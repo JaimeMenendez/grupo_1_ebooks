@@ -10,12 +10,17 @@ Descripción de los integrantes del equipo:
 - Tatiana Leal del Río:
 
 Sitios de referencia:
+
 Por los productos que ofrecen:
+
 Por los clientes que apuntan:
 * https://www.laleo.com/libros-c-127.html: un sitio dirigido a estudiantes de Medicina con todos los libros y productos necesarios durante la carrera. Categorizan sus libros por campo de estudio. Podemos usar este tipo de clasificación para que nuestros estudiantes universitarios encuentren lo que quieren más rápido.
+
 Por la estética que presentan:
 * https://www.barnesandnoble.com: una de las librerías más grandes de Estados Unidos, su diseño es sencillo e intuitivo. Usan colores neutrales para que las portadas de los libros resalten.
+
 Por las funcionalidades implementadas:
+
 
 * https://www.planetadelibros.com/libros-ebooks
 * https://latam.casadellibro.com/ebooks
