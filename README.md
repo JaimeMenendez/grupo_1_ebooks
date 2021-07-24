@@ -4,39 +4,34 @@
 
 ## Público al que se apunta
 
-<<<<<<< HEAD
 Estudiantes universitarios y profesionales en el campo de la medicina y la ingeniería.
-=======
-Descripción de los integrantes del equipo:
-- Jaime Menéndez Álvarez:Ingeniero en Telecomunicaciones y Electrónica.
-- Roxana Ramos Carpinteyro: MPSS de la Facultad de Medicina UNAM. Antes de estudiar Medicina hice un año en la carrera de Diseño en Medios Digitales en CENTRO. Interesada en aprender de programación para aplicarlo en mi campo de estudio.
+
 - Tatiana Leal del Río:
 >>>>>>> 8d4cfe9649fdfdab5565f2f4a70afab94fc9d966
-
 ## Descripción de los integrantes del equipo
 
-- **Jaime Menéndez Álvarez:** 
+- **Jaime Menéndez Álvarez:** Ingeniero en Telecomunicaciones y Electrónica.
 
 - **Roxana Ramos Carpinteyro:** MPSS de la Facultad de Medicina UNAM. Antes de estudiar Medicina hice un año en la carrera de Diseño en Medios Digitales en CENTRO. Interesada en aprender de programación para aplicarlo en mi campo de estudio.
 
-- **Tatiana Leal del Río:** Ingeniera electrónica de la *Universidad Francisco de Paula Santander (UFPS)* en Cúcuta, Colombia, con estudios de Maestría y Doctorado en "Tecnología Avanzada" en el *Centro de Investigación en Ciencia Aplicada y Tecnología Avanzada (CICATA-Legaria)* del IPN. Tengo conocimientos en programación de microcontroladores (*8, 16, 32 y 64 bits*), sensores, protocolos de comunicación serial síncrona y asíncrona (*UART, I2C, SPI, one-wire y Bluetooth*), programación de diferentes tarjetas electrónicas (*Raspberry Pi, Arduino, FPGAs, Microchip, Texas Instruments, GPS, RTC, Datalogger, entre otros*), electrónica, programación, investigación, redacción de artículos científicos en español e inglés, buen manejo del inglés, modelado 3D, impresión 3D, diseño vectorial 2D, entre muchas otras. Mi enfoque principal es integrar los conocimientos adquiridos con el desarrollo web, para crear aplicaciones robustas de IoT con Python y JavaScript, y en un fututo hacer ciencia de datos.
+- **Tatiana Leal del Río:** Ingeniera electrónica de la *Universidad Francisco de Paula Santander (UFPS)* en Cúcuta, Colombia, con estudios de Maestría y Doctorado en "Tecnología Avanzada" en el *Centro de Investigación en Ciencia Aplicada y Tecnología Avanzada (CICATA-Legaria)* del IPN. Mi enfoque principal es integrar los conocimientos adquiridos con el desarrollo web, para crear aplicaciones robustas de IoT con Python y JavaScript, y en un fututo hacer ciencia de datos.
 
 ## Sitios de referencia
 
--### Por los clientes que apuntan y productos que ofrecen
+-**Por los clientes que apuntan y productos que ofrecen**
 
 * [Laleo] (https://www.laleo.com/libros-c-127.html): un sitio dirigido a estudiantes de Medicina con todos los libros y productos necesarios durante la carrera. Categorizan sus libros por campo de estudio. Podemos usar este tipo de clasificación para que nuestros estudiantes universitarios encuentren lo que quieren más rápido.
 
 * [Packt] (https://www.packtpub.com/): un sitio dirigido a estudiantes y profesionales en tecnologías de la información donde se ofertan libros de programación, diseño web, análisis de datos, IoT y hardware, aplicaciones móviles, seguridas, redes y negocios con versiones electrónicas y vídeos. También manejan lenguajes de programación como Python, C#, C++, Javascript, JAVA, AWS, React, Azure, Angular, PHP, entre otros.
 
--### Por la estética que presentan 
+-**Por la estética que presentan**
 
 * [Barnes&Noble] (https://www.barnesandnoble.com): una de las librerías más grandes de Estados Unidos, su diseño es sencillo e intuitivo. Usan colores neutrales para que las portadas de los libros resalten.
 
 * [Makerteka] (https://makerteca.net/): es una página que ofrece contenidos relacionados a la educación STEAM con un enfoque maker. No está relacionada al tema de interés, pero su diseño es muy creativo con pequeñas animaciones y una variedad de colores cálidos acordes al público que apunta. 
 
 
--### Por las funcionalidades implementadas
+-**Por las funcionalidades implementadas**
 
 * [PlanetadeLibros] (https://www.planetadelibros.com/libros-ebooks)
 * [CasadelLibro] (https://latam.casadellibro.com/ebooks)
