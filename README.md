@@ -5,9 +5,6 @@
 ## Público al que se apunta
 
 Estudiantes universitarios y profesionales en el campo de la medicina y la ingeniería.
-
-- Tatiana Leal del Río:
->>>>>>> 8d4cfe9649fdfdab5565f2f4a70afab94fc9d966
 ## Descripción de los integrantes del equipo
 
 - **Jaime Menéndez Álvarez:** Ingeniero en Telecomunicaciones y Electrónica.
@@ -18,20 +15,20 @@ Estudiantes universitarios y profesionales en el campo de la medicina y la ingen
 
 ## Sitios de referencia
 
--**Por los clientes que apuntan y productos que ofrecen**
+- **Por los clientes que apuntan y productos que ofrecen**
 
 * [Laleo] (https://www.laleo.com/libros-c-127.html): un sitio dirigido a estudiantes de Medicina con todos los libros y productos necesarios durante la carrera. Categorizan sus libros por campo de estudio. Podemos usar este tipo de clasificación para que nuestros estudiantes universitarios encuentren lo que quieren más rápido.
 
 * [Packt] (https://www.packtpub.com/): un sitio dirigido a estudiantes y profesionales en tecnologías de la información donde se ofertan libros de programación, diseño web, análisis de datos, IoT y hardware, aplicaciones móviles, seguridas, redes y negocios con versiones electrónicas y vídeos. También manejan lenguajes de programación como Python, C#, C++, Javascript, JAVA, AWS, React, Azure, Angular, PHP, entre otros.
 
--**Por la estética que presentan**
+- **Por la estética que presentan**
 
 * [Barnes&Noble] (https://www.barnesandnoble.com): una de las librerías más grandes de Estados Unidos, su diseño es sencillo e intuitivo. Usan colores neutrales para que las portadas de los libros resalten.
 
 * [Makerteka] (https://makerteca.net/): es una página que ofrece contenidos relacionados a la educación STEAM con un enfoque maker. No está relacionada al tema de interés, pero su diseño es muy creativo con pequeñas animaciones y una variedad de colores cálidos acordes al público que apunta. 
 
 
--**Por las funcionalidades implementadas**
+- **Por las funcionalidades implementadas**
 
 * [PlanetadeLibros] (https://www.planetadelibros.com/libros-ebooks)
 * [CasadelLibro] (https://latam.casadellibro.com/ebooks)
