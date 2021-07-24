@@ -1,27 +1,38 @@
-# grupo_1_insideBooks
+# Grupo_1_insideBooks
 
-Descripción: Inside Books es un e-comerce que contiene todos los libros que un estudiante universitario pueda necesitar. Desde Ingenierías, hasta Medicina, contamos con libros para cada carrera, en diversos idiomas y empastados. Además contamos con envío gratis a toda la República Mexicana.
+**Inside Books** es una propuesta de e-comerce (*en fase de desarrollo*) que ofrece la venta de libros en diferentes formatos, a estudiantes universitarios o profesionales. Desde Ingenierías relacionadas con las tecnologías de la información, hasta Medicina, *Inside Books* ofrece libros en diversos idiomas, versiones y empastados. Además cuenta con diferentes formas de pago, envíos gratis a toda la República Mexicana, promociones y descuentos para sus clientes más recurrentes.
 
-Público al que se apunta: Estudiantes universitarios.
+## Público al que se apunta
 
-Descripción de los integrantes del equipo:
-- Jaime Menéndez Álvarez:
-- Roxana Ramos Carpinteyro: MPSS de la Facultad de Medicina UNAM. Antes de estudiar Medicina hice un año en la carrera de Diseño en Medios Digitales en CENTRO. Interesada en aprender de programación para aplicarlo en mi campo de estudio.
-- Tatiana Leal del Río:
+Estudiantes universitarios y profesionales en el campo de la medicina y la ingeniería.
 
-Sitios de referencia:
+## Descripción de los integrantes del equipo
 
-Por los productos que ofrecen:
+- **Jaime Menéndez Álvarez:** 
 
-Por los clientes que apuntan:
-* https://www.laleo.com/libros-c-127.html: un sitio dirigido a estudiantes de Medicina con todos los libros y productos necesarios durante la carrera. Categorizan sus libros por campo de estudio. Podemos usar este tipo de clasificación para que nuestros estudiantes universitarios encuentren lo que quieren más rápido.
+- **Roxana Ramos Carpinteyro:** MPSS de la Facultad de Medicina UNAM. Antes de estudiar Medicina hice un año en la carrera de Diseño en Medios Digitales en CENTRO. Interesada en aprender de programación para aplicarlo en mi campo de estudio.
 
-Por la estética que presentan:
-* https://www.barnesandnoble.com: una de las librerías más grandes de Estados Unidos, su diseño es sencillo e intuitivo. Usan colores neutrales para que las portadas de los libros resalten.
+- **Tatiana Leal del Río:** Ingeniera electrónica de la *Universidad Francisco de Paula Santander (UFPS)* en Cúcuta, Colombia, con estudios de Maestría y Doctorado en "Tecnología Avanzada" en el *Centro de Investigación en Ciencia Aplicada y Tecnología Avanzada (CICATA-Legaria)* del IPN. Tengo conocimientos en programación de microcontroladores (*8, 16, 32 y 64 bits*), sensores, protocolos de comunicación serial síncrona y asíncrona (*UART, I2C, SPI, one-wire y Bluetooth*), programación de diferentes tarjetas electrónicas (*Raspberry Pi, Arduino, FPGAs, Microchip, Texas Instruments, GPS, RTC, Datalogger, entre otros*), electrónica, programación, investigación, redacción de artículos científicos en español e inglés, buen manejo del inglés, modelado 3D, impresión 3D, diseño vectorial 2D, entre muchas otras. Mi enfoque principal es integrar los conocimientos adquiridos con el desarrollo web, para crear aplicaciones robustas de IoT con Python y JavaScript, y en un fututo hacer ciencia de datos.
 
-Por las funcionalidades implementadas:
+## Sitios de referencia
+
+-### Por los clientes que apuntan y productos que ofrecen
+
+* [Laleo] (https://www.laleo.com/libros-c-127.html): un sitio dirigido a estudiantes de Medicina con todos los libros y productos necesarios durante la carrera. Categorizan sus libros por campo de estudio. Podemos usar este tipo de clasificación para que nuestros estudiantes universitarios encuentren lo que quieren más rápido.
+
+* [Packt] (https://www.packtpub.com/): un sitio dirigido a estudiantes y profesionales en tecnologías de la información donde se ofertan libros de programación, diseño web, análisis de datos, IoT y hardware, aplicaciones móviles, seguridas, redes y negocios con versiones electrónicas y vídeos. También manejan lenguajes de programación como Python, C#, C++, Javascript, JAVA, AWS, React, Azure, Angular, PHP, entre otros.
+
+-### Por la estética que presentan 
+
+* [Barnes&Noble] (https://www.barnesandnoble.com): una de las librerías más grandes de Estados Unidos, su diseño es sencillo e intuitivo. Usan colores neutrales para que las portadas de los libros resalten.
+
+* [Makerteka] (https://makerteca.net/): es una página que ofrece contenidos relacionados a la educación STEAM con un enfoque maker. No está relacionada al tema de interés, pero su diseño es muy creativo con pequeñas animaciones y una variedad de colores cálidos acordes al público que apunta. 
 
 
-* https://www.planetadelibros.com/libros-ebooks
-* https://latam.casadellibro.com/ebooks
-* https://www.amazon.com.mx/ebooks-kindle/b?ie=UTF8&node=6507977011
+-### Por las funcionalidades implementadas
+
+* [PlanetadeLibros] (https://www.planetadelibros.com/libros-ebooks)
+* [CasadelLibro] (https://latam.casadellibro.com/ebooks)
+* [Amazon] (https://www.amazon.com.mx/ebooks-kindle/b?ie=UTF8&node=6507977011)
+* [LibreriasGandhi] (https://www.gandhi.com.mx/)
+* [Santillana] (https://www.santillana.com.mx/profesores/)
