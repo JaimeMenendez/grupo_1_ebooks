@@ -1,7 +1,7 @@
 # grupo_1_insideBooks
 
 <a href="logo">
-    <img src="https://github.com/JaimeMenendez/grupo_1_ebooks/blob/main/design/logoWS/Logo.png" alt="Logo del sitio web" align="middle" width="500">
+    <img src="https://github.com/JaimeMenendez/grupo_1_ebooks/blob/main/design/logoWS/Logo.png" alt="Logo del sitio web" width="500"> align="middle">
 </a>
 
 **Inside Books** es una propuesta de e-comerce (*en fase de desarrollo*) que ofrece la venta de libros en diferentes formatos, a estudiantes universitarios o profesionales. Desde Ingenierías relacionadas con las tecnologías de la información, hasta Medicina, *Inside Books* ofrece libros en diversos idiomas, versiones y empastados. Además cuenta con diferentes formas de pago, envíos gratis a toda la República Mexicana, promociones y descuentos para sus clientes más recurrentes.
