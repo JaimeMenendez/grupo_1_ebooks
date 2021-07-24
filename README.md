@@ -4,7 +4,14 @@
 
 ## Público al que se apunta
 
+<<<<<<< HEAD
 Estudiantes universitarios y profesionales en el campo de la medicina y la ingeniería.
+=======
+Descripción de los integrantes del equipo:
+- Jaime Menéndez Álvarez:Ingeniero en Telecomunicaciones y Electrónica.
+- Roxana Ramos Carpinteyro: MPSS de la Facultad de Medicina UNAM. Antes de estudiar Medicina hice un año en la carrera de Diseño en Medios Digitales en CENTRO. Interesada en aprender de programación para aplicarlo en mi campo de estudio.
+- Tatiana Leal del Río:
+>>>>>>> 8d4cfe9649fdfdab5565f2f4a70afab94fc9d966
 
 ## Descripción de los integrantes del equipo
 
