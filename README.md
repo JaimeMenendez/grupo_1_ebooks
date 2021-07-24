@@ -16,22 +16,16 @@ Estudiantes universitarios y profesionales en el campo de la medicina y la ingen
 ## Sitios de referencia
 
 - **Por los clientes que apuntan y productos que ofrecen**
-
-* [Laleo](https://www.laleo.com/libros-c-127.html): un sitio dirigido a estudiantes de Medicina con todos los libros y productos necesarios durante la carrera. Categorizan sus libros por campo de estudio. Podemos usar este tipo de clasificación para que nuestros estudiantes universitarios encuentren lo que quieren más rápido.
-
-* [Packt](https://www.packtpub.com/): un sitio dirigido a estudiantes y profesionales en tecnologías de la información donde se ofertan libros de programación, diseño web, análisis de datos, IoT y hardware, aplicaciones móviles, seguridas, redes y negocios con versiones electrónicas y vídeos. También manejan lenguajes de programación como Python, C#, C++, Javascript, JAVA, AWS, React, Azure, Angular, PHP, entre otros.
+    * [Laleo](https://www.laleo.com/libros-c-127.html): un sitio dirigido a estudiantes de Medicina con todos los libros y productos necesarios durante la carrera. Categorizan sus libros por campo de estudio. Podemos usar este tipo de clasificación para que nuestros estudiantes universitarios encuentren lo que quieren más rápido.
+    * [Packt](https://www.packtpub.com/): un sitio dirigido a estudiantes y profesionales en tecnologías de la información donde se ofertan libros de programación, diseño web, análisis de datos, IoT y hardware, aplicaciones móviles, seguridas, redes y negocios con versiones electrónicas y vídeos. También manejan lenguajes de programación como Python, C#, C++, Javascript, JAVA, AWS, React, Azure, Angular, PHP, entre otros.
 
 - **Por la estética que presentan**
-
-* [Barnes&Noble](https://www.barnesandnoble.com): una de las librerías más grandes de Estados Unidos, su diseño es sencillo e intuitivo. Usan colores neutrales para que las portadas de los libros resalten.
-
-* [Makerteka](https://makerteca.net/): es una página que ofrece contenidos relacionados a la educación STEAM con un enfoque maker. No está relacionada al tema de interés, pero su diseño es muy creativo con pequeñas animaciones y una variedad de colores cálidos acordes al público que apunta. 
-
+    * [Barnes&Noble](https://www.barnesandnoble.com): una de las librerías más grandes de Estados Unidos, su diseño es sencillo e intuitivo. Usan colores neutrales para que las portadas de los libros resalten.
+    * [Makerteka](https://makerteca.net/): es una página que ofrece contenidos relacionados a la educación STEAM con un enfoque maker. No está relacionada al tema de interés, pero su diseño es muy creativo con pequeñas animaciones y una variedad de colores cálidos acordes al público que apunta. 
 
 - **Por las funcionalidades implementadas**
-
-* [PlanetadeLibros](https://www.planetadelibros.com/libros-ebooks)
-* [CasadelLibro](https://latam.casadellibro.com/ebooks)
-* [Amazon](https://www.amazon.com.mx/ebooks-kindle/b?ie=UTF8&node=6507977011)
-* [LibreriasGandhi](https://www.gandhi.com.mx/)
-* [Santillana](https://www.santillana.com.mx/profesores/)
+    * [PlanetadeLibros](https://www.planetadelibros.com/libros-ebooks)
+    * [CasadelLibro](https://latam.casadellibro.com/ebooks)
+    * [Amazon](https://www.amazon.com.mx/ebooks-kindle/b?ie=UTF8&node=6507977011)
+    * [LibreriasGandhi](https://www.gandhi.com.mx/)
+    * [Santillana](https://www.santillana.com.mx/profesores/)
