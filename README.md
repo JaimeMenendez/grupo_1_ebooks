@@ -44,5 +44,7 @@ Estudiantes universitarios y profesionales en el campo de la medicina y la ingen
 
         * [PlanetadeLibros](https://www.planetadelibros.com/libros-ebooks): se tomó como referencia el inicio de sesión alternativo usando una red social. En este caso se cambió por una cuenta de google.
         * [LinkedIn](https://www.linkedin.com/uas/login?fromSignIn=true&trk=cold_join_sign_in): se tomó como referencia el diseño de inicio de sesión.
-        
-    * [Amazon](https://www.amazon.com.mx/ebooks-kindle/b?ie=UTF8&node=6507977011)
+    
+    * **Carrito de compras (pág we):**
+
+        * [Amazon](https://www.amazon.com.mx/gp/cart/view.html?ref_=nav_cart#nav-top): se tomó como referencia el carrito de compras con algunas modificaciones al diseño.
