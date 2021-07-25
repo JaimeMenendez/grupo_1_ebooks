@@ -11,7 +11,7 @@
 Estudiantes universitarios y profesionales en el campo de la medicina y la ingeniería.
 ## Descripción de los integrantes del equipo
 
-- **Jaime Menéndez Álvarez:** Ingeniero en Telecomunicaciones y Electrónica.
+- **Jaime Menéndez Álvarez:** Ingeniero en Telecomunicaciones y Electrónica y Máster en Ingeniería Eléctrica en la UANL. Soy un apasionado de la programación y de la automatización y busco consolidar mis conocimientos en el desarrollo web. 
 
 - **Roxana Ramos Carpinteyro:** MPSS de la Facultad de Medicina UNAM. Antes de estudiar Medicina hice un año en la carrera de Diseño en Medios Digitales en CENTRO. Interesada en aprender de programación para aplicarlo en mi campo de estudio.
 
