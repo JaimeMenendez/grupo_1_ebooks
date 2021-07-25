@@ -11,7 +11,7 @@
 Estudiantes universitarios y profesionales en el campo de la medicina y la ingeniería.
 ## Descripción de los integrantes del equipo
 
-- **Jaime Menéndez Álvarez:** Ingeniero en Telecomunicaciones y Electrónica.
+- **Jaime Menéndez Álvarez:** Ingeniero en Telecomunicaciones y Electrónica y Máster en Ingeniería Eléctrica en la UANL. Soy un apasionado de la programación y de la automatización y busco consolidar mis conocimientos en el desarrollo web. 
 
 - **Roxana Ramos Carpinteyro:** MPSS de la Facultad de Medicina UNAM. Antes de estudiar Medicina hice un año en la carrera de Diseño en Medios Digitales en CENTRO. Interesada en aprender de programación para aplicarlo en mi campo de estudio.
 
@@ -44,7 +44,12 @@ Estudiantes universitarios y profesionales en el campo de la medicina y la ingen
 
         * [PlanetadeLibros](https://www.planetadelibros.com/libros-ebooks): se tomó como referencia el inicio de sesión alternativo usando una red social. En este caso se cambió por una cuenta de google.
         * [LinkedIn](https://www.linkedin.com/uas/login?fromSignIn=true&trk=cold_join_sign_in): se tomó como referencia el diseño de inicio de sesión.
+<<<<<<< HEAD
     
     * **Carrito de compras (pág we):**
 
         * [Amazon](https://www.amazon.com.mx/gp/cart/view.html?ref_=nav_cart#nav-top): se tomó como referencia el carrito de compras con algunas modificaciones al diseño.
+=======
+        
+    * [Amazon](https://www.amazon.com.mx/ebooks-kindle/b?ie=UTF8&node=6507977011)
+>>>>>>> ca5d383e98d7bdb9b52a786fc8c519577018e48a
