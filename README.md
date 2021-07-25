@@ -28,8 +28,18 @@ Estudiantes universitarios y profesionales en el campo de la medicina y la ingen
     * [Makerteka](https://makerteca.net/): es una página que ofrece contenidos relacionados a la educación STEAM con un enfoque maker. No está relacionada al tema de interés, pero su diseño es muy creativo con pequeñas animaciones y una variedad de colores cálidos acordes al público que apunta. 
 
 - **Por las funcionalidades implementadas**
+
+    * **Home (pág web):**
+
+        * [Pack](https://www.packtpub.com/): se tomó como referente el diseño en general del sitio
+        * [Amazon](https://www.amazon.com.mx/s?k=python+books&i=stripbooks&rh=n%3A9576190011%2Cp_n_feature_browse-bin%3A9590853011&dc&__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1627232270&rnid=9590844011&ref=sr_nr_p_n_feature_browse-bin_2): se tomó como referencia la lista de la parte izquierda de la página, donde se muestran opciones de la búsqueda como las subcategorías de libros de una categoría en específico.
+
+    * **Formulario de registro (pág web):**
+
+        * [LibreriasGandhi](https://www.gandhi.com.mx/): se tomaron como referentes el registro de usuario (*nombre, apellido, correo, contraseña y confirmación de contraseña*), el CAPTCHA, los checkbox de *promociones y aviso de privacidad* y la etiqueta de campos obligatorios.
+        * [LinkedIn](https://www.linkedin.com/signup/cold-join?trk=guest_homepage-basic_nav-header-join): se tomó como referencia la opción de crear una cuenta con Google
+        * [Packt](https://account.packtpub.com/register): se tomó como referencia la pregunta *¿Ya tienes una cuenta? Ingresa a mi cuenta*
+
     * [PlanetadeLibros](https://www.planetadelibros.com/libros-ebooks)
     * [CasadelLibro](https://latam.casadellibro.com/ebooks)
     * [Amazon](https://www.amazon.com.mx/ebooks-kindle/b?ie=UTF8&node=6507977011)
-    * [LibreriasGandhi](https://www.gandhi.com.mx/)
-    * [Santillana](https://www.santillana.com.mx/profesores/)
