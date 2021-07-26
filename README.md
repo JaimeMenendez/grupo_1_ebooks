@@ -46,10 +46,6 @@ Estudiantes universitarios y profesionales en el campo de la medicina y la ingen
         * [LinkedIn](https://www.linkedin.com/uas/login?fromSignIn=true&trk=cold_join_sign_in): se tomó como referencia el diseño de inicio de sesión.
 <<<<<<< HEAD
     
-    * **Carrito de compras (pág we):**
+    * **Carrito de compras (Versión Web):**
 
         * [Amazon](https://www.amazon.com.mx/gp/cart/view.html?ref_=nav_cart#nav-top): se tomó como referencia el carrito de compras con algunas modificaciones al diseño.
-=======
-        
-    * [Amazon](https://www.amazon.com.mx/ebooks-kindle/b?ie=UTF8&node=6507977011)
->>>>>>> ca5d383e98d7bdb9b52a786fc8c519577018e48a
