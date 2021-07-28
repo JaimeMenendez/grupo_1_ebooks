@@ -1,6 +1,6 @@
 # grupo_1_insideBooks
 
-<div style="margin:auto;">
+<div>
     <img src="https://github.com/JaimeMenendez/grupo_1_ebooks/blob/main/design/logoWS/Logo.png" alt="Logo del sitio web" width="500" >
 </div>
 
