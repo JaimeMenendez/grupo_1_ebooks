@@ -1,7 +1,7 @@
 # grupo_1_insideBooks
 
 <a>
-    <img src="https://github.com/JaimeMenendez/grupo_1_ebooks/blob/main/design/logoWS/Logo.png" alt="Logo del sitio web" width="500">
+    <img style="{display:block;margin:auto;}" src="https://github.com/JaimeMenendez/grupo_1_ebooks/blob/main/design/logoWS/Logo.png" alt="Logo del sitio web" width="500">
 </a>
 
 **Inside Books** es una propuesta de e-comerce (*en fase de desarrollo*) que ofrece la venta de libros en diferentes formatos, a estudiantes universitarios o profesionales. Desde Ingenierías relacionadas con las tecnologías de la información, hasta Medicina, *Inside Books* ofrece libros en diversos idiomas, versiones y empastados. Además cuenta con diferentes formas de pago, envíos gratis a toda la República Mexicana, promociones y descuentos para sus clientes más recurrentes.
@@ -44,8 +44,12 @@ Estudiantes universitarios y profesionales en el campo de la medicina y la ingen
 
         * [PlanetadeLibros](https://www.planetadelibros.com/libros-ebooks): se tomó como referencia el inicio de sesión alternativo usando una red social. En este caso se cambió por una cuenta de google.
         * [LinkedIn](https://www.linkedin.com/uas/login?fromSignIn=true&trk=cold_join_sign_in): se tomó como referencia el diseño de inicio de sesión.
-<<<<<<< HEAD
     
     * **Carrito de compras (Versión Web):**
 
         * [Amazon](https://www.amazon.com.mx/gp/cart/view.html?ref_=nav_cart#nav-top): se tomó como referencia el carrito de compras con algunas modificaciones al diseño.
+
+    * **Descripción de producto (Versión Web):**
+        
+        *[Amazon](https://www.amazon.com.mx/Web-Design-Html-JavaScript-Jquery/dp/1118907442/ref=sr_1_1?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=javascript+book&qid=1627491935&sr=8-1): se tomó como referencia para el diseño del wareframe la información del libro, la opción de compra de la derecha, las últimas novedades en libros y las reseñas de los usuarios.
+        * [Packt](https://www.packtpub.com/product/flutter-cookbook/9781838823382): se tómo como referencia el diseño de fondo donde se presenta la información del libro, así como la descripción del libro y la información complementaria acerca del contenido del libro.
