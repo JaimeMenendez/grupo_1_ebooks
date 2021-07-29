@@ -44,6 +44,50 @@ nav {
   margin-left: 3px;
 }
 
+.loginBannerContainer{
+  padding-bottom: 20px;
+  background: var(--azul-oscuro);
+}
+
+.showPassword{
+  text-align: center;
+}
+
+.logoPanel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.logoFont{
+  color: var(--blanco);
+  font-family: "Russo One", sans-serif;
+}
+
+.yellow{
+  color: var(--amarillo-claro);
+}
+
+
+.logoPanel img{
+   width: 150px;
+   padding: 0 5px;
+}
+
+.logoPanel h2{
+  margin: 0;
+  color: var(--blanco);
+  font-family: "Russo One", sans-serif;
+  font-size: 2.5em;
+  
+}
+
+.logoPanel h2 span{
+  color: var(--amarillo-claro);
+  margin-left: 20px;
+}
+
 a img {
   width: 30px;
   height: 30px;
@@ -142,8 +186,28 @@ footer {
   justify-content: center;
 }
 
-@media (max-width: 300px) {
+@media (max-width: 315px) {
   .logo h2 {
     font-size: 1em;
   }
+
+  .logoPanel img{
+    width: 100px;
+    padding: 0 5px;
+ }
+ 
+ .logoPanel h2{
+   margin: 0;
+   color: var(--blanco);
+   font-family: "Russo One", sans-serif;
+   font-size: 2em;
+   
+ }
+
+ .prompt h1 {
+   font-size:1.2em;
+ }
+ .prompt h3 {
+   font-size:1em;
+ }
 }
