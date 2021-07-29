@@ -15,6 +15,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.menu-label{
+  display: none;
+}
+
 nav {
   width: 100%;
   background: var(--azul-oscuro);
@@ -51,13 +55,20 @@ nav {
 
 .showPassword{
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
+
+
+
+
 
 .logoPanel{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 .logoFont{
@@ -80,6 +91,7 @@ nav {
   color: var(--blanco);
   font-family: "Russo One", sans-serif;
   font-size: 2.5em;
+  line-height:0.9em;
   
 }
 
@@ -145,6 +157,7 @@ a img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-content: center;
   width: 100vw;
   margin: 1.5em 0;
   font-weight: bold;
@@ -157,6 +170,7 @@ a img {
   width: 80vw;
   margin: 0.2em 0;
   height: 1.5em;
+  max-width: 450px;
 }
 
 label {
@@ -170,11 +184,23 @@ button {
   border-radius: 5px;
   background: var(--amarillo-medio);
   box-shadow: 0 2px 3px;
+  max-width: 450px;
 }
 
 .button-div {
   text-align: center;
   margin: 30px 0;
+}
+
+.showPassword label{
+  padding-top: 2px;
+  padding-left: 4px;
+  color:var(--azul-oscuro);
+}
+
+.showPassword input{
+  width : 20px;
+  height: 20px;
 }
 
 footer {
@@ -185,6 +211,100 @@ footer {
   -ms-flex-pack: center;
   justify-content: center;
 }
+
+@media (min-width: 600px){
+  .menuButton a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color:white;
+    font-family: "Russo One", sans-serif;
+    margin:0 10px;
+  }
+
+  a:hover{
+    color:var(--amarillo-claro);
+  }
+  
+  
+  .menuButton img{
+    width: 45px;
+    height: 45px;
+  }
+  
+  
+  nav{
+    height:10vh;
+  }
+  
+  .logo h2{
+    font-size:2.5em;
+  }
+  
+  .logo-img {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    margin-left: 10px;
+  }
+
+  footer{height: 10vh;}
+
+  
+}
+
+
+@media (min-width: 960px) {
+.menu-label{
+  display: inline;
+  font-size:1.5em;
+}
+.main-container{
+  display: flex;
+}
+
+.main-container section{
+  width: 50%;
+  height: 80vh;  
+}
+
+.loginBannerContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.question {
+  width: 100%;
+}
+
+.loginForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.loginForm input{
+  height:35px;
+}
+.question label{
+  font-size: 1.3em;
+}
+
+.showPassword label{
+  padding-top: 10px;
+  padding-left: 6px;
+  color:var(--azul-oscuro);
+}
+
+.showPassword input{
+  width : 20px;
+  vertical-align: bottom;
+}
+
+
+}
+
 
 @media (max-width: 315px) {
   .logo h2 {
@@ -201,8 +321,8 @@ footer {
    color: var(--blanco);
    font-family: "Russo One", sans-serif;
    font-size: 2em;
-   
  }
+
 
  .prompt h1 {
    font-size:1.2em;

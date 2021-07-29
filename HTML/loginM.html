@@ -1,77 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Russo+One&display=swap"
-      rel="stylesheet"
-    />
 
-    <link rel="stylesheet" href="css/normalize.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Registro de Usuario</title>
-  </head>
-  <body>
-    <nav>
-      <div class="logo">
-        <img class="logo-img" src="images/Logo.png" alt="Logo InsideBooks" />
-        <h2>Inside<span>Books</span></h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Russo+One&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/normalize.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Registro de Usuario</title>
+
+</head>
+
+<body>
+  <nav>
+    <div class="logo">
+      <img class="logo-img" src="images/Logo.png" alt="Logo InsideBooks" />
+      <h2>Inside<span>Books</span></h2>
+    </div>
+
+    <div class="menuButton">
+      <a href="#"><img src="images/account_circle_white_24dp.svg" alt="#" /><span class="menu-label">Mi Cuenta</span> </a>
+      <a href="#"><img src="images/shopping_cart_white_24dp.svg" alt="#" /> <span class="menu-label">Mi Carrito</span></a>
+      <a href="#"><img src="images/menu_white_24dp.svg" alt="#" /> <span class="menu-label">Menú</span> </a>
+    </div>
+  </nav>
+
+  <div class="main-container">
+  <section class="loginBannerContainer">
+    <div class="logoPanel">
+      <img src="images/Logo.png" alt="Logo InsideBooks" />
+      <h2>Inside <br><span>Books</span></h2>
+    </div>
+
+    <div class="prompt">
+      <h1>Bienvenido a <span class="logoFont">Inside<span class="yellow">Books</span></span></h1>
+      <h3>Inicia sesión o <a href="registerM.html">Regístrate.</a></h3>
+    </div>
+  </section>
+
+  <section class="loginForm">
+    <form action="">
+      <div class="question">
+        <label for="">Correo Electrónico</label>
+        <input type="email" />
       </div>
 
-      <div class="menuButton">
-        <a href="#"
-          ><img src="images/account_circle_white_24dp.svg" alt="#"
-        /></a>
-        <a href="#"
-          ><img src="images/shopping_cart_white_24dp.svg" alt="#"
-        /></a>
-        <a href="#"><img src="images/menu_white_24dp.svg" alt="#" /></a>
+      <div class="question">
+        <label for="">Contraseña</label>
+        <input type="password" />
       </div>
-    </nav>
 
-    <section class="loginBannerContainer">
-        <div class="logoPanel">
-            <img src="images/Logo.png" alt="Logo InsideBooks" />
-            <h2>Inside <br><span>Books</span></h2>
-          </div> 
-
-        <div class="prompt">
-            <h1>Bienvenido a <span class="logoFont">Inside<span class="yellow">Books</span></span></h1>
-            <h3>Inicia sesión o <a href="registerM.html">Regístrate.</a></h3>
-        </div>
-    </section>
-
-    <section >
-        <form action="">
-            <div class="question">
-                <label for="">Correo Electrónico</label>
-                <input type="email" />
-            </div>
-
-            <div class="question">
-                <label for="">Contraseña</label>
-                <input type="password" />
-            </div>
-
-            <div class="showPassword">
-                <label><input type="checkbox" id="cbox1" value="first_checkbox"> Mostrar Contraseña</label><br>
-            </div>
-
-            <div class ="button-div">
-                <button type="submit">Iniciar Sesión</button>
-            </div>
-        </form>
-    </section>
-
-    <footer>
-      <div class="logo">
-        <img class="logo-img" src="images/Logo.png" alt="Logo InsideBooks" />
-        <h2>Inside<span>Books</span></h2>
+      <div class="showPassword">
+        <input type="checkbox" id="cbox1" value="first_checkbox">
+        <label> Mostrar Contraseña</label>
       </div>
-    </footer>
-  </body>
+
+      <div class="button-div">
+        <button type="submit">Iniciar Sesión</button>
+      </div>
+
+      <div class="button-div">
+        <button type="submit">Iniciar Sesión con Google </button>
+      </div>
+    </form>
+  </section>
+</div>
+  <footer>
+    <div class="logo">
+      <img class="logo-img" src="images/Logo.png" alt="Logo InsideBooks" />
+      <h2>Inside<span>Books</span></h2>
+    </div>
+  </footer>
+</body>
+
 </html>
