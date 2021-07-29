@@ -10,6 +10,7 @@ font-family: 'Russo One', sans-serif; */
   --azul-oscuro: #2c3b44;
   --blanco: white;
 }
+
 body {
   overflow-x: hidden;
   font-family: "Roboto", sans-serif;
@@ -60,10 +61,6 @@ nav {
   align-content: center;
 }
 
-
-
-
-
 .logoPanel{
   display: flex;
   align-items: center;
@@ -79,7 +76,6 @@ nav {
 .yellow{
   color: var(--amarillo-claro);
 }
-
 
 .logoPanel img{
    width: 150px;
@@ -233,10 +229,6 @@ footer {
   }
   
   
-  nav{
-    height:10vh;
-  }
-  
   .logo h2{
     font-size:2.5em;
   }
@@ -247,10 +239,6 @@ footer {
     margin: 10px;
     margin-left: 10px;
   }
-
-  footer{height: 10vh;}
-
-  
 }
 
 
@@ -261,11 +249,12 @@ footer {
 }
 .main-container{
   display: flex;
+  height: 528px;
 }
 
 .main-container section{
   width: 50%;
-  height: 80vh;  
+    
 }
 
 .loginBannerContainer{
@@ -302,7 +291,9 @@ footer {
   vertical-align: bottom;
 }
 
-
+nav{
+  height:60px;
+}
 }
 
 
