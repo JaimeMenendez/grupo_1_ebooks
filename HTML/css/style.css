@@ -10,6 +10,9 @@ font-family: 'Russo One', sans-serif; */
   --azul-oscuro: #2c3b44;
   --blanco: white;
 }
+body{
+    overflow-x: hidden;
+}
 
 nav {
   width: 100%;
