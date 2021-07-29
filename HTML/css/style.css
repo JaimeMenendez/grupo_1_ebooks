@@ -1,7 +1,6 @@
 /* font-family: 'Roboto', sans-serif;
 font-family: 'Russo One', sans-serif; */
 
-
 :root {
   --amarillo-transp: #fbe18d59;
   --amarillo-claro: #fbe18d;
@@ -11,28 +10,21 @@ font-family: 'Russo One', sans-serif; */
   --azul-oscuro: #2c3b44;
   --blanco: white;
 }
-body{
-    overflow-x: hidden;
+body {
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
 }
 
 nav {
   width: 100%;
   background: var(--azul-oscuro);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .logo h2 {
@@ -59,120 +51,95 @@ a img {
 }
 
 .menuButton {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
-.ingresar {
+.prompt {
   background: var(--azul-oscuro);
 }
 
-.ingresar h1 {
+.prompt h1 {
   margin: 0;
   color: var(--blanco);
-  font-family: "Roboto", sans-serif;
+
   text-align: center;
   padding: 20px 20px 0 20px;
 }
-.ingresar h3 {
+.prompt h3 {
   margin: 0;
   color: var(--blanco);
-  font-family: "Roboto", sans-serif;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.ingresar h3 a {
+.prompt h3 a {
   color: var(--amarillo-claro);
 }
 
-.condiciones {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.conditions {
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
   width: 80vw;
   margin: 0 9vw;
   padding: 10px 1vw;
   background-color: var(--amarillo-transp);
 }
 
-.condiciones label {
+.conditions label {
   width: 80vw;
 }
 
-.condiciones label a {
+.conditions label a {
   color: var(--amarillo-fuerte);
 }
 
-.pregunta {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.question {
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   width: 100vw;
   margin: 1.5em 0;
   font-weight: bold;
 }
 
-.pregunta input {
+.question input {
   border: 2px solid var(--azul-oscuro);
-  border-style: solid; 
+  border-style: solid;
   border-radius: 5px;
   width: 80vw;
   margin: 0.2em 0;
   height: 1.5em;
-  border-color:#2c3b44;
 }
 
 label {
-  font-family: "Roboto", sans-serif;
   color: var(--azul-oscuro);
 }
 
 button {
   width: 80vw;
   height: 2.5em;
-  font-family: "Roboto", sans-serif;
   font-size: 1.1em;
   border-radius: 5px;
   background: var(--amarillo-medio);
   box-shadow: 0 2px 3px;
 }
 
-.button-div{
-    text-align: center;
-    margin: 30px 0;
+.button-div {
+  text-align: center;
+  margin: 30px 0;
 }
 
 footer {
   width: 100vw;
   background: var(--azul-oscuro);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 @media (max-width: 300px) {
