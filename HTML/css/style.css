@@ -107,16 +107,17 @@ a img {
 }
 
 .pregunta input {
-  border: 2px solid var(--azul-oscuro);
+  border: 2px solid #2c3b44;
   border-radius: 5px;
   width: 80vw;
   margin: 0.2em 0;
   height: 1.5em;
+  color: #2c3b44;
 }
 
 label {
   font-family: "Roboto", sans-serif;
-  color: var(--azul-oscuro);
+  color: #2c3b44;
 }
 
 button {
