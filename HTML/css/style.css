@@ -108,6 +108,7 @@ a img {
 
 .pregunta input {
   border: 2px solid #2c3b44;
+  border-style: solid; 
   border-radius: 5px;
   width: 80vw;
   margin: 0.2em 0;
