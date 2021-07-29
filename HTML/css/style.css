@@ -1,6 +1,7 @@
 /* font-family: 'Roboto', sans-serif;
 font-family: 'Russo One', sans-serif; */
 
+
 :root {
   --amarillo-transp: #fbe18d59;
   --amarillo-claro: #fbe18d;
@@ -17,13 +18,21 @@ body{
 nav {
   width: 100%;
   background: var(--azul-oscuro);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .logo h2 {
@@ -50,8 +59,12 @@ a img {
 }
 
 .menuButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .ingresar {
@@ -79,10 +92,18 @@ a img {
 }
 
 .condiciones {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   width: 80vw;
   margin: 0 9vw;
   padding: 10px 1vw;
@@ -98,9 +119,16 @@ a img {
 }
 
 .pregunta {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100vw;
   margin: 1.5em 0;
   font-weight: bold;
@@ -139,8 +167,12 @@ button {
 footer {
   width: 100vw;
   background: var(--azul-oscuro);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (max-width: 300px) {
