@@ -57,12 +57,13 @@ a img {
 .ingresar {
   background: var(--azul-oscuro);
 }
+
 .ingresar h1 {
   margin: 0;
   color: var(--blanco);
   font-family: "Roboto", sans-serif;
   text-align: center;
-  padding-top: 20px;
+  padding: 20px 20px 0 20px;
 }
 .ingresar h3 {
   margin: 0;
