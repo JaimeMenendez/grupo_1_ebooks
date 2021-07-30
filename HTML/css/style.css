@@ -210,15 +210,40 @@ label {
   align-content: center;
 }
 
+.menuButton a{
+  text-decoration: none;
+  color: white;
+  padding-left: 5px;
+}
 a img {
   width: 30px;
   height: 30px;
   padding: 0 5px;
 }
 
+a i {
+  font-size:25px;
+  text-decoration: none;
+}
+
+a{
+  transition: 0.1s !important;
+}
+
+a:hover {
+  color: var(--amarillo-claro) !important;
+  transform: scale(1.1) !important;
+}
+
+button:hover{
+  background-color: var(--amarillo-fuerte);
+}
+
 .menuButton {
   display: flex;
   align-items: center;
+  margin-right: 10px;
+
 }
 
 button {
@@ -229,6 +254,7 @@ button {
   background: var(--amarillo-medio);
   box-shadow: 0 2px 3px;
   max-width: 450px;
+  transition: 0.1s;
 }
 
 .button-div {
@@ -264,11 +290,7 @@ footer {
     text-decoration: none;
     color: white;
     font-family: "Russo One", sans-serif;
-    margin: 0 10px;
-  }
-
-  a:hover {
-    color: var(--amarillo-claro);
+   
   }
 
   form.searchBar {
@@ -283,7 +305,7 @@ footer {
 }
 
 /* PC STYLES */
-@media (min-width: 970px) {
+@media (min-width: 980px) {
   .menu-label {
     display: inline;
     font-size: 1em;
@@ -350,6 +372,14 @@ footer {
   .registrationInput{
     padding-top:var(--navBarHeight);
   }
+
+  .menuButton {
+    margin-right: 20px;
+  }
+
+  .menuButton a{
+    padding-left:20px;
+  }
 }
 
 @media (max-width: 315px) {
@@ -375,4 +405,8 @@ footer {
   .prompt h3 {
     font-size: 1em;
   }
+.menuButton{
+  margin-right: 5 px;
+}
+  
 }
