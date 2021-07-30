@@ -7,7 +7,8 @@ font-family: 'Russo One', sans-serif; */
   --amarillo-medio: #eecf82;
   --amarillo-fuerte: hsl(43, 84%, 59%);
   --azul-gris: #4d5e68;
-  --azul-oscuro: #2c3b44;
+  /*--azul-oscuro: #2c3b44;*/
+  --azul-oscuro: #202020;
   --blanco: white;
   --navBarHeight: 50px;
 }
@@ -33,6 +34,7 @@ nav {
 /* Navegation bar Logo */
 .logoContainer {
   display: flex;
+  margin: 1; 
   align-items: center;
 }
 
@@ -182,8 +184,14 @@ form.searchBar::after {
   max-width: 450px;
 }
 
+.question p {
+  font-size: 12px;
+}
+
+
 label {
   color: var(--azul-oscuro);
+  text-align: left;
 }
 
 .conditions {
@@ -372,7 +380,7 @@ footer {
   }
 
   .registrationInput{
-    padding-top:var(--navBarHeight);
+    padding-top: 200px;
   }
 
   .menuButton {
