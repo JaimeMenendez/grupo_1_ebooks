@@ -53,12 +53,14 @@
     <form action="">
       <div class="question">
         <label for="">Correo Electrónico</label>
-        <input type="email" />
+        <input type="email" required/>
       </div>
 
       <div class="question">
-        <label for="">Contraseña</label>
-        <input type="password" />
+        <label for="pwd">Contraseña</label>
+        <input type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+               title="La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres"
+               required>
       </div>
 
       <div class="showPassword">
