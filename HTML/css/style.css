@@ -3,14 +3,15 @@ font-family: 'Russo One', sans-serif; */
 
 :root {
   --amarillo-transp: #fbe18d59;
-  --amarillo-claro: #fbe18d;
-  --amarillo-medio: #eecf82;
+  --amarillo-claro: #ffd300;
+  --amarillo-medio: #fcbf49;
   --amarillo-fuerte: hsl(43, 84%, 59%);
   --azul-gris: #4d5e68;
   /*--azul-oscuro: #2c3b44;*/
   --azul-oscuro: #202020;
   --blanco: white;
   --navBarHeight: 50px;
+  --crema:#fdf0d5;
 }
 
 /* --------MOBILE VERSION STYLE----------- */
@@ -40,7 +41,7 @@ nav {
 
 .logoContainer h2 {
   margin: 0;
-  color: var(--blanco);
+  color: var(--crema);
   font-family: "Russo One", sans-serif;
 }
 
@@ -75,7 +76,7 @@ nav {
 }
 
 .logoFont {
-  color: var(--blanco);
+  color: var(--crema);
   font-family: "Russo One", sans-serif;
 }
 
@@ -91,7 +92,7 @@ nav {
 
 .logoPanel h2 {
   margin: 0;
-  color: var(--blanco);
+  color: var(--crema);
   font-family: "Russo One", sans-serif;
   font-size: 2.8em;
   line-height: 0.9em;
@@ -234,6 +235,7 @@ a img {
 a i {
   font-size:25px;
   text-decoration: none;
+  padding-top: 5px;
 }
 
 a{
@@ -380,7 +382,7 @@ footer {
   }
 
   .registrationInput{
-    padding-top: 200px;
+    padding-top: 60px;
   }
 
   .menuButton {
