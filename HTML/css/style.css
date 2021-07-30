@@ -333,9 +333,7 @@ footer {
   }
 
   .loginBannerContainer {
-    display: flex;
-    flex-direction: column;
-    padding-top: 40px;
+    padding-top: 80px;
   }
 
   .question {
