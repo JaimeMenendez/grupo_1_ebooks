@@ -9,6 +9,7 @@ font-family: 'Russo One', sans-serif; */
   --azul-gris: #4d5e68;
   --azul-oscuro: #2c3b44;
   --blanco: white;
+  --navBarHeight: 50px;
 }
 
 /* --------MOBILE VERSION STYLE----------- */
@@ -81,15 +82,16 @@ nav {
 .logoPanel img {
   width: 150px;
   padding: 0 5px;
-  margin-top:40px;
+  margin-top:var(--navBarHeight);
 }
 
 .logoPanel h2 {
   margin: 0;
   color: var(--blanco);
   font-family: "Russo One", sans-serif;
-  font-size: 2.5em;
+  font-size: 2.8em;
   line-height: 0.9em;
+  padding-top: 50px;
 }
 
 .logoPanel h2 span {
@@ -120,15 +122,51 @@ nav {
   color: var(--amarillo-claro);
 }
 
+
+form.searchBar {
+  height:30px;
+  width:40vw;
+  display:none;
+  }
+
+form.searchBar input[type=text] {
+  font-size: 17px;
+  border: 2px solid #f1f1f1;
+  width: 80%;
+  background: #f1f1f1;
+
+}
+
+form.searchBar button {
+  width: 10%;
+  color: white;
+  font-size: 17px;
+  border-left: none;
+  cursor: pointer;
+  border-radius: 0;
+  box-shadow: none;
+  height:100%;
+  border: 1px solid var(--amarillo-claro);
+  min-width:40px;
+}
+
+form.searchBar button:hover {
+  background: var(--azul-oscuro);
+}
+
+form.searchBar::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 /* LOGIN FORM */
 
 .question {
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-content: center;
   width: 100vw;
-  margin: 1.5em 0;
+  margin: 1.2em 0;
   font-weight: bold;
 }
 
@@ -138,7 +176,7 @@ nav {
   border-radius: 5px;
   width: 80vw;
   margin: 0.2em 0;
-  height: 1.5em;
+  height: 30px;
   max-width: 450px;
 }
 
@@ -233,11 +271,19 @@ footer {
     color: var(--amarillo-claro);
   }
 
+  form.searchBar {
+    display:flex;
+  }
+
+  form.searchBar input {
+    margin-left: 20px;
+  }
+
 
 }
 
 /* PC STYLES */
-@media (min-width: 960px) {
+@media (min-width: 970px) {
   .menu-label {
     display: inline;
     font-size: 1em;
@@ -271,9 +317,7 @@ footer {
   .loginForm input {
     height: 35px;
   }
-  .question label {
-    font-size: 1.3em;
-  }
+
 
   .showPassword label {
     padding-top: 10px;
@@ -287,7 +331,7 @@ footer {
   }
 
   nav {
-    height: 40px;
+    height: var(--navBarHeight);
   }
 
   .conditions{
@@ -304,7 +348,7 @@ footer {
   }
 
   .registrationInput{
-    padding-top:40px;
+    padding-top:var(--navBarHeight);
   }
 }
 
