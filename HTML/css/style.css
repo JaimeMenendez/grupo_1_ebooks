@@ -11,100 +11,90 @@ font-family: 'Russo One', sans-serif; */
   --blanco: white;
 }
 
+/* --------MOBILE VERSION STYLE----------- */
+
 body {
   overflow-x: hidden;
   font-family: "Roboto", sans-serif;
 }
 
-.menu-label{
-  display: none;
-}
-
+/* Navegation Bar */
 nav {
   width: 100%;
   background: var(--azul-oscuro);
   display: flex;
   justify-content: space-between;
+  position: fixed;
 }
 
-.logo {
+/* Navegation bar Logo */
+.logoContainer {
   display: flex;
   align-items: center;
 }
 
-.logo h2 {
+.logoContainer h2 {
   margin: 0;
   color: var(--blanco);
   font-family: "Russo One", sans-serif;
 }
 
-.logo h2 span {
+.logoContainer h2 span {
   color: var(--amarillo-claro);
 }
 
 .logo-img {
+  /* Icon Size Navegation Bar */
   width: 40px;
   height: 40px;
   margin: 2px;
   margin-left: 3px;
 }
 
-.loginBannerContainer{
+.menu-label {
+  display: none;
+}
+
+/* Banner Container*/
+
+.loginBannerContainer {
   padding-bottom: 20px;
   background: var(--azul-oscuro);
 }
 
-.showPassword{
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
-.logoPanel{
+.logoPanel {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 10px;
 }
 
-.logoFont{
+.logoFont {
   color: var(--blanco);
   font-family: "Russo One", sans-serif;
 }
 
-.yellow{
+.yellow {
   color: var(--amarillo-claro);
 }
 
-.logoPanel img{
-   width: 150px;
-   padding: 0 5px;
+.logoPanel img {
+  width: 150px;
+  padding: 0 5px;
+  margin-top:40px;
 }
 
-.logoPanel h2{
+.logoPanel h2 {
   margin: 0;
   color: var(--blanco);
   font-family: "Russo One", sans-serif;
   font-size: 2.5em;
-  line-height:0.9em;
-  
+  line-height: 0.9em;
 }
 
-.logoPanel h2 span{
+.logoPanel h2 span {
   color: var(--amarillo-claro);
   margin-left: 20px;
-}
-
-a img {
-  width: 30px;
-  height: 30px;
-  padding: 0 5px;
-}
-
-.menuButton {
-  display: flex;
-  align-items: center;
 }
 
 .prompt {
@@ -130,24 +120,7 @@ a img {
   color: var(--amarillo-claro);
 }
 
-.conditions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  width: 80vw;
-  margin: 0 9vw;
-  padding: 10px 1vw;
-  background-color: var(--amarillo-transp);
-}
-
-.conditions label {
-  width: 80vw;
-}
-
-.conditions label a {
-  color: var(--amarillo-fuerte);
-}
+/* LOGIN FORM */
 
 .question {
   display: flex;
@@ -173,6 +146,43 @@ label {
   color: var(--azul-oscuro);
 }
 
+.conditions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  width: 80vw;
+  margin: 0 9vw;
+  padding: 10px 1vw;
+  background-color: var(--amarillo-transp);
+}
+
+.conditions label {
+  width: 80vw;
+}
+
+.conditions label a {
+  color: var(--amarillo-fuerte);
+}
+
+.showPassword {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+a img {
+  width: 30px;
+  height: 30px;
+  padding: 0 5px;
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+}
+
 button {
   width: 80vw;
   height: 2.5em;
@@ -188,14 +198,14 @@ button {
   margin: 30px 0;
 }
 
-.showPassword label{
+.showPassword label {
   padding-top: 2px;
   padding-left: 4px;
-  color:var(--azul-oscuro);
+  color: var(--azul-oscuro);
 }
 
-.showPassword input{
-  width : 20px;
+.showPassword input {
+  width: 20px;
   height: 20px;
 }
 
@@ -208,117 +218,117 @@ footer {
   justify-content: center;
 }
 
-@media (min-width: 600px){
-  .menuButton a{
+/* TABLET */
+@media (min-width: 600px) {
+  .menuButton a {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color:white;
+    color: white;
     font-family: "Russo One", sans-serif;
-    margin:0 10px;
+    margin: 0 10px;
   }
 
-  a:hover{
-    color:var(--amarillo-claro);
+  a:hover {
+    color: var(--amarillo-claro);
   }
-  
-  
-  .menuButton img{
-    width: 45px;
-    height: 45px;
-  }
-  
-  
-  .logo h2{
-    font-size:2.5em;
-  }
-  
-  .logo-img {
-    width: 60px;
-    height: 60px;
-    margin: 10px;
-    margin-left: 10px;
-  }
+
+
 }
 
-
+/* PC STYLES */
 @media (min-width: 960px) {
-.menu-label{
-  display: inline;
-  font-size:1.5em;
-}
-.main-container{
-  display: flex;
-  height: 528px;
-}
+  .menu-label {
+    display: inline;
+    font-size: 1em;
+  }
+  .main-container {
+    display: flex;
+    height: 100%;
+    min-height: 100vh;
+  }
 
-.main-container section{
-  width: 50%;
-    
-}
+  .main-container section {
+    width: 50%;
+  }
 
-.loginBannerContainer{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+  .loginBannerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-.question {
-  width: 100%;
-}
+  .question {
+    width: 100%;
+  }
 
-.loginForm{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-.loginForm input{
-  height:35px;
-}
-.question label{
-  font-size: 1.3em;
-}
+  .loginForm input {
+    height: 35px;
+  }
+  .question label {
+    font-size: 1.3em;
+  }
 
-.showPassword label{
-  padding-top: 10px;
-  padding-left: 6px;
-  color:var(--azul-oscuro);
-}
+  .showPassword label {
+    padding-top: 10px;
+    padding-left: 6px;
+    color: var(--azul-oscuro);
+  }
 
-.showPassword input{
-  width : 20px;
-  vertical-align: bottom;
-}
+  .showPassword input {
+    width: 20px;
+    vertical-align: bottom;
+  }
 
-nav{
-  height:60px;
-}
-}
+  nav {
+    height: 40px;
+  }
 
+  .conditions{
+    width: 80%;
+    margin-left:10%;
+  }
+
+  .conditions label {
+    width: 95%;
+  }
+  
+  .conditions label a {
+    color: var(--amarillo-fuerte);
+  }
+
+  .registrationInput{
+    padding-top:40px;
+  }
+}
 
 @media (max-width: 315px) {
-  .logo h2 {
+  .logoContainer h2 {
     font-size: 1em;
   }
 
-  .logoPanel img{
+  .logoPanel img {
     width: 100px;
     padding: 0 5px;
- }
- 
- .logoPanel h2{
-   margin: 0;
-   color: var(--blanco);
-   font-family: "Russo One", sans-serif;
-   font-size: 2em;
- }
+  }
 
+  .logoPanel h2 {
+    margin: 0;
+    color: var(--blanco);
+    font-family: "Russo One", sans-serif;
+    font-size: 2em;
+  }
 
- .prompt h1 {
-   font-size:1.2em;
- }
- .prompt h3 {
-   font-size:1em;
- }
+  .prompt h1 {
+    font-size: 1.2em;
+  }
+  .prompt h3 {
+    font-size: 1em;
+  }
 }
