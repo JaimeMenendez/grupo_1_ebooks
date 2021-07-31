@@ -2,7 +2,7 @@
 
 In this part, we can find all, fonts, logo, sizes, colors palette, and others related with the design of the web site.
 
-- The logo proposal for web site is: https://github.com/JaimeMenendez/grupo_1_ebooks/blob/main/design/logoWS/Logo.png 
+- The logo proposal for web site is: [logo](https://github.com/JaimeMenendez/grupo_1_ebooks/blob/main/design/logoWS/Logo.png) 
 
 - The type of font for web site are:
 
@@ -14,11 +14,11 @@ In this part, we can find all, fonts, logo, sizes, colors palette, and others re
 - The color palette are:
 
     * [Palette](https://coolors.co/000000-202020-4d5e68-eebd3f-fcbf49-ffd300-fbe18d-fdf0d5-ffffff)
-    * amarillo-transp: #fbe18d59
-    * amarillo-claro: #ffd300
-    * amarillo-medio: #fcbf49
-    * amarillo-fuerte: #eebd3f
-    * azul-gris: #4d5e68
-    * azul-oscuro: #202020
-    * blanco: white
-    * crema:#fdf0d5
+        * azul-oscuro: #202020
+        * azul-gris: #4d5e68
+        * amarillo-fuerte: #eebd3f
+        * amarillo-medio: #fcbf49
+        * amarillo-claro: #ffd300
+        * amarillo-transp: #fbe18d59
+        * crema:#fdf0d5
+        * blanco: white
