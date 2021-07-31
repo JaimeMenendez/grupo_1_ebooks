@@ -30,6 +30,7 @@ nav {
   position: fixed;
   top: 0;
   left:0;
+  height:var(--navBarHeight);
 }
 
 /* Navegation bar Logo */
@@ -164,8 +165,16 @@ form.searchBar::after {
   clear: both;
   display: table;
 }
-/* LOGIN FORM */
 
+.bannerContainer{
+  margin-top: var(--navBarHeight);
+}
+.bannerContainer img{
+  width: 100%;
+}
+
+
+/* LOGIN FORM */
 .question {
   display: flex;
   flex-direction: column;
@@ -226,6 +235,7 @@ label {
   color: white;
   padding-left: 5px;
 }
+
 a img {
   width: 30px;
   height: 30px;
@@ -293,6 +303,51 @@ footer {
   -ms-flex-pack: center;
   justify-content: center;
 }
+
+/* HOME */
+.homeContent{
+  display: flex;
+}
+aside{
+  width:25%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.materia{
+  width: 50%;
+  text-align: center;
+}
+.materia img{
+  width: 50%;
+}
+
+.bookSectionContainer h2{
+  padding-left: 20px;
+}
+
+
+.bookSection{
+  display: flex;
+  flex-wrap: wrap;  
+}
+
+.book{
+  width: 200px;
+  margin:20px;
+}
+
+.book button{
+  width:100%;
+}
+
+.book img{
+  width: 100%;
+}
+
+
+
 
 /* TABLET */
 @media (min-width: 600px) {
@@ -405,6 +460,7 @@ footer {
 
 }
 
+/* Samsung Dodge */
 @media (max-width: 315px) {
   .logoContainer h2 {
     font-size: 1em;
