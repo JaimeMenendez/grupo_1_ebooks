@@ -13,6 +13,12 @@ In this part, we can find all, fonts, logo, sizes, colors palette, and others re
 
 -The color palette are:
 
+- **Por las funcionalidades implementadas**
+
+    * **Home (pág web):**
+
+    * [Pack](https://www.packtpub.com/)
+    * [Pack](https://www.packtpub.com/) 
     * [Palette](https://coolors.co/000000-202020-4d5e68-eebd3f-fcbf49-ffd300-fbe18d-fdf0d5-ffffff)
     * amarillo-transp: #fbe18d59
     * amarillo-claro: #ffd300
