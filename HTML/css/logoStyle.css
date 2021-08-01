@@ -1,0 +1,73 @@
+/*Importa la letra*/
+@import url(//db.onlinewebfonts.com/c/1bbe3460b053c4f1d67d1f1afecdaa76?family=DIN);
+
+body{
+  text-align:center;
+}
+
+/*Para hacerlo más grande modifica width y height*/
+.logo{
+  width:280px;
+  height:300px;
+  position: relative;
+  margin:auto;
+}
+
+.rojo{color:#EA4533;}
+.azul{color:#585DBA;}
+.verde{color:#44979c;}
+
+.logoText{
+  font-size:80px;
+  margin:0;
+  font-family: 'DIN Medium', sans-serif;
+  line-height:68px;
+  padding-top:10px;
+  /*letter-spacing: 5px;*/
+    font-weight: bold;
+
+ 
+}
+
+.bloqueAzul{
+  position: absolute;
+  background: #585DBA;
+  width:30%;
+  height:80%;
+  bottom:0;
+  border-radius: 1ex;
+  opacity:90%;
+}
+
+.bloqueVerde{
+  background: #44979c;
+  width:20%;
+  height:100%;
+  position: absolute;
+  bottom:0;
+  left:24%;
+  opacity:90%;
+  border-radius: 1ex;
+}
+
+.bloqueNaranja{
+  background: #F4AE62;
+  width:28%;
+  height:70%;
+  position: absolute;
+  bottom:0;
+  left:47%;
+  border-radius: 1ex;
+  transform:rotate(-15deg);
+  opacity:80%;
+}
+
+.bloqueRojo{
+   background: #EA4533;
+  width:25%;
+  height:85%;
+  position: absolute;
+  bottom:0;
+  left:75%;
+  border-radius: 1ex;
+}
