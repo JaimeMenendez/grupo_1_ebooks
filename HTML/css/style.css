@@ -318,6 +318,14 @@ margin: auto;
 
 .googleButton{
   background-color:#f1f1f1;
+  margin:auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.googleButton img{
+  height: 70%;
 }
 
 .button-div {
