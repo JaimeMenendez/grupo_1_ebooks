@@ -1,0 +1,70 @@
+/*Importa la letra*/
+@font-face { font-family: DINMedium; src: local("DINMedium.ttf"), url("https://jaimemenendez.github.io/grupo_1_ebooks/HTML/css/DINMedium.ttf");} 
+body{
+  text-align:center;
+}
+
+/*Para hacerlo más grande modifica width y height*/
+.logo{
+  width:280px;
+  height:300px;
+  position: relative;
+  margin:auto;
+  margin-top:10px;
+}
+
+.rojo{color:#EA4533;}
+.azul{color:#2D2F8E;}
+.verde{color:#44979c;}
+
+.logoText{
+  font-size:80px;
+  margin:0;
+  font-family: 'DINMedium', sans-serif;
+  line-height:68px;
+  padding-top:2px;
+  letter-spacing: 5px;
+}
+
+.bloqueAzul{
+  position: absolute;
+  background: #585DBA;
+  width:30%;
+  height:80%;
+  bottom:0;
+  border-radius: 1ex;
+  opacity:90%;
+}
+
+.bloqueVerde{
+  background: #44979c;
+  width:20%;
+  height:100%;
+  position: absolute;
+  bottom:0;
+  left:24%;
+  opacity:90%;
+  border-radius: 1ex;
+}
+
+.bloqueNaranja{
+  background: #F4AE62;
+  width:28%;
+  height:70%;
+  position: absolute;
+  bottom:0;
+  left:47%;
+  border-radius: 1ex;
+  transform:rotate(-15deg);
+  opacity:80%;
+}
+
+.bloqueRojo{
+   background: #EA4533;
+  width:25%;
+  height:85%;
+  position: absolute;
+  bottom:0;
+  left:75%;
+  border-radius: 1ex;
+}
