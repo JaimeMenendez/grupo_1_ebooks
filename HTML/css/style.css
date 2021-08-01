@@ -280,7 +280,7 @@ button:hover{
 
 button {
   width: 80vw;
-  height: 2.5em;
+  min-height: 2.5em;
   font-size: 1.1em;
   border-radius: 5px;
   background: var(--amarillo-medio);
@@ -288,7 +288,6 @@ button {
   max-width: 450px;
   transition: 0.1s;
   font-weight: 600;
-  line-height: 2.7em;
   cursor: pointer;
   outline: none;
   border: none;
@@ -325,7 +324,7 @@ margin: auto;
 }
 
 .googleButton img{
-  height: 70%;
+  height: 24px;
 }
 
 .button-div {
@@ -416,6 +415,7 @@ aside{
   form.searchBar input {
     margin-left: 20px;
   }
+
 
 
 }
@@ -537,5 +537,10 @@ aside{
 .menuButton{
   margin-right: 5 px;
 }
+
+button{
+  font-size: 14px;
+}
+
   
 }
