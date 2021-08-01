@@ -141,7 +141,7 @@ form.searchBar input[type=text] {
   border: 2px solid #f1f1f1;
   width: 80%;
   background: #f1f1f1;
-
+  
 }
 
 form.searchBar button {
@@ -158,6 +158,7 @@ form.searchBar button {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height:0;
 }
 
 form.searchBar button i{
@@ -399,6 +400,9 @@ aside{
 
 /* TABLET */
 @media (min-width: 600px) {
+
+
+
   .menuButton a {
     display: flex;
     align-items: center;
@@ -422,6 +426,10 @@ aside{
 
 /* PC STYLES */
 @media (min-width: 980px) {
+  .logoContainer{
+    margin-left: 20px;
+  }
+
   .menu-label {
     display: inline;
     font-size: 1em;
