@@ -1,4 +1,4 @@
-# Wideframes
+# Wireframes
 
 Se muestran las maquetas del sitio web para móviles, tabletas y computadoras.
 
