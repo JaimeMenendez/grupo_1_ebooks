@@ -1,5 +1,5 @@
 /*Importa la letra*/
-@font-face { font-family: DINMedium; src: local("DINMedium.ttf"), url('DINMedium.ttf'); } 
+@font-face { font-family: DINMedium; src: local("DINMedium.ttf"), url("https://jaimemenendez.github.io/grupo_1_ebooks/HTML/css/DINMedium.ttf");} 
 body{
   text-align:center;
 }
