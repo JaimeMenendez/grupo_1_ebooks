@@ -11,7 +11,7 @@ Estudiantes universitarios y profesionales en el campo de la medicina y la ingen
 
 - **Roxana Ramos Carpinteyro:** MPSS de la Facultad de Medicina UNAM. Antes de estudiar Medicina hice un año en la carrera de Diseño en Medios Digitales en CENTRO. Interesada en aprender de programación para aplicarlo en mi campo de estudio.
 
-- **Tatiana Leal del Río:** Ingeniera electrónica de la [Universidad Francisco de Paula Santander (UFPS)](https://ww2.ufps.edu.co/) en Cúcuta, Colombia, con estudios de Maestría y Doctorado en "Tecnología Avanzada" en el [Centro de Investigación en Ciencia Aplicada y Tecnología Avanzada (CICATA-Legaria)](https://www.google.com/search?client=firefox-b-d&q=cicata+legaria) del IPN. Mi enfoque principal es integrar los conocimientos adquiridos durante mi formación académica con el desarrollo web, para crear aplicaciones robustas de IoT con Python y JavaScript, y en un fututo hacer ciencia de datos.
+- **Tatiana Leal del Río:** Ingeniera electrónica de la [Universidad Francisco de Paula Santander (UFPS)](https://ww2.ufps.edu.co/) en Cúcuta, Colombia, con estudios de Maestría y Doctorado en "Tecnología Avanzada" en el [Centro de Investigación en Ciencia Aplicada y Tecnología Avanzada (CICATA-Legaria)](https://www.google.com/search?client=firefox-b-d&q=cicata+legaria) del IPN. Mi enfoque principal es integrar los conocimientos adquiridos durante mi formación académica con el desarrollo web, para crear aplicaciones robustas de IoT con Python y JavaScript, y en un futuro hacer ciencia de datos.
 
 ## Sitios de referencia
 
