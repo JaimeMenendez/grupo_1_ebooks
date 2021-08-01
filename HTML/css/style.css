@@ -155,7 +155,16 @@ form.searchBar button {
   height:100%;
   border: 1px solid var(--amarillo-claro);
   min-width:40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+form.searchBar button i{
+  padding-top: 5px;
+}
+
+
 
 form.searchBar button:hover {
   background: var(--azul-oscuro);
