@@ -1,6 +1,5 @@
 /*Importa la letra*/
-@import url(//db.onlinewebfonts.com/c/1bbe3460b053c4f1d67d1f1afecdaa76?family=DIN);
-
+@font-face { font-family: DINMedium; src: local("DINMedium.ttf"), url('DINMedium.ttf'); } 
 body{
   text-align:center;
 }
@@ -11,22 +10,20 @@ body{
   height:300px;
   position: relative;
   margin:auto;
+  margin-top:10px;
 }
 
 .rojo{color:#EA4533;}
-.azul{color:#585DBA;}
+.azul{color:#2D2F8E;}
 .verde{color:#44979c;}
 
 .logoText{
   font-size:80px;
   margin:0;
-  font-family: 'DIN Medium', sans-serif;
+  font-family: 'DINMedium', sans-serif;
   line-height:68px;
-  padding-top:10px;
-  /*letter-spacing: 5px;*/
-    font-weight: bold;
-
- 
+  padding-top:2px;
+  letter-spacing: 5px;
 }
 
 .bloqueAzul{
