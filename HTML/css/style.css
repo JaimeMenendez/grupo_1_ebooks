@@ -32,6 +32,7 @@ nav {
   top: 0;
   left:0;
   height:var(--navBarHeight);
+  z-index:200;
 }
 
 /* Navegation bar Logo */
@@ -195,13 +196,16 @@ form.searchBar::after {
   font-weight: bold;
 }
 
+input{
+  height: 35px;
+}
+
 .question input {
   border: 2px solid var(--azul-oscuro);
   border-style: solid;
   border-radius: 5px;
   width: 80vw;
   margin: 0.2em 0;
-  height: 30px;
   max-width: 450px;
 }
 
@@ -216,22 +220,24 @@ label {
 }
 
 .conditions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
   width: 80vw;
   margin: 0 9vw;
   padding: 10px 1vw;
   background-color: var(--amarillo-transp);
-}
-
-.conditions label {
-  width: 80vw;
+  display: flex;
+  flex-direction: column;
 }
 
 .conditions label a {
   color: var(--amarillo-fuerte);
+}
+
+.condition input{
+  position: relative;
+  vertical-align: middle;
+  bottom: 1px;
+  width: 18px;
+
 }
 
 .showPassword {
@@ -341,7 +347,7 @@ margin: auto;
 
 .showPassword input {
   width: 20px;
-  height: 20px;
+
 }
 
 footer {
@@ -395,6 +401,15 @@ aside{
   width: 100%;
 }
 
+.passwordDiv{
+  position: relative;
+}
+.passwordDiv span{
+position: absolute;
+right: 2%;
+top:25%;
+font-size: 21px;
+}
 
 
 
@@ -418,6 +433,7 @@ aside{
 
   form.searchBar input {
     margin-left: 20px;
+    height: auto;
   }
 
 
@@ -460,9 +476,6 @@ aside{
     text-align: center;
   }
 
-  .loginForm input {
-    height: 35px;
-  }
 
 
   .showPassword label {

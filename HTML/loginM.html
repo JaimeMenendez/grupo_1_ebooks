@@ -14,6 +14,7 @@
 
   <link rel="stylesheet" href="css/normalize.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <script defer src="./js/index.js" ></script>
   <title>Registro de Usuario</title>
 
 </head>
@@ -57,15 +58,12 @@
       </div>
 
       <div class="question">
-        <label for="pwd">Contraseña</label>
-        <input type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-               title="La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres"
-               required>
-      </div>
-
-      <div class="showPassword">
-        <input type="checkbox" id="cbox1" value="first_checkbox">
-        <label> Mostrar Contraseña</label>
+        <div class="passwordDiv">
+          <input type="password" id="PasswordInput" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres"
+            placeholder="Contraseña" required>
+          <span ><i id="passwordEye" class="flaticon-invisible"></i></span>
+        </div>
       </div>
 
       <div class="button-div">
