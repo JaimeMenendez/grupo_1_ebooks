@@ -1,0 +1,282 @@
+:root {
+    --amarillo-transp: #fbe18d59;
+    --amarillo-claro: #ffd300;
+    --amarillo-medio: #fcbf49;
+    --amarillo-fuerte: hsl(43, 84%, 59%);
+    --azul-gris: #4d5e68;
+    /*--azul-oscuro: #2c3b44;*/
+    --azul-oscuro: #202020;
+    --blanco: white;
+    --navBarHeight: 50px;
+    --crema:#fdf0d5;
+}
+
+  body {
+      /*Muestra solo el contenido que cabe en la caja*/
+      overflow-x: hidden;
+      font-family: "Roboto", sans-serif;
+  }
+
+  /*Navegation Bar*/
+  nav{
+      width: 100%;
+      height: 50px;
+      background-color: var(--azul-oscuro);
+      /*Ayuda a distribuir el espacio de la interfaz*/
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      left: 0
+  }
+
+  /*Navegation Bar logo*/
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    /*Define el margen de los 4 lados*/
+    margin: 1;
+  }
+
+  .logoContainer h3 {
+      margin: 0;
+      color: var(--crema);
+      font-family: "Russo One", sans-serif;
+  }
+
+  .logoContainer h3 span {
+      color: var(--amarillo-fuerte);
+  }
+
+  .logoSize-img {
+      width: 40px;
+      height: 40px;
+      margin: 2px;
+      margin-left: 100px;
+  }
+
+  /*Diseño de la barra de búsqueda*/
+
+  form.searchBar {
+      /*Es una medida 1/100 tamaño región visible del navegador*/
+      width: 40vw;
+      height: 30px;
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+  }
+
+  form.searchBar input[type=text]{
+    width: 80%;
+    height: 100%;
+    font-size: 1em;
+    box-sizing: border-box;
+    border: 2px solid var(--azul-gris);
+    border-radius: 0;
+    background-color: #f1f1f1;
+    color: var(--azul-gris);
+  }
+
+  form.searchBar button{
+    width: 10%;
+    height: 95%;
+    font-size: 1em;
+    background-color: var(--amarillo-medio);
+    border: 2px solid var(--amarillo-transp);
+    border-radius: 0px;
+    color: white;
+    cursor: pointer;
+    box-shadow: none;
+    min-width: 40px;
+  }
+
+  form.searchBar button:hover {
+    /*:hover selector cambia el estilo de boton cuando se pasa el mouse sobre él*/
+    background: var(--amarillo-transp);
+}
+
+form.searchBar::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*Diseño del menú de opciones: Cuenta, Carrito, Mennú*/
+
+.menuButtons { 
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.menuButtons a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-family:"Russo One", sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-left: 25px;
+}
+.menuButtons a i{
+    align-content: center;
+    text-decoration: none;
+    color: var(--amarillo-transp);
+    margin-right: 5px;
+}
+
+/*Dividiendo la pantalla en 2*/
+
+.mainScreen {
+    display: flex;
+    align-content: center;
+    height: 100vh;
+    min-height: 100%;
+}
+
+.mainScreen section {
+    width: 50%;
+}
+
+/*************** First section ****************/
+.logoMainScreen {
+    padding-bottom: 20px;
+    padding-top: 130px;
+    background: #242423;
+}
+
+/*Div first section*/
+.logoScreen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.logoScreen img{
+    width: 150px;
+    margin-top: var(--navBarHeight);
+}
+
+.logoScreen h2{
+    font-size: 2.8em;
+    /*Separación de letras*/
+    line-height: 0.9em;
+    font-family: "Russo One", sans-serif;
+    color: var(--crema);
+    /*Distancias desde la parte superior*/
+    padding-top: 50px;
+}
+
+.logoScreen span{
+    color: var(--amarillo-claro);
+    margin-left: 20px;
+}
+
+ /*Second div Firts section*/
+.welcomeLogin {
+    background-color: #242423;
+}
+
+.welcomeLogin h1{
+    margin: 0;
+    text-align: center;
+    color: white;
+    padding: 20px 20px 0 20px;
+}
+
+.welcomeLogin h3{
+    margin: 0;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#welcome {
+    color: var(--amarillo-claro);
+}
+
+/*************** Second section ****************/
+.login{
+    padding-top: 80px;
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+    width: 100%;
+    font-size: 1em;
+}
+
+.question input{
+    width: 60%;
+    margin-top: 0.5em;
+    box-sizing: border-box;
+    border: 2px solid var(--azul-oscuro);
+    border-radius: 4px;
+    background-color: whitesmoke;
+    box-shadow: none;
+    line-height: 1.7em;
+    color: var(--azul-oscuro);
+}
+
+.question label{
+    font-weight: 500;
+}
+
+.question p{
+    font-size: 0.8em;
+    justify-content: right;
+}
+
+.buttonConfirm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 1.2em;
+    padding-top: 15px;
+}
+
+.buttonConfirm button{
+    width: 60%;
+    line-height: 2.7em;
+    cursor: pointer;
+    outline: none;
+    background-color: var(--amarillo-medio);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 3px 5px #999;
+}
+
+.buttonConfirm button:hover{
+    background-color: var(--amarillo-claro);
+}
+
+.buttonConfirmGoogle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2em;
+}
+.buttonConfirmGoogle button{
+    width: 60%;
+    line-height: 2.7em;
+    cursor: pointer;
+    outline: none;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 3px 5px #999;
+}
+
+.buttonConfirmGoogle button:hover{
+    background-color: var(--amarillo-claro);
+}
