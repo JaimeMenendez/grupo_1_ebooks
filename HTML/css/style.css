@@ -13,6 +13,7 @@ font-family: 'Russo One', sans-serif; */
   --navBarHeight: 50px;
   --crema:#fdf0d5;
   --sombra-boton: #999;
+  --animate-duration: 1s;
 }
 
 /* --------MOBILE VERSION STYLE----------- */
@@ -509,6 +510,8 @@ font-size: 21px;
   .registrationInput{
     padding-top: 60px;
     margin-left:50%;
+
+
   }
 
   .menuButton {
