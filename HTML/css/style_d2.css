@@ -10,11 +10,13 @@ font-family: 'Russo One', sans-serif; */
   --amarillo-fuerte: hsl(43, 84%, 59%);
   --azul-gris: #4d5e68;
   /*--azul-oscuro: #2c3b44;*/
-  --azul-oscuro: black  ;
+  --azul-oscuro: black ;
   --blanco: white;
   --navBarHeight: 50px;
   --crema:#fdf0d5;
   --sombra-boton: #999;
+  --oscuro:#0e0f38  ;
+  
 }
 
 /* --------MOBILE VERSION STYLE----------- */
@@ -88,11 +90,21 @@ nav {
   display: none;
 }
 
+#passwordEye{
+  color: var(--oscuro);
+}
+
+#confirmPasswordEye{
+  color: var(--oscuro);
+}
+
 /* Banner Container*/
 
 .loginBannerContainer {
   padding-top:60px;
   background: white;
+
+  --animate-duration: 2s;
 }
 
 .logoPanel {
@@ -132,7 +144,7 @@ nav {
 }
 
 .prompt{
-  color:black;
+  color:var(--oscuro);
 }
 
 
@@ -177,7 +189,7 @@ form.searchBar button {
   border-radius: 0;
   box-shadow: none;
   height:100%;
-  border: 1px solid black;
+  border: 1px solid var(--oscuro);
   min-width:40px;
   display: flex;
   justify-content: center;
@@ -224,7 +236,7 @@ input{
 }
 
 .question input {
-  border: 2px solid var(--azul-oscuro);
+  border: 2px solid var(--oscuro);
   border-style: solid;
   border-radius: 5px;
   width: 80vw;
@@ -238,7 +250,7 @@ input{
 
 
 label {
-  color: var(--azul-oscuro);
+  color: var(--oscuro);
   text-align: left;
 }
 
@@ -278,7 +290,7 @@ label {
 .menuButton a{
   text-decoration: none;
   padding-left: 5px;
-  color: black;
+  color: var(--oscuro);
 }
 
 a img {
@@ -310,7 +322,7 @@ button:hover{
   display: flex;
   align-items: center;
   margin-right: 10px;
-  color: black;
+  color: var(--oscuro);
 
 }
 
@@ -327,14 +339,14 @@ button {
   font-weight: 600;
   cursor: pointer;
   outline: none;
-  border: 1px solid black;
+  border: 1px solid var(--oscuro);
   border-radius: 4px;
   box-shadow: 3px 3px 3px black;
 }
 .center-separator {
   display: flex;
 line-height: 1em;
-color: gray;
+color: var(--oscuro);
 width: 80vw;
 max-width: 450px;
 margin: auto;
@@ -346,7 +358,7 @@ margin: auto;
   display: inline-block;
   flex-grow: 1;
   margin-top: 0.5em;
-  background: gray;
+  background: var(--oscuro);
   height: 1px;
   margin-right: 10px;
   margin-left: 10px;
@@ -354,7 +366,7 @@ margin: auto;
 
 .googleButton{
   background-color:#f1f1f1;
-  color:black;
+  color: var(--oscuro);
   margin:auto;
   display: flex;
   align-items: center;
@@ -476,7 +488,7 @@ font-size: 21px;
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: black;
+    color: var(--oscuro);
     font-family: "Roboto", sans-serif;
     font-weight:bold;
     font-size:18px
@@ -592,8 +604,11 @@ font-size: 21px;
     font-size: 2em;
   }
 
+
+
   .prompt h1 {
     font-size: 1.2em;
+    font-weight:normal;
   }
   .prompt h3 {
     font-size: 1em;
