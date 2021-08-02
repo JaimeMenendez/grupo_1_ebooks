@@ -6,3 +6,6 @@ Puede obtener un adelanto de su implementación en:
 - [Login](https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/loginM.html)
 - [Registro](https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/registerM.html)
 - [Propuesta de logo en CSS](https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/logo.html)
+- [Login (Segunda Propuesta)](https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/login.html)
+- [Registro (Segunda Propuesta)](https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/register.html)
+
