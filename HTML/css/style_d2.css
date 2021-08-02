@@ -46,6 +46,11 @@ nav {
   display:block;
 }
 
+.logo{
+  width:200px;
+  height:230px;
+}
+
 .logoNavBar{
   display: flex;
   align-items: center;
@@ -53,6 +58,15 @@ nav {
   margin-left: 5px;
 }
 
+
+.logoText{
+  font-size:60px;
+  margin:0;
+  font-family: 'DINMedium', sans-serif;
+  line-height:50px;
+  padding-top:2px;
+  letter-spacing: 2px;
+}
 
 .logoNavBar p {
   font-size:23px;
@@ -436,6 +450,19 @@ font-size: 21px;
 @media (min-width: 600px) {
   .logoContainer{
     margin-left: 20px;
+  }
+
+  .logoText{
+    font-size:80px;
+    margin:0;
+    font-family: 'DINMedium', sans-serif;
+    line-height:68px;
+    padding-top:2px;
+    letter-spacing: 5px;
+  }
+  .logo{
+    width:280px;
+    height:300px;
   }
 
   .condition{
