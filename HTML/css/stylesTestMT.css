@@ -1,0 +1,416 @@
+:root {
+    --amarillo-transp: #fbe18d59;
+    --amarillo-claro: #ffd300;
+    --amarillo-medio: #fcbf49;
+    --amarillo-fuerte: hsl(43, 84%, 59%);
+    --azul-gris: #4d5e68;
+    --azul-oscuro: #202020;
+    --login-screen: #242423;
+    --barra-navegacion: #f1f1f1;
+    --boton-google: #dcdcdd;
+    --sombra-boton: #999;
+    --blanco: white;
+    --crema:#fdf0d5;
+    --navBarHeight: 50px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+/************Mobile Design First*************/
+body {
+/*Muestra solo el contenido que cabe en la caja*/
+   overflow-x: hidden;
+   font-family: "Roboto", sans-serif;
+}
+
+/*Navegation Bar*/
+nav{
+   width: 100vw;
+   height: var(--navBarHeight);
+   background-color: var(--azul-oscuro);
+   display: flex;
+   justify-content: space-between;
+   position: fixed;
+   top: 0;
+   left: 0
+}
+
+/*Navegation Bar logo*/
+.logoContainer {
+   display: flex;
+   align-items: center;
+   /*Define el margen de los 4 lados*/
+   margin: 1;
+}
+
+.logoContainer h3 {
+    margin: 0;
+    color: var(--crema);
+    font-family: "Russo One", sans-serif;
+}
+
+.logoContainer h3 span {
+    color: var(--amarillo-fuerte);
+}
+
+.logoSize-img {
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    margin-left: 3px;
+}
+
+/*Diseño de la barra de búsqueda*/
+
+form.searchBar {
+    /*Es una medida 1/100 tamaño región visible del navegador*/
+    width: 40vw;
+    height: 30px;
+    display: none;
+}
+
+form.searchBar input[type=text]{
+  width: 90%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 2px solid var(--azul-gris);
+  border-radius: 0;
+  background-color: var(--barra-navegacion);
+  color: var(--azul-gris);
+}
+
+form.searchBar button{
+  width: 10%;
+  min-width: 40px;
+  height: 95%;
+  background-color: var(--amarillo-medio);
+  border: 2px solid var(--amarillo-medio);
+  border-radius: 0px;
+  color: white;
+  cursor: pointer;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form.searchBar button i{
+    padding-top: 4px;
+}
+
+form.searchBar button:hover {
+ /*:hover selector cambia el estilo de boton cuando se pasa el mouse sobre él*/
+ background: var(--amarillo-transp);
+}
+
+form.searchBar::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*Diseño del menú de opciones: Cuenta, Carrito, Mennú*/
+.menuButtons { 
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.menuButtons a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-family:"Russo One", sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.menuButtons a i{
+    align-content: center;
+    text-decoration: none;
+    color: var(--amarillo-transp);
+    margin-right: 3px;
+}
+
+.menuButtons a span {
+    text-align: center;
+    display: none;
+    margin-bottom: 3px;
+}
+
+.menuButtons a:hover{
+    color: var(--amarillo-claro) !important;
+    transform: scale(1.1) !important;
+ }
+
+/*************** First section ****************/
+.logoMainScreen {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    background: var(--login-screen);
+}
+
+/*Div first section*/
+.logoScreen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.logoScreen img{
+    width: 150px;
+    margin-top: var(--navBarHeight);
+}
+
+.logoScreen h2{
+    font-size: 1.8em;
+    /*Separación de letras*/
+    line-height: 0.9em;
+    font-family: "Russo One", sans-serif;
+    color: var(--crema);
+    /*Distancias desde la parte superior*/
+    padding-top: 50px;
+}
+
+.logoScreen span{
+    color: var(--amarillo-claro);
+    margin-left: 20px;
+}
+
+ /*Second div Firts section*/
+
+.welcomeLogin h1{
+    margin: 0;
+    text-align: center;
+    color: white;
+    padding: 20px 20px 0 20px;
+}
+
+.welcomeLogin h3{
+    margin: 0;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#welcome {
+    color: var(--amarillo-claro);
+}
+
+/*************** Second section ****************/
+.login{
+    padding-top: 10px;
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+    width: 100%;
+    font-size: 1em;
+}
+
+.question input{
+    width: 80%;
+    max-width: 450px;
+    margin-top: 0.5em;
+    box-sizing: border-box;
+    border: 1px solid var(--azul-oscuro);
+    border-radius: 4px;
+    background-color: whitesmoke;
+    box-shadow: none;
+    line-height: 1.7em;
+    color: var(--azul-oscuro);
+}
+
+.question label{
+    font-weight: 500;
+}
+
+.question p{
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+/*Checkbox de términos y condiciones*/
+.conditions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    width: 80vw;
+    margin: 0 9vw;
+    padding: 10px 1vw;
+    background-color: var(--amarillo-transp);
+  }
+  
+.conditions label {
+    width: 75vw;
+    margin-left: 10px;
+}
+
+.conditions a{
+    background-color: var(--amarillo-claro);
+}
+
+.question label {
+    text-align: left;
+    padding: 0;
+    background-color: var(--amarillo-transp);
+}
+
+/*Botones de crear cuenta y registrar con google*/
+
+.buttonConfirm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 1.2em;
+    padding-top: 15px;
+}
+
+.buttonConfirm button{
+    width: 80vw;
+    max-width: 450px;
+    font-weight: 600;
+    line-height: 2.7em;
+    cursor: pointer;
+    outline: none;
+    background-color: var(--amarillo-medio);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 3px 5px var(--sombra-boton);
+}
+
+.buttonConfirm button:hover{
+    background-color: var(--amarillo-claro);
+}
+
+/*Separador entre los botones*/
+
+.center-separator {
+  display: flex;
+  line-height: 1em;
+  color: gray;
+  width: 80vw;
+  max-width: 450px;
+  margin: auto;
+}
+
+.center-separator p{
+    margin: auto;
+}
+
+.center-separator::before, .center-separator::after {
+   content: '';
+   display: inline-block;
+   flex-grow: 1;
+   margin-top: 1.5em;
+   margin-bottom: 1.5em;
+   background: gray;
+   height: 1px;
+   margin-right: 10px;
+   margin-left: 10px;
+}
+
+.buttonConfirmGoogle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.buttonConfirmGoogle button{
+    width: 80vw;
+    max-width: 450px;
+    font-weight: 600;
+    line-height: 2.7em;
+    margin-bottom: 25px;
+    cursor: pointer;
+    outline: none;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 3px 5px var(--sombra-boton);
+}
+
+.buttonConfirmGoogle button:hover{
+    background-color: var(--boton-google);
+}
+
+footer {
+    width: 100vw;
+    background: var(--azul-oscuro);
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  
+
+/******************MEDIA QUERIES****************/
+
+/****Tablet****/
+@media (min-width: 600px) {
+
+    form.searchBar {
+        display: flex;
+    }
+
+    .confirm {
+        margin-left: 20vw;
+    }
+
+}
+
+/*****PC*****/
+@media (min-width: 980px) {
+    .menuButtons a span  {
+        display: inline;
+        font-size: 0.8em;
+    }
+
+    .mainScreen{
+        display: flex;
+        height: 100%;
+        min-height: 100vh;
+    }
+
+    .mainScreen section{
+        width: 50%;
+    }
+    
+    .logoMainScreen{
+        padding-top: 150px;
+        position: fixed;
+        height: 100%;
+        top:var(--navBarHeight);
+    }
+
+    .login{
+        margin-left: 50%;
+        padding-top: 80px;
+    }
+
+    .conditions {
+        width: 40vw;
+        margin-left: 10%;
+        padding: 10px 1vw;
+    }
+
+    .conditions label {
+        width: 40vw;
+
+    }
+}
