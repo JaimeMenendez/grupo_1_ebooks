@@ -11,6 +11,9 @@ font-family: 'Russo One', sans-serif; */
 }
 
 /* --------MOBILE VERSION STYLE----------- */
+*.{
+  box-sizing: border-box;
+}
 
 body {
   overflow-x: hidden;
@@ -101,6 +104,27 @@ a {
   height: 230px;
 }
 
+.logo .bloqueAzul:hover{
+  background: #9196ff;
+  transform: scale(1.05);
+}
+
+.logo .bloqueVerde:hover{
+  background: #5ed0d6;
+  transform: scale(1.05);
+}
+
+.logo .bloqueNaranja:hover{
+  background: #ffc485;
+  transform: rotate(-15deg) scale(1.05);
+}
+
+.logo .bloqueRojo:hover{
+  background: #ff7363;
+  transform: scale(1.05) ;
+}
+
+
 .logoText {
   font-size: 60px;
   margin: 0;
@@ -144,6 +168,7 @@ a {
   margin: 0.2rem 0;
   max-width: 450px;
   height: 35px;
+ 
 }
 
 /* Checkboxes */
@@ -167,7 +192,9 @@ a {
   position: relative;
   vertical-align: middle;
   bottom: 1px;
-  width: 18px;
+  width: 19px;
+  height:19px;
+  margin-right: 5px;
 }
 
 /* Separator for Account and Google Buttons */
@@ -219,6 +246,8 @@ a {
   font-size: 21px;
 }
 
+
+
 /* ========================================================= */
 /*                       TABLET                              */
 /* ========================================================= */
@@ -252,32 +281,55 @@ a {
 /* ========================================================= */
 /*                           PC                              */
 /* ========================================================= */
-@media (min-width: 980px) {
+@media (min-width: 1024px) {
   .condition {
     width: 70%;
   }
   .main-container {
     display: flex;
-    height: 100%;
-    min-height: 100vh;
+    align-items: center;
+    height: 100vh;
   }
-
+  
   .main-container section {
     width: 50%;
   }
-  .loginBannerContainer {
-    padding-top: 30px;
+
+  .loginBannerContainer{
+    margin:0;
+    padding:0;
+    width:50%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+
   .question {
     width: 100%;
+    display: flex;
+    margin: 0;
   }
+
+  .registrationInput .question label{
+    display:none;
+  }
+
+  .loginForm .question{
+    margin-bottom: 10px;
+  }
+
   .loginForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-left: 50%;
+    height: 100%;
+    
     text-align: center;
   }
+
   .showPassword label {
     padding-top: 10px;
     padding-left: 6px;
@@ -292,11 +344,6 @@ a {
     margin-left: 50%;
   }
 
-  .loginBannerContainer {
-    position: fixed;
-    top: var(--navBarHeight);
-    height: 100%;
-  }
 }
 
 /* Samsung Dodge */
