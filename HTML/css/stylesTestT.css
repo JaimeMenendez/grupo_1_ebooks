@@ -10,8 +10,12 @@
     --boton-google: #dcdcdd;
     --sombra-boton: #999;
     --blanco: white;
-    --navBarHeight: 50px;
     --crema:#fdf0d5;
+    --navBarHeight: 50px;
+}
+
+*{
+    box-sizing: border-box;
 }
 
   body {
@@ -105,7 +109,6 @@ form.searchBar::after {
 }
 
 /*Diseño del menú de opciones: Cuenta, Carrito, Mennú*/
-
 .menuButtons { 
     display: flex;
     align-items: center;
