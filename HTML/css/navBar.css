@@ -1,0 +1,162 @@
+/* Navegation Bar */
+nav {
+    width: 100%;
+    background: var(--blanco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: var(--navBarHeight);
+    z-index: 200;
+}
+
+/* Navegation bar Logo */
+.logoContainer {
+    width: 25px;
+    height: 35px;
+    position: relative;
+    display: block;
+}
+
+.logoNavBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+.logoNavBar p {
+    font-size: 23px;
+    letter-spacing: 0px;
+    display: block;
+    margin-left: 2px;
+}
+
+/* Search Bar */
+form.searchBar {
+    height: 30px;
+    display: none;
+    margin-top: 15px
+}
+
+form.searchBar input[type=text] {
+    font-size: 17px;
+    border: 2px solid #f1f1f1;
+    background: #f1f1f1;
+    max-width: 100%;
+    width: 32vw;
+}
+
+form.searchBar button {
+    width: 10%;
+    font-size: 17px;
+    border-left: none;
+    cursor: pointer;
+    border-radius: 0;
+    box-shadow: none;
+    height: 100%;
+    border: 1px solid var(--oscuro);
+    min-width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 0;
+}
+
+form.searchBar button i {
+    padding-top: 5px;
+    color: white;
+}
+
+form.searchBar button:hover {
+    background: #ff1900;
+}
+
+form.searchBar::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* MENU */
+.menuButton {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    color: var(--oscuro);
+}
+
+.menu-label {
+    display: none;
+}
+
+.menuButton a {
+    text-decoration: none;
+    padding-left: 5px;
+    color: var(--oscuro);
+    transition: 0.1s;
+}
+
+.menuButton a i {
+    font-size: 25px;
+    text-decoration: none;
+    padding-top: 5px;
+}
+
+.menuButton a:hover {
+    color: #EA4533 ;
+    transform: scale(1.1);
+}
+
+/* Tablet Style */
+@media (min-width: 600px) {
+    .logoContainer {
+        margin-left: 20px;
+    }
+ 
+    form.searchBar {
+        display: flex;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    form.searchBar input {
+        margin-left: 20px;
+        height: auto;
+    }
+
+    .menuButton a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--oscuro);
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+        font-size: 18px
+    }
+}
+
+/* PC STYLES */
+@media (min-width: 980px) {
+    .menu-label {
+        display: inline;
+        font-size: 1em;
+    }
+    .menuButton {
+        margin-right: 20px;
+      }
+      .menuButton a {
+        padding-left: 20px;
+      }
+}
+
+@media (max-width: 315px) {
+    .menuButton {
+      margin-right: 5px;
+    }
+    .logoNavBar p {
+      font-size: 15px;
+      margin-left: 5px;
+    }
+  }
