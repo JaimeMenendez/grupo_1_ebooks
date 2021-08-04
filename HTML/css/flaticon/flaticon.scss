@@ -2,11 +2,11 @@ $flaticon-font: "flaticon";
 
 @font-face {
     font-family: $flaticon-font;
-    src: url("./flaticon.ttf?6bbae97c3fb7d63a3589ab941f4f7b21") format("truetype"),
-url("./flaticon.woff?6bbae97c3fb7d63a3589ab941f4f7b21") format("woff"),
-url("./flaticon.woff2?6bbae97c3fb7d63a3589ab941f4f7b21") format("woff2"),
-url("./flaticon.eot?6bbae97c3fb7d63a3589ab941f4f7b21#iefix") format("embedded-opentype"),
-url("./flaticon.svg?6bbae97c3fb7d63a3589ab941f4f7b21#flaticon") format("svg");
+    src: url("./flaticon.ttf?41b776f1aa409fcaeb58673beb6c7eb3") format("truetype"),
+url("./flaticon.woff?41b776f1aa409fcaeb58673beb6c7eb3") format("woff"),
+url("./flaticon.woff2?41b776f1aa409fcaeb58673beb6c7eb3") format("woff2"),
+url("./flaticon.eot?41b776f1aa409fcaeb58673beb6c7eb3#iefix") format("embedded-opentype"),
+url("./flaticon.svg?41b776f1aa409fcaeb58673beb6c7eb3#flaticon") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -34,6 +34,12 @@ $flaticon-map: (
     "google": "\f10b",
     "invisible": "\f10c",
     "visibility": "\f10d",
+    "facebook": "\f10e",
+    "twitter": "\f10f",
+    "telegram": "\f110",
+    "instagram": "\f111",
+    "telephone-handle-silhouette": "\f112",
+    "email": "\f113",
 );
 
 .flaticon-list:before {
@@ -74,4 +80,22 @@ $flaticon-map: (
 }
 .flaticon-visibility:before {
     content: map-get($flaticon-map, "visibility");
+}
+.flaticon-facebook:before {
+    content: map-get($flaticon-map, "facebook");
+}
+.flaticon-twitter:before {
+    content: map-get($flaticon-map, "twitter");
+}
+.flaticon-telegram:before {
+    content: map-get($flaticon-map, "telegram");
+}
+.flaticon-instagram:before {
+    content: map-get($flaticon-map, "instagram");
+}
+.flaticon-telephone-handle-silhouette:before {
+    content: map-get($flaticon-map, "telephone-handle-silhouette");
+}
+.flaticon-email:before {
+    content: map-get($flaticon-map, "email");
 }

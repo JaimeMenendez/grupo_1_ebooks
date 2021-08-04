@@ -7,13 +7,10 @@ font-family: 'Russo One', sans-serif; */
   --blanco: white;
   --navBarHeight: 50px;
   --sombra-boton: #999;
-  --oscuro: #0e0f38;
+  --oscuro: #56575e;
 }
 
 /* --------MOBILE VERSION STYLE----------- */
-*.{
-  box-sizing: border-box;
-}
 
 body {
   overflow-x: hidden;
@@ -28,36 +25,80 @@ label, button, h1, h2, h3, h4, h5, h6, p {
 /*                     Button Style                          */
 /* ========================================================= */
 
-button {
-  width: 80vw;
-  min-height: 2.5em;
-  font-size: 1.1em;
-  border-radius: 5px;
-  background: #EA4533;
-  color: white;
-  box-shadow: 0 2px 3px;
-  max-width: 450px;
-  transition: 0.1s;
-  font-weight: 600;
-  cursor: pointer;
+/* ========================================================= */
+/*                     Button Style                          */
+/* ========================================================= */
+.btn.red {
+  background-color: #e74c3c;
+}
+
+.btn.red:hover, .btn.red:focus {
+  background-color: #c0392b;
+}
+
+.btn {
+  position: absolute;
+  bottom:0;
+  height: 35px;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  margin: 10px auto;
+  padding: 0;
+
+  overflow: hidden;
+
+  border-width: 0;
   outline: none;
-  border: 1px solid var(--oscuro);
-  border-radius: 4px;
-  box-shadow: 3px 3px 3px black;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  color: #ecf0f1;
+  
+  transition: background-color .3s;
 }
 
-button:hover {
-  background-color: #db200b;
+.btn:hover, .btn:focus {
+  background-color: #27ae60;
 }
 
-/* Google Button */
-.googleButton {
-  background-color: #f1f1f1;
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  display: block;
+  width: 0;
+  padding-top: 0;
+    
+  border-radius: 100%;
+  
+  background-color: rgba(236, 240, 241, .3);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+  transition: width .2s ease-out, padding-top .2s ease-out;
+}
+
+.btn.red {
+  background-color: #EA4533;
+}
+
+.btn.red:hover, .btn.red:focus {
+  background-color: #c0392b;
+}
+.googleButton{
   color: var(--oscuro);
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .googleButton img {
@@ -161,7 +202,7 @@ a {
 }
 
 .question input {
-  border: 2px solid var(--oscuro);
+  border: 1px solid var(--oscuro);
   border-style: solid;
   border-radius: 5px;
   width: 80vw;
@@ -228,7 +269,15 @@ a {
 .showPassword label {
   padding-top: 2px;
   padding-left: 4px;
-  color: var(--azul-oscuro);
+  color: var(--oscuro);
+}
+
+#passwordEye,#confirmPasswordEye{
+  color: var(--oscuro);
+}
+
+.showPassword label i{
+  color: var(--oscuro);
 }
 
 .showPassword input {
@@ -328,6 +377,14 @@ a {
     height: 100%;
     
     text-align: center;
+  }
+
+  .loginForm button,.registrationInput button{
+    position:static;
+    width: 80%;
+    height: 40px;
+    max-width: 450px;
+    width: 80vw;
   }
 
   .showPassword label {

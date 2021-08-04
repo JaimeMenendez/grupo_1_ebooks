@@ -12,6 +12,10 @@ nav {
     z-index: 200;
 }
 
+nav a{
+    text-decoration: none;
+}
+
 /* Navegation bar Logo */
 .logoContainer {
     width: 25px;
@@ -42,8 +46,10 @@ form.searchBar {
 }
 
 form.searchBar input[type=text] {
+    text-transform: none;
+    color:black;
+    font-weight: normal;
     font-size: 17px;
-    border: 1px solid var(--oscuro);
     background: #f1f1f1;
     max-width: 100%;
     width: 100%;
@@ -54,22 +60,23 @@ form.searchBar input[type=text] {
 }
 
 form.searchBar button {
+    margin:0;
+    padding:0;
     width: 10%;
     font-size: 17px;
     cursor: pointer;
-    border-radius: 0;
-    box-shadow: none;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 0;
     position:absolute;
-    top:1px;
-    right:-1px;
+    top:0px;
+    right:0px;
     min-width:30px;
-    border: 0;
-    border-left: 1px solid var(--oscuro);
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    
 }
 
 form.searchBar button i {

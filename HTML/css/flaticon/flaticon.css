@@ -1,10 +1,10 @@
 @font-face {
     font-family: "flaticon";
-    src: url("./flaticon.ttf?6bbae97c3fb7d63a3589ab941f4f7b21") format("truetype"),
-url("./flaticon.woff?6bbae97c3fb7d63a3589ab941f4f7b21") format("woff"),
-url("./flaticon.woff2?6bbae97c3fb7d63a3589ab941f4f7b21") format("woff2"),
-url("./flaticon.eot?6bbae97c3fb7d63a3589ab941f4f7b21#iefix") format("embedded-opentype"),
-url("./flaticon.svg?6bbae97c3fb7d63a3589ab941f4f7b21#flaticon") format("svg");
+    src: url("./flaticon.ttf?41b776f1aa409fcaeb58673beb6c7eb3") format("truetype"),
+url("./flaticon.woff?41b776f1aa409fcaeb58673beb6c7eb3") format("woff"),
+url("./flaticon.woff2?41b776f1aa409fcaeb58673beb6c7eb3") format("woff2"),
+url("./flaticon.eot?41b776f1aa409fcaeb58673beb6c7eb3#iefix") format("embedded-opentype"),
+url("./flaticon.svg?41b776f1aa409fcaeb58673beb6c7eb3#flaticon") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -56,4 +56,22 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
 }
 .flaticon-visibility:before {
     content: "\f10d";
+}
+.flaticon-facebook:before {
+    content: "\f10e";
+}
+.flaticon-twitter:before {
+    content: "\f10f";
+}
+.flaticon-telegram:before {
+    content: "\f110";
+}
+.flaticon-instagram:before {
+    content: "\f111";
+}
+.flaticon-telephone-handle-silhouette:before {
+    content: "\f112";
+}
+.flaticon-email:before {
+    content: "\f113";
 }
