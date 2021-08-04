@@ -295,6 +295,15 @@ a {
   font-size: 21px;
 }
 
+.loginForm button,.registrationInput button{
+  position:static;
+  width: 80%;
+  height: 40px;
+  max-width: 450px;
+  width: 80vw;
+}
+
+
 
 
 /* ========================================================= */
@@ -379,13 +388,6 @@ a {
     text-align: center;
   }
 
-  .loginForm button,.registrationInput button{
-    position:static;
-    width: 80%;
-    height: 40px;
-    max-width: 450px;
-    width: 80vw;
-  }
 
   .showPassword label {
     padding-top: 10px;
