@@ -10,7 +10,7 @@ font-family: 'Russo One', sans-serif; */
   --navBarHeight: 50px;
   --oscuro: #56575e; /*Text Color*/
   --marginBottom:10px;
-  --borderRadius:0px;
+  --borderRadius:5px;
   --backgroundColor: #e2e1e0;
   --backgroundSections:white;
 
@@ -241,6 +241,7 @@ aside ul a{
   background-color:white;
   margin:auto;
   box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+  border-radius:var(--borderRadius);
 }
 
 /* ========================================================= */
