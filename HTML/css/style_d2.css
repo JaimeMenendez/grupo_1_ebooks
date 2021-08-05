@@ -150,25 +150,7 @@ a {
   height: 230px;
 }
 
-.logo .bloqueAzul:hover{
-  background: #9196ff;
-  transform: scale(1.05);
-}
 
-.logo .bloqueVerde:hover{
-  background: #5ed0d6;
-  transform: scale(1.05);
-}
-
-.logo .bloqueNaranja:hover{
-  background: #ffc485;
-  transform: rotate(-15deg) scale(1.05);
-}
-
-.logo .bloqueRojo:hover{
-  background: #ff7363;
-  transform: scale(1.05) ;
-}
 
 
 .logoText {
@@ -397,6 +379,26 @@ a {
   .registrationInput {
     padding-top: 60px;
     margin-left: 50%;
+  }
+
+  .logo .bloqueAzul:hover{
+    background: #9196ff;
+    transform: scale(1.05);
+  }
+  
+  .logo .bloqueVerde:hover{
+    background: #5ed0d6;
+    transform: scale(1.05);
+  }
+  
+  .logo .bloqueNaranja:hover{
+    background: #ffc485;
+    transform: rotate(-15deg) scale(1.05);
+  }
+  
+  .logo .bloqueRojo:hover{
+    background: #ff7363;
+    transform: scale(1.05) ;
   }
 
 }
