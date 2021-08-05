@@ -8,4 +8,5 @@ Puede obtener un adelanto de su implementación en:
 - [Propuesta de logo en CSS](https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/logo.html)
 - [Login (Segunda Propuesta)](https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/login.html)
 - [Registro (Segunda Propuesta)](https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/register.html)
+- [Home (Segunda Propuesta)](https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/Home.html)
 
