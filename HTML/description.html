@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Russo+One&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="css/flaticon/flaticon.css">
+    <link rel="stylesheet" href="css/normalize.min.css" />
+    <link rel="stylesheet" href="css/description.css" />
+    <title>Detalles del Producto</title>
+</head>
+
+<body>
+    <nav>
+        <a href="./Home.html">
+            <div class="logoNavBar">
+                <div class="logoContainer">
+                    <div class="bloqueAzul"></div>
+                    <div class="bloqueVerde"></div>
+                    <div class="bloqueRojo"></div>
+                    <div class="bloqueNaranja"></div>
+                </div>
+                <p class="logoText"><span class="rojo">IN</span><span class="azul">SIDE</span><span
+                        class="verde">BOOKS</span>
+                </p>
+            </div>
+        </a>
+
+        <form class="searchBar" action="/action_page.php">
+            <input class="btn" type="text" placeholder=" Buscar.." name="search">
+            <button class="btn red" type="submit"><i class="flaticon-magnifying-glass-1"></i></button>
+        </form>
+
+        <div class="menuButton">
+            <a id="BotonBuscarParaMoviles" href="#"><i class="flaticon-magnifying-glass-1"></i> </a>
+            <a href="./login.html"><i class="flaticon-profile-user"></i> &nbsp <span class="menu-label"> Mi
+                    Cuenta</span> </a>
+            <a href="#"><i class="flaticon-shopping-cart"></i> &nbsp <span class="menu-label"> Mi Carrito</span></a>
+            <a href="#"><i class="flaticon-list"></i> &nbsp <span class="menu-label"> Menú</span> </a>
+        </div>
+    </nav>
+
+
+    <main>
+        <section>
+            <div class="materiaTitulo">
+                <p>Física > Física Universitaria<span class="heartIcon">❤️</span></p>
+            </div>
+
+            <div class="portada">
+                <img src="./images/book.png" alt="">
+                <h3 class="bookTitle">Flutter Cookbook</h3>
+            </div>
+
+            <div class="tablaIdioma">
+                <p class="idioma">Edición en Inglés</p>
+                <p class="autor">por Antonio González</p>
+            </div>
+
+            <div class="formato">
+                <input class="hidden" type="checkbox" name="ebookButton" id="ebookButton">
+                <label for="ebookButton">Libro Electrónico <br> <span class="precio">US$ 16.20</span></label>
+
+                <input class="hidden" type="checkbox" name="pastaBlandaButton" id="pastaBlandaButton">
+                <label for="pastaBlandaButton">Pasta Blanda <br> <span class="precio">US$ 16.20</span></label>
+            </div>
+
+            <div class="promociones">
+                <p>Envío gratis a toda la República Mexicana en compras mayores a <span>$299</span> o en productos
+                    elegibles de nuestro catálogo</p>
+
+                <p>Realiza tu pedido y recíbelo en <span>23 horas</span> u obtén instantáneamente la versión digital de
+                    nuestros libros </p>
+            </div>
+        </section>
+
+        <section>
+            <ul>
+                <li><a href="">Configurar Dirección de Envío</a></li>
+                <li><a href="">Más Información sobre precios y tiempos de entrega de Inside Books en la República
+                        Mexicana.</a></li>
+            </ul>
+
+            <div class="cantidad">
+                <p>Cantidad:</p>
+                <div class="number-input">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                        style="padding:1px 7px;">-</button>
+                    <input class="quantity" min="1" name="quantity" value="1" type="number">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+</button>
+                </div>
+            </div>
+
+            <div class="botones">
+                <button class='btn red agregarAlCarrito'>Agregar al Carrito</button>
+                <button class='btn Azul comprarAhora'>Comprar Ahora</button>
+            </div>
+
+        </section>
+
+
+        <section>
+            <h2>Información del Producto</h2>
+            <table class="productInfoTable">
+                <tr>
+                    <td class="sombrear">Editorial</td>
+                    <td>Maria Anders</td>
+                </tr>
+                <tr>
+                    <td class="sombrear">Idioma</td>
+                    <td>Francisco Chang</td>
+                </tr>
+                <tr>
+                    <td class="sombrear">ISNB</td>
+                    <td>Roland Mendel</td>
+                </tr>
+                <tr>
+                    <td class="sombrear">Materia</td>
+                    <td>Helen Bennett</td>
+                </tr>
+                <tr>
+                    <td class="sombrear">Año</td>
+                    <td>Yoshi Tannamuri</td>
+                </tr>
+                <tr>
+                    <td class="sombrear">Número de Páginas</td>
+                    <td>Giovanni Rovelli</td>
+                </tr>
+            </table>
+
+        </section>
+
+        <section class="acercaDelLibro">
+            <h2>Acerca de este Libro</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quidem delectus unde aut. Perferendis ad
+                asperiores soluta nesciunt quibusdam numquam impedit quas laudantium ipsa. Sint sapiente facere expedita
+                rem iure. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed saepe neque iure maiores quasi
+                vero aut nostrum officia in. Mollitia autem vitae est assumenda aspernatur officiis. Ea suscipit laborum
+                vel.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quidem delectus unde aut. Perferendis ad
+                asperiores soluta nesciunt quibusdam numquam impedit quas laudantium ipsa. Sint sapiente facere expedita
+                rem iure. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed saepe neque iure maiores quasi
+                vero aut nostrum officia in. Mollitia autem vitae est assumenda aspernatur officiis. Ea suscipit laborum
+                vel.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quidem delectus unde aut. Perferendis ad
+                asperiores soluta nesciunt quibusdam numquam impedit quas laudantium ipsa. Sint sapiente facere expedita
+                rem iure. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed saepe neque iure maiores quasi
+                vero aut nostrum officia in. Mollitia autem vitae est assumenda aspernatur officiis. Ea suscipit laborum
+                vel.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quidem delectus unde aut. Perferendis ad
+                asperiores soluta nesciunt quibusdam numquam impedit quas laudantium ipsa. Sint sapiente facere expedita
+                rem iure. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed saepe neque iure maiores quasi
+                vero aut nostrum officia in. Mollitia autem vitae est assumenda aspernatur officiis. Ea suscipit laborum
+                vel.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quidem delectus unde aut. Perferendis ad
+                asperiores soluta nesciunt quibusdam numquam impedit quas laudantium ipsa. Sint sapiente facere expedita
+                rem iure. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed saepe neque iure maiores quasi
+                vero aut nostrum officia in. Mollitia autem vitae est assumenda aspernatur officiis. Ea suscipit laborum
+                vel.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quidem delectus unde aut. Perferendis ad
+                asperiores soluta nesciunt quibusdam numquam impedit quas laudantium ipsa. Sint sapiente facere expedita
+                rem iure. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed saepe neque iure maiores quasi
+                vero aut nostrum officia in. Mollitia autem vitae est assumenda aspernatur officiis. Ea suscipit laborum
+                vel.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quidem delectus unde aut. Perferendis ad
+                asperiores soluta nesciunt quibusdam numquam impedit quas laudantium ipsa. Sint sapiente facere expedita
+                rem iure. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed saepe neque iure maiores quasi
+                vero aut nostrum officia in. Mollitia autem vitae est assumenda aspernatur officiis. Ea suscipit laborum
+                vel.
+            </p>
+
+        </section>
+
+        <section class="acercaDelAutor">
+            <h2>Acerca del Autor</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quidem delectus unde aut. Perferendis ad
+                asperiores soluta nesciunt quibusdam numquam impedit quas laudantium ipsa. Sint sapiente facere expedita
+                rem iure. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed saepe neque iure maiores quasi
+                vero aut nostrum officia in. Mollitia autem vitae est assumenda aspernatur officiis. Ea suscipit laborum
+                vel.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quidem delectus unde aut. Perferendis ad
+                asperiores soluta nesciunt quibusdam numquam impedit quas laudantium ipsa. Sint sapiente facere expedita
+                rem iure. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed saepe neque iure maiores quasi
+                vero aut nostrum officia in. Mollitia autem vitae est assumenda aspernatur officiis. Ea suscipit laborum
+                vel.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quidem delectus unde aut. Perferendis ad
+                asperiores soluta nesciunt quibusdam numquam impedit quas laudantium ipsa. Sint sapiente facere expedita
+                rem iure. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed saepe neque iure maiores quasi
+                vero aut nostrum officia in. Mollitia autem vitae est assumenda aspernatur officiis. Ea suscipit laborum
+                vel.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quidem delectus unde aut. Perferendis ad
+                asperiores soluta nesciunt quibusdam numquam impedit quas laudantium ipsa. Sint sapiente facere expedita
+                rem iure. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed saepe neque iure maiores quasi
+                vero aut nostrum officia in. Mollitia autem vitae est assumenda aspernatur officiis. Ea suscipit laborum
+                vel.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quidem delectus unde aut. Perferendis ad
+                asperiores soluta nesciunt quibusdam numquam impedit quas laudantium ipsa. Sint sapiente facere expedita
+                rem iure. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed saepe neque iure maiores quasi
+                vero aut nostrum officia in. Mollitia autem vitae est assumenda aspernatur officiis. Ea suscipit laborum
+                vel.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quidem delectus unde aut. Perferendis ad
+                asperiores soluta nesciunt quibusdam numquam impedit quas laudantium ipsa. Sint sapiente facere expedita
+                rem iure. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed saepe neque iure maiores quasi
+                vero aut nostrum officia in. Mollitia autem vitae est assumenda aspernatur officiis. Ea suscipit laborum
+                vel.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quidem delectus unde aut. Perferendis ad
+                asperiores soluta nesciunt quibusdam numquam impedit quas laudantium ipsa. Sint sapiente facere expedita
+                rem iure. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed saepe neque iure maiores quasi
+                vero aut nostrum officia in. Mollitia autem vitae est assumenda aspernatur officiis. Ea suscipit laborum
+                vel.
+            </p>
+
+        </section>
+
+        <section class="comentarios">
+            <h2>Reseñas de Usuarios</h2>
+
+            <div class="comentario">
+                <div class="usuarioInfo">
+                    <img src="./images/user1.jpg" alt="">
+                    <p>Antonio López Mendoza</p>
+                </div>
+
+                <div class="calificacionComentario">
+                    <p class=calificacion>⭐⭐⭐⭐⭐</p>
+                    <p class="tituloComentario">La mejor compra de mi vida</p>
+                </div>
+                <p class="revision">Revisado en México el <span clas="fechaRevisionCompra">23 de abril</span> </p>
+                <p class="verificacionDeCompra">Compra verificada</p>
+                <p class="contenidoComentario">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem itaque adipisci temporibus optio.
+                    Voluptate saepe culpa illo aliquam minima consequuntur quos quae officia? Fugit doloremque fuga nemo
+                    dolorum. Pariatur, veritatis!</p>
+
+                <div class="botonesDeComentarios">
+                    <button>👍🏻</button>
+                    <button>👎🏻</button>
+                    <button>🚩</button>
+                </div>
+            </div>
+
+
+            <div class="comentario">
+                <div class="usuarioInfo">
+                    <img src="./images/user1.jpg" alt="">
+                    <p>Antonio López Mendoza</p>
+                </div>
+
+                <div class="calificacionComentario">
+                    <p class=calificacion>⭐⭐⭐⭐⭐</p>
+                    <p class="tituloComentario">La mejor compra de mi vida</p>
+                </div>
+                <p class="revision">Revisado en México el <span clas="fechaRevisionCompra">23 de abril</span> </p>
+                <p class="verificacionDeCompra">Compra verificada</p>
+                <p class="contenidoComentario">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem itaque adipisci temporibus optio.
+                    Voluptate saepe culpa illo aliquam minima consequuntur quos quae officia? Fugit doloremque fuga nemo
+                    dolorum. Pariatur, veritatis!</p>
+
+                <div class="botonesDeComentarios">
+                    <button>👍🏻</button>
+                    <button>👎🏻</button>
+                    <button>🚩</button>
+                </div>
+            </div>
+
+            <div class="comentario">
+                <div class="usuarioInfo">
+                    <img src="./images/user1.jpg" alt="">
+                    <p>Antonio López Mendoza</p>
+                </div>
+
+                <div class="calificacionComentario">
+                    <p class=calificacion>⭐⭐⭐⭐⭐</p>
+                    <p class="tituloComentario">La mejor compra de mi vida</p>
+                </div>
+                <p class="revision">Revisado en México el <span clas="fechaRevisionCompra">23 de abril</span> </p>
+                <p class="verificacionDeCompra">Compra verificada</p>
+                <p class="contenidoComentario">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem itaque adipisci temporibus optio.
+                    Voluptate saepe culpa illo aliquam minima consequuntur quos quae officia? Fugit doloremque fuga nemo
+                    dolorum. Pariatur, veritatis!</p>
+
+                <div class="botonesDeComentarios">
+                    <button>👍🏻</button>
+                    <button>👎🏻</button>
+                    <button>🚩</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+
+
+
+
+
+    <footer>
+        <section>
+            <h4>Enlaces de Interés</h4>
+            <ul>
+                <li><a href="">Mi cuenta</a></li>
+                <li><a href="">Mis Pedidos</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="">Mi Lista de Deseos</a></li>
+                <li><a href="">Artículos Vistos</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h4>Ayuda y Soporte</h4>
+            <ul>
+                <li><a href="">Preguntas Frecuentes</a></li>
+                <li><a href="">Formas de Pago</a></li>
+                <li><a href="">Nuestro Boletín</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="">Términos y Condiciones </a></li>
+                <li><a href="">Política de Privacidad</a></li>
+                <li><a href="">Acerca de Nosotros</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h4>Contacto</h4>
+            <ul class="contactList">
+                <li><i class="flaticon-email"></i> &nbsp contact@insidebooks.com</li>
+                <li><i class="flaticon-telephone-handle-silhouette"></i>&nbsp&nbsp +53 123 456 7890</li>
+            </ul>
+        </section>
+
+        <section class="socialMedia">
+            <h4>Redes Sociales</h4>
+            <ul>
+                <li><a href=""><i class="flaticon-facebook"></i> &nbsp Facebook</a></li>
+                <li><a href=""><i class="flaticon-instagram"></i>&nbsp Instagram</a></li>
+            </ul>
+
+            <ul>
+                <li><a href=""><i class="flaticon-twitter"></i>&nbsp Twitter</a></li>
+                <li><a href=""><i class="flaticon-telegram"></i>&nbsp Telegram</a></li>
+            </ul>
+        </section>
+
+        <div class="logoFooter">
+            <div class="logoContainer">
+                <div class="bloqueAzul"></div>
+                <div class="bloqueVerde"></div>
+                <div class="bloqueRojo"></div>
+                <div class="bloqueNaranja"></div>
+            </div>
+            <p class="logoTextFooter"><span class="rojo">IN</span><span class="azul">SIDE</span><span
+                    class="verde">BOOKS</span>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

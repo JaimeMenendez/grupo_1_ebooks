@@ -1,0 +1,347 @@
+@import "./logoStyle.css";
+@import "./navBar.css";
+@import "./footer.css";
+
+:root {
+  --blanco: white;
+  --navBarHeight: 50px;
+  --oscuro: #56575e; /*Text Color*/
+  --marginBottom:10px;
+  --borderRadius:5px;
+  --backgroundColor: #e2e1e0;
+  --backgroundSections:white;
+
+  /* Buttons */
+  --buttonHeight:35px;
+  --buttonBorderRadio: 2px;
+  --buttonFontColor:#ecf0f1;
+  --buttonColor:#EA4533;
+
+   /* List */
+  --fontListColor:#56575e;;
+  --fontIndexTitleColor: #56575e;
+
+  /* Price */
+  --priceColor:#EA4533;
+
+  /* Margin Between Containers */
+  --separation:5px;
+}
+
+/* ========================================================= */
+/*                     Button Style                          */
+/* ========================================================= */
+.btn.red {
+    background-color: #e74c3c;
+  }
+  
+  .btn.red:hover, .btn.red:focus {
+    background-color: #c0392b;
+  }
+  
+  .btn {
+    font-weight: bold;
+    display: block;
+    margin: 10px auto;
+    padding: 0; 
+    border-width: 0;
+    outline: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    color: var(--buttonFontColor);
+    transition: background-color .3s;
+  }
+  
+  .btn.red {
+    background-color: var(--buttonColor);
+  }
+  
+  .btn.red:hover, .btn.red:focus {
+    background-color: #c0392b;
+  }
+
+
+main{
+    margin-top: 60px;
+}
+
+/* ========================================================= */
+/*                   Barra de Direccion                      */
+/* ========================================================= */
+.materiaTitulo{
+    width:95%;
+    margin: auto;
+    position: relative;
+    border-bottom: 1px solid grey;
+    margin-bottom:15px; 
+}
+
+.materiaTitulo p{
+    padding-right: 40px;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 16px;
+   
+}
+
+.heartIcon{
+    position: absolute;
+    top: 0;
+    right: 6px;
+}
+
+/* ========================================================= */
+/*                   Tabla de Idioma                       */
+/* ========================================================= */
+
+.tablaIdioma{
+    width:80%;
+    margin: auto;
+    height:100%;
+    display: flex;
+    align-items:stretch;
+    justify-content:stretch;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    margin-bottom: 20px;
+    border: 1px solid rgb(124, 121, 121);
+}
+
+.tablaIdioma p{
+    width:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+    padding: 4px 3px;
+}
+
+.tablaIdioma .idioma{
+    background-color:var(--buttonColor);
+    text-transform: none;
+    font-weight: bold;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    color: var(--buttonFontColor);
+}
+
+.tablaIdioma .autor{
+    background-color:var(--buttonColor);
+    text-transform: none;
+    background-color:white;
+    border-left: none;
+    color: black;
+}
+
+/* ========================================================= */
+/*                   Seleccion de Formato                    */
+/* ========================================================= */
+.hidden {visibility: hidden; display: none;}
+
+.formato{
+    width:80%;
+    margin: auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:auto;
+    margin-bottom: 40px;
+}
+
+.formato label{
+    display:block;
+    text-align:center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color:rgb(253, 254, 255);
+    border: 1px solid rgb(124, 121, 121);
+    width:40%;
+}
+
+.formato label span{
+    color: red;
+    font-weight: bold;
+}
+
+#ebookButton:checked + label,#pastaBlandaButton:checked + label {
+    background-color:var(--buttonColor);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    color: var(--buttonFontColor);
+    border:0;
+    padding:1px;
+  }
+
+  #ebookButton:checked + label span,#pastaBlandaButton:checked + label span{
+      color: white;
+  }
+
+/* ========================================================= */
+/*                  Promociones                       */
+/* ========================================================= */ 
+.promociones{
+    margin: auto;
+}
+.promociones p{
+    font-size:18px;
+    text-align: left;
+    width:80%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+
+/* ========================================================= */
+/*                 Cantidad                                  */
+/* ========================================================= */ 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+}
+
+.number-input{
+    display: inline;
+}
+.number-input input{
+    border:0;
+    text-align: center;
+    width: 15%;
+    font-size: 24px;
+}
+
+.number-input button{
+    border-radius: 100%;
+    border: 1px solid black;
+    background-color:white;
+}
+
+.cantidad{
+    width: 80%;
+    margin: 0 10%;
+
+
+}
+.cantidad p{
+    font-size: 24px;
+    display: inline;
+    padding-right: 25px;
+}
+
+/* ========================================================= */
+/*                Botones                                  */
+/* ========================================================= */ 
+
+.botones{
+    margin-top:30px
+}
+.agregarAlCarrito, .comprarAhora{
+    height: 40px;
+    width: 80%;
+    font-size: 18px;
+}
+
+.comprarAhora{
+    background-color: #2D2F8E;
+}
+
+/* ========================================================= */
+/*                Información del Producto                   */
+/* ========================================================= */ 
+
+.productInfoTable{
+    width: 90%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .sombrear{
+      background-color: rgb(245, 245, 245);
+      font-weight: bold;
+  }
+
+/* ========================================================= */
+/*                Información del Producto                   */
+/* ========================================================= */ 
+
+  .acercaDelLibro,.acercaDelAutor {
+      text-align: left;
+      width: 90%;
+      margin: auto;
+      font-size: 18px;
+  }
+
+
+
+/* ========================================================= */
+/*                       Reseñas                             */
+/* ========================================================= */ 
+.comentarios{
+    text-align:left;
+    margin: auto;
+    width: 92%;
+}
+
+.comentario{
+    margin-bottom: 40px;
+
+}
+.usuarioInfo, .calificacionComentario{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+}
+.usuarioInfo p{
+    margin-left: 10px;
+    font-size:18px;
+}
+.usuarioInfo img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+}
+
+.calificacionComentario p{
+    margin-bottom: 5px;
+    margin-top: 8px;
+}
+
+.calificacionComentario .tituloComentario{
+    margin-left: 6px;
+    font-weight: bold;
+    font-size:16px;
+
+}
+
+.revision,.verificacionDeCompra{
+    margin: 0;
+}
+
+.verificacionDeCompra{
+    color:var(--buttonColor);
+    font-weight: bold;
+}
+
+.contenidoComentario{
+    margin-top: 5px;
+    margin-bottom:0
+}
+
+.botonesDeComentarios button{
+    border:0;
+    background:none;
+    padding-left:0px;
+    margin-left: 10px;
+    margin-top: 0;
+    font-size: 20px;
+}
