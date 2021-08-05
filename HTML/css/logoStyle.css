@@ -34,6 +34,7 @@ body{
   bottom:0;
   border-radius: 1ex;
   opacity:90%;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
 }
 
 .bloqueVerde{
@@ -45,6 +46,7 @@ body{
   left:24%;
   opacity:90%;
   border-radius: 1ex;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
 }
 
 .bloqueNaranja{
@@ -57,6 +59,7 @@ body{
   border-radius: 1ex;
   transform:rotate(-15deg);
   opacity:80%;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
 }
 
 .bloqueRojo{
@@ -67,4 +70,5 @@ body{
   bottom:0;
   left:75%;
   border-radius: 1ex;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
 }
