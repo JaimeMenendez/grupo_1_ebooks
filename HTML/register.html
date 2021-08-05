@@ -86,7 +86,7 @@
           <div class="passwordDiv">
             <input type="password" id="PasswordInput" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres"
-              placeholder=" *Contraseña" required>
+              placeholder=" *Contraseña" autocomplete="on" required>
             <span ><i  id="passwordEye" class="flaticon-invisible"></i></span>
           </div>
         </div>
@@ -96,8 +96,8 @@
           <div class="passwordDiv">
             <input type="password" id="confirmPasswordInput" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres"
-              placeholder=" *Confirmar contraseña" required>
-            <span ><i id="confirmPasswordEye" class="flaticon-invisible"></i></span>
+              placeholder=" *Confirmar contraseña" autocomplete="on" required>
+            <span ><i id="confirmPasswordEye"  class="flaticon-invisible"></i></span>
           </div>
         </div>
 
@@ -113,7 +113,7 @@
           </div>
 
           <div class="condition">
-            <input type="checkbox" id="cbox1" value="first_checkbox">
+            <input type="checkbox" id="cbox2" value="first_checkbox">
             <label> Quiero recibir promociones y noticias a mi
               correo electrónico.</a></label>
           </div>

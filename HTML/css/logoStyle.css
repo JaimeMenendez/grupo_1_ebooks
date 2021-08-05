@@ -1,5 +1,6 @@
 /*Importa la letra*/
-@font-face { font-family: DINMedium; src: local("DINMedium.ttf"), url("https://jaimemenendez.github.io/grupo_1_ebooks/HTML/css/DINMedium.ttf");} 
+@font-face {font-family: "DIN Medium"; 
+           src: local('DINMedium.ttf') format("truetype"), url('https://jaimemenendez.github.io/grupo_1_ebooks/HTML/css/DINMedium.ttf') format("truetype");} 
 body{
   text-align:center;
 }
@@ -20,7 +21,7 @@ body{
 .logoText{
   font-size:80px;
   margin:0;
-  font-family: 'DINMedium', sans-serif;
+  font-family: "DIN Medium", sans-serif;
   line-height:68px;
   padding-top:2px;
   letter-spacing: 5px;
