@@ -8,6 +8,9 @@ font-family: 'Russo One', sans-serif; */
   --navBarHeight: 50px;
   --sombra-boton: #999;
   --oscuro: #56575e;
+  --buttonColor:#EA4533;
+  --buttonColorHover:#c0392b;
+  color:#c78c4d
 }
 
 /* --------MOBILE VERSION STYLE----------- */
@@ -30,16 +33,12 @@ input::placeholder{
 /* ========================================================= */
 /*                     Button Style                          */
 /* ========================================================= */
-
-/* ========================================================= */
-/*                     Button Style                          */
-/* ========================================================= */
 .btn.red {
-  background-color: #e74c3c;
+  background-color: var(--buttonColor);
 }
 
 .btn.red:hover, .btn.red:focus {
-  background-color: #c0392b;
+  background-color: var(--buttonColorHover);
 }
 
 .btn {
@@ -94,11 +93,11 @@ input::placeholder{
 }
 
 .btn.red {
-  background-color: #EA4533;
+  background-color: var(--buttonColor);
 }
 
 .btn.red:hover, .btn.red:focus {
-  background-color: #c0392b;
+  background-color: var(--buttonColorHover);
 }
 .googleButton{
   color: var(--oscuro);
@@ -126,7 +125,7 @@ input::placeholder{
 /* ========================================================= */
 
 a {
-  color: #EA4533;
+  color: var(--buttonColor);
 }
 
 /* ========================================================= */
