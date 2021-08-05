@@ -12,8 +12,6 @@ togglePassword.addEventListener('click', function (e) {
   this.classList.toggle('flaticon-visibility');
 });
 
-
-
   const bloqueRojo = document.querySelector(".logo .bloqueRojo");
   const bloqueAzul = document.querySelector(".logo .bloqueAzul");
   const bloqueVerde = document.querySelector(".logo .bloqueVerde");
