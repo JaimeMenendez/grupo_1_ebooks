@@ -139,7 +139,6 @@ form.searchBar button:hover {
         margin-left: 20px;
     }
 
- 
     .menuButton a {
         display: flex;
         align-items: center;
@@ -157,9 +156,6 @@ form.searchBar button:hover {
 
 /* PC STYLES */
 @media (min-width: 980px) {
-
- 
-
     .menu-label {
         display: inline;
         font-size: 1em;
