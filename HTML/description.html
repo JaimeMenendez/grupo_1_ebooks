@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/normalize.min.css" />
     <link rel="stylesheet" href="css/description.css" />
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="./css/fontawesome-pro-5.13.0-web/css/all.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <title>Detalles del Producto</title>
 </head>
 
@@ -58,82 +58,106 @@
                 <h3 class="bookTitle">Flutter Cookbook</h3>
             </div>
 
-            <div class="tablaIdioma">
-                <p class="idioma">Edición en Inglés</p>
-                <p class="autor"><span>por <span class="autorName">Antonio González</span></span></p>
-            </div>
-
-            <div class="formato">
-                <input class="hidden" type="checkbox" name="ebookButton" id="ebookButton">
-                <label for="ebookButton">Libro Electrónico <br> <span class="precio">US$ 16.20</span></label>
-
-                <input class="hidden" type="checkbox" name="pastaBlandaButton" id="pastaBlandaButton">
-                <label for="pastaBlandaButton">Pasta Blanda <br> <span class="precio">US$ 16.20</span></label>
-            </div>
-
-            <div class="promociones">
-                <p> <strong>Envío gratis</strong> a toda la <strong>República Mexicana</strong> en compras mayores a <span class="rojo">$299</span> o en productos
-                    elegibles de nuestro catálogo</p>
-
-                <p>Realiza tu pedido y recíbelo en <span class="rojo">23 horas</span> u obtén instantáneamente la versión digital de
-                    nuestros libros </p>
-            </div>
-        </section>
-
-        <section>
-            <ul>
-                <li><a href=""> <i class="fas fa-map-marker-alt"></i> <span> &nbsp Configurar Dirección de Envío</span></a></li>
-                <li><a href=""><i class="fas fa-info-circle"></i> <span>Más Información sobre precios y tiempos de entrega de Inside Books en la República Mexicana.</span></a></li>
-            </ul>
-
-            <div class="cantidad">
-                <p>Cantidad:</p>
-                <div class="number-input">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                        style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
-                    <input class="quantity" min="1" name="quantity" value="1" type="number" readonly>
-                    <button style="padding:1px 7px" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i class="fas fa-plus-circle" ></i></button>
+            <section class="dataLeft">
+                <h3 class="bookTitle PC">Flutter Cookbook</h3>
+                <div class="tablaIdioma">
+                    <p class="idioma">Edición en Inglés</p>
+                    <p class="autor"><span>por <span class="autorName">Antonio González</span></span></p>
                 </div>
-            </div>
 
-            <div class="botones">
-                <button class='btn red agregarAlCarrito'>Agregar al Carrito</button>
-                <button class='btn Azul comprarAhora'>Comprar Ahora</button>
-            </div>
+                <div class="formato">
+                    <input class="hidden" type="checkbox" name="ebookButton" id="ebookButton">
+                    <label for="ebookButton">Libro Electrónico <br> <span class="precio">US$ 16.20</span></label>
+
+                    <input class="hidden" type="checkbox" name="pastaBlandaButton" id="pastaBlandaButton">
+                    <label for="pastaBlandaButton">Pasta Blanda <br> <span class="precio">US$ 16.20</span></label>
+                </div>
+            </section>
+
+            <section class="dataRight">
+                <div class="promociones">
+                    <p> <strong>Envío gratis</strong> a toda la <strong>República Mexicana</strong> en compras mayores a
+                        <span class="rojo">$299</span> o en productos
+                        elegibles de nuestro catálogo</p>
+
+                    <p style="margin-bottom: 0;">Realiza tu pedido y recíbelo en <span class="rojo">23 horas</span> u
+                        obtén instantáneamente la versión digital de
+                        nuestros libros </p>
+                </div>
+                <ul>
+                    <li><a href=""> <i class="fas fa-map-marker-alt"></i> <span> &nbsp Configurar Dirección de
+                                Envío</span></a></li>
+                    <li><a href=""><i class="fas fa-info-circle"></i> <span>Más Información sobre precios y tiempos de
+                                entrega de Inside Books en la República Mexicana.</span></a></li>
+                </ul>
+            </section>
+
+            <section class="botonColumn">
+                <div class="cantidad">
+                    <p>Cantidad:</p>
+                    <div class="number-input">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                            style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
+                        <input class="quantity" min="1" name="quantity" value="1" type="number" readonly>
+                        <button style="padding:1px 7px"
+                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
+                                class="fas fa-plus-circle"></i></button>
+                    </div>
+                </div>
+                <div class="botones">
+                    <button class='btn red agregarAlCarrito'>Agregar al Carrito</button>
+                    <button class='btn Azul comprarAhora'>Comprar Ahora</button>
+                </div>
+            </section>
+
+            <section class="productInfoTable">
+                <h2>Información del Producto</h2>
+                <table class=>
+                    <tr>
+                        <td class="sombrear">Editorial</td>
+                        <td>Maria Anders</td>
+                    </tr>
+                    <tr>
+                        <td class="sombrear">Idioma</td>
+                        <td>Francisco Chang</td>
+                    </tr>
+                    <tr>
+                        <td class="sombrear">ISNB</td>
+                        <td>Roland Mendel</td>
+                    </tr>
+                    <tr>
+                        <td class="sombrear">Materia</td>
+                        <td>Helen Bennett</td>
+                    </tr>
+                    <tr>
+                        <td class="sombrear">Año</td>
+                        <td>Yoshi Tannamuri</td>
+                    </tr>
+                    <tr>
+                        <td class="sombrear">Número de Páginas</td>
+                        <td>Giovanni Rovelli</td>
+                    </tr>
+
+                    <tr>
+                        <td class="sombrear">Número de Páginas</td>
+                        <td>Giovanni Rovelli</td>
+                    </tr>
+
+                    <tr>
+                        <td class="sombrear">Número de Páginas</td>
+                        <td>Giovanni Rovelli</td>
+                    </tr>
+                </table>
+    
+            </section>
+
 
         </section>
 
 
-        <section>
-            <h2>Información del Producto</h2>
-            <table class="productInfoTable">
-                <tr>
-                    <td class="sombrear">Editorial</td>
-                    <td>Maria Anders</td>
-                </tr>
-                <tr>
-                    <td class="sombrear">Idioma</td>
-                    <td>Francisco Chang</td>
-                </tr>
-                <tr>
-                    <td class="sombrear">ISNB</td>
-                    <td>Roland Mendel</td>
-                </tr>
-                <tr>
-                    <td class="sombrear">Materia</td>
-                    <td>Helen Bennett</td>
-                </tr>
-                <tr>
-                    <td class="sombrear">Año</td>
-                    <td>Yoshi Tannamuri</td>
-                </tr>
-                <tr>
-                    <td class="sombrear">Número de Páginas</td>
-                    <td>Giovanni Rovelli</td>
-                </tr>
-            </table>
 
-        </section>
+
+       
 
         <section class="acercaDelLibro">
             <h2>Acerca de este Libro</h2>
@@ -250,73 +274,85 @@
                 </div>
                 <p class="revision">Revisado en México el <span clas="fechaRevisionCompra">23 de abril</span> </p>
                 <p class="verificacionDeCompra">Compra verificada</p>
-                <p class="contenidoComentario">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem itaque adipisci temporibus optio.
-                    Voluptate saepe culpa illo aliquam minima consequuntur quos quae officia? Fugit doloremque fuga nemo
-                    dolorum. Pariatur, veritatis!</p>
-
-                    <div class="botonesDeComentarios">
-                        <label for="like"><input class= "hidden" type="radio" name="like" value="like" id="like"><i class="far fa-thumbs-up"></i></label>
-                        <label for="dislike"><input  class= "hidden" type="radio" name="like" value="dislike" id="dislike"><i class="far fa-thumbs-down"></i></label>
-                        <label for="report"><input class= "hidden" type="checkbox" id="report"><i class="far fa-flag"></i></label>
-                    </div>
-            </div>
-
-
-            <div class="comentario">
-                <div class="usuarioInfo">
-                    <img src="./images/user1.jpg" alt="">
-                    <p>Antonio López Mendoza</p>
-                </div>
-
-                <div class="calificacionComentario">
-                    <p class=calificacion>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </p>
-                    <p class="tituloComentario">La mejor compra de mi vida</p>
-                </div>
-                <p class="revision">Revisado en México el <span clas="fechaRevisionCompra">23 de abril</span> </p>
-                <p class="verificacionDeCompra">Compra verificada</p>
-                <p class="contenidoComentario">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem itaque adipisci temporibus optio.
-                    Voluptate saepe culpa illo aliquam minima consequuntur quos quae officia? Fugit doloremque fuga nemo
-                    dolorum. Pariatur, veritatis!</p>
-
-                    <div class="botonesDeComentarios">
-                        <label for="like"><input class= "hidden" type="radio" name="like" value="like" id="like"><i class="far fa-thumbs-up"></i></label>
-                        <label for="dislike"><input  class= "hidden" type="radio" name="like" value="dislike" id="dislike"><i class="far fa-thumbs-down"></i></label>
-                        <label for="report"><input class= "hidden" type="checkbox" id="report"><i class="far fa-flag"></i></label>
-                    </div>
-            </div>
-
-            <div class="comentario">
-                <div class="usuarioInfo">
-                    <img src="./images/user1.jpg" alt="">
-                    <p>Antonio López Mendoza</p>
-                </div>
-
-                <div class="calificacionComentario">
-                    <p class=calificacion>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </p>
-                    <p class="tituloComentario">La mejor compra de mi vida</p>
-                </div>
-                <p class="revision">Revisado en México el <span clas="fechaRevisionCompra">23 de abril</span> </p>
-                <p class="verificacionDeCompra">Compra verificada</p>
-                <p class="contenidoComentario">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem itaque adipisci temporibus optio.
+                <p class="contenidoComentario">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem itaque
+                    adipisci temporibus optio.
                     Voluptate saepe culpa illo aliquam minima consequuntur quos quae officia? Fugit doloremque fuga nemo
                     dolorum. Pariatur, veritatis!</p>
 
                 <div class="botonesDeComentarios">
-                    <label for="like"><input class= "hidden" type="radio" name="like" value="like" id="like"><i class="far fa-thumbs-up"></i></label>
-                    <label for="dislike"><input  class= "hidden" type="radio" name="like" value="dislike" id="dislike"><i class="far fa-thumbs-down"></i></label>
-                    <label for="report"><input class= "hidden" type="checkbox" id="report"><i class="far fa-flag"></i></label>
+                    <label for="like"><input class="hidden" type="radio" name="like" value="like" id="like"><i
+                            class="far fa-thumbs-up"></i></label>
+                    <label for="dislike"><input class="hidden" type="radio" name="like" value="dislike" id="dislike"><i
+                            class="far fa-thumbs-down"></i></label>
+                    <label for="report"><input class="hidden" type="checkbox" id="report"><i
+                            class="far fa-flag"></i></label>
+                </div>
+            </div>
+
+
+            <div class="comentario">
+                <div class="usuarioInfo">
+                    <img src="./images/user1.jpg" alt="">
+                    <p>Antonio López Mendoza</p>
+                </div>
+
+                <div class="calificacionComentario">
+                    <p class=calificacion>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </p>
+                    <p class="tituloComentario">La mejor compra de mi vida</p>
+                </div>
+                <p class="revision">Revisado en México el <span clas="fechaRevisionCompra">23 de abril</span> </p>
+                <p class="verificacionDeCompra">Compra verificada</p>
+                <p class="contenidoComentario">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem itaque
+                    adipisci temporibus optio.
+                    Voluptate saepe culpa illo aliquam minima consequuntur quos quae officia? Fugit doloremque fuga nemo
+                    dolorum. Pariatur, veritatis!</p>
+
+                <div class="botonesDeComentarios">
+                    <label for="like"><input class="hidden" type="radio" name="like" value="like" id="like"><i
+                            class="far fa-thumbs-up"></i></label>
+                    <label for="dislike"><input class="hidden" type="radio" name="like" value="dislike" id="dislike"><i
+                            class="far fa-thumbs-down"></i></label>
+                    <label for="report"><input class="hidden" type="checkbox" id="report"><i
+                            class="far fa-flag"></i></label>
+                </div>
+            </div>
+
+            <div class="comentario">
+                <div class="usuarioInfo">
+                    <img src="./images/user1.jpg" alt="">
+                    <p>Antonio López Mendoza</p>
+                </div>
+
+                <div class="calificacionComentario">
+                    <p class=calificacion>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </p>
+                    <p class="tituloComentario">La mejor compra de mi vida</p>
+                </div>
+                <p class="revision">Revisado en México el <span clas="fechaRevisionCompra">23 de abril</span> </p>
+                <p class="verificacionDeCompra">Compra verificada</p>
+                <p class="contenidoComentario">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem itaque
+                    adipisci temporibus optio.
+                    Voluptate saepe culpa illo aliquam minima consequuntur quos quae officia? Fugit doloremque fuga nemo
+                    dolorum. Pariatur, veritatis!</p>
+
+                <div class="botonesDeComentarios">
+                    <label for="like"><input class="hidden" type="radio" name="like" value="like" id="like"><i
+                            class="far fa-thumbs-up"></i></label>
+                    <label for="dislike"><input class="hidden" type="radio" name="like" value="dislike" id="dislike"><i
+                            class="far fa-thumbs-down"></i></label>
+                    <label for="report"><input class="hidden" type="checkbox" id="report"><i
+                            class="far fa-flag"></i></label>
                 </div>
             </div>
         </section>
