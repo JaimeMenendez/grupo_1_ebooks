@@ -49,3 +49,7 @@ Estudiantes universitarios y profesionales en el campo de la medicina y la ingen
         
         * [Amazon](https://www.amazon.com.mx/Web-Design-Html-JavaScript-Jquery/dp/1118907442/ref=sr_1_1?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=javascript+book&qid=1627491935&sr=8-1): se tomó como referencia para el diseño del wareframe la información del libro, la opción de compra de la derecha, las últimas novedades en libros y las reseñas de los usuarios.
         * [Packt](https://www.packtpub.com/product/flutter-cookbook/9781838823382): se tómo como referencia el diseño de fondo donde se presenta la información del libro, así como la descripción del libro y la información complementaria acerca del contenido del libro.
+
+## Tablero de Trello
+
+    * [Trello](https://trello.com/b/WkaRN2xn/proyecto-integrador): enlace al tablero de Trello del e-commerce, para ver los avances del proyecto.
