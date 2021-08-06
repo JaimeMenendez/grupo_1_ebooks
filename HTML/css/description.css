@@ -31,6 +31,8 @@
 /* ========================================================= */
 /*                     Button Style                          */
 /* ========================================================= */
+body {
+    font-family: "Roboto", sans-serif;}
 .btn.red {
     background-color: #e74c3c;
   }
@@ -61,12 +63,19 @@
 
 
 main{
-    margin-top: 60px;
+    margin-top: var(--navBarHeight);
 }
 
 /* ========================================================= */
 /*                   Barra de Direccion                      */
 /* ========================================================= */
+.datosPrincipales{
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    
+    padding-top: 1px;
+    padding-bottom:30px;
+}
+
 .materiaTitulo{
     width:95%;
     margin: auto;
@@ -85,8 +94,14 @@ main{
 
 .heartIcon{
     position: absolute;
-    top: 0;
-    right: 6px;
+    right: 7px;
+    top:-2px;
+    font-size:20px;
+}
+
+.portada .bookTitle{
+font-size: 24px;
+margin-top: 10px;
 }
 
 /* ========================================================= */
@@ -111,7 +126,7 @@ main{
     justify-content:center;
     align-items:center;
     margin:0;
-    padding: 4px 3px;
+    padding: 7px 5px;
 }
 
 .tablaIdioma .idioma{
@@ -128,6 +143,10 @@ main{
     background-color:white;
     border-left: none;
     color: black;
+}
+
+.tablaIdioma .autorName{
+    font-weight: bold;
 }
 
 /* ========================================================= */
@@ -152,6 +171,7 @@ main{
     background-color:rgb(253, 254, 255);
     border: 1px solid rgb(124, 121, 121);
     width:40%;
+    padding: 7px 5px;
 }
 
 .formato label span{
@@ -160,11 +180,9 @@ main{
 }
 
 #ebookButton:checked + label,#pastaBlandaButton:checked + label {
-    background-color:var(--buttonColor);
+    background-color:#585DBA;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
     color: var(--buttonFontColor);
-    border:0;
-    padding:1px;
   }
 
   #ebookButton:checked + label span,#pastaBlandaButton:checked + label span{
@@ -180,7 +198,7 @@ main{
 .promociones p{
     font-size:18px;
     text-align: left;
-    width:80%;
+    width:85%;
     margin: auto;
     margin-bottom: 20px;
 }
@@ -207,34 +225,65 @@ input[type=number] {
 .number-input input{
     border:0;
     text-align: center;
-    width: 15%;
+    width: 30px;
     font-size: 24px;
 }
 
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
 .number-input button{
-    border-radius: 100%;
-    border: 1px solid black;
+    font-size: 24px;
     background-color:white;
+    color:#2D2F8E;
+    border:none;
 }
 
 .cantidad{
     width: 80%;
-    margin: 0 10%;
-
+    display:block;
+    margin: auto;
 
 }
 .cantidad p{
-    font-size: 24px;
+    font-size: 20px;
     display: inline;
     padding-right: 25px;
 }
 
+
 /* ========================================================= */
 /*                Botones                                  */
 /* ========================================================= */ 
+ul{
+    list-style: none;
+    text-align: left;
+    
+}
+
+ul li{
+    margin-top: 15px;
+    color:green;
+}
+
+ul i{
+    font-size:25px;
+    margin-right: 10px;
+}
+
+ul a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color:black;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
 
 .botones{
-    margin-top:30px
+    margin-top:35px
 }
 .agregarAlCarrito, .comprarAhora{
     height: 40px;
@@ -320,7 +369,10 @@ input[type=number] {
     margin-left: 6px;
     font-weight: bold;
     font-size:16px;
+}
 
+.calificacion{
+    color:gold;
 }
 
 .revision,.verificacionDeCompra{
@@ -337,11 +389,8 @@ input[type=number] {
     margin-bottom:0
 }
 
-.botonesDeComentarios button{
-    border:0;
-    background:none;
-    padding-left:0px;
-    margin-left: 10px;
-    margin-top: 0;
-    font-size: 20px;
+.botonesDeComentarios label{
+    margin-right: 10px;
+
 }
+

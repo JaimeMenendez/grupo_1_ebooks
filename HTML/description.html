@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="css/flaticon/flaticon.css">
     <link rel="stylesheet" href="css/normalize.min.css" />
     <link rel="stylesheet" href="css/description.css" />
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="./css/fontawesome-pro-5.13.0-web/css/all.css">
     <title>Detalles del Producto</title>
 </head>
 
@@ -46,9 +48,9 @@
 
 
     <main>
-        <section>
+        <section class="datosPrincipales">
             <div class="materiaTitulo">
-                <p>Física > Física Universitaria<span class="heartIcon">❤️</span></p>
+                <p>Física > Física Universitaria<span class="heartIcon"><i class="far fa-heart"></i></span></p>
             </div>
 
             <div class="portada">
@@ -58,7 +60,7 @@
 
             <div class="tablaIdioma">
                 <p class="idioma">Edición en Inglés</p>
-                <p class="autor">por Antonio González</p>
+                <p class="autor"><span>por <span class="autorName">Antonio González</span></span></p>
             </div>
 
             <div class="formato">
@@ -70,28 +72,27 @@
             </div>
 
             <div class="promociones">
-                <p>Envío gratis a toda la República Mexicana en compras mayores a <span>$299</span> o en productos
+                <p> <strong>Envío gratis</strong> a toda la <strong>República Mexicana</strong> en compras mayores a <span class="rojo">$299</span> o en productos
                     elegibles de nuestro catálogo</p>
 
-                <p>Realiza tu pedido y recíbelo en <span>23 horas</span> u obtén instantáneamente la versión digital de
+                <p>Realiza tu pedido y recíbelo en <span class="rojo">23 horas</span> u obtén instantáneamente la versión digital de
                     nuestros libros </p>
             </div>
         </section>
 
         <section>
             <ul>
-                <li><a href="">Configurar Dirección de Envío</a></li>
-                <li><a href="">Más Información sobre precios y tiempos de entrega de Inside Books en la República
-                        Mexicana.</a></li>
+                <li><a href=""> <i class="fas fa-map-marker-alt"></i> <span> &nbsp Configurar Dirección de Envío</span></a></li>
+                <li><a href=""><i class="fas fa-info-circle"></i> <span>Más Información sobre precios y tiempos de entrega de Inside Books en la República Mexicana.</span></a></li>
             </ul>
 
             <div class="cantidad">
                 <p>Cantidad:</p>
                 <div class="number-input">
                     <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                        style="padding:1px 7px;">-</button>
-                    <input class="quantity" min="1" name="quantity" value="1" type="number">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+</button>
+                        style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
+                    <input class="quantity" min="1" name="quantity" value="1" type="number" readonly>
+                    <button style="padding:1px 7px" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i class="fas fa-plus-circle" ></i></button>
                 </div>
             </div>
 
@@ -238,7 +239,13 @@
                 </div>
 
                 <div class="calificacionComentario">
-                    <p class=calificacion>⭐⭐⭐⭐⭐</p>
+                    <p class=calificacion>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </p>
                     <p class="tituloComentario">La mejor compra de mi vida</p>
                 </div>
                 <p class="revision">Revisado en México el <span clas="fechaRevisionCompra">23 de abril</span> </p>
@@ -247,11 +254,11 @@
                     Voluptate saepe culpa illo aliquam minima consequuntur quos quae officia? Fugit doloremque fuga nemo
                     dolorum. Pariatur, veritatis!</p>
 
-                <div class="botonesDeComentarios">
-                    <button>👍🏻</button>
-                    <button>👎🏻</button>
-                    <button>🚩</button>
-                </div>
+                    <div class="botonesDeComentarios">
+                        <label for="like"><input class= "hidden" type="radio" name="like" value="like" id="like"><i class="far fa-thumbs-up"></i></label>
+                        <label for="dislike"><input  class= "hidden" type="radio" name="like" value="dislike" id="dislike"><i class="far fa-thumbs-down"></i></label>
+                        <label for="report"><input class= "hidden" type="checkbox" id="report"><i class="far fa-flag"></i></label>
+                    </div>
             </div>
 
 
@@ -262,7 +269,13 @@
                 </div>
 
                 <div class="calificacionComentario">
-                    <p class=calificacion>⭐⭐⭐⭐⭐</p>
+                    <p class=calificacion>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </p>
                     <p class="tituloComentario">La mejor compra de mi vida</p>
                 </div>
                 <p class="revision">Revisado en México el <span clas="fechaRevisionCompra">23 de abril</span> </p>
@@ -271,11 +284,11 @@
                     Voluptate saepe culpa illo aliquam minima consequuntur quos quae officia? Fugit doloremque fuga nemo
                     dolorum. Pariatur, veritatis!</p>
 
-                <div class="botonesDeComentarios">
-                    <button>👍🏻</button>
-                    <button>👎🏻</button>
-                    <button>🚩</button>
-                </div>
+                    <div class="botonesDeComentarios">
+                        <label for="like"><input class= "hidden" type="radio" name="like" value="like" id="like"><i class="far fa-thumbs-up"></i></label>
+                        <label for="dislike"><input  class= "hidden" type="radio" name="like" value="dislike" id="dislike"><i class="far fa-thumbs-down"></i></label>
+                        <label for="report"><input class= "hidden" type="checkbox" id="report"><i class="far fa-flag"></i></label>
+                    </div>
             </div>
 
             <div class="comentario">
@@ -285,7 +298,13 @@
                 </div>
 
                 <div class="calificacionComentario">
-                    <p class=calificacion>⭐⭐⭐⭐⭐</p>
+                    <p class=calificacion>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </p>
                     <p class="tituloComentario">La mejor compra de mi vida</p>
                 </div>
                 <p class="revision">Revisado en México el <span clas="fechaRevisionCompra">23 de abril</span> </p>
@@ -295,9 +314,9 @@
                     dolorum. Pariatur, veritatis!</p>
 
                 <div class="botonesDeComentarios">
-                    <button>👍🏻</button>
-                    <button>👎🏻</button>
-                    <button>🚩</button>
+                    <label for="like"><input class= "hidden" type="radio" name="like" value="like" id="like"><i class="far fa-thumbs-up"></i></label>
+                    <label for="dislike"><input  class= "hidden" type="radio" name="like" value="dislike" id="dislike"><i class="far fa-thumbs-down"></i></label>
+                    <label for="report"><input class= "hidden" type="checkbox" id="report"><i class="far fa-flag"></i></label>
                 </div>
             </div>
         </section>
