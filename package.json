@@ -1,0 +1,19 @@
+{
+  "name": "grupo_1_ebooks",
+  "version": "1.0.0",
+  "description": "Diseño del sitio web \"Inside Book\" del curso \"Desarrollador web full stack de Digital House\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaimeMenendez/grupo_1_ebooks.git"
+  },
+  "author": "Roxana Ramos Carpinteyro, Tatiana Mileydy Leal del Rio y Jaime Menendez Alvarez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaimeMenendez/grupo_1_ebooks/issues"
+  },
+  "homepage": "https://github.com/JaimeMenendez/grupo_1_ebooks#readme"
+}
