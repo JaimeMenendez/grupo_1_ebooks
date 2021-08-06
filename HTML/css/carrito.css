@@ -1,0 +1,114 @@
+@import "./logoStyle.css";
+@import "./navBar.css";
+@import "./footer.css";
+
+:root {
+  --blanco: white;
+  --navBarHeight: 50px;
+  --oscuro: #56575e; /*Text Color*/
+  --marginBottom:10px;
+  --borderRadius:5px;
+  --backgroundColor: #e2e1e0;
+  --backgroundSections:white;
+
+  /* Buttons */
+  --buttonHeight:35px;
+  --buttonBorderRadio: 2px;
+  --buttonFontColor:#ecf0f1;
+  --buttonColor:#EA4533;
+
+   /* List */
+  --fontListColor:#56575e;;
+  --fontIndexTitleColor: #56575e;
+
+  /* Price */
+  --priceColor:#EA4533;
+
+  /* Margin Between Containers */
+  --separation:5px;
+}
+
+.carritoTitle{
+  margin-top:70px;
+    text-align: center;
+}
+
+.shoppingCarTable{
+    
+    width: 95%;
+    margin: auto;
+    table-layout:fixed;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.imagenColumna{
+    width: 20%;
+}
+
+.detallesColumna{
+    width: 40%;
+}
+
+.cantidadColumna, .priceColumna{
+    width: 20%;
+}
+
+.shoppingCarTable td img{
+width:95%;
+max-width: 200px;
+}
+
+.shoppingCarTable td, .shoppingCarTable th{
+      padding:10px 0;
+      border-bottom: 1px solid #afafaf;
+      text-align: center;
+}
+
+.shoppingCarTable th, .finalRow{
+      border: 1px solid #afafaf;
+      padding: 5px;
+}
+
+
+.btn.red {
+    background-color: #e74c3c;
+  }
+  
+  .btn.red:hover, .btn.red:focus {
+    background-color: #c0392b;
+  }
+  
+  .btn {
+    font-weight: bold;
+    display: block;
+    margin: 10px auto;
+    padding: 0; 
+    border-width: 0;
+    outline: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    color: var(--buttonFontColor);
+    transition: background-color .3s;
+  }
+  
+  .btn.red {
+    background-color: var(--buttonColor);
+  }
+  
+  .btn.red:hover, .btn.red:focus {
+    background-color: #c0392b;
+  }
+
+.botones{
+    margin-top:35px
+}
+.agregarAlCarrito, .comprarAhora{
+    height: 40px;
+    width: 80%;
+    font-size: 18px;
+}
+
+.comprarAhora{
+    background-color: #2D2F8E;
+}
+
