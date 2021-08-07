@@ -37,6 +37,7 @@ nav{
    background-color: var(--white);
    display: flex;
    justify-content: space-between;
+   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
    position: fixed;
    top: 0;
    left: 0
@@ -82,24 +83,28 @@ form.searchBar input[type=text]{
   box-sizing: border-box;
   border: 2px solid var(--cafe);
   border-right: none;
-  border-radius: 0;
+  border-radius: 2px;
   background-color: var(--barra-navegacion);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   color: var(--cafe);
 }
 
 form.searchBar button{
   width: 10%;
-  min-width: 40px;
+  max-width: 40px;
   height: 100%;
   background-color: var(--cafe);
   border: 2px solid var(--cafe);
-  border-radius: 0px;
+  border-radius: 2px;
+  border-top-left-radius: 0px;
+  border-end-left-radius: 0px;
   color: white;
   cursor: pointer;
   box-shadow: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 form.searchBar button i{
@@ -259,9 +264,8 @@ form.searchBar::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 80vw;
     padding: 10px 1vw;
-    background-color: var(--amarillo-transp);
   }
   
 .conditions label {
@@ -426,5 +430,24 @@ footer {
     .conditions label {
         width: 40vw;
 
+    }
+}
+
+@media (min-width: 1200px){
+
+    .logoMainScreen{
+        padding-top: 70px;
+        position: fixed;
+        padding-left: 250px;
+        height: 100%;
+        top:var(--navBarHeight);
+    }
+
+    .logoScreen img{
+        width: 300px;
+    }
+
+    .logoContainer{
+        margin-left: 30px;
     }
 }
