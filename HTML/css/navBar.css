@@ -155,7 +155,7 @@ form.searchBar button:hover {
 }
 
 /* PC STYLES */
-@media (min-width: 980px) {
+@media (min-width: 1024px) {
     .menu-label {
         display: inline;
         font-size: 1em;

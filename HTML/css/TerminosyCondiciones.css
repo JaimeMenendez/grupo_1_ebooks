@@ -1,0 +1,99 @@
+@import "./logoStyle.css";
+@import "./navBar.css";
+@import "./footer.css";
+
+:root {
+  --blanco: white;
+  --navBarHeight: 50px;
+  --oscuro: #56575e; /*Text Color*/
+  --marginBottom:10px;
+  --borderRadius:5px;
+  --backgroundColor: #e2e1e0;
+  --backgroundSections:white;
+
+  /* Buttons */
+  --buttonHeight:35px;
+  --buttonBorderRadio: 2px;
+  --buttonFontColor:#ecf0f1;
+  --buttonColor:#EA4533;
+
+   /* List */
+  --fontListColor:#56575e;;
+  --fontIndexTitleColor: #56575e;
+
+  /* Price */
+  --priceColor:#EA4533;
+
+  /* Margin Between Containers */
+  --separation:5px;
+}
+
+
+/* --------MOBILE VERSION STYLE----------- */
+*{
+  box-sizing:content-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: var(--backgroundColor);
+  overflow-x: hidden;
+}
+
+main {
+    width:auto;
+    max-width: 1000px;
+    margin: auto;
+    text-align: left;
+    background-color: white;
+    padding:40px;
+    margin-top: 60px;
+}
+
+main h2{
+    text-align: center;
+}
+
+main p,main ul{
+    line-height: 20px;
+}
+
+.btn {
+    position: absolute;
+    bottom:0;
+    height: var(--buttonHeight);
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    margin: 10px auto;
+    padding: 0;
+  
+    overflow: hidden;
+  
+    border-width: 0;
+    outline: none;
+    border-radius: var(--buttonBorderRadio);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    color: var(--buttonFontColor);
+    transition: background-color .3s;
+  }
+  
+  .btn.red {
+    background-color: var(--buttonColor);
+  }
+  
+  .btn.red:hover, .btn.red:focus {
+    background-color: #c0392b;
+  }
+
+  .shine-me{
+      width: 80px;
+      height: 100px
+  }
+
+  .logoTerminos p{
+  text-align: center;
+  font-size:25px;
+  line-height: 24px;
+  letter-spacing:normal;
+}
