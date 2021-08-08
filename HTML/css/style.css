@@ -1,19 +1,16 @@
 /* font-family: 'Roboto', sans-serif;
 font-family: 'Russo One', sans-serif; */
 
+@import "./logoStyle.css";
+@import "./navBar.css";
 :root {
-  --amarillo-transp: #fbe18d59;
-  --amarillo-claro: #ffd300;
-  --amarillo-medio: #fcbf49;
-  --amarillo-fuerte: hsl(43, 84%, 59%);
-  --azul-gris: #4d5e68;
-  /*--azul-oscuro: #2c3b44;*/
-  --azul-oscuro: #202020;
   --blanco: white;
   --navBarHeight: 50px;
-  --crema:#fdf0d5;
   --sombra-boton: #999;
-  --animate-duration: 1s;
+  --oscuro: #56575e;
+  --buttonColor:#EA4533;
+  --buttonColorHover:#c0392b;
+  color:#c78c4d
 }
 
 /* --------MOBILE VERSION STYLE----------- */
@@ -21,55 +18,127 @@ font-family: 'Russo One', sans-serif; */
 body {
   overflow-x: hidden;
   font-family: "Roboto", sans-serif;
+  
 }
 
-/* Navegation Bar */
-nav {
-  width: 100%;
-  background: var(--azul-oscuro);
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  left:0;
-  height:var(--navBarHeight);
-  z-index:200;
+label, button, h1, h2, h3, h4, h5, h6, p {
+  color: var(--oscuro);
+  font-weight: 400;
 }
 
-/* Navegation bar Logo */
-.logoContainer {
-  display: flex;
-  margin: 1; 
-  align-items: center;
+input::placeholder{
+  color: var(--oscuro);
 }
 
-.logoContainer h2 {
-  margin: 0;
-  color: var(--crema);
-  font-family: "Russo One", sans-serif;
+/* ========================================================= */
+/*                     Button Style                          */
+/* ========================================================= */
+.btn.red {
+  background-color: var(--buttonColor);
 }
 
-.logoContainer h2 span {
-  color: var(--amarillo-claro);
+.btn.red:hover, .btn.red:focus {
+  background-color: var(--buttonColorHover);
 }
 
-.logo-img {
-  /* Icon Size Navegation Bar */
-  width: 40px;
-  height: 40px;
-  margin: 2px;
-  margin-left: 3px;
+.btn {
+  position: absolute;
+  bottom:0;
+  height: 35px;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  margin: 10px auto;
+  padding: 0;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  color: #ecf0f1;
+  
+  transition: background-color .3s;
 }
 
-.menu-label {
-  display: none;
+.btn:hover, .btn:focus {
+  background-color: #27ae60;
 }
 
-/* Banner Container*/
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  display: block;
+  width: 0;
+  padding-top: 0;
+    
+  border-radius: 100%;
+  
+  background-color: rgba(236, 240, 241, .3);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+  transition: width .2s ease-out, padding-top .2s ease-out;
+}
+
+.btn.red {
+  background-color: var(--buttonColor);
+}
+
+.btn.red:hover, .btn.red:focus {
+  background-color: var(--buttonColorHover);
+}
+.googleButton{
+  color: var(--oscuro);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.googleButton img {
+  height: 24px;
+}
+
+.googleButton:hover {
+  background-color: rgb(196, 181, 181);
+}
+
+/* Button Container Div */
+.button-div {
+  text-align: center;
+  margin: 15px 0;
+}
+
+/* ========================================================= */
+/*                       LINKS                               */
+/* ========================================================= */
+
+a {
+  color: var(--buttonColor);
+}
+
+/* ========================================================= */
+/*              Logo Container With Prompt                   */
+/* ========================================================= */
 
 .loginBannerContainer {
-  padding-bottom: 20px;
-  background: var(--azul-oscuro);
+  padding-top: 60px;
+  background: var(--blanco);
+  --animate-duration: 2s;
+  position:relative;
+  overflow: hidden;
+  z-index:2;
 }
 
 .logoPanel {
@@ -79,237 +148,94 @@ nav {
   padding-top: 10px;
 }
 
-.logoFont {
-  color: var(--crema);
-  font-family: "Russo One", sans-serif;
+.logo {
+  width: 200px;
+  height: 230px;
 }
 
-.yellow {
-  color: var(--amarillo-claro);
-}
 
-.logoPanel img {
-  width: 150px;
-  padding: 0 5px;
-  margin-top:var(--navBarHeight);
-}
 
-.logoPanel h2 {
+
+.logoText {
+  font-size: 60px;
   margin: 0;
-  color: var(--crema);
-  font-family: "Russo One", sans-serif;
-  font-size: 2.8em;
-  line-height: 0.9em;
-  padding-top: 50px;
-}
-
-.logoPanel h2 span {
-  color: var(--amarillo-claro);
-  margin-left: 20px;
-}
-
-.prompt {
-  background: var(--azul-oscuro);
+  font-family: "DIN Medium", sans-serif;
+  line-height: 50px;
+  padding-top: 2px;
+  letter-spacing: 2px;
 }
 
 .prompt h1 {
   margin: 0;
-  color: var(--blanco);
-
   text-align: center;
-  padding: 20px 20px 0 20px;
+  font-weight: normal;
+  padding-top: 20px;
 }
+
 .prompt h3 {
   margin: 0;
-  color: var(--blanco);
   text-align: center;
   padding-top: 10px;
-  padding-bottom: 10px;
 }
 
-.prompt h3 a {
-  color: var(--amarillo-claro);
-}
+/* ========================================================= */
+/*             FORM FOR LOGIN OR REGISTER                    */
+/* ========================================================= */
 
-
-form.searchBar {
-  height:30px;
-  width:40vw;
-  display:none;
-  }
-
-form.searchBar input[type=text] {
-  font-size: 17px;
-  border: 2px solid #f1f1f1;
-  width: 80%;
-  background: #f1f1f1;
-  
-}
-
-form.searchBar button {
-  width: 10%;
-  color: white;
-  font-size: 17px;
-  border-left: none;
-  cursor: pointer;
-  border-radius: 0;
-  box-shadow: none;
-  height:100%;
-  border: 1px solid var(--amarillo-claro);
-  min-width:40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height:0;
-}
-
-form.searchBar button i{
-  padding-top: 5px;
-}
-
-
-
-form.searchBar button:hover {
-  background: var(--azul-oscuro);
-}
-
-form.searchBar::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.bannerContainer{
-  margin-top: var(--navBarHeight);
-}
-.bannerContainer img{
-  width: 100%;
-}
-
-
-/* LOGIN FORM */
 .question {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   margin: 1.2em 0;
   font-weight: bold;
 }
 
-input{
-  height: 35px;
-}
-
 .question input {
-  border: 2px solid var(--azul-oscuro);
+  border: 1px solid var(--oscuro);
   border-style: solid;
   border-radius: 5px;
   width: 80vw;
-  margin: 0.2em 0;
+  margin: 0.2rem 0;
+  max-width: 450px;
+  height: 35px;
+ 
+}
+
+/* Checkboxes */
+.conditions {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.condition {
+  width: 80%;
+  text-align: start;
+  margin-bottom: 10px;
   max-width: 450px;
 }
 
-.question p {
-  font-size: 12px;
-}
-
-
-label {
-  color: var(--azul-oscuro);
-  text-align: left;
-}
-
-.conditions {
-  width: 80vw;
-  margin: 0 9vw;
-  padding: 10px 1vw;
-  background-color: var(--amarillo-transp);
-  display: flex;
-  flex-direction: column;
-}
-
-.conditions label a {
-  color: var(--amarillo-fuerte);
-}
-
-.condition input{
+.condition input {
   position: relative;
   vertical-align: middle;
   bottom: 1px;
-  width: 18px;
-
+  width: 19px;
+  height:19px;
+  margin-right: 5px;
 }
 
-.showPassword {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
-.menuButton a{
-  text-decoration: none;
-  color: white;
-  padding-left: 5px;
-}
-
-a img {
-  width: 30px;
-  height: 30px;
-  padding: 0 5px;
-}
-
-a i {
-  font-size:25px;
-  text-decoration: none;
-  padding-top: 5px;
-}
-
-a{
-  transition: 0.1s !important;
-}
-
-a:hover {
-  color: var(--amarillo-claro) !important;
-  transform: scale(1.1) !important;
-}
-
-button:hover{
-  background-color: var(--amarillo-fuerte);
-}
-
-.menuButton {
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-
-}
-
-button {
-  width: 80vw;
-  min-height: 2.5em;
-  font-size: 1.1em;
-  border-radius: 5px;
-  background: var(--amarillo-medio);
-  box-shadow: 0 2px 3px;
-  max-width: 450px;
-  transition: 0.1s;
-  font-weight: 600;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  border-radius: 4px;
-  box-shadow: 3px 5px var(--sombra-boton);
-}
+/* Separator for Account and Google Buttons */
 .center-separator {
   display: flex;
-line-height: 1em;
-color: gray;
-width: 80vw;
-max-width: 450px;
-margin: auto;
-
+  line-height: 1em;
+  color: var(--oscuro);
+  width: 80vw;
+  max-width: 450px;
+  margin: auto;
 }
 
 .center-separator::before, .center-separator::after {
@@ -317,166 +243,179 @@ margin: auto;
   display: inline-block;
   flex-grow: 1;
   margin-top: 0.5em;
-  background: gray;
+  background: var(--oscuro);
   height: 1px;
   margin-right: 10px;
   margin-left: 10px;
 }
 
-.googleButton{
-  background-color:#f1f1f1;
-  margin:auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.googleButton img{
-  height: 24px;
-}
-
-.button-div {
+/* Password EYE */
+.showPassword {
   text-align: center;
-  margin: 30px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .showPassword label {
   padding-top: 2px;
   padding-left: 4px;
-  color: var(--azul-oscuro);
+  color: var(--oscuro);
+}
+
+#passwordEye,#confirmPasswordEye{
+  color: var(--oscuro);
+}
+
+.showPassword label i{
+  color: var(--oscuro);
 }
 
 .showPassword input {
   width: 20px;
-
 }
 
-footer {
-  width: 100vw;
-  background: var(--azul-oscuro);
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-/* HOME */
-.homeContent{
-  display: flex;
-}
-aside{
-  width:25%;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-}
-
-.materia{
-  width: 50%;
-  text-align: center;
-}
-.materia img{
-  width: 50%;
-}
-
-.bookSectionContainer h2{
-  padding-left: 20px;
-}
-
-
-.bookSection{
-  display: flex;
-  flex-wrap: wrap;  
-}
-
-.book{
-  width: 200px;
-  margin:20px;
-}
-
-.book button{
-  width:100%;
-}
-
-.book img{
-  width: 100%;
-}
-
-.passwordDiv{
+.passwordDiv {
   position: relative;
 }
-.passwordDiv span{
-position: absolute;
-right: 2%;
-top:25%;
-font-size: 21px;
+
+.passwordDiv span {
+  position: absolute;
+  right: 2%;
+  top: 25%;
+  font-size: 21px;
+}
+
+.loginForm button,.registrationInput button{
+  position:static;
+  width: 80%;
+  height: 50px;
+  max-width: 450px;
+  width: 80vw;
 }
 
 
+  .loginBannerContainer li{
+    animation: subir infinite;
+    animation-fill-mode: forwards;
+    bottom: -120%;
+    position:absolute;
+  
+  }
+  
+ 
+  .triangle{
+    --color:#EA4533;
+    --ancho:50px;
+    --largo:50px;
+    width: 0; 
+    height: 0; 
+    border-left: 0px solid transparent;
+    border-right: var(--ancho) solid transparent;
+    border-bottom: var(--largo) solid var(--color); 
 
-/* TABLET */
+  }
+  
+  .circle{
+    --ancho:50px;
+    --largo:50px; 
+    --color:#F4AE62;
+    width: var(--largo);
+    height:var(--largo);
+    border-radius:50%;
+    background:var(--color);
+  }
+
+
+  .rectangle{
+    --ancho:50px;
+    --largo:50px; 
+    --color:#F4AE62;
+    width: var(--largo);
+    height:var(--ancho);
+    background:var(--color);
+  }
+
+  @keyframes subir{
+      from{bottom: -20%;}
+      to{bottom:120%;}
+  }
+
+
+
+/* ========================================================= */
+/*                       TABLET                              */
+/* ========================================================= */
+
 @media (min-width: 600px) {
 
-
-
-  .menuButton a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    font-family: "Russo One", sans-serif;
-   
+  /* Left Banner Logo */
+  .logo {
+    width: 280px;
+    height: 300px;
   }
-
-  form.searchBar {
-    display:flex;
+  .logoText {
+    font-size: 80px;
+    margin: 0;
+    font-family: "DIN Medium", sans-serif;
+    line-height: 68px;
+    padding-top: 2px;
+    letter-spacing: 5px;
   }
-
-  form.searchBar input {
-    margin-left: 20px;
-    height: auto;
-  }
-
-
-
 }
 
-/* PC STYLES */
-@media (min-width: 980px) {
-  .logoContainer{
-    margin-left: 20px;
-  }
-
-  .menu-label {
-    display: inline;
-    font-size: 1em;
+/* ========================================================= */
+/*                           PC                              */
+/* ========================================================= */
+@media (min-width: 1024px) {
+  .condition {
+    width: 70%;
   }
   .main-container {
     display: flex;
-    height: 100%;
-    min-height: 100vh;
+    align-items: center;
+    height: 100vh;
   }
-
+  
   .main-container section {
     width: 50%;
   }
 
-  .loginBannerContainer {
-    padding-top: 100px;
+  .loginBannerContainer{
+    margin:0;
+    padding:0;
+    width:50%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    z-index: 3;
   }
+
 
   .question {
     width: 100%;
+    display: flex;
+    margin: 0;
+  }
+
+  .registrationInput .question label{
+    display:none;
+  }
+
+  .loginForm .question{
+    margin-bottom: 10px;
   }
 
   .loginForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left:50%;
+    margin-left: 50%;
+    height: 100%;
+    
     text-align: center;
   }
-
 
 
   .showPassword label {
@@ -484,87 +423,47 @@ font-size: 21px;
     padding-left: 6px;
     color: var(--azul-oscuro);
   }
-
   .showPassword input {
     width: 20px;
     vertical-align: bottom;
   }
-
-  nav {
-    height: var(--navBarHeight);
+  .registrationInput {
+    padding-top: 60px;
+    margin-left: 50%;
   }
 
-  .conditions{
-    width: 80%;
-    margin-left:10%;
-  }
-
-  .conditions label {
-    width: 95%;
+  .logo .bloqueAzul:hover{
+    background: #9196ff;
+    transform: scale(1.05);
   }
   
-  .conditions label a {
-    color: var(--amarillo-fuerte);
+  .logo .bloqueVerde:hover{
+    background: #5ed0d6;
+    transform: scale(1.05);
   }
-
-  .registrationInput{
-    padding-top: 60px;
-    margin-left:50%;
-
-
+  
+  .logo .bloqueNaranja:hover{
+    background: #ffc485;
+    transform: rotate(-15deg) scale(1.05);
   }
-
-  .menuButton {
-    margin-right: 20px;
+  
+  .logo .bloqueRojo:hover{
+    background: #ff7363;
+    transform: scale(1.05) ;
   }
-
-  .menuButton a{
-    padding-left:20px;
-  }
-
-  .prompt {
-  background: var(--azul-oscuro);
-}
-
-.loginBannerContainer{
-  position:fixed;
-  top:var(--navBarHeight);
-  height:100%;
-}
 
 }
 
 /* Samsung Dodge */
 @media (max-width: 315px) {
-  .logoContainer h2 {
-    font-size: 1em;
-  }
-
-  .logoPanel img {
-    width: 100px;
-    padding: 0 5px;
-  }
-
-  .logoPanel h2 {
-    margin: 0;
-    color: var(--blanco);
-    font-family: "Russo One", sans-serif;
-    font-size: 2em;
-  }
-
   .prompt h1 {
     font-size: 1.2em;
+    font-weight: normal;
   }
   .prompt h3 {
     font-size: 1em;
   }
-.menuButton{
-  margin-right: 5 px;
-}
-
-button{
-  font-size: 14px;
-}
-
-  
+  button {
+    font-size: 14px;
+  }
 }
