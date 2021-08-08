@@ -11,5 +11,5 @@ Puede obtener un adelanto de su implementación en:
 - [Términos y Condiciones](https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/TerminosyCondiciones.html)
 - [Política de Privacidad](https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/PoliticaDePrivacidad.html)
 - [Logo con fondo animado](https://codepen.io/jaimemenendez/pen/NWjErOr)
-- [Logo con fondo animado (from Github)](https://jaimemenendez.github.io/HTML/logoBackgroundAnimated.html)
+- [Logo con fondo animado from Github](https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/logoBackgroundAnimated.html)
 
