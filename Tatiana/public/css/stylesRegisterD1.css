@@ -43,11 +43,10 @@ nav{
    display: flex;
    align-items: center;
    /*Define el margen de los 4 lados*/
-  margin-left: 20px;
 }
 
 .logoContainer h3 {
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: var(--crema);
     font-family: 'Russo One', sans-serif;
 }
@@ -380,12 +379,24 @@ form.searchBar::after {
     form.searchBar {
         display: flex;
     }  
+
+    .logoContainer{
+        margin-left: 20px;
+    }
 }
 
 @media (min-width: 980px) {
 
     form.searchBar {
         display: flex;
+    }
+
+    .logoContainer{
+        margin-left: 5%;
+    }
+
+    .logoContainer h3{
+        font-size: 1.5em;
     }
 
     .menuButtons i{
@@ -414,12 +425,11 @@ form.searchBar::after {
     }
 
     div.logoScreen{
-        margin-top: 250px;
+        margin-top: 20%;
     }
 
     section.login{
         width: 50%;
-        position: fixed;
         margin-left: 50%;
         margin-top: 50px;
     }
