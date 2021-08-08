@@ -5,6 +5,7 @@
     --amarillo-fuerte: hsl(43, 84%, 59%);
     --azul-gris: #4d5e68;
     --azul-gris-oscuro: #202020;
+    --azul-oscuro: #14213D;
     --login-screen: #242423;
     --barra-navegacion: #f1f1f1;
     --boton-google: #dcdcdd;
@@ -16,6 +17,8 @@
 
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /************Mobile Design First*************/
@@ -23,6 +26,31 @@ body {
 /*Muestra solo el contenido que cabe en la caja*/
    overflow-x: hidden;
    font-family: 'Roboto', sans-serif;
+   background: radial-gradient(#fdf0d5,#202020);
+}
+
+h3{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+p{
+    font-size: 12px;
+}
+
+.price{
+    font-size: 18px;
+    font-family: 'Russo One', sans-serif;
+    text-align: left;
+    font-weight: 700;
+    color: var(--azul-gris-oscuro);
+}
+
+.name{
+    font-size: 16px;
+    font-weight: 70;
+    text-align: left;
+    color: --azul-oscuro;
 }
 
 /*Navegation Bar*/
@@ -43,11 +71,10 @@ nav{
    display: flex;
    align-items: center;
    /*Define el margen de los 4 lados*/
-  margin-left: 20px;
 }
 
 .logoContainer h3 {
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: var(--crema);
     font-family: 'Russo One', sans-serif;
 }
@@ -127,7 +154,7 @@ form.searchBar::after {
 .menuButtons i{
     align-content: center;
     text-decoration: none;
-    color: var(--amarillo-transp);
+    color: var(--crema);
     margin-right: 3px;
 }
 
@@ -146,3 +173,153 @@ form.searchBar::after {
     color: #fff !important;
     transform: scale(1.2) !important;
  }
+
+ /***************** NAV SEARCH BAR MOBILE ***************************/
+ section.searchBar-mobile{
+     width: 100vw;
+     height: 120px;
+     margin-top: 60px;
+     background: radial-gradient(black,#202020);
+     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+ }
+
+ section.searchBar-mobile label{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 40px;
+    font-size: 1em;
+    font-weight: 700;
+    color: #f1f1f1;
+ }
+
+ form.sbMobile{
+     margin-top: 10px;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+ }
+
+ form.sbMobile input[type=text]{
+    font-size: 14px;
+    border: 2px solid #f1f1f1;
+    width: 70%;
+    min-width: 190px;
+    background: var(--crema);
+ }
+
+ form.sbMobile button{
+    width: 10%;
+    min-width: 40px;
+    background-color: var(--amarillo-claro);
+    border: 2px solid var(--amarillo-claro);
+    border-top-left-radius: 0px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+form.sbMobile i{
+   color: #fff;
+}
+
+form.sbMobile button:hover {
+    /*:hover selector cambia el estilo de boton cuando se pasa el mouse sobre él*/
+    background: var(--amarillo-transp);
+}
+   
+form.sbMobile::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*Diseño del banner promocional*/
+section.banner img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100vw;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+/****************** MAIN SECTION ************************/
+main{
+    width: 80vw;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+main section.moreSearching, section.moreSelling{
+    background-color: white;
+}
+
+main section{
+    width: 100%;
+    display: inline-block;
+    background: radial-gradient(#fdf0d5, var(--amarillo-transp));
+}
+
+main section h3{
+    width: 97%;
+    background-color: white;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    font-size: 1.1em;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
+}
+
+main div.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+main article{
+    display: block;
+    width: 45%;
+    text-align: center;
+    margin: 15px 0;
+}
+
+main article img{
+    width: 100%;
+}
+
+main article div.main-article{
+    width: 100%;
+    padding: 15px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
+}
+
+main article p.name{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+main article form{
+    margin-top: 10px;
+}
+
+main article div.main-article button{
+    width: 100%;
+    height: 33px;
+    font-size: 0.8em;
+    font-weight: 700;
+    box-sizing: border-box;
+    border: 2px solid var(--amarillo-fuerte);
+    border-radius: 2px;
+    background-color: var(--amarillo-fuerte);
+    color: var(--azul-gris-oscuro);
+    cursor: pointer;
+    box-shadow: 3px 5px var(--sombra-boton);
+}
+
+main article div.main-article button:hover{
+    background: #6c584c;
+}
+

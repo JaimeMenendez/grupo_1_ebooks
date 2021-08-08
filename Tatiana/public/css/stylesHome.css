@@ -53,6 +53,9 @@ p{
     font-size: 16px;
     font-weight: 700;
     text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     color: var(--azul-oscuro);
 }
 
@@ -266,7 +269,7 @@ main section.moreSearching{
 }
 main section{
     width: 100%;
-    display: inline-block;[Solucionado] css | Limitar la longitud del texto a n líneasr;
+    display: inline-block;
 }
 
 main section h3{
@@ -295,9 +298,6 @@ main article img{
 
 main article div.main-article{
     width: 100%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
     padding: 15px;
     margin: 10px 0;
     border-top: 1px solid var(--cafe);
