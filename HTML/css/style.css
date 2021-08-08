@@ -136,6 +136,9 @@ a {
   padding-top: 60px;
   background: var(--blanco);
   --animate-duration: 2s;
+  position:relative;
+  overflow: hidden;
+  z-index:2;
 }
 
 .logoPanel {
@@ -291,6 +294,52 @@ a {
 }
 
 
+  .loginBannerContainer li{
+    animation: subir infinite;
+    animation-fill-mode: forwards;
+    bottom: -120%;
+    position:absolute;
+  
+  }
+  
+ 
+  .triangle{
+    --color:#EA4533;
+    --ancho:50px;
+    --largo:50px;
+    width: 0; 
+    height: 0; 
+    border-left: 0px solid transparent;
+    border-right: var(--ancho) solid transparent;
+    border-bottom: var(--largo) solid var(--color); 
+
+  }
+  
+  .circle{
+    --ancho:50px;
+    --largo:50px; 
+    --color:#F4AE62;
+    width: var(--largo);
+    height:var(--largo);
+    border-radius:50%;
+    background:var(--color);
+  }
+
+
+  .rectangle{
+    --ancho:50px;
+    --largo:50px; 
+    --color:#F4AE62;
+    width: var(--largo);
+    height:var(--ancho);
+    background:var(--color);
+  }
+
+  @keyframes subir{
+      from{bottom: -20%;}
+      to{bottom:120%;}
+  }
+
 
 
 /* ========================================================= */
@@ -339,6 +388,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    z-index: 3;
   }
 
 
