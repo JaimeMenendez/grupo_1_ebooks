@@ -127,7 +127,7 @@ form.searchBar::after {
 .menuButtons i{
     align-content: center;
     text-decoration: none;
-    color: var(--amarillo-transp);
+    color: var(--crema);
     margin-right: 3px;
 }
 
@@ -388,6 +388,10 @@ form.searchBar::after {
         display: flex;
     }
 
+    .menuButtons i{
+        color: var(--amarillo-transp);
+    }
+
     .menuButtons a span {
         text-align: center;
         display: inline;
@@ -404,19 +408,24 @@ form.searchBar::after {
     section.logoMainScreen{
         width: 50%;
         height: 100%;
+        position: fixed;
+        margin-right: 50%;
+        margin-top: 100px;
     }
 
     div.logoScreen{
-        margin-top: 150px;
+        margin-top: 250px;
     }
 
     section.login{
         width: 50%;
-        margin-top: 40px;
+        position: fixed;
+        margin-left: 50%;
+        margin-top: 50px;
     }
-    
+
     .question label{
-        display: none;
+        display: inline;
     }
 
     .conditions {
