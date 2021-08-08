@@ -28,18 +28,26 @@
   --separation:5px;
 }
 
+body {
+  font-family: "Roboto", sans-serif;}
+
 .carritoTitle{
   margin-top:70px;
     text-align: center;
+    color:#2D2F8E;
+    font-weight: bold;
+    font-size:30px;
 }
 
+
 .shoppingCarTable{
-    
     width: 95%;
+    max-width: 700px;
     margin: auto;
     table-layout:fixed;
     text-align: center;
     border-collapse: collapse;
+    font-size: 12px;
 }
 
 .imagenColumna{
@@ -68,8 +76,10 @@ max-width: 200px;
 .shoppingCarTable th, .finalRow{
       border: 1px solid #afafaf;
       padding: 5px;
+      background:#2d2f8ef5;
+      color:white;
+      box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
 }
-
 
 .btn.red {
     background-color: #e74c3c;
@@ -89,12 +99,21 @@ max-width: 200px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
     color: var(--buttonFontColor);
     transition: background-color .3s;
+    width: 80%;
   }
   
   .btn.red {
     background-color: var(--buttonColor);
   }
-  
+
+  .btn.blue {
+    background-color: #2D2F8E;
+  }
+
+  .btn.green {
+    background-color: #44979c;
+  }
+
   .btn.red:hover, .btn.red:focus {
     background-color: #c0392b;
   }
@@ -106,9 +125,228 @@ max-width: 200px;
     height: 40px;
     width: 80%;
     font-size: 18px;
+    max-width: 600px;
 }
 
 .comprarAhora{
     background-color: #2D2F8E;
 }
 
+/* ========================================================= */
+/*                 Cantidad   y Precio                       */
+/* ========================================================= */ 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+}
+
+.number-input{
+    display: inline;
+}
+.number-input input{
+    border:0;
+    text-align: center;
+    width: 15px;
+    font-size: 16px;
+    background: transparent;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+.number-input button{
+    font-size: 24px;
+    color:#2D2F8E;
+    border:none;
+    background: transparent;
+}
+
+.number-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.precio i{
+  color:#e74c3c;
+  font-size: 20px;
+}
+
+/* ========================================================= */
+/*                Botones de las Sugerencias                 */
+/* ========================================================= */ 
+
+.hidden {visibility: hidden; display: none;} 
+#fav1:checked + label i.fas,#fav2:checked + label i.fas,#fav3:checked + label i.fas,#fav4:checked + label i.fas,#fav5:checked + label i.fas,#fav6:checked + label i.fas{
+  display:inline;
+}
+
+#fav1:checked + label i.far, #fav2:checked + label i.far, #fav3:checked + label i.far, #fav4:checked + label i.far, #fav5:checked + label i.far, #fav6:checked + label i.far{
+  display:none;
+}
+
+label i.fas{
+  display: none;
+}
+
+
+/* ========================================================= */
+/*                Sugerencias Formato                    */
+/* ========================================================= */ 
+.booksSection .sectionTitle{
+  text-align: left;
+  margin: 0 30px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+
+.books{
+  display:flex;
+  justify-content:space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin:auto;
+}
+
+.book {
+  text-align: center;
+  background:var(--backgroundSections);
+  display: inline-block;
+  position: relative;
+  width: 150px;
+  margin: 10px; 
+  transition: all 0.2s cubic-bezier(.25,.8,.25,1);
+  padding-bottom:65px; /*Required for button and price tag */
+
+}
+
+.book img{
+  width: 150px;
+  height: 180px;
+}
+
+.bookPrice, .bookAuthor, .bookTitle{
+  margin:0;
+}
+
+.bookPrice{
+  color:var(--priceColor);
+  font-weight: bold;
+  font-size:18px;
+  margin-top: 5px;
+  position: absolute;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.bookTitle{
+  font-weight:500;
+  font-size:16px;
+  margin: 2px 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.bookAuthor{
+  font-size:14px;
+  color:black;
+  margin: 2px 0;
+  text-align: center;
+  font-weight: 300;
+}
+
+
+
+
+
+
+.botonesLibro .red{
+  width: 60%;
+  box-shadow: none;
+  padding: 0;
+  margin:0;
+  height:35px;
+}
+
+.botonesLibro .blue,.botonesLibro .green{
+  width: 20%;
+  height:30px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  box-shadow: none;
+  padding: 0;
+  margin:0;
+  height:35px;
+}
+
+.botonesLibro .blue{
+  border-left-color:#e74c3c ;
+}
+
+.botonesLibro{
+  display:flex;
+  justify-content: center;
+  position: absolute;
+  bottom:0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+}
+
+
+
+
+@media(min-width:468px) {
+  .shoppingCarTable{
+    font-size: 16px;
+}
+
+
+  .number-input{
+    flex-direction: row;
+    justify-content: center;
+  }  
+
+  .book img{
+    width: 200px;
+    height: 250px;
+  }
+
+  .book {
+    width: 200px;
+  }
+}
+
+
+@media(min-width:768px) {
+  .books {
+    max-width: 800px;
+  }
+}
+
+
+@media(min-width:1100px) {
+  .book img{
+    width: 150px;
+    height: 180px;
+  }
+
+  .book {
+    width: 150px;
+  }
+
+  .books {
+    max-width: 95%;
+  }
+}
