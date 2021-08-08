@@ -2,20 +2,15 @@
     --amarillo-transp: #fbe18d59;
     --amarillo-claro: #ffd300;
     --amarillo-medio: #fcbf49;
+    --amarillo-fuerte: hsl(43, 84%, 59%);
     --azul-gris: #4d5e68;
-    --azul-oscuro: #202020;
+    --azul-gris-oscuro: #202020;
     --login-screen: #242423;
     --barra-navegacion: #f1f1f1;
     --boton-google: #dcdcdd;
     --sombra-boton: #999;
     --blanco: white;
-    --cafe: #5e454b;
     --crema:#fdf0d5;
-    --crema-claro: #f3f0d7;
-    --cafe-crema:#d8b384;
-    --verde-oscuro: #4a7c59;
-    --verde-crema-oscuro: #8EB290;
-    --verde-crema-claro: #cee5d0;
     --navBarHeight: 50px;
 }
 
@@ -27,14 +22,14 @@
 body {
 /*Muestra solo el contenido que cabe en la caja*/
    overflow-x: hidden;
-   font-family: adobe-caslon-pro, serif; 
+   font-family: 'Roboto', sans-serif;
 }
 
 /*Navegation Bar*/
 nav{
    width: 100%;
    height: var(--navBarHeight);
-   background-color: #fff;
+   background-color: var(--azul-gris-oscuro);
    display: flex;
    justify-content: space-between;
    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -53,12 +48,12 @@ nav{
 
 .logoContainer h3 {
     font-size: 1.3em;
-    color: var(--verde-oscuro);
-    font-family: 'Bodoni Moda', serif;
+    color: var(--crema);
+    font-family: 'Russo One', sans-serif;
 }
 
 .logoContainer h3 span {
-    color: var(--cafe);
+    color: var(--amarillo-claro);
 }
 
 .logoSize-img {
@@ -72,30 +67,25 @@ nav{
 
 form.searchBar {
     /*Es una medida 1/100 tamaño región visible del navegador*/
-    width: 40vw;
+    width: 30vw;
     height: 30px;
     display: none;
 }
 
-form.searchBar input[type=text]{
-  width: 90%;
-  height: 100%;
-  box-sizing: border-box;
-  border: 2px solid var(--cafe);
-  border-right: none;
-  border-radius: 2px;
-  background-color: var(--barra-navegacion);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  color: var(--cafe);
+form.searchBar input{
+  font-size: 17px;
+  border: 2px solid #f1f1f1;
+  width: 80%;
+  min-width: 190px;
+  background: #f1f1f1;
 }
 
 form.searchBar button{
   width: 10%;
-  max-width: 40px;
+  min-width: 40px;
   height: 100%;
-  background-color: var(--cafe);
-  border: 2px solid var(--cafe);
-  border-radius: 2px;
+  background-color: var(--amarillo-claro);
+  border: 2px solid var(--amarillo-claro);
   border-top-left-radius: 0px;
   color: white;
   cursor: pointer;
@@ -104,7 +94,7 @@ form.searchBar button{
 
 form.searchBar button:hover {
  /*:hover selector cambia el estilo de boton cuando se pasa el mouse sobre él*/
- background: var(--cafe-crema);
+ background: var(--amarillo-transp);
 }
 
 form.searchBar::after {
@@ -117,7 +107,7 @@ form.searchBar::after {
 .menuButtons { 
     display: flex;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 22px;
     margin-top: 5px;
     cursor: pointer;
 }
@@ -126,93 +116,110 @@ form.searchBar::after {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: var(--cafe);
-    font-family: 'Bodoni Moda', serif; 
+    justify-content: space-between;
+    color: #fff;
+    font-family: 'Russo One', sans-serif;
     font-weight: 700;
-    font-size: 1.5em;
-    margin-left: 5px;
-    margin-right: 10px;
+    font-size: 1.3em;
+    margin-left: 10px;
 }
 
 .menuButtons i{
     align-content: center;
     text-decoration: none;
-    color: var(--verde-crema-oscuro);
+    color: var(--amarillo-transp);
     margin-right: 3px;
 }
-
 
 .menuButtons a span {
     text-align: center;
     display: none;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
 }
 
 .menuButtons a:hover{
-    color: var(--cafe-crema) !important;
+    color: #fff !important;
+    transform: scale(1.2) !important;
+ }
+
+ .menuButtons a:hover i{
+    color: #fff !important;
     transform: scale(1.2) !important;
  }
 
 /*************** First section ****************/
+.mainScreen{
+    width: 100vw;
+}
+
 .logoMainScreen {
-    padding-top: 20px;
-    padding-bottom: 30px;
-    background: white;
-    margin-top: 60px;
+    padding-bottom: 20px;
+    background: var(--azul-gris-oscuro);
+    box-shadow: 0 10px 13px rgba(0,0,0,0.12), 0 5px 2px rgba(0,0,0,0.24);
 }
 
 /*Div first section*/
 .logoScreen{
+    margin-top: 50px;
+    padding-top: 30px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 10px;
 }
 
 .logoScreen img{
-    width: 200px;
+    width: 150px;
 }
 
 .logoScreen h2{
-    display: none;
-    font-size: 5em;
+    margin:0;
+    font-size: 2.8em;
     /*Separación de letras*/
-    line-height: 0.9em;
-    font-family: 'Bodoni Moda', serif;
-    color: var(--verde-oscuro);
+    line-height: 0.8em;
+    font-family: 'Russo One', sans-serif;
+    color: var(--crema);
     /*Distancias desde la parte superior*/
-    padding-top: 50px;
+    padding-top: px;
 }
 
 .logoScreen span{
-    display: none;
-    color: var(--cafe);
-    margin-left: 20px;
+    color: var(--amarillo-claro);
 }
 
  /*Second div Firts section*/
 
+ .welcomeLogin{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+ }
+
 .welcomeLogin h1{
-    margin: 0;
-    text-align: center;
-    color: var(--azul-oscuro);
-    padding: 20px 20px 0 20px;
+    margin:0;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 30px;
 }
 
 .welcomeLogin h3{
+    margin:0;
     font-size: 1.3em;
-    margin: 0;
-    color: var(--azul-oscuro);
-    text-align: center;
-    padding-top: 10px;
+    font-weight: 400;
+    color: #fff;
+    padding-bottom: 30px;
 }
 
 #welcome {
-    color: var(--verde-oscuro);
+    color: var(--amarillo-claro);
+    font-weight: 700;
 }
 
 /*************** Second section ****************/
 .login{
+    margin-top: 20px;
     padding-top: 10px;
     align-content: center;
 }
@@ -221,34 +228,34 @@ form.searchBar::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    justify-content: center;
     margin-top: 15px;
     width: 100%;
     font-size: 1em;
+    font-weight: 700;
 }
 
 .question input{
-    width: 80%;
+    width:80%;
     max-width: 450px;
     margin-top: 0.5em;
     box-sizing: border-box;
-    border: 1px solid var(--azul-oscuro);
+    border: 2px solid var(--login-screen);
     border-radius: 4px;
-    background-color: whitesmoke;
-    box-shadow: none;
+    background-color: white;
     line-height: 1.7em;
     color: var(--azul-oscuro);
     cursor:pointer;
 }
 
-
-
 .question label{
     font-weight: 500;
+    padding-bottom: 5px;
 }
 
 .question p{
     font-size: 0.8em;
+    font-weight: 400;
 }
 
 /*Checkbox de términos y condiciones*/
@@ -256,18 +263,19 @@ form.searchBar::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80vw;
+    width: 80%;
+    margin-left: 10%;
     padding: 10px 1vw;
   }
   
 .conditions label {
-    width: 75%;
+    width: 80vw;
     max-width: 450px;
-    margin-left: 10px;
 }
 
 .conditions a{
-    color: #4a7c59;
+    color: var(--amarillo-fuerte);
+    font-weight: 700;
 }
 
 .question label {
@@ -280,32 +288,27 @@ form.searchBar::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    margin-top: 25px;
+    margin-top: 10px;
     font-size: 1.2em;
     padding-top: 15px;
 }
 
 .buttonConfirm button{
-    width: 80vw;
+    width: 80%;
     max-width: 450px;
     font-weight: 600;
     line-height: 2.7em;
     cursor: pointer;
     outline: none;
-    background-color: var(--cafe);
+    background-color: var(--amarillo-fuerte);
+    color: --barra-navegacion;
     border: none;
     border-radius: 4px;
     box-shadow: 3px 5px var(--sombra-boton);
 }
 
-.buttonConfirm span{
-    color: white;
-}
-
 .buttonConfirm button:hover{
-    background-color: var(--cafe-crema);
-    color: var(--cafe);
+    background-color: var(--amarillo-claro);
 }
 
 /*Separador entre los botones*/
@@ -314,7 +317,7 @@ form.searchBar::after {
   display: flex;
   line-height: 1em;
   color: gray;
-  width: 80vw;
+  width: 80%;
   max-width: 450px;
   margin: auto;
 }
@@ -339,107 +342,91 @@ form.searchBar::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    font-size: 1.2em;
+    padding-top: 1px;
+    padding-bottom: 25px;
 }
+
 .buttonConfirmGoogle button{
-    width: 80vw;
+    width: 80%;
     max-width: 450px;
     font-weight: 600;
     line-height: 2.7em;
-    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     outline: none;
-    background-color: whitesmoke;
+    background-color: var(--crema);
     border: none;
     border-radius: 4px;
     box-shadow: 3px 5px var(--sombra-boton);
 }
 
+.buttonConfirmGoogle img{
+    width: 24px;
+    padding-right: 5px;
+}
+
+
 .buttonConfirmGoogle button:hover{
     background-color: var(--boton-google);
 }
-
-footer {
-    width: 100vw;
-    background: var(--azul-oscuro);
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
   
-
 /******************MEDIA QUERIES****************/
 
 /****Tablet****/
-@media (min-width: 600px) {
+@media (min-width: 600px){
+    form.searchBar {
+        display: flex;
+    }  
+}
+
+@media (min-width: 980px) {
 
     form.searchBar {
         display: flex;
     }
 
-    section.logoMainScreen{
-        margin-top: 60px;
-    }
-
-}
-
-/*****PC*****/
-@media (min-width: 980px) {
-    .menuButtons a span  {
+    .menuButtons a span {
+        text-align: center;
         display: inline;
-        font-size: 0.8em;
     }
 
-    .mainScreen{
+    div.mainScreen{
         display: flex;
-        height: 100%;
-        min-height: 100vh;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
     }
 
-    .mainScreen section{
+    section.logoMainScreen{
         width: 50%;
+        height: 100%;
+    }
+
+    div.logoScreen{
+        margin-top: 150px;
+    }
+
+    section.login{
+        width: 50%;
+        margin-top: 40px;
     }
     
-    .logoMainScreen{
-        padding-top: 100px;
-        position: fixed;
-        height: 100%;
-        top:var(--navBarHeight);
-    }
-
-    .login{
-        margin-left: 50%;
-        padding-top: 80px;
+    .question label{
+        display: none;
     }
 
     .conditions {
-        width: 40vw;
-        margin-left: 10%;
+        width: 80%;
         padding: 10px 1vw;
     }
 
     .conditions label {
-        width: 40vw;
+        width: 100%;
 
     }
-}
 
-@media (min-width: 1200px){
-
-    .logoMainScreen{
-        padding-top: 70px;
-        position: fixed;
-        padding-left: 250px;
-        height: 100%;
-        top:var(--navBarHeight);
-    }
-
-    .logoScreen img{
-        width: 300px;
-    }
-
-    .logoContainer{
-        margin-left: 30px;
-    }
 }
