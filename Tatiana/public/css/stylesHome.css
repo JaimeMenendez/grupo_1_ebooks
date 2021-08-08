@@ -45,15 +45,13 @@ p{
     font-size: 18px;
     font-family: 'Bodoni Moda', serif;
     text-align: left;
-    margin-left: 30px;
     font-weight: 700;
     color: #31572c;
 }
 
 .name{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
-    margin-left: 30px;
     text-align: left;
     color: var(--azul-oscuro);
 }
@@ -268,9 +266,7 @@ main section.moreSearching{
 }
 main section{
     width: 100%;
-    display: inline-block;
-    align-content: center;
-    justify-content: center;
+    display: inline-block;[Solucionado] css | Limitar la longitud del texto a n líneasr;
 }
 
 main section h3{
@@ -288,21 +284,20 @@ main div.products{
 
 main article{
     display: block;
-    width: 90%;
-    background-color: var(--crema-claro);
-    border: 1px solid var(--crema);
-    border-radius: 15px;
+    width: 45%;
     text-align: center;
     margin: 15px 0;
 }
 
 main article img{
-    margin-top: 15px;
-    width: 80%;
+    width: 100%;
 }
 
 main article div.main-article{
     width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     padding: 15px;
     margin: 10px 0;
     border-top: 1px solid var(--cafe);
