@@ -1,6 +1,16 @@
 /*Importa la letra*/
 @font-face {font-family: "DIN Medium"; 
            src: local('DINMedium.ttf') format("truetype"), url('https://jaimemenendez.github.io/grupo_1_ebooks/HTML/css/DINMedium.ttf') format("truetype");} 
+@font-face {font-family: "DIN";
+  src: url("http://db.onlinewebfonts.com/t/1bbe3460b053c4f1d67d1f1afecdaa76.eot"); /* IE9*/
+  src: url("http://db.onlinewebfonts.com/t/1bbe3460b053c4f1d67d1f1afecdaa76.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("http://db.onlinewebfonts.com/t/1bbe3460b053c4f1d67d1f1afecdaa76.woff2") format("woff2"), /* chrome firefox */
+  url("http://db.onlinewebfonts.com/t/1bbe3460b053c4f1d67d1f1afecdaa76.woff") format("woff"), /* chrome firefox */
+  url("http://db.onlinewebfonts.com/t/1bbe3460b053c4f1d67d1f1afecdaa76.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+  url("http://db.onlinewebfonts.com/t/1bbe3460b053c4f1d67d1f1afecdaa76.svg#DIN") format("svg"); /* iOS 4.1- */
+}
+
+
 body{
   text-align:center;
 }
@@ -12,6 +22,7 @@ body{
   position: relative;
   margin:auto;
   margin-top:10px;
+  z-index:100;
 }
 
 .rojo{color:#EA4533;}
@@ -21,7 +32,7 @@ body{
 .logoText{
   font-size:80px;
   margin:0;
-  font-family: "DIN Medium", sans-serif;
+  font-family: "DIN Medium","DIN", sans-serif;
   line-height:68px;
   padding-top:2px;
   letter-spacing: 5px;
@@ -34,7 +45,7 @@ body{
   height:80%;
   bottom:0;
   border-radius: 1ex;
-  opacity:90%;
+  opacity:var(--opacityBlue);
   box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
 }
 
@@ -49,7 +60,7 @@ body{
   position: absolute;
   bottom:0;
   left:24%;
-  opacity:90%;
+  opacity:var(--opacityGreen);
   border-radius: 1ex;
   box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
 }
@@ -63,7 +74,7 @@ body{
   left:47%;
   border-radius: 1ex;
   transform:rotate(-15deg);
-  opacity:80%;
+  opacity:var(--opacityOrange);
   box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
 }
 

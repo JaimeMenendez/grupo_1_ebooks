@@ -1,33 +1,89 @@
 /* font-family: 'Roboto', sans-serif;
 font-family: 'Russo One', sans-serif; */
-
+@import url("https://db.onlinewebfonts.com/c/1bbe3460b053c4f1d67d1f1afecdaa76?family=DIN");
 @import "./logoStyle.css";
 @import "./navBar.css";
 :root {
-  --blanco: white;
   --navBarHeight: 50px;
-  --sombra-boton: #999;
-  --oscuro: #56575e;
   --buttonColor:#EA4533;
   --buttonColorHover:#c0392b;
-  color:#c78c4d
+
+  --navBarHeight: 50px;
+  --buttonColor:#EA4533;
+  --buttonColorHover:#c0392b;
+  
+
+  --fontColors:#676768;
+  --fontColorButtons: #eaebf1; 
+
+  --googleButtonHover:rgb(134, 126, 126);
+  --googleFontColor: #1d1d1d;
+  --googleButtonBackground:rgb(233, 231, 231);
+
+
+
+  --sectionBackground: #ffffff;
+  --navBarBackground:rgb(255, 255, 255);
+  --searchBarColor: rgb(255, 255, 255);
+  --inputBackground:rgb(255, 255, 255);
+
+  --borderColor: #383737;
+  --opacityBlue:90%;
+  --opacityGreen:90%;
+  --opacityOrange:80%;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --navBarHeight: 50px;
+    --buttonColor:#EA4533;
+    --buttonColorHover:#c0392b;
+    
+  
+    --fontColors:#eaebf1;
+    --fontColorButtons: #eaebf1; 
+  
+    --googleButtonHover:rgb(134, 126, 126);
+    --googleFontColor: #eaebf1;
+    --googleButtonBackground:rgb(59, 57, 57);
+  
+  
+  
+    --sectionBackground: #121212;
+    --navBarBackground:rgb(41, 41, 41);
+    --searchBarColor: rgb(59, 57, 57);
+    --inputBackground:rgb(39, 37, 37);
+  
+    --borderColor: #383737;
+
+    --opacityBlue:100%;
+    --opacityGreen:100%;
+    --opacityOrange:100%;
+  } 
+}
+
+
+
+/* DarkMode */
+
+/* */
 
 /* --------MOBILE VERSION STYLE----------- */
 
 body {
   overflow-x: hidden;
   font-family: "Roboto", sans-serif;
+  background-color: var(--sectionBackground);
   
 }
 
 label, button, h1, h2, h3, h4, h5, h6, p {
-  color: var(--oscuro);
+  color: var(--fontColors);
   font-weight: 400;
 }
 
 input::placeholder{
-  color: var(--oscuro);
+  color: var(--fontColors);
 }
 
 /* ========================================================= */
@@ -57,39 +113,9 @@ input::placeholder{
   outline: none;
   border-radius: 2px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
-  color: #ecf0f1;
+  color: var(--fontColorButtons);
   
   transition: background-color .3s;
-}
-
-.btn:hover, .btn:focus {
-  background-color: #27ae60;
-}
-
-.btn:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  
-  display: block;
-  width: 0;
-  padding-top: 0;
-    
-  border-radius: 100%;
-  
-  background-color: rgba(236, 240, 241, .3);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-.btn:active:before {
-  width: 120%;
-  padding-top: 120%;
-  transition: width .2s ease-out, padding-top .2s ease-out;
 }
 
 .btn.red {
@@ -100,10 +126,11 @@ input::placeholder{
   background-color: var(--buttonColorHover);
 }
 .googleButton{
-  color: var(--oscuro);
+  color: var(--googleFontColor);
   display:flex;
   align-items:center;
   justify-content:center;
+  background-color: var(--googleButtonBackground);
 }
 
 .googleButton img {
@@ -111,7 +138,7 @@ input::placeholder{
 }
 
 .googleButton:hover {
-  background-color: rgb(196, 181, 181);
+  background-color: var(--googleButtonHover);
 }
 
 /* Button Container Div */
@@ -132,9 +159,11 @@ a {
 /*              Logo Container With Prompt                   */
 /* ========================================================= */
 
+.content-left{
+  z-index: 100;
+}
 .loginBannerContainer {
   padding-top: 60px;
-  background: var(--blanco);
   --animate-duration: 2s;
   position:relative;
   overflow: hidden;
@@ -159,7 +188,7 @@ a {
 .logoText {
   font-size: 60px;
   margin: 0;
-  font-family: "DIN Medium", sans-serif;
+  font-family: "DIN", sans-serif;
   line-height: 50px;
   padding-top: 2px;
   letter-spacing: 2px;
@@ -192,19 +221,20 @@ a {
 }
 
 .question input {
-  border: 1px solid var(--oscuro);
+  border: 1px solid var(--borderColor);
   border-style: solid;
   border-radius: 5px;
   width: 80vw;
   margin: 0.2rem 0;
   max-width: 450px;
   height: 35px;
+  background-color: var(--inputBackground);
  
 }
 
 /* Checkboxes */
 .conditions {
-  background-color: white;
+  background-color: var(--sectionBackground);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -232,7 +262,7 @@ a {
 .center-separator {
   display: flex;
   line-height: 1em;
-  color: var(--oscuro);
+  color: var(--fontColors);
   width: 80vw;
   max-width: 450px;
   margin: auto;
@@ -243,7 +273,7 @@ a {
   display: inline-block;
   flex-grow: 1;
   margin-top: 0.5em;
-  background: var(--oscuro);
+  background: var(--fontColors);
   height: 1px;
   margin-right: 10px;
   margin-left: 10px;
@@ -259,15 +289,15 @@ a {
 .showPassword label {
   padding-top: 2px;
   padding-left: 4px;
-  color: var(--oscuro);
+  color: var(--fontColors);
 }
 
 #passwordEye,#confirmPasswordEye{
-  color: var(--oscuro);
+  color: var(--fontColors);
 }
 
 .showPassword label i{
-  color: var(--oscuro);
+  color: var(--fontColors);
 }
 
 .showPassword input {
@@ -341,6 +371,8 @@ a {
   }
 
 
+ 
+
 
 /* ========================================================= */
 /*                       TABLET                              */
@@ -374,10 +406,12 @@ a {
     display: flex;
     align-items: center;
     height: 100vh;
+    background-color:var(--sectionBackground);
   }
   
   .main-container section {
     width: 50%;
+    
   }
 
   .loginBannerContainer{
@@ -421,7 +455,6 @@ a {
   .showPassword label {
     padding-top: 10px;
     padding-left: 6px;
-    color: var(--azul-oscuro);
   }
   .showPassword input {
     width: 20px;
