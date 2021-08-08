@@ -5,37 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Russo+One&display=swap"
-      rel="stylesheet"
-    />
-    <!--Bodoni font design3-->
+    <!--Russo One font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet"> 
 
-    <!--Adobe Caslon-->
-    <link rel="stylesheet" href="https://use.typekit.net/xmo5wvs.css">
+    <!--Roboto font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
 
     <!--Referencia on-line (no descargamos nada) para íconos de "Font Awesome"-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
           rel="stylesheet" />
 
     <link rel="stylesheet" href="css/normalize.min.css" />
-    <link rel="stylesheet" href="css/stylesTestMT3.css" />
+    <link rel="stylesheet" href="css/stylesRegisterD1.css" />
     <title>InsideBooks</title>
 </head>
 <body>
     <nav>
         <div class="logoContainer">
-            <img class="logoSize-img" src="images/logo3.png" alt="Logo InsideBooks" />
+            <img class="logoSize-img" src="images/Logo.png" alt="Logo InsideBooks" />
             <h3>Inside<span>Books</span></h3>
         </div>
 
         <form class="searchBar" action="/action_page.php" style="margin: auto">
-            <input type="text" id="search" name="search" placeholder="Buscar...">
+            <input type="text" id="search" name="search" placeholder="¿Qué estás buscando?">
             <button type="submit"><i><i class="fas fa-search"></i></i></button>
         </form>
         <div class="menuButtons">
@@ -49,8 +45,8 @@
 
         <section class="logoMainScreen">
             <div class="logoScreen">
-                <img src="images/logo_3.1.png" alt="logo">
-                <h2>Inside<br><span> Books</span></h2>
+                <img src="images/Logo.png" alt="logo">
+                <h2>Inside<span>Books</span></h2>
             </div>
 
             <div class="welcomeLogin">
@@ -62,32 +58,32 @@
         <section class="login">
             <form class="position" action="/action_page.php">
                 <div class="question">
-                    <label for="">*¿Cuál es tú nombre?</label>
-                    <input type="email" placeholder=" Nombre(s)" required>
+                    <label for="">¿Cuál es tú nombre?</label>
+                    <input type="email" placeholder="  *Nombre(s)" required>
                 </div>
 
                 <div class="question">
-                    <label for="">*¿Cuál es tu apellido?</label>
-                    <input type="email" placeholder=" Apellidos(s)" required>
+                    <label for="">¿Cuál es tu apellido?</label>
+                    <input type="email" placeholder="  *Apellidos(s)" required>
                 </div>
 
                 <div class="question">
-                    <label for="">*¿Cuál es tu correo electrónico?</label>
-                    <input type="email" placeholder=" nombre@example.com" required>
+                    <label for="">¿Cuál es tu correo electrónico?</label>
+                    <input type="email" placeholder="  *nombre@example.com" required>
                 </div>
 
                 <div class="question">
                     <label for="">*Crea una contraseña</label>
                     <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                     title="La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres"
-                    placeholder=" Contraseña"  required>
+                    placeholder="  Contraseña"  required>
                 </div>
 
                 <div class="question">
-                    <label for="">*Confirma tu contraseña</label>
+                    <label for="">Confirma tu contraseña</label>
                     <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                     title="La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres"
-                    placeholder=" Contraseña"  required>
+                    placeholder="  *Contraseña"  required>
                 </div>
 
                 <div class="question">
@@ -100,13 +96,16 @@
                 </div>
 
                 <div class="buttonConfirm">
-                    <button type="submit"><span class="create">Crear una cuenta</span></button>
+                    <button type="submit">Crear una cuenta</button>
                 </div>
 
                 <div class="center-separator"><p>o</p></div>
 
                 <div class="buttonConfirmGoogle">
-                    <button type="submit">Registrarse con Google</button>
+                    <button type="submit">
+                        <img src="images/google.svg" alt="Google">
+                        Registrarse con Google
+                    </button>
                 </div>
             </form>
         </section>
