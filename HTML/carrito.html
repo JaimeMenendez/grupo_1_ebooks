@@ -42,7 +42,8 @@
             <a id="BotonBuscarParaMoviles" href="#"><i class="flaticon-magnifying-glass-1"></i> </a>
             <a href="./login.html"><i class="flaticon-profile-user"></i> &nbsp <span class="menu-label"> Mi
                     Cuenta</span> </a>
-            <a href="./carrito.html"><i class="flaticon-shopping-cart"></i> &nbsp <span class="menu-label"> Mi Carrito</span></a>
+            <a href="./carrito.html"><i class="flaticon-shopping-cart"></i> &nbsp <span class="menu-label"> Mi
+                    Carrito</span></a>
             <a href="#"><i class="flaticon-list"></i> &nbsp <span class="menu-label"> Menú</span> </a>
         </div>
     </nav>
@@ -60,37 +61,62 @@
                 </colgroup>
                 <tr>
                     <th></th>
-                    <th>Detalles</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
+                    <th style="overflow: hidden;">Detalles</th>
+                    <th style="overflow: hidden;">Cantidad</th>
+                    <th style="overflow: hidden;">Precio</th>
                 </tr>
 
                 <tr>
                     <td><img src="./images/480.jpeg" alt=""></td>
-                    <td> Programación estructurada <br>
-                         Alberto González <br> 
-                         Computación <br> 
-                         Libro Electrónico</td>
-                    <td>1</td>
-                    <td>$ 125.00</td>
+                    <td> <strong>Programación estructurada </strong><br><br>
+                        Alberto González <br>
+                        <em> Libro Electrónico</em></td>
+                    <td>
+                        <div class="number-input">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
+                            <input class="quantity" min="1" name="quantity" value="1" type="number" readonly>
+                            <button style="padding:1px 7px"
+                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
+                                    class="fas fa-plus-circle"></i></button>
+                        </div>
+
+                    </td>
+                    <td class="precio"><span>$ 125.00</span> <i class="fas fa-trash-alt"></td>
                 <tr>
                     <td><img src="./images/book.png" alt=""></td>
-                    <td> Programación estructurada <br>
-                        Alberto González <br> 
-                        Computación <br> 
-                        Copia Dura</td>
-                    <td>1</td>
-                    <td>$ 250.00</td>
+                    <td> <strong>Programación estructurada </strong><br><br>
+                        Alberto González <br>
+                        <em> Libro Electrónico</em></td>
+                    <td>
+                        <div class="number-input">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
+                            <input class="quantity" min="1" name="quantity" value="1" type="number" readonly>
+                            <button style="padding:1px 7px"
+                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
+                                    class="fas fa-plus-circle"></i></button>
+                        </div>
+                    </td>
+                    <td class="precio"><span>$ 125.00</span> <i class="fas fa-trash-alt"></td>
                 </tr>
 
                 <tr>
                     <td><img src="./images/book.png" alt=""></td>
-                    <td> Programación estructurada <br>
-                        Alberto González <br> 
-                        Computación <br> 
-                        Libro Electrónico</td>
-                    <td>1</td>
-                    <td>$ 125.00</td>
+                    <td> <strong>Programación estructurada </strong><br><br>
+                        Alberto González <br>
+                        <em> Libro Electrónico</em></td>
+                    <td>
+                        <div class="number-input">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
+                            <input class="quantity" min="1" name="quantity" value="1" type="number" readonly>
+                            <button style="padding:1px 7px"
+                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
+                                    class="fas fa-plus-circle"></i></button>
+                        </div>
+                    </td>
+                    <td class="precio"><span>$ 125.00</span> <i class="fas fa-trash-alt"></i> </td>
                 </tr>
 
                 <tr>
@@ -108,8 +134,90 @@
         </section>
     </main>
 
+    <section class="booksSection">
+        <h2 class="sectionTitle">Otras Personas también Compraron</h2>
+        <div class="books">
+            <article class="book">
+                <img src="./images/book.png" alt="">
+                <p class="bookTitle">Física Universitaria</p>
+                <p class="bookAuthor">Juan Pablo Segundo</p>
+                <p class="bookPrice">$129</p>
+                <div class="botonesLibro">
+                    <button class="btn red" onclick="location.href='./description.html';">Detalles</button>
+                    <button class="btn blue" onclick="location.href='./description.html';"><i
+                            class="fas fa-cart-plus"></i></button>
+                    <input type="checkbox" class="hidden" name="favorito" id="fav1">
+                    <label for="fav1" class="btn green"><i class="far fa-heart"></i><i class="fas fa-heart"></i></label>
+                </div>
+            </article>
+            <article class="book">
+                <img src="./images/book2.png" alt="">
+                <p class="bookTitle">Física Universitaria</p>
+                <p class="bookAuthor">Juan Pablo Segundo</p>
+                <p class="bookPrice">$129</p>
+                <div class="botonesLibro">
+                    <button class="btn red" onclick="location.href='./description.html';">Detalles</button>
+                    <button class="btn blue" onclick="location.href='./description.html';"><i
+                            class="fas fa-cart-plus"></i></button>
+                    <input type="checkbox" class="hidden" name="favorito" id="fav2">
+                    <label for="fav2" class="btn green"><i class="far fa-heart"></i><i class="fas fa-heart"></i></label>
+                </div>
+            </article>
+            <article class="book">
+                <img src="./images/book3.jpeg" alt="">
+                <p class="bookTitle">Física Universitaria</p>
+                <p class="bookAuthor">Juan Pablo Segundo</p>
+                <p class="bookPrice">$129</p>
+                <div class="botonesLibro">
+                    <button class="btn red" onclick="location.href='./description.html';">Detalles</button>
+                    <button class="btn blue" onclick="location.href='./description.html';"><i
+                            class="fas fa-cart-plus"></i></button>
+                    <input type="checkbox" class="hidden" name="favorito" id="fav3">
+                    <label for="fav3" class="btn green"><i class="far fa-heart"></i><i class="fas fa-heart"></i></label>
+                </div>
+            </article>
+            <article class="book">
+                <img src="./images/book3.jpeg" alt="">
+                <p class="bookTitle">Física Universitaria</p>
+                <p class="bookAuthor">Juan Pablo Segundo</p>
+                <p class="bookPrice">$129</p>
+                <div class="botonesLibro">
+                    <button class="btn red" onclick="location.href='./description.html';">Detalles</button>
+                    <button class="btn blue" onclick="location.href='./description.html';"><i
+                            class="fas fa-cart-plus"></i></button>
+                    <input type="checkbox" class="hidden" name="favorito" id="fav4">
+                    <label for="fav4" class="btn green"><i class="far fa-heart"></i><i class="fas fa-heart"></i></label>
+                </div>
+            </article>
+            <article class="book">
+                <img src="./images/book4.png" alt="">
+                <p class="bookTitle">Física Universitaria</p>
+                <p class="bookAuthor">Juan Pablo Segundo</p>
+                <p class="bookPrice">$129</p>
+                <div class="botonesLibro">
+                    <button class="btn red" onclick="location.href='./description.html';">Detalles</button>
+                    <button class="btn blue" onclick="location.href='./description.html';"><i
+                            class="fas fa-cart-plus"></i></button>
+                    <input type="checkbox" class="hidden" name="favorito" id="fav5">
+                    <label for="fav5" class="btn green"><i class="far fa-heart"></i><i class="fas fa-heart"></i></label>
+                </div>
+            </article>
+            <article class="book">
+                <img src="./images/book4.png" alt="">
+                <p class="bookTitle">Física Universitaria</p>
+                <p class="bookAuthor">Juan Pablo Segundo</p>
+                <p class="bookPrice">$129</p>
+                <div class="botonesLibro">
+                    <button class="btn red" onclick="location.href='./description.html';">Detalles</button>
+                    <button class="btn blue" onclick="location.href='./description.html';"><i
+                            class="fas fa-cart-plus"></i></button>
+                    <input type="checkbox" class="hidden" name="favorito" id="fav5">
+                    <label for="fav5" class="btn green"><i class="far fa-heart"></i><i class="fas fa-heart"></i></label>
+                </div>
+            </article>
 
-
+        </div>
+    </section>
 
     <footer>
         <section>
@@ -143,7 +251,8 @@
         <section>
             <h4>Contacto</h4>
             <ul class="contactList">
-                <li><a href='mailto:contact@insidebooks.com?subject="Hi There!"'><i class="flaticon-email" ></i> &nbsp contact@insidebooks.com</a></li>
+                <li><a href='mailto:contact@insidebooks.com?subject="Hi There!"'><i class="flaticon-email"></i>
+                        &nbsp contact@insidebooks.com</a></li>
                 <li><i class="flaticon-telephone-handle-silhouette"></i>&nbsp&nbsp +53 123 456 7890</li>
             </ul>
         </section>
@@ -151,13 +260,17 @@
         <section class="socialMedia">
             <h4>Redes Sociales</h4>
             <ul>
-                <li><a href="https://www.facebook.com/" target="_blank"><i class="flaticon-facebook"></i> &nbsp Facebook</a></li>
-                <li><a href="https://www.instagram.com/" target="_blank"><i class="flaticon-instagram"></i>&nbsp Instagram</a></li>
+                <li><a href="https://www.facebook.com/" target="_blank"><i class="flaticon-facebook"></i> &nbsp
+                        Facebook</a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><i class="flaticon-instagram"></i>&nbsp
+                        Instagram</a></li>
             </ul>
 
             <ul>
-                <li><a href="https://twitter.com/" target="_blank"><i class="flaticon-twitter"></i>&nbsp Twitter</a></li>
-                <li><a href="https://web.telegram.org" target="_blank"><i class="flaticon-telegram"></i>&nbsp Telegram</a></li>
+                <li><a href="https://twitter.com/" target="_blank"><i class="flaticon-twitter"></i>&nbsp Twitter</a>
+                </li>
+                <li><a href="https://web.telegram.org" target="_blank"><i class="flaticon-telegram"></i>&nbsp
+                        Telegram</a></li>
             </ul>
         </section>
 
