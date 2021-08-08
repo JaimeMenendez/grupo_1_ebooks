@@ -14,6 +14,9 @@ font-family: 'Russo One', sans-serif; */
   --backgroundColor: #e2e1e0;
   --backgroundSections:white;
 
+  --fontColors:#2e2e2e;
+  --navBarBackground:rgb(255, 255, 255);
+
   /* Buttons */
   --buttonHeight:35px;
   --buttonBorderRadio: 2px;

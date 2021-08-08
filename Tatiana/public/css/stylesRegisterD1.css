@@ -43,11 +43,10 @@ nav{
    display: flex;
    align-items: center;
    /*Define el margen de los 4 lados*/
-  margin-left: 20px;
 }
 
 .logoContainer h3 {
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: var(--crema);
     font-family: 'Russo One', sans-serif;
 }
@@ -127,7 +126,7 @@ form.searchBar::after {
 .menuButtons i{
     align-content: center;
     text-decoration: none;
-    color: var(--amarillo-transp);
+    color: var(--crema);
     margin-right: 3px;
 }
 
@@ -380,12 +379,28 @@ form.searchBar::after {
     form.searchBar {
         display: flex;
     }  
+
+    .logoContainer{
+        margin-left: 20px;
+    }
 }
 
 @media (min-width: 980px) {
 
     form.searchBar {
         display: flex;
+    }
+
+    .logoContainer{
+        margin-left: 5%;
+    }
+
+    .logoContainer h3{
+        font-size: 1.5em;
+    }
+
+    .menuButtons i{
+        color: var(--amarillo-transp);
     }
 
     .menuButtons a span {
@@ -404,19 +419,23 @@ form.searchBar::after {
     section.logoMainScreen{
         width: 50%;
         height: 100%;
+        position: fixed;
+        margin-right: 50%;
+        margin-top: 100px;
     }
 
     div.logoScreen{
-        margin-top: 150px;
+        margin-top: 20%;
     }
 
     section.login{
         width: 50%;
-        margin-top: 40px;
+        margin-left: 50%;
+        margin-top: 50px;
     }
-    
+
     .question label{
-        display: none;
+        display: inline;
     }
 
     .conditions {
