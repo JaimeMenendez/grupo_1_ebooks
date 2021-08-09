@@ -3,13 +3,11 @@
 @import "./footer.css";
 
 :root {
-  --blanco: white;
   --navBarHeight: 50px;
-  --oscuro: #56575e; /*Text Color*/
   --marginBottom:10px;
   --borderRadius:5px;
-  --backgroundColor: #e2e1e0;
-  --backgroundSections:white;
+
+  --sectionBackground: white;
 
   --navBarBackground:rgb(255, 255, 255);
   --fontColors:#2e2e2e;
@@ -20,10 +18,6 @@
   --buttonFontColor:#ecf0f1;
   --buttonColor:#EA4533;
 
-   /* List */
-  --fontListColor:#56575e;;
-  --fontIndexTitleColor: #56575e;
-
   /* Price */
   --priceColor:#EA4533;
 
@@ -32,12 +26,16 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;}
+  font-family: "Roboto", sans-serif;
+  background-color: var(--sectionBackground);
+  color: var(--fontColors);
+
+}
 
 .carritoTitle{
   margin-top:70px;
     text-align: center;
-    color:#2D2F8E;
+    color:var(--fontColors);
     font-weight: bold;
     font-size:30px;
 }
@@ -77,12 +75,18 @@ max-width: 200px;
 }
 
 .shoppingCarTable th, .finalRow{
-      border: 1px solid #afafaf;
+      border: 1px solid var(--sectionBackground);
       padding: 5px;
       background:#2d2f8ef5;
       color:white;
       box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
 }
+
+.shoppingCarTable tr .finalRow{
+  border-bottom: none;
+  border-top:none;
+}
+
 
 .btn.red {
     background-color: #e74c3c;
@@ -159,6 +163,7 @@ input[type=number] {
     width: 15px;
     font-size: 16px;
     background: transparent;
+    color:var(--fontColors);
 }
 
 input:focus, textarea:focus, select:focus{
@@ -223,7 +228,7 @@ label i.fas{
 
 .book {
   text-align: center;
-  background:var(--backgroundSections);
+  background:var(--sectionBackground);
   display: inline-block;
   position: relative;
   width: 150px;
@@ -308,6 +313,27 @@ label i.fas{
 }
 
 
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --navBarHeight: 50px;
+    --navBarBackground:rgb(41, 41, 41);
+    --searchBarColor: rgb(59, 57, 57);
+    --fontColors:#eaebf1;
+    --sectionBackground: #121212;
+
+    --whiteButtonsFontColor: #eaebf1;
+    --whiteButtonsBackground:rgb(59, 57, 57);
+    --footerBackground: rgb(41, 41, 41);
+  } 
+
+  .datosPrincipales{
+      background-color: #000000;
+      background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+  }
+  
+}
 
 
 @media(min-width:468px) {
