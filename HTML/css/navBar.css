@@ -62,6 +62,10 @@ form.searchBar input[type=text] {
 
 }
 
+form.searchBar input[type=text]::placeholder{
+    color: var(--fontColors);
+}
+
 form.searchBar button {
     margin:0;
     padding:0;
