@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <script defer src="./js/index.js"></script>
   <script defer src="./js/backgroundAnimation.js"></script>
+  <script defer src="./js/darkModeScript.js"></script>
   <title>Iniciar Sesión</title>
 
 </head>
@@ -46,7 +47,28 @@
       <a href="./login.html"><i class="flaticon-profile-user"></i> &nbsp <span class="menu-label"> Mi Cuenta</span> </a>
       <a href="./carrito.html"><i class="flaticon-shopping-cart"></i> &nbsp <span class="menu-label"> Mi
           Carrito</span></a>
-      <a href="#"><i class="flaticon-list"></i> &nbsp <span class="menu-label"> Menú</span> </a>
+
+      <a href="#" onclick="openNav()"><i class="flaticon-list"></i> &nbsp <span class="menu-label">
+          Menú</span> </a>
+      <div class="mySidenav" id="sideNav">
+        <div class="mySidenavlinks">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="#"> <input type="checkbox" name="" id="darkMode"><label for="darkMode">Modo Oscuro</label></a>
+         
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+          <script>
+            function openNav() {
+              document.getElementById("sideNav").style.width = "250px";
+            }
+
+            function closeNav() {
+              document.getElementById("sideNav").style.width = "0";
+            }
+          </script>
+        </div>
+      </div>
+
     </div>
   </nav>
 

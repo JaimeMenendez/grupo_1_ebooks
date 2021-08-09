@@ -133,6 +133,67 @@ form.searchBar button:hover {
     padding-right:5px;
 }
 
+
+
+
+/* DropDown menu */
+#sideNav{
+    width: 0;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    height: 100vh;
+    background:var(--navBarBackground);
+    transition-property: width;
+    transition-duration: 0.3s;
+    z-index: -1;
+  
+}
+.mySidenavlinks{
+    position:relative;
+}
+
+#sideNav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--fontColors);
+    display: block;
+    opacity:1;
+    z-index: -1;
+  }
+
+  #sideNav a:hover{
+      color:#EA4533;
+  }
+
+  #sideNav .closebtn {
+      text-align: left;
+  }
+  
+  #darkMode:checked ~ :root{
+    --navBarHeight: 50px;
+    --buttonColor:#EA4533;
+    --buttonColorHover:#c0392b;
+    
+  
+    --fontColors:#eaebf1;
+    --fontColorButtons: #eaebf1; 
+  
+    --googleButtonHover:rgb(134, 126, 126);
+    --googleFontColor: #eaebf1;
+    --googleButtonBackground:rgb(59, 57, 57);
+  
+  
+  
+    --sectionBackground: #121212;
+    --navBarBackground:rgb(41, 41, 41);
+    --searchBarColor: rgb(59, 57, 57);
+    --inputBackground:rgb(39, 37, 37);
+  
+    --borderColor: #383737;
+  }
+
 /* Tablet Style */
 @media (min-width: 600px) {
 
@@ -151,7 +212,8 @@ form.searchBar button:hover {
         color:var(--fontColors);
         font-family: "Roboto", sans-serif;
         font-weight: bold;
-        font-size: 18px
+        font-size: 18px;
+        z-index: 1;
     }
 
     form.searchBar {
@@ -171,6 +233,7 @@ form.searchBar button:hover {
       .menuButton a {
         padding-left: 20px;
       }
+
 }
 
 @media (max-width: 360px) {

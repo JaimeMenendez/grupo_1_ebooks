@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/flaticon/flaticon.css">
     <link rel="stylesheet" href="css/normalize.min.css" />
     <link rel="stylesheet" href="css/carrito.css">
+    <script defer src="./js/darkModeScript.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <title>Mi Carrito</title>
 </head>
@@ -20,33 +21,53 @@
 
     <nav>
         <a href="./Home.html">
-            <div class="logoNavBar">
-                <div class="logoContainer">
-                    <div class="bloqueAzul"></div>
-                    <div class="bloqueVerde"></div>
-                    <div class="bloqueRojo"></div>
-                    <div class="bloqueNaranja"></div>
-                </div>
-                <p class="logoText"><span class="rojo">IN</span><span class="azul">SIDE</span><span
-                        class="verde">BOOKS</span>
-                </p>
+          <div class="logoNavBar">
+            <div class="logoContainer">
+              <div class="bloqueAzul"></div>
+              <div class="bloqueVerde"></div>
+              <div class="bloqueRojo"></div>
+              <div class="bloqueNaranja"></div>
             </div>
+            <p class="logoText"><span class="rojo">IN</span><span class="azul">SIDE</span><span class="verde">BOOKS</span>
+            </p>
+    
+          </div>
         </a>
-
+    
         <form class="searchBar" action="/action_page.php">
-            <input class="btn" type="text" placeholder=" Buscar.." name="search">
-            <button class="btn red" type="submit"><i class="flaticon-magnifying-glass-1"></i></button>
+          <input class="btn" type="text" placeholder=" Buscar.." name="search">
+          <button class="btn red" type="submit"><i class="flaticon-magnifying-glass-1"></i></button>
         </form>
-
+    
         <div class="menuButton">
-            <a id="BotonBuscarParaMoviles" href="#"><i class="flaticon-magnifying-glass-1"></i> </a>
-            <a href="./login.html"><i class="flaticon-profile-user"></i> &nbsp <span class="menu-label"> Mi
-                    Cuenta</span> </a>
-            <a href="./carrito.html"><i class="flaticon-shopping-cart"></i> &nbsp <span class="menu-label"> Mi
-                    Carrito</span></a>
-            <a href="#"><i class="flaticon-list"></i> &nbsp <span class="menu-label"> Menú</span> </a>
+          <a id="BotonBuscarParaMoviles" href="#"><i class="flaticon-magnifying-glass-1"></i> </a>
+          <a href="./login.html"><i class="flaticon-profile-user"></i> &nbsp <span class="menu-label"> Mi Cuenta</span> </a>
+          <a href="./carrito.html"><i class="flaticon-shopping-cart"></i> &nbsp <span class="menu-label"> Mi
+              Carrito</span></a>
+    
+          <a href="#" onclick="openNav()"><i class="flaticon-list"></i> &nbsp <span class="menu-label">
+              Menú</span> </a>
+          <div class="mySidenav" id="sideNav">
+            <div class="mySidenavlinks">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <a href="#"> <input type="checkbox" name="" id="darkMode"><label for="darkMode">Modo Oscuro</label></a>
+             
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+              <script>
+                function openNav() {
+                  document.getElementById("sideNav").style.width = "250px";
+                }
+    
+                function closeNav() {
+                  document.getElementById("sideNav").style.width = "0";
+                }
+              </script>
+            </div>
+          </div>
+    
         </div>
-    </nav>
+      </nav>
 
 
     <main>

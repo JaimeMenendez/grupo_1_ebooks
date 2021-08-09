@@ -21,6 +21,7 @@ togglePassword.addEventListener('click', function (e) {
 
   const root = document.documentElement;
 
+
 bloqueRojo.addEventListener('click',e =>{
     root.style.setProperty('--buttonColor', '#EA4533');
     root.style.setProperty('--buttonColorHover', '#c0392b');
@@ -111,3 +112,5 @@ togglePasswordConfirm.addEventListener('click', function (e) {
   // toggle the eye slash icon
   this.classList.toggle('flaticon-visibility');
 })}
+
+

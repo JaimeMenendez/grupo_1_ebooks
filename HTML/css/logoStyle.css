@@ -1,14 +1,6 @@
 /*Importa la letra*/
-@font-face {font-family: "DIN Medium"; 
+@font-face {font-family: "DIN"; 
            src: local('DINMedium.ttf') format("truetype"), url('https://jaimemenendez.github.io/grupo_1_ebooks/HTML/css/DINMedium.ttf') format("truetype");} 
-@font-face {font-family: "DIN";
-  src: url("http://db.onlinewebfonts.com/t/1bbe3460b053c4f1d67d1f1afecdaa76.eot"); /* IE9*/
-  src: url("http://db.onlinewebfonts.com/t/1bbe3460b053c4f1d67d1f1afecdaa76.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("http://db.onlinewebfonts.com/t/1bbe3460b053c4f1d67d1f1afecdaa76.woff2") format("woff2"), /* chrome firefox */
-  url("http://db.onlinewebfonts.com/t/1bbe3460b053c4f1d67d1f1afecdaa76.woff") format("woff"), /* chrome firefox */
-  url("http://db.onlinewebfonts.com/t/1bbe3460b053c4f1d67d1f1afecdaa76.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
-  url("http://db.onlinewebfonts.com/t/1bbe3460b053c4f1d67d1f1afecdaa76.svg#DIN") format("svg"); /* iOS 4.1- */
-}
 
 
 body{
@@ -32,7 +24,7 @@ body{
 .logoText{
   font-size:80px;
   margin:0;
-  font-family: "DIN Medium","DIN", sans-serif;
+  font-family: "DIN","DIN Medium", sans-serif;
   line-height:68px;
   padding-top:2px;
   letter-spacing: 5px;
