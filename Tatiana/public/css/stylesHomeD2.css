@@ -1,0 +1,277 @@
+@import url(//db.onlinewebfonts.com/c/1bbe3460b053c4f1d67d1f1afecdaa76?family=DIN);
+@import url(nav-barD2.css);
+@import url(category-buttons.css);
+
+:root{
+    --azul-morado-oscuro: #2d2f8e;
+    --azul-morado-claro: #585dba;
+    --verde-pastel-oscuro: #44979c;
+    --verde-pastel-claro: #89cab4;
+    --azul-gris-oscuro: #202020;
+    --oscuro: #56575e;
+    --azul-oscuro: #14213D;
+    --rojo: #ea4533;
+    --rojo-oscuro: #c0392b;
+    --naranja-pastel: #f4ae62;
+    --rosado-pastel: #f6c7af;
+    --crema:#f3f0d7;
+    --blanco: #ffffff;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*Muestra solo el contenido que cabe en la caja*/
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+    
+h3{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+p{
+    font-size: 12px;
+}
+
+.price{
+    font-size: 18px;
+    font-family: 'DIN', sans-serif;
+    text-align: left;
+    font-weight: 700;
+    color: var(--azul-morado-oscuro);
+}
+
+.name{
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    color: var(--azul-oscuro);
+}
+
+/************************************
+//        SEARCH BAR MOBILE        //
+/***********************************/
+
+ section.searchBar-mobile{
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 3px;
+    background: radial-gradient(var(--azul-morado-claro), var(--azul-morado-oscuro));
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+form.sbMobile{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+form.sbMobile input[type=text]{
+   font-size: 17px;
+   border: 1px solid  var(--blanco);
+   border-radius: 4px;
+   border-top-right-radius: 0;
+   border-bottom-right-radius: 0;
+   width: 80%;
+   min-width: 190px;
+   background: var(--blanco);
+   color: --oscuro;
+}
+
+form.sbMobile button{
+   width: 10%;
+   max-width: 40px;
+   font-size: 20px;
+   font-weight: 700;
+   background-color: var(--rojo);
+   border: 2px solid var(--rojo);
+   border-radius: 4px;
+   border-top-left-radius: 0;
+   border-bottom-left-radius: 0;
+   color: white;
+   cursor: pointer;
+   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+form.sbMobile i{
+  color: var(--blanco);
+}
+
+form.sbMobile button:hover {
+   /*:hover selector cambia el estilo de boton cuando se pasa el mouse sobre él*/
+   background: var(--rojo-oscuro);
+   background-color: var(--rojo-oscuro);
+   border: 2px solid var(--rojo-oscuro);
+}
+  
+form.sbMobile::after {
+   content: "";
+   clear: both;
+   display: table;
+}
+
+/************************************
+//        PROMOTIONAL BANNER       //
+/***********************************/
+section.banner img{
+    margin-top: 0px;
+    margin-bottom: 10px;
+    width: 100vw;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+/************************************
+//        MAIN SECTION             //
+/***********************************/
+main{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+main section.moreSearching, section.moreSelling{
+    background-color: white;
+}
+
+main section.separador img{
+    width: 100%;
+    margin-top: 15px;
+}
+
+main section{
+    width: 90%;
+    margin-left: 5%;
+    display: inline-block;
+}
+
+/************************************
+//        BOOKS SECTIONS        //
+/***********************************/
+main section h3{
+    width: 97%;
+    margin-top: 15px;
+    margin-left: -15px;
+    font-size: 1.3em;
+    font-family: "DIN", sans-serif;
+}
+
+main div.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+main article{
+    display: block;
+    width: 45%;
+    text-align: center;
+    margin: 15px 0;
+}
+
+main article img{
+    width: 100%;
+}
+
+main article div.main-article{
+    width: 100%;
+    padding: 15px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
+}
+
+main article p.name{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+main article form{
+    margin-top: 10px;
+}
+
+main article div.main-article button{
+    width: 100%;
+    height: 33px;
+    font-family: "DIN", sans-serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    box-sizing: border-box;
+    border: 2px solid var(--rojo);
+    border-radius: 2px;
+    background-color: var(--rojo);
+    color: var(--blanco);
+    cursor: pointer;
+    box-shadow: 3px 5px var(--sombra-boton);
+}
+
+main article div.main-article button:hover{
+    background: var(--rojo-oscuro);
+    border: 2px solid var(--rojo-oscuro);
+}
+
+/************************************
+//        FOOTER SECTIONS          //
+/***********************************/
+footer{
+    margin-top: 30px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+footer h3{
+    font-family: "DIN", sans-serif;
+    color: var(--blanco);
+}
+
+footer section.links-interest{
+    height: 200px;
+    padding-top: 15px;
+    border: 1px solid var(--blanco);
+    background: var(--azul-morado-oscuro);
+}
+
+footer section.support{
+    height: 200px;
+    padding-top: 15px;
+    border: 1px solid var(--blanco);
+    border-top: none;
+    background: var(--azul-morado-oscuro);
+}
+
+footer section.contact{
+    height: 200px;
+    padding-top: 15px;
+    border: 1px solid var(--blanco);
+    border-top: none;
+    background: var(--azul-morado-oscuro);
+}
+
+footer section.social-media{
+    height: 200px;
+    padding-top: 15px;
+    border: 1px solid var(--blanco);
+    border-top: none;
+    background: var(--azul-morado-oscuro);
+}
+
+footer section.logo-footer img{
+    height: 40px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
