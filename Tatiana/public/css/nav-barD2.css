@@ -1,0 +1,109 @@
+nav{
+    width: 100%;
+    height: 50px;
+    background-color: var(--blanco);
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    position: fixed;
+    top: 0;
+    left: 0
+ }
+ 
+ /*Navegation Bar logo*/
+ .logoContainer {
+     display: flex;
+     align-items: center;
+  }
+  
+ .logoSize-img {
+     height: 30px;
+     margin: 2px;
+     margin-left: 5px;
+ }
+ 
+ /************ Diseño de la barra de búsqueda +*****************/
+ 
+ form.searchBar {
+     /*Es una medida 1/100 tamaño región visible del navegador*/
+     width: 30vw;
+     height: 30px;
+     display: none;
+ }
+ 
+ form.searchBar input{
+   font-size: 17px;
+   border: 2px solid #f1f1f1;
+   width: 80%;
+   min-width: 190px;
+   background: #f1f1f1;
+ }
+ 
+ form.searchBar button{
+   width: 10%;
+   max-width: 40px;
+   height: 100%;
+   background-color: var(--rojo);
+   border: 2px solid var(--rojo);
+   border-top-left-radius: 0px;
+   color: white;
+   cursor: pointer;
+   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+ }
+ 
+ form.searchBar button:hover {
+  /*:hover selector cambia el estilo de boton cuando se pasa el mouse sobre él*/
+  background: var(--rojo-oscuro);
+ }
+ 
+ form.searchBar::after {
+   content: "";
+   clear: both;
+   display: table;
+ }
+ 
+ /*Diseño del menú de opciones: Cuenta, Carrito, Mennú*/
+ .menuButtons { 
+     display: flex;
+     align-items: center;
+     margin-right: 22px;
+     margin-top: 5px;
+     cursor: pointer;
+ }
+ 
+ .menuButtons a {
+     display: flex;
+     align-items: center;
+     text-decoration: none;
+     justify-content: space-between;
+     color: var(--oscuro);
+     font-family: 'Roboto', sans-serif;
+     font-weight: 700;
+     font-size: 18px;
+     margin-left: 10px;
+ }
+ 
+ .menuButtons i{
+     align-content: center;
+     text-decoration: none;
+     font-size: 1.8rem;
+     font-size: 700;
+     color: var(--oscuro);
+     margin-right: 3px;
+ }
+ 
+ .menuButtons a span {
+     text-align: center;
+     display: none;
+ }
+ 
+ .menuButtons a:hover{
+     color:var(--rojo) !important;
+     transform: scale(1.2) !important;
+  }
+ 
+  .menuButtons a:hover i{
+     color: var(--rojo) !important;
+     transform: scale(1.2) !important;
+  }
+ 
