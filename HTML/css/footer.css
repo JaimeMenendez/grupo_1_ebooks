@@ -1,5 +1,5 @@
 footer{
-    background-color: var(--backgroundSections);
+    background-color: var(--footerBackground);
     margin-top:5px;
 }
 
@@ -34,7 +34,7 @@ footer section h4{
 /* Footer Links */
 footer a{
     text-decoration: none;
-    color:black;
+    color:var(--fontColors);
 }
 
 .contactList{
