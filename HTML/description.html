@@ -48,7 +48,14 @@
           <div class="mySidenav" id="sideNav">
             <div class="mySidenavlinks">
               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-              <a href="#"> <input type="checkbox" name="" id="darkMode"><label for="darkMode">Modo Oscuro</label></a>
+              
+              <div>
+                <input style="display: none;" type="checkbox" id="darkMode">
+                <label for="darkMode">
+                  <span id="textoModoClaro"><i class="far fa-moon"></i>&nbsp Modo Oscuro</span> 
+                  <span id="textoModoOscuro"> <i class="fas fa-sun"></i> &nbsp Modo Claro</span>
+                </label>
+              </div>
              
               <a href="#">Link 2</a>
               <a href="#">Link 3</a>

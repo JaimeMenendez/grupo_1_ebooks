@@ -9,11 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Russo+One&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+   
+
   <link rel="stylesheet" type="text/css" href="css/flaticon/flaticon.css">
 
   <link rel="stylesheet" href="css/normalize.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+ 
   <script defer src="./js/index.js"></script>
   <script defer src="./js/backgroundAnimation.js"></script>
   <script defer src="./js/darkModeScript.js"></script>
@@ -53,7 +56,14 @@
       <div class="mySidenav" id="sideNav">
         <div class="mySidenavlinks">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="#"> <input type="checkbox" name="" id="darkMode"><label for="darkMode">Modo Oscuro</label></a>
+          
+          <div>
+            <input style="display: none;" type="checkbox" id="darkMode">
+            <label for="darkMode">
+              <span id="textoModoClaro"><i class="far fa-moon"></i>&nbsp Modo Oscuro</span> 
+              <span id="textoModoOscuro"> <i class="fas fa-sun"></i> &nbsp Modo Claro</span>
+            </label>
+          </div>
          
           <a href="#">Link 2</a>
           <a href="#">Link 3</a>
@@ -71,7 +81,6 @@
 
     </div>
   </nav>
-
 
   <div class="main-container">
     <section class="loginBannerContainer">
