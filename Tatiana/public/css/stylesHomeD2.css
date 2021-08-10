@@ -255,14 +255,57 @@ footer section.support{
     background: var(--azul-morado-oscuro);
 }
 
+/************************************
+//         CONTACT SECTION         //
+/***********************************/
 footer section.contact{
-    height: 200px;
+    height: 240px;
     padding-top: 15px;
     border: 1px solid var(--blanco);
     border-top: none;
     background: var(--azul-morado-oscuro);
 }
 
+footer div.inf-contact{
+    text-align: left;
+    margin-left: 27%;
+    margin-top:15px
+}
+
+footer div.inf-contact ul{
+    list-style-type: none;
+    font-size: 1em;
+    color: var(--verde-pastel-oscuro);
+}
+
+footer p.contact{
+    color: var(--blanco);
+    margin-top: 30px;
+    margin-left: 27%;
+    font-size: 1em;
+    text-align: left;
+}
+
+footer div.inf-contact li{
+    margin: 10px;
+}
+
+footer div.inf-contact i{
+    position: relative;
+    font-size: 1.3em;
+
+}
+
+footer div.inf-contact a{
+    margin-left: 10px;
+    font-size: 1em;
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+/************************************
+//      SOCIAL MEDIA SECTION       //
+/***********************************/
 footer section.social-media{
     height: 200px;
     padding-top: 15px;
