@@ -32,7 +32,8 @@ body {
     
 h3{
     font-size: 22px;
-    font-weight: 700;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
 }
 
 p{
@@ -270,8 +271,54 @@ footer section.social-media{
     background: var(--azul-morado-oscuro);
 }
 
+footer section.social-media h3{
+    width: 100%;
+    height: 40px;
+}
+
+footer div.elements-sm{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    margin: 10px;
+}
+
+footer div.SM{
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+} 
+
+footer div.elements-sm{
+    margin-top: 0px;
+}
+
+footer div.SM a{
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+footer div.SM h4{
+    width: 48%;
+    text-decoration: none;
+    font-family: "DIN", sans-serif;
+}
+
+footer div.logoSM i{
+    position: relative;
+    font-size: 1.3em;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+    border: 2px solid var(--blanco);
+    border-radius: 50%;
+    color: var(--verde-pastel-claro);
+}
+
 footer section.logo-footer img{
     height: 40px;
-    margin-bottom: 5px;
-    margin-top: 5px;
+    padding: 5px;
 }
