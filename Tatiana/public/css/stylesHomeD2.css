@@ -240,6 +240,9 @@ footer h3{
     color: var(--blanco);
 }
 
+/************************************
+//     LINKS INTEREST SECTION      //
+/***********************************/
 footer section.links-interest{
     height: 200px;
     padding-top: 15px;
@@ -247,12 +250,49 @@ footer section.links-interest{
     background: var(--azul-morado-oscuro);
 }
 
+footer div.links-interest-links{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+footer div.links{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer div.links ul{
+    list-style-type: none;
+    text-align: left;
+    font-size: 1em;
+}
+
+footer div.links li{
+    margin: 10px;
+    font-family: "DIN", sans-serif;
+}
+
+footer div.links a{
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+/************************************
+//         SUPPORT SECTION         //
+/***********************************/
 footer section.support{
     height: 200px;
     padding-top: 15px;
     border: 1px solid var(--blanco);
     border-top: none;
     background: var(--azul-morado-oscuro);
+}
+
+footer div.support-links{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 /************************************
@@ -270,8 +310,7 @@ footer div.inf-contact{
     display: flex;
     text-align: left;
     justify-content: center;
-    margin-top:15px
-    margin-bottom: 15px;
+    
 }
 
 footer div.inf-contact ul{
@@ -287,7 +326,7 @@ footer p.contact{
     margin-top: 30px;
     width: 100%;
     font-size: 1em;
-    text-align: left;
+    text-align: center;
 }
 
 footer div.inf-contact li{
