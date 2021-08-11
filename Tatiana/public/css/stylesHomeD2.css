@@ -1,6 +1,7 @@
 @import url(//db.onlinewebfonts.com/c/1bbe3460b053c4f1d67d1f1afecdaa76?family=DIN);
 @import url(nav-barD2.css);
 @import url(category-buttons.css);
+@import url(stylesFooter.css);
 
 :root{
     --azul-morado-oscuro: #2d2f8e;
@@ -162,7 +163,7 @@ main section{
 }
 
 /************************************
-//        BOOKS SECTIONS        //
+//        BOOKS SECTIONS           //
 /***********************************/
 main section h3{
     width: 97%;
@@ -236,189 +237,24 @@ main section.button-beginning button{
     width: 150px;
     box-shadow: 0 10px 10px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
 }
-/************************************
-//        FOOTER SECTIONS          //
-/***********************************/
-footer{
-    margin-top: 10px;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-}
 
-footer h3{
-    font-family: "DIN", sans-serif;
-    color: var(--blanco);
-}
 
 /************************************
-//     LINKS INTEREST SECTION      //
+//    MEDIA QUERIES TABLET         //
 /***********************************/
-footer section.links-interest{
-    height: 200px;
-    padding-top: 15px;
-    border: 1px solid var(--blanco);
-    background: var(--azul-morado-oscuro);
+@media (min-width: 600px) {
+
+    section.searchBar-mobile{
+        display: none;
+    }
+
+    main article{
+        width: 23%;
+    }
 }
 
-footer div.links-interest-links{
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    margin-left: 10px;
-}
-footer div.links{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-footer div.links ul{
-    list-style-type: none;
-    text-align: left;
-    font-size: 1em;
-}
-
-footer div.links li{
-    margin: 10px;
-    font-family: "DIN", sans-serif;
-}
-
-footer div.links a{
-    color: var(--blanco);
-    text-decoration: none;
-}
 
 /************************************
-//         SUPPORT SECTION         //
+//    MEDIA QUERIES PC             //
 /***********************************/
-footer section.support{
-    height: 200px;
-    padding-top: 15px;
-    border: 1px solid var(--blanco);
-    border-top: none;
-    background: var(--azul-morado-oscuro);
-}
-
-footer div.support-links{
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-/************************************
-//         CONTACT SECTION         //
-/***********************************/
-footer section.contact{
-    height: 240px;
-    padding-top: 15px;
-    border: 1px solid var(--blanco);
-    border-top: none;
-    background: var(--azul-morado-oscuro);
-}
-
-footer div.inf-contact{
-    display: flex;
-    text-align: left;
-    justify-content: center;
-    
-}
-
-footer div.inf-contact ul{
-    list-style-type: none;
-    font-size: 1em;
-    color: var(--verde-pastel-oscuro);
-}
-
-footer p.contact{
-    display: flex;
-    justify-content: center;
-    color: var(--blanco);
-    margin-top: 30px;
-    width: 100%;
-    font-size: 1em;
-    text-align: center;
-}
-
-footer div.inf-contact li{
-    margin: 10px;
-}
-
-footer div.inf-contact i{
-    position: relative;
-    font-size: 1.3em;
-
-}
-
-footer div.inf-contact a{
-    margin-left: 10px;
-    font-size: 1em;
-    text-decoration: none;
-    color: var(--blanco);
-}
-
-/************************************
-//      SOCIAL MEDIA SECTION       //
-/***********************************/
-footer section.social-media{
-    height: 200px;
-    padding-top: 15px;
-    border: 1px solid var(--blanco);
-    border-top: none;
-    background: var(--azul-morado-oscuro);
-}
-
-footer section.social-media h3{
-    width: 100%;
-    height: 40px;
-}
-
-footer div.elements-sm{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: stretch;
-    margin: 10px;
-}
-
-footer div.SM{
-    display: flex;
-    margin-top: 20px;
-    flex-wrap: wrap;
-    width: 50%;
-    align-items: center;
-    justify-content: center;
-} 
-
-footer div.elements-sm{
-    margin-top: 0px;
-}
-
-footer div.SM a{
-    text-decoration: none;
-    color: var(--blanco);
-}
-
-footer div.SM h4{
-    width: 48%;
-    text-decoration: none;
-    font-family: "DIN", sans-serif;
-}
-
-footer div.logoSM i{
-    position: relative;
-    font-size: 1.3em;
-    padding: 5px;
-    width: 35px;
-    height: 35px;
-    border: 2px solid var(--blanco);
-    border-radius: 50%;
-    color: var(--verde-pastel-claro);
-}
-
-footer section.logo-footer img{
-    height: 40px;
-    padding: 5px;
-}
+@media (min-width: 1024px) {}

@@ -4,7 +4,6 @@ main section.important-buttons{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    margin-top: 35px;
 }
 
 /**** Identifier 1 ****/
@@ -140,4 +139,80 @@ main div.identifier4 p{
 
 main div.identifier4 i:hover:active{
     background-color: var(--verde-pastel-claro);
+}
+
+/**** Identifier 5 ****/
+main div.identifier5{
+    width: 47%;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+    height: 100px;
+    font-size: 60px;
+    background: radial-gradient(var(--verde-pastel-claro), var(--verde-pastel-oscuro));
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border: 1px solid var(--verde-pastel-oscuro);
+    border-radius: 10px;
+}
+
+main div.identifier5 i{
+    width: 100%;
+    margin-right: 15%;
+    color: var(--blanco);
+}
+
+main div.identifier5 p{
+    color: var(--blanco);
+    font-family: "DIN";
+    font-size: 17px;
+}
+
+main div.identifier5 i:hover:active{
+    background-color: var(--verde-pastel-claro);
+}
+
+/************************************
+//    MEDIA QUERIES TABLET         //
+/***********************************/
+@media (min-width: 600px) {
+
+    main section.important-buttons{
+        flex-direction: row;
+    }
+    main div.identifier{
+        width: 23%;
+    }
+
+    main div.identifier2{
+        width: 23%;
+    }
+
+    main div.identifier3{
+        width: 23%;
+    }
+
+    main div.identifier4{
+        width: 23%;
+    }
+
+    main div.identifier5{
+        width:23%;
+    }
+}
+
+/************************************
+//    MEDIA QUERIES PC             //
+/***********************************/
+@media (min-width: 1024px) {
+    main div.identifier5{
+        width:10%;
+    }
+
+    main div.identifier5 p{
+        font-size: 14px;
+    }
 }
