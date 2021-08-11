@@ -4,6 +4,7 @@ main section.important-buttons{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    margin-top: 35px;
 }
 
 /**** Identifier 1 ****/
