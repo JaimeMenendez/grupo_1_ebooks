@@ -184,3 +184,65 @@ footer section.logo-footer img{
     height: 40px;
     padding: 5px;
 }
+
+/************************************
+//    MEDIA QUERIES TABLET         //
+/***********************************/
+@media (min-width: 600px) {
+    footer{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    footer section.links-interest{
+        width: 50%;
+        height: 245px;
+    }
+
+    footer section.support{
+        width: 50%;
+        height: 245px;
+    }
+
+    footer section.contact{
+        width: 50%;
+        height: 245px;
+    }
+
+    footer section.social-media{
+        width: 50%;
+        height: 245px;
+    }
+}
+
+
+/************************************
+//    MEDIA QUERIES PC             //
+/***********************************/
+@media (min-width: 1024px) {
+
+    footer section.links-interest{
+        width: 25%;
+        height: 245px;
+    }
+    
+    footer section div.elements-sm h4{
+        font-size: 12px;
+    }
+
+    footer section.support{
+        width: 25%;
+        height: 245px;
+    }
+
+    footer section.contact{
+        width: 25%;
+        height: 245px;
+    }
+
+    footer section.social-media{
+        width: 25%;
+        height: 245px;
+    }
+}
