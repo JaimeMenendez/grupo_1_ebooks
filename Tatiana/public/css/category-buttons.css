@@ -176,13 +176,42 @@ main div.identifier5 i:hover:active{
 }
 
 /************************************
+//    MEDIA QUERIES MOBILE         //
+/***********************************/
+@media (min-width: 360px) {
+   
+    main div.identifier{
+        width: 45%;
+    }
+
+    main div.identifier2{
+        width: 45%;
+    }
+
+    main div.identifier3{
+        width: 45%;
+    }
+
+    main div.identifier4{
+        width: 45%;
+    }
+
+    main div.identifier5{
+        width:45%;
+    }
+}
+
+
+/************************************
 //    MEDIA QUERIES TABLET         //
 /***********************************/
 @media (min-width: 600px) {
 
-    main section.important-buttons{
+    section.important-buttons{
         flex-direction: row;
+        flex-wrap: wrap;
     }
+
     main div.identifier{
         width: 23%;
     }

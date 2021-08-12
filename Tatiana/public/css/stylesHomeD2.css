@@ -68,7 +68,6 @@ p{
     align-items: center;
     justify-content: center;
     margin-top: 50px;
-    margin-bottom: 3px;
     background: radial-gradient(var(--azul-morado-claro), var(--azul-morado-oscuro));
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
@@ -180,18 +179,25 @@ main div.products{
 }
 
 main article{
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 45%;
     text-align: center;
+    align-items: center;
+    justify-content: center;
     margin: 15px 0;
 }
 
+main #article-hidden{
+    display: none;
+}
+
 main article img{
-    width: 100%;
+    width: 90%;
 }
 
 main article div.main-article{
-    width: 100%;
+    width: 90%;
     padding: 15px;
     box-shadow: 0 10px 10px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
 }
@@ -207,7 +213,7 @@ main article form{
 }
 
 main form.product-button button{
-    width: 100%;
+    width: 90%;
     height: 33px;
     font-family: "DIN", sans-serif;
     font-size: 0.8em;
@@ -234,10 +240,9 @@ main section.button-beginning{
 } 
 
 main section.button-beginning button{
-    width: 150px;
+    min-width: 150px;
     box-shadow: 0 10px 10px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
 }
-
 
 /************************************
 //    MEDIA QUERIES TABLET         //
@@ -248,8 +253,17 @@ main section.button-beginning button{
         display: none;
     }
 
+    section.banner img{
+        margin-top: 50px;
+        margin-bottom: 5px;
+    }
+
+    main #article-hidden{
+        display: inline;
+    }
+
     main article{
-        width: 23%;
+        width: 30%;
     }
 }
 
@@ -257,4 +271,30 @@ main section.button-beginning button{
 /************************************
 //    MEDIA QUERIES PC             //
 /***********************************/
-@media (min-width: 1024px) {}
+@media (min-width: 1024px) {
+
+    main article{
+        width: 15%;
+    }
+
+    main article img{
+        width: 100%;
+    }
+
+    main article div.main-article{
+        width: 100%;
+    }
+
+    main form.product-button button{
+        width: 100%;
+    }
+
+    main #article-hidden2{
+        display: none;
+    }
+
+    main #separador-hidden{
+        display: none;
+    }
+
+}
