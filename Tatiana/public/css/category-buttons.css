@@ -175,6 +175,9 @@ main div.identifier5 i:hover:active{
     background-color: var(--verde-pastel-claro);
 }
 
+main #category-book-hidden{
+    display: none;
+}
 /************************************
 //    MEDIA QUERIES MOBILE         //
 /***********************************/
@@ -238,10 +241,20 @@ main div.identifier5 i:hover:active{
 /***********************************/
 @media (min-width: 1024px) {
     main div.identifier5{
-        width:10%;
+        width:45%;
+    }
+    main #category-book-hidden{
+        display: inline;
     }
 
-    main div.identifier5 p{
+    main #important-buttons-pc{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    div.identifier5 p{
         font-size: 14px;
     }
 }

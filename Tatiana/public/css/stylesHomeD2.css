@@ -285,7 +285,11 @@ main section.button-beginning button{
 @media (min-width: 1024px) {
 
     main article{
-        width: 15%;
+        width: 18%;
+    }
+
+    main article div.sub-categories-books{
+        width: 18%;
     }
 
     main article img{
@@ -301,7 +305,7 @@ main section.button-beginning button{
     }
 
     main #article-hidden{
-        width:15%;
+        width:18%;
     }
 
     main #article-hidden2{
@@ -310,6 +314,14 @@ main section.button-beginning button{
 
     main #separador-hidden{
         display: none;
+    }
+
+    main div.categories-books{
+        display: flex;
+    }
+
+    main div.sub-categories-books{
+        order: 1;
     }
 
 }
