@@ -190,6 +190,11 @@ main article{
 
 main #article-hidden{
     display: none;
+
+}
+
+main #article-hidden2{
+    display: none;
 }
 
 main article img{
@@ -258,8 +263,14 @@ main section.button-beginning button{
         margin-bottom: 5px;
     }
 
-    main #article-hidden{
-        display: inline;
+    main #article-hidden, main #article-hidden2{
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: 15px 0;
     }
 
     main article{
@@ -287,6 +298,10 @@ main section.button-beginning button{
 
     main form.product-button button{
         width: 100%;
+    }
+
+    main #article-hidden{
+        width:15%;
     }
 
     main #article-hidden2{
