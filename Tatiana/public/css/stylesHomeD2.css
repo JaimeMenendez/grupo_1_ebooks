@@ -155,8 +155,8 @@ main section.separador img{
 }
 
 main section{
-    width: 90%;
-    margin-left: 5%;
+    width: 96%;
+    margin-left: 2%;
     display: inline-block;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -168,7 +168,7 @@ main section{
 main section h3{
     width: 97%;
     margin-top: 15px;
-    margin-left: -15px;
+    margin-left: 15px;
     font-size: 1.3em;
     font-family: "DIN", sans-serif;
 }
@@ -334,24 +334,24 @@ main section.button-beginning button{
         background-color: #ebebeb;;
     }
 
+    main{
+        width:100vw;
+    }
+
     main article{
         width: 15%;
     }
 
-    main article div.sub-categories-books{
-        width: 18%;
-    }
-
     main article img{
-        width: 100%;
+        width: 80%;
     }
 
     main article div.main-article{
-        width: 100%;
+        width: 80%;
     }
 
     main form.product-button button{
-        width: 100%;
+        width: 80%;
     }
 
     main Article#article-hidden{
@@ -371,4 +371,7 @@ main section.button-beginning button{
         display: flex;
     }
 
+    main section.separador{
+        display: none;
+    }
 }
