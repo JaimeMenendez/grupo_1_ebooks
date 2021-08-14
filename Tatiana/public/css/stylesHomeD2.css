@@ -128,9 +128,14 @@ form.sbMobile::after {
 //        PROMOTIONAL BANNER       //
 /***********************************/
 section.banner img{
-    margin-bottom: 5px;
-    padding: 20px;
-    width: 100vw;
+    margin-top: 5px;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+section.banner-books img{
+    background: none;
+    width: 100%;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
@@ -149,10 +154,13 @@ main section.trend, section.suggest, section.moreNew, section.ebooks{
     background-color: #ffffff;
 }
 
+main section.separador{
+    padding: 0px;
+    box-shadow: none;
+}
+
 main section.separador img{
     width: 100%;
-    margin-top: 15px;
-    margin-bottom: 15px;
 }
 
 main section{
@@ -165,7 +173,6 @@ main section{
     box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.24);
     border-radius: 4px;
 }
-
 /************************************
 //        BOOKS SECTIONS           //
 /***********************************/
@@ -278,22 +285,17 @@ main article div.main-article button:hover{
 
 /********** BUTTON INICIO * ************/
 main section.button-beginning{
-    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: none;
+    margin-top: 10px;
 } 
 
 main section.button-beginning button{
     min-width: 150px;
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: 700;
-    box-shadow: 0 10px 10px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
-}
-
-main section#beginning{
-    background-color: white;;
-    box-shadow: none;
     box-shadow: 0 10px 10px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
 }
 
@@ -309,6 +311,10 @@ main section#beginning{
     section.banner img{
         margin-top: 50px;
         margin-bottom: 5px;
+    }
+
+    section#banner-hidden{
+        display: none;
     }
 
     main Article#article-hidden, main Article#article-hidden2{
@@ -350,10 +356,6 @@ main section#beginning{
 
     main article img, main article div.main-article, main form.product-button button{
         width: 80%;
-    }
-   
-    main section.important-buttons div#category-book-hidden{
-        display: inline;
     }
 
     main #separador-hidden{

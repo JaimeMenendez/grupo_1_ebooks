@@ -215,6 +215,10 @@ main #category-book-hidden{
     main div.identifier5{
         width:45%;
     }
+
+    main #category-book-hidden{
+        display: none;
+    }
 }
 
 
@@ -246,6 +250,9 @@ main #category-book-hidden{
 
     main div.identifier5{
         width:23%;
+    }
+    main #category-book-hidden{
+        display: none;
     }
 }
 
