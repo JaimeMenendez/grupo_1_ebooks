@@ -4,6 +4,7 @@ main section.important-buttons{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    padding: 15px;
 }
 
 /**** Identifier 1 ****/
@@ -30,8 +31,10 @@ main div.identifier i{
     color: var(--blanco);
 }
 
-main div.identifier i:hover:active{
+main div.identifier:hover{
     background-color: var(--azul-morado-claro);
+    transition: transform 1s;
+    transform: scale(0.9) !important;
 } 
 
 main div.identifier p{
@@ -70,8 +73,10 @@ main div.identifier2 p{
     font-size: 17px;
 }
 
-main div.identifier2 i:hover:active{
+main div.identifier2:hover{
     background-color: var(--verde-pastel-claro);
+    transition: transform 1s;
+    transform: scale(0.9) 
 }
 
 /**** Identifier 3 ****/
@@ -104,8 +109,10 @@ main div.identifier3 p{
     font-size: 17px;
 }
 
-main div.identifier3 i:hover:active{
+main div.identifier3:hover{
     background-color: var(--rosado-pastel);
+    transition: transform 1s;
+    transform: scale(0.9); 
 }
 /**** Identifier 4 ****/
 main div.identifier4{
@@ -137,8 +144,10 @@ main div.identifier4 p{
     font-size: 17px;
 }
 
-main div.identifier4 i:hover:active{
-    background-color: var(--verde-pastel-claro);
+main div.identifier4:hover{
+    background-color: var(--rojo);
+    transition: transform 1s;
+    transform: scale(0.9); 
 }
 
 /**** Identifier 5 ****/
