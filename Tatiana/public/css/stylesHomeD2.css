@@ -179,6 +179,9 @@ main div.products{
     justify-content: space-around;
 }
 
+/************************************
+//    BOOKS 1ST SECTIONS           //
+/***********************************/
 main article{
     display: flex;
     flex-direction: column;
@@ -190,12 +193,8 @@ main article{
     cursor: pointer;
 }
 
-main #article-hidden{
-    display: none;
-
-}
-
-main #article-hidden2{
+/********** BOOKS HIDDEN************/
+main Article#article-hidden, main Article#article-hidden2{
     display: none;
 }
 
@@ -210,6 +209,22 @@ main article div.main-article{
     border-top: 4px solid var(--dorado);
 }
 
+main article p.name{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+} 
+
+main article:hover div.main-article{
+    box-shadow: 0 10px 10px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
+}
+
+main article:hover{
+    transition: transform 0.2s;
+    transform: scale(1.1) !important;
+}
+
+/********** LOGO IN BOOKS ************/
 main article div.article-logo{
     position: relative;
     left: 90%;
@@ -230,19 +245,6 @@ main article div.article-logo i{
     background-color: white;
 }
 
-main article .product-button{
-    display:none;
-}
-
-main article:hover div.main-article{
-    box-shadow: 0 10px 10px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
-}
-
-main article:hover{
-    transition: transform 0.2s;
-    transform: scale(1.1) !important;
-}
-
 main article:hover i{
     transform: rotate(90deg);
 }
@@ -251,16 +253,15 @@ main article i{
     transition: transform 1s;
 }
 
-main article p.name{
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
 main article form{
     margin-top: 10px;
 }
 
+main article .product-button{
+    display:none;
+}
+
+/********** BUTTON BOOKS ************/
 main form.product-button button{
     width: 90%;
     height: 33px;
@@ -281,6 +282,7 @@ main article div.main-article button:hover{
     border: 2px solid var(--rojo-oscuro);
 }
 
+/********** BUTTON INICIO * ************/
 main section.button-beginning{
     height: 70px;
     display: flex;
@@ -307,14 +309,14 @@ main section.button-beginning button{
         margin-bottom: 5px;
     }
 
-    main #article-hidden, main #article-hidden2{
+    main Article#article-hidden, main Article#article-hidden2{
         display: flex;
         flex-direction: column;
         width: 30%;
         text-align: center;
         align-items: center;
         justify-content: center;
-        margin: 15px 0;
+        margin: 20px 0;
     }
 
     main article{
@@ -348,12 +350,13 @@ main section.button-beginning button{
         width: 100%;
     }
 
-    main #article-hidden{
+    main Article#article-hidden{
         width:15%;
     }
 
-    main #article-hidden2{
-        display: none;
+    main Article#article-hidden2{
+        display: inline;
+        width:15%;
     }
    
     main #separador-hidden{
