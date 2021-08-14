@@ -182,6 +182,7 @@ main div.identifier5 p{
 
 main div.identifier5:hover{
     background-color: var(--verde-pastel-claro);
+    box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.52);
     transition: transform 1s;
     transform: scale(0.9) 
     }

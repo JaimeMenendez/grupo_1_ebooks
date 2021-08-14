@@ -219,11 +219,6 @@ main article:hover div.main-article{
     box-shadow: 0 10px 10px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
 }
 
-main article:hover{
-    transition: transform 1s;
-    transform: scale(1.1) !important;
-}
-
 main Article#article-hidden, main Article#article-hidden2{
     display: none;
 }
@@ -329,6 +324,15 @@ main section#beginning{
     main article{
         width: 30%;
     }
+
+    main article:hover{
+        transition: transform 1s;
+        transform: scale(1.1) !important;
+    }
+
+    main section.important-buttons div#category-book-hidden{
+        display: none;
+    }
 }
 
 /************************************
@@ -348,12 +352,12 @@ main section#beginning{
         width: 80%;
     }
    
-    main #separador-hidden{
-        display: none;
+    main section.important-buttons div#category-book-hidden{
+        display: inline;
     }
 
-    main div.categories-books{
-        display: flex;
+    main #separador-hidden{
+        display: none;
     }
 
     main section.separador{
