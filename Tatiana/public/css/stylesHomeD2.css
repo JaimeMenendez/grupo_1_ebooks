@@ -194,10 +194,6 @@ main article{
 }
 
 /********** BOOKS HIDDEN************/
-main Article#article-hidden, main Article#article-hidden2{
-    display: none;
-}
-
 main article img{
     width: 90%;
 }
@@ -220,10 +216,13 @@ main article:hover div.main-article{
 }
 
 main article:hover{
-    transition: transform 0.2s;
+    transition: transform 1s;
     transform: scale(1.1) !important;
 }
 
+main Article#article-hidden, main Article#article-hidden2{
+    display: none;
+}
 /********** LOGO IN BOOKS ************/
 main article div.article-logo{
     position: relative;
@@ -255,10 +254,6 @@ main article i{
 
 main article form{
     margin-top: 10px;
-}
-
-main article .product-button{
-    display:none;
 }
 
 /********** BUTTON BOOKS ************/
@@ -324,43 +319,21 @@ main section.button-beginning button{
     }
 }
 
-
 /************************************
 //    MEDIA QUERIES PC             //
 /***********************************/
-@media (min-width: 1024px) {
+@media (min-width: 900px) {
 
     body{
         background-color: #ebebeb;;
     }
 
-    main{
-        width:100vw;
-    }
-
-    main article{
+    main article,  main Article#article-hidden,  main Article#article-hidden2{
         width: 15%;
     }
 
-    main article img{
+    main article img, main article div.main-article, main form.product-button button{
         width: 80%;
-    }
-
-    main article div.main-article{
-        width: 80%;
-    }
-
-    main form.product-button button{
-        width: 80%;
-    }
-
-    main Article#article-hidden{
-        width:15%;
-    }
-
-    main Article#article-hidden2{
-        display: inline;
-        width:15%;
     }
    
     main #separador-hidden{
