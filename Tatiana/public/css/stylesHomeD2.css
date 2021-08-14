@@ -330,6 +330,10 @@ main section.button-beginning button{
 /***********************************/
 @media (min-width: 1024px) {
 
+    body{
+        background-color: #ebebeb;;
+    }
+
     main article{
         width: 15%;
     }
@@ -365,10 +369,6 @@ main section.button-beginning button{
 
     main div.categories-books{
         display: flex;
-    }
-
-    main div.sub-categories-books{
-        order: 1;
     }
 
 }
