@@ -146,7 +146,7 @@ main{
 }
 
 main section.trend, section.suggest, section.moreNew, section.ebooks{
-    background-color: white;
+    background-color: #ffffff;
 }
 
 main section.separador img{
