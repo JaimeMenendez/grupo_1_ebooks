@@ -17,6 +17,7 @@
     --rosado-pastel: #f6c7af;
     --crema:#f3f0d7;
     --blanco: #ffffff;
+    --dorado: #81670f;
 }
 
 *{
@@ -185,7 +186,8 @@ main article{
     text-align: center;
     align-items: center;
     justify-content: center;
-    margin: 15px 0;
+    margin: 20px 0;
+    cursor: pointer;
 }
 
 main #article-hidden{
@@ -203,8 +205,50 @@ main article img{
 
 main article div.main-article{
     width: 90%;
+    margin: 18px 0px;
     padding: 15px;
+    border-top: 4px solid var(--dorado);
+}
+
+main article div.article-logo{
+    position: relative;
+    left: 90%;
+    top: -40px;
+}
+
+main article div.article-logo i{
+    display: block;
+    font-size: 20px;
+    margin-top: 5px;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--dorado);
+    color: var(--dorado);
+    border-radius: 50%;
+    position: absolute;
+    background-color: white;
+}
+
+main article .product-button{
+    display:none;
+}
+
+main article:hover div.main-article{
     box-shadow: 0 10px 10px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
+}
+
+main article:hover{
+    transition: transform 0.2s;
+    transform: scale(1.1) !important;
+}
+
+main article:hover i{
+    transform: rotate(90deg);
+}
+
+main article i{
+    transition: transform 1s;
 }
 
 main article p.name{
@@ -285,7 +329,7 @@ main section.button-beginning button{
 @media (min-width: 1024px) {
 
     main article{
-        width: 18%;
+        width: 15%;
     }
 
     main article div.sub-categories-books{
@@ -305,13 +349,13 @@ main section.button-beginning button{
     }
 
     main #article-hidden{
-        width:18%;
+        width:15%;
     }
 
     main #article-hidden2{
         display: none;
     }
-
+   
     main #separador-hidden{
         display: none;
     }

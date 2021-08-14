@@ -247,11 +247,16 @@ main #category-book-hidden{
         display: inline;
     }
 
-    main #important-buttons-pc{
+    main section#important-buttons-pc{
+        margin-top: 30px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-around;
+    }
+
+    div.identifier5{
+        flex-grow: 0.5;
     }
 
     div.identifier5 p{
