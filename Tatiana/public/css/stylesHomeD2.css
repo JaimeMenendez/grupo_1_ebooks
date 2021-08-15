@@ -344,10 +344,6 @@ main section.button-beginning button{
         transition: transform 1s;
         transform: scale(1.1) !important;
     }
-
-    main section.important-buttons div#category-book-hidden{
-        display: none;
-    }
 }
 
 /************************************
