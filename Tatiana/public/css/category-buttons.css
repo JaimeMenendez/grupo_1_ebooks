@@ -251,7 +251,7 @@ main #category-book-hidden{
     main div.identifier5{
         width:23%;
     }
-    main #category-book-hidden{
+    main section.important-buttons #category-book-hidden{
         display: none;
     }
 }
@@ -272,7 +272,7 @@ main #category-book-hidden{
         width:18%;
     }
 
-    main #category-book-hidden{
+    main section.important-buttons #category-book-hidden{
         display: inline;
     }
 
