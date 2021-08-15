@@ -326,7 +326,7 @@ main section.button-beginning button{
         display: none;
     }
 
-    main Article#article-hidden, main Article#article-hidden2{
+    main article#article-hidden, main article#article-hidden2{
         display: flex;
         flex-direction: column;
         width: 30%;
@@ -359,7 +359,7 @@ main section.button-beginning button{
         background-color: #ebebeb;;
     }
 
-    main article,  main Article#article-hidden,  main Article#article-hidden2{
+    main article,  main article#article-hidden,  main article#article-hidden2{
         width: 15%;
     }
 
