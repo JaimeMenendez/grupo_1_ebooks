@@ -21,74 +21,155 @@
     <title>Search Books</title>
 </head>
 <body>
-    <nav>
-        <div class="logoContainer">
-            <img class="logoSize-img" src="images/Logo_2.2.png" alt="Logo InsideBooks" />
-        </div>
-
-        <form class="searchBar">
-            <input type="text" id="search" name="search" placeholder=" Buscar por autor, título, categoría...">
-            <button type="submit"><i><i class="fas fa-search"></i></i></button>
-        </form>
-
-        <div class="menuButtons">
-            <a href="#"> <i class="fas fa-user-circle"></i> &nbsp<span class="mBSpan"> Mi cuenta</span> </a> 
-            <a href="#"> <i class="fas fa-shopping-cart"></i> &nbsp<span class="mBSpan"> Mi carrito</span> </a>
-            <a href="#"> <i class="fas fa-bars"></i> &nbsp<span class="mBSpan"> Menú</span></a>
-        </div>
-    </nav>
-
-    <section class="searchBar-mobile">
-        <form class="sbMobile">
-            <input type="text" id="search" name="search" placeholder=" Buscar por autor, título, categoría...">
-            <button type="submit"><i><i class="fas fa-search"></i></i></button>
-        </form>
-    </section>
-
-    <section class="banner">
-        <img src="images/banner.png" alt="promotions">
-    </section>
+    <div class="sectionBook1">
+        <nav>
+            <div class="logoContainer">
+                <img class="logoSize-img" src="images/Logo_2.2.png" alt="Logo InsideBooks" />
+            </div>
     
-    <main>
+            <form class="searchBar">
+                <input type="text" id="search" name="search" placeholder=" Buscar por autor, título, categoría...">
+                <button type="submit"><i><i class="fas fa-search"></i></i></button>
+            </form>
+    
+            <div class="menuButtons">
+                <a href="#"> <i class="fas fa-user-circle"></i> &nbsp<span class="mBSpan"> Mi cuenta</span> </a> 
+                <a href="#"> <i class="fas fa-shopping-cart"></i> &nbsp<span class="mBSpan"> Mi carrito</span> </a>
+                <a href="#"> <i class="fas fa-bars"></i> &nbsp<span class="mBSpan"> Menú</span></a>
+            </div>
+        </nav>
+    </div>
 
-    </main>
-    <footer>
+    <div class="sectionBook2">
+        <section class="searchBar-mobile">
+            <form class="sbMobile">
+                <input type="text" id="search" name="search" placeholder=" Buscar por autor, título, categoría...">
+                <button type="submit"><i><i class="fas fa-search"></i></i></button>
+            </form>
+        </section>
+    </div>
+
+    <div class="sectionBook3">
+        <section class="banner">
+            <img src="images/banner.png" alt="promotions">
+        </section>
+    </div>
+
+    <div class="sectionBook4">
+        <main>
+            <!--Libros electrónicos-->
+            <section class="ebooks">
+                <h3 id="nuevos">Ebooks...</h3>
+                <div class="products" id="products-lower">
+                    <article>
+                        <img class="image-product" src="images/book1.png" alt="book">
+                        <div class="main-article">
+                        <p class="name">Extreme C</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                        </div>
+                    </article>
+                    <article>
+                        <img class="image-product" src="images/book2.png" alt="book">
+                        <div class="main-article">
+                        <p class="name">Cross-Platform Development</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                        </div>
+                    </article>
+                    <article>
+                        <img class="image-product" src="images/book3.jpeg" alt="book">
+                        <div class="main-article">
+                        <p class="name">Keycloak-Identity and Access Managment</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                        </div>
+                    </article>
+                    <article>
+                        <img class="main-article" src="images/book4.png" alt="book">
+                        <div class="main-article">
+                        <p class="name">Machine learning with R</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                        </div>
+                    </article>
+                    <article id="article-hidden">
+                        <img class="main-article" src="images/book4.png" alt="book">
+                        <div class="main-article">
+                        <p class="name">Machine learning with R</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                        </div>
+                    </article>
+                    <article id="article-hidden2">
+                        <img class="main-article" src="images/book4.png" alt="book">
+                        <div class="main-article">
+                        <p class="name">Machine learning with R</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="separador">
+                <img src="images/Separador.jpg" alt="promotions">
+            </section> 
+
+            <section class="button-beginning" id="beginning">
+                <form class="product-button">
+                    <button type="submit">INICIO</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <div class="footerSection1">
         <section class="links-interest">
             <h3>Enlaces de interés</h3>
             <div class="links-interest-links">
-                <div class="links">
-                    <ul>
-                        <li><a href="#">Acerca de nosotros</a></li>
-                        <li><a href="#">Términos y condiciones</a></li>
-                        <li><a href="#">Avisos de privacidad</a></li>
-                    </ul>
-                </div>
-                <div class="links">
-                    <ul>
-                        <li><a href="#">Mis lista de deseos</a></li>
-                        <li><a href="#">Mis pedidos</a></li>
-                        <li><a href="#">Membresías</a></li>
-                    </ul>
-                </div>
+                <ul class="left">
+                    <li><a href="#">Acerca de nosotros</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Avisos de privacidad</a></li>
+                </ul>
+                <ul class="right">
+                    <li><a href="#">Mis lista de deseos</a></li>
+                    <li><a href="#">Mis pedidos</a></li>
+                    <li><a href="#">Membresías</a></li>
+                </ul>
             </div>
         </section>
+    </div>
+
+    <div class="footerSection2">
         <section class="support">
             <h3>Ayuda y soporte</h3>
             <div class="support-links">
-                <div class="links">
-                    <ul>
-                        <li><a href="#">Preguntas frecuentes</a></li>
-                        <li><a href="#">Formas de pago</a></li>
+                <ul class="left">
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Formas de pago</a></li>
+                </ul>
+                <ul class="right">
+                    <li><a href="#">Nuestro boletín</a></li>
+                    <li><a href="#">Envíos</a></li>
                     </ul>
-                </div>
-                <div class="links">
-                    <ul>
-                        <li><a href="#">Nuestro boletín</a></li>
-                        <li><a href="#">Envíos</a></li>
-                    </ul>
-                </div>
             </div>
         </section>
+    </div>
+    <div class="footerSection3">
         <section class="contact">
             <h3>Contáctenos</h3>
             <p class="contact">Calle falsa 123 Int 103<br>
@@ -103,6 +184,8 @@
                 </ul>
             </div>
         </section>
+    </div>
+    <div class="footerSection4">
         <section class="social-media">
             <h3>Síguenos en nuestras redes</h3>
             <div class="elements-sm">
@@ -124,10 +207,11 @@
                 </div>
             </div>
         </section>
+    </div>
+    <div class="footerSection5">
         <section class="logo-footer">
             <img src="images/Logo_2.2.png" alt="logo-footer">
         </section>
-    </footer>
-    
+    </div>
 </body>
 </html>
