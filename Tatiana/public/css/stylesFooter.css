@@ -231,6 +231,10 @@ footer section.logo-footer img{
         font-size: 12px;
     }
 
+    footer section div.SM h4{
+        font-size: 1em;
+    }
+
     footer section.support{
         width: 25%;
         height: 245px;
