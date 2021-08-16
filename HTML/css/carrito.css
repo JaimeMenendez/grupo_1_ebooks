@@ -24,6 +24,9 @@
 
   /* Margin Between Containers */
   --separation:5px;
+
+  --footerBackground: #2d2f8e;
+  --footerFontColor: #eaebf1;
 }
 
 body {

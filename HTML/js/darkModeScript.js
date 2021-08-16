@@ -21,7 +21,8 @@ if(window.matchMedia('(prefers-color-scheme: dark)').matches){
       document.documentElement.style.setProperty('--backgroundSections','#222222')
       document.documentElement.style.setProperty('--whiteButtonsFontColor','#eaebf1')
       document.documentElement.style.setProperty('--whiteButtonsBackground','rgb(59, 57, 57)')
-      document.documentElement.style.setProperty('--footerBackground','rgb(41, 41, 41)')
+      document.documentElement.style.setProperty('--footerBackground','#222222')
+      document.documentElement.style.setProperty('--footerFontColor','#eaebf1')
 
       datosPrincipales.style.background = "linear-gradient(315deg, #000000 0%, #414141 74%)";
 
@@ -40,7 +41,8 @@ if(window.matchMedia('(prefers-color-scheme: dark)').matches){
       document.documentElement.style.setProperty('--backgroundSections','white')
       document.documentElement.style.setProperty('--whiteButtonsFontColor','#2e2e2e')
       document.documentElement.style.setProperty('--whiteButtonsBackground','white')
-      document.documentElement.style.setProperty('--footerBackground','white')
+      document.documentElement.style.setProperty('--footerBackground','#2d2f8e')
+      document.documentElement.style.setProperty('--footerFontColor','#eaebf1')
 
       datosPrincipales.style.background = "linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)";
 

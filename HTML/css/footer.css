@@ -1,6 +1,5 @@
 footer{
     background-color: var(--footerBackground);
-    margin-top:5px;
 }
 
 footer ul{
@@ -28,13 +27,14 @@ footer section{
 
 footer section h4{
     grid-column:1/3;
-    margin-bottom: 20px;
+    margin: 20px 0;
+    color:var(--footerFontColor);
 }
 
 /* Footer Links */
 footer a{
     text-decoration: none;
-    color:var(--fontColors);
+    color:var(--footerFontColor);
 }
 
 .contactList{
@@ -49,6 +49,7 @@ footer .logoFooter {
     display: flex;
     justify-content:center;
     align-items: center;
+    background-color: var(--backgroundSections);
 }
 
 footer .logoFooter p {

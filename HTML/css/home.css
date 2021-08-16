@@ -31,8 +31,9 @@ font-family: 'Russo One', sans-serif; */
 
   /* Margin Between Containers */
   --separation:5px;
-
-  --footerBackground: white;
+  
+  --footerBackground: #2d2f8e;
+  --footerFontColor: #eaebf1;
 }
 
 @media (prefers-color-scheme: dark) {

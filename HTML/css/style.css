@@ -3,6 +3,7 @@ font-family: 'Russo One', sans-serif; */
 @import url("https://db.onlinewebfonts.com/c/1bbe3460b053c4f1d67d1f1afecdaa76?family=DIN");
 @import "./logoStyle.css";
 @import "./navBar.css";
+@import "./footer.css";
 :root {
   --navBarHeight: 50px;
   --buttonColor:#EA4533;
@@ -31,11 +32,9 @@ font-family: 'Russo One', sans-serif; */
   --opacityBlue:90%;
   --opacityGreen:90%;
   --opacityOrange:80%;
+  --footerBackground: #2d2f8e;
+  --footerFontColor: #eaebf1;
 }
-
-
-
-
 
 /* DarkMode */
 
@@ -391,7 +390,7 @@ a {
   .logoText {
     font-size: 80px;
     margin: 0;
-    font-family: "DIN Medium", sans-serif;
+    font-family: "DIN", sans-serif;
     line-height: 68px;
     padding-top: 2px;
     letter-spacing: 5px;
