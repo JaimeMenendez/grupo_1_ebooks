@@ -70,9 +70,18 @@ body {
     background-color: #c0392b;
   }
 
+  #separadorTop{
+    margin-top: var(--navBarHeight);
+    margin-bottom: 0;
+  }
+
+  #separadorBottom{
+    margin-top: -4px;
+    margin-bottom: -5px;
+  }
 
 main{
-    margin-top: var(--navBarHeight);
+    margin-top: -3px;
 }
 
 /* ========================================================= */
