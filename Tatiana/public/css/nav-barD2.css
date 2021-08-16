@@ -147,7 +147,13 @@ nav{
 /***********************************/
 @media (min-width: 600px) {
     form.searchBar {
+      width: 40%;
+      margin-left: 11%;
       display: flex;
+    }
+
+    .menuButtons { 
+        width: 25%;
     }
 }
 
@@ -155,6 +161,15 @@ nav{
 //    MEDIA QUERIES PC             //
 /***********************************/
 @media (min-width: 1024px) {
+    form.searchBar {
+        width: 45%;
+        margin: auto;
+        display: flex;
+      }
+  
+      .menuButtons { 
+          width: 30%;
+      }
     .menuButtons a span {
         display: inline;
         font-size: 0.8em;
