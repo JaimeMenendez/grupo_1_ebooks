@@ -4,6 +4,7 @@ font-family: 'Russo One', sans-serif; */
 @import "./logoStyle.css";
 @import "./navBar.css";
 @import "./footer.css";
+@import "./footer.css";
 :root {
   --navBarHeight: 50px;
   --buttonColor:#EA4533;

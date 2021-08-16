@@ -1,3 +1,15 @@
+:root {
+    --backgroundColor: #e2e1e0;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+ 
+      --backgroundColor: #121212;
+    } 
+  }
+
+
 footer{
     background-color: var(--footerBackground);
 }
@@ -23,6 +35,7 @@ footer section{
     border: 1px solid var(--backgroundColor);
     height:100%;
     width:100%;
+    border-bottom: none;
 }
 
 footer section h4{
@@ -50,6 +63,7 @@ footer .logoFooter {
     justify-content:center;
     align-items: center;
     background-color: var(--backgroundSections);
+    border-top: 1px solid var(--backgroundColor);
 }
 
 footer .logoFooter p {
@@ -107,6 +121,7 @@ footer li a, footer li{
 
    .logoFooter{
         grid-column:1/5;
+       
     }
 
     .socialMedia{
