@@ -9,22 +9,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
-<link rel="manifest" href="./images/favicon/site.webmanifest">
-<link rel="mask-icon" href="./images/favicon/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
 
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-  
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Russo+One&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/flaticon/flaticon.css">
- 
-    
+
+
     <link rel="stylesheet" href="css/normalize.min.css" />
     <link rel="stylesheet" href="css/carrito.css">
     <script defer src="./js/darkModeScript.js"></script>
@@ -35,251 +35,180 @@
 
     <nav>
         <a href="./homeT.html">
-          <div class="logoNavBar">
-            <div class="logoContainer">
-              <div class="bloqueAzul"></div>
-              <div class="bloqueVerde"></div>
-              <div class="bloqueRojo"></div>
-              <div class="bloqueNaranja"></div>
+            <div class="logoNavBar">
+                <div class="logoContainer">
+                    <div class="bloqueAzul"></div>
+                    <div class="bloqueVerde"></div>
+                    <div class="bloqueRojo"></div>
+                    <div class="bloqueNaranja"></div>
+                </div>
+                <p class="logoText"><span class="rojo">IN</span><span class="azul">SIDE</span><span
+                        class="verde">BOOKS</span>
+                </p>
+
             </div>
-            <p class="logoText"><span class="rojo">IN</span><span class="azul">SIDE</span><span class="verde">BOOKS</span>
-            </p>
-    
-          </div>
         </a>
-    
+
         <form class="searchBar" action="/action_page.php">
-          <input class="btn" type="text" placeholder=" Buscar.." name="search">
-          <button class="btn red" type="submit"><i class="flaticon-magnifying-glass-1"></i></button>
+            <input class="btn" type="text" placeholder=" Buscar.." name="search">
+            <button class="btn red" type="submit"><i class="flaticon-magnifying-glass-1"></i></button>
         </form>
-    
+
         <div class="menuButton">
-          <a id="BotonBuscarParaMoviles" href="#"><i class="flaticon-magnifying-glass-1"></i> </a>
-          <a href="./login.html"><i class="flaticon-profile-user"></i> &nbsp <span class="menu-label"> Mi Cuenta</span> </a>
-          <a href="./carrito.html"><i class="flaticon-shopping-cart"></i> &nbsp <span class="menu-label"> Mi
-              Carrito</span></a>
-    
-          <a href="#" onclick="openNav()"><i class="flaticon-list"></i> &nbsp <span class="menu-label">
-              Menú</span> </a>
-          <div class="mySidenav" id="sideNav">
-            <div class="mySidenavlinks">
-              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-              
-              <div>
-                <input style="display: none;" type="checkbox" id="darkMode">
-                <label for="darkMode">
-                  <span id="textoModoClaro"> <i class="far fa-moon"></i>&nbsp Modo Oscuro</span> 
-                  <span id="textoModoOscuro"> <i class="far fa-sun"></i>&nbsp Modo Claro</span>
-                </label>
-              </div>
-             
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-              <script>
-                function openNav() {
-                  document.getElementById("sideNav").style.width = "250px";
-                }
-    
-                function closeNav() {
-                  document.getElementById("sideNav").style.width = "0";
-                }
-              </script>
+            <a href="./login.html"><i class="flaticon-profile-user"></i> &nbsp <span class="menu-label"> Mi
+                    Cuenta</span> </a>
+            <a href="./carrito.html"><i class="flaticon-shopping-cart"></i> &nbsp <span class="menu-label"> Mi
+                    Carrito</span></a>
+
+            <a href="#" onclick="openNav()"><i class="flaticon-list"></i> &nbsp <span class="menu-label">
+                    Menú</span> </a>
+
+            <div class="mySidenav" id="sideNav">
+                <div class="mySidenavlinks">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                    <div>
+                        <input style="display: none;" type="checkbox" id="darkMode">
+                        <label for="darkMode">
+                            <span id="textoModoClaro"> <i class="far fa-moon"></i>&nbsp Modo Oscuro</span>
+                            <span id="textoModoOscuro"> <i class="far fa-sun"></i>&nbsp Modo Claro</span>
+                        </label>
+                    </div>
+
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                    <script>
+                        function openNav() {
+                            document.getElementById("sideNav").style.width = "250px";
+                        }
+
+                        function closeNav() {
+                            document.getElementById("sideNav").style.width = "0";
+                        }
+                    </script>
+                </div>
             </div>
-          </div>
-    
+
         </div>
-      </nav>
+    </nav>
 
     <img style="margin-top: 50px;" src="./images/separador.jpg" alt="Separador decorativo" width="100%">
 
     <main>
+        <h2 class="carritoTitle"><i class="fas fa-shopping-cart"></i>&nbsp Mi Carrito</h2>
         <section>
-            <h2 class="carritoTitle"><i class="fas fa-shopping-cart"></i>&nbsp Mi Carrito</h2>
-            <table class="shoppingCarTable">
-                <colgroup>
-                    <col class="imagenColumna" />
-                    <col class="detallesColumna" />
-                    <col class="cantidadColumna" />
-                    <col class="priceColumna" />
-                </colgroup>
-                <tr>
-                    <th></th>
-                    <th style="overflow: hidden;">Detalles</th>
-                    <th style="overflow: hidden;">Cantidad</th>
-                    <th style="overflow: hidden;">Precio</th>
-                </tr>
+            <article class="carArticle">
+                <img src="./images/480.jpeg" alt="">
+                <div class="carArticleData">
+                    <p class="carProductTitle">Programación estructurada </p>
+                    <p class="carProductAuthor"> Alberto González</p>
+                    <p class="carProductFormat">Libro Electrónico</p>
+                </div>
 
-                <tr>
-                    <td><img src="./images/480.jpeg" alt=""></td>
-                    <td> <strong>Programación estructurada </strong><br><br>
-                        Alberto González <br>
-                        <em> Libro Electrónico</em></td>
-                    <td>
-                        <div class="number-input">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
-                            <input class="quantity" min="1" name="quantity" value="1" type="number" readonly>
-                            <button style="padding:1px 7px"
-                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
-                                    class="fas fa-plus-circle"></i></button>
-                        </div>
+                <div class="number-input">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                        style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
+                    <input class="quantity" min="1" name="quantity" value="1" type="number" readonly>
+                    <button style="padding:1px 7px"
+                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
+                            class="fas fa-plus-circle"></i></button>
+                </div>
+                <p class="precio"><span>$ 125.00</span></p>
+                <i class="fas fa-trash-alt"></i>
+            </article>
 
-                    </td>
-                    <td class="precio"><span>$ 125.00</span> <i class="fas fa-trash-alt"></td>
-                <tr>
-                    <td><img src="./images/book.png" alt=""></td>
-                    <td> <strong>Programación estructurada </strong><br><br>
-                        Alberto González <br>
-                        <em> Libro Electrónico</em></td>
-                    <td>
-                        <div class="number-input">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
-                            <input class="quantity" min="1" name="quantity" value="1" type="number" readonly>
-                            <button style="padding:1px 7px"
-                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
-                                    class="fas fa-plus-circle"></i></button>
-                        </div>
-                    </td>
-                    <td class="precio"><span>$ 125.00</span> <i class="fas fa-trash-alt"></td>
-                </tr>
+            <article class="carArticle">
+                <img src="./images/480.jpeg" alt="">
+                <div class="carArticleData">
+                    <p class="carProductTitle">Programación estructurada </p>
+                    <p class="carProductAuthor"> Alberto González</p>
+                    <p class="carProductFormat">Libro Electrónico</p>
+                </div>
 
-                <tr>
-                    <td><img src="./images/book.png" alt=""></td>
-                    <td> <strong>Programación estructurada </strong><br><br>
-                        Alberto González <br>
-                        <em> Libro Electrónico</em></td>
-                    <td>
-                        <div class="number-input">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
-                            <input class="quantity" min="1" name="quantity" value="1" type="number" readonly>
-                            <button style="padding:1px 7px"
-                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
-                                    class="fas fa-plus-circle"></i></button>
-                        </div>
-                    </td>
-                    <td class="precio"><span>$ 125.00</span> <i class="fas fa-trash-alt"></i> </td>
-                </tr>
+                <div class="number-input">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                        style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
+                    <input class="quantity" min="1" name="quantity" value="1" type="number" readonly>
+                    <button style="padding:1px 7px"
+                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
+                            class="fas fa-plus-circle"></i></button>
+                </div>
+                <p class="precio"><span>$ 125.00</span></p>
+                <i class="fas fa-trash-alt"></i>
+            </article>
 
-                <tr>
-                    <td class="finalRow" colspan="3">Total a pagar</td>
-                    <td class="finalRow">$ 400.00</td>
-                </tr>
-            </table>
+            <article class="carArticle">
+                <img src="./images/480.jpeg" alt="">
+                <div class="carArticleData">
+                    <p class="carProductTitle">Programación estructurada </p>
+                    <p class="carProductAuthor"> Alberto González</p>
+                    <p class="carProductFormat">Libro Electrónico</p>
+                </div>
 
-
-            <div class="botones">
-                <button class='btn red agregarAlCarrito'>Proceder al Pago</button>
-                <button class='btn Azul comprarAhora'>Seguir Comprando</button>
-            </div>
-
+                <div class="number-input">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                        style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
+                    <input class="quantity" min="1" name="quantity" value="1" type="number" readonly>
+                    <button style="padding:1px 7px"
+                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
+                            class="fas fa-plus-circle"></i></button>
+                </div>
+                <p class="precio"><span>$ 125.00</span></p>
+                <i class="fas fa-trash-alt"></i>
+            </article>
         </section>
-    </main>
-        
-<img src="./images/bannerDescuentos.jpg" alt="Banner de descuentos" width="100%">
-        
-    <section class="booksSection">
-        <h2 class="sectionTitle">Otras Personas también Compraron</h2>
-        <div class="books">
-            <article class="book">
-                <img src="./images/book.png" alt="">
-                <p class="bookTitle">Física Universitaria</p>
-                <p class="bookAuthor">Juan Pablo Segundo</p>
-                <p class="bookPrice">$129</p>
-                <div class="botonesLibro">
-                    <button class="btn red" onclick="location.href='./description.html';">Detalles</button>
-                    <button class="btn blue" onclick="location.href='./description.html';"><i
-                            class="fas fa-cart-plus"></i></button>
-                    <input type="checkbox" class="hidden" name="favorito" id="fav1">
-                    <label for="fav1" class="btn green"><i class="far fa-heart"></i><i class="fas fa-heart"></i></label>
-                </div>
-            </article>
-            <article class="book">
-                <img src="./images/book2.png" alt="">
-                <p class="bookTitle">Física Universitaria</p>
-                <p class="bookAuthor">Juan Pablo Segundo</p>
-                <p class="bookPrice">$129</p>
-                <div class="botonesLibro">
-                    <button class="btn red" onclick="location.href='./description.html';">Detalles</button>
-                    <button class="btn blue" onclick="location.href='./description.html';"><i
-                            class="fas fa-cart-plus"></i></button>
-                    <input type="checkbox" class="hidden" name="favorito" id="fav2">
-                    <label for="fav2" class="btn green"><i class="far fa-heart"></i><i class="fas fa-heart"></i></label>
-                </div>
-            </article>
-            <article class="book">
-                <img src="./images/book3.jpeg" alt="">
-                <p class="bookTitle">Física Universitaria</p>
-                <p class="bookAuthor">Juan Pablo Segundo</p>
-                <p class="bookPrice">$129</p>
-                <div class="botonesLibro">
-                    <button class="btn red" onclick="location.href='./description.html';">Detalles</button>
-                    <button class="btn blue" onclick="location.href='./description.html';"><i
-                            class="fas fa-cart-plus"></i></button>
-                    <input type="checkbox" class="hidden" name="favorito" id="fav3">
-                    <label for="fav3" class="btn green"><i class="far fa-heart"></i><i class="fas fa-heart"></i></label>
-                </div>
-            </article>
-            <article class="book">
-                <img src="./images/book3.jpeg" alt="">
-                <p class="bookTitle">Física Universitaria</p>
-                <p class="bookAuthor">Juan Pablo Segundo</p>
-                <p class="bookPrice">$129</p>
-                <div class="botonesLibro">
-                    <button class="btn red" onclick="location.href='./description.html';">Detalles</button>
-                    <button class="btn blue" onclick="location.href='./description.html';"><i
-                            class="fas fa-cart-plus"></i></button>
-                    <input type="checkbox" class="hidden" name="favorito" id="fav4">
-                    <label for="fav4" class="btn green"><i class="far fa-heart"></i><i class="fas fa-heart"></i></label>
-                </div>
-            </article>
-            <article class="book">
-                <img src="./images/book4.png" alt="">
-                <p class="bookTitle">Física Universitaria</p>
-                <p class="bookAuthor">Juan Pablo Segundo</p>
-                <p class="bookPrice">$129</p>
-                <div class="botonesLibro">
-                    <button class="btn red" onclick="location.href='./description.html';">Detalles</button>
-                    <button class="btn blue" onclick="location.href='./description.html';"><i
-                            class="fas fa-cart-plus"></i></button>
-                    <input type="checkbox" class="hidden" name="favorito" id="fav5">
-                    <label for="fav5" class="btn green"><i class="far fa-heart"></i><i class="fas fa-heart"></i></label>
-                </div>
-            </article>
-            <article class="book">
-                <img src="./images/book4.png" alt="">
-                <p class="bookTitle">Física Universitaria</p>
-                <p class="bookAuthor">Juan Pablo Segundo</p>
-                <p class="bookPrice">$129</p>
-                <div class="botonesLibro">
-                    <button class="btn red" onclick="location.href='./description.html';">Detalles</button>
-                    <button class="btn blue" onclick="location.href='./description.html';"><i
-                            class="fas fa-cart-plus"></i></button>
-                    <input type="checkbox" class="hidden" name="favorito" id="fav5">
-                    <label for="fav5" class="btn green"><i class="far fa-heart"></i><i class="fas fa-heart"></i></label>
-                </div>
-            </article>
 
+        <article class="totalAPagar carArticle">
+            <p>Total:</p>
+            <p>$ 592.25</p>
+        </article>
+
+        <div class="promociones">
+            <p> <strong>Envío gratis</strong> a toda la <strong>República Mexicana</strong> en compras mayores a
+                <span class="rojo">$299</span> o en productos
+                elegibles de nuestro catálogo
+            </p>
+
+            <p style="margin-bottom: 0;">Realiza tu pedido y recíbelo en <span class="rojo">23 horas</span> u
+                obtén instantáneamente la versión digital de
+                nuestros libros </p>
+
+            <ul>
+                <li><a href=""> <i class="fas fa-map-marker-alt"></i> <span> &nbsp Configurar Dirección de
+                            Envío</span></a></li>
+                <li><a href=""><i class="fas fa-info-circle"></i> <span>&nbsp Más Información sobre precios y tiempos de
+                            entrega de Inside Books en la República Mexicana.</span></a></li>
+            </ul>
         </div>
-    </section>
-        
-<img src="./images/separador.jpg" alt="Separador decorativo" width="100%">
-   
-   <footer>
+
+
+
+        <div class="botones">
+
+            <button class='btn red agregarAlCarrito'>Proceder al Pago</button>
+            <button class='btn Azul comprarAhora'>Seguir Comprando</button>
+        </div>
+    </main>
+
+    <img src="./images/bannerDescuentos.jpg" alt="Banner de descuentos" width="100%">
+
+
+    <img src="./images/separador.jpg" alt="Separador decorativo" width="100%">
+
+    <footer>
         <section>
             <h4>Enlaces de Interés</h4>
             <ul>
                 <li><a href="">Mi cuenta</a></li>
                 <li><a href="">Mis Pedidos</a></li>
             </ul>
-
+    
             <ul>
                 <li><a href="">Mi Lista de Deseos</a></li>
                 <li><a href="">Artículos Vistos</a></li>
             </ul>
         </section>
-
+    
         <section>
             <h4>Ayuda y Soporte</h4>
             <ul>
@@ -287,40 +216,35 @@
                 <li><a href="">Formas de Pago</a></li>
                 <li><a href="">Nuestro Boletín</a></li>
             </ul>
-
+    
             <ul>
                 <li><a href="./TerminosyCondiciones.html">Términos y Condiciones </a></li>
                 <li><a href="./PoliticaDePrivacidad.html">Política de Privacidad</a></li>
                 <li><a href="">Acerca de Nosotros</a></li>
             </ul>
         </section>
-
+    
         <section>
             <h4>Contacto</h4>
             <ul class="contactList">
-                <li><a href='mailto:contact@insidebooks.com?subject="Hi There!"'><i class="flaticon-email"></i>
-                        &nbsp contact@insidebooks.com</a></li>
-                <li><i class="flaticon-telephone-handle-silhouette"></i>&nbsp&nbsp +53 123 456 7890</li>
+                <li><a href='mailto:contact@insidebooks.com?subject="Hi There!"'><i class="flaticon-email" ></i> &nbsp contact@insidebooks.com</a></li>
+                <li><a href="tel:+521234567890">  <i class="flaticon-telephone-handle-silhouette"></i>&nbsp&nbsp +53 123 456 7890</li></a>
             </ul>
         </section>
-
+    
         <section class="socialMedia">
             <h4>Redes Sociales</h4>
             <ul>
-                <li><a href="https://www.facebook.com/" target="_blank"><i class="flaticon-facebook"></i> &nbsp
-                        Facebook</a></li>
-                <li><a href="https://www.instagram.com/" target="_blank"><i class="flaticon-instagram"></i>&nbsp
-                        Instagram</a></li>
+                <li><a href="https://www.facebook.com/" target="_blank"><i class="flaticon-facebook"></i> &nbsp Facebook</a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><i class="flaticon-instagram"></i>&nbsp Instagram</a></li>
             </ul>
-
+    
             <ul>
-                <li><a href="https://twitter.com/" target="_blank"><i class="flaticon-twitter"></i>&nbsp Twitter</a>
-                </li>
-                <li><a href="https://web.telegram.org" target="_blank"><i class="flaticon-telegram"></i>&nbsp
-                        Telegram</a></li>
+                <li><a href="https://twitter.com/" target="_blank"><i class="flaticon-twitter"></i>&nbsp Twitter</a></li>
+                <li><a href="https://web.telegram.org" target="_blank"><i class="flaticon-telegram"></i>&nbsp Telegram</a></li>
             </ul>
         </section>
-
+    
         <div class="logoFooter">
             <div class="logoContainer">
                 <div class="bloqueAzul"></div>

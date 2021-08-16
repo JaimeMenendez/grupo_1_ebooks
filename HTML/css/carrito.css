@@ -8,10 +8,15 @@
   --marginBottom:10px;
   --borderRadius:5px;
 
-  --sectionBackground: white;
+  --navBarHeight: 50px;
+  --marginBottom:10px;
+  --borderRadius:5px;
 
-  --navBarBackground:rgb(255, 255, 255);
+  --backgroundColor: #e2e1e0;
+  --backgroundSections:white;
+
   --fontColors:#2e2e2e;
+  --navBarBackground:rgb(255, 255, 255);
 
   /* Buttons */
   --buttonHeight:35px;
@@ -19,21 +24,31 @@
   --buttonFontColor:#ecf0f1;
   --buttonColor:#EA4533;
 
+   /* List */
+  --fontListColor:#56575e;;
+  --fontIndexTitleColor: #56575e;
+
   /* Price */
   --priceColor:#EA4533;
 
   /* Margin Between Containers */
   --separation:5px;
-
+  
   --footerBackground: #2d2f8e;
   --footerFontColor: #eaebf1;
 }
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: var(--sectionBackground);
+  background-color: var(--backgroundColor);
   color: var(--fontColors);
 
+}
+
+main{
+  width:100%;
+  display: grid;
+  justify-content: center; 
 }
 
 .carritoTitle{
@@ -44,52 +59,84 @@ body {
     font-size:30px;
 }
 
+.carArticle{
 
-.shoppingCarTable{
-    width: 95%;
-    max-width: 700px;
-    margin: auto;
-    table-layout:fixed;
-    text-align: center;
-    border-collapse: collapse;
-    font-size: 12px;
+  position: relative;
+  margin: 0 5px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 20% 55% 25%;
+  padding: 20px;
+  border-radius: 20px;
+  
+
+  background-color:var(--backgroundSections);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  margin-bottom: 10px;
+ max-width:800px;
+ 
+
+}
+.carArticle img{
+  grid-row: 1/4;
+  width:100%;
+ 
+  max-height: 350px;
 }
 
-.imagenColumna{
-    width: 20%;
+.carProductAuthor{
+  display: none;
 }
 
-.detallesColumna{
-    width: 40%;
+.carProductFormat{
+  display: none;
 }
 
-.cantidadColumna, .priceColumna{
-    width: 20%;
+.carArticle .number-input{
+  grid-row: 3/4;
+  grid-column: 3/4;  
+  display: flex;
+  flex-direction: row;  
 }
 
-.shoppingCarTable td img{
-width:95%;
-max-width: 200px;
+.carProductTitle{
+  font-weight: bold;
+}
+.carArticleData{
+  grid-row: 1/3;
+  text-align:left;
+  grid-column: 2/3;
+  margin-left: 10px;
 }
 
-.shoppingCarTable td, .shoppingCarTable th{
-      padding:10px 0;
-      border-bottom: 1px solid #afafaf;
-      text-align: center;
+.carArticle .fa-trash-alt{
+  grid-column: 3/4;
+  grid-row: 1/3;
+  font-size: 25px;
+  display:flex;
+  justify-content:center;
+  align-content: center;
+  align-items:space-between;
+  margin-top:10px;
+  color: var(--buttonColor);
+  cursor: pointer;
 }
 
-.shoppingCarTable th, .finalRow{
-      border: 1px solid var(--sectionBackground);
-      padding: 5px;
-      background:#2d2f8ef5;
-      color:white;
-      box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+.carArticleData p{
+  margin: 5px;
 }
 
-.shoppingCarTable tr .finalRow{
-  border-bottom: none;
-  border-top:none;
+.carArticle .precio{
+  grid-row: 3/4;
+  grid-column: 2/3;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  margin-left: 20px;
+
 }
+
+
 
 
 .btn.red {
@@ -143,6 +190,31 @@ max-width: 200px;
     background-color: #2D2F8E;
 }
 
+.number-input{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+/* ========================================================= */
+/*                  Promociones                       */
+/* ========================================================= */ 
+.promociones{
+  margin: auto;
+  display: none;
+}
+.promociones p{
+  font-size:16px;
+  text-align: left;
+  width:80%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.dataRight ul li a{
+  color: var(--fontColors);
+}
+
 /* ========================================================= */
 /*                 Cantidad   y Precio                       */
 /* ========================================================= */ 
@@ -179,6 +251,7 @@ input:focus, textarea:focus, select:focus{
     color:#2D2F8E;
     border:none;
     background: transparent;
+    cursor: pointer;
 }
 
 .number-input{
@@ -192,127 +265,17 @@ input:focus, textarea:focus, select:focus{
   font-size: 20px;
 }
 
-/* ========================================================= */
-/*                Botones de las Sugerencias                 */
-/* ========================================================= */ 
-
-.hidden {visibility: hidden; display: none;} 
-#fav1:checked + label i.fas,#fav2:checked + label i.fas,#fav3:checked + label i.fas,#fav4:checked + label i.fas,#fav5:checked + label i.fas,#fav6:checked + label i.fas{
-  display:inline;
-}
-
-#fav1:checked + label i.far, #fav2:checked + label i.far, #fav3:checked + label i.far, #fav4:checked + label i.far, #fav5:checked + label i.far, #fav6:checked + label i.far{
-  display:none;
-}
-
-label i.fas{
-  display: none;
-}
-
-
-/* ========================================================= */
-/*                Sugerencias Formato                    */
-/* ========================================================= */ 
-.booksSection .sectionTitle{
-  text-align: left;
-  margin: 0 30px;
-  margin-top: 50px;
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-
-.books{
-  display:flex;
-  justify-content:space-around;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin:auto;
-}
-
-.book {
-  text-align: center;
-  display: inline-block;
-  position: relative;
-  width: 150px;
-  margin: 10px; 
-  transition: all 0.2s cubic-bezier(.25,.8,.25,1);
-  padding-bottom:65px; /*Required for button and price tag */
+.totalAPagar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 30px;
 
 }
 
-.book img{
-  width: 150px;
-  height: 180px;
-}
-
-.bookPrice, .bookAuthor, .bookTitle{
-  margin:0;
-}
-
-.bookPrice{
-  color:var(--priceColor);
-  font-weight: bold;
-  font-size:18px;
-  margin-top: 5px;
-  position: absolute;
-  bottom:40px;
-  left:50%;
-  transform:translateX(-50%);
-}
-
-.bookTitle{
-  font-weight:500;
-  font-size:16px;
-  margin: 2px 0;
-  text-align: center;
-  font-weight: 500;
-}
-
-.bookAuthor{
-  font-size:14px;
-  color:var(--fontColors);
-  margin: 2px 0;
-  text-align: center;
-  font-weight: 300;
-}
-
-
-
-
-
-
-.botonesLibro .red{
-  width: 60%;
-  box-shadow: none;
-  padding: 0;
-  margin:0;
-  height:35px;
-}
-
-.botonesLibro .blue,.botonesLibro .green{
-  width: 20%;
-  height:30px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  box-shadow: none;
-  padding: 0;
-  margin:0;
-  height:35px;
-}
-
-.botonesLibro .blue{
-  border-left-color:#e74c3c ;
-}
-
-.botonesLibro{
-  display:flex;
-  justify-content: center;
-  position: absolute;
-  bottom:0;
-  width: 100%;
-  box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+@media (max-width:340px) {
+  .carArticle{
+  grid-template-columns: 20% 45% 30%;}
 }
 
 
@@ -326,6 +289,9 @@ label i.fas{
     --fontColors:#eaebf1;
     --sectionBackground: #121212;
 
+    --backgroundColor: #121212;
+  --backgroundSections:#222222;
+
     --whiteButtonsFontColor: #eaebf1;
     --whiteButtonsBackground:rgb(59, 57, 57);
     --footerBackground: rgb(41, 41, 41);
@@ -335,51 +301,92 @@ label i.fas{
     background-color: #000000 74%;
   }
 
-
-  
 }
 
 
 @media(min-width:468px) {
-  .shoppingCarTable{
-    font-size: 16px;
-}
 
+  .carProductAuthor{
+    display: block;
+  }
+  
+  .carProductFormat{
+    display: block;
+  }
 
   .number-input{
     flex-direction: row;
     justify-content: center;
   }  
-
-  .book img{
-    width: 200px;
-    height: 250px;
-  }
-
-  .book {
-    width: 200px;
-  }
 }
 
 
 @media(min-width:768px) {
-  .books {
-    max-width: 800px;
+  .carArticle{
+    grid-template-columns: 2fr 6fr 2fr;
   }
+
 }
 
 
 @media(min-width:1100px) {
-  .book img{
-    width: 150px;
-    height: 180px;
-  }
 
-  .book {
-    width: 150px;
-  }
+main{
+ grid-template-columns: 60% minmax(350px,25%);
+ max-width:1200px;
+ justify-content: center;
+ margin: auto;
+ margin-bottom: 50px;
+}
 
-  .books {
-    max-width: 95%;
-  }
+main section{
+  grid-column: 1/2;
+  grid-row: 2/4;
+}
+
+main .carritoTitle{
+  grid-column:1/3;
+  grid-row: 1/2;}
+
+.totalAPagar{
+  grid-column: 2/3;
+  grid-row: 2/4;
+}
+
+main .botones{
+  grid-row: 2/4;
+  grid-column: 2/3;
+  z-index: 3;
+  padding-top: 400px;
+}
+
+.promociones{
+  grid-row: 2/3;
+  grid-column: 2/3;
+  padding-top: 80px;
+  z-index: 4;
+  display:block;
+}
+
+.promociones ul li{
+  text-decoration: none;
+  list-style: none;
+  text-align:left;
+  margin: 10px;
+  padding: 0;
+  margin-right: 10px;
+  margin-left: 0;
+  padding: 0;
+
+}
+
+.promociones ul a{
+  text-decoration: none;
+  padding: 10px;
+  color:var(--fontColors);
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items:stretch;
+}
 }
