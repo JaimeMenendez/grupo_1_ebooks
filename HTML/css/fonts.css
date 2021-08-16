@@ -1,9 +1,9 @@
 @font-face {font-family: "DIN";
-    src:url("../1bbe3460b053c4f1d67d1f1afecdaa76.eot"); /* IE9*/
-    src:url("../1bbe3460b053c4f1d67d1f1afecdaa76.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("../1bbe3460b053c4f1d67d1f1afecdaa76.woff2") format("woff2"), /* chrome firefox */
-    url("../DIN-Medium.ttf") format("woff"), /* chrome firefox */
-    url("../1bbe3460b053c4f1d67d1f1afecdaa76.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
-    url("../1bbe3460b053c4f1d67d1f1afecdaa76.svg#DIN") format("svg"), /* iOS 4.1- */
-    url("../DIN-Medium.ttf") format("opentype"),
-    url("../DIN-Medium.ttf") format("truetype"
+    src:url("https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/css/1bbe3460b053c4f1d67d1f1afecdaa76.eot"); /* IE9*/
+    src:url("https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/css/1bbe3460b053c4f1d67d1f1afecdaa76.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/css/1bbe3460b053c4f1d67d1f1afecdaa76.woff2") format("woff2"), /* chrome firefox */
+    url("https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/css/DIN-Medium.ttf") format("woff"), /* chrome firefox */
+    url("https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/css/1bbe3460b053c4f1d67d1f1afecdaa76.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/css/1bbe3460b053c4f1d67d1f1afecdaa76.svg#DIN") format("svg"), /* iOS 4.1- */
+    url("https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/css/DIN-Medium.ttf") format("opentype"),
+    url("https://jaimemenendez.github.io/grupo_1_insidebooks/HTML/css/DIN-Medium.ttf") format("truetype"
