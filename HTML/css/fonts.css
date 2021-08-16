@@ -1,0 +1,10 @@
+@font-face {font-family: "DIN";
+    src:url("../ggrupo_1_insidebooks/1bbe3460b053c4f1d67d1f1afecdaa76.eot"); /* IE9*/
+    src:url("../grupo_1_insidebooks/1bbe3460b053c4f1d67d1f1afecdaa76.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../grupo_1_insidebooks/1bbe3460b053c4f1d67d1f1afecdaa76.woff2") format("woff2"), /* chrome firefox */
+    url("../grupo_1_insidebooks/DIN-Medium.ttf") format("woff"), /* chrome firefox */
+    url("../grupo_1_insidebooks/1bbe3460b053c4f1d67d1f1afecdaa76.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("../grupo_1_insidebooks/1bbe3460b053c4f1d67d1f1afecdaa76.svg#DIN") format("svg"), /* iOS 4.1- */
+    url("../grupo_1_insidebooks/DIN-Medium.ttf") format("opentype"),
+    url("../grupo_1_insidebooks/DIN-Medium.ttf") format("truetype")
+  }
