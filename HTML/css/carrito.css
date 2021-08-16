@@ -65,7 +65,7 @@ main{
   margin: 0 5px;
   text-align: center;
   display: grid;
-  grid-template-columns: 20% 55% 25%;
+  grid-template-columns: 20% 50% 30%;
   padding: 20px;
   border-radius: 20px;
   
