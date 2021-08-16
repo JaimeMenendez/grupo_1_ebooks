@@ -302,9 +302,7 @@ main article p.name{
     overflow: hidden;
 } 
 
-main article:hover div.main-article{
-    box-shadow: 0 10px 10px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
-}
+
 
 main Article#article-hidden, main Article#article-hidden2{
     display: none;
@@ -335,7 +333,7 @@ main article:hover i{
 }
 
 main article i{
-    transition: transform 1s;
+    transition: transform 0.5s;
 }
 
 main article form{
