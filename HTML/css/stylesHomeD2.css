@@ -233,6 +233,7 @@ main{
 
 main section.trend, section.suggest, section.moreNew, section.ebooks{
     background-color: var(--backgroundSections);
+    text-align: left;
 }
 
 main section.separador{
