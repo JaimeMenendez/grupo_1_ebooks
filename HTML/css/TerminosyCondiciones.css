@@ -30,6 +30,9 @@
 
   /* Margin Between Containers */
   --separation:5px;
+
+  --footerBackground: #2d2f8e;
+  --footerFontColor: #eaebf1;
 }
 
 
@@ -49,9 +52,10 @@ main {
     max-width: 1000px;
     margin: auto;
     text-align: left;
-    background-color: white;
+    background-color: var(--backgroundSections);
     padding:40px;
     margin-top: 60px;
+    color:var(--fontColors);
 }
 
 main h2{
@@ -100,4 +104,21 @@ main p,main ul{
   font-size:25px;
   line-height: 24px;
   letter-spacing:normal;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --navBarHeight: 50px;
+    --navBarBackground:rgb(41, 41, 41);
+    --searchBarColor: rgb(59, 57, 57);
+    --fontColors:#eaebf1;
+    --sectionBackground: #121212;
+
+    --backgroundColor: #121212;
+  --backgroundSections:#222222;
+
+    --whiteButtonsFontColor: #eaebf1;
+    --whiteButtonsBackground:rgb(59, 57, 57);
+    --footerBackground: rgb(41, 41, 41);
+  } 
 }
