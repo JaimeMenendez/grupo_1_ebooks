@@ -1,6 +1,6 @@
 @import url(//db.onlinewebfonts.com/c/1bbe3460b053c4f1d67d1f1afecdaa76?family=DIN);
 @import url(nav-barD2.css);
-
+@import url(stylesFooterGrid.css);
 
 :root{
     --azul-morado-oscuro: #2d2f8e;
@@ -33,6 +33,15 @@ html,body
     padding: 0px;
 }
 
+/************************************
+This view contains 4 colums and 9 rows
+1 row: Nav search bar (main)
+2 row: Nav search bar (mobile)
+3 row: Upper banner promotional
+4 row: Main section
+5-8 row: Footer section
+9 row: Logo footer section
+/***********************************/
 body {
     /*Muestra solo el contenido que cabe en la caja*/
     display: grid;
@@ -40,7 +49,6 @@ body {
     grid-template-rows: 50px 60px auto auto auto auto auto auto auto;
     justify-items: center;
     align-items: center;
-    /**grid-gap: 10px;**/ 
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
 }
@@ -51,25 +59,40 @@ div{
     height: 100%;
 }
 
+/************************************
+//     GRID FOR NAV SEARCH BAR     //
+/***********************************/
 div.sectionBook1{
     grid-column: 1/5;
     background-color: white;
 }
 
+/************************************
+//  GRID FOR NAV SEARCH BAR MOBILE //
+/***********************************/
 div.sectionBook2{
     grid-column: 1/5;
     background-color: blue;
 }
 
+/************************************
+//      GRID FOR UPPER BANNER      //
+/***********************************/
 div.sectionBook3{
     grid-column: 1/5;
     background-color: blue;
 }
 
+/************************************
+//          GRID FOR MAIN          //
+/***********************************/
 div.sectionBook4{
     grid-column: 1/5;
 }
 
+/************************************
+//     GRID FOR FOOTER SECTION     //
+/***********************************/
 div.footerSection1{
     grid-column: 1/5;
     width: 100%;
@@ -186,178 +209,10 @@ section.banner-books img{
 }
  
 /************************************
-//     LINKS INTEREST SECTION      //
+//          MAIN SECTION           //
 /***********************************/
-section.links-interest{
-    padding-top: 15px;
-    height: 240px;
-    background: var(--azul-morado-oscuro);
-    align-items: center;
-}
 
-div.links-interest-links{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto;
-    margin-top: 15px;
-}
 
-ul.left{
-    grid-column: 1/2;
-    list-style-type: none;
-    text-align: left;
-    font-size: 1em;
-    justify-content: center;
-    align-items: center;
-    margin-left: 15%;
-    font-family: "DIN", sans-serif;
-}
-
-ul.right{
-    grid-column: 2/3;
-    list-style-type: none;
-    text-align: left;
-    font-size: 1em;
-    justify-content: center;
-    align-items: center;
-    margin-left: 15%;
-    font-family: "DIN", sans-serif;
-}
-
-ul.left li, ul.right li{
-    margin: 15px;
-    font-family: "DIN", sans-serif;
-}
-
-ul.left a, ul.right a{
-    color: var(--blanco);
-    text-decoration: none;
-}
-
-/************************************
-//         SUPPORT SECTION         //
-/***********************************/
-section.support{
-    padding-top: 15px;
-    height: 100%;
-    border-top: 1px solid white;
-    background: var(--azul-morado-oscuro);
-}
-
-div.support-links{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto;
-    margin-top: 15px;
-}
-
-/************************************
-//         CONTACT SECTION         //
-/***********************************/
-section.contact{
-    padding-top: 15px;
-    padding-bottom: 13px;
-    border-top: 1px solid white;
-    background: var(--azul-morado-oscuro);
-}
-
-div.inf-contact{
-    display: flex;
-    text-align: left;
-    justify-content: center;  
-}
-
-div.inf-contact ul{
-    list-style-type: none;
-    font-size: 1em;
-    color: var(--verde-pastel-oscuro);
-}
-
-p.contact{
-    display: flex;
-    justify-content: center;
-    color: var(--blanco);
-    margin-top: 30px;
-    width: 100%;
-    font-size: 1em;
-    text-align: center;
-}
-
-div.inf-contact li{
-    margin: 10px;
-}
-
-div.inf-contact i{
-    position: relative;
-    font-size: 1.3em;
-}
-
-div.inf-contact a{
-    margin-left: 10px;
-    font-size: 1em;
-    text-decoration: none;
-    color: var(--blanco);
-}
-
-/************************************
-//      SOCIAL MEDIA SECTION       //
-***********************************/
-section.social-media{
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-top: 1px solid white;
-    background: var(--azul-morado-oscuro);
-
-}
-
-div.elements-sm{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-    margin: 15px;
-    margin-left: 10%;
-}
-
-div.SM{
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    align-items: center;
-    justify-content: flex-start;
-} 
-
-div.SM a{
-    text-decoration: none;
-    color: var(--blanco);
-}
-
-div.SM h4{
-    margin-left: 5px;
-    font-family: "DIN", sans-serif;
-}
-
-div.logoSM{
-    width: 20%;
-}
-
-div.logoSM i{
-    position: relative;
-    font-size: 1.3em;
-    padding: 5px;
-    width: 35px;
-    height: 35px;
-    border: 2px solid var(--blanco);
-    border-radius: 50%;
-    color: var(--verde-pastel-claro);
-}
-
-section.logo-footer img{
-    height: 40px;
-    padding: 5px;
-    margin-top: 5px;
-}
 /************************************
 //    MEDIA QUERIES TABLET         //
 /***********************************/
@@ -394,6 +249,7 @@ section.logo-footer img{
 //    MEDIA QUERIES PC             //
 /***********************************/
 @media (min-width: 1024px) {
+    
     div.SM h4{
         font-size: 0.8em;
     }
