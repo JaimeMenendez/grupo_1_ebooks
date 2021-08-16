@@ -1,6 +1,6 @@
 /* font-family: 'Roboto', sans-serif;
 font-family: 'Russo One', sans-serif; */
-@import url("https://db.onlinewebfonts.com/c/1bbe3460b053c4f1d67d1f1afecdaa76?family=DIN");
+@import "./fonts.css";
 @import "./logoStyle.css";
 @import "./navBar.css";
 @import "./footer.css";
