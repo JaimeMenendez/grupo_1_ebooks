@@ -240,7 +240,7 @@ main div.imp-buttons-hidden{
 }
 
 main section.show-filter section.sectionChange, section.suggest, section.moreNew, section.ebooks{
-    background-color: var(whiteButtonsBackground);
+    background-color: var(--backgroundSections);
     text-align: left;
     
 }
