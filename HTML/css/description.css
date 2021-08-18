@@ -24,6 +24,8 @@
   --borderRadius:5px;
 
   --sectionBackground: white;
+  --backgroundColor: #e2e1e0;
+  --backgroundSections:white;
 
   --navBarBackground:rgb(255, 255, 255);
   --fontColors:#2e2e2e;
@@ -86,7 +88,6 @@ body {
   }
 
   #separadorTop{
-    margin-top: var(--navBarHeight);
     margin-bottom: 0;
   }
 
@@ -131,8 +132,8 @@ form.sbMobile input[type=text]{
 
    width: 80%;
    min-width: 190px;
-   background: var(--backgroundSections);
-   color: --oscuro;
+   background-color: var(--backgroundSections);
+   color: var(--fontColors);
 }
 
 form.sbMobile input[type=text]::placeholder{
@@ -522,6 +523,9 @@ main ul a{
       --fontColors:#eaebf1;
       --sectionBackground: #121212;
 
+      --backgroundColor: #121212;
+      --backgroundSections:#222222;
+
       --whiteButtonsFontColor: #eaebf1;
       --whiteButtonsBackground:rgb(59, 57, 57);
       --footerBackground: rgb(41, 41, 41);
@@ -539,6 +543,9 @@ main ul a{
     section.searchBar-mobile{
         display: none;
     }
+    #separadorTop{
+        margin-top: var(--navBarHeight);
+      }
 }
 
 @media(min-width:768px){
