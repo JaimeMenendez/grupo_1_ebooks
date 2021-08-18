@@ -231,8 +231,17 @@ main{
     background-color: var(--backgroundColor);
 }
 
-main section.trend, section.suggest, section.moreNew, section.ebooks{
+main div.imp-buttons-hidden{
+    display: none;
+}
+
+main section.show-filter section.sectionChange, section.suggest, section.moreNew, section.ebooks{
     background-color: var(--backgroundSections);
+    text-align: left;
+}
+
+section.trends, section.results{
+    background-color: white;
     text-align: left;
 }
 
@@ -255,6 +264,24 @@ main section{
     border-radius: 4px;
 }
 
+main div.show-filter{
+    display: flex;
+    border-bottom: 4px solid var(--dorado);
+}
+
+main div.show-filter a{
+    font-family: "DIN", sans-serif;
+    text-decoration: none;
+    color: var(--fontColors);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 21px;
+    padding: 5px;
+    border: 1px solid white;
+    box-shadow: 3px 3px 15px 3px rgba(0,0,0,0.24);
+    border-radius: 4px;
+}
 /************************************
 //        SECTIONS ASIDE           //
 /***********************************/
@@ -292,7 +319,7 @@ main div#indexFirst{
     width: 100%;
 }
 
-main div#sideBarVer a:hover{
+main div#sideBarVer a:hover, main div.show-filter a:hover{
     color:#EA4533;
     transform: none;
 }
@@ -390,6 +417,7 @@ main aside div.calificacionComentario p.tituloComentario{
     margin-left: 5px;
     font-weight: bold;
     font-size:17px;
+    color: white;
 }
 
 main aside p.calificacion{
@@ -440,13 +468,23 @@ main article div.main-article{
     border-top: 4px solid var(--dorado);
 }
 
+main article div.calificacionComentario{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+}
+
+main article p.calificacion{
+    color: var(--dorado);
+    text-align: left;
+    font-size: 17px;
+}
+
 main article p.name{
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 } 
-
-
 
 main Article#article-hidden, main Article#article-hidden2{
     display: none;
