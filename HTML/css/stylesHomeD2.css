@@ -258,6 +258,16 @@ main section{
 /************************************
 //        SECTIONS ASIDE           //
 /***********************************/
+
+main div#sideBarVer .closebtn {
+    text-align: left;
+    margin-left: 75%;
+    border: 1px solid var(--azul-morado-claro);
+    box-shadow: 3px 3px 15px 3px rgba(0,0,0,0.24);
+    border-radius: 4px;
+    max-width: 100px;
+} 
+
 main div#sideBarVer{
     display: none;
     position: absolute;
@@ -269,7 +279,20 @@ main div#sideBarVer{
     z-index: 300;
 }
 
-#sideBarVer a:hover{
+main div#sideBarVer .closebtn{
+    padding-left: 5px;
+    color: var(--crema);
+    font-weight: bold;
+    line-height: 30px;
+}
+
+main div#indexFirst{
+    margin-top: 10px;
+    border-top: 1px solid #fff;
+    width: 100%;
+}
+
+main div#sideBarVer a:hover{
     color:#EA4533;
     transform: none;
 }
@@ -287,6 +310,7 @@ main aside{
     background-color: #ffffff;
     border-radius: 4px;
     z-index: 300;
+    background: radial-gradient(var(--azul-morado-claro), var(--azul-morado-oscuro));
 }
 
 main aside div.index h3{
@@ -295,6 +319,7 @@ main aside div.index h3{
     font-size: 1.3em;
     font-family: "DIN", sans-serif;
     text-align: left;
+    color: #ffffff;
 }
 
 main aside div.index{
@@ -325,7 +350,7 @@ main aside ul.subcategory-books li{
 }
 
 main aside ul{
-    width: 95%;
+    width: 94%;
     list-style: none;
     text-align: left;
     margin-top: 15px;
@@ -344,9 +369,34 @@ main aside a{
     color:rgba(0, 0, 0);
 }
 
-main div#sideBarVer .closebtn {
-    text-align: left;
+/******* Sección de estrellas ******/
+main aside div.calificacionComentario{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    margin-left: 30px;
 }
+
+main aside div.calificacionComentario p{
+    margin-top: 5px;
+}
+
+/***** Primer div de estrellas *****/
+main aside div#first{
+    margin-top: 15px;
+}
+
+main aside div.calificacionComentario p.tituloComentario{
+    margin-left: 5px;
+    font-weight: bold;
+    font-size:17px;
+}
+
+main aside p.calificacion{
+    color:gold;
+    font-size: 15px;
+}
+
 /************************************
 //        BOOKS SECTIONS           //
 /***********************************/

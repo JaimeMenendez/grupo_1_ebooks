@@ -142,8 +142,8 @@
             Menú</span> </a>
         <div class="sideBarVer" id="sideBarVer">
             <aside id="subjects">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeBarVer()">&times;</a>
-                <div class="index">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeBarVer()"> &times cerrar</a>
+                <div class="index" id="indexFirst">
                   <h3>Categorías por área</h3>
                   <ul class="subcategory-books">
                     <li><a href="">Medicina</a></li>
@@ -151,17 +151,17 @@
                     <li><a href="">Electrónica</a></li>
                     <li><a href="">Matemáticas</a></li>
                     <li><a href="">Física</a></li>
-                    <li><a href="">Historia</a></li>
+                    <li><a href="">Mecánica</a></li>
                     <li><a href="">Economía y Finanzas</a></li>
                     <li><a href="">Telecomunicaciones</a></li>
-                    <li><a href="">Literatura</a></li>
-                    <li><a href="">Lenguaje</a></li>
-                    <li><a href="">Álgebra</a></li>
+                    <li><a href="">Redes</a></li>
+                    <li><a href="">Química</a></li>
+                    <li><a href="">Biotecnología</a></li>
                     <li><a href="">Estadísticas</a></li>
                     <li><a href="">Microbiología</a></li>
                     <li><a href="">Inglés</a></li>
-                    <li><a href="">Economía y Finanzas</a></li>
-                    <li><a href="">Economía y Finanzas</a></li>
+                    <li><a href="">Electromecánica</a></li>
+                    <li><a href="">Civil</a></li>
                   </ul>
                 </div>
           
@@ -186,15 +186,47 @@
                     </div>
           
                     <div class="index">
-                        <h3>Libros por Opiniones</h3>
-                        <ul>
-                        <li><a href="">⭐</a> om</li>
-                        <li><a href="">⭐⭐</a></li>
-                        <li><a href="">⭐⭐⭐</a></li>
-                        <li><a href="">⭐⭐⭐⭐</a></li>
-                        <li><a href="">⭐⭐⭐⭐⭐</a></li>
-                        </ul>
-                    </div>
+                        <h3>Opinión de los clientes</h3>
+                        <div class="calificacionComentario" id="first">
+                            <p class=calificacion>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </p>
+                            <p class="tituloComentario">o más</p>
+                        </div>
+                        <div class="calificacionComentario">
+                            <p class=calificacion>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </p>
+                            <p class="tituloComentario">o más</p>
+                        </div>
+                        <div class="calificacionComentario">
+                            <p class=calificacion>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </p>
+                            <p class="tituloComentario">o más</p>
+                        </div>
+                        <div class="calificacionComentario">
+                            <p class=calificacion>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </p>
+                            <p class="tituloComentario">o más</p>
+                        </div>
                 </div>
                 <script>
                     function openBarVer() {
