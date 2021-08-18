@@ -254,6 +254,91 @@ main section{
     box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.24);
     border-radius: 4px;
 }
+
+/************************************
+//        SECTIONS ASIDE           //
+/***********************************/
+main div#sideBarVer{
+    width: 0;
+    position: fixed;
+    top: 300px;
+    width: 96%;
+    background:var(--navBarBackground);
+    transition-property: height;
+    transition-duration: 0.3s;
+    z-index: 100;
+}
+
+main aside{
+    position: relative;
+    display: grid;
+    grid-template-columns: 100%;
+    width: 96%;
+    height: 100%;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-left: 2%;
+    border: 4px solid var(--sombra-boton);
+    box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.24);
+    background-color: white;
+    border-radius: 4px;
+}
+
+main aside div.index h3{
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 1.3em;
+    font-family: "DIN", sans-serif;
+    text-align: left;
+}
+
+main aside div.index{
+    width: 100%;
+}
+
+main aside ul.subcategory-books{
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    justify-content: flex-start;
+    list-style: none;
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 30px;
+    padding: 0;
+}
+
+main aside ul.subcategory-books li{
+    margin-bottom:5px;
+    margin-right: 5px;
+    border-radius: 1px solid var(--azul-gris-oscuro);
+    border-radius: 4px;
+    background-color: var(--buttonFontColor);
+    line-height: 1.5em;
+    padding: 5px;
+    font-size: 17px;
+}
+
+main aside ul{
+    width: 95%;
+    list-style: none;
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 30px;
+    padding: 0;
+}
+
+main aside li{
+    margin-bottom:5px;
+    margin-right: 5px;
+    font-size: 17px;
+}
+
+main aside a{
+    text-decoration: none;
+    color:rgba(0, 0, 0);
+}
+
 /************************************
 //        BOOKS SECTIONS           //
 /***********************************/
