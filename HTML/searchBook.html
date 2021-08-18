@@ -138,12 +138,11 @@
             </div>
         </section>
 
-        <section class="button-beginning" id="openBarVer">
-            <a href="#startBanner" onclick="openBarVer()" class="inicio">FILTRAR</a>
-        </section> 
+        <a href="#" onclick="openBarVer()"><i class="flaticon-list"></i> &nbsp <span class="menu-label">
+            Menú</span> </a>
         <div class="sideBarVer" id="sideBarVer">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeBarVer()">&times;</a>
-            <aside class="subjects">
+            <aside id="subjects">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeBarVer()">&times;</a>
                 <div class="index">
                   <h3>Categorías por área</h3>
                   <ul class="subcategory-books">
@@ -199,14 +198,15 @@
                 </div>
                 <script>
                     function openBarVer() {
-                    document.getElementById("openBarVer").style.height = "500px";
+                      document.getElementById("sideBarVer").style.display = "inline";
                     }
-
+        
                     function closeBarVer() {
-                    document.getElementById("openBarVer").style.height = "0";
+                      document.getElementById("sideBarVer").style.display = "none";
                     }
-                </script>
+                  </script>
             </aside>
+            
         </div>
 
         <!--Resultado de la búsqueda-->
