@@ -40,6 +40,7 @@
     --buttonBorderRadio: 2px;
     --buttonFontColor:#ecf0f1;
     --buttonColor:#EA4533;
+
   
      /* List */
     --fontListColor:#56575e;;
@@ -206,10 +207,13 @@ form.sbMobile::after {
 /************************************
 //        PROMOTIONAL BANNER       //
 /***********************************/
-
+#startBanner{
+    background-color: var(--backgroundColor);
+}
 section.banner img{
     width: 100%;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background-color: var(--backgroundColor);
 }
 
 section.banner-books img{
@@ -236,12 +240,13 @@ main div.imp-buttons-hidden{
 }
 
 main section.show-filter section.sectionChange, section.suggest, section.moreNew, section.ebooks{
-    background-color: var(--backgroundSections);
+    background-color: var(whiteButtonsBackground);
     text-align: left;
+    
 }
 
 section.trends, section.results{
-    background-color: white;
+    background-color: var(--backgroundSections);
     text-align: left;
 }
 
