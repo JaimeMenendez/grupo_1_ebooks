@@ -650,6 +650,10 @@ main section.button-beginning .inicio{
         width: 15%;
     }
 
+    main div.products article#products{
+        width: 25%;
+    }
+
     main article img, main article div.main-article, main form.product-button button{
         width: 80%;
     }
