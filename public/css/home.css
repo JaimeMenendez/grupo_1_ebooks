@@ -742,6 +742,9 @@ main section.button-beginning .inicio{
         border-radius: 4px;
         padding: 15px;
     }
+    main div#category-book-hidden{
+        display: inline;
+    }
     
     main div.identifier5{
         width:18%;
