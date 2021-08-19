@@ -165,7 +165,7 @@ form.sbMobile input[type=text]{
    width: 80%;
    min-width: 190px;
    background: var(--backgroundSections);
-   color: --oscuro;
+   color: var(--fontColors);
 }
 
 form.sbMobile input[type=text]::placeholder{
@@ -203,6 +203,59 @@ form.sbMobile::after {
    clear: both;
    display: table;
 }
+/************************************
+//        Slider                   //
+/***********************************/
+.slider{
+    position: relative;
+    width: 500%;
+    overflow: hidden;
+    animation: 20s slider infinite;
+}
+
+.sliderContent{
+    width: 20%;
+    float: left;
+}
+
+@keyframes slider {
+    0% {
+        left: 0;
+    }
+
+    20% {
+        left:0;
+    }
+
+    25% {
+        left:-100%;
+    }
+
+    45% {
+        left:-100%;
+    }
+
+    50% {
+        left:-200%;
+    }
+
+    70% {
+        left:-200%;
+    }
+
+    75% {
+        left:-300%;
+    }
+
+    95% {
+        left:-300%;
+    }
+
+    100%{
+        left: -400%;
+    }
+}
+
 
 /************************************
 //        PROMOTIONAL BANNER       //
@@ -607,6 +660,10 @@ main section.button-beginning .inicio{
 //    MEDIA QUERIES TABLET         //
 /***********************************/
 @media (min-width: 600px) {
+
+    .slider{
+        margin-top:var(--navBarHeight);
+    }
 
     section.searchBar-mobile{
         display: none;

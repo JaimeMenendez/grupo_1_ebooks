@@ -158,6 +158,7 @@ main{
     color: var(--buttonFontColor);
     transition: background-color .3s;
     width: 80%;
+    cursor: pointer;
   }
   
   .btn.red {
@@ -188,6 +189,12 @@ main{
 
 .comprarAhora{
     background-color: #2D2F8E;
+    transition-duration: 0.5s;
+
+}
+
+.comprarAhora:hover{
+  background-color: #1a1b57;
 }
 
 .number-input{
