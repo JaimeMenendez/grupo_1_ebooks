@@ -370,6 +370,10 @@ main aside ul.subcategory-books{
     padding: 0;
 }
 
+main aside ul.subcategory-books-pc{
+    display: none;
+}
+
 main aside ul.subcategory-books li{
     margin-bottom:5px;
     margin-right: 5px;
@@ -720,8 +724,19 @@ main section.button-beginning .inicio{
     main aside div#indexFirst h3{
         margin-top: 0px;
     }
+
+
     main aside ul.subcategory-books{
-        display: column;
+        display: none;
+    }
+
+    main aside ul.subcategory-books-pc{
+        display: block;
+    }
+
+    main aside ul.subcategory-books-pc a{
+        font-size: 16px;
+        color: #ffffff;
     }
 
     main aside .closebtn{
