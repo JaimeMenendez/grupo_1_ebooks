@@ -6,12 +6,17 @@ const app = express();
 const publicPath = path.resolve(__dirname, "./public");
 app.use(express.static(publicPath));
 
-let port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, ()=>
-    console.log("Servidor corriendo"));
+    console.log("Servidor Corriendo en el puerto",port));
 
 app.get("/", (req,res)=>{
-    let htmlPath = path.resolve(__dirname, "./views/homeT.html");
+    let htmlPath = path.resolve(__dirname, "./views/home.html");
+    res.sendFile(htmlPath);
+});
+
+app.get("/home", (req,res)=>{
+    let htmlPath = path.resolve(__dirname, "./views/home.html");
     res.sendFile(htmlPath);
 });
 
@@ -37,4 +42,8 @@ app.get("/login", (req,res)=> {
 
 app.get("/register", (req,res)=> {
     res.sendFile(__dirname + "/views/register.html");
+})
+
+app.get("/searchBook", (req,res)=> {
+    res.sendFile(__dirname + "/views/searchBook.html");
 })
