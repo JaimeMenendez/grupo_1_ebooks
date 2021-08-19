@@ -601,6 +601,39 @@ main section.button-beginning .inicio{
         display: none;
     }
 
+    main div.sectionChange{
+        display: grid;
+        grid-template-columns: 40% 60%;
+    }
+
+    main div.show-filter{
+        display: none;
+    }
+
+    main div#sideBarVer{
+        grid-column:1/2;
+        display: inline;
+        position: inherit;
+        width: 100%;
+        margin-bottom: 10px
+    }
+
+    main aside{
+        margin-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    main aside .closebtn{
+        display: none;
+    }
+
+    main section.results{
+        grid-column: 2/3;
+        width: 97%;
+        margin-left: 10px;
+    }
+
+
     section.banner img{
         margin-top: 50px;
         margin-bottom: 5px;
