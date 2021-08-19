@@ -97,7 +97,7 @@
             <!--Categoria de libros-->
             <div class="imp-buttons-hidden">
                 <section class="important-buttons" id="important-buttons-pc">
-                    <div class="identifier5" class="class1">
+                    <div onclick="myFunction()" class="identifier5" class="class1">
                         <a href="#"><i class="fas fa-laptop-code"></i></a>
                         <p>Programación</p>
                     </div>
@@ -137,6 +137,11 @@
                         <a href="#"><i class="fas fa-leaf"></i></a>
                         <p>Biotecnología</p>
                     </div>
+                    <script>
+                        function myFunction() {
+                            document.getElementById("title-subcategory").innerHTML = "Subcategoría de programación";
+                        }
+                    </script>
                 </section>
             </div>
 
@@ -144,7 +149,7 @@
                 <aside id="subjects">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeBarVer()"> &times cerrar</a>
                     <div class="index" id="indexFirst">
-                        <h3>Categorías por área</h3>
+                        <h3 id="title-subcategory">Categorías por área</h3>
                         <ul class="subcategory-books">
                             <li><a href="">Medicina</a></li>
                             <li><a href="">Programación</a></li>
