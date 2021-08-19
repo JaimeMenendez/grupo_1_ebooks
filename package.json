@@ -19,6 +19,13 @@
   },
   "homepage": "https://github.com/JaimeMenendez/grupo_1_ebooks#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "engines": {
+    "node": "14.16.0"
   }
 }
