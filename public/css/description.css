@@ -24,6 +24,8 @@
   --borderRadius:5px;
 
   --sectionBackground: white;
+  --backgroundColor: #e2e1e0;
+  --backgroundSections:white;
 
   --navBarBackground:rgb(255, 255, 255);
   --fontColors:#2e2e2e;
@@ -86,7 +88,6 @@ body {
   }
 
   #separadorTop{
-    margin-top: var(--navBarHeight);
     margin-bottom: 0;
   }
 
@@ -113,6 +114,7 @@ section.searchBar-mobile{
     margin-top: 50px;
     background: radial-gradient(var(--azul-morado-claro), var(--azul-morado-oscuro));
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-sizing: border-box;
 }
 
 form.sbMobile{
@@ -120,6 +122,7 @@ form.sbMobile{
     height: 30px;
     display: flex;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 form.sbMobile input[type=text]{
@@ -131,12 +134,14 @@ form.sbMobile input[type=text]{
 
    width: 80%;
    min-width: 190px;
-   background: var(--backgroundSections);
-   color: --oscuro;
+   background-color: var(--backgroundSections);
+   color: var(--fontColors);
+   box-sizing: border-box;
 }
 
 form.sbMobile input[type=text]::placeholder{
     color: var(--fontColors);
+    
 }
 
 form.sbMobile button{
@@ -152,10 +157,15 @@ form.sbMobile button{
    color: white;
    cursor: pointer;
    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+   box-sizing: border-box;
+   display: flex;
+   justify-content: center;
+   align-items:center;
 }
 
 form.sbMobile i{
   color: var(--blanco);
+  box-sizing: border-box;
 }
 
 form.sbMobile button:hover {
@@ -169,6 +179,7 @@ form.sbMobile::after {
    content: "";
    clear: both;
    display: table;
+   box-sizing: border-box;
 }
 
 /* ========================================================= */
@@ -522,6 +533,9 @@ main ul a{
       --fontColors:#eaebf1;
       --sectionBackground: #121212;
 
+      --backgroundColor: #121212;
+      --backgroundSections:#222222;
+
       --whiteButtonsFontColor: #eaebf1;
       --whiteButtonsBackground:rgb(59, 57, 57);
       --footerBackground: rgb(41, 41, 41);
@@ -539,6 +553,9 @@ main ul a{
     section.searchBar-mobile{
         display: none;
     }
+    #separadorTop{
+        margin-top: var(--navBarHeight);
+      }
 }
 
 @media(min-width:768px){

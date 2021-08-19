@@ -22,7 +22,7 @@
 
   <link rel="stylesheet" type="text/css" href="css/flaticon/flaticon.css">
   <link rel="stylesheet" href="css/normalize.min.css" />
-  <link rel="stylesheet" href="css/stylesHomeD2.css" />
+  <link rel="stylesheet" href="css/home.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
    
   <script defer src="./js/darkModeScript.js"></script>
@@ -31,7 +31,7 @@
 
 <body>
   <nav>
-    <a href="./Home.html">
+    <a href="/">
       <div class="logoNavBar">
         <div class="logoContainer">
           <div class="bloqueAzul"></div>
@@ -45,14 +45,14 @@
       </div>
     </a>
 
-    <form class="searchBar" action="./searchBook.html">
+    <form class="searchBar" action="./searchBook">
       <input class="btn" type="text" placeholder=" Buscar.." name="search">
       <button class="btn red" type="submit"><i class="flaticon-magnifying-glass-1"></i></button>
     </form>
 
     <div class="menuButton">
-      <a href="./login.html"><i class="flaticon-profile-user"></i> &nbsp <span class="menu-label"> Mi Cuenta</span> </a>
-      <a href="./carrito.html"><i class="flaticon-shopping-cart"></i> &nbsp <span class="menu-label"> Mi
+      <a href="/login"><i class="flaticon-profile-user"></i> &nbsp <span class="menu-label"> Mi Cuenta</span> </a>
+      <a href="/carrito"><i class="flaticon-shopping-cart"></i> &nbsp <span class="menu-label"> Mi
           Carrito</span></a>
 
       <a href="#" onclick="openNav()"><i class="flaticon-list"></i> &nbsp <span class="menu-label">
@@ -88,7 +88,7 @@
   
 
   <section class="searchBar-mobile">
-    <form action="./searchBook.html" class="sbMobile">
+    <form action="./searchBook" class="sbMobile">
         <input type="text" id="search" name="search" placeholder=" Buscar por autor, título, categoría...">
         <button type="submit"><i><i class="fas fa-search"></i></i></button>
     </form>
@@ -119,16 +119,12 @@
         </div>
     </section>
 
-    <section class="separador">
-        <img src="./images/Separador.jpg" alt="separador">
-    </section>
-
     <div class="books-upper-left">
         <!--Tendencia en libros-->
-        <section class="trend">
+        <section class="trends">
             <h3>Tendencia en libros...</h3>
             <div class="products">
-                <article  onclick="window.location='./description.html';">
+                <article  onclick="window.location='./description';">
                     <img class="image-product" src="images/book1.png" alt="book">
                     <div class="main-article">
                     <p class="name">Extreme C</p>
@@ -138,7 +134,7 @@
                     </form>
                     </div>
                 </article>
-                <article  onclick="window.location='./description.html';">
+                <article  onclick="window.location='./description';">
                     <img class="image-product" src="images/book2.png" alt="book">
                     <div class="main-article">
                     <p class="name">Cross-Platform Development</p>
@@ -148,7 +144,7 @@
                     </form>
                     </div>
                 </article>
-                <article  onclick="window.location='./description.html';">
+                <article  onclick="window.location='./description';">
                     <img class="image-product" src="images/book3.jpeg" alt="book">
                     <div class="main-article">
                     <p class="name">Keycloak-Identity and Access Managment</p>
@@ -158,7 +154,7 @@
                     </form>
                     </div>
                 </article>
-                <article  onclick="window.location='./description.html';">
+                <article  onclick="window.location='./description';">
                     <img class="main-article" src="images/book4.png" alt="book">
                     <div class="main-article">
                     <p class="name">Machine learning with R</p>
@@ -168,7 +164,7 @@
                     </form>
                     </div>
                 </article>
-                <article onclick="window.location='./description.html';" id="article-hidden">
+                <article onclick="window.location='./description';" id="article-hidden">
                     <img class="main-article" src="images/book4.png" alt="book">
                     <div class="main-article">
                     <p class="name">Machine learning with R</p>
@@ -178,7 +174,7 @@
                     </form>
                     </div>
                 </article>
-                <article onclick="window.location='./description.html';" id="article-hidden2">
+                <article onclick="window.location='./description';" id="article-hidden2">
                     <img class="main-article" src="images/book4.png" alt="book">
                     <div class="main-article">
                     <p class="name">Machine learning with R</p>
@@ -200,7 +196,7 @@
         <section class="suggest">
         <h3 id="recomendados">Libros recomendados...</h3>
         <div class="products">
-            <article  onclick="window.location='./description.html';">
+            <article  onclick="window.location='./description';">
                 <img class="image-product" src="images/book1.png" alt="book">
                 <div class="main-article">
                 <p class="name">Extreme C</p>
@@ -210,7 +206,7 @@
                 </form>
                 </div>
             </article>
-            <article  onclick="window.location='./description.html';">
+            <article  onclick="window.location='./description';">
                 <img class="image-product" src="images/book2.png" alt="book">
                 <div class="main-article">
                 <p class="name">Cross-Platform Development</p>
@@ -220,7 +216,7 @@
                 </form>
                 </div>
             </article>
-            <article  onclick="window.location='./description.html';">
+            <article  onclick="window.location='./description';">
                 <img class="image-product" src="images/book3.jpeg" alt="book">
                 <div class="main-article">
                 <p class="name">Keycloak-Identity and Access Managment</p>
@@ -230,7 +226,7 @@
                 </form>
                 </div>
             </article>
-            <article  onclick="window.location='./description.html';">
+            <article  onclick="window.location='./description';">
                 <img class="main-article" src="images/book4.png" alt="book">
                 <div class="main-article">
                 <p class="name">Machine learning with R</p>
@@ -240,7 +236,7 @@
                 </form>
                 </div>
             </article>
-            <article onclick="window.location='./description.html';" id="article-hidden">
+            <article onclick="window.location='./description';" id="article-hidden">
                 <img class="main-article" src="images/book4.png" alt="book">
                 <div class="main-article">
                 <p class="name">Machine learning with R</p>
@@ -250,7 +246,7 @@
                 </form>
                 </div>
             </article>
-            <article onclick="window.location='./description.html';" id="article-hidden2">
+            <article onclick="window.location='./description';" id="article-hidden2">
                 <img class="main-article" src="images/book4.png" alt="book">
                 <div class="main-article">
                 <p class="name">Machine learning with R</p>
@@ -313,7 +309,7 @@
     <section class="moreNew">
         <h3 id="nuevos">Lo más nuevos...</h3>
         <div class="products" id="products-lower">
-            <article  onclick="window.location='./description.html';">
+            <article  onclick="window.location='./description';">
                 <img class="image-product" src="images/book1.png" alt="book">
                 <div class="main-article">
                     <div class="article-logo"><i class="fas fa-bell"></i></div>
@@ -324,7 +320,7 @@
                     </form>
                 </div>
             </article>
-            <article  onclick="window.location='./description.html';">
+            <article  onclick="window.location='./description';">
                 <img class="image-product" src="images/book2.png" alt="book">
                 <div class="main-article">
                     <div class="article-logo"><i class="fas fa-bell"></i></div>
@@ -335,7 +331,7 @@
                     </form>
                 </div>
             </article>
-            <article  onclick="window.location='./description.html';">
+            <article  onclick="window.location='./description';">
                 <img class="image-product" src="images/book3.jpeg" alt="book">
                 <div class="main-article">
                     <div class="article-logo"><i class="fas fa-bell"></i></div>
@@ -346,7 +342,7 @@
                     </form>
                 </div>
             </article>
-            <article  onclick="window.location='./description.html';">
+            <article  onclick="window.location='./description';">
                 <img class="main-article" src="images/book4.png" alt="book">
                 <div class="main-article">
                     <div class="article-logo"><i class="fas fa-bell"></i></div>
@@ -357,7 +353,7 @@
                     </form>
                 </div>
             </article>
-            <article onclick="window.location='./description.html';" id="article-hidden">
+            <article onclick="window.location='./description';" id="article-hidden">
                 <img class="main-article" src="images/book4.png" alt="book">
                 <div class="main-article">
                     <div class="article-logo"><i class="fas fa-bell"></i></div>
@@ -368,7 +364,7 @@
                     </form>
                 </div>
             </article>
-            <article onclick="window.location='./description.html';" id="article-hidden2">
+            <article onclick="window.location='./description';" id="article-hidden2">
                 <img class="main-article" src="images/book4.png" alt="book">
                 <div class="main-article">
                     <div class="article-logo"><i class="fas fa-bell"></i></div>
@@ -391,7 +387,7 @@
         <h3 id="nuevos">Ebooks...</h3>
         <div class="products" id="products-lower">
 
-            <article  onclick="window.location='./description.html';">
+            <article  onclick="window.location='./description';">
                 <img class="image-product" src="images/book1.png" alt="book">
                 <div class="main-article">
                 <p class="name">Extreme C</p>
@@ -402,7 +398,7 @@
                 </div>
             </article>
 
-            <article  onclick="window.location='./description.html';">
+            <article  onclick="window.location='./description';">
                 <img class="image-product" src="images/book2.png" alt="book">
                 <div class="main-article">
                 <p class="name">Cross-Platform Development</p>
@@ -412,7 +408,7 @@
                 </form>
                 </div>
             </article>
-            <article  onclick="window.location='./description.html';">
+            <article  onclick="window.location='./description';">
                 <img class="image-product" src="images/book3.jpeg" alt="book">
                 <div class="main-article">
                 <p class="name">Keycloak-Identity and Access Managment</p>
@@ -422,7 +418,7 @@
                 </form>
                 </div>
             </article>
-            <article  onclick="window.location='./description.html';">
+            <article  onclick="window.location='./description';">
                 <img class="main-article" src="images/book4.png" alt="book">
                 <div class="main-article">
                 <p class="name">Machine learning with R</p>
@@ -432,7 +428,7 @@
                 </form>
                 </div>
             </article>
-            <article onclick="window.location='./description.html';" id="article-hidden">
+            <article onclick="window.location='./description';" id="article-hidden">
                 <img class="main-article" src="images/book4.png" alt="book">
                 <div class="main-article">
                 <p class="name">Machine learning with R</p>
@@ -442,7 +438,7 @@
                 </form>
                 </div>
             </article>
-            <article onclick="window.location='./description.html';" id="article-hidden2">
+            <article onclick="window.location='./description';" id="article-hidden2">
                 <img class="main-article" src="images/book4.png" alt="book">
                 <div class="main-article">
                 <p class="name">Machine learning with R</p>
@@ -487,9 +483,9 @@
             </ul>
 
             <ul>
-                <li><a href="./TerminosyCondiciones.html">Términos y Condiciones </a></li>
-                <li><a href="./PoliticaDePrivacidad.html">Política de Privacidad</a></li>
-                <li><a href="">Acerca de Nosotros</a></li>
+                <li><a href="/TerminosyCondiciones">Términos y Condiciones </a></li>
+                <li><a href="/PoliticaDePrivacidad">Política de Privacidad</a></li>
+                <li><a href="#">Acerca de Nosotros</a></li>
             </ul>
         </section>
 
@@ -513,7 +509,7 @@
                 <li><a href="https://web.telegram.org" target="_blank"><i class="flaticon-telegram"></i>&nbsp Telegram</a></li>
             </ul>
         </section>
-
+        
         <div class="logoFooter">
             <div class="logoContainer">
                 <div class="bloqueAzul"></div>
