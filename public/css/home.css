@@ -664,7 +664,30 @@ main section.button-beginning .inicio{
 
     main div.sectionChange{
         display: grid;
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 30% 70%;
+    }
+
+    main div.imp-buttons-hidden{
+        display: inline;
+        grid-column: 1/3;
+    }
+    main section#important-buttons-pc{
+        border: 4px solid var(--sombra-boton);
+        box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.24);
+        border-radius: 4px;
+        padding: 15px;
+    }
+    
+    main div.identifier5{
+        width:18%;
+    }
+
+    main section.important-buttons #category-book-hidden{
+        display: inline;
+    }
+
+    div.identifier5 p{
+        font-size: 14px;
     }
 
     main div.show-filter{
@@ -675,18 +698,14 @@ main section.button-beginning .inicio{
         grid-column:1/2;
         display: inline;
         position: inherit;
-        width: 100%;
-        max-width: 240px;
-        margin-bottom: 10px
+        width: 95%;
+        margin-bottom: 10px;
+        margin-left: 5%;
     }
 
     main aside{
         margin-top: 5px;
         padding-bottom: 5px;
-    }
-
-    main div.index{
-        max-height: 220px;
     }
 
     main aside div#indexFirst{
@@ -707,7 +726,8 @@ main section.button-beginning .inicio{
 
     main section.results{
         grid-column: 2/3;
-        width: 97%;
-        margin-left: 10px;
+        width: 96.5%;
+        margin-left: 5px;
+        margin-right: 5%;
     }
 }
