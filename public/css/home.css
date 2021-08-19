@@ -271,7 +271,7 @@ main section{
 
 main div.show-filter{
     display: flex;
-    border-bottom: 4px solid var(--dorado);
+    border-bottom: 2px solid var(--dorado);
 }
 
 main div.show-filter a{
@@ -281,7 +281,7 @@ main div.show-filter a{
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 10px;
-    font-size: 21px;
+    font-size: 1em;
     padding: 5px;
     border: 1px solid white;
     box-shadow: 3px 3px 15px 3px rgba(0,0,0,0.24);
@@ -293,11 +293,11 @@ main div.show-filter a{
 
 main div#sideBarVer .closebtn {
     text-align: left;
-    margin-left: 75%;
+    margin-right: 5px;
     border: 1px solid var(--azul-morado-claro);
     box-shadow: 3px 3px 15px 3px rgba(0,0,0,0.24);
     border-radius: 4px;
-    max-width: 100px;
+    max-width: 70px;
 } 
 
 main div#sideBarVer{
@@ -378,7 +378,14 @@ main aside ul.subcategory-books li{
     background-color: var(--buttonFontColor);
     line-height: 1.5em;
     padding: 5px;
-    font-size: 17px;
+    font-size: 16px;
+}
+
+main aside ul.priceBooks a{
+    color: #ffffff;
+}
+main aside ul.formatBooks label, ul.idiomBooks label{
+    color: #ffffff;
 }
 
 main aside ul{
@@ -394,7 +401,7 @@ main aside ul{
 main aside li{
     margin-bottom:5px;
     margin-right: 5px;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 main aside a#white{
@@ -601,39 +608,6 @@ main section.button-beginning .inicio{
         display: none;
     }
 
-    main div.sectionChange{
-        display: grid;
-        grid-template-columns: 40% 60%;
-    }
-
-    main div.show-filter{
-        display: none;
-    }
-
-    main div#sideBarVer{
-        grid-column:1/2;
-        display: inline;
-        position: inherit;
-        width: 100%;
-        margin-bottom: 10px
-    }
-
-    main aside{
-        margin-top: 5px;
-        padding-bottom: 5px;
-    }
-
-    main aside .closebtn{
-        display: none;
-    }
-
-    main section.results{
-        grid-column: 2/3;
-        width: 97%;
-        margin-left: 10px;
-    }
-
-
     section.banner img{
         margin-top: 50px;
         margin-bottom: 5px;
@@ -686,5 +660,54 @@ main section.button-beginning .inicio{
 
     main section.separador{
         display: none;
+    }
+
+    main div.sectionChange{
+        display: grid;
+        grid-template-columns: 40% 60%;
+    }
+
+    main div.show-filter{
+        display: none;
+    }
+
+    main div#sideBarVer{
+        grid-column:1/2;
+        display: inline;
+        position: inherit;
+        width: 100%;
+        max-width: 240px;
+        margin-bottom: 10px
+    }
+
+    main aside{
+        margin-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    main div.index{
+        max-height: 220px;
+    }
+
+    main aside div#indexFirst{
+        border-top: none;
+        margin-top: 0px;
+    }
+
+    main aside div#indexFirst h3{
+        margin-top: 0px;
+    }
+    main aside ul.subcategory-books{
+        display: column;
+    }
+
+    main aside .closebtn{
+        display: none;
+    }
+
+    main section.results{
+        grid-column: 2/3;
+        width: 97%;
+        margin-left: 10px;
     }
 }
