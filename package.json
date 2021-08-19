@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/JaimeMenendez/grupo_1_ebooks/issues"
   },
-  "homepage": "https://github.com/JaimeMenendez/grupo_1_ebooks#readme"
+  "homepage": "https://github.com/JaimeMenendez/grupo_1_ebooks#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
