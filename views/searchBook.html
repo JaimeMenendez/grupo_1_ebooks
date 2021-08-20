@@ -138,35 +138,87 @@
                         <p>Biotecnología</p>
                     </div>
                     <script>
+                        var subcategoryPython = ['Django', 'Flask', 'Pandas', 'Machine learning','Deep learning','','','','',''];
+                        var subcategoryElectronica = ['Electrónica de potencia','Análisis de circuitos CC','Análisis de circuitos CA','Electrónica digital','Semiconductores','Electrónica Industrial','Control','','',''];
+                        var subcategoryIntArtificial = ['Redes neuronales','Machine learning','Deep learning','Máquinas vectoriales','Análisis de PCA','Aprendizaje supervizado','Aprendizaje no supervizado','Clusttering','',''];
+                        var subcategoryRedes = ['PAN','LAN','CAN','WLAN','WAN','MAN','SAN','GAN','',''];
+                        var subcategoryMecanica = ['Propiedades mecánicas','Dinámica','Estática','Fluidos','Aire acondicionado','Máquinas eléctricas','Mecánica de materiales','Termodinámica','Mecánica automotriz',''];
+                        var subcategoryMedicina = ['Diabetes','Cardiología','Neurología','Epidemiología','Farmacología','Anestesiología','Oncología','Pediatría','Bacteriología','Microbiología'];
+                        var subcategoryQuimica = ['Química orgánica','Química inorgánica','Polímeros','Estequiometría', 'Nuclear','Estado sólido','Organometálica','Forense','Ambiental',''];
+                        var subcategoryBiotecnologia1 = ['Bio1','Bio2','Bio3','Bio4','Bio5','Bio6','Bio7','Bio8','Bio9','Bio10'];
+                        var subcategoryBiotecnologia2 = ['Mis','ojos','son','más','hermosos','cuando','lees','através','de','ellos'];
+                        var subcategoryBiotecnologia3 = ['InsideBooks','es','un','e-commerce','de','venta','de','libros','universitarios',''];
+                        
                         function myFunction1() {
                             document.getElementById("title-subcategory").innerHTML = "Programación";
+
+                            let prueba = document.querySelectorAll('#subcategory');
+                            for (let i = 0; i <= prueba.length; i++){
+                                prueba[i].textContent = subcategoryPython[i];
+                            }
                         }
                         function myFunction2() {
                             document.getElementById("title-subcategory").innerHTML = "Electrónica";
+                            let prueba = document.querySelectorAll('#subcategory');
+                            for (let i = 0; i <= prueba.length; i++){
+                                prueba[i].textContent = subcategoryElectronica[i];
+                            }
                         }
                         function myFunction3() {
                             document.getElementById("title-subcategory").innerHTML = "Inteligencia Artificial";
+                            let prueba = document.querySelectorAll('#subcategory');
+                            for (let i = 0; i <= prueba.length; i++){
+                                prueba[i].textContent = subcategoryIntArtificial[i];
+                            }
                         }
                         function myFunction4() {
                             document.getElementById("title-subcategory").innerHTML = "Redes";
+                            let prueba = document.querySelectorAll('#subcategory');
+                            for (let i = 0; i <= prueba.length; i++){
+                                prueba[i].textContent = subcategoryRedes[i];
+                            }
                         }
                         function myFunction5() {
                             document.getElementById("title-subcategory").innerHTML = "Mecánica";
+                            let prueba = document.querySelectorAll('#subcategory');
+                            for (let i = 0; i <= prueba.length; i++){
+                                prueba[i].textContent = subcategoryMecanica[i];
+                            }
                         }
                         function myFunction6() {
                             document.getElementById("title-subcategory").innerHTML = "Medicina";
+                            let prueba = document.querySelectorAll('#subcategory');
+                            for (let i = 0; i <= prueba.length; i++){
+                                prueba[i].textContent = subcategoryMedicina[i];
+                            }
                         }
                         function myFunction7() {
                             document.getElementById("title-subcategory").innerHTML = "Química";
+                            let prueba = document.querySelectorAll('#subcategory');
+                            for (let i = 0; i <= prueba.length; i++){
+                                prueba[i].textContent = subcategoryQuimica[i];
+                            }
                         }
                         function myFunction8() {
                             document.getElementById("title-subcategory").innerHTML = "Biotecnología1";
+                            let prueba = document.querySelectorAll('#subcategory');
+                            for (let i = 0; i <= prueba.length; i++){
+                                prueba[i].textContent = subcategoryBiotecnologia1[i];
+                            }
                         }
                         function myFunction9() {
                             document.getElementById("title-subcategory").innerHTML = "Biotecnología2";
+                            let prueba = document.querySelectorAll('#subcategory');
+                            for (let i = 0; i <= prueba.length; i++){
+                                prueba[i].textContent = subcategoryBiotecnologia2[i];
+                            }
                         }
                         function myFunction10() {
                             document.getElementById("title-subcategory").innerHTML = "Biotecnología3";
+                            let prueba = document.querySelectorAll('#subcategory');
+                            for (let i = 0; i <= prueba.length; i++){
+                                prueba[i].textContent = subcategoryBiotecnologia3[i];
+                            }
                         }
                     </script>
                 </section>
@@ -196,16 +248,16 @@
                             <li><a href="">Civil</a></li>
                         </ul>
                         <ul class="subcategory-books-pc">
-                            <li><a href="">Inteligencia artifical</a></li>
-                            <li><a href="">Desarrollo web</a></li>
-                            <li><a href="">Amazon web services</a></li>
-                            <li><a href="">Deep learning</a></li>
-                            <li><a href="">Conceptos básicos</a></li>
-                            <li><a href="">Ciencias de datos</a></li>
-                            <li><a href="">Pandas y numpy</a></li>
-                            <li><a href="">Django</a></li>
-                            <li><a href="">Flsk</a></li>
-                            <li><a href="">Raspberry Pi</a></li>
+                            <li><a id="subcategory" href="">Inteligencia artifical</a></li>
+                            <li><a id="subcategory" href="">Desarrollo web</a></li>
+                            <li><a id="subcategory" href="">Amazon web services</a></li>
+                            <li><a id="subcategory" href="">Deep learning</a></li>
+                            <li><a id="subcategory" href="">Conceptos básicos</a></li>
+                            <li><a id="subcategory" href="">Ciencias de datos</a></li>
+                            <li><a id="subcategory" href="">Pandas y numpy</a></li>
+                            <li><a id="subcategory" href="">Django</a></li>
+                            <li><a id="subcategory" href="">Flsk</a></li>
+                            <li><a id="subcategory" href="">Raspberry Pi</a></li>
                         </ul>
                     </div>
                     <div class="index">
