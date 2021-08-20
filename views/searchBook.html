@@ -97,44 +97,44 @@
             <!--Categoria de libros-->
             <div class="imp-buttons-hidden">
                 <section class="important-buttons" id="important-buttons-pc">
-                    <div onclick="myFunction1()" class="identifier5" class="class1">
-                        <a href="#"><i class="fas fa-laptop-code"></i></a>
+                    <div id="programacion" onclick="myFunction(this.id)" class="identifier5" class="class1">
+                        <a href=""><i class="fas fa-laptop-code"></i></a>
                         <p>Programación</p>
                     </div>
-                    <div onclick="myFunction2()" class="identifier5">
-                        <a href="#"><i class="fas fa-car-battery"></i></a>
+                    <div id="electronica" onclick="myFunction(this.id)" class="identifier5">
+                        <a href=""><i class="fas fa-car-battery"></i></a>
                         <p>Electrónica</p>
                     </div>
-                    <div onclick="myFunction3()" class="identifier5">
-                        <a href="#"><i class="fas fa-brain"></i></a>
+                    <div id="intArtificial" onclick="myFunction(this.id)" class="identifier5">
+                        <a href=""><i class="fas fa-brain"></i></a>
                         <p>Int Artificial</p>
                     </div>
-                    <div onclick="myFunction4()" class="identifier5">
-                        <a href="#"><i class="fas fa-network-wired"></i></a>
+                    <div id="redes" onclick="myFunction(this.id)" class="identifier5">
+                        <a href=""><i class="fas fa-network-wired"></i></a>
                         <p>Redes</p>
                     </div>
-                    <div onclick="myFunction5()" class="identifier5">
-                        <a href="#"><i class="fas fa-cogs"></i></a>
+                    <div id="mecanica" onclick="myFunction(this.id)" class="identifier5">
+                        <a href=""><i class="fas fa-cogs"></i></a>
                         <p>Mecánica</p>
                     </div>
-                    <div onclick="myFunction6()" class="identifier5">
-                        <a href="#"><i class="fas fa-stethoscope"></i></a>
+                    <div id="medicina" onclick="myFunction(this.id)" class="identifier5">
+                        <a href=""><i class="fas fa-stethoscope"></i></a>
                         <p>Medicina</p>
                     </div>
-                    <div onclick="myFunction7()" class="identifier5">
-                        <a href="#"><i class="fas fa-atom"></i></a>
+                    <div id="quimica" onclick="myFunction(this.id)" class="identifier5">
+                        <a href=""><i class="fas fa-atom"></i></a>
                         <p>Química</p>
                     </div>
-                    <div onclick="myFunction8()" class="identifier5">
-                        <a href="#"><i class="fas fa-leaf"></i></a>
+                    <div id="biotecnologia1" onclick="myFunction(this.id)" class="identifier5">
+                        <a href=""><i class="fas fa-leaf"></i></a>
                         <p>Biotecnología</p>
                     </div>
-                    <div onclick="myFunction9()" class="identifier5" id="category-book-hidden">
-                        <a href="#"><i class="fas fa-leaf"></i></a>
+                    <div id="biotecnologia2" onclick="myFunction(this.id)" class="identifier5" id="category-book-hidden">
+                        <a href=""><i class="fas fa-leaf"></i></a>
                         <p>Biotecnología</p>
                     </div>
-                    <div onclick="myFunction10 ()"class="identifier5" id="category-book-hidden">
-                        <a href="#"><i class="fas fa-leaf"></i></a>
+                    <div id="biotecnologia3" onclick="myFunction(this.id)"class="identifier5" id="category-book-hidden">
+                        <a href=""><i class="fas fa-leaf"></i></a>
                         <p>Biotecnología</p>
                     </div>
                     <script>
@@ -149,75 +149,59 @@
                         var subcategoryBiotecnologia2 = ['Mis','ojos','son','más','hermosos','cuando','lees','através','de','ellos'];
                         var subcategoryBiotecnologia3 = ['InsideBooks','es','un','e-commerce','de','venta','de','libros','universitarios',''];
                         
-                        function myFunction1() {
-                            document.getElementById("title-subcategory").innerHTML = "Programación";
-
+                        function myFunction(button_id) {
                             let prueba = document.querySelectorAll('#subcategory');
-                            for (let i = 0; i <= prueba.length; i++){
-                                prueba[i].textContent = subcategoryPython[i];
-                            }
-                        }
-                        function myFunction2() {
-                            document.getElementById("title-subcategory").innerHTML = "Electrónica";
-                            let prueba = document.querySelectorAll('#subcategory');
-                            for (let i = 0; i <= prueba.length; i++){
-                                prueba[i].textContent = subcategoryElectronica[i];
-                            }
-                        }
-                        function myFunction3() {
-                            document.getElementById("title-subcategory").innerHTML = "Inteligencia Artificial";
-                            let prueba = document.querySelectorAll('#subcategory');
-                            for (let i = 0; i <= prueba.length; i++){
-                                prueba[i].textContent = subcategoryIntArtificial[i];
-                            }
-                        }
-                        function myFunction4() {
-                            document.getElementById("title-subcategory").innerHTML = "Redes";
-                            let prueba = document.querySelectorAll('#subcategory');
-                            for (let i = 0; i <= prueba.length; i++){
-                                prueba[i].textContent = subcategoryRedes[i];
-                            }
-                        }
-                        function myFunction5() {
-                            document.getElementById("title-subcategory").innerHTML = "Mecánica";
-                            let prueba = document.querySelectorAll('#subcategory');
-                            for (let i = 0; i <= prueba.length; i++){
-                                prueba[i].textContent = subcategoryMecanica[i];
-                            }
-                        }
-                        function myFunction6() {
-                            document.getElementById("title-subcategory").innerHTML = "Medicina";
-                            let prueba = document.querySelectorAll('#subcategory');
-                            for (let i = 0; i <= prueba.length; i++){
-                                prueba[i].textContent = subcategoryMedicina[i];
-                            }
-                        }
-                        function myFunction7() {
-                            document.getElementById("title-subcategory").innerHTML = "Química";
-                            let prueba = document.querySelectorAll('#subcategory');
-                            for (let i = 0; i <= prueba.length; i++){
-                                prueba[i].textContent = subcategoryQuimica[i];
-                            }
-                        }
-                        function myFunction8() {
-                            document.getElementById("title-subcategory").innerHTML = "Biotecnología1";
-                            let prueba = document.querySelectorAll('#subcategory');
-                            for (let i = 0; i <= prueba.length; i++){
-                                prueba[i].textContent = subcategoryBiotecnologia1[i];
-                            }
-                        }
-                        function myFunction9() {
-                            document.getElementById("title-subcategory").innerHTML = "Biotecnología2";
-                            let prueba = document.querySelectorAll('#subcategory');
-                            for (let i = 0; i <= prueba.length; i++){
-                                prueba[i].textContent = subcategoryBiotecnologia2[i];
-                            }
-                        }
-                        function myFunction10() {
-                            document.getElementById("title-subcategory").innerHTML = "Biotecnología3";
-                            let prueba = document.querySelectorAll('#subcategory');
-                            for (let i = 0; i <= prueba.length; i++){
-                                prueba[i].textContent = subcategoryBiotecnologia3[i];
+                            switch(button_id){
+                                case "programacion": 
+                                    document.getElementById("title-subcategory").innerHTML = "Programación";
+                                    for (let i = 0; i <= prueba.length; i++){
+                                        prueba[i].textContent = subcategoryPython[i];}
+                                    break;
+                                case "electronica":
+                                    document.getElementById("title-subcategory").innerHTML = "Electrónica";
+                                    for (let i = 0; i <= prueba.length; i++){
+                                        prueba[i].textContent = subcategoryElectronica[i];}
+                                    break;
+                                case "intArtificial":
+                                    document.getElementById("title-subcategory").innerHTML = "Inteligencia Artificial";
+                                    for (let i = 0; i <= prueba.length; i++){
+                                        prueba[i].textContent = subcategoryIntArtificial[i];}
+                                    break;
+                                case "redes":
+                                    document.getElementById("title-subcategory").innerHTML = "Redes";
+                                    for (let i = 0; i <= prueba.length; i++){
+                                        prueba[i].textContent = subcategoryRedes[i];}
+                                    break; 
+                                case "mecanica":
+                                    document.getElementById("title-subcategory").innerHTML = "Mecánica";
+                                    for (let i = 0; i <= prueba.length; i++){
+                                        prueba[i].textContent = subcategoryMecanica[i];}
+                                    break;
+                                case "medicina":
+                                    document.getElementById("title-subcategory").innerHTML = "Medicina";
+                                    for (let i = 0; i <= prueba.length; i++){
+                                        prueba[i].textContent = subcategoryMedicina[i];}
+                                    break;  
+                                case "quimica":
+                                    document.getElementById("title-subcategory").innerHTML = "Química";
+                                    for (let i = 0; i <= prueba.length; i++){
+                                        prueba[i].textContent = subcategoryQuimica[i];}
+                                    break; 
+                                case "biotecnologia1":
+                                    document.getElementById("title-subcategory").innerHTML = "Biotecnologia1";
+                                    for (let i = 0; i <= prueba.length; i++){
+                                        prueba[i].textContent = subcategoryBiotecnologia1[i];}
+                                    break;
+                                case "biotecnologia2":
+                                    document.getElementById("title-subcategory").innerHTML = "Biotecnologia2";
+                                    for (let i = 0; i <= prueba.length; i++){
+                                        prueba[i].textContent = subcategoryBiotecnologia2[i];}
+                                    break; 
+                                case "biotecnologia3":
+                                    document.getElementById("title-subcategory").innerHTML = "Biotecnologia3";
+                                    for (let i = 0; i <= prueba.length; i++){
+                                        prueba[i].textContent = subcategoryBiotecnologia3[i];}
+                                    break;   
                             }
                         }
                     </script>
