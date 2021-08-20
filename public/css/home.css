@@ -303,6 +303,11 @@ section.trends, section.results{
     text-align: left;
 }
 
+section.trends h3, section.suggest h3{
+    padding-top: 10px;
+}
+
+
 main section.separador{
     padding: 0px;
     box-shadow: none;
@@ -387,7 +392,7 @@ main aside{
     grid-template-columns: 100%;
     width: 96%;
     height: 100%;
-    padding: 15px;
+    padding: 15px 15px 30px 15px;
     margin-top: 15px;
     margin-left: 2%;
     border: 4px solid var(--sombra-boton);
@@ -524,6 +529,7 @@ main article{
     display: flex;
     flex-direction: column;
     width: 45%;
+    max-width: 200px;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -552,7 +558,7 @@ main article div.calificacionComentario{
 main article p.calificacion{
     color: var(--dorado);
     text-align: left;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 main article p.name{
@@ -644,10 +650,7 @@ main section.button-beginning .inicio{
       --navBarHeight: 50px;
       --navBarBackground:rgb(41, 41, 41);
       --searchBarColor: rgb(59, 57, 57);
-      --fontColors:#eaebf1;
-      --sectionBackground: #121212;
-  
-      --backgroundColor: #121212;
+      --fontColors:#eaebf1;1724
     --backgroundSections:#222222;
   
       --whiteButtonsFontColor: #eaebf1;
@@ -709,6 +712,10 @@ main section.button-beginning .inicio{
 
     main article,  main article#article-hidden,  main article#article-hidden2{
         width: 15%;
+    }
+
+    main article p.calificacion{
+        font-size: 13px;
     }
 
     main div.products article#products{
@@ -805,5 +812,42 @@ main section.button-beginning .inicio{
         width: 96.5%;
         margin-left: 5px;
         margin-right: 5%;
+    }
+}
+
+/************************************
+//    MEDIA QUERIES PC             //
+/***********************************/
+@media (min-width: 1024px) {
+    main div.sectionChange{
+        display: grid;
+        grid-template-columns: 25% 75%;
+    }
+
+    main article p.calificacion{
+        font-size: 15px;
+    }
+}
+
+/************************************
+//    MEDIA QUERIES PC             //
+/***********************************/
+@media (min-width: 1281px) {
+    main div.sectionChange{
+        display: grid;
+        grid-template-columns: 20% 80%;
+    }
+
+    main div.products article#products{
+        width: 20%;
+    }
+
+    main div#sideBarVer{
+        margin-left: 8%;
+    }
+
+    main section.results{
+        margin-left: 15px;
+        margin-right: 4%;
     }
 }
