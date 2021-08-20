@@ -807,3 +807,36 @@ main section.button-beginning .inicio{
         margin-right: 5%;
     }
 }
+
+/************************************
+//    MEDIA QUERIES PC             //
+/***********************************/
+@media (min-width: 1024px) {
+    main div.sectionChange{
+        display: grid;
+        grid-template-columns: 25% 75%;
+    }
+}
+
+/************************************
+//    MEDIA QUERIES PC             //
+/***********************************/
+@media (min-width: 1281px) {
+    main div.sectionChange{
+        display: grid;
+        grid-template-columns: 20% 80%;
+    }
+
+    main div.products article#products{
+        width: 20%;
+    }
+
+    main div#sideBarVer{
+        margin-left: 8%;
+    }
+
+    main section.results{
+        margin-left: 15px;
+        margin-right: 4%;
+    }
+}
