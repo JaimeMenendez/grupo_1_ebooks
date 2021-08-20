@@ -650,8 +650,10 @@ main section.button-beginning .inicio{
       --navBarHeight: 50px;
       --navBarBackground:rgb(41, 41, 41);
       --searchBarColor: rgb(59, 57, 57);
-      --fontColors:#eaebf1;1724
-    --backgroundSections:#222222;
+      --fontColors:#eaebf1;
+      --sectionBackground: #121212;
+      --backgroundColor: #121212;
+      --backgroundSections:#222222;
   
       --whiteButtonsFontColor: #eaebf1;
       --whiteButtonsBackground:rgb(59, 57, 57);
