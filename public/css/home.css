@@ -524,6 +524,7 @@ main article{
     display: flex;
     flex-direction: column;
     width: 45%;
+    max-width: 200px;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -552,7 +553,7 @@ main article div.calificacionComentario{
 main article p.calificacion{
     color: var(--dorado);
     text-align: left;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 main article p.name{
@@ -644,10 +645,7 @@ main section.button-beginning .inicio{
       --navBarHeight: 50px;
       --navBarBackground:rgb(41, 41, 41);
       --searchBarColor: rgb(59, 57, 57);
-      --fontColors:#eaebf1;
-      --sectionBackground: #121212;
-  
-      --backgroundColor: #121212;
+      --fontColors:#eaebf1;1724
     --backgroundSections:#222222;
   
       --whiteButtonsFontColor: #eaebf1;
@@ -709,6 +707,10 @@ main section.button-beginning .inicio{
 
     main article,  main article#article-hidden,  main article#article-hidden2{
         width: 15%;
+    }
+
+    main article p.calificacion{
+        font-size: 13px;
     }
 
     main div.products article#products{
@@ -815,6 +817,10 @@ main section.button-beginning .inicio{
     main div.sectionChange{
         display: grid;
         grid-template-columns: 25% 75%;
+    }
+
+    main article p.calificacion{
+        font-size: 15px;
     }
 }
 
