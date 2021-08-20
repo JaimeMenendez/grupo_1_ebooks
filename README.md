@@ -54,6 +54,6 @@ Estudiantes universitarios y profesionales en el campo de la medicina y la ingen
 
 * [Trello](https://trello.com/b/WkaRN2xn/proyecto-integrador): enlace al tablero de Trello del e-commerce, para ver los avances del proyecto.
 
-## Servido en Heroku
+## Servidor en Heroku
 
 * [insideBooks](https://insidebook.herokuapp.com/): enlace al servidor corriendo el e-commerce en la web
