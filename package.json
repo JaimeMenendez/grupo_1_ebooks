@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/JaimeMenendez/grupo_1_ebooks#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "normalize.css": "^8.0.1"
   },

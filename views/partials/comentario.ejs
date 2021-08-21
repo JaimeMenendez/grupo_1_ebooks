@@ -1,0 +1,30 @@
+<div class="comentario">
+    <div class="usuarioInfo">
+        <img src="<%=userAvatar%>" alt="">
+        <p><%=username%></p>
+    </div>
+    <div class="calificacionComentario">
+        <p class=calificacion>
+            <% for(let i=0; i<5; i++){ %> 
+            <%    if(i< calificacion){ %> 
+                <i class="fas fa-star"></i> <% } else{%>
+                <i class="far fa-star"></i> <% }}%>
+        </p>
+        <p class="tituloComentario"><%= title %> </p>
+    </div>
+
+    <% if(verificado){ %> 
+        <p class="revision">Revisado en México el <span clas="fechaRevisionCompra"><%=fechaDeVerificacion%></span> </p>
+        <p class="verificacionDeCompra">Compra verificada</p>
+    <% }%>
+
+    <p class="contenidoComentario"><%= content %></p>
+    <div class="botonesDeComentarios">
+        <label for="like"><input class="hidden" type="radio" name="like" value="like" id="like"><i
+                class="far fa-thumbs-up"></i></label>
+        <label for="dislike"><input class="hidden" type="radio" name="like" value="dislike" id="dislike"><i
+                class="far fa-thumbs-down"></i></label>
+        <label for="report"><input class="hidden" type="checkbox" id="report"><i
+                class="far fa-flag"></i></label>
+    </div>
+</div>

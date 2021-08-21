@@ -1,4 +1,5 @@
 const path = require('path');
+const book = require('./libro.json')
 
 const controller = {
     sendHome: (req,res)=>{
@@ -18,8 +19,8 @@ const controller = {
         res.sendFile(htmlPath);
     },
     sendProductDescription:(req,res)=> {
-        const htmlPath = path.resolve(__dirname, "../views/description.html");
-        res.sendFile(htmlPath);
+        console.log(book);
+        res.render("description",book);
     },
     sendLogin: (req,res)=> {
         const htmlPath = path.resolve(__dirname, "../views/login.html");
