@@ -7,3 +7,5 @@
 # 21-8-2021
 - Se efectuó la reunión semanal para programar y distribuir todas las tareas relacionadas con el sprint 3.
 - Se creó el partial de comentarios, y se implementó la vista de descripción del producto en el motor de plantillas ejs. 
+- Se creó el partial de productos del carrito, y se implementó la vista de carrito en el motor de plantillas ejs. 
+- Se agregó al carrito la funcionalidad de calcular el precio total de manera dinámica con javascript.
