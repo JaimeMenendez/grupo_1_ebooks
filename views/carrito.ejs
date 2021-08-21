@@ -95,71 +95,18 @@
     <main>
         <h2 class="carritoTitle"><i class="fas fa-shopping-cart"></i>&nbsp Mi Carrito</h2>
         <section>
-            <article class="carArticle">
-                <img src="./images/480.jpeg" alt="">
-                <div class="carArticleData">
-                    <p class="carProductTitle">Programación estructurada </p>
-                    <p class="carProductAuthor"> Alberto González</p>
-                    <p class="carProductFormat">Libro Electrónico</p>
-                </div>
-
-                <div class="number-input">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                        style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
-                    <input class="quantity" min="1" name="quantity" value="1" type="number" readonly>
-                    <button style="padding:1px 7px"
-                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
-                            class="fas fa-plus-circle"></i></button>
-                </div>
-                <p class="precio"><span>$ 125.00</span></p>
-                <i class="fas fa-trash-alt"></i>
-            </article>
-
-            <article class="carArticle">
-                <img src="./images/480.jpeg" alt="">
-                <div class="carArticleData">
-                    <p class="carProductTitle">Programación estructurada </p>
-                    <p class="carProductAuthor"> Alberto González</p>
-                    <p class="carProductFormat">Libro Electrónico</p>
-                </div>
-
-                <div class="number-input">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                        style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
-                    <input class="quantity" min="1" name="quantity" value="1" type="number" readonly>
-                    <button style="padding:1px 7px"
-                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
-                            class="fas fa-plus-circle"></i></button>
-                </div>
-                <p class="precio"><span>$ 125.00</span></p>
-                <i class="fas fa-trash-alt"></i>
-            </article>
-
-            <article class="carArticle">
-                <img src="./images/480.jpeg" alt="">
-                <div class="carArticleData">
-                    <p class="carProductTitle">Programación estructurada </p>
-                    <p class="carProductAuthor"> Alberto González</p>
-                    <p class="carProductFormat">Libro Electrónico</p>
-                </div>
-
-                <div class="number-input">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                        style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
-                    <input class="quantity" min="1" name="quantity" value="1" type="number" readonly>
-                    <button style="padding:1px 7px"
-                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
-                            class="fas fa-plus-circle"></i></button>
-                </div>
-                <p class="precio"><span>$ 125.00</span></p>
-                <i class="fas fa-trash-alt"></i>
-            </article>
+            <% articulos.forEach(libro => { %> 
+                <%- include('./partials/articuloCarrito', libro) %> 
+            <% })%>       
         </section>
 
         <article class="totalAPagar carArticle">
             <p>Total:</p>
-            <p>$ 592.25</p>
+            <p >$ <span id="precioFinal">592.25</span></p>
         </article>
+
+        <script src="./js/carrito.js">       
+        </script>
 
         <div class="promociones">
             <p> <strong>Envío gratis</strong> a toda la <strong>República Mexicana</strong> en compras mayores a
@@ -182,7 +129,6 @@
 
 
         <div class="botones">
-
             <button class='btn red agregarAlCarrito'>Proceder al Pago</button>
             <button class='btn Azul comprarAhora' onclick="location.href='/home';">Seguir Comprando</button>
         </div>

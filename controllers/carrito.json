@@ -1,0 +1,27 @@
+{
+    "articulos":[
+        {
+            "nombreLibro": "La guía de Java",
+            "autor": "Alberto González",
+            "precio": 125.00,
+            "formato": "Libro Electrónico",
+            "portada": "./images/480.jpeg"
+        },
+    
+        {
+            "nombreLibro": "La guía de Java",
+            "autor": "Alberto González",
+            "precio": 125.00,
+            "formato": "Libro Electrónico",
+            "portada": "./images/480.jpeg"
+        },
+
+        {
+            "nombreLibro": "La guía de Java",
+            "autor": "Alberto González",
+            "precio": 125.00,
+            "formato": "Libro Electrónico",
+            "portada": "./images/480.jpeg"
+        }
+    ]
+}

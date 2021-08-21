@@ -1,5 +1,6 @@
 const path = require('path');
 const book = require('./libro.json')
+const carrito = require('./carrito.json')
 
 const controller = {
     sendHome: (req,res)=>{
@@ -15,8 +16,7 @@ const controller = {
         res.sendFile(htmlPath);
     },
     sendShoppingCart: (req,res)=> {
-        const htmlPath = path.resolve(__dirname, "../views/carrito.html");
-        res.sendFile(htmlPath);
+        res.render("carrito",carrito);
     },
     sendProductDescription:(req,res)=> {
         res.render("description",book);

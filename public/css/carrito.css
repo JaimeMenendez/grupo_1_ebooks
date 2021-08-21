@@ -57,6 +57,7 @@ main{
     color:var(--fontColors);
     font-weight: bold;
     font-size:30px;
+    margin-top: 80px;
 }
 
 .carArticle{
@@ -243,7 +244,7 @@ input[type=number] {
 .number-input input{
     border:0;
     text-align: center;
-    width: 15px;
+    width: 18px;
     font-size: 16px;
     background: transparent;
     color:var(--fontColors);
@@ -358,6 +359,7 @@ main .carritoTitle{
 .totalAPagar{
   grid-column: 2/3;
   grid-row: 2/4;
+  padding-bottom: 500px;
 }
 
 main .botones{

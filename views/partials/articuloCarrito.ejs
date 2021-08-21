@@ -1,0 +1,19 @@
+<article class="carArticle">
+    <img src="<%= portada %> " alt="">
+    <div class="carArticleData">
+        <p class="carProductTitle"><%= nombreLibro %> </p>
+        <p class="carProductAuthor"><%= autor %></p>
+        <p class="carProductFormat"><%= formato %></p>
+    </div>
+
+    <div class="number-input">
+        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+            style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
+        <input class="quantity" min="1" name="quantity" value="1" type="number" readonly>
+        <button style="padding:1px 7px"
+            onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
+                class="fas fa-plus-circle"></i></button>
+    </div>
+    <p class="precio">$ &nbsp<span><%= precio.toFixed(2) %> </span></p>
+    <i class="fas fa-trash-alt"></i>
+</article>
