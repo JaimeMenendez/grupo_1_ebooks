@@ -2,6 +2,7 @@
 @import "./logoStyle.css";
 @import "./navBar.css";
 @import "./footer.css";
+@import "./comentarios.css";
 
 :root {
     --azul-morado-oscuro: #2d2f8e;
@@ -465,72 +466,6 @@ main ul a{
       margin: auto;
       font-size: 18px;
   }
-
-
-
-/* ========================================================= */
-/*                       Reseñas                             */
-/* ========================================================= */ 
-.comentarios{
-    text-align:left;
-    margin: auto;
-    width: 92%;
-}
-
-.comentario{
-    margin-bottom: 40px;
-
-}
-.usuarioInfo, .calificacionComentario{
-    display:flex;
-    justify-content:flex-start;
-    align-items:center;
-}
-.usuarioInfo p{
-    margin-left: 10px;
-    font-size:18px;
-}
-.usuarioInfo img{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
-}
-
-.calificacionComentario p{
-    margin-bottom: 5px;
-    margin-top: 8px;
-}
-
-.calificacionComentario .tituloComentario{
-    margin-left: 6px;
-    font-weight: bold;
-    font-size:16px;
-}
-
-.calificacion{
-    color:gold;
-}
-
-.revision,.verificacionDeCompra{
-    margin: 0;
-}
-
-.verificacionDeCompra{
-    color:var(--buttonColor);
-    font-weight: bold;
-}
-
-.contenidoComentario{
-    margin-top: 5px;
-    margin-bottom:0
-}
-
-.botonesDeComentarios label{
-    margin-right: 10px;
-    cursor: pointer;
-}
-
 
 .PC{
     display: none;
