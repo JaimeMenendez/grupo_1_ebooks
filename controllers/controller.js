@@ -19,7 +19,6 @@ const controller = {
         res.sendFile(htmlPath);
     },
     sendProductDescription:(req,res)=> {
-        console.log(book);
         res.render("description",book);
     },
     sendLogin: (req,res)=> {
