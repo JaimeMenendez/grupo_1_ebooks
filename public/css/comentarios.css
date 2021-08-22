@@ -75,6 +75,9 @@
     font-weight: bold;
 }
 
+.botonesDeComentarios label:hover i{
+    font-weight: bold;
+}
 
 .calificacion i:hover~i, .calificacion i:hover {
     color: rgb(202, 172, 4);
