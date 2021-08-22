@@ -95,7 +95,9 @@
         <section class="datosPrincipales">
             <div class="materiaTitulo">
                 <p>
-                    <%= materia %> > <%= nombre%> <span class="heartIcon"><i class="far fa-heart"></i></span>
+                    <%= materia %> > <%= nombre%> <label class="heartIcon">
+                        <input type="checkbox" name="favorito" id="favorito">
+                        <i class="far fa-heart"></i></label>
                 </p>
             </div>
 
@@ -159,8 +161,8 @@
                     </div>
                 </div>
                 <div class="botones">
-                    <button class='btn red agregarAlCarrito'>Agregar al Carrito</button>
-                    <button class='btn Azul comprarAhora'>Comprar Ahora</button>
+                    <button class='btn red agregarAlCarrito'>Agregar al carrito</button>
+                    <button class='btn Azul comprarAhora'>Comprar ahora</button>
                 </div>
             </section>
 

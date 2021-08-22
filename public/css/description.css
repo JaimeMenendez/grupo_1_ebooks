@@ -219,6 +219,23 @@ form.sbMobile::after {
     cursor: pointer;
 }
 
+.heartIcon input{
+    display: none;
+}
+
+.heartIcon input:checked ~ i{
+    font-weight: bold;
+}
+
+.heartIcon i {
+    transition-duration: 0.2s;
+}
+
+.heartIcon i:active{
+    transform: scale(1.5);
+}
+
+
 .portada img{
     width: auto;
     height: auto;
@@ -306,16 +323,21 @@ margin-top: 10px;
     color: red;
     font-weight: bold;
 }
+#ebookButton+ label, #pastaBlandaButton+label{
+    user-select: none;
+}
 
 #ebookButton:checked + label,#pastaBlandaButton:checked + label {
     background-color:#585DBA;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
     color: var(--fontColorButtons);
+    user-select: none
     
   }
 
   #ebookButton:checked + label span,#pastaBlandaButton:checked + label span{
       color: white;
+      user-select: none;
   }
 
 /* ========================================================= */

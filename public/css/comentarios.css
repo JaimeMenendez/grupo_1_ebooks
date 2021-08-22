@@ -75,6 +75,14 @@
     font-weight: bold;
 }
 
+.botonesDeComentarios label i{
+    transition-duration: 0.3s;
+}
+
+.botonesDeComentarios label i:active{
+    transform: scale(1.5);
+}
+
 .botonesDeComentarios label:hover i{
     font-weight: bold;
 }
@@ -83,6 +91,10 @@
     color: rgb(202, 172, 4);
     font-weight: bold;
     cursor: pointer;
+}
+
+.botonesDeComentarios label input:checked ~ i{
+    font-weight: bold;
 }
 
 .animatedStar{
@@ -138,8 +150,6 @@
     --varTop : 40px;
     --varLeft: -80px;
 }
-
-
 
 
 @keyframes starMoving{
