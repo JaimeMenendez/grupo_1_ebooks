@@ -1,0 +1,855 @@
+/* @import url(//db.onlinewebfonts.com/c/1bbe3460b053c4f1d67d1f1afecdaa76?family=DIN);
+@import url(nav-barD2.css);
+
+@import url(stylesFooter.css); */
+
+@import "./fonts.css";
+@import "./logoStyle.css";
+@import "./navBar.css";
+@import "./footer.css";
+@import "./category-buttons.css";
+
+:root{
+    --azul-morado-oscuro: #2d2f8e;
+    --azul-morado-claro: #585dba;
+    --verde-pastel-oscuro: #44979c;
+    --verde-pastel-claro: #89cab4;
+    --azul-gris-oscuro: #202020;
+    --oscuro: #56575e;
+    --azul-oscuro: #14213D;
+    --rojo: #ea4533;
+    --rojo-oscuro: #c0392b;
+    --naranja-pastel: #f4ae62;
+    --rosado-pastel: #f6c7af;
+    --crema:#f3f0d7;
+    --blanco: #ffffff;
+    --dorado: #81670f;
+
+    --navBarHeight: 50px;
+    --marginBottom:10px;
+    --borderRadius:5px;
+  
+    --backgroundColor: #e2e1e0;
+    --backgroundSections:white;
+  
+    --fontColors:#2e2e2e;
+    --navBarBackground:rgb(255, 255, 255);
+  
+    /* Buttons */
+    --buttonHeight:35px;
+    --buttonBorderRadio: 2px;
+    --buttonFontColor:#ecf0f1;
+    --buttonColor:#EA4533;
+
+  
+     /* List */
+    --fontListColor:#56575e;;
+    --fontIndexTitleColor: #56575e;
+  
+    /* Price */
+    --priceColor:#EA4533;
+  
+    /* Margin Between Containers */
+    --separation:5px;
+  
+    --footerBackground: #2d2f8e;
+    --footerFontColor: #eaebf1;
+}
+
+label, button, h1, h2, h3, h4, h5, h6, p {
+    color: var(--fontColors);
+  }
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    background-color: var(--backgroundColor);
+    scroll-behavior: smooth;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*Muestra solo el contenido que cabe en la caja*/
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+    
+h3{
+    font-size: 22px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+}
+
+p{
+    font-size: 12px;
+}
+
+.price{
+    font-size: 18px;
+    font-family: 'DIN', sans-serif;
+    text-align: left;
+    font-weight: 700;
+    color: var(--azul-morado-oscuro);
+}
+
+.name{
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    color:var(--fontColors);
+}
+
+.btn {
+    position: absolute;
+    bottom:0;
+    height: 35px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    margin: 10px auto;
+    padding: 0;
+  
+    overflow: hidden;
+  
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    color: var(--fontColorButtons);
+    
+    transition: background-color .3s;
+  }
+  
+  .btn.red {
+    background-color: var(--buttonColor);
+  }
+/************************************
+//        SEARCH BAR MOBILE        //
+/***********************************/
+
+ section.searchBar-mobile{
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    background: radial-gradient(var(--azul-morado-claro), var(--azul-morado-oscuro));
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+form.sbMobile{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+form.sbMobile input[type=text]{
+   font-size: 17px;
+   border: 1px solid  var(--backgroundSections);
+   border-radius: 4px;
+   border-top-right-radius: 0;
+   border-bottom-right-radius: 0;
+
+   width: 80%;
+   min-width: 190px;
+   background: var(--backgroundSections);
+   color: var(--fontColors);
+}
+
+form.sbMobile input[type=text]::placeholder{
+    color: var(--fontColors);
+}
+
+form.sbMobile button{
+   width: 10%;
+   max-width: 40px;
+   font-size: 20px;
+   font-weight: 700;
+   background-color: var(--rojo);
+   border: 2px solid var(--rojo);
+   border-radius: 4px;
+   border-top-left-radius: 0;
+   border-bottom-left-radius: 0;
+   color: white;
+   cursor: pointer;
+   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+form.sbMobile i{
+  color: var(--blanco);
+}
+
+form.sbMobile button:hover {
+   /*:hover selector cambia el estilo de boton cuando se pasa el mouse sobre él*/
+   background: var(--rojo-oscuro);
+   background-color: var(--rojo-oscuro);
+   border: 2px solid var(--rojo-oscuro);
+}
+  
+form.sbMobile::after {
+   content: "";
+   clear: both;
+   display: table;
+}
+/************************************
+//        Slider                   //
+/***********************************/
+.slider{
+    position: relative;
+    width: 500%;
+    overflow: hidden;
+    animation: 20s slider infinite;
+}
+
+.sliderContent{
+    width: 20%;
+    float: left;
+}
+
+@keyframes slider {
+    0% {
+        left: 0;
+    }
+
+    20% {
+        left:0;
+    }
+
+    25% {
+        left:-100%;
+    }
+
+    45% {
+        left:-100%;
+    }
+
+    50% {
+        left:-200%;
+    }
+
+    70% {
+        left:-200%;
+    }
+
+    75% {
+        left:-300%;
+    }
+
+    95% {
+        left:-300%;
+    }
+
+    100%{
+        left: -400%;
+    }
+}
+
+
+/************************************
+//        PROMOTIONAL BANNER       //
+/***********************************/
+#startBanner{
+    background-color: var(--backgroundColor);
+}
+section.banner img{
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background-color: var(--backgroundColor);
+}
+
+section.banner-books img{
+    background: none;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+
+/************************************
+//        MAIN SECTION             //
+/***********************************/
+main{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: var(--backgroundColor);
+}
+
+main div.imp-buttons-hidden{
+    display: none;
+}
+
+main section.show-filter section.sectionChange, section.suggest, section.moreNew, section.ebooks{
+    background-color: var(--backgroundSections);
+    text-align: left;
+    
+}
+
+section.trends, section.results{
+    background-color: var(--backgroundSections);
+    text-align: left;
+}
+
+section.trends h3, section.suggest h3{
+    padding-top: 10px;
+}
+
+
+main section.separador{
+    padding: 0px;
+    box-shadow: none;
+}
+
+main section.separador img{
+    width: 100%;
+}
+
+main section{
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 4px solid var(--sombra-boton);
+    box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.24);
+    border-radius: 4px;
+}
+
+main div.show-filter{
+    display: flex;
+    border-bottom: 2px solid var(--dorado);
+}
+
+main div.show-filter a{
+    font-family: "DIN", sans-serif;
+    text-decoration: none;
+    color: var(--fontColors);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 1em;
+    padding: 5px;
+    border: 1px solid white;
+    box-shadow: 3px 3px 15px 3px rgba(0,0,0,0.24);
+    border-radius: 4px;
+}
+/************************************
+//        SECTIONS ASIDE           //
+/***********************************/
+
+main div#sideBarVer .closebtn {
+    text-align: left;
+    margin-right: 5px;
+    border: 1px solid var(--azul-morado-claro);
+    box-shadow: 3px 3px 15px 3px rgba(0,0,0,0.24);
+    border-radius: 4px;
+    max-width: 70px;
+} 
+
+main div#sideBarVer{
+    display: none;
+    position: absolute;
+    top: 50vh;
+    width: 100%;
+    left: 0;
+    transition-property: width;
+    transition-duration: 0.3s;  
+    z-index: 300;
+}
+
+main div#sideBarVer .closebtn{
+    padding-left: 5px;
+    color: var(--crema);
+    font-weight: bold;
+    line-height: 30px;
+}
+
+main div#indexFirst{
+    margin-top: 10px;
+    border-top: 1px solid #fff;
+    width: 100%;
+}
+
+main div#sideBarVer a:hover, main div.show-filter a:hover{
+    color:#EA4533;
+    transform: none;
+}
+main aside{
+    display: grid;
+    position: relative;
+    grid-template-columns: 100%;
+    width: 96%;
+    height: 100%;
+    padding: 15px 15px 30px 15px;
+    margin-top: 15px;
+    margin-left: 2%;
+    border: 4px solid var(--sombra-boton);
+    box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.24);
+    background-color: #ffffff;
+    border-radius: 4px;
+    z-index: 300;
+    background: radial-gradient(var(--azul-morado-claro), var(--azul-morado-oscuro));
+}
+
+main aside div.index h3{
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 1.3em;
+    font-family: "DIN", sans-serif;
+    text-align: left;
+    color: #ffffff;
+}
+
+main aside div.index{
+    width: 100%;
+}
+
+main aside ul.subcategory-books{
+    display: flex;
+    flex-wrap: wrap;
+    width: 94%;
+    justify-content: flex-start;
+    list-style: none;
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 30px;
+    padding: 0;
+}
+
+main aside ul.subcategory-books-pc{
+    display: none;
+}
+
+main aside ul.subcategory-books li{
+    margin-bottom:5px;
+    margin-right: 5px;
+    border-radius: 1px solid var(--azul-gris-oscuro);
+    border-radius: 4px;
+    background-color: var(--buttonFontColor);
+    line-height: 1.5em;
+    padding: 5px;
+    font-size: 16px;
+}
+
+main aside ul.priceBooks a{
+    color: #ffffff;
+}
+main aside ul.formatBooks label, ul.idiomBooks label{
+    color: #ffffff;
+}
+
+main aside ul{
+    width: 94%;
+    list-style: none;
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 30px;
+    padding: 0;
+    color: white;
+}
+
+main aside li{
+    margin-bottom:5px;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+main aside a#white{
+    text-decoration: none;
+    color:white;
+}
+
+main aside a{
+    text-decoration: none;
+    color:rgba(0, 0, 0);
+}
+
+/******* Sección de estrellas ******/
+main aside div.calificacionComentario{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    margin-left: 30px;
+}
+
+main aside div.calificacionComentario p{
+    margin-top: 5px;
+}
+
+/***** Primer div de estrellas *****/
+main aside div#first{
+    margin-top: 15px;
+}
+
+main aside div.calificacionComentario p.tituloComentario{
+    margin-left: 5px;
+    font-weight: bold;
+    font-size:17px;
+    color: white;
+}
+
+main aside p.calificacion{
+    color:gold;
+    font-size: 15px;
+}
+
+/************************************
+//        BOOKS SECTIONS           //
+/***********************************/
+main section h3{
+    width: 97%;
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 1.3em;
+    font-family: "DIN", sans-serif;
+}
+
+main div.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/************************************
+//    BOOKS 1ST SECTIONS           //
+/***********************************/
+main article{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    max-width: 200px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+/********** BOOKS HIDDEN************/
+main article img{
+    width: 90%;
+}
+
+main article div.main-article{
+    width: 90%;
+    margin: 18px 0px;
+    padding: 15px;
+    border-top: 4px solid var(--dorado);
+}
+
+main article div.calificacionComentario{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+}
+
+main article p.calificacion{
+    color: var(--dorado);
+    text-align: left;
+    font-size: 15px;
+}
+
+main article p.name{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+} 
+
+main Article#article-hidden, main Article#article-hidden2{
+    display: none;
+}
+/********** LOGO IN BOOKS ************/
+main article div.article-logo{
+    position: relative;
+    left: 90%;
+    top: -40px;
+}
+
+main article div.article-logo i{
+    display: block;
+    font-size: 20px;
+    margin-top: 5px;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--dorado);
+    color: var(--dorado);
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--backgroundSections);
+}
+
+main article:hover i{
+    transform: rotate(90deg);
+}
+
+main article i{
+    transition: transform 0.5s;
+}
+
+main article form{
+    margin-top: 10px;
+}
+
+/********** BUTTON BOOKS ************/
+main form.product-button button, .inicio{
+    width: 90%;
+    height: 33px;
+    font-family: "DIN", sans-serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    box-sizing: border-box;
+    border: 2px solid var(--rojo);
+    border-radius: 2px;
+    background-color: var(--rojo);
+    color: var(--blanco);
+    cursor: pointer;
+    box-shadow: 3px 5px var(--sombra-boton);
+}
+
+main article div.main-article button:hover{
+    background: var(--rojo-oscuro);
+    border: 2px solid var(--rojo-oscuro);
+}
+
+/********** BUTTON INICIO * ************/
+main section.button-beginning{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
+    margin-top: 10px;
+} 
+
+main section.button-beginning .inicio{
+    min-width: 150px;
+    font-size: 0.8em;
+    font-weight: 700;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 150px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+      --navBarHeight: 50px;
+      --navBarBackground:rgb(41, 41, 41);
+      --searchBarColor: rgb(59, 57, 57);
+      --fontColors:#eaebf1;
+      --sectionBackground: #121212;
+      --backgroundColor: #121212;
+      --backgroundSections:#222222;
+  
+      --whiteButtonsFontColor: #eaebf1;
+      --whiteButtonsBackground:rgb(59, 57, 57);
+      --footerBackground: rgb(41, 41, 41);
+    } 
+  }
+
+/************************************
+//    MEDIA QUERIES TABLET         //
+/***********************************/
+@media (min-width: 600px) {
+
+    .slider{
+        margin-top:var(--navBarHeight);
+    }
+
+    section.searchBar-mobile{
+        display: none;
+    }
+
+    section.banner img{
+        margin-top: 50px;
+        margin-bottom: 5px;
+    }
+
+    section#banner-hidden{
+        display: none;
+    }
+
+    main article#article-hidden, main article#article-hidden2{
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    main article{
+        width: 30%;
+    }
+
+    main article:hover{
+        transition: transform 0.5s;
+        transform: scale(1.1) !important;
+    }
+}
+
+/************************************
+//    MEDIA QUERIES PC             //
+/***********************************/
+@media (min-width: 900px) {
+
+    body{
+        background-color: #ebebeb;;
+    }
+
+    main article,  main article#article-hidden,  main article#article-hidden2{
+        width: 15%;
+    }
+
+    main article p.calificacion{
+        font-size: 13px;
+    }
+
+    main div.products article#products{
+        width: 25%;
+    }
+
+    main article img, main article div.main-article, main form.product-button button{
+        width: 80%;
+    }
+
+    main #separador-hidden{
+        display: none;
+    }
+
+    main section.separador{
+        display: none;
+    }
+
+    main div.sectionChange{
+        display: grid;
+        grid-template-columns: 30% 70%;
+    }
+
+    main div.imp-buttons-hidden{
+        display: inline;
+        grid-column: 1/3;
+    }
+    main section#important-buttons-pc{
+        border: 4px solid var(--sombra-boton);
+        box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.24);
+        border-radius: 4px;
+        padding: 15px;
+    }
+    
+    main div.identifier5{
+        width:18%;
+    }
+
+    main section#important-buttons #category-book-hidden{
+        display: inline;
+    }
+
+    div.identifier5 p{
+        font-size: 14px;
+    }
+
+    main div.show-filter{
+        display: none;
+    }
+
+    main div#sideBarVer{
+        grid-column:1/2;
+        display: inline;
+        position: inherit;
+        width: 95%;
+        margin-bottom: 10px;
+        margin-left: 5%;
+    }
+
+    main aside{
+        margin-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    main aside div#indexFirst{
+        border-top: none;
+        margin-top: 0px;
+    }
+
+    main aside div#indexFirst h3{
+        margin-top: 0px;
+    }
+
+
+    main aside ul.subcategory-books{
+        display: none;
+    }
+
+    main aside ul.subcategory-books-pc{
+        display: block;
+    }
+
+    main aside ul.subcategory-books-pc a{
+        font-size: 16px;
+        color: #ffffff;
+    }
+
+    main aside .closebtn{
+        display: none;
+    }
+
+    main section.results{
+        grid-column: 2/3;
+        width: 96.5%;
+        margin-left: 5px;
+        margin-right: 5%;
+    }
+}
+
+/************************************
+//    MEDIA QUERIES PC             //
+/***********************************/
+@media (min-width: 1024px) {
+    main div.sectionChange{
+        display: grid;
+        grid-template-columns: 25% 75%;
+    }
+
+    main article p.calificacion{
+        font-size: 15px;
+    }
+}
+
+/************************************
+//    MEDIA QUERIES PC             //
+/***********************************/
+@media (min-width: 1281px) {
+    main div.sectionChange{
+        display: grid;
+        grid-template-columns: 20% 80%;
+    }
+
+    main div.products article#products{
+        width: 20%;
+    }
+
+    main div#sideBarVer{
+        margin-left: 8%;
+    }
+
+    main section.results{
+        margin-left: 15px;
+        margin-right: 4%;
+    }
+}

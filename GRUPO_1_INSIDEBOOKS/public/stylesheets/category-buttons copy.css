@@ -1,0 +1,282 @@
+/********************* Buttons for category ****************/
+main section.important-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: var(--backgroundSections);
+}
+
+/**** Identifier 1 ****/
+main div.identifier{
+    width: 47%;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+    height: 100px;
+    font-size: 60px;
+    background: radial-gradient(var(--azul-morado-claro), var(--azul-morado-oscuro));
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border: 1px solid var(--azul-morado-oscuro);
+    border-radius: 10px;
+}
+
+main div.identifier i{
+    width: 100%;
+    margin-right: 15%;
+    color: var(--blanco);
+}
+
+main div.identifier:hover{
+    background-color: var(--azul-morado-claro);
+    transition: transform 0.4s;
+    transform: scale(0.9) !important;
+} 
+
+main div.identifier p{
+    color: var(--blanco);
+    font-family: "DIN";
+    font-size: 17px;
+}
+
+/**** Identifier 2 ****/
+main div.identifier2{
+    width: 47%;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+    height: 100px;
+    font-size: 60px;
+    background: radial-gradient(var(--verde-pastel-claro), var(--verde-pastel-oscuro));
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border: 1px solid var(--verde-pastel-oscuro);
+    border-radius: 10px;
+}
+
+main div.identifier2 i{
+    width: 100%;
+    margin-right: 15%;
+    color: var(--blanco);
+}
+
+main div.identifier2 p{
+    color: var(--blanco);
+    font-family: "DIN";
+    font-size: 17px;
+}
+
+main div.identifier2:hover{
+    background-color: var(--verde-pastel-claro);
+    transition: transform 0.4s;
+    transform: scale(0.9) 
+}
+
+/**** Identifier 3 ****/
+main div.identifier3{
+    width: 47%;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+    height: 100px;
+    font-size: 60px;
+    background: radial-gradient(var(--rosado-pastel), var(--naranja-pastel));
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border: 1px solid var(--naranja-pastel);
+    border-radius: 10px;
+}
+
+main div.identifier3 i{
+    width: 100%;
+    margin-right: 15%;
+    color: var(--blanco);
+}
+
+main div.identifier3 p{
+    color: var(--blanco);
+    font-family: "DIN";
+    font-size: 17px;
+}
+
+main div.identifier3:hover{
+    background-color: var(--rosado-pastel);
+    transition: transform 0.4s;
+    transform: scale(0.9); 
+}
+/**** Identifier 4 ****/
+main div.identifier4{
+    width: 47%;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+    height: 100px;
+    font-size: 60px;
+    background: radial-gradient(var(--rojo), var(--rojo-oscuro));
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border: 1px solid var(--rojo-oscuro);
+    border-radius: 10px;
+}
+
+main div.identifier4 i{
+    width: 100%;
+    margin-right: 15%;
+    color: var(--blanco);
+}
+
+main div.identifier4 p{
+    color: var(--blanco);
+    font-family: "DIN";
+    font-size: 17px;
+}
+
+main div.identifier4:hover{
+    background-color: var(--rojo);
+    transition: transform 0.4s;
+    transform: scale(0.9); 
+}
+
+/**** Identifier 5 ****/
+main div.identifier5{
+    width: 47%;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+    height: 100px;
+    font-size: 60px;
+    background: radial-gradient(var(--verde-pastel-claro), var(--verde-pastel-oscuro));
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border: 1px solid var(--verde-pastel-oscuro);
+    border-radius: 10px;
+}
+
+main div.identifier5 i{
+    width: 100%;
+    margin-right: 15%;
+    color: var(--blanco);
+}
+
+main div.identifier5 p{
+    color: var(--blanco);
+    font-family: "DIN";
+    font-size: 17px;
+}
+
+main div.identifier5:hover{
+    background-color: var(--verde-pastel-claro);
+    box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.52);
+    transition: transform 0.4s;
+    transform: scale(0.9);
+    }
+
+main #category-book-hidden{
+    display: none;
+}
+/************************************
+//    MEDIA QUERIES MOBILE         //
+/***********************************/
+@media (min-width: 360px) {
+   
+    main div.identifier{
+        width: 45%;
+    }
+
+    main div.identifier2{
+        width: 45%;
+    }
+
+    main div.identifier3{
+        width: 45%;
+    }
+
+    main div.identifier4{
+        width: 45%;
+    }
+
+    main div.identifier5{
+        width:45%;
+    }
+
+    main #category-book-hidden{
+        display: none;
+    }
+}
+
+
+/************************************
+//    MEDIA QUERIES TABLET         //
+/***********************************/
+@media (min-width: 600px) {
+
+    section.important-buttons{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    main div.identifier{
+        width: 23%;
+    }
+
+    main div.identifier2{
+        width: 23%;
+    }
+
+    main div.identifier3{
+        width: 23%;
+    }
+
+    main div.identifier4{
+        width: 23%;
+    }
+
+    main div.identifier5{
+        width:23%;
+    }
+    main section.important-buttons #category-book-hidden{
+        display: none;
+    }
+}
+
+/************************************
+//    MEDIA QUERIES PC             //
+/***********************************/
+@media (min-width: 1024px) {
+
+    main section#important-buttons-pc{
+        border: 4px solid var(--sombra-boton);
+        box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.24);
+        border-radius: 4px;
+        padding: 15px;
+    }
+    
+    main div.identifier5{
+        width:18%;
+    }
+
+    main section.important-buttons #category-book-hidden{
+        display: inline;
+    }
+
+    div.identifier5 p{
+        font-size: 14px;
+    }
+}

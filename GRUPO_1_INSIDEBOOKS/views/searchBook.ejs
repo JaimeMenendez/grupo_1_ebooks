@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Russo+One&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="css/flaticon/flaticon.css">
+    <link rel="stylesheet" href="css/normalize.min.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    
+    <script defer src="./js/darkModeScript.js"></script>
+    <script defer src="./js/asideSubcategoryBooks.js"></script>
+    <title>Search Book - InsideBooks</title>
+</head>
+
+<body>
+    <nav>
+        <a href="./home">
+            <div class="logoNavBar">
+                <div class="logoContainer">
+                    <div class="bloqueAzul"></div>
+                    <div class="bloqueVerde"></div>
+                    <div class="bloqueRojo"></div>
+                    <div class="bloqueNaranja"></div>
+                </div>
+                <p class="logoText">
+                    <span class="rojo">IN</span><span class="azul">SIDE</span><span class="verde">BOOKS</span>
+                </p>
+            </div>
+        </a>
+
+        <form class="searchBar" action="./searchBook">
+            <input class="btn" type="text" placeholder=" Buscar.." name="search">
+            <button class="btn red" type="submit"><i class="flaticon-magnifying-glass-1"></i></button>
+        </form>
+
+        <div class="menuButton">
+            <a href="./login"><i class="flaticon-profile-user"></i> &nbsp <span class="menu-label"> Mi Cuenta</span> </a>
+            <a href="./carrito"><i class="flaticon-shopping-cart"></i> &nbsp <span class="menu-label"> Mi
+                Carrito</span></a>
+            <a href="#" onclick="openNav()"><i class="flaticon-list"></i> &nbsp <span class="menu-label">
+                Menú</span> </a>
+            <div class="mySidenav" id="sideNav">
+                <div class="mySidenavlinks">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div>
+                        <input style="display: none;" type="checkbox" id="darkMode">
+                        <label for="darkMode">
+                            <span id="textoModoClaro"><i class="far fa-moon"></i>&nbsp Modo Oscuro</span> 
+                            <span id="textoModoOscuro"> <i class="fas fa-sun"></i> &nbsp Modo Claro</span>
+                        </label>
+                    </div>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+  
+    <section class="searchBar-mobile">
+        <form action="./searchBook" class="sbMobile">
+            <input type="text" id="search" name="search" placeholder=" Buscar por autor, título, categoría...">
+            <button type="submit"><i><i class="fas fa-search"></i></i></button>
+        </form>
+    </section>
+
+    <section class="banner" id="startBanner">
+        <img src="./images/bannerSeparador.jpg" alt="promotions">
+    </section>
+
+    <main>
+        <div class="sectionChange">
+            <!--Categoria de libros-->
+            <div class="imp-buttons-hidden">
+                <section class="important-buttons" id="important-buttons-pc">
+                    <div id="programacion" onclick="myFunction(this.id)" class="identifier5" class="class1">
+                        <a href="#"><i class="fas fa-laptop-code"></i></a>
+                        <p>Programación</p>
+                    </div>
+                    <div id="electronica" onclick="myFunction(this.id)" class="identifier5">
+                        <a href="#"><i class="fas fa-car-battery"></i></a>
+                        <p>Electrónica</p>
+                    </div>
+                    <div id="intArtificial" onclick="myFunction(this.id)" class="identifier5">
+                        <a href="#"><i class="fas fa-brain"></i></a>
+                        <p>Int Artificial</p>
+                    </div>
+                    <div id="redes" onclick="myFunction(this.id)" class="identifier5">
+                        <a href="#"><i class="fas fa-network-wired"></i></a>
+                        <p>Redes</p>
+                    </div>
+                    <div id="mecanica" onclick="myFunction(this.id)" class="identifier5">
+                        <a href="#"><i class="fas fa-cogs"></i></a>
+                        <p>Mecánica</p>
+                    </div>
+                    <div id="medicina" onclick="myFunction(this.id)" class="identifier5">
+                        <a href="#"><i class="fas fa-stethoscope"></i></a>
+                        <p>Medicina</p>
+                    </div>
+                    <div id="quimica" onclick="myFunction(this.id)" class="identifier5">
+                        <a href="#"><i class="fas fa-atom"></i></a>
+                        <p>Química</p>
+                    </div>
+                    <div id="biotecnologia1" onclick="myFunction(this.id)" class="identifier5">
+                        <a href="#"><i class="fas fa-leaf"></i></a>
+                        <p>Biotecnología</p>
+                    </div>
+                    <div id="biotecnologia2" onclick="myFunction(this.id)" class="identifier5" id="category-book-hidden">
+                        <a href="#"><i class="fas fa-leaf"></i></a>
+                        <p>Biotecnología</p>
+                    </div>
+                    <div id="biotecnologia3" onclick="myFunction(this.id)"class="identifier5" id="category-book-hidden">
+                        <a href="#"><i class="fas fa-leaf"></i></a>
+                        <p>Biotecnología</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="sideBarVer, sideBarPC" id="sideBarVer">
+                <aside id="subjects">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeBarVer()"> &times cerrar</a>
+                    <div class="index" id="indexFirst">
+                        <h3 id="title-subcategory">Categorías por área</h3>
+                        <ul class="subcategory-books">
+                            <li><a href="">Medicina</a></li>
+                            <li><a href="">Programación</a></li>
+                            <li><a href="">Electrónica</a></li>
+                            <li><a href="">Matemáticas</a></li>
+                            <li><a href="">Física</a></li>
+                            <li><a href="">Mecánica</a></li>
+                            <li><a href="">Economía y Finanzas</a></li>
+                            <li><a href="">Telecomunicaciones</a></li>
+                            <li><a href="">Redes</a></li>
+                            <li><a href="">Química</a></li>
+                            <li><a href="">Biotecnología</a></li>
+                            <li><a href="">Estadísticas</a></li>
+                            <li><a href="">Microbiología</a></li>
+                            <li><a href="">Inglés</a></li>
+                            <li><a href="">Electromecánica</a></li>
+                            <li><a href="">Civil</a></li>
+                        </ul>
+                        <ul class="subcategory-books-pc">
+                            <li><a id="subcategory" href="">Inteligencia artifical</a></li>
+                            <li><a id="subcategory" href="">Desarrollo web</a></li>
+                            <li><a id="subcategory" href="">Amazon web services</a></li>
+                            <li><a id="subcategory" href="">Deep learning</a></li>
+                            <li><a id="subcategory" href="">Conceptos básicos</a></li>
+                            <li><a id="subcategory" href="">Ciencias de datos</a></li>
+                            <li><a id="subcategory" href="">Pandas y numpy</a></li>
+                            <li><a id="subcategory" href="">Django</a></li>
+                            <li><a id="subcategory" href="">Flsk</a></li>
+                            <li><a id="subcategory" href="">Raspberry Pi</a></li>
+                        </ul>
+                    </div>
+                    <div class="index">
+                        <h3>Libros por Idioma</h3>
+                        <ul class="idiomBooks">
+                            <li>
+                                <a href="#">
+                                    <input type="checkbox" name="idioma" id="idioma" value="ingles" checked>
+                                    <label for="idioma">Inglés</label>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <input type="checkbox" name="idioma" id="idioma" value="español">
+                                    <label for="idioma">Español</label>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <input type="checkbox" name="idioma" id="idioma" value="frances">
+                                    <label for="idioma">Francés</label>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <input type="checkbox" name="idioma" id="idioma" value="Italiano">
+                                    <label for="idioma">Italiano</label>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+            
+                        <div class="index">
+                            <h3>Libros por Formato</h3>
+                            <ul class="formatBooks">
+                                <li>
+                                    <a href="#">
+                                        <input type="checkbox" name="formato" id="formato" value="ebook" checked>
+                                        <label for="formato">Ebooks</label>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <input type="checkbox" name="formato" id="formato" value="blanda">
+                                        <label for="formato">Pasta blanda</label>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <input type="checkbox" name="formato" id="formato" value="dura">
+                                        <label for="formato">Pasta dura</label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="index">
+                            <h3>Promociones</h3>
+                            <ul class="formatBooks">
+                                <li>
+                                    <a href="#">
+                                        <input type="checkbox" name="promociones" id="promociones" value="promociones" checked>
+                                        <label for="promociones">Promociones</label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+            
+                        <div class="index">
+                            <h3>Opinión de los clientes</h3>
+                            <div class="calificacionComentario" id="first">
+                                <p class=calificacion>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </p>
+                                <p class="tituloComentario">o más</p>
+                            </div>
+                            <div class="calificacionComentario">
+                                <p class=calificacion>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </p>
+                                <p class="tituloComentario">o más</p>
+                            </div>
+                            <div class="calificacionComentario">
+                                <p class=calificacion>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </p>
+                                <p class="tituloComentario">o más</p>
+                            </div>
+                            <div class="calificacionComentario">
+                                <p class=calificacion>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </p>
+                                <p class="tituloComentario">o más</p>
+                            </div>
+                        </div>
+                        <div class="index">
+                            <h3>Precio</h3>
+                            <ul class="priceBooks">
+                                <li><a href="">Hasta $50</a></li>
+                                <li><a href="">$50 a $100</a></li>
+                                <li><a href="">$100 a $200</a></li>
+                                <li><a href="">$200 a $300</a></li>
+                                <li><a href="">$300 a $500</a></li>
+                                <li><a href="">$500 a más</a></li>
+                            </ul>
+                        </div>
+                </aside>
+                
+            </div>
+
+            <!--Resultado de la búsqueda-->
+            <section class="results">
+                <div class="show-filter">
+                    <a href="#" onclick="openBarVer()"> &nbsp
+                        Filtrar búsqueda </a>
+                </div>
+                <h3>Resultados de la búsqueda...</h3>
+                <div class="products">
+                    <article  onclick="window.location='./description';" id="products">
+                        <img class="image-product" src="images/book1.png" alt="book">
+                        <div class="main-article">
+                            <div class="calificacionComentario" id="first">
+                                <p class=calificacion>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                            </div>
+                            <p class="name">Extreme C</p>
+                            <p class="price">$49.99</p>
+                            <form class="product-button">
+                                <button type="submit">Ver detalles</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article  onclick="window.location='./description';" id="products">
+                        <img class="image-product" src="images/book2.png" alt="book">
+                        <div class="main-article">
+                            <div class="calificacionComentario" id="first">
+                                <p class=calificacion>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                            </div>
+                            <p class="name">Cross-Platform Development</p>
+                            <p class="price">$49.99</p>
+                            <form class="product-button">
+                                <button type="submit">Ver detalles</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article  onclick="window.location='./description';" id="products"> 
+                        <img class="image-product" src="images/book3.jpeg" alt="book">
+                        <div class="main-article">
+                            <div class="calificacionComentario" id="first">
+                                <p class=calificacion>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                            </div>
+                            <p class="name">Keycloak-Identity and Access Managment</p>
+                            <p class="price">$49.99</p>
+                            <form class="product-button">
+                                <button type="submit">Ver detalles</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article  onclick="window.location='./description';" id="products">
+                        <img class="main-article" src="images/book4.png" alt="book">
+                        <div class="main-article">
+                            <div class="calificacionComentario" id="first">
+                                <p class=calificacion>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </p>
+                            </div>
+                            <p class="name">Machine learning with R</p>
+                            <p class="price">$49.99</p>
+                            <form class="product-button">
+                                <button type="submit">Ver detalles</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article  onclick="window.location='./description';" id="products">
+                        <img class="image-product" src="images/book1.png" alt="book">
+                        <div class="main-article">
+                            <div class="calificacionComentario" id="first">
+                                <p class=calificacion>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </p>
+                            </div>
+                            <p class="name">Extreme C</p>
+                            <p class="price">$49.99</p>
+                            <form class="product-button">
+                                <button type="submit">Ver detalles</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article  onclick="window.location='./description';" id="products">
+                        <img class="image-product" src="images/book2.png" alt="book">
+                        <div class="main-article">
+                            <div class="calificacionComentario" id="first">
+                                <p class=calificacion>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </p>
+                            </div>
+                            <p class="name">Cross-Platform Development</p>
+                            <p class="price">$49.99</p>
+                            <form class="product-button">
+                                <button type="submit">Ver detalles</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article  onclick="window.location='./description';" id="products">
+                        <img class="image-product" src="images/book3.jpeg" alt="book">
+                        <div class="main-article">
+                            <div class="calificacionComentario" id="first">
+                                <p class=calificacion>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </p>
+                            </div>
+                            <p class="name">Keycloak-Identity and Access Managment</p>
+                            <p class="price">$49.99</p>
+                            <form class="product-button">
+                                <button type="submit">Ver detalles</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article  onclick="window.location='./description';"id="products">
+                        <img class="main-article" src="images/book4.png" alt="book">
+                        <div class="main-article">
+                            <div class="calificacionComentario" id="first">
+                                <p class=calificacion>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </p>
+                            </div>
+                            <p class="name">Machine learning with R</p>
+                            <p class="price">$49.99</p>
+                            <form class="product-button">
+                                <button type="submit">Ver detalles</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article onclick="window.location='./description';"id="products">
+                        <img class="main-article" src="images/book4.png" alt="book">
+                        <div class="main-article">
+                            <div class="calificacionComentario" id="first">
+                                <p class=calificacion>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </p>
+                            </div>
+                            <p class="name">Machine learning with R</p>
+                            <p class="price">$49.99</p>
+                            <form class="product-button">
+                                <button type="submit">Ver detalles</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article onclick="window.location='./description';" id="products">
+                        <img class="main-article" src="images/book4.png" alt="book">
+                        <div class="main-article">
+                            <div class="calificacionComentario" id="first">
+                                <p class=calificacion>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </p>
+                            </div>
+                            <p class="name">Machine learning with R</p>
+                            <p class="price">$49.99</p>
+                            <form class="product-button">
+                                <button type="submit">Ver detalles</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article onclick="window.location='./description';" id="products">
+                        <img class="main-article" src="images/book4.png" alt="book">
+                        <div class="main-article">
+                            <div class="calificacionComentario" id="first">
+                                <p class=calificacion>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </p>
+                            </div>
+                            <p class="name">Machine learning with R</p>
+                            <p class="price">$49.99</p>
+                            <form class="product-button">
+                                <button type="submit">Ver detalles</button>
+                            </form>
+                        </div>
+                    </article>
+                    <article onclick="window.location='./description';" id="products">
+                        <img class="main-article" src="images/book4.png" alt="book">
+                        <div class="main-article">
+                            <div class="calificacionComentario" id="first">
+                                <p class=calificacion>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </p>
+                            </div>
+                            <p class="name">Machine learning with R</p>
+                            <p class="price">$49.99</p>
+                            <form class="product-button">
+                                <button type="submit">Ver detalles</button>
+                            </form>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <!--Parte inferior de Libros. No hay división horizontal-->
+        <section class="banner-books" id="banner-hidden2">
+            <img src="./images/bannerDescuentos.jpg" alt="promotions">
+        </section>   
+
+        <!--Lo más nuevo-->
+        <section class="moreNew">
+            <h3 id="nuevos">Lo más nuevos...</h3>
+            <div class="products" id="products-lower">
+                <article  onclick="window.location='./description';">
+                    <img class="image-product" src="images/book1.png" alt="book">
+                    <div class="main-article">
+                        <div class="article-logo"><i class="fas fa-bell"></i></div>
+                        <div class="calificacionComentario" id="first">
+                            <p class=calificacion>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </p>
+                        </div>
+                        <p class="name">Extreme C</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                    </div>
+                </article>
+                <article  onclick="window.location='./description';">
+                    <img class="image-product" src="images/book2.png" alt="book">
+                    <div class="main-article">
+                        <div class="article-logo"><i class="fas fa-bell"></i></div>
+                        <div class="calificacionComentario" id="first">
+                            <p class=calificacion>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </p>
+                        </div>
+                        <p class="name">Cross-Platform Development</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                    </div>
+                </article>
+                <article  onclick="window.location='./description';">
+                    <img class="image-product" src="images/book3.jpeg" alt="book">
+                    <div class="main-article">
+                        <div class="article-logo"><i class="fas fa-bell"></i></div>
+                        <div class="calificacionComentario" id="first">
+                            <p class=calificacion>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </p>
+                        </div>
+                        <p class="name">Keycloak-Identity and Access Managment</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                    </div>
+                </article>
+                <article  onclick="window.location='./description';">
+                    <img class="main-article" src="images/book4.png" alt="book">
+                    <div class="main-article">
+                        <div class="article-logo"><i class="fas fa-bell"></i></div>
+                        <div class="calificacionComentario" id="first">
+                            <p class=calificacion>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </p>
+                        </div>
+                        <p class="name">Machine learning with R</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                    </div>
+                </article>
+                <article onclick="window.location='./description';" id="article-hidden">
+                    <img class="main-article" src="images/book4.png" alt="book">
+                    <div class="main-article">
+                        <div class="article-logo"><i class="fas fa-bell"></i></div>
+                        <div class="calificacionComentario" id="first">
+                            <p class=calificacion>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </p>
+                        </div>
+                        <p class="name">Machine learning with R</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                    </div>
+                </article>
+                <article onclick="window.location='./description';" id="article-hidden2">
+                    <img class="main-article" src="images/book4.png" alt="book">
+                    <div class="main-article">
+                        <div class="article-logo"><i class="fas fa-bell"></i></div>
+                        <div class="calificacionComentario" id="first">
+                            <p class=calificacion>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </p>
+                        </div>
+                        <p class="name">Machine learning with R</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!--Libros electrónicos-->
+        <section class="ebooks">
+            <h3 id="nuevos">Ebooks...</h3>
+            <div class="products" id="products-lower">
+
+                <article  onclick="window.location='./description';">
+                    <img class="image-product" src="images/book1.png" alt="book">
+                    <div class="main-article">
+                        <div class="calificacionComentario" id="first">
+                            <p class=calificacion>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </p>
+                        </div>
+                        <p class="name">Extreme C</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                    </div>
+                </article>
+
+                <article  onclick="window.location='./description';">
+                    <img class="image-product" src="images/book2.png" alt="book">
+                    <div class="main-article">
+                        <div class="calificacionComentario" id="first">
+                            <p class=calificacion>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </p>
+                        </div>
+                        <p class="name">Cross-Platform Development</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                    </div>
+                </article>
+                <article  onclick="window.location='./description';">
+                    <img class="image-product" src="images/book3.jpeg" alt="book">
+                    <div class="main-article">
+                        <div class="calificacionComentario" id="first">
+                            <p class=calificacion>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </p>
+                        </div>
+                        <p class="name">Keycloak-Identity and Access Managment</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                    </div>
+                </article>
+                <article  onclick="window.location='./description';">
+                    <img class="main-article" src="images/book4.png" alt="book">
+                    <div class="main-article">
+                        <div class="calificacionComentario" id="first">
+                            <p class=calificacion>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </p>
+                        </div>
+                        <p class="name">Machine learning with R</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                    </div>
+                </article>
+                <article onclick="window.location='./description';" id="article-hidden">
+                    <img class="main-article" src="images/book4.png" alt="book">
+                    <div class="main-article">
+                        <div class="calificacionComentario" id="first">
+                            <p class=calificacion>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </p>
+                        </div>
+                        <p class="name">Machine learning with R</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                    </div>
+                </article>
+                <article onclick="window.location='./description';" id="article-hidden2">
+                    <img class="main-article" src="images/book4.png" alt="book">
+                    <div class="main-article">
+                        <div class="calificacionComentario" id="first">
+                            <p class=calificacion>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </p>
+                        </div>
+                        <p class="name">Machine learning with R</p>
+                        <p class="price">$49.99</p>
+                        <form class="product-button">
+                            <button type="submit">Ver detalles</button>
+                        </form>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="separador">
+            <img src="./images/separador.jpg" alt="separador">
+        </section> 
+
+        <section class="button-beginning" id="beginning">
+            <a href="#startBanner" class="inicio">INICIO</a>
+        </section>
+    </main>
+
+    <footer>
+        <section>
+            <h4>Enlaces de Interés</h4>
+            <ul>
+                <li><a href="">Mi cuenta</a></li>
+                <li><a href="">Mis Pedidos</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="">Mi Lista de Deseos</a></li>
+                <li><a href="">Artículos Vistos</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h4>Ayuda y Soporte</h4>
+            <ul>
+                <li><a href="">Preguntas Frecuentes</a></li>
+                <li><a href="">Formas de Pago</a></li>
+                <li><a href="">Nuestro Boletín</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="./TerminosyCondiciones.html">Términos y Condiciones </a></li>
+                <li><a href="./PoliticaDePrivacidad.html">Política de Privacidad</a></li>
+                <li><a href="">Acerca de Nosotros</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h4>Contacto</h4>
+            <ul class="contactList">
+                <li><a href='mailto:contact@insidebooks.com?subject="Hi There!"'><i class="flaticon-email" ></i> &nbsp contact@insidebooks.com</a></li>
+                <li><a href="tel:+521234567890">  <i class="flaticon-telephone-handle-silhouette"></i>&nbsp&nbsp +53 123 456 7890</li></a>
+            </ul>
+        </section>
+
+        <section class="socialMedia">
+            <h4>Redes Sociales</h4>
+            <ul>
+                <li><a href="https://www.facebook.com/" target="_blank"><i class="flaticon-facebook"></i> &nbsp Facebook</a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><i class="flaticon-instagram"></i>&nbsp Instagram</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="https://twitter.com/" target="_blank"><i class="flaticon-twitter"></i>&nbsp Twitter</a></li>
+                <li><a href="https://web.telegram.org" target="_blank"><i class="flaticon-telegram"></i>&nbsp Telegram</a></li>
+            </ul>
+        </section>
+
+        <div class="logoFooter">
+            <div class="logoContainer">
+                <div class="bloqueAzul"></div>
+                <div class="bloqueVerde"></div>
+                <div class="bloqueRojo"></div>
+                <div class="bloqueNaranja"></div>
+            </div>
+            <p class="logoTextFooter"><span class="rojo">IN</span><span class="azul">SIDE</span><span
+                    class="verde">BOOKS</span>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
