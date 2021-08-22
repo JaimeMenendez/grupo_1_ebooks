@@ -15,3 +15,4 @@
 - Se agregó animación de estrellas fugaces al hacer click en las estrellas de calificación de las reseñas en detalle del producto.
 - Se agregó funcionalidad al botón de favoritos y se animó. Ahora al presionar el corazón, se marca o desmarca el libro. 
 - Se animaron en estado activo los botones de comentarios.
+- Se convirtió a plantilla ejs los Términos y condiciones y política de privacidad. Ahora a partir de un solo documento se generan ambos archivos.

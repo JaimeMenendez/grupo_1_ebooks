@@ -8,12 +8,10 @@ const controller = {
         res.sendFile(htmlPath);
     },
     sendPoliticaDePrivacidad:(req,res)=> {
-        const htmlPath = path.resolve(__dirname, "../views/PoliticaDePrivacidad.html");
-        res.sendFile(htmlPath);
+        res.render("documento",{documento: "./partials/politica"});
     },
     sendTerminosyCondiciones: (req,res)=> {
-        const htmlPath = path.resolve(__dirname, "../views/TerminosyCondiciones.html");
-        res.sendFile(htmlPath);
+        res.render("documento",{documento: "./partials/terminos"});
     },
     sendShoppingCart: (req,res)=> {
         res.render("carrito",carrito);
