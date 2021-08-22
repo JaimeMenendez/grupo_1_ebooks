@@ -155,6 +155,7 @@
         top: var(--varTop);
         left: var(--varLeft);
         opacity: 0;
+        display: none;
     }
 }
 
