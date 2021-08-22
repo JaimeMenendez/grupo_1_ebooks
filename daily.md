@@ -12,3 +12,4 @@
 
 # 22-8-2021
 - Se agregó a los botones de los comentarios y a las estrellas que califican los comentarios en la vista de descripción del producto un efecto de hover para que el usuario elija la calificación de la reseña.
+- Se agregó animación de estrellas fugaces al hacer click en las estrellas de calificación de las reseñas en detalle del producto.

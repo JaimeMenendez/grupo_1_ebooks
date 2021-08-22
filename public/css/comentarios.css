@@ -81,3 +81,80 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+.animatedStar{
+    position: absolute;
+    top: 0;
+    left:0;
+    transform: translate(-50%,-150%);
+    animation-duration: 0.5s;
+    animation-name: starMoving;
+    animation-timing-function: cubic-bezier(0.97, 0.22, 0.54, 1);
+    animation-fill-mode: forwards;
+    color:gold;
+}
+
+.animatedStar1{
+    --varTop : 80px;
+    --varLeft: 40px;
+}
+
+.animatedStar2{
+    --varTop : -80px;
+    --varLeft: 40px;
+}
+
+.animatedStar3{
+    --varTop : 80px;
+    --varLeft: -40px;
+}
+
+.animatedStar4{
+    --varTop : -80px;
+    --varLeft: 40px;
+}
+
+.animatedStar5{
+    --varTop : 80px;
+    --varLeft: 40px;
+}
+
+.animatedStar6{
+    --varTop : 40px;
+    --varLeft: 80px;
+}
+
+
+.animatedStar7{
+    --varTop : -40px;
+    --varLeft: -80px;
+}
+
+
+.animatedStar8{
+    --varTop : 40px;
+    --varLeft: -80px;
+}
+
+
+
+
+@keyframes starMoving{
+    0%{
+        top: 0;
+        left:0;
+        transform: translate(-50%,-150%);
+        opacity: 0;
+    }
+
+    60%{
+        opacity: 1;
+    }
+
+    100%{
+        top: var(--varTop);
+        left: var(--varLeft);
+        opacity: 0;
+    }
+}
+

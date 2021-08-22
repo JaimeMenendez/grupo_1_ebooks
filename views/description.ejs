@@ -14,7 +14,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-  
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Russo+One&display=swap"
         rel="stylesheet" />
 
@@ -29,91 +29,101 @@
 <body>
     <nav>
         <a href="/">
-          <div class="logoNavBar">
-            <div class="logoContainer">
-              <div class="bloqueAzul"></div>
-              <div class="bloqueVerde"></div>
-              <div class="bloqueRojo"></div>
-              <div class="bloqueNaranja"></div>
+            <div class="logoNavBar">
+                <div class="logoContainer">
+                    <div class="bloqueAzul"></div>
+                    <div class="bloqueVerde"></div>
+                    <div class="bloqueRojo"></div>
+                    <div class="bloqueNaranja"></div>
+                </div>
+                <p class="logoText"><span class="rojo">IN</span><span class="azul">SIDE</span><span
+                        class="verde">BOOKS</span>
+                </p>
+
             </div>
-            <p class="logoText"><span class="rojo">IN</span><span class="azul">SIDE</span><span class="verde">BOOKS</span>
-            </p>
-    
-          </div>
         </a>
-    
+
         <form class="searchBar" action="./searchBook">
-          <input class="btn" type="text" placeholder=" Buscar.." name="search">
-          <button class="btn red" type="submit"><i class="flaticon-magnifying-glass-1"></i></button>
+            <input class="btn" type="text" placeholder=" Buscar.." name="search">
+            <button class="btn red" type="submit"><i class="flaticon-magnifying-glass-1"></i></button>
         </form>
-    
+
         <div class="menuButton">
-          <a href="/login"><i class="flaticon-profile-user"></i> &nbsp <span class="menu-label"> Mi Cuenta</span> </a>
-          <a href="/carrito"><i class="flaticon-shopping-cart"></i> &nbsp <span class="menu-label"> Mi
-              Carrito</span></a>
-    
-          <a href="#" onclick="openNav()"><i class="flaticon-list"></i> &nbsp <span class="menu-label">
-              Menú</span> </a>
-          <div class="mySidenav" id="sideNav">
-            <div class="mySidenavlinks">
-              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-              
-              <div>
-                <input style="display: none;" type="checkbox" id="darkMode">
-                <label for="darkMode">
-                  <span id="textoModoClaro"><i class="far fa-moon"></i>&nbsp Modo Oscuro</span> 
-                  <span id="textoModoOscuro"> <i class="fas fa-sun"></i> &nbsp Modo Claro</span>
-                </label>
-              </div>
-             
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-              <script>
-                function openNav() {
-                  document.getElementById("sideNav").style.width = "250px";
-                }
-    
-                function closeNav() {
-                  document.getElementById("sideNav").style.width = "0";
-                }
-              </script>
+            <a href="/login"><i class="flaticon-profile-user"></i> &nbsp <span class="menu-label"> Mi Cuenta</span> </a>
+            <a href="/carrito"><i class="flaticon-shopping-cart"></i> &nbsp <span class="menu-label"> Mi
+                    Carrito</span></a>
+
+            <a href="#" onclick="openNav()"><i class="flaticon-list"></i> &nbsp <span class="menu-label">
+                    Menú</span> </a>
+            <div class="mySidenav" id="sideNav">
+                <div class="mySidenavlinks">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                    <div>
+                        <input style="display: none;" type="checkbox" id="darkMode">
+                        <label for="darkMode">
+                            <span id="textoModoClaro"><i class="far fa-moon"></i>&nbsp Modo Oscuro</span>
+                            <span id="textoModoOscuro"> <i class="fas fa-sun"></i> &nbsp Modo Claro</span>
+                        </label>
+                    </div>
+
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                    <script>
+                        function openNav() {
+                            document.getElementById("sideNav").style.width = "250px";
+                        }
+
+                        function closeNav() {
+                            document.getElementById("sideNav").style.width = "0";
+                        }
+                    </script>
+                </div>
             </div>
-          </div>
-    
+
         </div>
-      </nav>
-      
-      <section class="searchBar-mobile">
+    </nav>
+
+    <section class="searchBar-mobile">
         <form action="/searchBook" class="sbMobile">
             <input type="text" id="search" name="search" placeholder=" Buscar por autor, título, categoría...">
             <button type="submit"><i><i class="fas fa-search"></i></i></button>
         </form>
     </section>
-   
+
     <main>
         <section class="datosPrincipales">
             <div class="materiaTitulo">
-                <p><%= materia %>  > <%= nombre%> <span class="heartIcon"><i class="far fa-heart"></i></span></p>
+                <p>
+                    <%= materia %> > <%= nombre%> <span class="heartIcon"><i class="far fa-heart"></i></span>
+                </p>
             </div>
 
             <div class="portada">
                 <img src="<%=portada%>" alt="">
-                <h3 class="bookTitle"><%= nombre %> </h3>
+                <h3 class="bookTitle">
+                    <%= nombre %>
+                </h3>
             </div>
 
             <section class="dataLeft">
                 <h3 class="bookTitle PC">Flutter Cookbook</h3>
                 <div class="tablaIdioma">
-                    <p class="idioma">Edición en <%= idioma %> </p>
-                    <p class="autor"><span>por <span class="autorName"><%= autor %> </span></span></p>
+                    <p class="idioma">Edición en <%= idioma %>
+                    </p>
+                    <p class="autor"><span>por <span class="autorName">
+                                <%= autor %>
+                            </span></span></p>
                 </div>
 
                 <div class="formato">
                     <input class="hidden" type="checkbox" name="ebookButton" id="ebookButton">
-                    <label for="ebookButton">Libro Electrónico <br> <span class="precio">US$ <%= precioEbook.toFixed(2) %> </span></label>
+                    <label for="ebookButton">Libro Electrónico <br> <span class="precio">US$ <%= precioEbook.toFixed(2)
+                                %> </span></label>
 
                     <input class="hidden" type="checkbox" name="pastaBlandaButton" id="pastaBlandaButton">
-                    <label for="pastaBlandaButton">Pasta Blanda <br> <span class="precio">US$ <%= precioBook.toFixed(2) %></span></label>
+                    <label for="pastaBlandaButton">Pasta Blanda <br> <span class="precio">US$ <%= precioBook.toFixed(2)
+                                %></span></label>
                 </div>
             </section>
 
@@ -159,27 +169,39 @@
                 <table class=>
                     <tr>
                         <td class="sombrear">Editorial</td>
-                        <td><%=editorial%></td>
+                        <td>
+                            <%=editorial%>
+                        </td>
                     </tr>
                     <tr>
                         <td class="sombrear">Idioma</td>
-                        <td><%=idioma%></td>
+                        <td>
+                            <%=idioma%>
+                        </td>
                     </tr>
                     <tr>
                         <td class="sombrear">ISBN</td>
-                        <td><%=isbn%></td>
+                        <td>
+                            <%=isbn%>
+                        </td>
                     </tr>
                     <tr>
                         <td class="sombrear">Materia</td>
-                        <td><%=materia%></td>
+                        <td>
+                            <%=materia%>
+                        </td>
                     </tr>
                     <tr>
                         <td class="sombrear">Número de páginas</td>
-                        <td><%=paginas%></td>
+                        <td>
+                            <%=paginas%>
+                        </td>
                     </tr>
                     <tr>
                         <td class="sombrear">Año</td>
-                        <td><%=year%></td>
+                        <td>
+                            <%=year%>
+                        </td>
                     </tr>
                 </table>
             </section>
@@ -197,86 +219,116 @@
         <section class="acercaDelAutor">
             <h2>Acerca del Autor</h2>
             <%- detallesAutor%>
-           
+
         </section>
 
-        <% if(comentarios){ %> 
+        <% if(comentarios){ %>
 
-        <section class="comentarios">
-            <h2>Reseñas de Usuarios</h2>
+            <section class="comentarios">
+                <h2>Reseñas de Usuarios</h2>
 
-            <% comentarios.forEach(c => { %> 
-                <%- include('./partials/comentario', c) %> 
-            <% })%> 
-        </section>
-        <% }%> 
+                <% comentarios.forEach(c=> { %>
+                    <%- include('./partials/comentario', c) %>
+                        <% })%>
+            </section>
+            <% }%>
+
+                <script>
+                    const a = document.querySelectorAll(".comentarios i")
+                    console.log(a)
+                    a.forEach(a => {
+                        a.addEventListener("click", create)
+                    })
+
+                    function create(event) {
+                        let i = document.createElement('ul');
+                        i.style.position = 'fixed';
+                        i.innerHTML = `<i class="fas fa-star animatedStar animatedStar1"></i>
+                                      <i class="fas fa-star animatedStar animatedStar2"></i>
+                                      <i class="fas fa-star animatedStar animatedStar3"></i>
+                                      <i class="fas fa-star animatedStar animatedStar4"></i>
+                                      <i class="fas fa-star animatedStar animatedStar5"></i>
+                                      <i class="fas fa-star animatedStar animatedStar6"></i>
+                                      <i class="fas fa-star animatedStar animatedStar7"></i>
+                                      <i class="fas fa-star animatedStar animatedStar8"></i>`
+                        i.style.left = event.clientX + 'px';
+                        i.style.top = event.clientY + 'px';
+                        document.body.appendChild(i);
+                    }
+                </script>
 
     </main>
-    
-<img src="./images/bannerDescuentos.jpg" alt="Banner de descuentos" width="100%">
-    
-<footer>
-    <section>
-        <h4>Enlaces de Interés</h4>
-        <ul>
-            <li><a href="">Mi cuenta</a></li>
-            <li><a href="">Mis Pedidos</a></li>
-        </ul>
 
-        <ul>
-            <li><a href="">Mi Lista de Deseos</a></li>
-            <li><a href="">Artículos Vistos</a></li>
-        </ul>
-    </section>
+    <img src="./images/bannerDescuentos.jpg" alt="Banner de descuentos" width="100%">
 
-    <section>
-        <h4>Ayuda y Soporte</h4>
-        <ul>
-            <li><a href="">Preguntas Frecuentes</a></li>
-            <li><a href="">Formas de Pago</a></li>
-            <li><a href="">Nuestro Boletín</a></li>
-        </ul>
+    <footer>
+        <section>
+            <h4>Enlaces de Interés</h4>
+            <ul>
+                <li><a href="">Mi cuenta</a></li>
+                <li><a href="">Mis Pedidos</a></li>
+            </ul>
 
-        <ul>
-            <li><a href="/TerminosyCondiciones">Términos y Condiciones </a></li>
-            <li><a href="/PoliticaDePrivacidad">Política de Privacidad</a></li>
-            <li><a href="#">Acerca de Nosotros</a></li>
-        </ul>
-    </section>
+            <ul>
+                <li><a href="">Mi Lista de Deseos</a></li>
+                <li><a href="">Artículos Vistos</a></li>
+            </ul>
+        </section>
 
-    <section>
-        <h4>Contacto</h4>
-        <ul class="contactList">
-            <li><a href='mailto:contact@insidebooks.com?subject="Hi There!"'><i class="flaticon-email" ></i> &nbsp contact@insidebooks.com</a></li>
-            <li><a href="tel:+521234567890">  <i class="flaticon-telephone-handle-silhouette"></i>&nbsp&nbsp +53 123 456 7890</li></a>
-        </ul>
-    </section>
+        <section>
+            <h4>Ayuda y Soporte</h4>
+            <ul>
+                <li><a href="">Preguntas Frecuentes</a></li>
+                <li><a href="">Formas de Pago</a></li>
+                <li><a href="">Nuestro Boletín</a></li>
+            </ul>
 
-    <section class="socialMedia">
-        <h4>Redes Sociales</h4>
-        <ul>
-            <li><a href="https://www.facebook.com/" target="_blank"><i class="flaticon-facebook"></i> &nbsp Facebook</a></li>
-            <li><a href="https://www.instagram.com/" target="_blank"><i class="flaticon-instagram"></i>&nbsp Instagram</a></li>
-        </ul>
+            <ul>
+                <li><a href="/TerminosyCondiciones">Términos y Condiciones </a></li>
+                <li><a href="/PoliticaDePrivacidad">Política de Privacidad</a></li>
+                <li><a href="#">Acerca de Nosotros</a></li>
+            </ul>
+        </section>
 
-        <ul>
-            <li><a href="https://twitter.com/" target="_blank"><i class="flaticon-twitter"></i>&nbsp Twitter</a></li>
-            <li><a href="https://web.telegram.org" target="_blank"><i class="flaticon-telegram"></i>&nbsp Telegram</a></li>
-        </ul>
-    </section>
-    
-    <div class="logoFooter">
-        <div class="logoContainer">
-            <div class="bloqueAzul"></div>
-            <div class="bloqueVerde"></div>
-            <div class="bloqueRojo"></div>
-            <div class="bloqueNaranja"></div>
+        <section>
+            <h4>Contacto</h4>
+            <ul class="contactList">
+                <li><a href='mailto:contact@insidebooks.com?subject="Hi There!"'><i class="flaticon-email"></i> &nbsp
+                        contact@insidebooks.com</a></li>
+                <li><a href="tel:+521234567890"> <i class="flaticon-telephone-handle-silhouette"></i>&nbsp&nbsp +53 123
+                        456 7890</li></a>
+            </ul>
+        </section>
+
+        <section class="socialMedia">
+            <h4>Redes Sociales</h4>
+            <ul>
+                <li><a href="https://www.facebook.com/" target="_blank"><i class="flaticon-facebook"></i> &nbsp
+                        Facebook</a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><i class="flaticon-instagram"></i>&nbsp
+                        Instagram</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="https://twitter.com/" target="_blank"><i class="flaticon-twitter"></i>&nbsp Twitter</a>
+                </li>
+                <li><a href="https://web.telegram.org" target="_blank"><i class="flaticon-telegram"></i>&nbsp
+                        Telegram</a></li>
+            </ul>
+        </section>
+
+        <div class="logoFooter">
+            <div class="logoContainer">
+                <div class="bloqueAzul"></div>
+                <div class="bloqueVerde"></div>
+                <div class="bloqueRojo"></div>
+                <div class="bloqueNaranja"></div>
+            </div>
+            <p class="logoTextFooter"><span class="rojo">IN</span><span class="azul">SIDE</span><span
+                    class="verde">BOOKS</span>
+            </p>
         </div>
-        <p class="logoTextFooter"><span class="rojo">IN</span><span class="azul">SIDE</span><span
-                class="verde">BOOKS</span>
-        </p>
-    </div>
-</footer>
+    </footer>
 </body>
 
 </html>
