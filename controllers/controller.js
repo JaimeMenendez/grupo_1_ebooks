@@ -5,6 +5,7 @@ const carrito = require('./carrito.json')
 const controller = {
     sendHome: (req,res)=>{
         const htmlPath = path.resolve(__dirname, "../views/home.html");
+        //res.render("home",section);
         res.sendFile(htmlPath);
     },
     sendPoliticaDePrivacidad:(req,res)=> {
