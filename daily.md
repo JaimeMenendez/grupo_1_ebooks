@@ -9,3 +9,6 @@
 - Se creó el partial de comentarios, y se implementó la vista de descripción del producto en el motor de plantillas ejs. 
 - Se creó el partial de productos del carrito, y se implementó la vista de carrito en el motor de plantillas ejs. 
 - Se agregó al carrito la funcionalidad de calcular el precio total de manera dinámica con javascript.
+
+# 22-8-2021
+- Se agregó a los botones de los comentarios y a las estrellas que califican los comentarios en la vista de descripción del producto un efecto de hover para que el usuario elija la calificación de la reseña.
