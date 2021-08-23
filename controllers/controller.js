@@ -1,6 +1,7 @@
 const path = require('path');
-const book = require('./libro.json')
-const carrito = require('./carrito.json')
+const book = require('./libro.json');
+const carrito = require('./carrito.json');
+const section = require('./section.json');
 
 const controller = {
     sendHome: (req,res)=>{
