@@ -30,6 +30,9 @@ const controller = {
     sendSearchPage: (req,res)=> {
         const htmlPath = path.resolve(__dirname, "../views/searchBook.html");
         res.sendFile(htmlPath);
+    },
+    sendPageNotFound: (req,res)=>{
+        res.render("error404",book);
     }
 }
 
