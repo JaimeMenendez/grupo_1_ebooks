@@ -1,0 +1,28 @@
+<article  onclick="window.location='./description';">
+    <img class="image-product" src="<%= portada %>" alt="book">
+    <div class="main-article">
+        <% if(nuevo) { %>
+            <div class="article-logo"><i class="fas fa-bell"></i></div>
+        <% } %>
+        <div class="calificacionComentario" id="first">
+            <p class=calificacion>
+            <% for(let i = 0; i < 5; i++){ %>
+                <% if(i < clasificacion) { %>
+                    <i class="fas fa-star"></i>
+                <% } else{ %>
+                    <i class="far fa-star"></i>
+                <% } %>
+            <% } %>
+            </p>
+        </div>
+        <p class="name"><%= nombreLibro %></p>
+        <% if(formato === "ebook"){ %>
+            <p class="price"><%= precioEbook %></p>
+        <% } else{ %>
+            <p class="price"><%= precioBook %></p>
+        <% } %>
+        <form class="product-button">
+            <button type="submit">Ver detalles</button>
+        </form>
+    </div>
+</article>

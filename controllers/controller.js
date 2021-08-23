@@ -4,8 +4,7 @@ const carrito = require('./carrito.json')
 
 const controller = {
     sendHome: (req,res)=>{
-        const htmlPath = path.resolve(__dirname, "../views/home.html");
-        res.sendFile(htmlPath);
+        res.render("home",section);
     },
     sendPoliticaDePrivacidad:(req,res)=> {
         res.render("documento",{documento: "./partials/politica"});
@@ -33,4 +32,4 @@ const controller = {
     }
 }
 
-module.exports = controller
+module.exports = controller;
