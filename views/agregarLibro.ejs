@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/flaticon/flaticon.css">
+    <link rel="stylesheet" href="css/agregarLibro.css">
+    <script src="https://cdn.tiny.cloud/1/3c54177q3lh311521ar9zn5r80ehbssagbubwkxw3apnsps3/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+        });
+    </script>
+    <title>Agregar nuevo libro</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">
+            <div class="logoNavBar">
+                <div class="logoContainer">
+                    <div class="bloqueAzul"></div>
+                    <div class="bloqueVerde"></div>
+                    <div class="bloqueRojo"></div>
+                    <div class="bloqueNaranja"></div>
+                </div>
+                <p class="logoText"><span class="rojo">IN</span><span class="azul">SIDE</span><span
+                        class="verde">BOOKS</span>
+                </p>
+
+            </div>
+        </a>
+
+        <form class="searchBar" action="./searchBook">
+            <input class="btn" type="text" placeholder=" Buscar.." name="search">
+            <button class="btn red" type="submit"><i class="flaticon-magnifying-glass-1"></i></button>
+        </form>
+
+        <div class="menuButton">
+            <a href="/login"><i class="flaticon-profile-user"></i> &nbsp <span class="menu-label"> Mi Cuenta</span> </a>
+            <a href="/carrito"><i class="flaticon-shopping-cart"></i> &nbsp <span class="menu-label"> Mi
+                    Carrito</span></a>
+
+            <a href="#" onclick="openNav()"><i class="flaticon-list"></i> &nbsp <span class="menu-label">
+                    Menú</span> </a>
+            <div class="mySidenav" id="sideNav">
+                <div class="mySidenavlinks">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                    <div>
+                        <input style="display: none;" type="checkbox" id="darkMode">
+                        <label for="darkMode">
+                            <span id="textoModoClaro"><i class="far fa-moon"></i>&nbsp Modo Oscuro</span>
+                            <span id="textoModoOscuro"> <i class="fas fa-sun"></i> &nbsp Modo Claro</span>
+                        </label>
+                    </div>
+
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                    <script>
+                        function openNav() {
+                            document.getElementById("sideNav").style.width = "250px";
+                        }
+
+                        function closeNav() {
+                            document.getElementById("sideNav").style.width = "0";
+                        }
+                    </script>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <h1 class="pageTitle"><i class="fas fa-folder-plus"></i>&nbsp Agregar Libro</h1>
+
+    <form class="addBooks" action="/index" method="get">
+        <img src="" alt="portada" id="portadaImg">
+        <label>Título:<input class="textInput" type="text" name="nombre" placeholder="Nombre del Libro"></label>
+        <label>Portada: <input type="file" id="portada" name="portada" accept="image/*" onchange="loadFile(event)"></label>
+
+        <script>
+            var loadFile = function (event) {
+                var output = document.getElementById('portadaImg');
+                output.src = URL.createObjectURL(event.target.files[0]);
+                output.onload = function () {
+                    URL.revokeObjectURL(output.src)
+                }
+            };
+        </script>
+
+        <label>Idioma:
+            <select name="idioma" id="idioma">
+                <option value="Inglés" selected>Inglés</option>
+                <option value="Español">Español</option>
+                <option value="Francés">Francés</option>
+                <option value="Italiano">Italiano</option>
+            </select>
+        </label>
+
+        <label>Materia: <input id="materia" class="textInput"  type="text" name="materia" placeholder="Materia"></label>
+        <label >Autor: <input  class="textInput" id="autor" type="text" name="autor" placeholder="Autor"></label>
+
+        <label>Precio del libro físico: <input id="precioBook" type="number" min="0" step="0.01" name="precioBook"></label>
+        <label>Precio del ebook: <input id="preciEBook" type="number" min="0" step="0.01" name="precioEbook"></label>
+
+        <label>Editorial:<input  class="textInput" id="editorial" type="text" name="editorial"> </label>
+        <label>ISBN:<input   class="textInput" id="isnb" type="text" name="isbn" placeholder="ISBN "></label>
+        <label>Editorial:<input  class="textInput" type="text" name="editorial" placeholder="Editorial"></label>
+
+        <label>Número de Páginas: <input type="number" id="paginas" name="paginas"></label>
+        <label>Año:<input type="number" id="year" min="1980" max="2021" step="1" name="year"></label>
+
+
+        <h2>Acerca de este libro</h2>
+        <textarea id="detallesLibro" name="mytextarea">
+          </textarea>
+
+        <h2>Acerca del autor</h2>
+        <textarea id="detallesAutor" name="mytextarea">
+            
+          </textarea>
+
+          <div class="botones">
+            <input type="submit" class="btn agregar" value="Agregar libro">
+            <input type="reset" class="btn red borrar" value="Borrar campos">
+          </div>
+        
+    </form>
+
+</body>
+
+</html>

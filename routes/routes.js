@@ -12,6 +12,7 @@ router.get("/description", controller.sendProductDescription)
 router.get("/login",controller.sendLogin)
 router.get("/register", controller.sendRegister)
 router.get("/searchBook", controller.sendSearchPage)
+router.get("/agregarLibro", controller.agregarLibro)
 router.get("*", controller.sendPageNotFound)
 
 module.exports = router;

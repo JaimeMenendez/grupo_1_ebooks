@@ -31,9 +31,13 @@ const controller = {
         const htmlPath = path.resolve(__dirname, "../views/searchBook.html");
         res.sendFile(htmlPath);
     },
+    agregarLibro: (req,res)=>{
+        res.render("agregarLibro",book);
+    },
     sendPageNotFound: (req,res)=>{
         res.render("error404",book);
     }
+    
 }
 
 module.exports = controller;

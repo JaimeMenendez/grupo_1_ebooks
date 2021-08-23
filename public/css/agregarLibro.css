@@ -1,0 +1,163 @@
+@import "./fonts.css";
+@import "./logoStyle.css";
+@import "./navBar.css";
+@import "./footer.css";
+@import "./comentarios.css";
+
+:root {
+    --azul-morado-oscuro: #2d2f8e;
+    --azul-morado-claro: #585dba;
+    --verde-pastel-oscuro: #44979c;
+    --verde-pastel-claro: #89cab4;
+    --azul-gris-oscuro: #202020;
+    --oscuro: #56575e;
+    --azul-oscuro: #14213D;
+    --rojo: #ea4533;
+    --rojo-oscuro: #c0392b;
+    --naranja-pastel: #f4ae62;
+    --rosado-pastel: #f6c7af;
+    --crema:#f3f0d7;
+    --blanco: #ffffff;
+    --dorado: #81670f;
+
+  --navBarHeight: 50px;
+  --marginBottom:10px;
+  --borderRadius:5px;
+  --borderColor: #383737;
+
+  --sectionBackground: white;
+  --backgroundColor: #e2e1e0;
+  --backgroundSections:white;
+
+  --navBarBackground:rgb(255, 255, 255);
+  --fontColors:#2e2e2e;
+
+  /* Buttons */
+  --buttonHeight:35px;
+  --buttonBorderRadio: 2px;
+
+  --buttonColor:#EA4533;
+  --buttonColorHover:#c0392b;
+   --fontColorButtons: #eaebf1;
+
+   /* White Buttons */
+
+   --whiteButtonsFontColor: #2e2e2e;
+   --whiteButtonsBackground:white;
+
+   --footerBackground: #2d2f8e;
+   --footerFontColor: #eaebf1;
+
+}
+
+
+  
+
+/* ========================================================= */
+/*                     Button Style                          */
+/* ========================================================= */
+body {
+    font-family: "Roboto", sans-serif;
+    color:var(--fontColors);
+    background-color: var(--sectionBackground);
+}
+.btn.red {
+    background-color: #e74c3c;
+  }
+  
+  .btn.red:hover, .btn.red:focus {
+    background-color: #c0392b;
+  }
+  
+  .btn {
+    font-weight: bold;
+    display: block;
+    margin: 10px auto;
+    padding: 0; 
+    border-width: 0;
+    outline: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    color: var(--fontColorButtons);
+    transition: background-color .3s;
+    cursor: pointer;
+  }
+  
+  .btn.red {
+    background-color: var(--buttonColor);
+  }
+  
+  .btn.red:hover, .btn.red:focus {
+    background-color: #c0392b;
+  }
+
+  #separadorTop{
+    margin-bottom: 0;
+  }
+
+  #separadorBottom{
+    margin-top: -4px;
+    margin-bottom: -5px;
+  }
+
+form.addBooks{
+    margin-top: 70px;
+    width:95%;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+}
+
+h1.pageTitle{
+    margin-top: 70px;
+    font-weight: 500;
+}
+
+#portadaImg{
+    background-image: url("../images/book.png");
+    width:240px;
+    height: 300px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+form.addBooks .textInput{
+    border: 1px solid var(--borderColor);
+    border-style: solid;
+    border-radius: 5px;
+    width: 80vw;
+    margin: 0.2rem 0;
+    max-width: 450px;
+    height: 35px;
+    background-color: var(--inputBackground);
+    color: var(--fontColors);
+    object-fit:contain;
+   
+  }
+
+  form.addBooks label{
+      display: flex;
+      flex-direction: column;
+      justify-content:center;
+      align-items: center;
+      margin-bottom: 20px;
+  }
+
+
+.agregar, .borrar{
+    height: 40px;
+    width: 80%;
+    font-size: 18px;
+}
+
+.agregar{
+    background-color: #2D2F8E;
+}
+
+.agregar:hover{
+    background-color: #1a1b52;
+}
+
+.oneLine{
+    display: flex;
+    flex-direction: row;
+}
