@@ -1,0 +1,27 @@
+.loginBannerContainer{
+    height: 100vh;
+}
+
+.prompt{
+    text-align: center;
+}
+.prompt h3{
+    width: 60%;
+    text-align: center;
+    margin: auto;
+}
+
+@media (min-width: 1024px) {
+.loginBannerContainer{
+    position: relative;
+    width:100%;
+  }
+
+.main-container section{
+    width: 100%;
+}
+
+.logo {
+    height: 340px;
+  }
+}

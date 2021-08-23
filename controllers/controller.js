@@ -29,6 +29,9 @@ const controller = {
     },
     sendSearchPage: (req,res)=> {
         res.render("searchBook",section);
+    },
+    sendPageNotFound: (req,res)=>{
+        res.render("error404",book);
     }
 }
 

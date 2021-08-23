@@ -11,6 +11,14 @@ app.set('view engine', 'ejs');
 const publicPath = path.resolve(__dirname, "./public");
 app.use(express.static(publicPath));
 
+// Middleware necesarios para atender solicitudes POST
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+// Middleware necesario para atender solicitudes PUT y DELETE
+const methodOverride = require("method-override");
+app.use(methodOverride('_method'))
+
 // Routes
 app.use(router);
 
