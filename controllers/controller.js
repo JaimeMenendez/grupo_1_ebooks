@@ -1,11 +1,11 @@
 const path = require('path');
-const book = require('./libro.json')
-const carrito = require('./carrito.json')
+const book = require('./libro.json');
+const carrito = require('./carrito.json');
+const section = require('./section.json');
 
 const controller = {
     sendHome: (req,res)=>{
-        const htmlPath = path.resolve(__dirname, "../views/home.html");
-        res.sendFile(htmlPath);
+        res.render("home",section);
     },
     sendPoliticaDePrivacidad:(req,res)=> {
         res.render("documento",{documento: "./partials/politica"});
@@ -30,7 +30,10 @@ const controller = {
     sendSearchPage: (req,res)=> {
         const htmlPath = path.resolve(__dirname, "../views/searchBook.html");
         res.sendFile(htmlPath);
+    },
+    sendPageNotFound: (req,res)=>{
+        res.render("error404",book);
     }
 }
 
-module.exports = controller
+module.exports = controller;
