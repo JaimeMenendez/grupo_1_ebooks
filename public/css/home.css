@@ -834,7 +834,7 @@ main section.button-beginning .inicio{
 /************************************
 //    MEDIA QUERIES PC             //
 /***********************************/
-@media (min-width: 1281px) {
+@media (min-width: 1280px) {
     main div.sectionChange{
         display: grid;
         grid-template-columns: 20% 80%;
@@ -845,7 +845,7 @@ main section.button-beginning .inicio{
     }
 
     main div.products article#products{
-        width: 20%;
+        width: 55%;
     }
 
     main div#sideBarVer{

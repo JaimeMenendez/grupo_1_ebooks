@@ -28,8 +28,7 @@ const controller = {
         res.sendFile(htmlPath);
     },
     sendSearchPage: (req,res)=> {
-        const htmlPath = path.resolve(__dirname, "../views/searchBook.html");
-        res.sendFile(htmlPath);
+        res.render("searchBook",section);
     }
 }
 
