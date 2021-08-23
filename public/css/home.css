@@ -717,7 +717,7 @@ main section.button-beginning .inicio{
     }
 
     main article p.calificacion{
-        font-size: 13px;
+        font-size: 11px;
     }
 
     main div.products article#products{
@@ -827,7 +827,7 @@ main section.button-beginning .inicio{
     }
 
     main article p.calificacion{
-        font-size: 15px;
+        font-size: 13px;
     }
 }
 
@@ -838,6 +838,10 @@ main section.button-beginning .inicio{
     main div.sectionChange{
         display: grid;
         grid-template-columns: 20% 80%;
+    }
+
+    main article p.calificacion{
+        font-size: 15px;
     }
 
     main div.products article#products{
