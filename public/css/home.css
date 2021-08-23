@@ -717,7 +717,7 @@ main section.button-beginning .inicio{
     }
 
     main article p.calificacion{
-        font-size: 13px;
+        font-size: 11px;
     }
 
     main div.products article#products{
@@ -827,21 +827,25 @@ main section.button-beginning .inicio{
     }
 
     main article p.calificacion{
-        font-size: 15px;
+        font-size: 13px;
     }
 }
 
 /************************************
 //    MEDIA QUERIES PC             //
 /***********************************/
-@media (min-width: 1281px) {
+@media (min-width: 1280px) {
     main div.sectionChange{
         display: grid;
         grid-template-columns: 20% 80%;
     }
 
+    main article p.calificacion{
+        font-size: 15px;
+    }
+
     main div.products article#products{
-        width: 20%;
+        width: 55%;
     }
 
     main div#sideBarVer{

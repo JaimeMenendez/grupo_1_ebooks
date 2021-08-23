@@ -1,5 +1,6 @@
 {
     "nombreSeccion": ["Tendencia en libros...","Libros recomendados...","Los más nuevos...","Ebooks...","Resultados de la búsqueda..."],
+    "articulosId" : [" ","products","article-hidden","article-hidden2"],
     "articulos": [
         {
             "nombreLibro": "La guía de Java",
@@ -20,7 +21,8 @@
             "detalleLibro": " ",
             "detalleAutor": " ",
             "hidden": false,
-            "nuevo": false
+            "nuevo": false,
+            "id": " "
         },
 
         {
@@ -42,7 +44,8 @@
             "detalleLibro": " ",
             "detalleAutor": " ",
             "hidden": false,
-            "nuevo": false
+            "nuevo": false,
+            "id": " "
         },
 
         {
@@ -64,7 +67,8 @@
             "detalleLibro": " ",
             "detalleAutor": " ",
             "hidden": false,
-            "nuevo": false
+            "nuevo": false,
+            "id": " "
         },
 
         {
@@ -86,7 +90,8 @@
             "detalleLibro": " ",
             "detalleAutor": " ",
             "hidden": false,
-            "nuevo": false
+            "nuevo": false,
+            "id": " "
         },
 
         {
@@ -98,7 +103,7 @@
             "precioEbook": 16.20,
             "precioBook": 29.29,
             "autor": "Alberto González",
-            "portada": "./images/480.jpeg",
+            "portada": "./images/book4.png",
             "editorial": "O'Reilly",
             "isbn": "9780596101992",
             "paginas": "400",
@@ -108,7 +113,8 @@
             "detalleLibro": " ",
             "detalleAutor": " ",
             "hidden": true,
-            "nuevo": false
+            "nuevo": false,
+            "id": " "
         },
 
         {
@@ -130,7 +136,8 @@
             "detalleLibro": " ",
             "detalleAutor": " ",
             "hidden": true,
-            "nuevo": false
+            "nuevo": false,
+            "id": " "
         },
     
         {
@@ -152,7 +159,8 @@
             "detalleLibro": " ",
             "detalleAutor": " ",
             "hidden": false,
-            "nuevo": true
+            "nuevo": true,
+            "id": " "
         },
 
         {
@@ -174,7 +182,8 @@
             "detalleLibro": " ",
             "detalleAutor": " ",
             "hidden": false,
-            "nuevo": true
+            "nuevo": true,
+            "id": " "
         },
 
         {
@@ -196,7 +205,8 @@
             "detalleLibro": " ",
             "detalleAutor": " ",
             "hidden": false,
-            "nuevo": true
+            "nuevo": true,
+            "id": " "
         },
 
         {
@@ -208,7 +218,7 @@
             "precioEbook": 16.20,
             "precioBook": 39.86,
             "autor": "Kamran Amini",
-            "portada": "./images/book3.png",
+            "portada": "./images/book3.jpeg",
             "editorial": "Packt",
             "isbn": "9780596101992",
             "paginas": "400",
@@ -218,7 +228,8 @@
             "detalleLibro": " ",
             "detalleAutor": " ",
             "hidden": false,
-            "nuevo": true
+            "nuevo": true,
+            "id": " "
         },
 
         {
@@ -230,7 +241,7 @@
             "precioEbook": 16.20,
             "precioBook": 29.29,
             "autor": "Alberto González",
-            "portada": "./images/480.jpeg",
+            "portada": "./images/book4.png",
             "editorial": "O'Reilly",
             "isbn": "9780596101992",
             "paginas": "400",
@@ -240,7 +251,8 @@
             "detalleLibro": " ",
             "detalleAutor": " ",
             "hidden": true,
-            "nuevo": true
+            "nuevo": true,
+            "id": " "
         },
 
         {
@@ -262,7 +274,8 @@
             "detalleLibro": " ",
             "detalleAutor": " ",
             "hidden": true,
-            "nuevo": true
+            "nuevo": true,
+            "id": " "
         }
     ]
 }
