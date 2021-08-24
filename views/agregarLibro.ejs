@@ -9,12 +9,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/flaticon/flaticon.css">
     <link rel="stylesheet" href="css/agregarLibro.css">
+    <script defer src="./js/darkModeScript.js"></script>
     <script src="https://cdn.tiny.cloud/1/3c54177q3lh311521ar9zn5r80ehbssagbubwkxw3apnsps3/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
     <script>
         tinymce.init({
-            selector: 'textarea',
+            selector: 'textarea'
         });
+        
     </script>
     <title>Agregar nuevo libro</title>
 </head>
@@ -79,16 +81,34 @@
     </nav>
 
     <h1 class="pageTitle"><i class="fas fa-folder-plus"></i>&nbsp Agregar Libro</h1>
+    
 
     <form class="addBooks" action="/index" method="get">
+        <div class="portadaDiv">
         <img src="" alt="portada" id="portadaImg">
-        <label>Título:<input class="textInput" type="text" name="nombre" placeholder="Nombre del Libro"></label>
-        <label>Portada: <input type="file" id="portada" name="portada" accept="image/*" onchange="loadFile(event)"></label>
 
+        <div class="uploadFile">
+            <input type="file" id="portada" name="portada" accept="image/*" multiple = false onchange="loadFile(event)" class="inputfile"
+                data-multiple-caption="{count} files selected" multiple>
+            <label for="portada" class="btn red"><i class="fas fa-upload"></i>&nbsp Subir Portada </label>
+        </div>
+    </div>
+
+        <label>Título:<input class="textInput" type="text" name="nombre"></label>
+        <label>Materia: <input id="materia" class="textInput" type="text" name="materia"></label>
+        <label>Autor: <input class="textInput" id="autor" type="text" name="autor" ></label>
+        <label>Editorial:<input class="textInput" id="editorial" type="text" name="editorial"> </label>
+        <label>ISBN:<input class="textInput" id="isnb" type="text" name="isbn" ></label>
+
+       
+       
         <script>
-            var loadFile = function (event) {
-                var output = document.getElementById('portadaImg');
+            let loadFile = function (event) {
+                let output = document.getElementById('portadaImg');
+                let label = document.querySelector('.uploadFile label')
+                
                 output.src = URL.createObjectURL(event.target.files[0]);
+                label.innerHTML = event.target.files[0].name
                 output.onload = function () {
                     URL.revokeObjectURL(output.src)
                 }
@@ -104,35 +124,98 @@
             </select>
         </label>
 
-        <label>Materia: <input id="materia" class="textInput"  type="text" name="materia" placeholder="Materia"></label>
-        <label >Autor: <input  class="textInput" id="autor" type="text" name="autor" placeholder="Autor"></label>
-
-        <label>Precio del libro físico: <input id="precioBook" type="number" min="0" step="0.01" name="precioBook"></label>
+       
+        <label>Precio del libro físico: <input id="precioBook" type="number" min="0" step="0.01"
+                name="precioBook"></label>
         <label>Precio del ebook: <input id="preciEBook" type="number" min="0" step="0.01" name="precioEbook"></label>
 
-        <label>Editorial:<input  class="textInput" id="editorial" type="text" name="editorial"> </label>
-        <label>ISBN:<input   class="textInput" id="isnb" type="text" name="isbn" placeholder="ISBN "></label>
-        <label>Editorial:<input  class="textInput" type="text" name="editorial" placeholder="Editorial"></label>
-
+        
         <label>Número de Páginas: <input type="number" id="paginas" name="paginas"></label>
         <label>Año:<input type="number" id="year" min="1980" max="2021" step="1" name="year"></label>
 
 
+        <div class="librosDetails">
         <h2>Acerca de este libro</h2>
         <textarea id="detallesLibro" name="mytextarea">
           </textarea>
+        </div>
 
+        <div class="autorDetails">
         <h2>Acerca del autor</h2>
         <textarea id="detallesAutor" name="mytextarea">
-            
-          </textarea>
 
-          <div class="botones">
+          </textarea>
+        </div>
+
+        <div class="botones">
             <input type="submit" class="btn agregar" value="Agregar libro">
             <input type="reset" class="btn red borrar" value="Borrar campos">
-          </div>
-        
+        </div>
+
     </form>
+
+    <footer>
+        <section>
+            <h4>Enlaces de Interés</h4>
+            <ul>
+                <li><a href="">Mi cuenta</a></li>
+                <li><a href="">Mis Pedidos</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="">Mi Lista de Deseos</a></li>
+                <li><a href="">Artículos Vistos</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h4>Ayuda y Soporte</h4>
+            <ul>
+                <li><a href="">Preguntas Frecuentes</a></li>
+                <li><a href="">Formas de Pago</a></li>
+                <li><a href="">Nuestro Boletín</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="/TerminosyCondiciones">Términos y Condiciones </a></li>
+                <li><a href="/PoliticaDePrivacidad">Política de Privacidad</a></li>
+                <li><a href="#">Acerca de Nosotros</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h4>Contacto</h4>
+            <ul class="contactList">
+                <li><a href='mailto:contact@insidebooks.com?subject="Hi There!"'><i class="flaticon-email" ></i> &nbsp contact@insidebooks.com</a></li>
+                <li><a href="tel:+521234567890">  <i class="flaticon-telephone-handle-silhouette"></i>&nbsp&nbsp +53 123 456 7890</li></a>
+            </ul>
+        </section>
+
+        <section class="socialMedia">
+            <h4>Redes Sociales</h4>
+            <ul>
+                <li><a href="https://www.facebook.com/" target="_blank"><i class="flaticon-facebook"></i> &nbsp Facebook</a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><i class="flaticon-instagram"></i>&nbsp Instagram</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="https://twitter.com/" target="_blank"><i class="flaticon-twitter"></i>&nbsp Twitter</a></li>
+                <li><a href="https://web.telegram.org" target="_blank"><i class="flaticon-telegram"></i>&nbsp Telegram</a></li>
+            </ul>
+        </section>
+        
+        <div class="logoFooter">
+            <div class="logoContainer">
+                <div class="bloqueAzul"></div>
+                <div class="bloqueVerde"></div>
+                <div class="bloqueRojo"></div>
+                <div class="bloqueNaranja"></div>
+            </div>
+            <p class="logoTextFooter"><span class="rojo">IN</span><span class="azul">SIDE</span><span
+                    class="verde">BOOKS</span>
+            </p>
+        </div>
+    </footer>
 
 </body>
 
