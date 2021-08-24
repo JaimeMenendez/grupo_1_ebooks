@@ -16,3 +16,7 @@
 - Se agregó funcionalidad al botón de favoritos y se animó. Ahora al presionar el corazón, se marca o desmarca el libro. 
 - Se animaron en estado activo los botones de comentarios.
 - Se convirtió a plantilla ejs los Términos y condiciones y política de privacidad. Ahora a partir de un solo documento se generan ambos archivos.
+
+# 23-8-2021
+- Se creó una vista personalizada para las rutas con error 404 usando el tema de la página.
+- Se creó la primera versión de AgregarLibros en ejs responsive para movil, tablet y escritorio con la funcionalidad de previsualizar la imagen de portada cargada por el usuario.
