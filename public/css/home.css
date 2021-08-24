@@ -6,6 +6,9 @@
 @import "./fonts.css";
 @import "./logoStyle.css";
 @import "./navBar.css";
+@import "./navBarMobile.css";
+@import "./sliderStartBanner.css";
+@import "./filterAside.css";
 @import "./footer.css";
 @import "./category-buttons.css";
 
@@ -132,149 +135,6 @@ p{
   .btn.red {
     background-color: var(--buttonColor);
   }
-/************************************
-//        SEARCH BAR MOBILE        //
-/***********************************/
-
- section.searchBar-mobile{
-    width: 100vw;
-    height: 60px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-    background: radial-gradient(var(--azul-morado-claro), var(--azul-morado-oscuro));
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-form.sbMobile{
-    width: 100%;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-}
-
-form.sbMobile input[type=text]{
-   font-size: 17px;
-   border: 1px solid  var(--backgroundSections);
-   border-radius: 4px;
-   border-top-right-radius: 0;
-   border-bottom-right-radius: 0;
-
-   width: 80%;
-   min-width: 190px;
-   background: var(--backgroundSections);
-   color: var(--fontColors);
-}
-
-form.sbMobile input[type=text]::placeholder{
-    color: var(--fontColors);
-}
-
-form.sbMobile button{
-   width: 10%;
-   max-width: 40px;
-   font-size: 20px;
-   font-weight: 700;
-   background-color: var(--rojo);
-   border: 2px solid var(--rojo);
-   border-radius: 4px;
-   border-top-left-radius: 0;
-   border-bottom-left-radius: 0;
-   color: white;
-   cursor: pointer;
-   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-form.sbMobile i{
-  color: var(--blanco);
-}
-
-form.sbMobile button:hover {
-   /*:hover selector cambia el estilo de boton cuando se pasa el mouse sobre él*/
-   background: var(--rojo-oscuro);
-   background-color: var(--rojo-oscuro);
-   border: 2px solid var(--rojo-oscuro);
-}
-  
-form.sbMobile::after {
-   content: "";
-   clear: both;
-   display: table;
-}
-/************************************
-//        Slider                   //
-/***********************************/
-.slider{
-    position: relative;
-    width: 500%;
-    overflow: hidden;
-    animation: 20s slider infinite;
-}
-
-.sliderContent{
-    width: 20%;
-    float: left;
-}
-
-@keyframes slider {
-    0% {
-        left: 0;
-    }
-
-    20% {
-        left:0;
-    }
-
-    25% {
-        left:-100%;
-    }
-
-    45% {
-        left:-100%;
-    }
-
-    50% {
-        left:-200%;
-    }
-
-    70% {
-        left:-200%;
-    }
-
-    75% {
-        left:-300%;
-    }
-
-    95% {
-        left:-300%;
-    }
-
-    100%{
-        left: -400%;
-    }
-}
-
-
-/************************************
-//        PROMOTIONAL BANNER       //
-/***********************************/
-#startBanner{
-    background-color: var(--backgroundColor);
-}
-section.banner img{
-    width: 100%;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    background-color: var(--backgroundColor);
-}
-
-section.banner-books img{
-    background: none;
-    width: 100%;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
 
 /************************************
 //        MAIN SECTION             //
@@ -295,7 +155,6 @@ main div.imp-buttons-hidden{
 main section.show-filter section.sectionChange, section.suggest, section.moreNew, section.ebooks{
     background-color: var(--backgroundSections);
     text-align: left;
-    
 }
 
 section.trends, section.results{
@@ -306,7 +165,6 @@ section.trends, section.results{
 section.trends h3, section.suggest h3{
     padding-top: 10px;
 }
-
 
 main section.separador{
     padding: 0px;
@@ -344,165 +202,6 @@ main div.show-filter a{
     border: 1px solid white;
     box-shadow: 3px 3px 15px 3px rgba(0,0,0,0.24);
     border-radius: 4px;
-}
-/************************************
-//        SECTIONS ASIDE           //
-/***********************************/
-
-main div#sideBarVer .closebtn {
-    text-align: left;
-    margin-right: 5px;
-    border: 1px solid var(--azul-morado-claro);
-    box-shadow: 3px 3px 15px 3px rgba(0,0,0,0.24);
-    border-radius: 4px;
-    max-width: 70px;
-} 
-
-main div#sideBarVer{
-    display: none;
-    position: absolute;
-    top: 50vh;
-    width: 100%;
-    left: 0;
-    transition-property: width;
-    transition-duration: 0.3s;  
-    z-index: 300;
-}
-
-main div#sideBarVer .closebtn{
-    padding-left: 5px;
-    color: var(--crema);
-    font-weight: bold;
-    line-height: 30px;
-}
-
-main div#indexFirst{
-    margin-top: 10px;
-    border-top: 1px solid #fff;
-    width: 100%;
-}
-
-main div#sideBarVer a:hover, main div.show-filter a:hover{
-    color:#EA4533;
-    transform: none;
-}
-main aside{
-    display: grid;
-    position: relative;
-    grid-template-columns: 100%;
-    width: 96%;
-    height: 100%;
-    padding: 15px 15px 30px 15px;
-    margin-top: 15px;
-    margin-left: 2%;
-    border: 4px solid var(--sombra-boton);
-    box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.24);
-    background-color: #ffffff;
-    border-radius: 4px;
-    z-index: 300;
-    background: radial-gradient(var(--azul-morado-claro), var(--azul-morado-oscuro));
-}
-
-main aside div.index h3{
-    margin-top: 15px;
-    margin-left: 15px;
-    font-size: 1.3em;
-    font-family: "DIN", sans-serif;
-    text-align: left;
-    color: #ffffff;
-}
-
-main aside div.index{
-    width: 100%;
-}
-
-main aside ul.subcategory-books{
-    display: flex;
-    flex-wrap: wrap;
-    width: 94%;
-    justify-content: flex-start;
-    list-style: none;
-    text-align: left;
-    margin-top: 15px;
-    margin-left: 30px;
-    padding: 0;
-}
-
-main aside ul.subcategory-books-pc{
-    display: none;
-}
-
-main aside ul.subcategory-books li{
-    margin-bottom:5px;
-    margin-right: 5px;
-    border-radius: 1px solid var(--azul-gris-oscuro);
-    border-radius: 4px;
-    background-color: var(--buttonFontColor);
-    line-height: 1.5em;
-    padding: 5px;
-    font-size: 16px;
-}
-
-main aside ul.priceBooks a{
-    color: #ffffff;
-}
-main aside ul.formatBooks label, ul.idiomBooks label{
-    color: #ffffff;
-}
-
-main aside ul{
-    width: 94%;
-    list-style: none;
-    text-align: left;
-    margin-top: 15px;
-    margin-left: 30px;
-    padding: 0;
-    color: white;
-}
-
-main aside li{
-    margin-bottom:5px;
-    margin-right: 5px;
-    font-size: 16px;
-}
-
-main aside a#white{
-    text-decoration: none;
-    color:white;
-}
-
-main aside a{
-    text-decoration: none;
-    color:rgba(0, 0, 0);
-}
-
-/******* Sección de estrellas ******/
-main aside div.calificacionComentario{
-    display:flex;
-    justify-content:flex-start;
-    align-items:center;
-    margin-left: 30px;
-}
-
-main aside div.calificacionComentario p{
-    margin-top: 5px;
-}
-
-/***** Primer div de estrellas *****/
-main aside div#first{
-    margin-top: 15px;
-}
-
-main aside div.calificacionComentario p.tituloComentario{
-    margin-left: 5px;
-    font-weight: bold;
-    font-size:17px;
-    color: white;
-}
-
-main aside p.calificacion{
-    color:gold;
-    font-size: 15px;
 }
 
 /************************************
@@ -666,14 +365,6 @@ main section.button-beginning .inicio{
 /***********************************/
 @media (min-width: 600px) {
 
-    .slider{
-        margin-top:var(--navBarHeight);
-    }
-
-    section.searchBar-mobile{
-        display: none;
-    }
-
     section.banner img{
         margin-top: 50px;
         margin-bottom: 5px;
@@ -756,57 +447,8 @@ main section.button-beginning .inicio{
         width:18%;
     }
 
-    main section#important-buttons #category-book-hidden{
-        display: inline;
-    }
-
     div.identifier5 p{
         font-size: 14px;
-    }
-
-    main div.show-filter{
-        display: none;
-    }
-
-    main div#sideBarVer{
-        grid-column:1/2;
-        display: inline;
-        position: inherit;
-        width: 95%;
-        margin-bottom: 10px;
-        margin-left: 5%;
-    }
-
-    main aside{
-        margin-top: 5px;
-        padding-bottom: 5px;
-    }
-
-    main aside div#indexFirst{
-        border-top: none;
-        margin-top: 0px;
-    }
-
-    main aside div#indexFirst h3{
-        margin-top: 0px;
-    }
-
-
-    main aside ul.subcategory-books{
-        display: none;
-    }
-
-    main aside ul.subcategory-books-pc{
-        display: block;
-    }
-
-    main aside ul.subcategory-books-pc a{
-        font-size: 16px;
-        color: #ffffff;
-    }
-
-    main aside .closebtn{
-        display: none;
     }
 
     main section.results{
@@ -846,10 +488,6 @@ main section.button-beginning .inicio{
 
     main div.products article#products{
         width: 55%;
-    }
-
-    main div#sideBarVer{
-        margin-left: 8%;
     }
 
     main section.results{
