@@ -277,6 +277,77 @@
             "nuevo": true,
             "id": " "
         }
+    ],
+    "categorias": [
+        {
+            "categoria": "Programación",
+            "subcategorias":["Django","Flask","Pandas","Machine learning","Deep learning"],
+            "icono": "fas fa-laptop-code",
+            "id": " "
+        },
+
+        {
+            "categoria": "Electrónica",
+            "subcategorias": ["Electrónica de potencia","Análisis de circuitos CC","Análisis de circuitos CA","Electrónica digital","Semiconductores","Electrónica Industrial","Control"],
+            "icono":"fas fa-car-battery",
+            "id": " "
+        },
+
+        {
+            "categoria": "Int Artificial",
+            "subcategorias": ["Redes neuronales","Machine learning","Deep learning","Máquinas vectoriales","Análisis de PCA","Aprendizaje supervizado","Aprendizaje no supervizado","Clusttering"],
+            "icono": "fas fa-brain",
+            "id": " "
+        },
+
+        {
+            "categoria": "Redes",
+            "subcategorias": ["Internet de las cosas","Redes neuronales","Ciberseguridad","Redes informáticas y seguridad","Redes infromáticas y hacking","Marketing","Marketing en redes sociales","Redes de computadoras"],
+            "icono":"fas fa-network-wired",
+            "id": " "
+        },
+
+        {
+            "categoria": "Mecánica",
+            "subcategorias": ["Mecánica de materiales","Mecánica automotriz","Estática","Dinámica","Resistencia de materiales","Mecánica de fluidos","Mecanismos","Aire acondicionado","Estructuras de concreto","Termodinámica"],
+            "icono": "fas fa-cogs",
+            "id": " "
+        },
+            
+        {
+            "categoria": "Medicina",
+            "subcategorias": ["Diabetes","Cardiología","Neurología","Farmacología","Epidemiología","Anestesiología","Oncología","Pediatría","Bacteriología","Ginecología","Microbiología","Neurología"],
+            "icono": "fas fa-stethoscope",
+            "id": " "
+        }, 
+
+        {
+            "categoria": "Química",
+            "subcategorias": ["Química orgánica","Fotoquímica","Química inorgánica","Polímeros","Estequiometría","Catálisis","Química nuclear","Química forense","Fenómenos de transporte","Balance de masa y energía"],
+            "icono": "fas fa-atom",
+            "id": " "
+        },
+        
+        {
+            "categoria":"Biotecnología",
+            "subcategorias": ["Ingeniería genética","Clonación","Enzimas de restricción","Productos biotecnológicos","Bioinformática","Bioníca","Biorremediación","Células madres","Órganos artificiales"],
+            "icono": "fas fa-leaf",
+            "id": " "
+        }, 
+
+        {
+            "categoria":"Estadística",
+            "subcategorias": ["Estadística descriptica","Estadística inferencial","Análisis de datos","Estadística analítica","Medidas de biodiversidad","Estadística aplicada","Asociaciones de estadística","Leyes estadísticas"],
+            "icono": "fas fa-chart-pie",
+            "id": "category-book-hidden"
+        }, 
+
+        {
+            "categoria":"Economía",
+            "subcategorias": ["Ciencia económica","Contabilidad","Derecho económico","Econometría","Economía y medio ambiente","Monedas circulantes","Negocios","Inversiones en la bolsa","Unidades de cuenta", "Macroeconomía","Microeconomía"],
+            "icono": "fas fa-chart-line",
+            "id": "category-book-hidden"
+        }
     ]
 }
 

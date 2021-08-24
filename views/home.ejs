@@ -89,25 +89,8 @@
   <%- include('./partials/sliderStartBanner') %>
 
 <main>
-    <!--Categorias principales-->
-    <section class="important-buttons">
-        <div class="identifier" class="class1">
-            <a href="#recomendados"><i class="fas fa-book-reader"></i></a>
-            <p>Recomendados</p>
-        </div>
-        <div class="identifier2">
-            <a href="#important-buttons-pc"><i class="fas fa-book"></i></a>
-            <p>Categorías</p>
-        </div>
-        <div class="identifier3">
-            <a href="#nuevos"><i class="fas fa-bell"></i></a>
-            <p>Nuevos</p>
-        </div>
-        <div class="identifier4">
-            <a href="#nuevos"><i class="fas fa-tablet-alt"></i></a>
-            <p>Ebooks</p>
-        </div>
-    </section>
+    <!--Botones de categorias principales-->
+    <%- include('./partials/importantButtons') %>
 
     <div class="books-upper-left">
         <!--Tendencia en libros-->
@@ -123,71 +106,31 @@
         </section>
 
         <!--Banner promocional-->
-        <section class="banner-books" id="banner-hidden">
-            <img src="./images/bannerDescuentos.jpg" alt="promotions">
-        </section>
+        <%- include('./partials/promotionalBanner')%>
 
         <!--Libros recomendados-->
         <section class="suggest">
-        <h3 id="recomendados"><%= nombreSeccion[1] %></h3>
-        <div class="products">
-            <% articulos.forEach(articulo => { %>
-                <% if(!articulo.nuevo){ %>
-                <%- include('./partials/articles', articulo) %>
-                <% } %>
-              <% }) %>
-        </div>
+            <h3 id="recomendados"><%= nombreSeccion[1] %></h3>
+            <div class="products">
+                <% articulos.forEach(articulo => { %>
+                    <% if(!articulo.nuevo){ %>
+                    <%- include('./partials/articles', articulo) %>
+                    <% } %>
+                <% }) %>
+            </div>
         </section>
     </div>
 
     <!--Categoria de libros-->
     <section class="important-buttons" id="important-buttons-pc">
-        <div class="identifier5" class="class1">
-            <a href="#"><i class="fas fa-laptop-code"></i></a>
-            <p>Programación</p>
-        </div>
-        <div class="identifier5">
-            <a href="#"><i class="fas fa-car-battery"></i></a>
-            <p>Electrónica</p>
-        </div>
-        <div class="identifier5">
-            <a href="#"><i class="fas fa-brain"></i></a>
-            <p>Int Artificial</p>
-        </div>
-        <div class="identifier5">
-            <a href="#"><i class="fas fa-network-wired"></i></a>
-            <p>Redes</p>
-        </div>
-        <div class="identifier5">
-            <a href="#"><i class="fas fa-cogs"></i></a>
-            <p>Mecánica</p>
-        </div>
-        <div class="identifier5">
-            <a href="#"><i class="fas fa-stethoscope"></i></a>
-            <p>Medicina</p>
-        </div>
-        <div class="identifier5">
-            <a href="#"><i class="fas fa-atom"></i></a>
-            <p>Química</p>
-        </div>
-        <div class="identifier5">
-            <a href="#"><i class="fas fa-leaf"></i></a>
-            <p>Biotecnología</p>
-        </div>
-        <div class="identifier5" id="category-book-hidden">
-            <a href="#"><i class="fas fa-leaf"></i></a>
-            <p>Biotecnología</p>
-        </div>
-        <div class="identifier5" id="category-book-hidden">
-            <a href="#"><i class="fas fa-leaf"></i></a>
-            <p>Biotecnología</p>
-        </div>
+        <% categorias.forEach(categoria => { %>
+            <%- include('./partials/categoryButtons', categoria) %>
+        <% }) %>
     </section>
-
     <!--Parte inferior de Libros. No hay división horizontal-->
     <!--Lo más nuevo-->
     <section class="moreNew">
-        <h3 id="nuevos"><%= nombreSeccion[4]%></h3>
+        <h3 id="nuevos"><%= nombreSeccion[2]%></h3>
         <div class="products" id="products-lower">
             <% articulos.forEach(articulo => { %>
                 <% if(articulo.nuevo){ %>

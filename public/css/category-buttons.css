@@ -259,6 +259,14 @@ main #category-book-hidden{
 /************************************
 //    MEDIA QUERIES PC             //
 /***********************************/
+@media (min-width: 900px) {
+    main section.important-buttons #category-book-hidden{
+        display: inline;
+    }
+}
+/************************************
+//    MEDIA QUERIES PC             //
+/***********************************/
 @media (min-width: 1024px) {
 
     main section#important-buttons-pc{
