@@ -2,31 +2,30 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
-<link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
-<link rel="manifest" href="./images/favicon/site.webmanifest">
-<link rel="mask-icon" href="./images/favicon/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Russo+One&display=swap"
+        rel="stylesheet" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Russo+One&display=swap"
-    rel="stylesheet" />
-
-  <link rel="stylesheet" type="text/css" href="css/flaticon/flaticon.css">
-  <link rel="stylesheet" href="css/normalize.min.css" />
-  <link rel="stylesheet" href="css/home.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/flaticon/flaticon.css">
+    <link rel="stylesheet" href="css/normalize.min.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
    
-  <script defer src="./js/darkModeScript.js"></script>
-  <title>Home - InsideBooks</title>
+    <script defer src="./js/darkModeScript.js"></script>
+    <title>Home - InsideBooks</title>
 </head>
 
 <body>
@@ -85,22 +84,9 @@
 
     </div>
   </nav>
-  
 
-  <section class="searchBar-mobile">
-    <form action="./searchBook" class="sbMobile">
-        <input type="text" id="search" name="search" placeholder=" Buscar por autor, título, categoría...">
-        <button type="submit"><i><i class="fas fa-search"></i></i></button>
-    </form>
-</section>
-
-<section class="slider" id="startBanner">
-    <img src="./images/bannerDescuentos.jpg" alt="promotions" class="sliderContent">
-    <img src="./images/bannerTodo.jpg" alt="promotions" class="sliderContent">
-    <img src="./images/bannerSeparador.jpg" alt="promotions" class="sliderContent">
-    <img src="./images/bannerDescuentos.jpg" alt="promotions" class="sliderContent">
-    <img src="./images/bannerDescuentos.jpg" alt="promotions" class="sliderContent">
-</section>
+  <%- include('./partials/navBarMobile') %>
+  <%- include('./partials/sliderStartBanner') %>
 
 <main>
     <!--Categorias principales-->
