@@ -20,4 +20,7 @@
 # 23-8-2021
 - Se creó una vista personalizada para las rutas con error 404 usando el tema de la página.
 - Se creó la primera versión de AgregarLibros en ejs responsive para movil, tablet y escritorio con la funcionalidad de previsualizar la imagen de portada cargada por el usuario.
+
+# 24-8-2021
 - Se iniciaron partials (header, footer y nav bar)
+- Se instaló e implementó multer de manera que ahora es posible guardar libros en un archivo librosDB.json en el servidor utilizando el formulario de AgregarLibro. Es solo un borrador puesto que los datos no son sometidos a ninguna validación.

@@ -16,7 +16,7 @@
         tinymce.init({
             selector: 'textarea'
         });
-        
+
     </script>
     <title>Agregar nuevo libro</title>
 </head>
@@ -81,32 +81,30 @@
     </nav>
 
     <h1 class="pageTitle"><i class="fas fa-folder-plus"></i>&nbsp Agregar Libro</h1>
-    
 
-    <form class="addBooks" action="/index" method="get">
+
+    <form class="addBooks" action="/agregarLibro" method="POST" enctype="multipart/form-data">
         <div class="portadaDiv">
-        <img src="" alt="portada" id="portadaImg">
+            <img src="" alt="portada" id="portadaImg">
 
-        <div class="uploadFile">
-            <input type="file" id="portada" name="portada" accept="image/*" multiple = false onchange="loadFile(event)" class="inputfile"
-                data-multiple-caption="{count} files selected" multiple>
-            <label for="portada" class="btn red"><i class="fas fa-upload"></i>&nbsp Subir Portada </label>
+            <div class="uploadFile">
+                <input type="file" id="portada" name="portada" accept="image/*" multiple=false
+                    onchange="loadFile(event)" class="inputfile">
+                <label for="portada" class="btn red"><i class="fas fa-upload"></i>&nbsp Subir Portada </label>
+            </div>
         </div>
-    </div>
 
         <label>Título:<input class="textInput" type="text" name="nombre"></label>
         <label>Materia: <input id="materia" class="textInput" type="text" name="materia"></label>
-        <label>Autor: <input class="textInput" id="autor" type="text" name="autor" ></label>
+        <label>Autor: <input class="textInput" id="autor" type="text" name="autor"></label>
         <label>Editorial:<input class="textInput" id="editorial" type="text" name="editorial"> </label>
-        <label>ISBN:<input class="textInput" id="isnb" type="text" name="isbn" ></label>
+        <label>ISBN:<input class="textInput" id="isnb" type="text" name="isbn"></label>
 
-       
-       
         <script>
             let loadFile = function (event) {
                 let output = document.getElementById('portadaImg');
                 let label = document.querySelector('.uploadFile label')
-                
+
                 output.src = URL.createObjectURL(event.target.files[0]);
                 label.innerHTML = event.target.files[0].name
                 output.onload = function () {
@@ -124,26 +122,25 @@
             </select>
         </label>
 
-       
+
         <label>Precio del libro físico: <input id="precioBook" type="number" min="0" step="0.01"
                 name="precioBook"></label>
         <label>Precio del ebook: <input id="preciEBook" type="number" min="0" step="0.01" name="precioEbook"></label>
 
-        
+
         <label>Número de Páginas: <input type="number" id="paginas" name="paginas"></label>
         <label>Año:<input type="number" id="year" min="1980" max="2021" step="1" name="year"></label>
 
 
         <div class="librosDetails">
-        <h2>Acerca de este libro</h2>
-        <textarea id="detallesLibro" name="mytextarea">
+            <h2>Acerca de este libro</h2>
+            <textarea id="detallesLibro" name="detallesDelLibro">
           </textarea>
         </div>
 
         <div class="autorDetails">
-        <h2>Acerca del autor</h2>
-        <textarea id="detallesAutor" name="mytextarea">
-
+            <h2>Acerca del autor</h2>
+            <textarea id="detallesAutor" name="detallesAutor">
           </textarea>
         </div>
 
@@ -186,24 +183,30 @@
         <section>
             <h4>Contacto</h4>
             <ul class="contactList">
-                <li><a href='mailto:contact@insidebooks.com?subject="Hi There!"'><i class="flaticon-email" ></i> &nbsp contact@insidebooks.com</a></li>
-                <li><a href="tel:+521234567890">  <i class="flaticon-telephone-handle-silhouette"></i>&nbsp&nbsp +53 123 456 7890</li></a>
+                <li><a href='mailto:contact@insidebooks.com?subject="Hi There!"'><i class="flaticon-email"></i> &nbsp
+                        contact@insidebooks.com</a></li>
+                <li><a href="tel:+521234567890"> <i class="flaticon-telephone-handle-silhouette"></i>&nbsp&nbsp +53 123
+                        456 7890</li></a>
             </ul>
         </section>
 
         <section class="socialMedia">
             <h4>Redes Sociales</h4>
             <ul>
-                <li><a href="https://www.facebook.com/" target="_blank"><i class="flaticon-facebook"></i> &nbsp Facebook</a></li>
-                <li><a href="https://www.instagram.com/" target="_blank"><i class="flaticon-instagram"></i>&nbsp Instagram</a></li>
+                <li><a href="https://www.facebook.com/" target="_blank"><i class="flaticon-facebook"></i> &nbsp
+                        Facebook</a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><i class="flaticon-instagram"></i>&nbsp
+                        Instagram</a></li>
             </ul>
 
             <ul>
-                <li><a href="https://twitter.com/" target="_blank"><i class="flaticon-twitter"></i>&nbsp Twitter</a></li>
-                <li><a href="https://web.telegram.org" target="_blank"><i class="flaticon-telegram"></i>&nbsp Telegram</a></li>
+                <li><a href="https://twitter.com/" target="_blank"><i class="flaticon-twitter"></i>&nbsp Twitter</a>
+                </li>
+                <li><a href="https://web.telegram.org" target="_blank"><i class="flaticon-telegram"></i>&nbsp
+                        Telegram</a></li>
             </ul>
         </section>
-        
+
         <div class="logoFooter">
             <div class="logoContainer">
                 <div class="bloqueAzul"></div>
