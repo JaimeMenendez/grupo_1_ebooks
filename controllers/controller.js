@@ -46,6 +46,8 @@ const controller = {
         }
 
         let newBook = req.body;
+        newBook.id = librosDB[0].id_count + 1
+        librosDB[0].id_count = librosDB[0].id_count + 1
         if(req.file){
             newBook.portada = req.file.path;
         }

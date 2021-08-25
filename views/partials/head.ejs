@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
@@ -15,18 +13,19 @@
     <link rel="mask-icon" href="./images/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-
-
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Russo+One&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/flaticon/flaticon.css">
-
-
     <link rel="stylesheet" href="css/normalize.min.css" />
-    <link rel="stylesheet" href="css/carrito.css">
-    <script defer src="./js/darkModeScript.js"></script>
-    <title>HEAD</title>
+
+
+    <% css.forEach(file => { %>
+        <link rel="stylesheet" href="<%= file %>"/>
+    <%}); %> 
+
+    <% jsfile.forEach(file => { %>
+        <script defer src="<%= file %>"></script>
+    <%}); %> 
+    <title> <%= titulo %> </title>
 </head>
