@@ -139,7 +139,7 @@ p{
 /************************************
 //        PROMOTIONAL BANNER       //
 /***********************************/
-section.banner-books img{
+section.banner-books img, section.banner img{
     background: none;
     width: 100%;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -246,7 +246,8 @@ main article{
 
 /********** BOOKS HIDDEN************/
 main article img{
-    width: 90%;
+    max-width: 160px;
+    max-height: 200px;
 }
 
 main article div.main-article{
@@ -411,6 +412,10 @@ main section.button-beginning .inicio{
         background-color: #ebebeb;;
     }
 
+    main div.show-filter{
+        display: none;
+    }
+    
     main article,  main article#article-hidden,  main article#article-hidden2{
         width: 15%;
     }
