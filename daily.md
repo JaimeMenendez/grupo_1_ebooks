@@ -27,3 +27,5 @@
 
 # 25-8-2021
 - Partial de head creado.
+- Partial de footer creado.
+- Partial de footer agregado a todas las vistas.
