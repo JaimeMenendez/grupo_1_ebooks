@@ -1,5 +1,21 @@
 [
   {
     "id_count": 1
+  },
+  {
+    "nombre": "Cybersecurity - Attack and Defense Strategies",
+    "materia": "Ciberseguridad",
+    "autor": "Yuri Diogenes , Dr. Erdal Ozkaya ",
+    "editorial": "Packt",
+    "isbn": "9781788475297",
+    "idioma": "Inglés",
+    "precioBook": "5.99",
+    "precioEbook": "2.99",
+    "paginas": "384",
+    "year": "2018",
+    "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>The book will start talking about the security posture before moving to Red Team tactics, where you will learn the basic syntax for the Windows and Linux tools that are commonly used to perform the necessary operations. You will also gain hands-on experience of using new Red Team techniques with powerful tools such as python and PowerShell, which will enable you to discover vulnerabilities in your system and how to exploit them. Moving on, you will learn how a system is usually compromised by adversaries, and how they hack user's identity, and the various tools used by the Red Team to find vulnerabilities in a system.</p>\r\n<p>In the next section, you will learn about the defense strategies followed by the Blue Team to enhance the overall security of a system. You will also learn about an in-depth strategy to ensure that there are security controls in each network layer, and how you can carry out the recovery process of a compromised system. Finally, you will learn how to create a vulnerability management strategy and the different techniques for manual log analysis.</p>\r\n<p>By the end of this book, you will be well-versed with Red Team and Blue Team techniques and will have learned the techniques used nowadays to attack and defend systems.</p>\r\n</div>",
+    "detallesAutor": "<p>Yuri Diogenes is a professor at EC-Council University for their master's degree in cybersecurity program. Yuri has a master of science degree in cybersecurity from UTICA College, and MBA from FGV Brazil. Yuri currently holds the following certifications CISSP, CyberSec First Responder, CompTIA CSA+, E|CEH, E|CSA, E|CHFI, E|CND, CyberSec First Responder, CompTIA, Security+, CompTIA Cloud Essentials, Network+, Mobility+, CASP, CSA+, MCSE, MCTS, and Microsoft Specialist - Azure.</p>\r\n<p>Dr. Erdal Ozkaya is a technically sophisticated executive leader with a solid education and strong business acumen. Over the course of his progressive career, he has developed a keen aptitude for facilitating the integration of standard operating procedures that ensure optimal functionality of all technical functions and systems.</p>\r\n<p>&nbsp;</p>\r\n<p>Being a proactive communicator, trusted partner, and skilled analyst, he is highly adept at building dynamic teams that work together to expedite operational goals, priorities, and objectives. As a result, he is poised to conduct reviews and investigations with prompt efficiency and provide thorough and informative reports to both internal and external stakeholders.</p>",
+    "id": 1,
+    "portada": "public/images/booksCover/portada-1629923888051.png"
   }
 ]

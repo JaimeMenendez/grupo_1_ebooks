@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const router = require("./routes/routes");
+const routerProducto = require("./routes/rutasProducto");
 
 const app = express();
 
@@ -10,6 +11,10 @@ app.set('view engine', 'ejs');
 
 const publicPath = path.resolve(__dirname, "./public");
 app.use(express.static(publicPath));
+app.use('*/css',express.static('public/css'));
+app.use('*/js',express.static('public/js'));
+app.use('*/images',express.static('public/images'));
+
 
 // Middleware necesarios para atender solicitudes POST
 app.use(express.urlencoded({ extended: false }));
@@ -20,6 +25,7 @@ const methodOverride = require("method-override");
 app.use(methodOverride('_method'))
 
 // Routes
+app.use('/producto',routerProducto)
 app.use(router);
 
 // Inicia el servidor

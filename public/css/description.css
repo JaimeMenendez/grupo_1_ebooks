@@ -550,6 +550,7 @@ main ul a{
         grid-column: 1/2;
         grid-row: 2/5;
         width: 90%;
+        max-height: none;
     }
 
     .dataLeft{
@@ -657,11 +658,7 @@ main ul a{
     .portada img{
         grid-column: 1/2;
         grid-row: 2/5;
-
-        width: auto;
-        height: auto;
-        max-height: 80%;
-        max-width: 80%;
+        width: 500px;
        
     }
 

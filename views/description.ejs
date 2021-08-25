@@ -120,11 +120,11 @@
 
                 <div class="formato">
                     <input class="hidden" type="checkbox" name="ebookButton" id="ebookButton">
-                    <label for="ebookButton">Libro Electrónico <br> <span class="precio">US$ <%= precioEbook.toFixed(2)
+                    <label for="ebookButton">Libro Electrónico <br> <span class="precio">US$ <%= Number(precioEbook).toFixed(2)
                                 %> </span></label>
 
                     <input class="hidden" type="checkbox" name="pastaBlandaButton" id="pastaBlandaButton">
-                    <label for="pastaBlandaButton">Pasta Blanda <br> <span class="precio">US$ <%= precioBook.toFixed(2)
+                    <label for="pastaBlandaButton">Pasta Blanda <br> <span class="precio">US$ <%= Number(precioBook).toFixed(2)
                                 %></span></label>
                 </div>
             </section>
@@ -224,7 +224,7 @@
 
         </section>
 
-        <% if(comentarios){ %>
+        <% if(locals.comentarios){ %>
 
             <section class="comentarios">
                 <h2>Reseñas de Usuarios</h2>
