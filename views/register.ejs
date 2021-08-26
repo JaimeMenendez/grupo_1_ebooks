@@ -1,0 +1,208 @@
+<% let dataHead = {
+  css: ["css/style.css"],
+  jsfile: ["./js/darkModeScript.js","./js/backgroundAnimation.js","./js/index.js"],
+  titulo: "Iniciar sesión"
+}%>
+
+<%- include('./partials/head',dataHead) %> 
+
+<body>
+
+  <!--Barra de navegación PC-->
+  <%- include('./partials/navBar') %>
+
+  <!--Barra de navegación móviles -->
+  <%- include('./partials/navBarMobile') %>
+
+   <div class="main-container">
+    <section class="loginBannerContainer">
+      <div class="content-left shine-me">
+        <div class="logo shine-me">
+          <div class="bloqueAzul "></div>
+          <div class="bloqueVerde"></div>
+          <div class="bloqueRojo"></div>
+          <div class="bloqueNaranja"></div>
+        </div>
+        <p class="logoText"><span class="rojo">IN</span><span class="azul">SIDE</span><br><span class="verde">BOOKS</span>
+        </p>
+        <div class="prompt">
+          <h1>¿Ya tienes una cuenta?</h1>
+          <h3>Ingresa a <a href="/login">tu cuenta</a></h3>
+        </div>
+      </div>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    </section>
+
+    <section class="registrationInput">
+      <form action="">
+        <div class="question">
+          <label for="">*¿Cómo te llamas?</label>
+          <input type="text" placeholder=" *Nombre(s)" required/>
+        </div>
+
+        <div class="question">
+          <label for="">*¿Cuál es tu apellido?</label>
+          <input type="text" placeholder=" *Apellido(s)" required/>
+        </div>
+
+        <div class="question">
+          <label for="">*¿Cuál es tu correo electrónico?</label>
+          <input type="email" placeholder=" *Correo Electrónico" required/>
+        </div>
+
+        <div class="question">
+          <label for="pwd">*Crea una contraseña</label>
+          <div class="passwordDiv">
+            <input type="password" id="PasswordInput" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              title="La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres"
+              placeholder=" *Contraseña" autocomplete="on" required>
+            <span ><i  id="passwordEye" class="flaticon-invisible"></i></span>
+          </div>
+        </div>
+
+        <div class="question">
+          <label for="">*Confirma tu contraseña</label>
+          <div class="passwordDiv">
+            <input type="password" id="confirmPasswordInput" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              title="La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres"
+              placeholder=" *Confirmar contraseña" autocomplete="on" required>
+            <span ><i id="confirmPasswordEye"  class="flaticon-invisible"></i></span>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>*Todos los campos son obligatorios</p>
+        </div>
+
+        <div class="conditions">
+          <div class="condition">
+            <input type="checkbox" id="cbox1" value="first_checkbox">
+            <label for="cbox1"> He leído y acepto los <a href="/TerminosyCondiciones" target="_blank">Términos y
+                condiciones</a> y <a href="/PoliticaDePrivacidad" target="_blank">Avisos de Privacidad.</a></label>
+          </div>
+
+          <div class="condition">
+            <input type="checkbox" id="cbox2" value="first_checkbox">
+            <label  for="cbox2"> Quiero recibir promociones y noticias a mi
+              correo electrónico.</a></label>
+          </div>
+        </div>
+
+        <div class="button-div">
+          <button class="btn red" type="submit">Crear mi cuenta</button>
+        </div>
+
+        <div class="center-separator">o</div>
+
+        <div class="button-div">
+          <button class="btn googleButton" type="button"><img src="./images/google.svg" alt="">&nbsp Crear cuenta con Google
+          </button>
+        </div>
+  </div>
+  </form>
+  </section>
+  </div>
+</body>
+
+</html>
