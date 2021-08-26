@@ -275,7 +275,7 @@ main article p.name{
     overflow: hidden;
 } 
 
-main Article#article-hidden, main Article#article-hidden2{
+main article#article-hidden, main article#article-hidden2{
     display: none;
 }
 /********** LOGO IN BOOKS ************/
@@ -383,18 +383,12 @@ main section.button-beginning .inicio{
         display: none;
     }
 
-    main article#article-hidden, main article#article-hidden2{
-        display: flex;
-        flex-direction: column;
-        width: 30%;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        margin: 20px 0;
-    }
-
     main article{
         width: 30%;
+    }
+
+    main article#article-hidden,  main article#article-hidden2{
+        display:none;
     }
 
     main article:hover{
@@ -416,7 +410,7 @@ main section.button-beginning .inicio{
         display: none;
     }
     
-    main article,  main article#article-hidden,  main article#article-hidden2{
+    main article{
         width: 15%;
     }
 
@@ -470,6 +464,10 @@ main section.button-beginning .inicio{
         margin-left: 5px;
         margin-right: 5%;
     }
+
+    main article#article-hidden,  main article#article-hidden2{
+        display:none;
+    }
 }
 
 /************************************
@@ -483,6 +481,10 @@ main section.button-beginning .inicio{
 
     main article p.calificacion{
         font-size: 13px;
+    }
+
+    main article#article-hidden,  main article#article-hidden2{
+        display:none;
     }
 }
 
@@ -503,8 +505,34 @@ main section.button-beginning .inicio{
         width: 55%;
     }
 
+    main article#article-hidden,  main article#article-hidden2{
+        display:none;
+    }
+
     main section.results{
         margin-left: 15px;
         margin-right: 4%;
+    }
+}
+
+/************************************
+//    MEDIA QUERIES PC             //
+/***********************************/
+@media (min-width: 1460px) {
+    main article#article-hidden{
+        display:flex;
+    }
+
+    main article#article-hidden2{
+        display:none;
+    }
+}
+
+/************************************
+//    MEDIA QUERIES PC             //
+/***********************************/
+@media (min-width: 1670px) {
+    main article#article-hidden2{
+        display:flex;
     }
 }

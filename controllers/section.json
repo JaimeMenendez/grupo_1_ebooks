@@ -22,7 +22,7 @@
             "detalleAutor": " ",
             "hidden": false,
             "nuevo": false,
-            "id": " "
+            "id": ""
         },
 
         {
@@ -45,7 +45,7 @@
             "detalleAutor": " ",
             "hidden": false,
             "nuevo": false,
-            "id": " "
+            "id": ""
         },
 
         {
@@ -68,7 +68,7 @@
             "detalleAutor": " ",
             "hidden": false,
             "nuevo": false,
-            "id": " "
+            "id": ""
         },
 
         {
@@ -91,7 +91,7 @@
             "detalleAutor": " ",
             "hidden": false,
             "nuevo": false,
-            "id": " "
+            "id": ""
         },
 
         {
@@ -114,7 +114,7 @@
             "detalleAutor": " ",
             "hidden": true,
             "nuevo": false,
-            "id": " "
+            "id": ""
         },
 
         {
@@ -137,7 +137,7 @@
             "detalleAutor": " ",
             "hidden": true,
             "nuevo": false,
-            "id": " "
+            "id": ""
         },
 
         {
@@ -160,7 +160,7 @@
             "detalleAutor": " ",
             "hidden": true,
             "nuevo": false,
-            "id": " "
+            "id": "article-hidden"
         },
 
         {
@@ -183,7 +183,7 @@
             "detalleAutor": " ",
             "hidden": true,
             "nuevo": false,
-            "id": " "
+            "id": "article-hidden2"
         },
     
         {
@@ -206,7 +206,7 @@
             "detalleAutor": " ",
             "hidden": false,
             "nuevo": true,
-            "id": " "
+            "id": ""
         },
 
         {
@@ -229,7 +229,7 @@
             "detalleAutor": " ",
             "hidden": false,
             "nuevo": true,
-            "id": " "
+            "id": ""
         },
 
         {
@@ -252,7 +252,7 @@
             "detalleAutor": " ",
             "hidden": false,
             "nuevo": true,
-            "id": " "
+            "id": ""
         },
 
         {
@@ -275,7 +275,7 @@
             "detalleAutor": " ",
             "hidden": false,
             "nuevo": true,
-            "id": " "
+            "id": ""
         },
 
         {
@@ -298,7 +298,7 @@
             "detalleAutor": " ",
             "hidden": true,
             "nuevo": true,
-            "id": " "
+            "id": ""
         },
 
         {
@@ -321,7 +321,7 @@
             "detalleAutor": " ",
             "hidden": true,
             "nuevo": true,
-            "id": " "
+            "id": ""
         },
 
         {
@@ -344,7 +344,7 @@
             "detalleAutor": " ",
             "hidden": true,
             "nuevo": true,
-            "id": " "
+            "id": "article-hidden"
         },
 
         {
@@ -367,7 +367,7 @@
             "detalleAutor": " ",
             "hidden": true,
             "nuevo": true,
-            "id": " "
+            "id": "article-hidden2"
         }
     ],
     "categorias": [
@@ -375,56 +375,56 @@
             "categoria": "Programación",
             "subcategorias":["Django","Flask","Pandas","Machine learning","Deep learning"],
             "icono": "fas fa-laptop-code",
-            "id": " "
+            "id": ""
         },
 
         {
             "categoria": "Electrónica",
             "subcategorias": ["Electrónica de potencia","Análisis de circuitos CC","Análisis de circuitos CA","Electrónica digital","Semiconductores","Electrónica Industrial","Control"],
             "icono":"fas fa-car-battery",
-            "id": " "
+            "id": ""
         },
 
         {
             "categoria": "Int Artificial",
             "subcategorias": ["Redes neuronales","Machine learning","Deep learning","Máquinas vectoriales","Análisis de PCA","Aprendizaje supervizado","Aprendizaje no supervizado","Clusttering"],
             "icono": "fas fa-brain",
-            "id": " "
+            "id": ""
         },
 
         {
             "categoria": "Redes",
             "subcategorias": ["Internet de las cosas","Redes neuronales","Ciberseguridad","Redes informáticas y seguridad","Redes infromáticas y hacking","Marketing","Marketing en redes sociales","Redes de computadoras"],
             "icono":"fas fa-network-wired",
-            "id": " "
+            "id": ""
         },
 
         {
             "categoria": "Mecánica",
             "subcategorias": ["Mecánica de materiales","Mecánica automotriz","Estática","Dinámica","Resistencia de materiales","Mecánica de fluidos","Mecanismos","Aire acondicionado","Estructuras de concreto","Termodinámica"],
             "icono": "fas fa-cogs",
-            "id": " "
+            "id": ""
         },
             
         {
             "categoria": "Medicina",
             "subcategorias": ["Diabetes","Cardiología","Neurología","Farmacología","Epidemiología","Anestesiología","Oncología","Pediatría","Bacteriología","Ginecología","Microbiología","Neurología"],
             "icono": "fas fa-stethoscope",
-            "id": " "
+            "id": ""
         }, 
 
         {
             "categoria": "Química",
             "subcategorias": ["Química orgánica","Fotoquímica","Química inorgánica","Polímeros","Estequiometría","Catálisis","Química nuclear","Química forense","Fenómenos de transporte","Balance de masa y energía"],
             "icono": "fas fa-atom",
-            "id": " "
+            "id": ""
         },
         
         {
             "categoria":"Biotecnología",
             "subcategorias": ["Ingeniería genética","Clonación","Enzimas de restricción","Productos biotecnológicos","Bioinformática","Bioníca","Biorremediación","Células madres","Órganos artificiales"],
             "icono": "fas fa-leaf",
-            "id": " "
+            "id": ""
         }, 
 
         {
