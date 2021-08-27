@@ -1,6 +1,6 @@
 [
   {
-    "id_count": 1
+    "id_count": 2
   },
   {
     "nombre": "Cybersecurity - Attack and Defense Strategies",
@@ -17,5 +17,21 @@
     "detallesAutor": "<p>Yuri Diogenes is a professor at EC-Council University for their master's degree in cybersecurity program. Yuri has a master of science degree in cybersecurity from UTICA College, and MBA from FGV Brazil. Yuri currently holds the following certifications CISSP, CyberSec First Responder, CompTIA CSA+, E|CEH, E|CSA, E|CHFI, E|CND, CyberSec First Responder, CompTIA, Security+, CompTIA Cloud Essentials, Network+, Mobility+, CASP, CSA+, MCSE, MCTS, and Microsoft Specialist - Azure.</p>\r\n<p>Dr. Erdal Ozkaya is a technically sophisticated executive leader with a solid education and strong business acumen. Over the course of his progressive career, he has developed a keen aptitude for facilitating the integration of standard operating procedures that ensure optimal functionality of all technical functions and systems.</p>\r\n<p>&nbsp;</p>\r\n<p>Being a proactive communicator, trusted partner, and skilled analyst, he is highly adept at building dynamic teams that work together to expedite operational goals, priorities, and objectives. As a result, he is poised to conduct reviews and investigations with prompt efficiency and provide thorough and informative reports to both internal and external stakeholders.</p>",
     "id": 1,
     "portada": "public/images/booksCover/portada-1629923888051.png"
+  },
+  {
+    "nombre": "Machine Learning with R",
+    "materia": "Programación",
+    "autor": "Cory Lesmeister",
+    "editorial": "Packt",
+    "isbn": "9781789343625",
+    "idioma": "Inglés",
+    "precioBook": "4.99",
+    "precioEbook": "2.99",
+    "paginas": "321",
+    "year": "2020",
+    "detallesDelLibro": "",
+    "detallesAutor": "",
+    "id": 2,
+    "portada": "public/images/booksCover/portada-1629926911128.png"
   }
 ]

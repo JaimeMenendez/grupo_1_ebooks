@@ -3,9 +3,21 @@ font-family: 'Russo One', sans-serif; */
 @import "./fonts.css";
 @import "./logoStyle.css";
 @import "./navBar.css";
+@import "./category-buttons.css";
 @import "./footer.css";
-@import "./footer.css";
+@import "./navBarMobile.css";
+
 :root {
+  --azul-morado-oscuro: #2d2f8e;
+  --azul-morado-claro: #585dba;
+
+  --azul-oscuro: #14213D;
+  --rojo: #ea4533;
+  --rojo-oscuro: #c0392b;
+
+  --dorado: #81670f;
+
+
   --navBarHeight: 50px;
   --buttonColor:#EA4533;
   --buttonColorHover:#c0392b;
@@ -17,6 +29,8 @@ font-family: 'Russo One', sans-serif; */
 
   --fontColors:#2e2e2e;
   --fontColorButtons: #eaebf1; 
+  --backgroundColor: #e2e1e0;
+  --backgroundSections:white;
 
   --googleButtonHover:rgb(134, 126, 126);
   --googleFontColor: #1d1d1d;
