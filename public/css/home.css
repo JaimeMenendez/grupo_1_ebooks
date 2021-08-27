@@ -246,6 +246,7 @@ main article{
 
 /********** BOOKS HIDDEN************/
 main article img{
+    width: 90%;
     max-width: 160px;
     max-height: 200px;
 }
@@ -275,7 +276,7 @@ main article p.name{
     overflow: hidden;
 } 
 
-main article#article-hidden, main article#article-hidden2{
+main article.article-hidden, main article.article-hidden2{
     display: none;
 }
 /********** LOGO IN BOOKS ************/
@@ -387,7 +388,7 @@ main section.button-beginning .inicio{
         width: 30%;
     }
 
-    main article#article-hidden,  main article#article-hidden2{
+    main article.article-hidden,  main article.article-hidden2{
         display:none;
     }
 
@@ -465,7 +466,7 @@ main section.button-beginning .inicio{
         margin-right: 5%;
     }
 
-    main article#article-hidden,  main article#article-hidden2{
+    main article.article-hidden,  main article.article-hidden2{
         display:none;
     }
 }
@@ -483,7 +484,7 @@ main section.button-beginning .inicio{
         font-size: 13px;
     }
 
-    main article#article-hidden,  main article#article-hidden2{
+    main article.article-hidden,  main article.article-hidden2{
         display:none;
     }
 }
@@ -505,7 +506,7 @@ main section.button-beginning .inicio{
         width: 55%;
     }
 
-    main article#article-hidden,  main article#article-hidden2{
+    main article.article-hidden,  main article.article-hidden2{
         display:none;
     }
 
@@ -519,11 +520,11 @@ main section.button-beginning .inicio{
 //    MEDIA QUERIES PC             //
 /***********************************/
 @media (min-width: 1460px) {
-    main article#article-hidden{
+    main article.article-hidden{
         display:flex;
     }
 
-    main article#article-hidden2{
+    main article.article-hidden2{
         display:none;
     }
 }
@@ -532,7 +533,7 @@ main section.button-beginning .inicio{
 //    MEDIA QUERIES PC             //
 /***********************************/
 @media (min-width: 1670px) {
-    main article#article-hidden2{
+    main article.article-hidden2{
         display:flex;
     }
 }
