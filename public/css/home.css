@@ -1,5 +1,6 @@
 /* @import url(//db.onlinewebfonts.com/c/1bbe3460b053c4f1d67d1f1afecdaa76?family=DIN);
 @import url(nav-barD2.css);
+
 @import url(stylesFooter.css); */
 
 @import "./fonts.css";
@@ -7,8 +8,7 @@
 @import "./navBar.css";
 @import "./navBarMobile.css";
 @import "./sliderStartBanner.css";
-@import "./articles.css";
-@import "./buttonStart.css";
+@import "./filterAside.css";
 @import "./footer.css";
 @import "./category-buttons.css";
 
@@ -26,7 +26,7 @@
     --rosado-pastel: #f6c7af;
     --crema:#f3f0d7;
     --blanco: #ffffff;
-    --dorado: rgb(202, 172, 4);
+    --dorado: #81670f;
 
     --navBarHeight: 50px;
     --marginBottom:10px;
@@ -160,7 +160,12 @@ main div.imp-buttons-hidden{
     display: none;
 }
 
-main  section.trends, section.suggest, section.moreNew, section.ebooks{
+main section.show-filter section.sectionChange, section.suggest, section.moreNew, section.ebooks{
+    background-color: var(--backgroundSections);
+    text-align: left;
+}
+
+section.trends, section.results{
     background-color: var(--backgroundSections);
     text-align: left;
 }
@@ -188,6 +193,25 @@ main section{
     border-radius: 4px;
 }
 
+main div.show-filter{
+    display: flex;
+    border-bottom: 2px solid var(--dorado);
+}
+
+main div.show-filter a{
+    font-family: "DIN", sans-serif;
+    text-decoration: none;
+    color: var(--fontColors);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 1em;
+    padding: 5px;
+    border: 1px solid white;
+    box-shadow: 3px 3px 15px 3px rgba(0,0,0,0.24);
+    border-radius: 4px;
+}
+
 /************************************
 //        BOOKS SECTIONS           //
 /***********************************/
@@ -203,6 +227,130 @@ main div.products{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+/************************************
+//    BOOKS 1ST SECTIONS           //
+/***********************************/
+main article{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    max-width: 200px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+/********** BOOKS HIDDEN************/
+main article img{
+    max-width: 160px;
+    max-height: 200px;
+}
+
+main article div.main-article{
+    width: 90%;
+    margin: 18px 0px;
+    padding: 15px;
+    border-top: 4px solid var(--dorado);
+}
+
+main article div.calificacionComentario{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+}
+
+main article p.calificacion{
+    color: var(--dorado);
+    text-align: left;
+    font-size: 15px;
+}
+
+main article p.name{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+} 
+
+main article#article-hidden, main article#article-hidden2{
+    display: none;
+}
+/********** LOGO IN BOOKS ************/
+main article div.article-logo{
+    position: relative;
+    left: 90%;
+    top: -40px;
+}
+
+main article div.article-logo i{
+    display: block;
+    font-size: 20px;
+    margin-top: 5px;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--dorado);
+    color: var(--dorado);
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--backgroundSections);
+}
+
+main article:hover i{
+    transform: rotate(90deg);
+}
+
+main article i{
+    transition: transform 0.5s;
+}
+
+main article form{
+    margin-top: 10px;
+}
+
+/********** BUTTON BOOKS ************/
+main form.product-button button, .inicio{
+    width: 90%;
+    height: 33px;
+    font-family: "DIN", sans-serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    box-sizing: border-box;
+    border: 2px solid var(--rojo);
+    border-radius: 2px;
+    background-color: var(--rojo);
+    color: var(--blanco);
+    cursor: pointer;
+    box-shadow: 3px 5px var(--sombra-boton);
+}
+
+main article div.main-article button:hover{
+    background: var(--rojo-oscuro);
+    border: 2px solid var(--rojo-oscuro);
+}
+
+/********** BUTTON INICIO * ************/
+main section.button-beginning{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
+    margin-top: 10px;
+} 
+
+main section.button-beginning .inicio{
+    min-width: 150px;
+    font-size: 0.8em;
+    font-weight: 700;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 150px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -239,7 +387,7 @@ main div.products{
         width: 30%;
     }
 
-    main article.article-hidden,  main article.article-hidden2{
+    main article#article-hidden,  main article#article-hidden2{
         display:none;
     }
 
@@ -317,7 +465,7 @@ main div.products{
         margin-right: 5%;
     }
 
-    main article.article-hidden,  main article.article-hidden2{
+    main article#article-hidden,  main article#article-hidden2{
         display:none;
     }
 }
@@ -335,7 +483,7 @@ main div.products{
         font-size: 13px;
     }
 
-    main article.article-hidden,  main article.article-hidden2{
+    main article#article-hidden,  main article#article-hidden2{
         display:none;
     }
 }
@@ -357,7 +505,7 @@ main div.products{
         width: 55%;
     }
 
-    main article.article-hidden,  main article.article-hidden2{
+    main article#article-hidden,  main article#article-hidden2{
         display:none;
     }
 
@@ -371,11 +519,11 @@ main div.products{
 //    MEDIA QUERIES PC             //
 /***********************************/
 @media (min-width: 1460px) {
-    main article.article-hidden{
+    main article#article-hidden{
         display:flex;
     }
 
-    main article.article-hidden2{
+    main article#article-hidden2{
         display:none;
     }
 }
@@ -384,7 +532,7 @@ main div.products{
 //    MEDIA QUERIES PC             //
 /***********************************/
 @media (min-width: 1670px) {
-    main article.article-hidden2{
+    main article#article-hidden2{
         display:flex;
     }
 }

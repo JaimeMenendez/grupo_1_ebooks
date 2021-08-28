@@ -30,7 +30,3 @@
 - Partial de footer creado.
 - Partial de footer agregado a todas las vistas.
 - Se solucionaron algunos errores y ahora es posible visualizar los detalles del producto agregado con /producto/agregarLibro en la url /producto/1  donde el número es el id que se le asignó al producto que introdujo el usuario
-
-# 26-8-2021
-- Se agregó Eslint al proyecto para promover que todo el código sea estándar. 
-- Se trabajó en los estilos de la vista Agregar/Editar Libro creando la clase errores para validar los formularios y animando los inputs inspirándonos en Material Design de google.
