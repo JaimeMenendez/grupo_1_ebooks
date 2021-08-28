@@ -160,13 +160,9 @@ main div.imp-buttons-hidden{
     display: none;
 }
 
-main  section.trends, section.suggest, section.moreNew, section.ebooks{
+main  section.books{
     background-color: var(--backgroundSections);
     text-align: left;
-}
-
-section.trends h3, section.suggest h3{
-    padding-top: 10px;
 }
 
 main section.separador{
@@ -205,6 +201,9 @@ main div.products{
     justify-content: space-around;
 }
 
+/************************************
+//    MEDIA QUERIES DARK MODE      //
+/***********************************/
 @media (prefers-color-scheme: dark) {
     :root {
       --navBarHeight: 50px;
@@ -263,10 +262,6 @@ main div.products{
     body{
         background-color: #ebebeb;;
     }
-
-    main div.show-filter{
-        display: none;
-    }
     
     main article{
         width: 15%;
@@ -284,23 +279,10 @@ main div.products{
         width: 80%;
     }
 
-    main #separador-hidden{
-        display: none;
-    }
-
     main section.separador{
         display: none;
     }
 
-    main div.sectionChange{
-        display: grid;
-        grid-template-columns: 30% 70%;
-    }
-
-    main div.imp-buttons-hidden{
-        display: inline;
-        grid-column: 1/3;
-    }
     main section#important-buttons-pc{
         border: 4px solid var(--sombra-boton);
         box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.24);
@@ -316,13 +298,6 @@ main div.products{
         font-size: 14px;
     }
 
-    main section.results{
-        grid-column: 2/3;
-        width: 96.5%;
-        margin-left: 5px;
-        margin-right: 5%;
-    }
-
     main article.article-hidden,  main article.article-hidden2{
         display:none;
     }
@@ -332,11 +307,7 @@ main div.products{
 //    MEDIA QUERIES PC             //
 /***********************************/
 @media (min-width: 1024px) {
-    main div.sectionChange{
-        display: grid;
-        grid-template-columns: 25% 75%;
-    }
-
+  
     main article p.calificacion{
         font-size: 13px;
     }
@@ -350,11 +321,7 @@ main div.products{
 //    MEDIA QUERIES PC             //
 /***********************************/
 @media (min-width: 1280px) {
-    main div.sectionChange{
-        display: grid;
-        grid-template-columns: 20% 80%;
-    }
-
+   
     main article p.calificacion{
         font-size: 15px;
     }
@@ -367,16 +334,13 @@ main div.products{
         display:none;
     }
 
-    main section.results{
-        margin-left: 15px;
-        margin-right: 4%;
-    }
 }
 
 /************************************
 //    MEDIA QUERIES PC             //
 /***********************************/
 @media (min-width: 1460px) {
+
     main article.article-hidden{
         display:flex;
     }
@@ -390,6 +354,7 @@ main div.products{
 //    MEDIA QUERIES PC             //
 /***********************************/
 @media (min-width: 1670px) {
+    
     main article.article-hidden2{
         display:flex;
     }

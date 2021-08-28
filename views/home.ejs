@@ -81,7 +81,6 @@
           </script>
         </div>
       </div>
-
     </div>
   </nav>
 
@@ -92,85 +91,41 @@
   <%- include('./partials/sliderStartBanner') %>
 
 <main>
-    <!--Botones de categorias principales-->
-    <%- include('./partials/importantButtons') %>
+  
+  <!--Botones de categorias principales-->
+  <%- include('./partials/importantButtons') %>
 
-    <div class="books-upper-left">
-        <!--Tendencia en libros-->
-        <section class="trends">
-            <h3><%= seccion.tendencias.titulo %></h3>
-            <div class="products">
-                <% seccion.tendencias.articulos.forEach((articulo,n) => { %>
-                    <% if(!articulo.nuevo){ %>
-                        <% articulo.n = n %>
-                        <%- include('./partials/articles', articulo) %>
-                    <% } %>
-                  <% }) %>
-            </div>
-        </section>
+  <!--Tendencia en libros-->
+  <%- include('./partials/section', seccion.tendencias) %>
 
-        <!--Banner promocional-->
-        <%- include('./partials/promotionalBanner')%>
+  <!--Banner promocional-->
+  <%- include('./partials/promotionalBanner')%>
 
-        <!--Libros recomendados-->
-        <section class="suggest">
-            <h3 id="recomendados"><%= seccion.recomendados.titulo %></h3>
-            <div class="products">
-                <% seccion.recomendados.articulos.forEach((articulo,n) => { %>
-                    <% if(!articulo.nuevo){ %>
-                      <% articulo.n = n%>
-                      <%- include('./partials/articles', articulo) %>
-                    <% } %>
-                <% }) %>
-            </div>
-        </section>
-    </div>
+  <!--Libros recomendados-->
+  <%- include('./partials/section', seccion.recomendados) %>
 
-    <!--Categoria de libros-->
-    <section class="important-buttons" id="important-buttons-pc">
-        <% categorias.categoriasDeBotones.forEach((boton,n) => { %>
-            <% boton.n = n %>
-            <%- include('./partials/categoryButtons', boton) %>
-        <% }) %>
-    </section>
+  <!--Categoria de libros-->
+  <section class="important-buttons" id="important-buttons-pc">
+      <% categorias.categoriasDeBotones.forEach((boton,n) => { %>
+          <% boton.n = n %>
+          <%- include('./partials/categoryButtons', boton) %>
+      <% }) %>
+  </section>
 
-    <!--Parte inferior de Libros. No hay división horizontal-->
-    <!--Lo más nuevo-->
-    <section class="moreNew">
-        <h3 id="nuevos"><%= seccion.nuevos.titulo %></h3>
-        <div class="products" id="products-lower">
-            <% seccion.nuevos.articulos.forEach((articulo,n) => { %>
-                <% if(articulo.nuevo){ %>
-                  <% articulo.n = n %>
-                  <%- include('./partials/articles', articulo) %>
-                <% } %>
-              <% }) %>
-        </div>
-    </section>
+  <!--Lo más nuevo-->
+  <%- include('./partials/section', seccion.nuevos) %>
 
-    <section class="banner-books" id="banner-hidden2">
-        <img src="./images/bannerDescuentos.jpg" alt="promotions">
-    </section>
-    
-    <!--Libros electrónicos-->
-    <section class="ebooks">
-        <h3 id="nuevos"><%= seccion.ebooks.titulo %></h3>
-        <div class="products" id="products-lower">
-            <% seccion.ebooks.articulos.forEach((articulo,n) => { %>
-                <% if(!articulo.nuevo){ %>
-                  <% articulo.n = n %>
-                  <%- include('./partials/articles', articulo) %>
-                <% } %>
-              <% }) %>
-        </div>
-    </section>
+  <!--Banner promocional-->
+  <%- include('./partials/promotionalBanner')%>
 
-    <section class="separador">
-        <img src="./images/separador.jpg" alt="promotions">
-    </section> 
+  <!--Libros electrónicos-->
+  <%- include('./partials/section', seccion.ebooks) %>
 
-    <--Botón que retorna al incio de la página -->
-    <%- include('./partials/botonAInicio') %>
+  <!--Separador bonito -->
+  <%- include('./partials/separador') %>
+
+  <!--Botón que retorna al incio de la página -->
+  <%- include('./partials/botonAInicio') %>
 
 </main>
 
