@@ -1,0 +1,111 @@
+/************************************
+//    BOOKS 1ST SECTIONS           //
+/***********************************/
+main article{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    max-width: 200px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+/***********************************
+//         BOOKS HIDDEN            //
+/***********************************/
+main article img{
+    width: 90%;
+    max-width: 160px;
+    max-height: 200px;
+}
+
+main article div.main-article{
+    width: 90%;
+    margin: 18px 0px;
+    padding: 15px;
+    border-top: 4px solid var(--dorado);
+}
+
+main article div.calificacionComentario{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+}
+
+main article p.calificacion{
+    color: var(--dorado);
+    text-align: left;
+    font-size: 15px;
+}
+
+main article p.name{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+} 
+
+main article.article-hidden, main article.article-hidden2{
+    display: none;
+}
+
+/***********************************
+//        LOGO IN BOOKS            //
+/***********************************/
+main article div.article-logo{
+    position: relative;
+    left: 90%;
+    top: -40px;
+}
+
+main article div.article-logo i{
+    display: block;
+    font-size: 20px;
+    margin-top: 5px;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--dorado);
+    color: var(--dorado);
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--backgroundSections);
+}
+
+main article:hover i{
+    transform: rotate(90deg);
+}
+
+main article i{
+    transition: transform 0.5s;
+}
+
+main article form{
+    margin-top: 10px;
+}
+
+/************************************
+//         BUTTONS BOOKS           //
+/***********************************/
+
+main form.product-button button, .inicio{
+    width: 90%;
+    height: 33px;
+    font-family: "DIN", sans-serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    box-sizing: border-box;
+    border: 2px solid var(--rojo);
+    border-radius: 2px;
+    background-color: var(--rojo);
+    color: var(--blanco);
+    cursor: pointer;
+    box-shadow: 3px 5px var(--sombra-boton);
+}
+
+main article div.main-article button:hover{
+    background: var(--rojo-oscuro);
+    border: 2px solid var(--rojo-oscuro);
+}

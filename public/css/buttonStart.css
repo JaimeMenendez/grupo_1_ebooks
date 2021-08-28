@@ -1,0 +1,23 @@
+/************************************
+//         BUTTON INICIO           //
+/***********************************/
+
+main section.button-beginning{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
+    margin-top: 10px;
+} 
+
+main section.button-beginning .inicio{
+    min-width: 150px;
+    font-size: 0.8em;
+    font-weight: 700;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 150px;
+}

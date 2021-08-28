@@ -1,5 +1,6 @@
 /* @import url(//db.onlinewebfonts.com/c/1bbe3460b053c4f1d67d1f1afecdaa76?family=DIN);
 @import url(nav-barD2.css);
+
 @import url(stylesFooter.css); */
 
 @import "./fonts.css";
@@ -7,6 +8,7 @@
 @import "./navBar.css";
 @import "./navBarMobile.css";
 @import "./sliderStartBanner.css";
+@import "./filterAside.css";
 @import "./articles.css";
 @import "./buttonStart.css";
 @import "./footer.css";
@@ -26,7 +28,7 @@
     --rosado-pastel: #f6c7af;
     --crema:#f3f0d7;
     --blanco: #ffffff;
-    --dorado: rgb(202, 172, 4);
+    --dorado: rgb(202, 172, 4);;
 
     --navBarHeight: 50px;
     --marginBottom:10px;
@@ -156,17 +158,9 @@ main{
     background-color: var(--backgroundColor);
 }
 
-main div.imp-buttons-hidden{
-    display: none;
-}
-
-main  section.trends, section.suggest, section.moreNew, section.ebooks{
+main section.show-filter div.sectionChange, section.results, section.moreNew, section.ebooks{
     background-color: var(--backgroundSections);
     text-align: left;
-}
-
-section.trends h3, section.suggest h3{
-    padding-top: 10px;
 }
 
 main section.separador{
@@ -185,6 +179,25 @@ main section{
     margin-bottom: 5px;
     border: 4px solid var(--sombra-boton);
     box-shadow: 3px 5px 15px 5px rgba(0,0,0,0.24);
+    border-radius: 4px;
+}
+
+main div.show-filter{
+    display: flex;
+    border-bottom: 2px solid var(--dorado);
+}
+
+main div.show-filter a{
+    font-family: "DIN", sans-serif;
+    text-decoration: none;
+    color: var(--fontColors);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 1em;
+    padding: 5px;
+    border: 1px solid white;
+    box-shadow: 3px 3px 15px 3px rgba(0,0,0,0.24);
     border-radius: 4px;
 }
 
