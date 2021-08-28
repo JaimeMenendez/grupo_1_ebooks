@@ -21,7 +21,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/flaticon/flaticon.css">
     <link rel="stylesheet" href="css/normalize.min.css" />
-    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/searchBook.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     
     <script defer src="./js/darkModeScript.js"></script>
@@ -73,16 +73,11 @@
         </div>
     </nav>
   
-    <section class="searchBar-mobile">
-        <form action="./searchBook" class="sbMobile">
-            <input type="text" id="search" name="search" placeholder=" Buscar por autor, título, categoría...">
-            <button type="submit"><i><i class="fas fa-search"></i></i></button>
-        </form>
-    </section>
+    <!--Barra de navegación para móviles-->
+    <%- include('./partials/navBarMobile') %>
 
-    <section class="banner" id="startBanner">
-        <img src="./images/bannerSeparador.jpg" alt="promotions">
-    </section>
+    <!--Banner promocional con animaciones-->
+    <%- include('./partials/sliderStartBanner') %>
 
     <main>
         <div class="sectionChange">
@@ -307,7 +302,7 @@
         <!--Parte inferior de Libros. No hay división horizontal-->
         <section class="banner-books" id="banner-hidden2">
             <img src="./images/bannerDescuentos.jpg" alt="promotions">
-        </section>   
+        </section>  
 
         <!--Lo más nuevo-->
         <section class="moreNew">
@@ -337,9 +332,7 @@
             <img src="./images/separador.jpg" alt="separador">
         </section> 
 
-        <section class="button-beginning" id="beginning">
-            <a href="#startBanner" class="inicio">INICIO</a>
-        </section>
+        <%- include('./partials/botonAInicio') %>
     </main>
 
 <%- include('./partials/footer') %>

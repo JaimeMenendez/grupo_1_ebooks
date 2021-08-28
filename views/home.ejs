@@ -85,7 +85,10 @@
     </div>
   </nav>
 
+  <!--Barra de navegación para móviles-->
   <%- include('./partials/navBarMobile') %>
+
+  <!--Banner promocional con animaciones-->
   <%- include('./partials/sliderStartBanner') %>
 
 <main>
@@ -95,11 +98,12 @@
     <div class="books-upper-left">
         <!--Tendencia en libros-->
         <section class="trends">
-            <h3><%= nombreSeccion[0] %></h3>
+            <h3><%= seccion.tendencias.titulo %></h3>
             <div class="products">
-                <% articulos.forEach(articulo => { %>
+                <% seccion.tendencias.articulos.forEach((articulo,n) => { %>
                     <% if(!articulo.nuevo){ %>
-                    <%- include('./partials/articles', articulo) %>
+                        <% articulo.n = n %>
+                        <%- include('./partials/articles', articulo) %>
                     <% } %>
                   <% }) %>
             </div>
@@ -110,11 +114,12 @@
 
         <!--Libros recomendados-->
         <section class="suggest">
-            <h3 id="recomendados"><%= nombreSeccion[1] %></h3>
+            <h3 id="recomendados"><%= seccion.recomendados.titulo %></h3>
             <div class="products">
-                <% articulos.forEach(articulo => { %>
+                <% seccion.recomendados.articulos.forEach((articulo,n) => { %>
                     <% if(!articulo.nuevo){ %>
-                    <%- include('./partials/articles', articulo) %>
+                      <% articulo.n = n%>
+                      <%- include('./partials/articles', articulo) %>
                     <% } %>
                 <% }) %>
             </div>
@@ -123,18 +128,21 @@
 
     <!--Categoria de libros-->
     <section class="important-buttons" id="important-buttons-pc">
-        <% categorias.forEach(categoria => { %>
-            <%- include('./partials/categoryButtons', categoria) %>
+        <% categorias.categoriasDeBotones.forEach((boton,n) => { %>
+            <% boton.n = n %>
+            <%- include('./partials/categoryButtons', boton) %>
         <% }) %>
     </section>
+
     <!--Parte inferior de Libros. No hay división horizontal-->
     <!--Lo más nuevo-->
     <section class="moreNew">
-        <h3 id="nuevos"><%= nombreSeccion[2]%></h3>
+        <h3 id="nuevos"><%= seccion.nuevos.titulo %></h3>
         <div class="products" id="products-lower">
-            <% articulos.forEach(articulo => { %>
+            <% seccion.nuevos.articulos.forEach((articulo,n) => { %>
                 <% if(articulo.nuevo){ %>
-                <%- include('./partials/articles', articulo) %>
+                  <% articulo.n = n %>
+                  <%- include('./partials/articles', articulo) %>
                 <% } %>
               <% }) %>
         </div>
@@ -146,11 +154,12 @@
     
     <!--Libros electrónicos-->
     <section class="ebooks">
-        <h3 id="nuevos"><%= nombreSeccion[3]%></h3>
+        <h3 id="nuevos"><%= seccion.ebooks.titulo %></h3>
         <div class="products" id="products-lower">
-            <% articulos.forEach(articulo => { %>
+            <% seccion.ebooks.articulos.forEach((articulo,n) => { %>
                 <% if(!articulo.nuevo){ %>
-                <%- include('./partials/articles', articulo) %>
+                  <% articulo.n = n %>
+                  <%- include('./partials/articles', articulo) %>
                 <% } %>
               <% }) %>
         </div>
@@ -160,9 +169,9 @@
         <img src="./images/separador.jpg" alt="promotions">
     </section> 
 
-    <section class="button-beginning" id="beginning">
-        <a href="#startBanner" class="inicio">INICIO</a>
-    </section>
+    <--Botón que retorna al incio de la página -->
+    <%- include('./partials/botonAInicio') %>
+
 </main>
 
 <%- include('./partials/footer') %>
