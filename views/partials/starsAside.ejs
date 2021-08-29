@@ -1,0 +1,17 @@
+<div class="index">
+    <h3><%=titulo%></h3>
+    <% subcategorias.forEach(clasificacion => {%>
+        <div class="calificacionComentario" id="<%=clasificacion.idClass%>">
+            <p class=calificacion>
+                <% for(let i=0; i < 5; i++){ %>
+                    <% if(i < clasificacion.opinion) {%>
+                        <i class="fas fa-star"></i>
+                    <% } else{ %>    
+                        <i class="far fa-star"></i> 
+                    <% } %>
+                <% } %>
+            </p>
+            <p class="tituloComentario">o más</p>
+        </div>
+    <% }) %>
+</div>

@@ -75,5 +75,59 @@
             "icono": "fas fa-chart-line",
             "idClass": "economia"
         }
-    ]
+    ],
+
+    "categoriasCheckbox":[
+        {
+            "titulo": "Libros por idioma",
+            "categoria": "idioma",
+            "valor": ["ingles","español","frances","italiano"],
+            "subcategorias":[" Inglés"," Español"," Francés"," Italiano"]
+        },
+
+        {
+            "titulo": "Libros por formato",
+            "categoria": "formato",
+            "valor": ["ebook","blanda","dura"],
+            "subcategorias":[" Ebooks"," Pasta blanda"," Pasta dura"]
+        },
+
+        {
+            "titulo": "Promociones",
+            "categoria": "promociones",
+            "valor": ["promociones"],
+            "subcategorias":[" Promociones"]
+        }
+    ],
+
+    "opinionesClientes":{
+        "titulo": "Opiniones de los clientes",
+        "subcategorias": [
+            {
+                "opinion": 4,
+                "idClass": "first"
+            },
+
+            {
+                "opinion": 3,
+                "idClass": ""
+            },
+
+            {
+                "opinion": 2,
+                "idClass": ""
+            },
+            
+            {
+                "opinion": 1,
+                "idClass": ""
+            }
+        ]
+    },
+
+    "precios": {
+        "titulo": "Precio",
+        "subcategorias": ["Hasta $50","$50 a $100","$100 a $200","$200 a $300","$300 a $500","$500 a más"]
+    }
+
 }

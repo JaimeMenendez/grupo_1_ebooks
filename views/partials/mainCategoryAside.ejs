@@ -1,11 +1,11 @@
-<h3 id="title-subcategory"><%=categoriaGeneral.categoria%></h3>
+<h3 id="title-subcategory"><%=categoria%></h3>
 <ul class="subcategory-books">
-    <% categoriaGeneral.subcategorias.forEach(subcategoria => { %>
+    <% subcategorias.forEach(subcategoria => { %>
         <li><a href="">"<%=subcategoria%>"</a></li>
     <% }) %>  
 </ul>
 <ul class="subcategory-books-pc">
-    <% categoriaGeneral.subcategorias.forEach(subcategoria => {%>
+    <% subcategorias.forEach(subcategoria => {%>
         <li><a id="subcategory" href=""><%=subcategoria%></a></li>
     <% }) %>
 </ul>

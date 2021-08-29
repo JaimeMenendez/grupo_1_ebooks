@@ -96,122 +96,21 @@
                 <aside id="subjects">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeBarVer()"> &times cerrar</a>
                     <div class="index" id="indexFirst">
-                        <%- include('./partials/mainCategoryAside',categorias) %>
+                        <%- include('./partials/mainCategoryAside',categorias.categoriaGeneral) %>
+                        <!--Falta poner algo aquí-->
                     </div>
-                    <div class="index">
-                        <h3>Libros por Idioma</h3>
-                        <ul class="idiomBooks">
-                            <li>
-                                <a href="#">
-                                    <label><input type="checkbox" name="idioma" value="ingles" checked> Inglés</label>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <label><input type="checkbox" name="idioma" id="idioma" value="español"> Español</label>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <label><input type="checkbox" name="idioma" id="idioma" value="frances"> Francés</label>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <label><input type="checkbox" name="idioma" id="idioma" value="Italiano"> Italiano</label>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-            
-                        <div class="index">
-                            <h3>Libros por Formato</h3>
-                            <ul class="formatBooks">
-                                <li>
-                                    <a href="#">
-                                        <label><input type="checkbox" name="formato" id="formato" value="ebook" checked> Ebooks</label>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <label><input type="checkbox" name="formato" id="formato" value="blanda"> Pasta blanda</label>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <label><input type="checkbox" name="formato" id="formato" value="dura"> Pasta dura</label>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="index">
-                            <h3>Promociones</h3>
-                            <ul class="formatBooks">
-                                <li>
-                                    <a href="#">
-                                        <label><input type="checkbox" name="promociones" id="promociones" value="promociones" checked> Promociones</label>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-            
-                        <div class="index">
-                            <h3>Opinión de los clientes</h3>
-                            <div class="calificacionComentario" id="first">
-                                <p class=calificacion>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </p>
-                                <p class="tituloComentario">o más</p>
-                            </div>
-                            <div class="calificacionComentario">
-                                <p class=calificacion>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </p>
-                                <p class="tituloComentario">o más</p>
-                            </div>
-                            <div class="calificacionComentario">
-                                <p class=calificacion>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </p>
-                                <p class="tituloComentario">o más</p>
-                            </div>
-                            <div class="calificacionComentario">
-                                <p class=calificacion>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </p>
-                                <p class="tituloComentario">o más</p>
-                            </div>
-                        </div>
-                        <div class="index">
-                            <h3>Precio</h3>
-                            <ul class="priceBooks">
-                                <li><a href="">Hasta $50</a></li>
-                                <li><a href="">$50 a $100</a></li>
-                                <li><a href="">$100 a $200</a></li>
-                                <li><a href="">$200 a $300</a></li>
-                                <li><a href="">$300 a $500</a></li>
-                                <li><a href="">$500 a más</a></li>
-                            </ul>
-                        </div>
-                </aside>
-                
+                        
+                        <!--Campos de checkbox: idioma, formato, promociones-->
+                        <% categorias.categoriasCheckbox.forEach(checkbox => { %>
+                            <%- include('./partials/checkboxAside',checkbox) %>
+                        <% }) %>
+                        
+                        <!--Opinión de los clientes-->
+                        <%- include('./partials/starsAside',categorias.opinionesClientes)%>
+                        
+                        <!--Precio-->
+                        <%- include('./partials/priceAside',categorias.precios) %>
+                </aside>  
             </div>
 
             <!--Resultado de la búsqueda-->

@@ -1,0 +1,14 @@
+<div class="index">
+    <h3><%=titulo%></h3>
+    <ul class="idiomBooks">
+        <li>
+            <% for(let i=0; i< valor.length; i++){ %>
+                <% if (i==0) { %>
+                    <a href="#"><label><input type="checkbox" name="<%= categoria %>" id="<%= categoria %>" value="<%= valor[i] %>" checked> <%=subcategorias[i]%></label></a><br>
+                <% } else { %>
+                    <a href="#"><label><input type="checkbox" name="<%= categoria %>" id="<%= categoria %>" value="<%= valor[i] %>"> <%=subcategorias[i]%></label></a><br>
+                <% } %>
+            <% } %>
+        </li>
+    </ul>
+</div>
