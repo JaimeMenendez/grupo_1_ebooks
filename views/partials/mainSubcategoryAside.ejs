@@ -1,0 +1,8 @@
+<%categoriasDeBotones.forEach(boton => { %>
+    <h3 id="title-subcategory"><%=boton.categoria%></h3>
+    <ul class="subcategory-books-pc">
+        <% boton.subcategorias.forEach(subcategoria => {%>
+            <li><a id="subcategory" href=""><%=subcategoria%></a></li>
+        <% }) %>
+    </ul>
+<% }) %>
