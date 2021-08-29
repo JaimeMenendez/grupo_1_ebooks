@@ -21,7 +21,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": false,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
     
             {
@@ -43,7 +44,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": false,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
 
             {
@@ -65,7 +67,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": false,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
 
             {
@@ -87,7 +90,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": false,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
     
             {
@@ -109,7 +113,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": true,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
     
             {
@@ -131,7 +136,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": true,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
     
             {
@@ -153,7 +159,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": true,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
     
             {
@@ -175,7 +182,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": true,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             } 
         ]
     },
@@ -201,7 +209,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": false,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
     
             {
@@ -223,7 +232,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": false,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
 
             {
@@ -245,7 +255,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": false,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
     
             {
@@ -267,7 +278,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": false,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
     
             {
@@ -289,7 +301,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": true,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
     
             {
@@ -311,7 +324,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": true,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
     
             {
@@ -333,7 +347,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": true,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
     
             {
@@ -355,7 +370,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": true,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             } 
         ]
     },
@@ -381,7 +397,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": false,
-                "nuevo": true
+                "nuevo": true,
+                "idClass": ""
             },
     
             {
@@ -403,7 +420,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": false,
-                "nuevo": true
+                "nuevo": true,
+                "idClass": ""
             },
 
             {
@@ -425,7 +443,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": false,
-                "nuevo": true
+                "nuevo": true,
+                "idClass": ""
             },
     
             {
@@ -447,7 +466,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": false,
-                "nuevo": true
+                "nuevo": true,
+                "idClass": ""
             },
     
             {
@@ -469,7 +489,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": true,
-                "nuevo": true
+                "nuevo": true,
+                "idClass": ""
             },
     
             {
@@ -491,7 +512,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": true,
-                "nuevo": true
+                "nuevo": true,
+                "idClass": ""
             },
     
             {
@@ -513,7 +535,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": true,
-                "nuevo": true
+                "nuevo": true,
+                "idClass": ""
             },
     
             {
@@ -535,7 +558,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": true,
-                "nuevo": true
+                "nuevo": true,
+                "idClass": ""
             } 
         ]
     },
@@ -561,7 +585,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": false,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
     
             {
@@ -583,7 +608,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": false,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
 
             {
@@ -605,7 +631,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": false,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
     
             {
@@ -627,7 +654,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": false,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
     
             {
@@ -649,7 +677,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": true,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
     
             {
@@ -671,7 +700,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": true,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
     
             {
@@ -693,7 +723,8 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": true,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
             },
     
             {
@@ -715,7 +746,380 @@
                 "detalleLibro": " ",
                 "detalleAutor": " ",
                 "hidden": true,
-                "nuevo": false
+                "nuevo": false,
+                "idClass": ""
+            } 
+        ]
+    },
+    "resultados": {
+        "titulo": "Resultados de la búsqueda...",
+        "articulos":[
+            {
+                "nombreLibro": "La guía de Java",
+                "categoria": "Programación",
+                "subcategoria": "Java",
+                "idioma": "Inglés",
+                "formato": "ebook",
+                "precioEbook": 16.20,
+                "precioBook": 29.29,
+                "autor": "Alberto González",
+                "portada": "./images/480.jpeg",
+                "editorial": "O'Reilly",
+                "isbn": "9780596101992",
+                "paginas": "400",
+                "year": "2020",
+                "clasificacion": 3,
+                "promociones": true,
+                "detalleLibro": " ",
+                "detalleAutor": " ",
+                "hidden": false,
+                "nuevo": false,
+                "idClass": "products"
+            },
+    
+            {
+                "nombreLibro": "Extreme C",
+                "categoria": "Programación",
+                "subcategoria": "C",
+                "idioma": "Inglés",
+                "formato": "Pasta blanda",
+                "precioEbook": 16.20,
+                "precioBook": 39.45,
+                "autor": "Kamran Amini",
+                "portada": "./images/book1.png",
+                "editorial": "Packt",
+                "isbn": "9780596101992",
+                "paginas": "400",
+                "year": "2020",
+                "clasificacion": 4,
+                "promociones": true,
+                "detalleLibro": " ",
+                "detalleAutor": " ",
+                "hidden": false,
+                "nuevo": false,
+                "idClass": "products"
+            },
+
+            {
+                "nombreLibro": "Credd-Platafform Development with Qt 6 and Modern C++",
+                "categoria": "Programación",
+                "subcategoria": "C++",
+                "idioma": "Inglés",
+                "formato": "Pasta blanda",
+                "precioEbook": 16.20,
+                "precioBook": 59.86,
+                "autor": "Kamran Amini",
+                "portada": "./images/book2.png",
+                "editorial": "Packt",
+                "isbn": "9780596101992",
+                "paginas": "400",
+                "year": "2020",
+                "clasificacion": 5,
+                "promociones": true,
+                "detalleLibro": " ",
+                "detalleAutor": " ",
+                "hidden": false,
+                "nuevo": false,
+                "idClass": "products"
+            },
+    
+            {
+                "nombreLibro": "Keycloak - Identity and Access Management for Moder Applications",
+                "categoria": "Programación",
+                "subcategoria": "Servicios",
+                "idioma": "Inglés",
+                "formato": "Pasta blanda",
+                "precioEbook": 16.20,
+                "precioBook": 39.86,
+                "autor": "Kamran Amini",
+                "portada": "./images/book3.jpeg",
+                "editorial": "Packt",
+                "isbn": "9780596101992",
+                "paginas": "400",
+                "year": "2020",
+                "clasificacion": 3,
+                "promociones": true,
+                "detalleLibro": " ",
+                "detalleAutor": " ",
+                "hidden": false,
+                "nuevo": false,
+                "idClass": "products"
+            },
+    
+            {
+                "nombreLibro": "La guía de Java",
+                "categoria": "Programación",
+                "subcategoria": "Java",
+                "idioma": "Inglés",
+                "formato": "ebook",
+                "precioEbook": 16.20,
+                "precioBook": 29.29,
+                "autor": "Alberto González",
+                "portada": "./images/book4.png",
+                "editorial": "O'Reilly",
+                "isbn": "9780596101992",
+                "paginas": "400",
+                "year": "2020",
+                "clasificacion": 3,
+                "promociones": true,
+                "detalleLibro": " ",
+                "detalleAutor": " ",
+                "hidden": true,
+                "nuevo": false,
+                "idClass": "products"
+            },
+    
+            {
+                "nombreLibro": "Extreme C",
+                "categoria": "Programación",
+                "subcategoria": "C",
+                "idioma": "Inglés",
+                "formato": "Pasta blanda",
+                "precioEbook": 16.20,
+                "precioBook": 39.45,
+                "autor": "Kamran Amini",
+                "portada": "./images/book1.png",
+                "editorial": "Packt",
+                "isbn": "9780596101992",
+                "paginas": "400",
+                "year": "2020",
+                "clasificacion": 4,
+                "promociones": true,
+                "detalleLibro": " ",
+                "detalleAutor": " ",
+                "hidden": true,
+                "nuevo": false,
+                "idClass": "products"
+            },
+    
+            {
+                "nombreLibro": "La guía de Java",
+                "categoria": "Programación",
+                "subcategoria": "Java",
+                "idioma": "Inglés",
+                "formato": "ebook",
+                "precioEbook": 16.20,
+                "precioBook": 29.29,
+                "autor": "Alberto González",
+                "portada": "./images/book4.png",
+                "editorial": "O'Reilly",
+                "isbn": "9780596101992",
+                "paginas": "400",
+                "year": "2020",
+                "clasificacion": 3,
+                "promociones": true,
+                "detalleLibro": " ",
+                "detalleAutor": " ",
+                "hidden": true,
+                "nuevo": false,
+                "idClass": "products"
+            },
+    
+            {
+                "nombreLibro": "Extreme C",
+                "categoria": "Programación",
+                "subcategoria": "C",
+                "idioma": "Inglés",
+                "formato": "Pasta blanda",
+                "precioEbook": 16.20,
+                "precioBook": 39.45,
+                "autor": "Kamran Amini",
+                "portada": "./images/book1.png",
+                "editorial": "Packt",
+                "isbn": "9780596101992",
+                "paginas": "400",
+                "year": "2020",
+                "clasificacion": 4,
+                "promociones": true,
+                "detalleLibro": " ",
+                "detalleAutor": " ",
+                "hidden": true,
+                "nuevo": false,
+                "idClass": "products"
+            },
+            
+            {
+                "nombreLibro": "La guía de Java",
+                "categoria": "Programación",
+                "subcategoria": "Java",
+                "idioma": "Inglés",
+                "formato": "ebook",
+                "precioEbook": 16.20,
+                "precioBook": 29.29,
+                "autor": "Alberto González",
+                "portada": "./images/480.jpeg",
+                "editorial": "O'Reilly",
+                "isbn": "9780596101992",
+                "paginas": "400",
+                "year": "2020",
+                "clasificacion": 3,
+                "promociones": true,
+                "detalleLibro": " ",
+                "detalleAutor": " ",
+                "hidden": false,
+                "nuevo": false,
+                "idClass": "products"
+            },
+    
+            {
+                "nombreLibro": "Extreme C",
+                "categoria": "Programación",
+                "subcategoria": "C",
+                "idioma": "Inglés",
+                "formato": "Pasta blanda",
+                "precioEbook": 16.20,
+                "precioBook": 39.45,
+                "autor": "Kamran Amini",
+                "portada": "./images/book1.png",
+                "editorial": "Packt",
+                "isbn": "9780596101992",
+                "paginas": "400",
+                "year": "2020",
+                "clasificacion": 4,
+                "promociones": true,
+                "detalleLibro": " ",
+                "detalleAutor": " ",
+                "hidden": false,
+                "nuevo": false,
+                "idClass": "products"
+            },
+
+            {
+                "nombreLibro": "Credd-Platafform Development with Qt 6 and Modern C++",
+                "categoria": "Programación",
+                "subcategoria": "C++",
+                "idioma": "Inglés",
+                "formato": "Pasta blanda",
+                "precioEbook": 16.20,
+                "precioBook": 59.86,
+                "autor": "Kamran Amini",
+                "portada": "./images/book2.png",
+                "editorial": "Packt",
+                "isbn": "9780596101992",
+                "paginas": "400",
+                "year": "2020",
+                "clasificacion": 5,
+                "promociones": true,
+                "detalleLibro": " ",
+                "detalleAutor": " ",
+                "hidden": false,
+                "nuevo": false,
+                "idClass": "products"
+            },
+    
+            {
+                "nombreLibro": "Keycloak - Identity and Access Management for Moder Applications",
+                "categoria": "Programación",
+                "subcategoria": "Servicios",
+                "idioma": "Inglés",
+                "formato": "Pasta blanda",
+                "precioEbook": 16.20,
+                "precioBook": 39.86,
+                "autor": "Kamran Amini",
+                "portada": "./images/book3.jpeg",
+                "editorial": "Packt",
+                "isbn": "9780596101992",
+                "paginas": "400",
+                "year": "2020",
+                "clasificacion": 3,
+                "promociones": true,
+                "detalleLibro": " ",
+                "detalleAutor": " ",
+                "hidden": false,
+                "nuevo": false,
+                "idClass": "products"
+            },
+    
+            {
+                "nombreLibro": "La guía de Java",
+                "categoria": "Programación",
+                "subcategoria": "Java",
+                "idioma": "Inglés",
+                "formato": "ebook",
+                "precioEbook": 16.20,
+                "precioBook": 29.29,
+                "autor": "Alberto González",
+                "portada": "./images/book4.png",
+                "editorial": "O'Reilly",
+                "isbn": "9780596101992",
+                "paginas": "400",
+                "year": "2020",
+                "clasificacion": 3,
+                "promociones": true,
+                "detalleLibro": " ",
+                "detalleAutor": " ",
+                "hidden": true,
+                "nuevo": false,
+                "idClass": "products"
+            },
+    
+            {
+                "nombreLibro": "Extreme C",
+                "categoria": "Programación",
+                "subcategoria": "C",
+                "idioma": "Inglés",
+                "formato": "Pasta blanda",
+                "precioEbook": 16.20,
+                "precioBook": 39.45,
+                "autor": "Kamran Amini",
+                "portada": "./images/book1.png",
+                "editorial": "Packt",
+                "isbn": "9780596101992",
+                "paginas": "400",
+                "year": "2020",
+                "clasificacion": 4,
+                "promociones": true,
+                "detalleLibro": " ",
+                "detalleAutor": " ",
+                "hidden": true,
+                "nuevo": false,
+                "idClass": "products"
+            },
+    
+            {
+                "nombreLibro": "La guía de Java",
+                "categoria": "Programación",
+                "subcategoria": "Java",
+                "idioma": "Inglés",
+                "formato": "ebook",
+                "precioEbook": 16.20,
+                "precioBook": 29.29,
+                "autor": "Alberto González",
+                "portada": "./images/book4.png",
+                "editorial": "O'Reilly",
+                "isbn": "9780596101992",
+                "paginas": "400",
+                "year": "2020",
+                "clasificacion": 3,
+                "promociones": true,
+                "detalleLibro": " ",
+                "detalleAutor": " ",
+                "hidden": true,
+                "nuevo": false,
+                "idClass": "products"
+            },
+    
+            {
+                "nombreLibro": "Extreme C",
+                "categoria": "Programación",
+                "subcategoria": "C",
+                "idioma": "Inglés",
+                "formato": "Pasta blanda",
+                "precioEbook": 16.20,
+                "precioBook": 39.45,
+                "autor": "Kamran Amini",
+                "portada": "./images/book1.png",
+                "editorial": "Packt",
+                "isbn": "9780596101992",
+                "paginas": "400",
+                "year": "2020",
+                "clasificacion": 4,
+                "promociones": true,
+                "detalleLibro": " ",
+                "detalleAutor": " ",
+                "hidden": true,
+                "nuevo": false,
+                "idClass": "products"
             } 
         ]
     }

@@ -1,5 +1,5 @@
 <!--Cualquier que le quiera meter a un partial desde la vista lo meto como objeto literal ejm: articulo.n = n-->
-<article  onclick="window.location='./description';" class=<%= locals.n==6 ? "article-hidden": locals.n==7 ? "article-hidden2": "" %>>
+<article  onclick="window.location='./description';" id="<%=idClass%>" class=<%= locals.n==6 ? "article-hidden": locals.n==7 ? "article-hidden2": "" %>>
     <img class="image-product" src="<%= portada %>" alt="book">
     <div class="main-article">
         <% if(nuevo) { %>

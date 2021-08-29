@@ -2,7 +2,6 @@ const path = require('path')
 const book = require('./libro.json')
 const carrito = require('./carrito.json')
 const seccion = require('./secciones.json')
-const seccionSB = require('./seccionesSB.json')
 const categorias = require('./categorias.json')
 
 const controller = {
@@ -30,7 +29,7 @@ const controller = {
     res.sendFile(htmlPath)
   },
   sendSearchPage: (req, res) => {
-    res.render('searchBook', seccionSB)
+    res.render('searchBook', { seccion: seccion, categorias: categorias })
   },
   sendPageNotFound: (req, res) => {
     res.render('error404')

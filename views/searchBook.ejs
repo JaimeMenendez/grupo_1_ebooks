@@ -84,46 +84,10 @@
             <!--Categoria de libros-->
             <div class="imp-buttons-hidden">
                 <section class="important-buttons" id="important-buttons-pc">
-                    <div id="programacion" onclick="myFunction(this.id)" class="identifier5" class="class1">
-                        <a href="#"><i class="fas fa-laptop-code"></i></a>
-                        <p>Programación</p>
-                    </div>
-                    <div id="electronica" onclick="myFunction(this.id)" class="identifier5">
-                        <a href="#"><i class="fas fa-car-battery"></i></a>
-                        <p>Electrónica</p>
-                    </div>
-                    <div id="intArtificial" onclick="myFunction(this.id)" class="identifier5">
-                        <a href="#"><i class="fas fa-brain"></i></a>
-                        <p>Int Artificial</p>
-                    </div>
-                    <div id="redes" onclick="myFunction(this.id)" class="identifier5">
-                        <a href="#"><i class="fas fa-network-wired"></i></a>
-                        <p>Redes</p>
-                    </div>
-                    <div id="mecanica" onclick="myFunction(this.id)" class="identifier5">
-                        <a href="#"><i class="fas fa-cogs"></i></a>
-                        <p>Mecánica</p>
-                    </div>
-                    <div id="medicina" onclick="myFunction(this.id)" class="identifier5">
-                        <a href="#"><i class="fas fa-stethoscope"></i></a>
-                        <p>Medicina</p>
-                    </div>
-                    <div id="quimica" onclick="myFunction(this.id)" class="identifier5">
-                        <a href="#"><i class="fas fa-atom"></i></a>
-                        <p>Química</p>
-                    </div>
-                    <div id="biotecnologia1" onclick="myFunction(this.id)" class="identifier5">
-                        <a href="#"><i class="fas fa-leaf"></i></a>
-                        <p>Biotecnología</p>
-                    </div>
-                    <div id="biotecnologia2" onclick="myFunction(this.id)" class="identifier5" id="category-book-hidden">
-                        <a href="#"><i class="fas fa-leaf"></i></a>
-                        <p>Biotecnología</p>
-                    </div>
-                    <div id="biotecnologia3" onclick="myFunction(this.id)"class="identifier5" id="category-book-hidden">
-                        <a href="#"><i class="fas fa-leaf"></i></a>
-                        <p>Biotecnología</p>
-                    </div>
+                    <% categorias.categoriasDeBotones.forEach((boton,n) => { %>
+                        <% boton.n = n %>
+                        <%- include('./partials/categoryButtons', boton) %>
+                    <% }) %>
                 </section>
             </div>
 
@@ -280,58 +244,28 @@
             </div>
 
             <!--Resultado de la búsqueda-->
-            <section class="results">
-                <div class="show-filter">
-                    <a href="#" onclick="openBarVer()"> &nbsp
-                        Filtrar búsqueda </a>
-                </div>
-                <h3><%= nombreSeccion[4]%></h3>
-                <div class="products">
-                    <% for(let i=0; i < 2; i++) {%>
-                        <% articulos.forEach(articulo => { %>
-                            <% articulo.id = articulosId[1]; %>
-                            <% if((!articulo.nuevo)){ %>
-                                <%- include('./partials/articles', articulo);%>
-                            <% } %>
-                        <% }) %>
-                    <% } %>
-                </div>
-            </section>
+            <div class="show-filter">
+                <a href="#" onclick="openBarVer()"> &nbsp
+                    Filtrar búsqueda </a>
+            </div>
+            <!--Resultados de la búsqueda-->
+            <%- include('./partials/section', seccion.resultados) %>
+            
         </div>
 
-        <!--Parte inferior de Libros. No hay división horizontal-->
-        <section class="banner-books" id="banner-hidden2">
-            <img src="./images/bannerDescuentos.jpg" alt="promotions">
-        </section>  
+        <!--Banner promocional-->
+        <%- include('./partials/promotionalBanner')%> 
 
         <!--Lo más nuevo-->
-        <section class="moreNew">
-            <h3 id="nuevos"><%= nombreSeccion[2]%></h3>
-            <div class="products" id="products-lower">
-                <% articulos.forEach(articulo => { %>
-                    <% if(articulo.nuevo){ %>
-                        <%- include('./partials/articles', articulo) %>
-                    <% } %>
-                <% }) %>
-            </div>
-        </section>
+        <%- include('./partials/section', seccion.nuevos) %>
 
         <!--Libros electrónicos-->
-        <section class="ebooks">
-            <h3 id="nuevos"><%= nombreSeccion[3]%></h3>
-            <div class="products" id="products-lower">
-                <% articulos.forEach(articulo => { %>
-                    <% if(!articulo.nuevo){ %>
-                        <%- include('./partials/articles', articulo) %>
-                    <% } %>
-                <% }) %>
-            </div>
-        </section>
+        <%- include('./partials/section', seccion.ebooks) %>
 
-        <section class="separador">
-            <img src="./images/separador.jpg" alt="separador">
-        </section> 
+        <!--Separador bonito -->
+        <%- include('./partials/separador') %>    
 
+        <!--Botón que retorna al incio de la página -->
         <%- include('./partials/botonAInicio') %>
     </main>
 
