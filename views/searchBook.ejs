@@ -81,6 +81,7 @@
 
     <main>
         <div class="sectionChange">
+            
             <!--Categoria de libros-->
             <div class="imp-buttons-hidden">
                 <section class="important-buttons" id="important-buttons-pc">
@@ -95,37 +96,7 @@
                 <aside id="subjects">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeBarVer()"> &times cerrar</a>
                     <div class="index" id="indexFirst">
-                        <h3 id="title-subcategory">Categorías por área</h3>
-                        <ul class="subcategory-books">
-                            <li><a href="">Medicina</a></li>
-                            <li><a href="">Programación</a></li>
-                            <li><a href="">Electrónica</a></li>
-                            <li><a href="">Matemáticas</a></li>
-                            <li><a href="">Física</a></li>
-                            <li><a href="">Mecánica</a></li>
-                            <li><a href="">Economía y Finanzas</a></li>
-                            <li><a href="">Telecomunicaciones</a></li>
-                            <li><a href="">Redes</a></li>
-                            <li><a href="">Química</a></li>
-                            <li><a href="">Biotecnología</a></li>
-                            <li><a href="">Estadísticas</a></li>
-                            <li><a href="">Microbiología</a></li>
-                            <li><a href="">Inglés</a></li>
-                            <li><a href="">Electromecánica</a></li>
-                            <li><a href="">Civil</a></li>
-                        </ul>
-                        <ul class="subcategory-books-pc">
-                            <li><a id="subcategory" href="">Inteligencia artifical</a></li>
-                            <li><a id="subcategory" href="">Desarrollo web</a></li>
-                            <li><a id="subcategory" href="">Amazon web services</a></li>
-                            <li><a id="subcategory" href="">Deep learning</a></li>
-                            <li><a id="subcategory" href="">Conceptos básicos</a></li>
-                            <li><a id="subcategory" href="">Ciencias de datos</a></li>
-                            <li><a id="subcategory" href="">Pandas y numpy</a></li>
-                            <li><a id="subcategory" href="">Django</a></li>
-                            <li><a id="subcategory" href="">Flsk</a></li>
-                            <li><a id="subcategory" href="">Raspberry Pi</a></li>
-                        </ul>
+                        <%- include('./partials/mainCategoryAside',categorias) %>
                     </div>
                     <div class="index">
                         <h3>Libros por Idioma</h3>

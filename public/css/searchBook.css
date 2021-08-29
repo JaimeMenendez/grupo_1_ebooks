@@ -380,8 +380,8 @@ main section.banner-books img{
         font-size: 15px;
     }
 
-    main div.products article#products{
-        width: 55%;
+    main article#products{
+        width: 85%;
     }
 
     main article.article-hidden,  main article.article-hidden2{
