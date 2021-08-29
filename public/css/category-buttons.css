@@ -188,9 +188,6 @@ main div.identifier5:hover{
     transform: scale(0.9);
     }
 
-main #category-book-hidden{
-    display: none;
-}
 /************************************
 //    MEDIA QUERIES MOBILE         //
 /***********************************/
@@ -214,10 +211,6 @@ main #category-book-hidden{
 
     main div.identifier5{
         width:45%;
-    }
-
-    main #category-book-hidden{
-        display: none;
     }
 }
 
@@ -249,10 +242,11 @@ main #category-book-hidden{
     }
 
     main div.identifier5{
-        width:23%;
+        width:18%;
     }
-    main section.important-buttons #category-book-hidden{
-        display: none;
+
+    main div.identifier5 p{
+        font-size: 15px;
     }
 }
 
@@ -260,8 +254,9 @@ main #category-book-hidden{
 //    MEDIA QUERIES PC             //
 /***********************************/
 @media (min-width: 900px) {
-    main section.important-buttons #category-book-hidden{
-        display: inline;
+
+    main div.identifier5 p{
+        font-size: 17px;
     }
 }
 /************************************
