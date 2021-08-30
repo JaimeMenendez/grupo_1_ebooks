@@ -6,7 +6,8 @@ const categorias = require('./categorias.json')
 
 const controller = {
   sendHome: (req, res) => {
-    res.render('home', { seccion: seccion, categorias: categorias })
+    let buttonPressed = 'home'
+    res.render('home', { seccion: seccion, categorias: categorias, buttonPressed: buttonPressed })
   },
   sendPoliticaDePrivacidad: (req, res) => {
     res.render('documento', { documento: './partials/politica' })
@@ -29,7 +30,12 @@ const controller = {
     res.sendFile(htmlPath)
   },
   sendSearchPage: (req, res) => {
-    res.render('searchBook', { seccion: seccion, categorias: categorias })
+    let buttonPressed = 'searchBook'
+    res.render('searchBook', { seccion: seccion, categorias: categorias, buttonPressed: buttonPressed })
+  },
+  sendCategoryButtons: (req, res) => {
+    let buttonPressed = categorias.categoriasDeBotones.find(boton => boton.idClass === req.params.buttonId)
+    res.render('searchBook', { seccion: seccion, categorias: categorias, buttonPressed: buttonPressed })
   },
   sendPageNotFound: (req, res) => {
     res.render('error404')

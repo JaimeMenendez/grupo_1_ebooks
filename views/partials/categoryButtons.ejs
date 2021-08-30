@@ -1,4 +1,11 @@
-<div class="identifier5" id="<%=idClass%>" onclick="myFunction(this.id)" >
-    <a href="#"><i class="<%=icono%>"></i></a>
-    <p><%=categoria%></p>
-</div>
+<% if(locals.m) {%>
+    <div class="identifier5" id="<%=idClass%>" onclick="myFunction(this.id)" >
+        <a href="../searchBook/<%=idClass%>"><i class="<%=icono%>"></i></a>
+        <p><%=categoria%></p>
+    </div>
+<% } else { %>
+    <div class="identifier5" id="<%=idClass%>" onclick="myFunction(this.id)" >
+        <a href="#"><i class="<%=icono%>"></i></a>
+        <p><%=categoria%></p>
+    </div>
+<% } %>

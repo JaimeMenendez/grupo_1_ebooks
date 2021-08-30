@@ -87,6 +87,9 @@
                 <section class="important-buttons" id="important-buttons-pc">
                     <% categorias.categoriasDeBotones.forEach((boton,n) => { %>
                         <% boton.n = n %>
+                        <% if (buttonPressed !== undefined) { %>
+                            <% boton.m = false %>
+                        <% } %>
                         <%- include('./partials/categoryButtons', boton) %>
                     <% }) %>
                 </section>
@@ -96,7 +99,11 @@
                 <aside id="subjects">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeBarVer()"> &times cerrar</a>
                     <div class="index" id="indexFirst">
-                        <%- include('./partials/mainCategoryAside',categorias.categoriaGeneral) %>                        
+                        <% if (buttonPressed === 'searchBook') { %>
+                            <%- include('./partials/mainCategoryAside',categorias.categoriaGeneral) %>
+                        <% } else { %>
+                            <%- include('./partials/mainCategoryAside', buttonPressed) %>
+                        <% } %>                        
                     </div>
                         
                         <!--Campos de checkbox: idioma, formato, promociones-->
