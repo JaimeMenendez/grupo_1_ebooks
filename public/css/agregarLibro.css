@@ -1,197 +1,236 @@
 @import "./fonts.css";
 @import "./logoStyle.css";
 @import "./navBar.css";
+@import "./navBarMobile.css";
 @import "./footer.css";
-@import "./comentarios.css";
+@import "./category-buttons.css";
 
-:root {
-    --azul-morado-oscuro: #2d2f8e;
-    --azul-morado-claro: #585dba;
-    --verde-pastel-oscuro: #44979c;
-    --verde-pastel-claro: #89cab4;
-    --azul-gris-oscuro: #202020;
-    --oscuro: #56575e;
-    --azul-oscuro: #14213D;
-    --rojo: #ea4533;
-    --rojo-oscuro: #c0392b;
-    --naranja-pastel: #f4ae62;
-    --rosado-pastel: #f6c7af;
-    --crema:#f3f0d7;
-    --blanco: #ffffff;
-    --dorado: #81670f;
+:root{
+  --focusColor : #6969fc;
+  --errorColor: #cc0033;
+  --inputColor: rgb(75, 72, 72);
 
   --navBarHeight: 50px;
-  --marginBottom:10px;
-  --borderRadius:5px;
-  --borderColor: #383737;
-
-  --sectionBackground: white;
-  --backgroundColor: #e2e1e0;
-  --backgroundSections:white;
-
-  --navBarBackground:rgb(255, 255, 255);
-  --fontColors:#2e2e2e;
-
-  /* Buttons */
-  --buttonHeight:35px;
-  --buttonBorderRadio: 2px;
-
-  --buttonColor:#EA4533;
-  --buttonColorHover:#c0392b;
-   --fontColorButtons: #eaebf1;
-
-   /* White Buttons */
-
-   --whiteButtonsFontColor: #2e2e2e;
-   --whiteButtonsBackground:white;
-
-   --footerBackground: #2d2f8e;
-   --footerFontColor: #eaebf1;
-   --inputBackground:rgb(255, 255, 255);
-
-}
-
+    --marginBottom:10px;
+    --borderRadius:5px;
+  
+    --backgroundColor: #e2e1e0;
+    --backgroundSections:white;
+  
+    --fontColors:#2e2e2e;
+    --navBarBackground:rgb(255, 255, 255);
+  
+    /* Buttons */
+    --buttonHeight:35px;
+    --buttonBorderRadio: 2px;
+    --buttonFontColor:#ecf0f1;
+    --buttonColor:#EA4533;
 
   
+     /* List */
+    --fontListColor:#56575e;;
+    --fontIndexTitleColor: #56575e;
+  
+    /* Price */
+    --priceColor:#EA4533;
+  
+    /* Margin Between Containers */
+    --separation:5px;
+  
+    --footerBackground: #2d2f8e;
+    --footerFontColor: #eaebf1;
+}
 
-/* ========================================================= */
-/*                     Button Style                          */
-/* ========================================================= */
 body {
     font-family: "Roboto", sans-serif;
     color:var(--fontColors);
     background-color: var(--sectionBackground);
 }
-.btn.red {
-    background-color: #e74c3c;
-  }
-  
-  .btn.red:hover, .btn.red:focus {
-    background-color: #c0392b;
-  }
-  
-  .btn {
-    font-weight: bold;
-    display: block;
-    margin: 10px auto;
-    padding: 0; 
-    border-width: 0;
-    outline: none;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
-    color: var(--fontColorButtons);
-    transition: background-color .3s;
-    cursor: pointer;
-  }
-  
-  .btn.red {
-    background-color: var(--buttonColor);
-  }
-  
-  .btn.red:hover, .btn.red:focus {
-    background-color: #c0392b;
-  }
-
-  #separadorTop{
-    margin-bottom: 0;
-  }
-
-  #separadorBottom{
-    margin-top: -4px;
-    margin-bottom: -5px;
-  }
 
 form.addBooks{
-    margin-top: 70px;
-    width:95%;
-    margin:auto;
-    display: flex;
-    flex-direction: column;
+  text-align: center;
 }
 
 form.addBooks h2{
-  margin-bottom:5px;
+  text-align: left;
 }
-h1.pageTitle{
-    margin-top: 70px;
-    font-weight: 500;
+
+.pageTitle{
+  text-align: center;
+  margin-top: 70px;
 }
+
 
 #portadaImg{
-    background-image: url("../images/Logo_2.1.png");
-    background-size:160px 250px;
-    background-color: #dad6d6;
-    background-repeat: no-repeat;
-    background-position: center;
-    width:240px;
-    height: 300px;
-    margin-bottom: 10px;
-    display: inline-block;
+  height: 280px;
+  width: 230px;
+  background-color: gray;
+  margin: auto;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Formato de los Inputs */
+.container {
+  display: inline-block;
+  margin: 10px 0;
+  width: 90vw;
+    
+}
+
+.select{
+  position: relative;
+  width: 150px;
+  margin: auto;
+  padding-left: 25px;
+  
+}
+
+
+.container .inputContainer{
+  position: relative; 
+  display: flex; 
+  justify-content: center;
+}
+
+.inputContainer label, .select label{
+  position: absolute;
+  font-size: 1rem;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--backgroundSections);
+  color: var(--fontColors);
+  padding: 0 0.3rem;
+  margin: 0 0.5rem;
+  transition: .1s ease-out;
+  transform-origin: left top;
+  pointer-events: none;
+  transition: all 0.25s ease-in-out;
+}
+.inputContainer input{
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid var(--inputColor);
+  border-radius: 5px;  
+  padding: 1rem 0.7rem;
+  color: var(--fontColors);
+  width:fit-content;
+  height: 10px;
+  transition: all 0.25s ease-in-out;
+  width: 100%;
+  background-color: var(--backgroundSections);
+}
+
+.inputContainer input:focus, select:focus{
+  border-color: var(--focusColor);
+  box-shadow: 0 0 5px var(--focusColor);
+  border: 1px solid var(--focusColor);  
+}
+
+.inputContainer input:focus + label, select:focus + label{
+  color: var(--focusColor);
+  top: 0;
+  transform: translateY(-60%) scale(.9);
+}
+
+.inputContainer input:not(:placeholder-shown) + label,select:not(:placeholder-shown) + label{
+  top: 0;
+  transform: translateY(-60%) scale(.9);
+}
+
+.container .numberContainer{ 
+display: inline-block;
+  width: 150px;
+
 }
 
 
 
-
-form.addBooks .textInput{
-    border: 1px solid var(--borderColor);
-    border-style: solid;
-    border-radius: 5px;
-    width: 80%;
-    margin: 0.2rem 0;
-    max-width: 450px;
-    height: 30px;
-    background-color: var(--inputBackground);
-    color: var(--fontColors);
-    object-fit:contain;
-   
-  }
-
-  form.addBooks label{
-      display: flex;
-      flex-direction: column;
-      justify-content:center;
-      align-items: center;
-      margin-bottom: 20px;
-  }
-
-
-.agregar, .borrar{
-    height: 40px;
-    width: 80%;
-    font-size: 18px;
+/* SELECT STYLES */
+select{
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid var(--inputColor);
+  border-radius: 5px;  
+  padding: 0.5rem 0.7rem;
+  width: 150px;
+  height: 50px;
+  background-color: white;
+  color: var(--inputColor);
+  background-color: var(--backgroundSections);
+  color: var(--fontColors)
 }
 
-.agregar{
-    background-color: #2D2F8E;
+select option{
+  background-color: var(--backgroundSections);
+  color: var(--fontColors)
 }
 
-.agregar:hover{
-    background-color: #1a1b52;
+.container .select .select-label{
+  margin-left: 35px;
 }
 
-form.addBooks .oneLine{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* ERRORES */
+.inputContainer .error-message {
+  display: none;
+}
+
+.error label{
+  background-color:#fce4e4;
+  color: var(--errorColor);
+}
+
+.error-message {
+  color: var(--errorColor);
+  display: inline-block;
+  font-size: 12px;
+  line-height: 15px;
+  margin: 5px 0 0;
+} 
+
+.error label {
+  color: var(--errorColor);
+}
+
+.error input[type=text], .error input[type=number] {
+  background-color: #fce4e4;
+  border: 1px solid var(--errorColor);
+  outline: none;
+}
+
+.error .error-message {
+  display: inline-block;
+}
+
+.error input:focus, .error select:focus{
+  border-color: var(--errorColor); 
+  background-color: white; 
+} 
+
+.error input:focus + label, .error select:focus + label{
+  color: var(--errorColor);
+  background-color: white;
+  top: 0;
+  transform: translateY(-50%) scale(.9);
 }
 
 
-.uploadFile p{
+
+/* FILE UPLOAD */
+.uploadFile{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+.uploadFile label{
   margin: 0;
+  margin-left: 10px;
 }
 
-form.addBooks label{
-font-size: 18px;
-font-weight: bold;
-}
-
-form.addBooks input{
-  font-size: 18px;
-  margin-top: 5px;
-  padding-left: 6px;
-  }
-
-form.addBooks uploadFile{
+form.addBooks .uploadFile{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -202,9 +241,8 @@ form.addBooks uploadFile{
   display: none;
 }
 
-.uploadFile input + label{
+.uploadFile input + label.btn{
   -webkit-text-size-adjust: 100%;
-  font-family: Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-align: center;
   box-sizing: border-box;
@@ -220,97 +258,190 @@ form.addBooks uploadFile{
   padding: 0.625rem 1.25rem;
   color: #f1e5e6;
   background-color: #e74c3c;
+  border-radius: 5px;  
+  margin-left: 0;
 }
 
-input[type=number],select{
-  width: 100px;
-  height: 30px;
-  font-size: 20px;
-  text-align: center;
-  color: var(--fontColors);
-  background-color:var(--inputBackground);
-  border: 1px solid var(--borderColor);
-  border-style: solid;
-  border-radius: 5px;
-
+.btn {
+  font-weight: bold;
+  display: block;
+  margin: 10px auto;
+  padding: 0; 
+  border-width: 0;
+  outline: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  color: var(--fontColorButtons);
+  transition: background-color .3s;
+  cursor: pointer;
+  max-width: 400px;
 }
 
-textarea{
-  color: var(--fontColors);
-  background-color:var(--inputBackground);
+.btn.red {
+  background-color: var(--buttonColor);
+  background-color: #e74c3c;
 }
 
-.botones{
-  margin: 30px 0;
-}
-
-input[type=text]:focus,input[type=text]:active{
-  border-color:dodgerBlue;
-  box-shadow:0 0 8px 0 dodgerBlue;
-}
-
-
-@media (min-width: 600px) {
-
-form.addBooks{
-  display:grid;
-  grid-template-columns: 50% 50%;
-}
-
-#detallesAutor{
-  grid-column: 1/3;
-  width: 100%;
-}
-
-.portadaDiv{
-  grid-row: 1/6;
-  align-self: center;
-  
-}
-
-form.addBooks .librosDetails,form.addBooks .autorDetails{
-  grid-column: 1/3;
-}
-
-form.addBooks .librosDetails h2,form.addBooks .autorDetails h2{
-  text-align: left;
-}
-.botones{
-  grid-column: 1/3;
-  text-align: center;
-  justify-self: center;
+.btn.red:hover, .btn.red:focus {
+  background-color: #c0392b;
 }
 
 .agregar, .borrar{
-  width: 400px;
-  margin-left: 20px;
-}
+  height: 40px;
+  width: 80%;
+  font-size: 18px;
+  max-width: 600px;
+  color: white;
 }
 
-@media (min-width: 1200px){
-  form.addBooks{
-    display:grid;
-    grid-template-columns: 30% 35% 35%;
-    max-width: 1310px;
-    margin: auto;
+.agregar{
+  background-color: #2D2F8E;
+  transition-duration: 0.5s;
+
+}
+
+.agregar:hover{
+background-color: #1a1b57;
+}
+
+.botones{
+  padding-bottom: 30px;
+  padding-top: 20px
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --navBarHeight: 50px;
+    --navBarBackground:rgb(41, 41, 41);
+    --searchBarColor: rgb(59, 57, 57);
+    --fontColors:#eaebf1;
+    --sectionBackground: #121212;
+    --backgroundColor: #121212;
+    --backgroundSections:#222222;
+
+    --whiteButtonsFontColor: #eaebf1;
+    --whiteButtonsBackground:rgb(59, 57, 57);
+    --footerBackground: rgb(41, 41, 41);
+  } 
+}
+
+
+
+@media (min-width: 481px) {
+ form.addBooks{
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+ .container{
+    width: 95%;
+    margin: 10px auto;
   }
 
-  form.addBooks .librosDetails,form.addBooks .autorDetails{
+  .tituloInput,.autorInput,.materiaInput,.editorialInput,.isnbInput,.autorDetails,.librosDetails{
+    grid-column: 1/3;
+  }
+
+  .yearInput{
+    grid-column: 1/3;
+  }
+
+  .botones{
+    grid-column: 1/3;
+  }
+  
+}
+
+@media (min-width: 768px) {
+  form.addBooks{
+    display: grid;
+    grid-template-columns: 30% 35% 35%;
+  }
+
+  #portadaImg{
+    grid-column: 1/2;
+    grid-row: 1/5;
+  }
+
+  .uploadFile{
+    grid-column: 1/2
+  }
+
+  .tituloInput{
+    grid-column: 2/4;
+    grid-row: 1/2;
+  }
+
+  .autorInput{
+    grid-column: 2/4;
+    grid-row: 2/3;
+  }
+
+  .materiaInput{
+    grid-column: 2/4;
+    grid-row: 3/4;
+  }
+
+  .editorialInput{
+    grid-column: 2/4;
+    grid-row: 4/5;
+  }
+  .isnbInput{
+    grid-column: 2/4;
+    grid-row: 5/6;
+  }
+
+  .container{
+    width: 95%;
+    margin: 12px auto;
+  }
+
+  .librosDetails, .autorDetails{
     grid-column: 1/4;
+    margin: 0 2.5%;
+  }
+
+  .yearInput{
+    grid-column: 3/4;
   }
 
   .botones{
     grid-column: 1/4;
-    text-align: center;
-    justify-self: center;
     display: flex;
-   justify-content:space-around
+    gap: 20px;
+    justify-content: space-between;
+    margin: 0 2.5%;
   }
 
-  .agregar, .borrar{
-    width: 400px;
-    margin-left: 20px;
 }
 
-  
+@media (min-width: 1024px) {
+  form.addBooks{
+    display: grid;
+    grid-template-columns: 25% 55% 20%;
+    max-width: 1500px;
+    margin:auto;
+  }
+
+  .tituloInput,.autorInput,.materiaInput,.editorialInput,.isnbInput,.autorDetails,.librosDetails{
+    grid-column: auto;
+    margin: auto;
+  }
+
+  .uploadFile{
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+  #portadaImg{
+    grid-column: 1/2;
+    grid-row: 1/5;
+  }
+
+  .isnbInput{
+    grid-column: 2/3;
+  }
+
+  .librosDetails, .autorDetails{
+    grid-column: 1/4;
+    margin: 0 2.5%;
+  }
+
 }

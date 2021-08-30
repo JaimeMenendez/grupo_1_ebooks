@@ -14,7 +14,8 @@
         referrerpolicy="origin"></script>
     <script>
         tinymce.init({
-            selector: 'textarea'
+            selector: 'textarea',
+          
         });
 
     </script>
@@ -82,28 +83,23 @@
 
     <h1 class="pageTitle"><i class="fas fa-folder-plus"></i>&nbsp Agregar Libro</h1>
 
+    <form class="addBooks" autocomplete="false" action="/producto/agregarLibro" method="POST" enctype="multipart/form-data">
 
-    <form class="addBooks" action="/producto/agregarLibro" method="POST" enctype="multipart/form-data">
-        <div class="portadaDiv">
-            <img src="" alt="portada" id="portadaImg">
+        <img src="" alt="portada" id="portadaImg">
 
-            <div class="uploadFile">
-                <input type="file" id="portada" name="portada" accept="image/*" multiple=false
-                    onchange="loadFile(event)" class="inputfile">
-                <label for="portada" class="btn red"><i class="fas fa-upload"></i>&nbsp Subir Portada </label>
-            </div>
+        <div class="uploadFile">
+            <input type="file" id="portada" name="portada" accept="image/*" multiple=false
+                onchange="loadFile(event)" class="inputfile">
+
+          
+            <label for="portada"  class="btn red"><i class="fas fa-upload"></i>&nbsp Subir Portada </label>
+            <label style="text-overflow: ellipsis;" id="nombreArchivo" ></label>
         </div>
-
-        <label>Título:<input class="textInput" type="text" name="nombre"></label>
-        <label>Materia: <input id="materia" class="textInput" type="text" name="materia"></label>
-        <label>Autor: <input class="textInput" id="autor" type="text" name="autor"></label>
-        <label>Editorial:<input class="textInput" id="editorial" type="text" name="editorial"> </label>
-        <label>ISBN:<input class="textInput" id="isnb" type="text" name="isbn"></label>
 
         <script>
             let loadFile = function (event) {
                 let output = document.getElementById('portadaImg');
-                let label = document.querySelector('.uploadFile label')
+                let label = document.querySelector('#nombreArchivo')
 
                 output.src = URL.createObjectURL(event.target.files[0]);
                 label.innerHTML = event.target.files[0].name
@@ -113,23 +109,86 @@
             };
         </script>
 
-        <label>Idioma:
-            <select name="idioma" id="idioma">
-                <option value="Inglés" selected>Inglés</option>
-                <option value="Español">Español</option>
-                <option value="Francés">Francés</option>
-                <option value="Italiano">Italiano</option>
-            </select>
-        </label>
 
 
-        <label>Precio del libro físico: <input id="precioBook" type="number" min="0" step="0.01"
-                name="precioBook"></label>
-        <label>Precio del ebook: <input id="preciEBook" type="number" min="0" step="0.01" name="precioEbook"></label>
+        <div class="container tituloInput">
+            <div class="inputContainer ">
+                <input type="text" placeholder=" " name="nombre">
+                <label>Título</label>
+                <div class="error-message"></div>
+            </div>
+        </div>
 
+        <div class="container autorInput">
+            <div class="inputContainer">
+                <input id="autor" placeholder=" " type="text" name="autor">
+                <label>Autor</label>
+                <div class="error-message"></div>
+            </div>
+        </div>
 
-        <label>Número de Páginas: <input type="number" id="paginas" name="paginas"></label>
-        <label>Año:<input type="number" id="year" min="1980" max="2021" step="1" name="year"></label>
+        <div class="container materiaInput">
+            <div class="inputContainer">
+                <input id="materia" placeholder=" " type="text" name="materia">
+                <label>Materia</label>
+                <div class="error-message"></div>
+            </div>
+        </div>
+
+        <div class="container editorialInput">
+            <div class="inputContainer ">
+                <input id="editorial" placeholder=" "  type="text" name="editorial">
+                <label>Editorial</label>
+                <div class="error-message"></div>
+            </div>
+        </div>
+
+        <div class="container isnbInput">
+            <div class="inputContainer">
+                <input id="isnb" type="text" placeholder=" " name="isbn">
+                <label>ISBN</label>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="inputContainer numberContainer">
+                <input id="precioBook" type="number" min="0" step="0.5" name="precioBook" placeholder=" ">
+                <label>Precio del Libro</label>
+            </div>
+        </div>
+
+        <div class="container selector">
+            <div class="select">
+                <select name="idioma" id="idioma" placeholder=" ">
+                    <option value="Inglés">Inglés</option>
+                    <option value="Español">Español</option>
+                    <option value="Francés">Francés</option>
+                    <option value="Italiano">Italiano</option>
+                </select>
+                <label class="select-label">Idioma</label>
+            </div>
+        </div>
+
+        <div class="container ebookprice">
+            <div class="inputContainer numberContainer">
+                <input id="precioEBook" type="number" min="0" step="0.5" placeholder=" " name="precioEbook">
+                <label>Precio del Ebook</label>
+            </div>
+        </div>
+
+        <div class="container pagesInput">
+            <div class="inputContainer numberContainer">
+                <input type="number" id="paginas" name="paginas" min= "1" placeholder=" ">
+                <label>Páginas</label>
+            </div>
+        </div>
+
+        <div class="container yearInput">
+            <div class="inputContainer numberContainer" >
+                <input type="number" id="year" min="1980" max="2021" step="1" name="year" placeholder=" ">
+                <label>Año</label>
+            </div>
+        </div>
 
 
         <div class="librosDetails">
@@ -148,8 +207,8 @@
             <input type="submit" class="btn agregar" value="Agregar libro">
             <input type="reset" class="btn red borrar" value="Borrar campos">
         </div>
-
     </form>
+
 
 <%- include('./partials/footer') %>
 
