@@ -17,7 +17,9 @@ const multerStorage = multer.diskStorage({
 })
 const uploadFile = multer({ storage: multerStorage })
 
+routerProducto.get('/editarLibro', productoController.editarLibroView)
 routerProducto.get('/agregarLibro', productoController.agregarLibroView)
 routerProducto.post('/agregarLibro', uploadFile.single('portada'), productoController.agregarLibro)
 routerProducto.get('/:id', productoController.sendProductoID)
+
 module.exports = routerProducto
