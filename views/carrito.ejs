@@ -6,64 +6,7 @@
 
 <body>
 
-    <nav>
-        <a href="/">
-            <div class="logoNavBar">
-                <div class="logoContainer">
-                    <div class="bloqueAzul"></div>
-                    <div class="bloqueVerde"></div>
-                    <div class="bloqueRojo"></div>
-                    <div class="bloqueNaranja"></div>
-                </div>
-                <p class="logoText"><span class="rojo">IN</span><span class="azul">SIDE</span><span
-                        class="verde">BOOKS</span>
-                </p>
-
-            </div>
-        </a>
-
-        <form class="searchBar" action="./searchBook">
-            <input class="btn" type="text" placeholder=" Buscar.." name="search">
-            <button class="btn red" type="submit"><i class="flaticon-magnifying-glass-1"></i></button>
-        </form>
-
-        <div class="menuButton">
-            <a href="/login"><i class="flaticon-profile-user"></i> &nbsp <span class="menu-label"> Mi
-                    Cuenta</span> </a>
-            <a href="/carrito"><i class="flaticon-shopping-cart"></i> &nbsp <span class="menu-label"> Mi
-                    Carrito</span></a>
-
-            <a href="#" onclick="openNav()"><i class="flaticon-list"></i> &nbsp <span class="menu-label">
-                    Menú</span> </a>
-
-            <div class="mySidenav" id="sideNav">
-                <div class="mySidenavlinks">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-                    <div>
-                        <input style="display: none;" type="checkbox" id="darkMode">
-                        <label for="darkMode">
-                            <span id="textoModoClaro"> <i class="far fa-moon"></i>&nbsp Modo Oscuro</span>
-                            <span id="textoModoOscuro"> <i class="far fa-sun"></i>&nbsp Modo Claro</span>
-                        </label>
-                    </div>
-
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                    <script>
-                        function openNav() {
-                            document.getElementById("sideNav").style.width = "250px";
-                        }
-
-                        function closeNav() {
-                            document.getElementById("sideNav").style.width = "0";
-                        }
-                    </script>
-                </div>
-            </div>
-
-        </div>
-    </nav>
+    <%- include('./partials/navBar') %>
 
     <main>
         <h2 class="carritoTitle"><i class="fas fa-shopping-cart"></i>&nbsp Mi Carrito</h2>

@@ -30,6 +30,9 @@
 - Partial de footer creado.
 - Partial de footer agregado a todas las vistas.
 - Se solucionaron algunos errores y ahora es posible visualizar los detalles del producto agregado con /producto/agregarLibro en la url /producto/1  donde el número es el id que se le asignó al producto que introdujo el usuario
+# 28-8-2021
+- Junta de equipo
 
 # 30-8-2021
+- navBar y navBar mobile partials en todas las views
 - Se agregó la versión tentativa oficial de Editar/Agregar producto
