@@ -1,77 +1,87 @@
-const subcategoryPython = ['Django', 'Flask', 'Pandas', 'Machine learning', 'Deep learning', '', '', '', '', '']
-const subcategoryElectronica = ['Electrónica de potencia', 'Análisis de circuitos CC', 'Análisis de circuitos CA', 'Electrónica digital', 'Semiconductores', 'Electrónica Industrial', 'Control', '', '', '']
-const subcategoryIntArtificial = ['Redes neuronales', 'Machine learning', 'Deep learning', 'Máquinas vectoriales', 'Análisis de PCA', 'Aprendizaje supervizado', 'Aprendizaje no supervizado', 'Clusttering', '', '']
-const subcategoryRedes = ['PAN', 'LAN', 'CAN', 'WLAN', 'WAN', 'MAN', 'SAN', 'GAN', '', '']
-const subcategoryMecanica = ['Propiedades mecánicas', 'Dinámica', 'Estática', 'Fluidos', 'Aire acondicionado', 'Máquinas eléctricas', 'Mecánica de materiales', 'Termodinámica', 'Mecánica automotriz', '']
-const subcategoryMedicina = ['Diabetes', 'Cardiología', 'Neurología', 'Epidemiología', 'Farmacología', 'Anestesiología', 'Oncología', 'Pediatría', 'Bacteriología', 'Microbiología']
-const subcategoryQuimica = ['Química orgánica', 'Química inorgánica', 'Polímeros', 'Estequiometría', 'Nuclear', 'Estado sólido', 'Organometálica', 'Forense', 'Ambiental', '']
-const subcategoryBiotecnologia = ['Bio1', 'Bio2', 'Bio3', 'Bio4', 'Bio5', 'Bio6', 'Bio7', 'Bio8', 'Bio9', 'Bio10']
-const subcategoryEstadistica = ['Mis', 'ojos', 'son', 'más', 'hermosos', 'cuando', 'lees', 'através', 'de', 'ellos']
-const subcategoryEconomia = ['InsideBooks', 'es', 'un', 'e-commerce', 'de', 'venta', 'de', 'libros', 'universitarios', '']
+const categoriasLibros = [
+  {
+    categoria: 'Programación',
+    subcategorias: ['Django', 'Flask', 'Pandas', 'Machine learning', 'Deep learning'],
+    icono: 'fas fa-laptop-code',
+    idClass: 'programacion'
+  },
 
-function myFunction (button_id) {
-  const prueba = document.querySelectorAll('#subcategory')
-  switch (button_id) {
-    case 'programacion':
-      document.getElementById('title-subcategory').innerHTML = 'Programación'
-      for (let i = 0; i <= prueba.length; i++) {
-        prueba[i].textContent = subcategoryPython[i]
-      }
-      break
-    case 'electronica':
-      document.getElementById('title-subcategory').innerHTML = 'Electrónica'
-      for (let i = 0; i <= prueba.length; i++) {
-        prueba[i].textContent = subcategoryElectronica[i]
-      }
-      break
-    case 'intArtificial':
-      document.getElementById('title-subcategory').innerHTML = 'Inteligencia Artificial'
-      for (let i = 0; i <= prueba.length; i++) {
-        prueba[i].textContent = subcategoryIntArtificial[i]
-      }
-      break
-    case 'redes':
-      document.getElementById('title-subcategory').innerHTML = 'Redes'
-      for (let i = 0; i <= prueba.length; i++) {
-        prueba[i].textContent = subcategoryRedes[i]
-      }
-      break
-    case 'mecanica':
-      document.getElementById('title-subcategory').innerHTML = 'Mecánica'
-      for (let i = 0; i <= prueba.length; i++) {
-        prueba[i].textContent = subcategoryMecanica[i]
-      }
-      break
-    case 'medicina':
-      document.getElementById('title-subcategory').innerHTML = 'Medicina'
-      for (let i = 0; i <= prueba.length; i++) {
-        prueba[i].textContent = subcategoryMedicina[i]
-      }
-      break
-    case 'quimica':
-      document.getElementById('title-subcategory').innerHTML = 'Química'
-      for (let i = 0; i <= prueba.length; i++) {
-        prueba[i].textContent = subcategoryQuimica[i]
-      }
-      break
-    case 'biotecnologia1':
-      document.getElementById('title-subcategory').innerHTML = 'Biotecnologia'
-      for (let i = 0; i <= prueba.length; i++) {
-        prueba[i].textContent = subcategoryBiotecnologia[i]
-      }
-      break
-    case 'biotecnologia2':
-      document.getElementById('title-subcategory').innerHTML = 'Estadística'
-      for (let i = 0; i <= prueba.length; i++) {
-        prueba[i].textContent = subcategoryEstadistica[i]
-      }
-      break
-    case 'biotecnologia3':
-      document.getElementById('title-subcategory').innerHTML = 'Economía'
-      for (let i = 0; i <= prueba.length; i++) {
-        prueba[i].textContent = subcategoryEconomia[i]
-      }
-      break
+  {
+    categoria: 'Electrónica',
+    subcategorias: ['Electrónica de potencia', 'Análisis de circuitos CC', 'Análisis de circuitos CA', 'Electrónica digital', 'Semiconductores', 'Electrónica Industrial', 'Control'],
+    icono: 'fas fa-car-battery',
+    idClass: 'electronica'
+  },
+
+  {
+    categoria: 'Int Artificial',
+    subcategorias: ['Redes neuronales', 'Machine learning', 'Deep learning', 'Máquinas vectoriales', 'Análisis de PCA', 'Aprendizaje supervizado', 'Aprendizaje no supervizado', 'Clusttering'],
+    icono: 'fas fa-brain',
+    idClass: 'intArtificial'
+  },
+
+  {
+    categoria: 'Redes',
+    subcategorias: ['Internet de las cosas', 'Redes neuronales', 'Ciberseguridad', 'Redes informáticas y seguridad', 'Redes infromáticas y hacking', 'Marketing', 'Marketing en redes sociales', 'Redes de computadoras'],
+    icono: 'fas fa-network-wired',
+    idClass: 'redes'
+  },
+
+  {
+    categoria: 'Mecánica',
+    subcategorias: ['Mecánica de materiales', 'Mecánica automotriz', 'Estática', 'Dinámica', 'Resistencia de materiales', 'Mecánica de fluidos', 'Mecanismos', 'Aire acondicionado', 'Estructuras de concreto', 'Termodinámica'],
+    icono: 'fas fa-cogs',
+    idClass: 'mecanica'
+  },
+
+  {
+    categoria: 'Medicina',
+    subcategorias: ['Diabetes', 'Cardiología', 'Neurología', 'Farmacología', 'Epidemiología', 'Anestesiología', 'Oncología', 'Pediatría', 'Bacteriología', 'Ginecología', 'Microbiología', 'Neurología'],
+    icono: 'fas fa-stethoscope',
+    idClass: 'medicina'
+  },
+
+  {
+    categoria: 'Química',
+    subcategorias: ['Química orgánica', 'Fotoquímica', 'Química inorgánica', 'Polímeros', 'Estequiometría', 'Catálisis', 'Química nuclear', 'Química forense', 'Fenómenos de transporte', 'Balance de masa y energía'],
+    icono: 'fas fa-atom',
+    idClass: 'quimica'
+  },
+
+  {
+    categoria: 'Biotecnología',
+    subcategorias: ['Ingeniería genética', 'Clonación', 'Enzimas de restricción', 'Productos biotecnológicos', 'Bioinformática', 'Bioníca', 'Biorremediación', 'Células madres', 'Órganos artificiales'],
+    icono: 'fas fa-leaf',
+    idClass: 'biotecnologia'
+  },
+
+  {
+    categoria: 'Estadística',
+    subcategorias: ['Estadística descriptica', 'Estadística inferencial', 'Análisis de datos', 'Estadística analítica', 'Medidas de biodiversidad', 'Estadística aplicada', 'Asociaciones de estadística', 'Leyes estadísticas'],
+    icono: 'fas fa-chart-pie',
+    idClass: 'estadistica'
+  },
+
+  {
+    categoria: 'Economía',
+    subcategorias: ['Ciencia económica', 'Contabilidad', 'Derecho económico', 'Econometría', 'Economía y medio ambiente', 'Monedas circulantes', 'Negocios', 'Inversiones en la bolsa', 'Unidades de cuenta', 'Macroeconomía', 'Microeconomía', 'Microeconomía'],
+    icono: 'fas fa-chart-line',
+    idClass: 'economia'
+  }
+]
+
+function myFunction (buttonId) {
+  const elementList = document.querySelectorAll('#subcategory')
+  const buttonPressed = categoriasLibros.find(categoria => categoria.idClass === buttonId)
+
+  document.getElementById('title-subcategory').innerHTML = buttonPressed.categoria
+
+  for (let i = 0; i < elementList.length; i++) {
+    elementList[i].textContent = ''
+  }
+
+  for (let i = 0; i < buttonPressed.subcategorias.length; i++) {
+    elementList[i].textContent = buttonPressed.subcategorias[i]
   }
 }
 

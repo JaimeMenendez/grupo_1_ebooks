@@ -1,8 +1,14 @@
-<%categoriasDeBotones.forEach(boton => { %>
-    <h3 id="title-subcategory"><%=boton.categoria%></h3>
+<% if(locals.n==='True') { %>
+    <h3 id="title-subcategory"><%=categoria%></h3>
     <ul class="subcategory-books-pc">
-        <% boton.subcategorias.forEach(subcategoria => {%>
+        <% subcategorias.forEach(subcategoria => {%>
             <li><a id="subcategory" href=""><%=subcategoria%></a></li>
         <% }) %>
     </ul>
-<% }) %>
+<% } else{ %>
+    <ul class="subcategory-books-pc">
+        <% subcategorias.forEach(subcategoria => {%>
+            <li><a id="subcategory" href=""><%=subcategoria%></a></li>
+        <% }) %>
+    </ul>
+<% } %>

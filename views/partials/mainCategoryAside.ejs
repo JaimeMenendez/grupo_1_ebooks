@@ -4,9 +4,8 @@
         <li><a href="">"<%=subcategoria%>"</a></li>
     <% }) %>  
 </ul>
-<ul class="subcategory-books-pc">
-    <% subcategorias.forEach(subcategoria => {%>
-        <li><a id="subcategory" href=""><%=subcategoria%></a></li>
-    <% }) %>
-</ul>
+<% subcategorias.n = 'False' %>
+<%- include('mainSubcategoryAside',subcategorias)%>
+
+
     

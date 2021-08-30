@@ -2,7 +2,7 @@
     "categoriaGeneral": 
         {
             "categoria": "Categorías por área",
-            "subcategorias": ["Programación","Electrónica","Inteligencia Artificial","Redes","Mecánica","Medicina","Química","Biotecnología","Estadística","Economía"]
+            "subcategorias": ["Programación","Electrónica","Inteligencia Artificial","Redes","Mecánica","Medicina","Química","Biotecnología","Estadística","Economía"," "," "," "," "," " ]
         },
 
     "categoriasDeBotones": [
