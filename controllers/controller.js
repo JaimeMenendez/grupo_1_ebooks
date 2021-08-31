@@ -6,8 +6,7 @@ const categorias = require('./categorias.json')
 
 const controller = {
   sendHome: (req, res) => {
-    let buttonPressed = 'home'
-    res.render('home', { seccion: seccion, categorias: categorias, buttonPressed: buttonPressed })
+    res.render('home', { seccion: seccion, categorias: categorias })
   },
   sendPoliticaDePrivacidad: (req, res) => {
     res.render('documento', { documento: './partials/politica' })

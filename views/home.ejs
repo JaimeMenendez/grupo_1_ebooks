@@ -55,9 +55,6 @@
   <section class="important-buttons" id="important-buttons-pc">
       <% categorias.categoriasDeBotones.forEach((boton,n) => { %>
           <% boton.n = n %>
-          <% if (buttonPressed === 'home') { %>
-            <% boton.m = true %>
-        <% } %>
           <%- include('./partials/categoryButtons', boton) %>
       <% }) %>
   </section>
