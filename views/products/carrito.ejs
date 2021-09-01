@@ -2,18 +2,18 @@
              jsfile:["./js/darkModeScript.js"],
              titulo: "Mi Carrito"}%>
 
-<%- include('./partials/head', data)%>
+<%- include('../partials/head', data)%>
 
 <body>
 
-    <%- include('./partials/navBar') %>
-    <%- include('./partials/navBarMobile') %>
+    <%- include('../partials/navBar') %>
+    <%- include('../partials/navBarMobile') %>
 
     <main>
         <h2 class="carritoTitle"><i class="fas fa-shopping-cart"></i>&nbsp Mi Carrito</h2>
         <section>
             <% articulos.forEach(libro => { %> 
-                <%- include('./partials/articuloCarrito', libro) %> 
+                <%- include('../partials/articuloCarrito', libro) %> 
             <% })%>       
         </section>
 
@@ -53,7 +53,7 @@
 
     <img src="./images/bannerDescuentos.jpg" alt="Banner de descuentos" width="100%">
 
-<%- include('./partials/footer') %>
+<%- include('../partials/footer') %>
 </body>
 
 </html>

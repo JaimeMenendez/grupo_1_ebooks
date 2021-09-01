@@ -2,7 +2,7 @@
              jsfile:["./js/darkModeScript.js"],
              titulo: "Agregar libro"}%>
 
-<%- include('./partials/head', data)%>
+<%- include('../partials/head', data)%>
 
 <body>
     <script src="https://cdn.tiny.cloud/1/3c54177q3lh311521ar9zn5r80ehbssagbubwkxw3apnsps3/tinymce/5/tinymce.min.js"
@@ -13,8 +13,8 @@
         });
     </script>
 
-    <%- include('./partials/navBar') %>
-    <%- include('./partials/navBarMobile') %>
+    <%- include('../partials/navBar') %>
+    <%- include('../partials/navBarMobile') %>
 
     <h1 class="pageTitle"> <%- tittle %> </h1>
 
@@ -145,7 +145,7 @@
     </form>
 
 
-<%- include('./partials/footer') %>
+<%- include('../partials/footer') %>
 
 </body>
 

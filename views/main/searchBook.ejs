@@ -2,13 +2,13 @@
              jsfile:["./js/darkModeScript.js"],
              titulo: "Search Book"}%>
 
-<%- include('./partials/head', data)%>
+<%- include('../partials/head', data)%>
 
 <body>
-    <%- include('./partials/navBar') %>
-    <%- include('./partials/navBarMobile') %>
+    <%- include('../partials/navBar') %>
+    <%- include('../partials/navBarMobile') %>
 
-    <%- include('./partials/sliderStartBanner') %>
+    <%- include('../partials/sliderStartBanner') %>
 
     <main>
         <div class="sectionChange">
@@ -17,7 +17,7 @@
             <div class="imp-buttons-hidden">
                 <section class="important-buttons" id="important-buttons-pc">
                     <% categorias.categoriasDeBotones.forEach((boton,n) => { %>
-                        <%- include('./partials/categoryButtons', boton) %>
+                        <%- include('../partials/categoryButtons', boton) %>
                     <% }) %>
                 </section>
             </div>
@@ -27,22 +27,22 @@
                     <a href="javascript:void(0)" class="closebtn" onclick="closeBarVer()"> &times cerrar</a>
                     <div class="index" id="indexFirst">
                         <% if (buttonPressed === 'searchBook') { %>
-                            <%- include('./partials/mainCategoryAside',categorias.categoriaGeneral) %>
+                            <%- include('../partials/mainCategoryAside',categorias.categoriaGeneral) %>
                         <% } else { %>
-                            <%- include('./partials/mainCategoryAside', buttonPressed) %>
+                            <%- include('../partials/mainCategoryAside', buttonPressed) %>
                         <% } %>                        
                     </div>
                         
                         <!--Campos de checkbox: idioma, formato, promociones-->
                         <% categorias.categoriasCheckbox.forEach(checkbox => { %>
-                            <%- include('./partials/checkboxAside',checkbox) %>
+                            <%- include('../partials/checkboxAside',checkbox) %>
                         <% }) %>
                         
                         <!--Opinión de los clientes-->
-                        <%- include('./partials/starsAside',categorias.opinionesClientes)%>
+                        <%- include('../partials/starsAside',categorias.opinionesClientes)%>
                         
                         <!--Precio-->
-                        <%- include('./partials/priceAside',categorias.precios) %>
+                        <%- include('../partials/priceAside',categorias.precios) %>
                 </aside>  
             </div>
 
@@ -52,26 +52,26 @@
                     Filtrar búsqueda </a>
             </div>
             <!--Resultados de la búsqueda-->
-            <%- include('./partials/section', seccion.resultados) %>
+            <%- include('../partials/section', seccion.resultados) %>
             
         </div>
 
         <!--Banner promocional-->
-        <%- include('./partials/promotionalBanner')%> 
+        <%- include('../partials/promotionalBanner')%> 
 
         <!--Lo más nuevo-->
-        <%- include('./partials/section', seccion.nuevos) %>
+        <%- include('../partials/section', seccion.nuevos) %>
 
         <!--Libros electrónicos-->
-        <%- include('./partials/section', seccion.ebooks) %>
+        <%- include('../partials/section', seccion.ebooks) %>
 
         <!--Separador bonito -->
-        <%- include('./partials/separador') %>    
+        <%- include('../partials/separador') %>    
 
         <!--Botón que retorna al incio de la página -->
-        <%- include('./partials/botonAInicio') %>
+        <%- include('../partials/botonAInicio') %>
     </main>
 
-<%- include('./partials/footer') %>
+<%- include('../partials/footer') %>
 </body>
 </html>

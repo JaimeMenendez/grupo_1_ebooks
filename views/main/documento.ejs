@@ -2,23 +2,23 @@
              jsfile:["./js/darkModeScript.js"],
              titulo: "Términos y condiciones"}%>
 
-<%- include('./partials/head', data)%>
+<%- include('../partials/head', data)%>
 
 <body>
-    <%- include('./partials/navBar') %>
-    <%- include('./partials/navBarMobile') %>
+    <%- include('../partials/navBar') %>
+    <%- include('../partials/navBarMobile') %>
 <img src="/img/separador.jpg" alt="Separador decorativo" width="100%">
 
     <main>
       
-        <%- include('./partials/logoTerminos') %>
+        <%- include('../partials/logoTerminos') %>
         <%- include(documento) %>
 
     </main>
     
 <img src="./images/separador.jpg" alt="Separador decorativo" width="100%">
     
-<%- include('./partials/footer') %>
+<%- include('../partials/footer') %>
 </body>
 
 </html>

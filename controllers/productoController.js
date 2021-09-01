@@ -13,9 +13,9 @@ const productoController = {
         return false
       })
       if (libroBuscado) {
-        res.render('description', libroBuscado)
+        res.render('products/description', libroBuscado)
       } else {
-        res.render('error404')
+        res.render('main/error404')
       }
     }
   },

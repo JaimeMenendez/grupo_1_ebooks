@@ -1,4 +1,3 @@
-const path = require('path')
 const book = require('./libro.json')
 const carrito = require('./carrito.json')
 const seccion = require('./secciones.json')
@@ -6,36 +5,36 @@ const categorias = require('./categorias.json')
 
 const controller = {
   sendHome: (req, res) => {
-    res.render('home', { seccion: seccion, categorias: categorias })
+    res.render('main/home', { seccion: seccion, categorias: categorias })
   },
   sendPoliticaDePrivacidad: (req, res) => {
-    res.render('documento', { documento: './partials/politica' })
+    res.render('main/documento', { documento: './partials/politica' })
   },
   sendTerminosyCondiciones: (req, res) => {
-    res.render('documento', { documento: './partials/terminos' })
+    res.render('main/documento', { documento: './partials/terminos' })
   },
   sendShoppingCart: (req, res) => {
-    res.render('carrito', carrito)
+    res.render('products/carrito', carrito)
   },
   sendProductDescription: (req, res) => {
-    res.render('description', book)
+    res.render('products/description', book)
   },
   sendLogin: (req, res) => {
-    res.render('login')
+    res.render('users/login')
   },
   sendRegister: (req, res) => {
-    res.render('register')
+    res.render('users/register')
   },
   sendSearchPage: (req, res) => {
-    let buttonPressed = 'searchBook'
-    res.render('searchBook', { seccion: seccion, categorias: categorias, buttonPressed: buttonPressed })
+    const buttonPressed = 'searchBook'
+    res.render('main/searchBook', { seccion: seccion, categorias: categorias, buttonPressed: buttonPressed })
   },
   sendCategoryButtons: (req, res) => {
-    let buttonPressed = categorias.categoriasDeBotones.find(boton => boton.idClass === req.params.buttonId)
-    res.render('searchBook', { seccion: seccion, categorias: categorias, buttonPressed: buttonPressed })
+    const buttonPressed = categorias.categoriasDeBotones.find(boton => boton.idClass === req.params.buttonId)
+    res.render('main/searchBook', { seccion: seccion, categorias: categorias, buttonPressed: buttonPressed })
   },
   sendPageNotFound: (req, res) => {
-    res.render('error404')
+    res.render('main/error404')
   }
 }
 

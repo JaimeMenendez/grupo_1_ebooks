@@ -2,11 +2,11 @@
              jsfile:["./js/darkModeScript.js"],
              titulo: "Description"}%>
 
-<%- include('./partials/head', data)%>
+<%- include('../partials/head', data)%>
 
 <body>
-    <%- include('./partials/navBar') %>
-    <%- include('./partials/navBarMobile') %>
+    <%- include('../partials/navBar') %>
+    <%- include('../partials/navBarMobile') %>
 
     <main>
         <section class="datosPrincipales">
@@ -147,7 +147,7 @@
                 <h2>Reseñas de Usuarios</h2>
 
                 <% comentarios.forEach(c=> { %>
-                    <%- include('./partials/comentario', c) %>
+                    <%- include('../partials/comentario', c) %>
                         <% })%>
             </section>
             <% }%>
@@ -180,7 +180,7 @@
 
     <img src="./images/bannerDescuentos.jpg" alt="Banner de descuentos" width="100%">
 
-<%- include('./partials/footer') %>
+<%- include('../partials/footer') %>
 </body>
 
 </html>
