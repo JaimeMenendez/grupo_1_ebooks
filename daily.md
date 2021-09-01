@@ -41,3 +41,6 @@
 - Incluido el head partial a todas las vistas
 - Archivos html eliminados
 - Limpia de código
+
+# 1-9-2021
+- Se reestructuró el directorio de vistas separándo las vistas principales, las vistas de productos y las vistas de usuario.
