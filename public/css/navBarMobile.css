@@ -1,3 +1,21 @@
+
+:root{
+    --azul-morado-oscuro: #2d2f8e;
+    --azul-morado-claro: #585dba;
+    --verde-pastel-oscuro: #44979c;
+    --verde-pastel-claro: #89cab4;
+    --azul-gris-oscuro: #202020;
+    --oscuro: #56575e;
+    --azul-oscuro: #14213D;
+    --rojo: #ea4533;
+    --rojo-oscuro: #c0392b;
+    --naranja-pastel: #f4ae62;
+    --rosado-pastel: #f6c7af;
+    --crema:#f3f0d7;
+    --blanco: #ffffff;
+    --dorado: rgb(202, 172, 4);
+}
+
 /************************************
 //        SEARCH BAR MOBILE        //
 /***********************************/

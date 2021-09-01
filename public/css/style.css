@@ -3,6 +3,7 @@ font-family: 'Russo One', sans-serif; */
 @import "./fonts.css";
 @import "./logoStyle.css";
 @import "./navBar.css";
+@import "./navBarMobile.css";
 @import "./footer.css";
 @import "./footer.css";
 :root {
