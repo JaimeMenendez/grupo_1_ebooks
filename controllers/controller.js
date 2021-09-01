@@ -21,12 +21,10 @@ const controller = {
     res.render('description', book)
   },
   sendLogin: (req, res) => {
-    const htmlPath = path.resolve(__dirname, '../views/login.html')
-    res.sendFile(htmlPath)
+    res.render('login')
   },
   sendRegister: (req, res) => {
-    const htmlPath = path.resolve(__dirname, '../views/register.html')
-    res.sendFile(htmlPath)
+    res.render('register')
   },
   sendSearchPage: (req, res) => {
     let buttonPressed = 'searchBook'
