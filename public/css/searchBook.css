@@ -151,7 +151,7 @@ main{
 }
 
 main div.imp-buttons-hidden{
-    display: none;
+    display: inline;
 }
 
 main section.books{
