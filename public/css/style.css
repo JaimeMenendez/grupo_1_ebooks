@@ -145,7 +145,7 @@ a {
   z-index: 100;
 }
 .loginBannerContainer {
-  padding-top: 60px;
+  padding-top: 20px;
   --animate-duration: 2s;
   position:relative;
   overflow: hidden;
@@ -403,6 +403,10 @@ a {
     line-height: 68px;
     padding-top: 2px;
     letter-spacing: 5px;
+  }
+
+  .loginBannerContainer {
+    padding-top: 60px;
   }
 }
 
