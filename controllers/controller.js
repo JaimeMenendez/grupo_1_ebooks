@@ -8,10 +8,10 @@ const controller = {
     res.render('main/home', { seccion: seccion, categorias: categorias })
   },
   sendPoliticaDePrivacidad: (req, res) => {
-    res.render('main/documento', { documento: './partials/politica' })
+    res.render('main/documento', { documento: '../partials/politica' })
   },
   sendTerminosyCondiciones: (req, res) => {
-    res.render('main/documento', { documento: './partials/terminos' })
+    res.render('main/documento', { documento: '../partials/terminos' })
   },
   sendShoppingCart: (req, res) => {
     res.render('products/carrito', carrito)
