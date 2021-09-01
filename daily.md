@@ -39,3 +39,5 @@
 
 # 31-8-2021
 - Incluido el head partial a todas las vistas
+- Archivos html eliminados
+- Limpia de código
