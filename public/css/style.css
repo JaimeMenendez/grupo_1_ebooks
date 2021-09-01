@@ -23,7 +23,11 @@ font-family: 'Russo One', sans-serif; */
   --googleFontColor: #1d1d1d;
   --googleButtonBackground:rgb(233, 231, 231);
 
+  --sectionBackground: #121212;
+  --backgroundColor: #121212;
 
+  --backgroundColor: #e2e1e0;
+  --backgroundSections:white;
 
   --sectionBackground: #ffffff;
   --navBarBackground:rgb(255, 255, 255);
@@ -360,6 +364,9 @@ a {
       --googleButtonHover:rgb(134, 126, 126);
       --googleFontColor: #eaebf1;
       --googleButtonBackground:rgb(59, 57, 57);
+
+      --backgroundColor: #121212;
+      --backgroundSections:#222222;
     
     
     
