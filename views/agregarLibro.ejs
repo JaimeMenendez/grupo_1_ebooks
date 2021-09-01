@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<% let data ={css:["css/agregarLibro.css"],
+             jsfile:["./js/darkModeScript.js"],
+             titulo: "Agregar libro"}%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    <link rel="stylesheet" type="text/css" href="css/flaticon/flaticon.css">
-    <link rel="stylesheet" href="css/agregarLibro.css">
-    <script defer src="./js/darkModeScript.js"></script>
-    <script src="https://cdn.tiny.cloud/1/3c54177q3lh311521ar9zn5r80ehbssagbubwkxw3apnsps3/tinymce/5/tinymce.min.js"
-        referrerpolicy="origin"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <title>Agregar nuevo libro</title>
-</head>
+<%- include('./partials/head', data)%>
 
 <body>
     <script>

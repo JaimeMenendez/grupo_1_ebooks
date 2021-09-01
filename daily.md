@@ -36,3 +36,6 @@
 # 30-8-2021
 - navBar y navBar mobile partials en todas las views
 - Se agregó la versión tentativa oficial de Editar/Agregar producto
+
+# 31-8-2021
+- Incluido el head partial a todas las vistas
