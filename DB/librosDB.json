@@ -1,6 +1,6 @@
 [
   {
-    "id_count": 13
+    "id_count": 15
   },
   {
     "nombre": "Cybersecurity - Attack and Defense Strategies",
@@ -197,5 +197,35 @@
     "detallesDelLibro": "",
     "detallesAutor": "",
     "id": 13
+  },
+  {
+    "nombre": "",
+    "autor": "",
+    "materia": "",
+    "editorial": "",
+    "isbn": "",
+    "precioBook": "",
+    "idioma": "Inglés",
+    "precioEbook": "",
+    "paginas": "",
+    "year": "",
+    "detallesDelLibro": "",
+    "detallesAutor": "",
+    "id": 14
+  },
+  {
+    "nombre": "",
+    "autor": "",
+    "materia": "",
+    "editorial": "",
+    "isbn": "",
+    "precioBook": "",
+    "idioma": "Inglés",
+    "precioEbook": "",
+    "paginas": "",
+    "year": "",
+    "detallesDelLibro": "",
+    "detallesAutor": "",
+    "id": 15
   }
 ]
