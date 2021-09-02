@@ -272,14 +272,17 @@ a {
   padding-top: 2px;
   padding-left: 4px;
   color: var(--fontColors);
+
 }
 
 #passwordEye,#confirmPasswordEye{
   color: var(--fontColors);
+
 }
 
 .showPassword label i{
   color: var(--fontColors);
+  
 }
 
 .showPassword input {
@@ -295,6 +298,7 @@ a {
   right: 2%;
   top: 25%;
   font-size: 21px;
+  cursor: pointer;
 }
 
 .loginForm button,.registrationInput button{
