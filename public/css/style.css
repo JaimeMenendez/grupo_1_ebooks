@@ -98,6 +98,7 @@ input::placeholder{
   color: var(--fontColorButtons);
   
   transition: background-color .3s;
+  cursor:pointer;
 }
 
 .btn.red {
@@ -236,6 +237,7 @@ a {
   width: 19px;
   height:19px;
   margin-right: 5px;
+  cursor:pointer;
 }
 
 /* Separator for Account and Google Buttons */
@@ -348,6 +350,47 @@ a {
   @keyframes subir{
       from{bottom: -20%;}
       to{bottom:120%;}
+  }
+
+  .prompt, .loginBannerContainer .logoText, .loginBannerContainer .logo div{
+    opacity:0;
+    animation-name: aparecer;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+
+  .logoText{
+    animation-delay: 1.5s;
+  }
+
+  .prompt{
+    animation-delay: 1.5s;
+  }
+  
+  .bloqueAzul{
+     animation-delay: 0s;
+  }
+  
+  .bloqueVerde{
+     animation-delay: 0.4s;
+  }
+  
+  .bloqueNaranja{
+     animation-delay: 0.8s;
+  }
+  
+  .bloqueRojo{
+    animation-delay: 1.2s;
+  }
+
+  @keyframes aparecer{
+    from {
+      opacity:0;
+    }
+  
+    to {
+      opacity:1;
+    }
   }
 
 
