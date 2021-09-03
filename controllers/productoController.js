@@ -24,7 +24,7 @@ const productoController = {
     res.render('error404')
   },
   agregarLibroView: (req, res) => {
-    res.render('agregarLibro', { tittle: '<i class="fas fa-book"></i>&nbsp Agregar Libro' })
+    res.render('products/agregarLibro', { tittle: '<i class="fas fa-book"></i>&nbsp Agregar Libro' })
   },
 
   agregarLibro: (req, res) => {
@@ -44,7 +44,7 @@ const productoController = {
 
     librosDB.push(newBook)
     writeFileSync('./DB/librosDB.json', JSON.stringify(librosDB, null, 2), 'utf-8')
-    res.render('agregarLibro', { tittle: '<i class="fas fa-plus-circle"></i>&nbsp Agregar Libro' })
+    res.render('products/agregarLibro', { tittle: '<i class="fas fa-plus-circle"></i>&nbsp Agregar Libro' })
   },
   editarLibroView: (req, res) => {
     res.render('agregarLibro', { tittle: '<i class="fas fa-edit"></i>&nbsp Editar Libro' })
