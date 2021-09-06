@@ -756,6 +756,7 @@
         ]
     },
     "resultados": {
+        "idSection": "resultados",
         "titulo": "Resultados de la búsqueda...",
         "articulos":[
             {

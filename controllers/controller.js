@@ -2,10 +2,11 @@ const book = require('./libro.json')
 const carrito = require('./carrito.json')
 const seccion = require('./secciones.json')
 const categorias = require('./categorias.json')
+const botonesPrincipales = require('./botonesPrincipales.json')
 
 const controller = {
   sendHome: (req, res) => {
-    res.render('main/home', { seccion: seccion, categorias: categorias })
+    res.render('main/home', { seccion: seccion, categorias: categorias, botonesPrincipales: botonesPrincipales })
   },
   sendPoliticaDePrivacidad: (req, res) => {
     res.render('main/documento', { documento: '../partials/politica' })
@@ -34,7 +35,7 @@ const controller = {
     res.render('main/searchBook', { seccion: seccion, categorias: categorias, buttonPressed: buttonPressed })
   },
   sendMyAccount: (req, res) => {
-    res.render('users/myAccount')
+    res.render('users/myAccount', { botonesPrincipales: botonesPrincipales })
   },
   sendPageNotFound: (req, res) => {
     res.render('main/error404')

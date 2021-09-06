@@ -1,0 +1,54 @@
+{
+    "categoriasDeBotonesHome": [
+        {
+            "idClass": "identifier",
+            "idLink": "recomendados",
+            "icon": "fas fa-book-reader",
+            "name": "Recomendados"
+        },
+        {
+            "idClass": "identifier2",
+            "idLink": "important-buttons-pc",
+            "icon": "fas fa-book",
+            "name": "Categorías"
+        },
+        {
+            "idClass": "identifier3",
+            "idLink": "nuevos",
+            "icon": "fas fa-bell",
+            "name": "Nuevos"
+        },
+        {
+            "idClass": "identifier4",
+            "idLink": "ebooks",
+            "icon": "fas fa-tablet-alt",
+            "name": "Ebooks"
+        }
+    ],
+    "categoriasDeBotonesMyAccount": [
+        {
+            "idClass": "identifier",
+            "idLink": "pedidos",
+            "icon": "fas fa-concierge-bell",
+            "name": "Mis pedidos"
+        },
+        {
+            "idClass": "identifier2",
+            "idLink": "favoritos",
+            "icon": "fas fa-heart",
+            "name": "Mis favoritos"
+        },
+        {
+            "idClass": "identifier3",
+            "idLink": "comprarDeNuevo",
+            "icon": "fas fa-shopping-bag",
+            "name": "Comprar de nuevo"
+        },
+        {
+            "idClass": "identifier4",
+            "idLink": "cuenta",
+            "icon": "fas fa-user",
+            "name": "Mi cuenta"
+        }
+    ]
+}

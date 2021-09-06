@@ -13,7 +13,11 @@
 <main>
   
   <!--Botones de categorias principales-->
-  <%- include('../partials/importantButtons') %>
+  <section class="important-buttons">
+      <% botonesPrincipales.categoriasDeBotonesHome.forEach(boton => { %>
+          <%- include('../partials/importantButtons', boton) %>
+      <% }) %>
+  </section>
 
   <!--Tendencia en libros-->
   <%- include('../partials/section', seccion.tendencias) %>

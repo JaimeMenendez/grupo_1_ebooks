@@ -11,9 +11,21 @@
     <%- include('../partials/sliderStartBanner') %>
 
     <main>
+        <!--Sección superior-->
+        <section class="userHead">
+            <h3>Mi cuenta</h3>
+            <div class="user-head">
+                <i class="fas fa-user"></i>
+            </div>
+        </section>
+
         <!--Botones de categorias principales-->
-        <%- include('../partials/importantButtons') %>
-        
+        <section class="important-buttons">
+            <% botonesPrincipales.categoriasDeBotonesMyAccount.forEach(boton => { %>
+                <%- include('../partials/importantButtons', boton) %>
+            <% }) %>
+        </section>
+
         <!--Banner promocional-->
         <%- include('../partials/promotionalBanner')%>
 
