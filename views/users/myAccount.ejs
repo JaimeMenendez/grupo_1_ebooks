@@ -1,0 +1,30 @@
+<% let data ={css:["css/home.css","css/navBar.css", "css/navBarMobile.css"],
+             jsfile:["./js/darkModeScript.js"],
+             titulo: "My account"}%>
+
+<%- include('../partials/head', data)%>
+
+<body>
+
+    <%- include('../partials/navBar') %>
+    <%- include('../partials/navBarMobile') %>
+    <%- include('../partials/sliderStartBanner') %>
+
+    <main>
+        <!--Botones de categorias principales-->
+        <%- include('../partials/importantButtons') %>
+        
+        <!--Banner promocional-->
+        <%- include('../partials/promotionalBanner')%>
+
+        <!--Separador bonito -->
+        <%- include('../partials/separador') %>
+
+        <!--Botón que retorna al incio de la página -->
+        <%- include('../partials/botonAInicio') %>
+
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

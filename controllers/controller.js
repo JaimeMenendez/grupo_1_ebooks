@@ -33,6 +33,9 @@ const controller = {
     const buttonPressed = categorias.categoriasDeBotones.find(boton => boton.idClass === req.params.buttonId)
     res.render('main/searchBook', { seccion: seccion, categorias: categorias, buttonPressed: buttonPressed })
   },
+  sendMyAccount: (req, res) => {
+    res.render('users/myAccount')
+  },
   sendPageNotFound: (req, res) => {
     res.render('main/error404')
   }
