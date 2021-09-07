@@ -47,8 +47,8 @@
         {
             "idClass": "identifier4",
             "idLink": "cuenta",
-            "icon": "fas fa-user",
-            "name": "Mi cuenta"
+            "icon": "fas fa-address-card",
+            "name": "Mis direcciones"
         }
     ]
 }

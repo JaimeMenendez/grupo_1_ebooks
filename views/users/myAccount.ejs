@@ -1,4 +1,4 @@
-<% let data ={css:["css/home.css","css/navBar.css", "css/navBarMobile.css"],
+<% let data ={css:["css/myAccount.css","css/navBar.css", "css/navBarMobile.css"],
              jsfile:["./js/darkModeScript.js"],
              titulo: "My account"}%>
 
@@ -8,7 +8,6 @@
 
     <%- include('../partials/navBar') %>
     <%- include('../partials/navBarMobile') %>
-    <%- include('../partials/sliderStartBanner') %>
 
     <main>
         <!--Sección superior-->
@@ -24,6 +23,22 @@
             <% botonesPrincipales.categoriasDeBotonesMyAccount.forEach(boton => { %>
                 <%- include('../partials/importantButtons', boton) %>
             <% }) %>
+        </section>
+
+        <section class="body">
+            <h3>Mis pedidos</h3>
+        </section>
+
+        <section class="body">
+            <h3>Mis favoritos</h3>
+        </section>
+
+        <section class="body">
+            <h3>Comprar de nuevo</h3>
+        </section>
+
+        <section class="body">
+            <h3>Mis direcciones</h3>
         </section>
 
         <!--Banner promocional-->
