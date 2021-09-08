@@ -27,28 +27,32 @@
     ],
     "categoriasDeBotonesMyAccount": [
         {
-            "idClass": "identifier",
+            "idClass": "category-users",
             "idLink": "pedidos",
             "icon": "fas fa-concierge-bell",
-            "name": "Mis pedidos"
+            "name": "Mis pedidos",
+            "description": "Rastrear paquetes, devolver pedidos o comprar algo de nuevo"
         },
         {
-            "idClass": "identifier2",
+            "idClass": "category-users2",
             "idLink": "favoritos",
             "icon": "fas fa-heart",
-            "name": "Mis favoritos"
+            "name": "Mis favoritos",
+            "description": "Ver mis libros favoritos, consultar promociones, comprar libro"
         },
         {
-            "idClass": "identifier3",
+            "idClass": "category-users3",
             "idLink": "comprarDeNuevo",
             "icon": "fas fa-shopping-bag",
-            "name": "Comprar de nuevo"
+            "name": "Mis pagos",
+            "description": "Administrar configuraciones y métodos de pago"
         },
         {
-            "idClass": "identifier4",
-            "idLink": "cuenta",
+            "idClass": "category-users4",
+            "idLink": "direcciones",
             "icon": "fas fa-address-card",
-            "name": "Mis direcciones"
+            "name": "Mis direcciones",
+            "description": "Editar direcciones de envío y regalo"
         }
     ]
 }

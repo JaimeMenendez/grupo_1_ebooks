@@ -10,23 +10,12 @@
     <%- include('../partials/navBarMobile') %>
 
     <main>
-        <!--Sección superior-->
-        <section class="userHead">
+        
+        <section class="body-users">
             <h3>Mi cuenta</h3>
-            <div class="user-head">
-                <i class="fas fa-user"></i>
-            </div>
-        </section>
-
-        <!--Botones de categorias principales-->
-        <section class="important-buttons">
-            <% botonesPrincipales.categoriasDeBotonesMyAccount.forEach(boton => { %>
-                <%- include('../partials/importantButtons', boton) %>
-            <% }) %>
-        </section>
-
-        <section class="body">
-            <h3>Mis pedidos</h3>
+            <% botonesPrincipales.categoriasDeBotonesMyAccount.forEach(botonUser => { %>
+               <%- include('../partials/categoryButtonsUser', botonUser)%> 
+            <% })%>
         </section>
 
         <section class="body">
