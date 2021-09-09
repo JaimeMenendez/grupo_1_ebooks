@@ -1,5 +1,6 @@
 {
     "tendencias": {
+        "idSection": "tendencias",
         "titulo": "Tendencia en libros...",
         "articulos":[
             {
@@ -188,6 +189,7 @@
         ]
     },
     "recomendados": {
+        "idSection": "recomendados",
         "titulo": "Libros recomendados...",
         "articulos":[
             {
@@ -376,6 +378,7 @@
         ]
     },
     "nuevos": {
+        "idSection": "nuevos",
         "titulo": "Lo más nuevo....",
         "articulos":[
             {
@@ -564,6 +567,7 @@
         ]
     },
     "ebooks": {
+        "idSection": "ebooks",
         "titulo": "Libros electrónicos...",
         "articulos":[
             {
@@ -752,6 +756,7 @@
         ]
     },
     "resultados": {
+        "idSection": "resultados",
         "titulo": "Resultados de la búsqueda...",
         "articulos":[
             {

@@ -1,0 +1,46 @@
+<% let data ={css:["css/myAccount.css","css/navBar.css", "css/navBarMobile.css"],
+             jsfile:["./js/darkModeScript.js"],
+             titulo: "My account"}%>
+
+<%- include('../partials/head', data)%>
+
+<body>
+
+    <%- include('../partials/navBar') %>
+    <%- include('../partials/navBarMobile') %>
+
+    <main>
+        
+        <section class="body-users">
+            <h3>Mi cuenta</h3>
+            <% botonesPrincipales.categoriasDeBotonesMyAccount.forEach(botonUser => { %>
+               <%- include('../partials/categoryButtonsUser', botonUser)%> 
+            <% })%>
+        </section>
+
+        <section class="body">
+            <h3>Mis favoritos</h3>
+        </section>
+
+        <section class="body">
+            <h3>Comprar de nuevo</h3>
+        </section>
+
+        <section class="body">
+            <h3>Mis direcciones</h3>
+        </section>
+
+        <!--Banner promocional-->
+        <%- include('../partials/promotionalBanner')%>
+
+        <!--Separador bonito -->
+        <%- include('../partials/separador') %>
+
+        <!--Botón que retorna al incio de la página -->
+        <%- include('../partials/botonAInicio') %>
+
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

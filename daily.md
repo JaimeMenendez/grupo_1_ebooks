@@ -46,3 +46,6 @@
 - Se reestructuró el directorio de vistas separándo las vistas principales, las vistas de productos y las vistas de usuario.
 - Se agregó una animación al login y register.
 - Se mejoró la accesibilidad de los botones en el home y el register haciendo el cursor de tipo pointer en los elementos clickeables.
+
+# 6-9-2021
+- retro.md de 3er sprint

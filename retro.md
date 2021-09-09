@@ -57,3 +57,28 @@ El primer sprint fue un éxito para nuestro equipo. A través de la buena comuni
 
 ## Conclusiones:
 El segundo sprint fue un éxito para nuestro equipo. Logramos cumplir con los objetivos propuestos y revasarlos. Aprendimos mucho del trabajo realizado de cada uno de nuestros compañeros como la implementación de nuevos estilos con Grid, diseños de vistas más interactivas, implementación de pequeños scripts con JavaScript, segmentación de código en css para partes repetitivas del código, implementación de nuevas herramientas como Heroku para tener nuestro sitio en la web y poder consultar la página desde cualquier dispositivo, para ver y corregir problemas sin necesidad de estar en la computadora.
+
+
+# Sprint 3
+
+## Comenzar a hacer:
+- Agregar libros a la base de datos por categoría y subcategoría.
+- Trabajar con la base de datos de usuarios.
+
+## Hacer más:
+- División de las tareas.
+- Aportación de todos los miembros del equipo al código de otro.
+
+## Continuar haciendo:
+- Comunicación efectiva.
+- Actualización de Trello.
+- Juntas semanales (miércoles y sabados).
+
+## Hacer menos:
+- ¯\_(ツ)_/¯
+
+## Dejar de hacer:
+- Trabajar de forma individual en lo mismo.
+
+## Conclusiones:
+El tercer sprint fue un éxito para nuestro equipo. Logramos cumplir con los objetivos propuestos y revasarlos.

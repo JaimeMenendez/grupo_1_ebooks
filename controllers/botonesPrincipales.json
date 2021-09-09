@@ -1,0 +1,58 @@
+{
+    "categoriasDeBotonesHome": [
+        {
+            "idClass": "identifier",
+            "idLink": "recomendados",
+            "icon": "fas fa-book-reader",
+            "name": "Recomendados"
+        },
+        {
+            "idClass": "identifier2",
+            "idLink": "important-buttons-pc",
+            "icon": "fas fa-book",
+            "name": "Categorías"
+        },
+        {
+            "idClass": "identifier3",
+            "idLink": "nuevos",
+            "icon": "fas fa-bell",
+            "name": "Nuevos"
+        },
+        {
+            "idClass": "identifier4",
+            "idLink": "ebooks",
+            "icon": "fas fa-tablet-alt",
+            "name": "Ebooks"
+        }
+    ],
+    "categoriasDeBotonesMyAccount": [
+        {
+            "idClass": "category-users",
+            "idLink": "pedidos",
+            "icon": "fas fa-concierge-bell",
+            "name": "Mis pedidos",
+            "description": "Rastrear paquetes, devolver pedidos o comprar algo de nuevo"
+        },
+        {
+            "idClass": "category-users2",
+            "idLink": "favoritos",
+            "icon": "fas fa-heart",
+            "name": "Mis favoritos",
+            "description": "Ver mis libros favoritos, consultar promociones, comprar libro"
+        },
+        {
+            "idClass": "category-users3",
+            "idLink": "comprarDeNuevo",
+            "icon": "fas fa-shopping-bag",
+            "name": "Mis pagos",
+            "description": "Administrar configuraciones y métodos de pago"
+        },
+        {
+            "idClass": "category-users4",
+            "idLink": "direcciones",
+            "icon": "fas fa-address-card",
+            "name": "Mis direcciones",
+            "description": "Editar direcciones de envío y regalo"
+        }
+    ]
+}
