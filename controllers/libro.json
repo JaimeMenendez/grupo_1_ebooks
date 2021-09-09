@@ -1,6 +1,6 @@
 {
-    "nombre":  "Flutter Cookbook",
-    "materia": "Programación",
+    "nombreLibro":  "Flutter Cookbook",
+    "categoria": "Programación",
     "idioma":  "Inglés",
     "autor": "Antonio Hernández",
     "portada": "./images/480.jpeg",

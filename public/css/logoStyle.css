@@ -3,6 +3,7 @@
            src: local('DINMedium.ttf') format("truetype"), url('https://jaimemenendez.github.io/grupo_1_ebooks/HTML/css/DINMedium.ttf') format("truetype");} 
 @import url("https://db.onlinewebfonts.com/c/1bbe3460b053c4f1d67d1f1afecdaa76?family=DIN");
 
+
 body{
   text-align:center;
 }

@@ -78,6 +78,10 @@ footer .logoFooter p {
     display: block;
 }
 
+footer a:hover{
+    color: #9c9792;
+}
+
 /* Footer Icons */
 footer i{
     font-size: 30px;
