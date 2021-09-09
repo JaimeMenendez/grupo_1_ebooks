@@ -1,4 +1,4 @@
-const { readFileSync, writeFileSync } = require('fs')
+const { readFileSync, writeFileSync, unlinkSync } = require('fs')
 
 const productoController = {
   sendProductoID: (req, res) => {
@@ -6,12 +6,7 @@ const productoController = {
       let librosDB = readFileSync('./DB/librosDB.json', 'utf-8')
       librosDB = JSON.parse(librosDB)
 
-      const libroBuscado = librosDB.find((libro) => {
-        if (libro.id) {
-          return libro.id == req.params.id
-        }
-        return false
-      })
+      const libroBuscado = librosDB.find((libro) => libro.id == req.params.id)
       if (libroBuscado) {
         res.render('products/description', libroBuscado)
       } else {
@@ -25,7 +20,8 @@ const productoController = {
   },
   agregarLibroView: (req, res) => {
     res.render('products/editar-agregar-producto', {
-      tittle: '<i class="fas fa-book"></i>&nbsp Agregar Libro'
+      tittle: '<i class="fas fa-book"></i>&nbsp Agregar Libro',
+      edit: false
     })
   },
 
@@ -53,18 +49,20 @@ const productoController = {
     res.redirect('/producto/' + newBook.id)
   },
   editarLibroView: (req, res) => {
-    res.render('products/editar-agregar-producto', {
-      tittle: '<i class="fas fa-edit"></i>&nbsp Editar Libro'
-    })
-  }
-}
+    if (req.params.id) {
+      let librosDB = readFileSync('./DB/librosDB.json', 'utf-8')
+      librosDB = JSON.parse(librosDB)
 
-function eliminarImagen(req, index) {
-  if (products[index].image !== 'default-image.png') {
-    try {
-      fs.unlinkSync(path.resolve(productsImageFolder, products[index].image))
-    } catch {
-      console.log('El archivo no existe')
+      const libroBuscado = librosDB.find((libro) => libro.id == req.params.id)
+      if (libroBuscado) {
+        res.render('products/editar-agregar-producto', {
+          ...libroBuscado,
+          tittle: '<i class="fas fa-edit"></i>&nbsp Editar Libro',
+          edit: true
+        })
+      } else {
+        res.render('main/error404')
+      }
     }
   }
 }

@@ -23,48 +23,48 @@
         <div class="form-row">
             <div class="form-group col-sm-6">
                 <label for="nombreLibro">Título del Libro:</label>
-                <input type="text" name="nombreLibro" class="form-control" id="nombreLibro" placeholder="Título">
+                <input type="text" name="nombreLibro" class="form-control" id="nombreLibro" placeholder="Título" value="<%= edit ? nombreLibro : '' %>">
             </div>
 
             <div class="form-group col-sm-6">
                 <label for="autor">Autor:</label>
-                <input type="text" class="form-control" id="autor" name="autor" placeholder="Autor">
+                <input type="text" class="form-control" id="autor" name="autor" placeholder="Autor" value="<%= edit ? autor : '' %>">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-sm-4">
                 <label for="categoria">Categoría:</label>
-                <input type="text" class="form-control" name="categoria" id="categoria" placeholder="Programación">
+                <input type="text" class="form-control" name="categoria" id="categoria" placeholder="Programación" value="<%= edit ? categoria : '' %>">
             </div>
 
             <div class="form-group col-sm-4">
                 <label for="subcategoria">Subcategoría:</label>
-                <input type="text" class="form-control" name="subcategorias" id="subcategoria" placeholder="Python">
+                <input type="text" class="form-control" name="subcategorias" id="subcategoria" placeholder="Python" value="<%= edit ? subcategoria : '' %>">
             </div>
 
             <div class="form-group col-sm-4">
                 <label for="editorial">Editorial:</label>
-                <input type="text" class="form-control" name="editorial"  id="editorial" placeholder="Springer">
+                <input type="text" class="form-control" name="editorial"  id="editorial" placeholder="Springer" value="<%= edit ? editorial : '' %>">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-sm-4">
                 <label for="isbn">ISBN:</label>
-                <input type="text" class="form-control" id="isbn" name="isbn" placeholder="9781449340377">
+                <input type="text" class="form-control" id="isbn" name="isbn" placeholder="9781449340377"
+                value="<%= edit ? isbn : '' %>">
             </div>
 
             <div class="form-group col-sm-4">
                 <label for="precioBook">Precio del Libro</label>
                 <input id="precioBook" class="form-control" type="number" min="0" step="0.5" name="precioBook"
-                    placeholder=" ">
+                    placeholder=" "  value="<%= edit ? precioBook : '' %>">
             </div>
 
             <div class="form-group col-sm-4">
                 <label for="precioBook">Precio Ebook:</label>
-                <input id="precioBook" class="form-control" type="number" min="0" step="0.5" name="precioEbook"
-                    placeholder=" ">
+                <input id="precioBook" class="form-control" type="number" min="0" step="0.5" name="precioEbook" placeholder=" " value="<%= edit ? precioEbook : '' %>" >
             </div>
 
 
@@ -84,12 +84,12 @@
             <div class="form-group col-sm-4">
                 <label>Año</label>
                 <input type="number" class="form-control" id="year" min="1980" max="2021" step="1" name="year"
-                    placeholder=" ">
+                    placeholder=" " value="<%= edit ? year : '' %>">
             </div>
 
             <div class="form-group col-sm-4">
                 <label for="paginas">Número de Páginas</label>
-                <input type="number" class="form-control" id="paginas" min="0" step="1" name="paginas" placeholder=" ">
+                <input type="number" class="form-control" id="paginas" min="0" step="1" name="paginas" placeholder=" " value="<%= edit ? year : '' %>" >
             </div>
 
 
@@ -98,7 +98,7 @@
 
         <div class="form-row mb-3" >
             <div class="col-sm-4 text-center">
-                <img src="" class='center-block' alt="portada" id="portadaImg" style="width: 200px;">
+                <img src="<%= edit ? portada : '' %>" class='center-block' alt="portada" id="portadaImg" style="width: 200px;">
             </div>
 
             <div class="form-group col-sm-8">
@@ -123,12 +123,14 @@
         <div class="form-group">
             <h4>Acerca de este libro</h4>
             <textarea id="detallesLibro" name="detallesDelLibro">
+               <%= edit ? detallesDelLibro : '' %>
             </textarea>
         </div>
 
         <div class="autorDetails">
             <h4>Acerca del Autor</h4>
             <textarea id="detallesAutor" name="detallesAutor">
+                <%= edit ? detallesAutor : '' %>
           </textarea>
         </div>
 

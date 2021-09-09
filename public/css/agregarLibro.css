@@ -116,6 +116,11 @@ a:hover{
   margin-bottom: 10px;
 }
 
+.portadaPreview{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --navBarHeight: 50px;
