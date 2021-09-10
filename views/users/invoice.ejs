@@ -1,6 +1,6 @@
 <% let data ={css:["css/myAccount.css","css/navBar.css", "css/navBarMobile.css"],
              jsfile:["./js/darkModeScript.js"],
-             titulo: "My account"}%>
+             titulo: "Invoice"}%>
 
 <%- include('../partials/head', data)%>
 
@@ -13,10 +13,7 @@
         
         <section class="body-users">
             <div class="body-users-buttons">
-                <h3>Mi cuenta</h3>
-                <% botonesPrincipales.categoriasDeBotonesMyAccount.forEach(botonUser => { %>
-                <%- include('../partials/categoryButtonsUser', botonUser)%> 
-                <% })%>
+                <h3>Mis datos de facturación</h3>
             </div>
         </section>
 

@@ -1,5 +1,5 @@
-<div class="<%=idClass%>">
-    <a href="<%=idLink%>" ><i class="<%=icon%>"></i></a>
+<div class="<%=idClass%>" onclick= <%= idClass == 'category-users2' ? 'mostrar()' : idClass == 'category-users5' ? "window.location.href='/users/security'" : idClass == 'category-users6' ? "window.location.href='/users/invoice'" : ' ' %>>
+    <a href= "<%= idLink %>" ><i class="<%=icon%>"></i></a>
     <h3><%=name%></h3>
     <p><%=description%></p>
 </div>

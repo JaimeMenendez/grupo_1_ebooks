@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const router = require('./routes/routes')
+const routerUser = require('./routes/rutasUsuarios')
 const routerProducto = require('./routes/rutasProducto')
 
 const app = express()
@@ -25,6 +26,7 @@ app.use(methodOverride('_method'))
 
 // Routes
 app.use('/producto', routerProducto)
+app.use('/users', routerUser)
 app.use(router)
 
 // Inicia el servidor

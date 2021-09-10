@@ -12,7 +12,6 @@ router.get('/login', controller.sendLogin)
 router.get('/register', controller.sendRegister)
 router.get('/searchBook', controller.sendSearchPage)
 router.get('/searchBook/:buttonId/', controller.sendCategoryButtons)
-router.get('/myAccount', controller.sendMyAccount)
 router.get('*', controller.sendPageNotFound)
 
 module.exports = router

@@ -53,6 +53,20 @@
             "icon": "fas fa-address-card",
             "name": "Mis direcciones",
             "description": "Editar direcciones de envío y regalo"
+        },
+        {
+            "idClass": "category-users5",
+            "idLink": "seguridad",
+            "icon": "fas fa-user-shield",
+            "name": "Mi seguridad",
+            "description": "Editar inicio de sesión, nombre, contraseña y correo electrónico"
+        },
+        {
+            "idClass": "category-users6",
+            "idLink": "direcciones",
+            "icon": "fas fa-file-invoice",
+            "name": "Mis facturas",
+            "description": "Editar y/o configurar datos de facturación"
         }
     ]
 }
