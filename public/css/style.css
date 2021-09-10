@@ -357,8 +357,6 @@ a {
   }
 
   .prompt, .loginBannerContainer .logoText, .loginBannerContainer .logo div{
-    opacity:0;
-    animation-name: aparecer;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
   }

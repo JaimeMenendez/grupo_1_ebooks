@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdn.tiny.cloud/1/3c54177q3lh311521ar9zn5r80ehbssagbubwkxw3apnsps3/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+        });
+    </script>
+
+    <form class="container" autocomplete="false" action="/producto/agregarLibro" method="POST" enctype="multipart/form-data">
+        <div class="form-row">
+            <div class="form-group col-sm-6">
+                <label for="name">Título del Libro:</label>
+                <input type="text" class="form-control" id="name" placeholder="Título">
+            </div>
+
+            <div class="form-group col-sm-6">
+                <label for="autor">Autor:</label>
+                <input type="text" class="form-control" id="autor" placeholder="Autor">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-4">
+                <label for="categoria">Categoría:</label>
+                <input type="text" class="form-control" id="categoria" placeholder="Programación">
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label for="subcategoria">Subcategoría:</label>
+                <input type="text" class="form-control" id="subcategoria" placeholder="Python">
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label for="editorial">Editorial:</label>
+                <input type="text" class="form-control" id="editorial" placeholder="Springer">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-4">
+                <label for="isbn">ISBN:</label>
+                <input type="text" class="form-control" id="isbn" placeholder="9781449340377">
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label for="precioBook">Precio del Libro</label>
+                <input id="precioBook" class="form-control" type="number" min="0" step="0.5" name="precioBook"
+                    placeholder=" ">
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label for="precioBook">Precio Ebook:</label>
+                <input id="precioBook" class="form-control" type="number" min="0" step="0.5" name="precioBook"
+                    placeholder=" ">
+            </div>
+
+
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-sm-4">
+                <label for="exampleFormControlSelect1">Idioma:</label>
+                <select class="form-control" name="idioma" id="idioma">
+                    <option value="Inglés">Inglés</option>
+                    <option value="Español">Español</option>
+                    <option value="Francés">Francés</option>
+                    <option value="Italiano">Italiano</option>
+                </select>
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label>Año</label>
+                <input type="number" class="form-control" id="year" min="1980" max="2021" step="1" name="year"
+                    placeholder=" ">
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label for="paginas">Número de Páginas</label>
+                <input type="number" class="form-control" id="paginas" min="0" step="1" name="paginas" placeholder=" ">
+            </div>
+
+
+        </div>
+
+
+        <div class="form-row mb-3" >
+            <div class="col-sm-4 text-center">
+                <img src="" class='center-block' alt="portada" id="portadaImg" style="width: 200px;">
+            </div>
+
+            <div class="form-group col-sm-6">
+                <label for="imagen">Seleccionar imagen: </label>
+                <input type="file" onchange="loadFile(event)" class="form-control-file .form-control-lg" id="imagen">
+            </div>
+
+            <script>
+                let loadFile = function (event) {
+                    let output = document.getElementById('portadaImg');
+                    let label = document.querySelector('#nombreArchivo')
+    
+                    output.src = URL.createObjectURL(event.target.files[0]);
+                    label.innerHTML = event.target.files[0].name
+                    output.onload = function () {
+                        URL.revokeObjectURL(output.src)
+                    }
+                };
+            </script>
+        </div>
+
+        <div class="form-group">
+            <h4>Acerca de este libro</h4>
+            <textarea id="detallesLibro" name="detallesDelLibro">
+            </textarea>
+        </div>
+
+        <div class="autorDetails">
+            <h4>Acerca del Autor</h4>
+            <textarea id="detallesAutor" name="detallesAutor">
+          </textarea>
+        </div>
+
+
+        <div class="d-flex d-flex justify-content-around flex-wrap">
+            <button class="btn btn-primary col-md-4 m-2" type="button">Agregar Libro</button>
+            <button class="btn btn-danger col-md-4 m-2" type="button">Borrar</button>
+        </div>
+    </form>
+
+
+</body>
+
+</html>
