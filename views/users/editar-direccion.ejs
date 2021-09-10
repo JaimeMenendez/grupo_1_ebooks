@@ -1,0 +1,71 @@
+<% let data ={css:["css/myAccount.css","css/navBar.css", "css/navBarMobile.css"],
+             jsfile:["./js/darkModeScript.js"],
+             titulo: "My account"}%>
+
+<%- include('../partials/head', data)%>
+
+<body>
+    <%- include('../partials/navBar') %>
+    <%- include('../partials/navBarMobile') %>
+   
+    <section class="formContainer">
+        
+    <form class="addressEditForm" action="">
+    <h4 class="formPath"><a href="/users/">Mi cuenta</a> > <a href="/users/">Mis direcciones</a> > <span>Editar dirección</span></h4>
+    <h3 class="formTitle">Editar tu dirección</h3>
+    <div class="entradaDeDatos">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" name="nombre" id="nombre">
+    </div>
+
+    <div class="entradaDeDatos">
+        <label for="país">País</label>
+
+        <select name="pais" id="pais">
+            <option value="México">México</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Chile">Chile</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="Cuba">Cuba</option>
+            <option value="Perú">Perú</option>
+        </select>
+    </div>
+
+    <div class="entradaDeDatos">
+        <label for="direccion">Dirección de la calle y número</label>
+        <input type="text" name="direccion" id="direccion">
+    </div>
+
+    <div class="entradaDeDatos">
+        <label for="ciudad">Ciudad</label>
+        <input type="text" name="ciudad" id="ciudad">
+    </div>
+
+    <div class="entradaDeDatos">
+        <label for="estado">Estado/Provincia/Región</label>
+        <input type="text" name="estado" id="estado">
+    </div>
+
+    <div class="entradaDeDatos">
+        <label for="colonia">Colonia</label>
+        <input type="text" name="colonia" id="colonia">
+    </div>
+
+    <div class="entradaDeDatos">
+        <label for="telefono">Teléfono</label>
+        <input type="number" name="telefono" id="telefono">
+    </div>
+
+    <div class="formAddressButtons">
+        <button class="blue" type="submit">Guardar</button>
+        <button type="reset" onclick="window.location.href='/users/'">Salir</button>
+        
+    </div>
+</form>
+</section>
+
+ 
+    <%- include('../partials/footer') %>
+
+</body>
+</html>

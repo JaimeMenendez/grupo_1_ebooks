@@ -35,6 +35,7 @@
   
     --backgroundColor: #e2e1e0;
     --backgroundSections:white;
+    --backgroundAlternative:white;
   
     --fontColors:#2e2e2e;
     --navBarBackground:rgb(255, 255, 255);
@@ -319,6 +320,7 @@ main div.message{
       --sectionBackground: #121212;
       --backgroundColor: #121212;
       --backgroundSections:#222222;
+      --backgroundAlternative:#121212;
   
       --whiteButtonsFontColor: #eaebf1;
       --whiteButtonsBackground:rgb(59, 57, 57);
@@ -381,10 +383,6 @@ main div.message{
 //    MEDIA QUERIES PC             //
 /***********************************/
 @media (min-width: 900px) {
-
-    body{
-        background-color: #ebebeb;;
-    }
     
     main article{
         width: 15%;

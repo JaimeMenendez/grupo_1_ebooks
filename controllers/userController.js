@@ -11,6 +11,10 @@ const userController = {
   },
   sendInvoice: (req, res) => {
     res.render('users/invoice', { busquedas: seccion.busquedas, favoritos: seccion.favoritos })
+  },
+  sendEditAddressView: (req, res) => {
+    const direccionSolicitada = user.direcciones.find(direccion => direccion.id === Number.parseInt(req.params.id))
+    res.render('users/editar-direccion', direccionSolicitada)
   }
 }
 
