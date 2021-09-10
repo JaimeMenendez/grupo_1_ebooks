@@ -43,7 +43,7 @@
             
         {
             "categoria": "Medicina",
-            "subcategorias": ["Diabetes","Cardiología","Neurología","Farmacología","Epidemiología","Anestesiología","Oncología","Pediatría","Bacteriología","Ginecología","Microbiología","Neurología"],
+            "subcategorias": ["Cardiología","Neurología","Farmacología","Epidemiología","Anestesiología","Oncología","Pediatría","Microbiología","Ginecología","Urología","Neurología"],
             "icono": "fas fa-stethoscope",
             "idClass": "medicina"
         }, 
