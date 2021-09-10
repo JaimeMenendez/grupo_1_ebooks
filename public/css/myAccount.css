@@ -11,6 +11,7 @@
 @import "./buttonStart.css";
 @import "./footer.css";
 @import "./category-buttons.css";
+@import "./addressSection.css";
 
 :root{
     --azul-morado-oscuro: #2d2f8e;
@@ -293,6 +294,10 @@ main div.category-users p, div.category-users2 p, div.category-users3 p, div.cat
 
 main div.message{
     display: block;
+}
+
+.category{
+ cursor: pointer;
 }
 /************************************
 //        BODY SECTIONS           //

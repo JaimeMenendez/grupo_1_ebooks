@@ -21,6 +21,7 @@
         </section>
 
         <%- include('../partials/section', favoritos) %>
+        <%- include('../partials/address', user) %>
         <%- include('../partials/section', busquedas) %>
 
         <!--Banner promocional-->
@@ -40,7 +41,13 @@
             document.getElementById('favoritos').classList.toggle('ocultar')
             console.log('Estoy dentro')
         }
-        document.getElementById('favoritos').classList.toggle('ocultar')
+
+        function mostrarDirecciones(){
+        document.getElementsByClassName('addressContainer')[0].classList.toggle('ocultar')
+    }
+
+    document.getElementById('favoritos').classList.toggle('ocultar')
+    document.getElementsByClassName('addressContainer')[0].classList.toggle('ocultar')
     </script>
 </body>
 </html>

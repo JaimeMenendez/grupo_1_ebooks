@@ -1,0 +1,33 @@
+<section class="books addressContainer">
+    <h3>Mis direcciones</h3>
+    <div class="addresses">
+        <a href="/user/add-new-address" >
+            <div class="addressBox addAddress">
+                <i class="fas fa-plus"></i>
+                <h4>Agregar dirección</h4>
+            </div>
+        </a>
+
+        <% direcciones.forEach(address => {   %> 
+            <div class="addressBox">
+               <% if(address.predeterminada) {%> 
+                <div class="defaultAdress">Predeterminado: &nbsp &nbsp <img src="/public/images/Logo_2.2.png"></div>
+                <% } %> 
+                <div class="addressContent">
+                    <p><strong><%= address.nombre %></strong></p>
+                    <p><%= address.direccion %></p>
+                    <p><%= address.ciudad %>, <%= address.estado %></p>
+                    <p><%= address.codigoPostal %></p>
+                    <p><%= address.pais %></p>
+                    <p>Teléfono de contacto: <span><%= address.telefono %></span></p>
+                </div>
+    
+                <div class="addressButtons">
+                    <a href="/users/edit-address/<%= address.id %>">Editar</a> | <a href="/users/edit-address/<%= address.id %>">Descartar</a>
+                </div>
+            </div>
+        <% }) %> 
+    </div>
+
+
+</section>

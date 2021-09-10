@@ -1,0 +1,26 @@
+{
+  "direcciones": [
+    {
+      "nombre": "Jaime Menéndez Álvarez",
+      "direccion": "Claveles 605",
+      "estado": "Nuevo León",
+      "ciudad": "General Escobedo",
+      "codigoPostal": "66056",
+      "pais": "México",
+      "telefono": "1234567891",
+      "predeterminada": true,
+      "id": 1
+    },
+    {
+        "nombre": "Jaime Menéndez Álvarez",
+        "direccion": "Claveles 605",
+        "estado": "Nuevo León",
+        "ciudad": "General Escobedo",
+        "codigoPostal": "66056",
+        "pais": "México",
+        "telefono": "1234567891",
+        "predeterminada": false,
+        "id": 2
+      }
+  ]
+}
