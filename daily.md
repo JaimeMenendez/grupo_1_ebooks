@@ -49,3 +49,7 @@
 
 # 6-9-2021
 - retro.md de 3er sprint
+
+# 10-9-2021
+- Actualización de rutas y controller de productos
+- Corrección de subcategorías de categoría Medicina
