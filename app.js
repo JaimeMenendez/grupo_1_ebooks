@@ -25,7 +25,7 @@ const methodOverride = require('method-override')
 app.use(methodOverride('_method'))
 
 // Routes
-app.use('/producto', routerProducto)
+app.use('/products', routerProducto)
 app.use('/users', routerUser)
 app.use(router)
 
