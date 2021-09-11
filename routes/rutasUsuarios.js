@@ -6,7 +6,9 @@ routerUser.get('/', userController.sendMyAccount)
 routerUser.get('/security', userController.sendSecurity)
 routerUser.get('/invoice', userController.sendInvoice)
 routerUser.get('/edit-address/:id', userController.sendEditAddressView)
-routerUser.get('/add-new-address', userController.sendEditAddressView)
-routerUser.put('/edit-address/:id', userController.sendEditAddressView)
-routerUser.put('/delete-address/:id', userController.sendEditAddressView)
+routerUser.get('/add-new-address', userController.sendAddAddressView)
+routerUser.put('/edit-address/:id', userController.updateAddress)
+routerUser.post('/add-new-address', userController.storeNewAddress)
+
+routerUser.delete('/delete-address/:id', userController.deleteAddress)
 module.exports = routerUser

@@ -5,6 +5,7 @@
       "direccion": "Claveles 605",
       "estado": "Nuevo León",
       "ciudad": "General Escobedo",
+      "colonia": "Los Girasoles 1er Sector",
       "codigoPostal": "66056",
       "pais": "México",
       "telefono": "1234567891",
@@ -12,15 +13,28 @@
       "id": 1
     },
     {
-        "nombre": "Jaime Menéndez Álvarez",
-        "direccion": "Claveles 605",
-        "estado": "Nuevo León",
-        "ciudad": "General Escobedo",
-        "codigoPostal": "66056",
-        "pais": "México",
-        "telefono": "1234567891",
-        "predeterminada": false,
-        "id": 2
-      }
+      "nombre": "Alberto López",
+      "pais": "México",
+      "direccion": "Avenida Las Torres 402",
+      "ciudad": "Monterrey",
+      "estado": "Nuevo Leon",
+      "colonia": "Los Sauces",
+      "codigoPostal": "58025",
+      "telefono": "123456789",
+      "id": 3,
+      "predeterminada": false
+    },
+    {
+      "nombre": "Juana López",
+      "pais": "México",
+      "direccion": "Claveles 605",
+      "ciudad": "General Escobedo",
+      "estado": "Nuevo León",
+      "colonia": "Los Sauces",
+      "codigoPostal": "66056",
+      "telefono": "9982197111",
+      "id": 4,
+      "predeterminada": false
+    }
   ]
 }

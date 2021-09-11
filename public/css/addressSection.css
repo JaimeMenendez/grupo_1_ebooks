@@ -85,6 +85,19 @@
     color: #5a5cd6;
 }
 
+.addressButtons form{
+    display: inline;
+
+}
+
+.addressButtons button{
+   background: none;
+   border: none;
+   cursor: pointer;
+   color:#5a5cd6 ;
+   padding: 0 5px;
+}
+
 .defaultAdress{
     position: absolute;
     top: 0;
@@ -107,10 +120,9 @@
     margin-top: -5px;
 }
 
-.addressButtons a:hover,.addressEditForm .formPath a:hover{
+.addressButtons a:hover,.addressEditForm .formPath a:hover, .addressButtons button:hover{
     text-decoration:underline;
     color: #EA4533;
-
 }
 
 
