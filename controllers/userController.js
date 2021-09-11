@@ -73,6 +73,17 @@ const userController = {
       fs.writeFileSync(userPath, JSON.stringify(user, null, 2))
     }
     res.redirect('/users')
+  },
+  makeDefaultAddress: (req, res) => {
+    const id = Number.parseInt(req.params.id)
+    user.direcciones.forEach((address) => {
+      address.predeterminada = false
+      if (address.id === id) {
+        address.predeterminada = true
+      }
+    })
+    fs.writeFileSync(userPath, JSON.stringify(user, null, 2))
+    res.redirect('/users')
   }
 }
 

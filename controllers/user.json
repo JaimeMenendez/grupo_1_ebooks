@@ -9,7 +9,7 @@
       "codigoPostal": "66056",
       "pais": "México",
       "telefono": "1234567891",
-      "predeterminada": true,
+      "predeterminada": false,
       "id": 1
     },
     {
@@ -34,7 +34,7 @@
       "codigoPostal": "66056",
       "telefono": "9982197111",
       "id": 4,
-      "predeterminada": false
+      "predeterminada": true
     }
   ]
 }
