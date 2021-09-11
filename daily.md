@@ -1,34 +1,34 @@
 # 20-8-2021
-- Se agregaron nuevos banners al slider del home.
-- Se separaron todas las rutas del archivo app.js hacia la carpeta routes.
-- Se solucionaron pequeños errores del home y del searchBook.
-- Se creó la lista de tareas del sprint 3 en el Trello.
+- Se agregaron nuevos banners al slider del home
+- Se separaron todas las rutas del archivo app.js hacia la carpeta routes
+- Se solucionaron pequeños errores del home y del searchBook
+- Se creó la lista de tareas del sprint 3 en el Trello
 
 # 21-8-2021
-- Se efectuó la reunión semanal para programar y distribuir todas las tareas relacionadas con el sprint 3.
-- Se creó el partial de comentarios, y se implementó la vista de descripción del producto en el motor de plantillas ejs. 
-- Se creó el partial de productos del carrito, y se implementó la vista de carrito en el motor de plantillas ejs. 
-- Se agregó al carrito la funcionalidad de calcular el precio total de manera dinámica con javascript.
+- Se efectuó la reunión semanal para programar y distribuir todas las tareas relacionadas con el sprint 3
+- Se creó el partial de comentarios, y se implementó la vista de descripción del producto en el motor de plantillas ejs
+- Se creó el partial de productos del carrito, y se implementó la vista de carrito en el motor de plantillas ejs
+- Se agregó al carrito la funcionalidad de calcular el precio total de manera dinámica con javascript
 
 # 22-8-2021
 - Se agregó a los botones de los comentarios y a las estrellas que califican los comentarios en la vista de descripción del producto un efecto de hover para que el usuario elija la calificación de la reseña.
-- Se agregó animación de estrellas fugaces al hacer click en las estrellas de calificación de las reseñas en detalle del producto.
-- Se agregó funcionalidad al botón de favoritos y se animó. Ahora al presionar el corazón, se marca o desmarca el libro. 
-- Se animaron en estado activo los botones de comentarios.
-- Se convirtió a plantilla ejs los Términos y condiciones y política de privacidad. Ahora a partir de un solo documento se generan ambos archivos.
+- Se agregó animación de estrellas fugaces al hacer click en las estrellas de calificación de las reseñas en detalle del producto
+- Se agregó funcionalidad al botón de favoritos y se animó. Ahora al presionar el corazón, se marca o desmarca el libro
+- Se animaron en estado activo los botones de comentarios
+- Se convirtió a plantilla ejs los Términos y condiciones y política de privacidad. Ahora a partir de un solo documento se generan ambos archivos
 
 # 23-8-2021
-- Se creó una vista personalizada para las rutas con error 404 usando el tema de la página.
-- Se creó la primera versión de AgregarLibros en ejs responsive para movil, tablet y escritorio con la funcionalidad de previsualizar la imagen de portada cargada por el usuario.
+- Se creó una vista personalizada para las rutas con error 404 usando el tema de la página
+- Se creó la primera versión de AgregarLibros en ejs responsive para movil, tablet y escritorio con la funcionalidad de previsualizar la imagen de portada cargada por el usuario
 
 # 24-8-2021
 - Se iniciaron partials (head, header, footer y nav bar)
-- Se instaló e implementó multer de manera que ahora es posible guardar libros en un archivo librosDB.json en el servidor utilizando el formulario de AgregarLibro. Es solo un borrador puesto que los datos no son sometidos a ninguna validación.
+- Se instaló e implementó multer de manera que ahora es posible guardar libros en un archivo librosDB.json en el servidor utilizando el formulario de AgregarLibro Es solo un borrador puesto que los datos no son sometidos a ninguna validación
 
 # 25-8-2021
 - Partial de head creado.
-- Partial de footer creado.
-- Partial de footer agregado a todas las vistas.
+- Partial de footer creado
+- Partial de footer agregado a todas las vistas
 - Se solucionaron algunos errores y ahora es posible visualizar los detalles del producto agregado con /producto/agregarLibro en la url /producto/1  donde el número es el id que se le asignó al producto que introdujo el usuario
 # 28-8-2021
 - Junta de equipo
@@ -44,7 +44,7 @@
 
 # 1-9-2021
 - Se reestructuró el directorio de vistas separándo las vistas principales, las vistas de productos y las vistas de usuario.
-- Se agregó una animación al login y register.
+- Se agregó una animación al login y register
 - Se mejoró la accesibilidad de los botones en el home y el register haciendo el cursor de tipo pointer en los elementos clickeables.
 
 # 6-9-2021
@@ -53,3 +53,4 @@
 # 10-9-2021
 - Actualización de rutas y controller de productos
 - Corrección de subcategorías de categoría Medicina
+- Vista de Todos los productos iniciada
