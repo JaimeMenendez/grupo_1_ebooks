@@ -474,6 +474,10 @@ a {
     
   }
 
+  .registrationInput .question label{
+    display:none;
+  }
+
   .loginBannerContainer{
     margin:0;
     padding:0;
@@ -493,9 +497,7 @@ a {
     margin: 0;
   }
 
-  .registrationInput .question label{
-    display:none;
-  }
+
 
   .loginForm .question{
     margin-bottom: 10px;
@@ -545,6 +547,13 @@ a {
     transform: scale(1.05) ;
   }
 
+}
+
+@media(min-height: 762px) and (min-width:1024px){
+  .registrationInput .question label{
+    display:block;
+    padding-top: 10px;
+  }
 }
 
 /* Samsung Dodge */
