@@ -49,5 +49,39 @@
     "detallesAutor": "<p>El doctor Douglas P. Zipes es Profesor Emérito de Medicina, Farmacología y Toxicología, Director Emérito de la División de Cardiología y del Instituto Krannert de Cardiología de la Facultad de Medicina de la Universidad de Indiana. El Dr. Douglas P. Zipes ha recibido la Medalla de Oro de la Sociedad Europea de Cardiología 2013.</p>",
     "id": 3,
     "portada": "public/images/booksCover/default-image.png"
+  },
+  {
+    "nombreLibro": "Neuroanatomía clínica: Texto y Atlas",
+    "categoria": "Medicina",
+    "subcategoria": "Neurología",
+    "autor": "Duane E. Haines",
+    "editorial": "Wolters Kluwer",
+    "isbn": "9788418257650",
+    "idioma": "Español",
+    "precioBook": "600",
+    "precioEbook": "300",
+    "paginas": "355",
+    "year": "2021",
+    "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>La nueva edición de Neuroanatomía clínica. Texto y Atlas continúa proporcionando toda la información que el estudiante necesita conocer sobre la anatomía del sistema nervioso central en el contexto clínico; incluye ilustraciones anatómicas a todo color, abundantes imágenes de RM, TC y obtenidas con las técnicas más novedosas que ofrecen una visión más real y clara de las estructuras clínicamente relevantes del sistema nervioso.</p>\r\n</div>",
+    "detallesAutor": "<p>Duane E. Haines, PhD es profesor emérito del Centro Médico de la Universidad de Mississippi en el Departamento de Neurobiología y Ciencias Anatómicas.</p>",
+    "id": 4,
+    "portada": "public/images/booksCover/default-image.png"
+  },
+    {
+    "nombreLibro": "Neuroanatomia funcional: Texto y atlas",
+    "categoria": "Medicina",
+    "subcategoria": "Neurología",
+    "autor": "Adel K. Afifi",
+    "editorial": "McGraw-Hill",
+    "isbn": "9786071514936",
+    "idioma": "Español",
+    "precioBook": "800",
+    "precioEbook": "360",
+    "paginas": "515",
+    "year": "2020",
+    "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>Neuroanatomía funcional proporciona los principios de la neuroanatomía. Esta edición cuenta con cuatro capítulos nuevos, dos sobre formación reticular, la vigilia y el sueño  y sus correlaciones clínicas; uno acerca del control de la postura; uno  mas sobre el movimiento y otro enfocado en la forma de atender al paciente con un trastorno neurológico.</p>\r\n</div>",
+    "detallesAutor": "<p>El Dr. Adel Afifi nació en Akka (Acre), Palestina. El Dr. Afifi publicó más de cien artículos en revistas profesionales y diez libros. Ha recibido varios premios.</p>",
+    "id": 5,
+    "portada": "public/images/booksCover/default-image.png"
   }
 ]
