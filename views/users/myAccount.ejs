@@ -22,6 +22,7 @@
 
         <%- include('../partials/section', favoritos) %>
         <%- include('../partials/address', user) %>
+        <%- include('../partials/dataInvoices') %>
         <%- include('../partials/section', busquedas) %>
 
         <!--Banner promocional-->
@@ -43,11 +44,16 @@
         }
 
         function mostrarDirecciones(){
-        document.getElementsByClassName('addressContainer')[0].classList.toggle('ocultar')
-    }
+            document.getElementsByClassName('addressContainer')[0].classList.toggle('ocultar')
+        }
 
-    document.getElementById('favoritos').classList.toggle('ocultar')
-    document.getElementsByClassName('addressContainer')[0].classList.toggle('ocultar')
+        function mostrarDatosFacturacion(){
+            document.getElementById('invoiceContainer').classList.toggle('ocultar')
+        }
+
+        document.getElementById('favoritos').classList.toggle('ocultar')
+        document.getElementsByClassName('addressContainer')[0].classList.toggle('ocultar')
+        document.getElementsById('invoiceContainer').classList.toggle('ocultar')
     </script>
 </body>
 </html>

@@ -12,6 +12,7 @@
 @import "./footer.css";
 @import "./category-buttons.css";
 @import "./addressSection.css";
+@import "./invoiceSection.css";
 
 :root{
     --azul-morado-oscuro: #2d2f8e;
