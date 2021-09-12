@@ -9,8 +9,13 @@
     <%- include('../partials/navBarMobile') %>
    
     <section class="formContainer">
+
+    <div class="top">
+        <!--Separador bonito -->
+        <%- include('../partials/separador') %>
+    </div>
         
-    <form class="addressEditForm" action=<%= edit ? `/users/edit-address/${id}?_method=PUT` : '/users/add-new-address' %> method="POST">
+    <form class="editForm" action=<%= edit ? `/users/edit-address/${id}?_method=PUT` : '/users/add-new-address' %> method="POST">
     <h4 class="formPath"><a href="/users/">Mi cuenta</a> > <a href="/users/">Mis direcciones</a> > <span><%= edit ? 'Editar dirección' : 'Agregar dirección' %></span></h4>
     <h3 class="formTitle"><%= edit ? 'Editar dirección' : 'Agregar dirección' %></h3>
     <div class="entradaDeDatos">
@@ -61,12 +66,17 @@
         <input type="number" name="telefono" id="telefono" required value="<%= edit ? telefono : '' %>">
     </div>
 
-    <div class="formAddressButtons">
+    <div class="formButtons">
         <button class="blue" type="submit">Guardar</button>
         <button type="reset" onclick="window.location.href='/users/'">Salir</button>
         
     </div>
 </form>
+
+    <div class="bottom">
+        <!--Separador bonito -->
+        <%- include('../partials/separador') %>
+    </div>
 </section>
 
  

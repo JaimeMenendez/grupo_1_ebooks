@@ -185,8 +185,20 @@ main section.separador{
     box-shadow: none;
 }
 
-main section.separador img{
+main section.separador img, .formContainer .separador{
     width: 100%;
+}
+
+.top img{
+    background-color: red;
+    margin: 10px 0px 10px 0px;
+    max-height: 17.58px;
+}
+
+.bottom img{
+    background-color: red;
+    margin: 20px 0px 10px 0px;
+    max-height: 17.58px;
 }
 
 /************************************
@@ -366,6 +378,7 @@ main div.message{
     main div.category-users, div.category-users2, div.category-users3, div.category-users4, div.category-users5, div.category-users6{
         width:48%;
     }
+
 
 }
 

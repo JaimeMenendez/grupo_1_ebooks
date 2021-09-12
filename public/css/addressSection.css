@@ -25,7 +25,7 @@
     text-decoration: none;
 }
 
-.addressEditForm .formPath a{
+.editForm .formPath a{
     color: var(--fontColors);
     text-decoration: none;
 }
@@ -120,18 +120,20 @@
     margin-top: -5px;
 }
 
-.addressButtons a:hover,.addressEditForm .formPath a:hover, .addressButtons button:hover{
+.addressButtons a:hover,.editForm .formPath a:hover, .addressButtons button:hover{
     text-decoration:underline;
     color: #EA4533;
 }
 
 
-.addressEditForm{
+.editForm{
     max-width: 600px;
     margin: auto;
+    border: 10px solid var(--sombra-boton);
+    box-shadow: 1px 3px 5px 3px rgba(0,0,0,0.24);
 }
 
-.addressEditForm .formTitle{
+.editForm .formTitle{
     text-align: left;
     margin-left: 2%;
     font-weight: 700;
@@ -139,7 +141,7 @@
     padding-bottom: 20px;
 }
 
-.addressEditForm .formPath{
+.editForm .formPath{
     text-align: left;
     margin-left: 2%;
     padding-top: 10px;
@@ -149,7 +151,7 @@
     padding-bottom: 20px;
 }
 
-.addressEditForm .formPath span{
+.editForm .formPath span{
     color: #EA4533;
 }
 
@@ -194,10 +196,10 @@
 
 .formContainer{
    background-color: var(--backgroundAlternative);
-   margin: 0;
+   padding: 0px 10px;
 }
 
-.formAddressButtons{
+.formButtons{
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 2.5%;
@@ -205,7 +207,7 @@
   margin-top: 20px;
 }
 
-.formAddressButtons button{
+.formButtons button{
     font-weight: bold;
     display: block;
     margin: 10px auto;
@@ -224,15 +226,15 @@
     transition-duration: 0.3s;
 }
 
-.formAddressButtons button:hover{
+.formButtons button:hover{
     background-color: #cf2512;
 }
 
-.formAddressButtons button[type=submit]{
+.formButtons button[type=submit]{
     background-color: #585DBA;
 }
 
-.formAddressButtons button[type=submit]:hover{
+.formButtons button[type=submit]:hover{
     background-color: #1f25a5;
 }
 

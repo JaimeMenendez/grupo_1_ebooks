@@ -9,27 +9,79 @@
     <%- include('../partials/navBar') %>
     <%- include('../partials/navBarMobile') %>
 
-    <main>
+    <section class="formContainer">
         
-        <section class="body-users">
-            <div class="body-users-buttons">
-                <h3>Mis datos de facturación</h3>
+        <div class="top">
+            <!--Separador bonito -->
+            <%- include('../partials/separador') %>
+        </div>
+
+        <form class="editForm" action=" " method="POST">
+            <h4 class="formPath">
+                <a href="/users/">Mi cuenta</a>
+                >
+                <a href="/users/">Mis datos de facturación</a>
+                >
+                <span>Agregar datos de facturación</span>
+            </h4>
+            <h3 class="formTitle">Agregar datos de facturación</h3>
+            <div class="entradaDeDatos">
+                <label for="razonSocial">Nombre o Razón social</label>
+                <input type="text" id="razonSocial" name="razonSocial" value=" " autocomplete="on" required>
             </div>
-        </section>
+            <div class="entradaDeDatos">
+                <label for="rfc">R.F.C</label>
+                <input type="text" id="rfc" name="rfc" value=" " autocomplete="on" required>
+            </div>
+            <div class="entradaDeDatos">
+                <label for="cp">Código postal</label>
+                <input type="" id="cp" name="cp" value=" " autocomplete="on" required>
+            </div>
+            <div class="entradaDeDatos">
+                <label for="pais">País</label>
+                <select id="pais" name="pais">
+                    <option value="mexico">México</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="cuba">Cuba</option>
+                    <option value="guatemala">Guatemala</option>
+                    <option value="nicaragua">Nicaragua</option>
+                    <option value="salvador">El Salvador</option>
+                    <option value="panama">Panamá</option>
+                    <option value="venezuela">Venezuela</option>
+                    <option value="ecuador">Ecuador</option>
+                    <option value="peru">Perú</option>
+                    <option value="brasil">Brasil</option>
+                    <option value="chile">Chile</option>
+                    <option value="paraguay">Paraguay</option>
+                    <option value="uruguay">Uruguay</option>
+                    <option value="bolivia">Bolivia</option>
+                </select>
+            </div>
+            <div class="entradaDeDatos">
+                <label for="calle">Dirección de la calle y número</label>
+                <input type="text" id="calle" name="calle" value=" " autocomplete="on" required>
+            </div>
+            <div class="entradaDeDatos">
+                <label for="colonia">Colonia</label>
+                <input type="text" id="colonia" name="colonia" value=" " autocomplete="on" required>
+            </div>
+            <div class="entradaDeDatos">
+                <label for="delegacion">Delegación</label>
+                <input type="text" id="delegacion" name="delegacion" value=" " autocomplete="on" required>
+            </div>
+            <div class="formButtons">
+                <button class="blue" type="submit">Guardar</button>
+                <button type="reset" onclick="window.location.href='/users'">Salir</button>
+            </div>
+        </form>  
+        
+        <div class="bottom">
+            <!--Separador bonito -->
+            <%- include('../partials/separador') %>
+        </div>
 
-        <%- include('../partials/section', favoritos) %>
-        <%- include('../partials/section', busquedas) %>
-
-        <!--Banner promocional-->
-        <%- include('../partials/promotionalBanner')%>
-
-        <!--Separador bonito -->
-        <%- include('../partials/separador') %>
-
-        <!--Botón que retorna al incio de la página -->
-        <%- include('../partials/botonAInicio') %>
-
-    </main>
+    </section>
 
     <%- include('../partials/footer') %>
     <script defer>
