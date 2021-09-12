@@ -54,3 +54,6 @@
 - Actualización de rutas y controller de productos
 - Corrección de subcategorías de categoría Medicina
 - Vista de Todos los productos iniciada
+
+# 12-9-2021
+- Se agregaron 2 libros por cada una de las primeras 3 categorías de Medicina
