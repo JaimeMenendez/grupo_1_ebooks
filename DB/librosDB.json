@@ -15,5 +15,39 @@
     "detallesAutor": "<p>Yuri Diogenes is a professor at EC-Council University for their master's degree in cybersecurity program. Yuri has a master of science degree in cybersecurity from UTICA College, and MBA from FGV Brazil. Yuri currently holds the following certifications CISSP, CyberSec First Responder, CompTIA CSA+, E|CEH, E|CSA, E|CHFI, E|CND, CyberSec First Responder, CompTIA, Security+, CompTIA Cloud Essentials, Network+, Mobility+, CASP, CSA+, MCSE, MCTS, and Microsoft Specialist - Azure.</p>\r\n<p>Dr. Erdal Ozkaya is a technically sophisticated executive leader with a solid education and strong business acumen. Over the course of his progressive career, he has developed a keen aptitude for facilitating the integration of standard operating procedures that ensure optimal functionality of all technical functions and systems.</p>\r\n<p>&nbsp;</p>\r\n<p>Being a proactive communicator, trusted partner, and skilled analyst, he is highly adept at building dynamic teams that work together to expedite operational goals, priorities, and objectives. As a result, he is poised to conduct reviews and investigations with prompt efficiency and provide thorough and informative reports to both internal and external stakeholders.</p>",
     "id": 1,
     "portada": "public/images/booksCover/portada-1629923888051.png"
+  },
+  {
+    "nombreLibro": "Cardiología: Bases fisiopatológicas de las cardiopatías",
+    "categoria": "Medicina",
+    "subcategoria": "Cardiología",
+    "autor": "Leonard Stuart Lilly",
+    "editorial": "Wolters Kluwer",
+    "isbn": "9788418257728",
+    "idioma": "Español",
+    "precioBook": "600",
+    "precioEbook": "350",
+    "paginas": "500",
+    "year": "2021",
+    "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>El libro está diseñado específicamente para preparar a los estudiantes para sus primeros encuentros con pacientes con enfermedades cardiovasculares. Esta 7.ª edición, revisada a fondo por la facultad de la Facultad de Medicina de Harvard y un equipo selecto de cardiólogos y residentes de medicina interna, equipa a los estudiantes con una comprensión clara, completa y clínicamente relevante de la fisiopatología cardiovascular, estableciendo una base sólida para el diagnóstico y el tratamiento del paciente.</p>\r\n</div>",
+    "detallesAutor": "<p>El Dr. Leonard Stuart Lilly es jefe de la División de Cardiología del Brigham and Women's Faulkner Hospital y especialista en medicina cardiovascular del Brigham and Women’s Hospital (BWH). Además, es profesor de medicina en la Escuela de Medicina de Harvard (HMS).</p>",
+    "id": 2,
+    "portada": "public/images/booksCover/default-image.png"
+  },
+  {
+    "nombreLibro": "Braunwald: Tratado de cardiología: Texto de medicina cardiovascular",
+    "categoria": "Medicina",
+    "subcategoria": "Cardiología",
+    "autor": "Douglas P. Zipes",
+    "editorial": "Elsevier",
+    "isbn": "9788491133988",
+    "idioma": "Español",
+    "precioBook": "4000",
+    "precioEbook": "1000",
+    "paginas": "2056",
+    "year": "2019",
+    "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>Obra de referencia en Cardiología que cubre todos los aspectos de la especialidad proporcionando a clínicos, médicos en formación y estudiantes las herramientas fundamentales para estar al día tanto en lo que se refiere a las bases científicas como a los avances clínicos de la medicina cardiovascular.</p>\r\n</div>",
+    "detallesAutor": "<p>El doctor Douglas P. Zipes es Profesor Emérito de Medicina, Farmacología y Toxicología, Director Emérito de la División de Cardiología y del Instituto Krannert de Cardiología de la Facultad de Medicina de la Universidad de Indiana. El Dr. Douglas P. Zipes ha recibido la Medalla de Oro de la Sociedad Europea de Cardiología 2013.</p>",
+    "id": 3,
+    "portada": "public/images/booksCover/default-image.png"
   }
 ]
