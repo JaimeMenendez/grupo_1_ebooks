@@ -9,11 +9,6 @@
     <%- include('../partials/navBarMobile') %>
    
     <section class="formContainer">
-
-    <div class="top">
-        <!--Separador bonito -->
-        <%- include('../partials/separador') %>
-    </div>
         
     <form class="editForm" action=<%= edit ? `/users/edit-address/${id}?_method=PUT` : '/users/add-new-address' %> method="POST">
     <h4 class="formPath"><a href="/users/">Mi cuenta</a> > <a href="/users/">Mis direcciones</a> > <span><%= edit ? 'Editar dirección' : 'Agregar dirección' %></span></h4>
@@ -72,14 +67,8 @@
         
     </div>
 </form>
-
-    <div class="bottom">
-        <!--Separador bonito -->
-        <%- include('../partials/separador') %>
-    </div>
 </section>
 
- 
     <%- include('../partials/footer') %>
 
 </body>

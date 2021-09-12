@@ -10,6 +10,16 @@
       "pais": "México",
       "telefono": "1234567891",
       "predeterminada": false,
+      "razonSocial": " ",
+      "rfc": " ",
+      "direccionFacturacion": " ",
+      "estadoFacturacion": " ",
+      "ciudadFacturacion": " ",
+      "coloniaFacturacion": " ",
+      "delegacionFacturacion": "",
+      "codigoPostalFac": "",
+      "paisFacturacion":"",
+      "direccionFacPred": false,
       "id": 1
     },
     {
@@ -21,8 +31,18 @@
       "colonia": "Los Sauces",
       "codigoPostal": "58025",
       "telefono": "123456789",
-      "id": 3,
-      "predeterminada": false
+      "predeterminada": false,
+      "razonSocial": " ",
+      "rfc": " ",
+      "direccionFacturacion": " ",
+      "estadoFacturacion": " ",
+      "ciudadFacturacion": " ",
+      "coloniaFacturacion": " ",
+      "delegacionFacturacion": "",
+      "codigoPostalFac": "",
+      "paisFacturacion":"",
+      "direccionFacPred": false,
+      "id": 3
     },
     {
       "nombre": "Juana López",
@@ -33,8 +53,18 @@
       "colonia": "Los Sauces",
       "codigoPostal": "66056",
       "telefono": "9982197111",
-      "id": 4,
-      "predeterminada": true
+      "predeterminada": true,
+      "razonSocial": " ",
+      "rfc": " ",
+      "direccionFacturacion": " ",
+      "estadoFacturacion": " ",
+      "ciudadFacturacion": " ",
+      "coloniaFacturacion": " ",
+      "delegacionFacturacion": "",
+      "codigoPostalFac": "",
+      "paisFacturacion":"",
+      "direccionFacPred": false,
+      "id": 4
     }
   ]
 }

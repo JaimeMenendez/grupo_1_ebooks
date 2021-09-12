@@ -17,8 +17,6 @@
     max-width: 1000px;
     margin: auto;
     gap: 20px;
-   
-
 }
 
 .addresses a{
@@ -125,12 +123,10 @@
     color: #EA4533;
 }
 
-
 .editForm{
     max-width: 600px;
     margin: auto;
-    border: 10px solid var(--sombra-boton);
-    box-shadow: 1px 3px 5px 3px rgba(0,0,0,0.24);
+    padding: 10px 0px 20px 0px;
 }
 
 .editForm .formTitle{
@@ -148,7 +144,7 @@
     color:  var(--fontColors);
     font-weight: 400;
     padding-top: 15px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
 
 .editForm .formPath span{
@@ -171,7 +167,7 @@
     color: #0F1111;
     width: 95%;
     border: 1px solid #888C8C;
-    border-radius: 3px;
+    border-radius: 5px;
     box-shadow: 0 1px 2px rgba(15,17,17,.15) inset;
     outline: 0;
     background-color: var(--backgroundSections);
@@ -241,8 +237,8 @@
 @media (min-width: 600px) {
 
     .formContainer{
-        margin-top: 50px;
         padding-bottom: 5px;
+        margin-top: 50px;
     }
 }
 

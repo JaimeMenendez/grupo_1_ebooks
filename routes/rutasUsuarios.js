@@ -4,7 +4,12 @@ const routerUser = express.Router()
 
 routerUser.get('/', userController.sendMyAccount)
 routerUser.get('/security', userController.sendSecurity)
-routerUser.get('/invoice', userController.sendInvoice)
+
+routerUser.get('/add-new-invoice', userController.sendAddInvoiceView)
+routerUser.post('/add-new-invoice', userController.storeNewInvoice)
+routerUser.get('/edit-invoice/:id', userController.sendEditInvoiceView)
+routerUser.put('/edit-invoice/:id', userController.updateInvoice)
+
 routerUser.get('/edit-address/:id', userController.sendEditAddressView)
 routerUser.get('/add-new-address', userController.sendAddAddressView)
 routerUser.put('/edit-address/:id', userController.updateAddress)

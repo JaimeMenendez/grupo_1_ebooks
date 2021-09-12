@@ -22,11 +22,19 @@ const userController = {
       favoritos: seccion.favoritos
     })
   },
-  sendInvoice: (req, res) => {
-    res.render('users/invoice', {
-      busquedas: seccion.busquedas,
-      favoritos: seccion.favoritos
-    })
+  // Create new invoice
+  sendAddInvoiceView: (req, res) => {
+    res.render('users/invoice', { edit: false })
+  },
+  storeNewInvoice: (req, res) => {
+    res.redirect('/users')
+  },
+  // Edit old invoice
+  sendEditInvoiceView: (req, res) => {
+    res.render('users/invoice', { edit: true })
+  },
+  updateInvoice: (req, res) => {
+    res.redirect('/users')
   },
   sendEditAddressView: (req, res) => {
     const direccionSolicitada = user.direcciones.find(

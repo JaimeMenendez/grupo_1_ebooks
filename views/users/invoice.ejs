@@ -10,76 +10,84 @@
     <%- include('../partials/navBarMobile') %>
 
     <section class="formContainer">
-        
-        <div class="top">
-            <!--Separador bonito -->
-            <%- include('../partials/separador') %>
-        </div>
 
-        <form class="editForm" action=" " method="POST">
+        <form class="editForm" action=<%= edit ? `/users/edit-invoice/${id}?_method=PUT` : '/users/add-new-invoice' %> method="POST">
             <h4 class="formPath">
                 <a href="/users/">Mi cuenta</a>
                 >
                 <a href="/users/">Mis datos de facturación</a>
                 >
-                <span>Agregar datos de facturación</span>
+                <span><%= edit ? "Editar datos de facturación" : "Agregar datos de facturación" %></span>
             </h4>
-            <h3 class="formTitle">Agregar datos de facturación</h3>
+            <h3 class="formTitle"><%= edit ? "Editar datos de facturación" : "Agregar datos de facturación" %></h3>
+
             <div class="entradaDeDatos">
                 <label for="razonSocial">Nombre o Razón social</label>
-                <input type="text" id="razonSocial" name="razonSocial" value=" " autocomplete="on" required>
+                <input type="text" id="razonSocial" name="razonSocial" value="<%= edit ? razonSocial : '' %>" autocomplete="on" required>
             </div>
+
             <div class="entradaDeDatos">
                 <label for="rfc">R.F.C</label>
-                <input type="text" id="rfc" name="rfc" value=" " autocomplete="on" required>
+                <input type="text" id="rfc" name="rfc" value="<%= edit ? rfc : '' %>" autocomplete="on" required>
             </div>
-            <div class="entradaDeDatos">
-                <label for="cp">Código postal</label>
-                <input type="" id="cp" name="cp" value=" " autocomplete="on" required>
-            </div>
+
             <div class="entradaDeDatos">
                 <label for="pais">País</label>
                 <select id="pais" name="pais">
-                    <option value="mexico">México</option>
-                    <option value="colombia">Colombia</option>
-                    <option value="argentina">Argentina</option>
-                    <option value="cuba">Cuba</option>
-                    <option value="guatemala">Guatemala</option>
-                    <option value="nicaragua">Nicaragua</option>
-                    <option value="salvador">El Salvador</option>
-                    <option value="panama">Panamá</option>
-                    <option value="venezuela">Venezuela</option>
-                    <option value="ecuador">Ecuador</option>
-                    <option value="peru">Perú</option>
-                    <option value="brasil">Brasil</option>
-                    <option value="chile">Chile</option>
-                    <option value="paraguay">Paraguay</option>
-                    <option value="uruguay">Uruguay</option>
-                    <option value="bolivia">Bolivia</option>
+                    <option value="mexico" <%= edit && pais == "mexico" ? 'selected':''%> >México</option>
+                    <option value="colombia" <%= edit && pais == "colombia" ? 'selected':''%> >Colombia</option>
+                    <option value="argentina" <%= edit && pais == "argentina" ? 'selected':''%> >Argentina</option>
+                    <option value="cuba" <%= edit && pais == "cuba" ? 'selected':''%> >Cuba</option>
+                    <option value="guatemala" <%= edit && pais == "guatemala" ? 'selected':''%> >Guatemala</option>
+                    <option value="nicaragua" <%= edit && pais == "nicaragua" ? 'selected':''%> >Nicaragua</option>
+                    <option value="salvador" <%= edit && pais == "salvador" ? 'selected':''%> >El Salvador</option>
+                    <option value="panama" <%= edit && pais == "panama" ? 'selected':''%> >Panamá</option>
+                    <option value="venezuela" <%= edit && pais == "venezuela" ? 'selected':''%> >Venezuela</option>
+                    <option value="ecuador" <%= edit && pais == "ecuador" ? 'selected':''%> >Ecuador</option>
+                    <option value="peru" <%= edit && pais == "peru" ? 'selected':''%> >Perú</option>
+                    <option value="brasil" <%= edit && pais == "brasil" ? 'selected':''%> >Brasil</option>
+                    <option value="chile" <%= edit && pais == "chile" ? 'selected':''%> >Chile</option>
+                    <option value="paraguay" <%= edit && pais == "paraguay" ? 'selected':''%> >Paraguay</option>
+                    <option value="uruguay" <%= edit && pais == "uruguay" ? 'selected':''%> >Uruguay</option>
+                    <option value="bolivia" <%= edit && pais == "bolivia" ? 'selected':''%> >Bolivia</option>
                 </select>
             </div>
+
+            <div class="entradaDeDatos">
+                <label for="estado">Estado/Provincia/Región</label>
+                <input type="text" name="estado" id="estado" required value="<%= edit ? estadoFacturacion : '' %>">
+            </div>
+
+            <div class="entradaDeDatos">
+                <label for="ciudad">Ciudad</label>
+                <input type="text" name="ciudad" id="ciudad" required value="<%= edit ? ciudadFacturacion : '' %>">
+            </div>
+
             <div class="entradaDeDatos">
                 <label for="calle">Dirección de la calle y número</label>
-                <input type="text" id="calle" name="calle" value=" " autocomplete="on" required>
+                <input type="text" id="calle" name="calle" value="<%= edit ? direccionFacturacion : '' %>" autocomplete="on" required>
             </div>
+
             <div class="entradaDeDatos">
                 <label for="colonia">Colonia</label>
-                <input type="text" id="colonia" name="colonia" value=" " autocomplete="on" required>
+                <input type="text" id="colonia" name="colonia" value="<%= edit ? coloniaFacturacion : '' %>" autocomplete="on" required>
             </div>
+
             <div class="entradaDeDatos">
                 <label for="delegacion">Delegación</label>
-                <input type="text" id="delegacion" name="delegacion" value=" " autocomplete="on" required>
+                <input type="text" id="delegacion" name="delegacion" value="<%= edit ? delegacionFacturacion : '' %>" autocomplete="on" required>
             </div>
+
+            <div class="entradaDeDatos">
+                <label for="cp">Código postal</label>
+                <input type="" id="cp" name="cp" value="<%= edit ? codigoPostalFacturacion : '' %>" autocomplete="on" required>
+            </div>
+
             <div class="formButtons">
                 <button class="blue" type="submit">Guardar</button>
                 <button type="reset" onclick="window.location.href='/users'">Salir</button>
             </div>
         </form>  
-        
-        <div class="bottom">
-            <!--Separador bonito -->
-            <%- include('../partials/separador') %>
-        </div>
 
     </section>
 
