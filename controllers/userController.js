@@ -1,19 +1,17 @@
 const fs = require('fs')
 const path = require('path')
 
-const userPath = path.resolve(__dirname, 'user.json')
 const usersPath = path.resolve(__dirname, '../DB/usersDB.json')
 
 const seccion = require('./secciones.json')
 const botonesPrincipales = require('./botonesPrincipales.json')
-const user = require('./user.json')
-let users = JSON.parse(fs.readFileSync(usersPath))
+const users = JSON.parse(fs.readFileSync(usersPath))
 
 const userController = {
   sendMyAccount: (req, res) => {
     const user = users[0]
     res.render('users/myAccount', {
-      user,
+      user: user,
       botonesPrincipales: botonesPrincipales,
       busquedas: seccion.busquedas,
       favoritos: seccion.favoritos
@@ -61,7 +59,7 @@ const userController = {
     }
 
     user.direcciones.push(newAddress)
-    users[0] = user 
+    users[0] = user
     fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
     res.redirect('/users')
   },
@@ -86,7 +84,7 @@ const userController = {
 
     if (index >= 0) {
       user.direcciones.splice(index, 1)
-      users[0] = user 
+      users[0] = user
       fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
     }
     res.redirect('/users')
@@ -100,27 +98,26 @@ const userController = {
         address.predeterminada = true
       }
     })
-    users[0] = user 
+    users[0] = user
     fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
     res.redirect('/users')
   },
-  register: (req, res) =>{
+  register: (req, res) => {
     const email = req.body.email
-    if(users.findIndex(usuario => usuario.email === email) === -1){
+    if (users.findIndex(usuario => usuario.email === email) === -1) {
       const newUser = {
         ...req.body,
         direcciones: [],
         facturacion: [],
         category: 'cliente'
       }
-  
+
       users.push(newUser)
       fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
-      res.render('users/login', {mensaje: "Tu cuenta ha sido creada, ahora puedes iniciar sesión.", warning: false})
-    }else{
-      res.render('users/register', {mensaje: "El correo que está utilizando ya está registrado. Intente iniciar sesión o regístrese con otro correo.", warning: true})
+      res.render('users/login', { mensaje: 'Tu cuenta ha sido creada, ahora puedes iniciar sesión.', warning: false })
+    } else {
+      res.render('users/register', { mensaje: 'El correo que está utilizando ya está registrado. Intente iniciar sesión o regístrese con otro correo.', warning: true })
     }
- 
   }
 }
 

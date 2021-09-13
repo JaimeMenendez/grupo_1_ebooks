@@ -23,22 +23,22 @@
 
         <select name="pais" id="pais">
             <option value="México" <%= edit && pais == "México" ? 'selected':''%> >México</option>
-            <option value="Argentina"  <%= edit && pais == "Argentina" ? 'selected':''%>>Argentina</option>
-            <option value="Chile"  <%= edit && pais == "Chile" ? 'selected':''%>>Chile</option>
-            <option value="Ecuador"  <%= edit && pais == "Ecuador" ? 'selected':''%>>Ecuador</option>
-            <option value="Cuba"  <%= edit && pais == "Cuba" ? 'selected':''%>>Cuba</option>
-            <option value="Perú"  <%= edit && pais == "Perú" ? 'selected':''%>>Perú</option>
+            <option value="Colombia" <%= edit && pais == "Colombia" ? 'selected':''%> >Colombia</option>
+            <option value="Argentina" <%= edit && pais == "Argentina" ? 'selected':''%> >Argentina</option>
+            <option value="Cuba" <%= edit && pais == "Cuba" ? 'selected':''%> >Cuba</option>
+            <option value="Guatemala" <%= edit && pais == "Guatemala" ? 'selected':''%> >Guatemala</option>
+            <option value="Nicaragua" <%= edit && pais == "Nicaragua" ? 'selected':''%> >Nicaragua</option>
+            <option value="El Salvador" <%= edit && pais == "El Salvador" ? 'selected':''%> >El Salvador</option>
+            <option value="Panamá" <%= edit && pais == "Panamá" ? 'selected':''%> >Panamá</option>
+            <option value="Venezuela" <%= edit && pais == "Venezuela" ? 'selected':''%> >Venezuela</option>
+            <option value="Ecuador" <%= edit && pais == "Ecuador" ? 'selected':''%> >Ecuador</option>
+            <option value="Perú" <%= edit && pais == "Perú" ? 'selected':''%> >Perú</option>
+            <option value="Brasil" <%= edit && pais == "Brasil" ? 'selected':''%> >Brasil</option>
+            <option value="Chile" <%= edit && pais == "Chile" ? 'selected':''%> >Chile</option>
+            <option value="Paraguay" <%= edit && pais == "Paraguay" ? 'selected':''%> >Paraguay</option>
+            <option value="Uruguay" <%= edit && pais == "Uruguay" ? 'selected':''%> >Uruguay</option>
+            <option value="Bolivia" <%= edit && pais == "Bolivia" ? 'selected':''%> >Bolivia</option>
         </select>
-    </div>
-
-    <div class="entradaDeDatos">
-        <label for="direccion">Dirección de la calle y número</label>
-        <input type="text" name="direccion" id="direccion" required value="<%= edit ? direccion : '' %>">
-    </div>
-
-    <div class="entradaDeDatos">
-        <label for="ciudad">Ciudad</label>
-        <input type="text" name="ciudad" id="ciudad" required value="<%= edit ? ciudad : '' %>">
     </div>
 
     <div class="entradaDeDatos">
@@ -47,8 +47,23 @@
     </div>
 
     <div class="entradaDeDatos">
+        <label for="ciudad">Ciudad</label>
+        <input type="text" name="ciudad" id="ciudad" required value="<%= edit ? ciudad : '' %>">
+    </div>
+
+    <div class="entradaDeDatos">
+        <label for="direccion">Dirección de la calle y número</label>
+        <input type="text" name="direccion" id="direccion" required value="<%= edit ? direccion : '' %>">
+    </div>
+
+    <div class="entradaDeDatos">
         <label for="colonia">Colonia</label>
         <input type="text" name="colonia" id="colonia" required value="<%= edit ? colonia : '' %>">
+    </div>
+
+    <div class="entradaDeDatos">
+        <label for="delegacion">Delegación</label>
+        <input type="text" id="delegacion" name="delegacion" value="<%= edit ? delegacion : '' %>" autocomplete="on" required>
     </div>
 
     <div class="entradaDeDatos">

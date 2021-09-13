@@ -20,9 +20,9 @@
             </div>
         </section>
 
-        <%- include('../partials/section', favoritos) %>
         <%- include('../partials/address', user) %>
         <%- include('../partials/dataInvoices') %>
+        <%- include('../partials/section', favoritos) %>
         <%- include('../partials/section', busquedas) %>
 
         <!--Banner promocional-->
@@ -53,7 +53,7 @@
 
         document.getElementById('favoritos').classList.toggle('ocultar')
         document.getElementsByClassName('addressContainer')[0].classList.toggle('ocultar')
-        document.getElementsById('invoiceContainer').classList.toggle('ocultar')
+        document.getElementById('invoiceContainer').classList.toggle('ocultar')
     </script>
 </body>
 </html>

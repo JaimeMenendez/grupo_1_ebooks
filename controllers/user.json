@@ -1,4 +1,11 @@
 {
+  "facturacion":{
+      "razonSocial": " ",
+      "rfc": " ",
+      "idDireccionAsociada": 1,
+      "facturacionPredeterminada": false
+  },
+
   "direcciones": [
     {
       "nombre": "Jaime Menéndez Álvarez",
@@ -6,20 +13,11 @@
       "estado": "Nuevo León",
       "ciudad": "General Escobedo",
       "colonia": "Los Girasoles 1er Sector",
+      "delegacion": " ",
       "codigoPostal": "66056",
       "pais": "México",
       "telefono": "1234567891",
       "predeterminada": true,
-      "razonSocial": " ",
-      "rfc": " ",
-      "direccionFacturacion": " ",
-      "estadoFacturacion": " ",
-      "ciudadFacturacion": " ",
-      "coloniaFacturacion": " ",
-      "delegacionFacturacion": "",
-      "codigoPostalFacturacion": "",
-      "paisFacturacion": "",
-      "direccionFacPred": false,
       "id": 1
     },
     {
@@ -29,19 +27,10 @@
       "ciudad": "Monterrey",
       "estado": "Nuevo Leon",
       "colonia": "Los Sauces",
+      "delegacion": "Miguel Hidalgo",
       "codigoPostal": "58025",
       "telefono": "123456789",
       "predeterminada": false,
-      "razonSocial": " ",
-      "rfc": " ",
-      "direccionFacturacion": " ",
-      "estadoFacturacion": " ",
-      "ciudadFacturacion": " ",
-      "coloniaFacturacion": " ",
-      "delegacionFacturacion": "",
-      "codigoPostalFac": "",
-      "paisFacturacion": "",
-      "direccionFacPred": false,
       "id": 3
     },
     {
@@ -51,19 +40,10 @@
       "ciudad": "General Escobedo",
       "estado": "Nuevo León",
       "colonia": "Los Sauces",
+      "delegacion": " ",
       "codigoPostal": "66056",
       "telefono": "9982197111",
       "predeterminada": false,
-      "razonSocial": " ",
-      "rfc": " ",
-      "direccionFacturacion": " ",
-      "estadoFacturacion": " ",
-      "ciudadFacturacion": " ",
-      "coloniaFacturacion": " ",
-      "delegacionFacturacion": "",
-      "codigoPostalFac": "",
-      "paisFacturacion": "",
-      "direccionFacPred": false,
       "id": 4
     }
   ]
