@@ -117,5 +117,39 @@
     "detallesAutor": "<p>Sin información.</p>",
     "id": 7,
     "portada": "public/images/booksCover/default-image.png"
+  },
+  {
+    "nombreLibro": "Epidemiología clínica",
+    "categoria": "Medicina",
+    "subcategoria": "Epidemiología",
+    "autor": "Robert H. Fletcher",
+    "editorial": "Wolters Kluwer",
+    "isbn": "9788417949938",
+    "idioma": "Español",
+    "precioBook": "650",
+    "precioEbook": "200",
+    "paginas": "275",
+    "year": "2020",
+    "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>Epidemiología clínica es un texto introductorio, breve y conciso, para profesionales y estudiantes dedicados a la atención de los pacientes, quienes desean comprender la validez de la información en la que basan sus decisiones clínicas. Su contenido transversal está asociado a materias básicas de relevancia para médicos en formación: medicina basada en evidencia, bioestadística y diseño de investigación clínica. Escrito por educadores expertos y con una gran claridad expositiva, el texto ayuda a los estudiantes a desarrollar y aplicar métodos de observación clínica con el fin de formar conclusiones precisas.</p>\r\n</div>",
+    "detallesAutor": "<p>El Dr. Robert Fletcher es internista y epidemiólogo. Se graduó de Wesleyan University en 1962 y Harvard Medical School en 1966 y completó su residencia en medicina interna en Stanford Medical Center y Johns Hopkins, donde también obtuvo una maestría en Salud Pública mientras era miembro del Programa de Becas Clínicas Robert Wood Johnson. El Dr. Fletcher ocupó cargos docentes en Medicina y Epidemiología en McGill, 1973-8, y en la Universidad de Carolina del Norte, Chapel Hill, 1978-90, donde fue Director del Programa de Académicos Clínicos Robert Wood Johnson, Co-Jefe de la División de Medicina Interna General, codirectora del centro de capacitación de la Red Internacional de Epidemiología Clínica (INCLEN) y coeditora fundadora de la Revista de Medicina Interna General. El Dr. Fletcher fue editor de Annals of Internal Medicine (con Suzanne Fletcher) y vicepresidente senior de publicaciones del American College of Physicians desde 1990-3. Participó activamente en temas de edición como presidente del Comité de Política Editorial de la Asociación Mundial de Editores Médicos y forma parte del Consejo Asesor Internacional de Lancet. De 1994 a 2002, el Dr. Fletcher fue profesor de Prevención y Atención Ambulatoria en la Escuela de Medicina de Harvard, donde dirigió la Pasantía de Atención Primaria y el Centro de Enseñanza del Departamento. El Dr. Fletcher ahora vive en Chapel Hill, Carolina del Norte, donde continúa su investigación como profesor emérito en Harvard y enseña en la UNC, donde es profesor adjunto de epidemiología y medicina social.</p>",
+    "id": 8,
+    "portada": "public/images/booksCover/default-image.png"
+  },
+  {
+    "nombreLibro": "Manual de Epidemiología y Salud Pública para Grados en Ciencias de la Salud",
+    "categoria": "Medicina",
+    "subcategoria": "Epidemiología",
+    "autor": "Idelfonso Hernández-Aguado",
+    "editorial": "Panamericana",
+    "isbn": "9788491101734",
+    "idioma": "Español",
+    "precioBook": "760",
+    "precioEbook": "300",
+    "paginas": "405",
+    "year": "2018",
+    "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>Esta nueva edición de la obra Manual de epidemiología y Salud Pública para grados en Ciencias de la Salud contiene 95 capítulos organizados en 8 secciones: introducción a la salud púbica, herramientas y métodos en salud pública, condicionantes de la salud, estrategias de salud pública, actuaciones de salud pública, salud pública para grupos vulnerables, gestión y planificación sanitaria y por último políticas de salud pública y ética.</p>\r\n</div>",
+    "detallesAutor": "<p>Sin información.</p>",
+    "id": 9,
+    "portada": "public/images/booksCover/default-image.png"
   }
 ]
