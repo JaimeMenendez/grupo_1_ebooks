@@ -151,5 +151,39 @@
     "detallesAutor": "<p>Sin información.</p>",
     "id": 9,
     "portada": "public/images/booksCover/default-image.png"
+  },
+  {
+    "nombreLibro": "Anestesiología de Morgan y Mikhail",
+    "categoria": "Medicina",
+    "subcategoria": "Anestesiología",
+    "autor": "John F. Butterworth",
+    "editorial": "Manual Moderno",
+    "isbn": "9786074488418",
+    "idioma": "Español",
+    "precioBook": "2500",
+    "precioEbook": "900",
+    "paginas": "1150",
+    "year": "2020",
+    "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>Aclamada como la mejor, la Anestesiología de Morgan y Mikhail, 6ª ed., sigue fiel a su objetivo: hacer una presentación concisa y objetiva de los principios básicos esenciales para la práctica moderna de la anestesia. Esta obra clásica presenta una cobertura amplia de los temas elementales de ciencia básica y clínica, de una manera fácil de comprender. Al mismo tiempo, retiene su utilidad como libro de texto para cursos, fuente de repaso y referencia para el profesional.</p>\r\n</div>",
+    "detallesAutor": "<p>El Dr. Butterworth recibió su licenciatura en la Universidad de Virginia en 1975 y su doctorado en Medicina en la Facultad de Medicina de Virginia en 1979. Pasó un año de beca en la División de Neurocirugía en la Facultad de Medicina de Virginia antes de completar su pasantía en cirugía en la Universidad de Virginia. Centro médico de Massachusetts. Completó su residencia y una beca de investigación en el Brigham and Women's Hospital, Harvard Medical School de 1981 a 1984.</p>",
+    "id": 10,
+    "portada": "public/images/booksCover/default-image.png"
+  },
+  {
+    "nombreLibro": "Ventilación mecánica durante la anestesia",
+    "categoria": "Medicina",
+    "subcategoria": "Anestesiología",
+    "autor": "Pastor Luna Ortiz",
+    "editorial": "Alfil",
+    "isbn": "9786077412540",
+    "idioma": "Español",
+    "precioBook": "600",
+    "precioEbook": "200",
+    "paginas": "418",
+    "year": "2019",
+    "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>La ventilación mecánica durante la anestesia general puede tener efectos adversos conocidos, como lesión pulmonar inducida por ventilador, que es la principal causa de las complicaciones pulmonares posoperatorias. El anestesiólogo debe conocer la fisiopatología de la producción del daño pulmonar causado por la ventilación mecánica y estar familiarizado con los mecanismos de barotrauma, volutrauma, atelectrauma, biotrauma y ergotrauma, para poder prevenir e implementar las estrategias de ventilación pulmonar protectora.</p>\r\n</div>",
+    "detallesAutor": "<p>Medico Adjunto al Departamento de Anestesia del Centro Medico ABC. </p>",
+    "id": 11,
+    "portada": "public/images/booksCover/default-image.png"
   }
 ]
