@@ -182,8 +182,42 @@
     "paginas": "418",
     "year": "2019",
     "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>La ventilación mecánica durante la anestesia general puede tener efectos adversos conocidos, como lesión pulmonar inducida por ventilador, que es la principal causa de las complicaciones pulmonares posoperatorias. El anestesiólogo debe conocer la fisiopatología de la producción del daño pulmonar causado por la ventilación mecánica y estar familiarizado con los mecanismos de barotrauma, volutrauma, atelectrauma, biotrauma y ergotrauma, para poder prevenir e implementar las estrategias de ventilación pulmonar protectora.</p>\r\n</div>",
-    "detallesAutor": "<p>Medico Adjunto al Departamento de Anestesia del Centro Medico ABC. </p>",
+    "detallesAutor": "<p>Medico Adjunto al Departamento de Anestesia del Centro Medico ABC.</p>",
     "id": 11,
+    "portada": "public/images/booksCover/default-image.png"
+  },
+  {
+    "nombreLibro": "Oncología integrativa: Manual básico y clínico",
+    "categoria": "Medicina",
+    "subcategoria": "Oncología",
+    "autor": "Sociedad Española de Salud y Medicina",
+    "editorial": "Panamericana",
+    "isbn": "9788491106357",
+    "idioma": "Español",
+    "precioBook": "1400",
+    "precioEbook": "500",
+    "paginas": "500",
+    "year": "2020",
+    "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>Esta obra es la expresión de un movimiento a favor de la aceptación –y no persecución- de aquellos que ponen la primera piedra de la Oncología Integrativa en España de manera humilde y silenciosa, trabajando como médicos y agentes de salud en sus consultas extrahospitalarias o colaborando en otros lugares por afinidad o inquietud por ayudar a las personas que padecen cáncer.</p>\r\n</div>",
+    "detallesAutor": "<p>Sin información.</p>",
+    "id": 12,
+    "portada": "public/images/booksCover/default-image.png"
+  },
+  {
+    "nombreLibro": "Abeloff: Oncología clínica",
+    "categoria": "Medicina",
+    "subcategoria": "Oncología",
+    "autor": "John E. Niederhuber",
+    "editorial": "Elsevier",
+    "isbn": "9788491135203",
+    "idioma": "Español",
+    "precioBook": "3700",
+    "precioEbook": "2000",
+    "paginas": "2038",
+    "year": "2020",
+    "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>La sexta edición de Abeloff: Oncología clínica incorpora los avances apasionantes de la oncología básica, translacional, clínica y epidemiológica. Cada capítulo comienza con un resumen en el que se destacan los puntos clave e incluye un análisis crítico de la literatura y de estudios clínicos actuales. Los autores presentan sus propias opiniones en cuadros y algoritmos.</p>\r\n</div>",
+    "detallesAutor": "<p>John E. Niederhuber fue el decimotercer director del Instituto Nacional del Cáncer, desde 2006 hasta julio de 2010, sucediendo a Andrew von Eschenbach, quien se convirtió en director de la firma de biotecnología BioTime. Cirujano e investigador de renombre nacional, el Dr. Niederhuber ha dedicado su carrera de cuatro décadas al tratamiento y estudio del cáncer: como profesor, director de un centro oncológico, presidente de la Junta Asesora Nacional del Cáncer, asesor externo del NCI, revisor de subvenciones y laboratorio investigador apoyado por el NCI y los Institutos Nacionales de Salud. Ahora es vicepresidente ejecutivo / director ejecutivo del Instituto de Medicina Traslacional Inova e Inova Health System y codirector de la Red de Investigación Clínica Johns Hopkins.</p>",
+    "id": 13,
     "portada": "public/images/booksCover/default-image.png"
   }
 ]
