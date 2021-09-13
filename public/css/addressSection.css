@@ -144,7 +144,7 @@
     color:  var(--fontColors);
     font-weight: 400;
     padding-top: 15px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 .editForm .formPath span{

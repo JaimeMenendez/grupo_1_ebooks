@@ -9,7 +9,7 @@
       "codigoPostal": "66056",
       "pais": "México",
       "telefono": "1234567891",
-      "predeterminada": false,
+      "predeterminada": true,
       "razonSocial": " ",
       "rfc": " ",
       "direccionFacturacion": " ",
@@ -18,7 +18,7 @@
       "coloniaFacturacion": " ",
       "delegacionFacturacion": "",
       "codigoPostalFacturacion": "",
-      "paisFacturacion":"",
+      "paisFacturacion": "",
       "direccionFacPred": false,
       "id": 1
     },
@@ -40,7 +40,7 @@
       "coloniaFacturacion": " ",
       "delegacionFacturacion": "",
       "codigoPostalFac": "",
-      "paisFacturacion":"",
+      "paisFacturacion": "",
       "direccionFacPred": false,
       "id": 3
     },
@@ -53,7 +53,7 @@
       "colonia": "Los Sauces",
       "codigoPostal": "66056",
       "telefono": "9982197111",
-      "predeterminada": true,
+      "predeterminada": false,
       "razonSocial": " ",
       "rfc": " ",
       "direccionFacturacion": " ",
@@ -62,7 +62,7 @@
       "coloniaFacturacion": " ",
       "delegacionFacturacion": "",
       "codigoPostalFac": "",
-      "paisFacturacion":"",
+      "paisFacturacion": "",
       "direccionFacPred": false,
       "id": 4
     }

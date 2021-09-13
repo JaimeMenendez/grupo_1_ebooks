@@ -15,6 +15,8 @@ routerUser.get('/add-new-address', userController.sendAddAddressView)
 routerUser.put('/edit-address/:id', userController.updateAddress)
 routerUser.put('/make-default-address/:id', userController.makeDefaultAddress)
 routerUser.post('/add-new-address', userController.storeNewAddress)
-
 routerUser.delete('/delete-address/:id', userController.deleteAddress)
+
+routerUser.post('/register', userController.register)
+
 module.exports = routerUser

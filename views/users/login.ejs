@@ -10,6 +10,22 @@
   <%- include('../partials/navBar') %>
   <%- include('../partials/navBarMobile') %>
 
+  <% if(locals.mensaje) {%>
+    <div class="alert-message <%= warning ? 'red-alert': 'green-alert'%>">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeMessage()">&times;</a>
+         <%- mensaje %>  
+    </div>
+    <script> 
+      setTimeout(() => {
+        document.querySelector(".alert-message").style.opacity = '0';
+      }, 10000);
+
+      const closeMessage = () =>{
+        document.querySelector(".alert-message").style.opacity = '0';
+      }
+      </script>
+  <%}%>
+
   <div class="main-container">
     <section class="loginBannerContainer">
       <div class="content-left">

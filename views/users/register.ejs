@@ -10,6 +10,23 @@
   <%- include('../partials/navBar') %>
   <%- include('../partials/navBarMobile') %>
 
+  <% if(locals.mensaje) {%>
+   
+   <div class="alert-message <%= warning ? 'red-alert': 'green-alert'%>">
+     <a href="javascript:void(0)" class="closebtn" onclick="closeMessage()">&times;</a>
+        <%- mensaje %>  
+   </div>
+   <script> 
+     setTimeout(() => {
+       document.querySelector(".alert-message").style.opacity = '0';
+     }, 10000);
+
+     const closeMessage = () =>{
+       document.querySelector(".alert-message").style.opacity = '0';
+     }
+     </script>
+ <%}%>
+
    <div class="main-container">
     <section class="loginBannerContainer">
       <div class="content-left shine-me">
@@ -131,28 +148,28 @@
     </section>
 
     <section class="registrationInput">
-      <form action="">
+      <form action="/users/register" method="POST">
         <div class="question">
           <label for="">*¿Cómo te llamas?</label>
-          <input type="text" placeholder=" *Nombre(s)" required/>
+          <input type="text" name="firstName" placeholder=" *Nombre(s)" required/>
         </div>
 
         <div class="question">
           <label for="">*¿Cuál es tu apellido?</label>
-          <input type="text" placeholder=" *Apellido(s)" required/>
+          <input type="text" name="lastName" placeholder=" *Apellido(s)" required/>
         </div>
 
         <div class="question">
           <label for="">*¿Cuál es tu correo electrónico?</label>
-          <input type="email" placeholder=" *Correo Electrónico" required/>
+          <input type="email" name="email" placeholder=" *Correo Electrónico" required/>
         </div>
 
         <div class="question">
           <label for="pwd">*Crea una contraseña</label>
           <div class="passwordDiv">
-            <input type="password" id="PasswordInput" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            <input type="password" id="PasswordInput" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres"
-              placeholder=" *Contraseña" autocomplete="on" required>
+              placeholder=" *Contraseña" autocomplete="on" onchange='onChange();' required>
             <span ><i  id="passwordEye" class="flaticon-invisible"></i></span>
           </div>
         </div>
@@ -160,12 +177,25 @@
         <div class="question">
           <label for="">*Confirma tu contraseña</label>
           <div class="passwordDiv">
-            <input type="password" id="confirmPasswordInput" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            <input type="password" id="confirmPasswordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres"
-              placeholder=" *Confirmar contraseña" autocomplete="on" required>
+              placeholder=" *Confirmar contraseña" autocomplete="on" onchange='onChange();' required>
             <span ><i id="confirmPasswordEye"  class="flaticon-invisible"></i></span>
           </div>
         </div>
+
+        <script>
+
+          function onChange() {
+            const password = document.querySelector('input[name=password]');
+            const confirm = document.querySelector('#confirmPasswordInput');
+            if (confirm.value === password.value) {
+              confirm.setCustomValidity('');
+            } else {
+              confirm.setCustomValidity('Las contraseñas no coinciden');
+            }
+          }
+        </script>
 
         <div class="question">
           <p>*Todos los campos son obligatorios</p>
@@ -173,7 +203,7 @@
 
         <div class="conditions">
           <div class="condition">
-            <input type="checkbox" id="cbox1" value="first_checkbox">
+            <input type="checkbox" id="cbox1" value="first_checkbox"  required>
             <label for="cbox1"> He leído y acepto los <a href="/TerminosyCondiciones" target="_blank">Términos y
                 condiciones</a> y <a href="/PoliticaDePrivacidad" target="_blank">Avisos de Privacidad.</a></label>
           </div>
@@ -186,7 +216,7 @@
         </div>
 
         <div class="button-div">
-          <button class="btn red" type="submit">Crear mi cuenta</button>
+          <button class="btn red" type="submit" id="submit">Crear mi cuenta</button>
         </div>
 
         <div class="center-separator">o</div>

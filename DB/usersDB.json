@@ -1,0 +1,45 @@
+[
+  {
+    "firstName": "Jaime",
+    "lastName": "Menendez",
+    "email": "jaimemenendezalvarez@gmail.com",
+    "password": "Alonso657",
+    "direcciones": [
+      {
+        "nombre": "Juana López",
+        "pais": "México",
+        "direccion": "Gladiolas 487",
+        "ciudad": "Tamaulipas",
+        "estado": "Nuevo León",
+        "colonia": "Los Sauces",
+        "codigoPostal": "66056",
+        "telefono": "1236447",
+        "id": 1,
+        "predeterminada": true
+      },
+      {
+        "nombre": "Jaime",
+        "pais": "México",
+        "direccion": "Claveles 605",
+        "ciudad": "General Escobedo",
+        "estado": "Nuevo León",
+        "colonia": "Sergio Dalma",
+        "codigoPostal": "66056",
+        "telefono": "9982197111",
+        "id": 2,
+        "predeterminada": false
+      }
+    ],
+    "facturacion": [],
+    "category": "cliente"
+  },
+  {
+    "firstName": "Alicia",
+    "lastName": "Gimenez",
+    "email": "alicia@gmail.com",
+    "password": "Alicia12",
+    "direcciones": [],
+    "facturacion": [],
+    "category": "cliente"
+  }
+]
