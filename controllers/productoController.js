@@ -19,7 +19,7 @@ const controller = {
 	// Detail - Detail from one product
 	detail: (req, res) => {
 		if (req.params.id) {
-		  let librosDB = readFileSync('./DB/librosDB.json', 'utf-8')
+		  let librosDB = readFileSync(productsFilePath, 'utf-8')
 		  librosDB = JSON.parse(librosDB)
 	
 		  const libroBuscado = librosDB.find((libro) => libro.id == req.params.id)
@@ -45,7 +45,7 @@ const controller = {
 		newBook.precioBook = Number.parseInt(newBook.precioBook)
 		newBook.precioEbook = Number.parseInt(newBook.precioEbook)
 	
-		let librosDB = readFileSync('./DB/librosDB.json', 'utf-8')
+		let librosDB = readFileSync(productsFilePath, 'utf-8')
 		librosDB = JSON.parse(librosDB)
 	
 		const currentMaxId = librosDB[librosDB.length - 1].id
@@ -60,7 +60,7 @@ const controller = {
 		}
 	
 		librosDB.push(newBook)
-		writeFileSync('./DB/librosDB.json', JSON.stringify(librosDB, null, 2))
+		writeFileSync(productsFilePath, JSON.stringify(librosDB, null, 2))
 		res.redirect('/products/' + newBook.id)
 	  },
 
