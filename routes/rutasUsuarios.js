@@ -10,6 +10,7 @@ routerUser.post('/add-new-invoice', userController.storeNewInvoice)
 
 routerUser.get('/edit-invoice/:id', userController.sendEditInvoiceView)
 routerUser.put('/edit-invoice/:id', userController.updateInvoice)
+routerUser.put('/make-default-invoice/:id', userController.makeDefaultInvoice)
 
 routerUser.delete('/delete-invoice/:id', userController.deleteInvoice)
 

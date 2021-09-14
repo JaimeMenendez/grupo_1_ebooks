@@ -10,6 +10,12 @@
         <% const direcciones = user.direcciones %>
         <% user.facturacion.forEach(invoice => {   %> 
             <div class="addressBox">
+                <% if(invoice.predeterminada) {%> 
+                    <div class="defaultAdress">
+                        Predeterminada: &nbsp &nbsp 
+                        <img src="/public/images/Logo_2.2.png">
+                    </div>
+                <% } %> 
                 <div class="addressContent">
                     <p><strong><%= invoice.razonSocial %></strong></p>
                     <p><%= invoice.rfc %></p>
@@ -22,7 +28,12 @@
                 </div>
     
                 <div class="addressButtons">
-                    <a href="/users/edit-invoice/<%= invoice.id %>">Editar</a> | <form action="/users/delete-address/<%= invoice.id %>?_method=DELETE" method="POST"><button onclick="return confirm('¿Estás seguro que desea eliminar los datos de facturación?')" type="submit">Descartar</button></form>
+                    <a href="/users/edit-invoice/<%= invoice.id %>">Editar</a> | <form action="/users/delete-invoice/<%= invoice.id %>?_method=DELETE" method="POST"><button onclick="return confirm('¿Estás seguro que desea eliminar los datos de facturación?')" type="submit">Descartar</button></form>
+                    <% if(!invoice.predeterminada){ %> 
+                        | <form action="/users/make-default-invoice/<%= invoice.id %>?_method=PUT" method="POST">
+                            <button onclick="return confirm('¿Estás seguro que desea utilizar estos datos de facturación como predeterminados?')" type="submit">Predeterminada</button>
+                        </form>
+                    <% } %>
                 </div>
             </div>
         <% }) %> 

@@ -25,7 +25,9 @@ const userController = {
     })
   },
 
+  /** **************************************************/
   /** ************** METHODS FOR INVOICE ***************/
+  /** **************************************************/
 
   sendAddInvoiceView: (req, res) => {
     const user = users[0]
@@ -41,6 +43,7 @@ const userController = {
       newDataInvoice.id = user.facturacion[user.facturacion.length - 1].id + 1
     }
     newDataInvoice.idDireccion = parseInt(newDataInvoice.idDireccion)
+    newDataInvoice.predeterminada = false
     user.facturacion.push(newDataInvoice)
     users[0] = user
     fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
@@ -70,10 +73,35 @@ const userController = {
   },
 
   deleteInvoice: (req, res) => {
+    const id = Number.parseInt(req.params.id)
+    const user = users[0]
+    const index = user.facturacion.findIndex((invoice) => invoice.id === id)
+
+    if (index >= 0) {
+      user.facturacion.splice(index, 1)
+      users[0] = user
+      fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
+    }
     res.redirect('/users')
   },
 
+  makeDefaultInvoice: (req, res) => {
+    const id = parseInt(req.params.id)
+    const user = users[0]
+    user.facturacion.forEach(invoice => {
+      invoice.predeterminada = false
+      if (invoice.id === id) {
+        invoice.predeterminada = true
+      }
+    })
+    users[0] = user
+    fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
+    res.redirect('/users')
+  },
+
+  /** **************************************************/
   /** ************** METHODS FOR ADDRESS ***************/
+  /** **************************************************/
 
   sendEditAddressView: (req, res) => {
     const user = users[0]
@@ -145,7 +173,9 @@ const userController = {
     res.redirect('/users')
   },
 
-  /** ************** METHODS FOR REGISTER ***************/
+  /** **************************************************/
+  /** ************** METHODS FOR REGISTER **************/
+  /** **************************************************/
 
   register: (req, res) => {
     const email = req.body.email

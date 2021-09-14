@@ -6,32 +6,6 @@
     "password": "Alonso657",
     "direcciones": [
       {
-        "nombre": "Juana López",
-        "pais": "México",
-        "direccion": "Gladiolas 487",
-        "ciudad": "Tamaulipas",
-        "estado": "Nuevo León",
-        "colonia": "Los Sauces",
-        "delegacion": "",
-        "codigoPostal": "66056",
-        "telefono": "1236447",
-        "id": 1,
-        "predeterminada": true
-      },
-      {
-        "nombre": "Jaime",
-        "pais": "México",
-        "direccion": "Claveles 605",
-        "ciudad": "General Escobedo",
-        "estado": "Nuevo León",
-        "colonia": "Sergio Dalma",
-        "delegacion": "",
-        "codigoPostal": "66056",
-        "telefono": "9982197111",
-        "id": 2,
-        "predeterminada": false
-      },
-      {
         "nombre": "TATIANA LEAL",
         "pais": "México",
         "estado": "Ciudad de México",
@@ -61,15 +35,17 @@
     "facturacion": [
       {
         "razonSocial": "Tatiana Mileydy Leal del Río",
-        "rfc": "LASD7865347T5",
-        "idDireccion": 2,
-        "id": 2
+        "rfc": "LEARTHSLNU06",
+        "idDireccion": 4,
+        "id": 1,
+        "predeterminada": false
       },
       {
         "razonSocial": "Crononauter S.A",
         "rfc": "CRSACD0604174H8",
         "idDireccion": 4,
-        "id": 3
+        "id": 2,
+        "predeterminada": true
       }
     ],
     "category": "cliente"
@@ -102,31 +78,6 @@
     "lastName": "Leal",
     "email": "mileydy.1125@gmail.com",
     "password": "Tatiana1125",
-    "direcciones": [],
-    "facturacion": [],
-    "category": "cliente"
-  },
-  {
-<<<<<<< HEAD
-    "firstName": "dfghjk",
-    "lastName": "fghjk",
-    "email": "gbhnm@example.com",
-    "password": "Tatiana1125",
-=======
-    "firstName": "Ines",
-    "lastName": "Sanchez",
-    "email": "ines@gmail.com",
-    "password": "Ines1234",
-    "direcciones": [],
-    "facturacion": [],
-    "category": "cliente"
-  },
-  {
-    "firstName": "Antonio",
-    "lastName": "Hernandez",
-    "email": "antonio@gmail.com",
-    "password": "Antonio1234",
->>>>>>> 2c82eb30d8164fd3a26d401f0fbeac9a2ba0c029
     "direcciones": [],
     "facturacion": [],
     "category": "cliente"
