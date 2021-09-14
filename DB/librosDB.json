@@ -253,5 +253,39 @@
   "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>La preferencia por “Introducción a la Pediatría”, como libro de texto para impartir la cátedra de pediatría, se debe en gran parte a que no se ha perdido de vista los objetivos básicos del libro en cuanto a servir de guía para el estudiante de medicina, conservar un estilo didáctico sencillo tratando que cada tema contenga los elementos básicos para su estudio y sin entrar en complejidades que son del dominio del especialista.</p>\r\n</div>",
   "detallesAutor": "<p>Sin información.</p>",
   "portada": "public/images/booksCover/default-image.png"
+ },
+  {
+  "id": 16,
+  "nombreLibro": "Microbiología médica",
+  "autor": "Patrick R. Murray",
+  "categoria": "Medicina",
+  "subcategoria": "Microbiología",
+  "editorial": "Elsevier",
+  "isbn": "9788491138082",
+  "precioBook": "860",
+  "precioEbook": "350",
+  "idioma": "Español",
+  "year": "2021",
+  "paginas": "855",
+  "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>Nueva edición de la obra de referencia en la asignatura de Microbiología que en su 9ª ed continúa siendo la “biblia? y el texto más reputado en esta temática. Aborda los principios básicos de la inmunología la bacteriología la virología la parasitología así como las pruebas diagnósticas de Laboratorio.</p>\r\n</div>",
+  "detallesAutor": "<p>El Dr. Patrick R. Murray, autor de Elsevier, es director mundial de Asuntos Científicos en BD Diagnostic Systems. Tiene una reconocida carrera académica y práctica clínica, y se ha desempeñado como jefe del Servicio de Microbiología Clínica en el Departamento de Medicina de Laboratorio del Centro Clínico.</p>",
+  "portada": "public/images/booksCover/default-image.png"
+ },
+ {
+  "id": 17,
+  "nombreLibro": "Microbiología clínica",
+  "autor": "Keith Struthers",
+  "categoria": "Medicina",
+  "subcategoria": "Microbiología",
+  "editorial": "Manual Moderno",
+  "isbn": "9786074487046",
+  "precioBook": "600",
+  "precioEbook": "400",
+  "idioma": "Español",
+  "year": "2018",
+  "paginas": "260",
+  "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>Microbiología clínica es un texto conciso y atractivamente ilustrado, y que presenta la ciencia básica de la microbiología médica, así como su relación con la práctica clínica. Cabe señalar que esta edición incluye los temas más relevantes de la virología, micología y parasitología.</p>\r\n</div>",
+  "detallesAutor": "<p>El Dr. Struthers ha sido microbiólogo durante más de cuatro décadas, obteniendo la licenciatura en medicina y luego la especialización en microbiología médica a mitad de camino. Es médico microbiólogo consultor desde 1994. Tiene una amplia experiencia en microbiología clínica y de laboratorio, así como en la docencia de pregrado y posgrado. Ha escrito tres libros de texto sobre microbiología médica.</p>",
+  "portada": "public/images/booksCover/default-image.png"
  }
 ]
