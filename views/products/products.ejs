@@ -1,6 +1,6 @@
 <% let data ={css:["css/home.css","css/navBar.css", "css/navBarMobile.css"],
              jsfile:["./js/darkModeScript.js"],
-             titulo: "Home"}%>
+             titulo: "Products"}%>
 
 <%- include('../partials/head', data)%>
 
@@ -9,23 +9,8 @@
     <%- include('../partials/navBarMobile') %>
     
     <section class="books" id="<%=idSection%>">
-        <h3><%= titulo %></h3>
         <div class="products">
-            <%if (articulos.length === 0) {%>
-                <div class="message">
-                    <h3>No hay nada que mostrar</h3>
-                </div> 
-            <%} else {%>
-                <% articulos.forEach((articulo,n) => { %>
-                    <% if(!articulo.nuevo){ %>
-                        <% articulo.n = n %>
-                        <%- include('articles', articulo) %>
-                    <% } else {%>
-                        <% articulo.n = n %>
-                        <%- include('articles', articulo) %>
-                    <% }%>
-                <% }) %>
-            <% }%>
+                
         </div>
     </section>
 
