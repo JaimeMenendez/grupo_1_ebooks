@@ -7,14 +7,28 @@
 <body>
     <%- include('../partials/navBar') %>
     <%- include('../partials/navBarMobile') %>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    
+    <section class="books" id="<%=idSection%>">
+        <h3><%= titulo %></h3>
+        <div class="products">
+            <%if (articulos.length === 0) {%>
+                <div class="message">
+                    <h3>No hay nada que mostrar</h3>
+                </div> 
+            <%} else {%>
+                <% articulos.forEach((articulo,n) => { %>
+                    <% if(!articulo.nuevo){ %>
+                        <% articulo.n = n %>
+                        <%- include('articles', articulo) %>
+                    <% } else {%>
+                        <% articulo.n = n %>
+                        <%- include('articles', articulo) %>
+                    <% }%>
+                <% }) %>
+            <% }%>
+        </div>
+    </section>
+
+    <%- include('../partials/promotionalBanner')%>
     <%- include('../partials/footer') %>
 </body>
