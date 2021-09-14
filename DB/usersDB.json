@@ -107,10 +107,26 @@
     "category": "cliente"
   },
   {
+<<<<<<< HEAD
     "firstName": "dfghjk",
     "lastName": "fghjk",
     "email": "gbhnm@example.com",
     "password": "Tatiana1125",
+=======
+    "firstName": "Ines",
+    "lastName": "Sanchez",
+    "email": "ines@gmail.com",
+    "password": "Ines1234",
+    "direcciones": [],
+    "facturacion": [],
+    "category": "cliente"
+  },
+  {
+    "firstName": "Antonio",
+    "lastName": "Hernandez",
+    "email": "antonio@gmail.com",
+    "password": "Antonio1234",
+>>>>>>> 2c82eb30d8164fd3a26d401f0fbeac9a2ba0c029
     "direcciones": [],
     "facturacion": [],
     "category": "cliente"

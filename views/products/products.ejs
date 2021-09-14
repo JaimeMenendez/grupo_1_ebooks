@@ -1,20 +1,19 @@
 <% let data ={css:["css/home.css","css/navBar.css", "css/navBarMobile.css"],
              jsfile:["./js/darkModeScript.js"],
-             titulo: "Home"}%>
+             titulo: "Products"}%>
 
 <%- include('../partials/head', data)%>
 
 <body>
     <%- include('../partials/navBar') %>
     <%- include('../partials/navBarMobile') %>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    
+    <section class="books" id="<%=idSection%>">
+        <div class="products">
+                
+        </div>
+    </section>
+
+    <%- include('../partials/promotionalBanner')%>
     <%- include('../partials/footer') %>
 </body>
