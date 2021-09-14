@@ -7,5 +7,24 @@
                 <h4>Agregar dirección</h4>
             </div>
         </a>
+        <% const direcciones = user.direcciones %>
+        <% user.facturacion.forEach(invoice => {   %> 
+            <div class="addressBox">
+                <div class="addressContent">
+                    <p><strong><%= invoice.razonSocial %></strong></p>
+                    <p><%= invoice.rfc %></p>
+                    <% let addressInvoice = user.direcciones.find(direccion => direccion.id == invoice.idDireccion)%>
+                    <p><%= addressInvoice.direccion %></p>
+                    <p><%= addressInvoice.delegacion.trim() === "" ? addressInvoice.colonia : addressInvoice.delegacion + ", " + addressInvoice.colonia %></p>
+                    <p><%= addressInvoice.ciudad %>, <%= addressInvoice.estado %></p>
+                    <p><%= addressInvoice.pais %></p>
+                    <p><%= addressInvoice.codigoPostal %></p>
+                </div>
+    
+                <div class="addressButtons">
+                    <a href="/users/edit-invoice/<%= invoice.id %>">Editar</a> | <form action="/users/delete-address/<%= invoice.id %>?_method=DELETE" method="POST"><button onclick="return confirm('¿Estás seguro que desea eliminar los datos de facturación?')" type="submit">Descartar</button></form>
+                </div>
+            </div>
+        <% }) %> 
     </div>
 </section>

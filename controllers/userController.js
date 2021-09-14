@@ -17,26 +17,64 @@ const userController = {
       favoritos: seccion.favoritos
     })
   },
+
   sendSecurity: (req, res) => {
     res.render('users/security', {
       busquedas: seccion.busquedas,
       favoritos: seccion.favoritos
     })
   },
-  // Create new invoice
+
+  /** ************** METHODS FOR INVOICE ***************/
+
   sendAddInvoiceView: (req, res) => {
-    res.render('users/invoice', { edit: false })
+    const user = users[0]
+    res.render('users/invoice', { direcciones: user.direcciones, edit: false })
   },
+
   storeNewInvoice: (req, res) => {
+    const newDataInvoice = req.body
+    const user = users[0]
+    if (user.facturacion.length === 0) {
+      newDataInvoice.id = 1
+    } else {
+      newDataInvoice.id = user.facturacion[user.facturacion.length - 1].id + 1
+    }
+    newDataInvoice.idDireccion = parseInt(newDataInvoice.idDireccion)
+    user.facturacion.push(newDataInvoice)
+    users[0] = user
+    fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
     res.redirect('/users')
   },
+
   // Edit old invoice
   sendEditInvoiceView: (req, res) => {
-    res.render('users/invoice', { edit: true })
+    const user = users[0]
+    const invoiceEdit = user.facturacion.find(invoice => invoice.id === parseInt(req.params.id))
+    console.log(invoiceEdit)
+    res.render('users/invoice', { edit: true, user: invoiceEdit, direcciones: user.direcciones })
   },
+
   updateInvoice: (req, res) => {
+    const user = users[0]
+    const updateInvoice = req.body
+    const id = parseInt(req.params.id)
+    const index = user.facturacion.findIndex(invoice => invoice.id === id)
+    if (index >= 0) {
+      updateInvoice.id = id
+      user.facturacion[index] = updateInvoice
+      users[0] = user
+      fs.writeFileSync(usersPath, JSON.stringify(users[0], null, 2))
+    }
     res.redirect('/users')
   },
+
+  deleteInvoice: (req, res) => {
+    res.redirect('/users')
+  },
+
+  /** ************** METHODS FOR ADDRESS ***************/
+
   sendEditAddressView: (req, res) => {
     const user = users[0]
     const direccionSolicitada = user.direcciones.find(
@@ -44,9 +82,11 @@ const userController = {
     )
     res.render('users/editar-direccion', { edit: true, ...direccionSolicitada })
   },
+
   sendAddAddressView: (req, res) => {
     res.render('users/editar-direccion', { edit: false })
   },
+
   storeNewAddress: (req, res) => {
     const newAddress = req.body
     const user = users[0]
@@ -63,12 +103,12 @@ const userController = {
     fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
     res.redirect('/users')
   },
+
   updateAddress: (req, res) => {
     const addressUpdated = req.body
     const user = users[0]
     const id = Number.parseInt(req.params.id)
-
-    const index = user.direcciones.findIndex((direccion) => direccion.id === id)
+    const index = user.direcciones.findIndex(direccion => direccion.id === id)
     if (index >= 0) {
       addressUpdated.id = id
       addressUpdated.predeterminada = users[0].direcciones[index].predeterminada
@@ -77,6 +117,7 @@ const userController = {
     }
     res.redirect('/users')
   },
+
   deleteAddress: (req, res) => {
     const id = Number.parseInt(req.params.id)
     const user = users[0]
@@ -89,6 +130,7 @@ const userController = {
     }
     res.redirect('/users')
   },
+
   makeDefaultAddress: (req, res) => {
     const id = Number.parseInt(req.params.id)
     const user = users[0]
@@ -102,6 +144,9 @@ const userController = {
     fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
     res.redirect('/users')
   },
+
+  /** ************** METHODS FOR REGISTER ***************/
+
   register: (req, res) => {
     const email = req.body.email
     if (users.findIndex(usuario => usuario.email === email) === -1) {

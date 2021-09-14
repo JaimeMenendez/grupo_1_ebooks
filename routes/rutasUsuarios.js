@@ -7,8 +7,11 @@ routerUser.get('/security', userController.sendSecurity)
 
 routerUser.get('/add-new-invoice', userController.sendAddInvoiceView)
 routerUser.post('/add-new-invoice', userController.storeNewInvoice)
+
 routerUser.get('/edit-invoice/:id', userController.sendEditInvoiceView)
 routerUser.put('/edit-invoice/:id', userController.updateInvoice)
+
+routerUser.delete('/delete-invoice/:id', userController.deleteInvoice)
 
 routerUser.get('/edit-address/:id', userController.sendEditAddressView)
 routerUser.get('/add-new-address', userController.sendAddAddressView)
