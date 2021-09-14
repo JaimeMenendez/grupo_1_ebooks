@@ -32,6 +32,13 @@
             </div>
 
             <div class="entradaDeDatos">
+                <label for="direcciones">Seleccionar una dirección</label>
+                <select id="direcciones" name="direcciones">
+                    
+                    <option></option>
+                </select>
+            </div>
+            <div class="entradaDeDatos">
                 <label for="pais">País</label>
                 <select id="pais" name="pais">
                     <option value="mexico" <%= edit && pais == "mexico" ? 'selected':''%> >México</option>

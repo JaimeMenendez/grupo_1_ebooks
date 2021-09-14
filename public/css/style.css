@@ -429,13 +429,14 @@ a {
     border-color: #c3e6cb;
   }
 
-  .closebtn{
+  .closebtn1{
     position: absolute;
     right: 10px;
     top: 0;
     text-decoration: none;
     font-size: 20px;
   }
+
   
 
   .red-alert{

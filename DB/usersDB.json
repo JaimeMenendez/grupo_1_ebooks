@@ -12,6 +12,7 @@
         "ciudad": "Tamaulipas",
         "estado": "Nuevo León",
         "colonia": "Los Sauces",
+        "delegacion": "",
         "codigoPostal": "66056",
         "telefono": "1236447",
         "id": 1,
@@ -24,9 +25,23 @@
         "ciudad": "General Escobedo",
         "estado": "Nuevo León",
         "colonia": "Sergio Dalma",
+        "delegacion": "",
         "codigoPostal": "66056",
         "telefono": "9982197111",
         "id": 2,
+        "predeterminada": false
+      },
+      {
+        "nombre": "TATIANA MILEYDY LEAL DEL RIO",
+        "pais": "México",
+        "estado": "Ciudad de México",
+        "ciudad": "Ciudad de México",
+        "direccion": "Call 7",
+        "colonia": "Argentina Antigua",
+        "delegacion": "Miguel Hidalgo",
+        "codigoPostal": "11270",
+        "telefono": "5555555",
+        "id": 3,
         "predeterminada": false
       }
     ],
@@ -38,6 +53,29 @@
     "lastName": "Gimenez",
     "email": "alicia@gmail.com",
     "password": "Alicia12",
+    "direcciones": [
+      {
+        "nombre": "Yeison Leal",
+        "pais": "Argentina",
+        "estado": "jgfdsdghj",
+        "ciudad": "jhgfdfghj",
+        "direccion": "lkhgfghjk",
+        "colonia": "sdfghjk",
+        "delegacion": "ertyuiop",
+        "codigoPostal": "112345",
+        "telefono": "257898765",
+        "id": 1,
+        "predeterminada": true
+      }
+    ],
+    "facturacion": [],
+    "category": "cliente"
+  },
+  {
+    "firstName": "Tatiana ",
+    "lastName": "Leal",
+    "email": "mileydy.1125@gmail.com",
+    "password": "Tatiana1125",
     "direcciones": [],
     "facturacion": [],
     "category": "cliente"

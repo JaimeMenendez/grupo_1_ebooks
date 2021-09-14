@@ -8,7 +8,7 @@
             </div>
         </a>
 
-        <% direcciones.forEach(address => {   %> 
+        <% user.direcciones.forEach(address => {   %> 
             <div class="addressBox">
                <% if(address.predeterminada) {%> 
                 <div class="defaultAdress">Predeterminada: &nbsp &nbsp <img src="/public/images/Logo_2.2.png"></div>
@@ -16,7 +16,7 @@
                 <div class="addressContent">
                     <p><strong><%= address.nombre %></strong></p>
                     <p><%= address.direccion %></p>
-                    <p><%= address.colonia %></p>
+                    <p><%= address.delegacion.trim() === "" ? address.colonia : address.delegacion + ", " + address.colonia %></p>
                     <p><%= address.ciudad %>, <%= address.estado %></p>
                     <p><%= address.codigoPostal %></p>
                     <p><%= address.pais %></p>
