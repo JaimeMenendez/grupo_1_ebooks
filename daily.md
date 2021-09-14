@@ -57,3 +57,6 @@
 
 # 12-9-2021
 - Se agregaron 2 libros por cada una de las primeras 3 categorías de Medicina
+
+# 14-9-2021
+- Base de datos de libros categoría Medicina completada
