@@ -97,7 +97,7 @@
             <div class="form-group col-sm-4">
                 <label for="paginas">Número de Páginas</label>
                 <input type="number" class="form-control" id="paginas" min="0" step="1" name="paginas"
-                    placeholder=" " value="<%= edit ? year : '' %>">
+                    placeholder=" " value="<%= edit ? paginas : '' %>">
             </div>
         </div>
 
@@ -145,7 +145,7 @@
 
 
         <div class="botones">
-            <button class="btn btn-primary" type="submit">Agregar Libro</button>
+            <button class="btn btn-primary" type="submit"><%= edit ? "Editar Libro" : 'Agregar Libro' %></button>
             <button class="btn btn-danger" type="reset">Borrar</button>
         </div>
     </form>

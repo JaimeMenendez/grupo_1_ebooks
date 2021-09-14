@@ -17,21 +17,21 @@
   "portada": "public/images/booksCover/portada-1629923888051.png"
  },
  {
+  "id": 2,
   "nombreLibro": "Cardiología: Bases fisiopatológicas de las cardiopatías",
+  "autor": "Leonard Stuart Lilly",
   "categoria": "Medicina",
   "subcategoria": "Cardiología",
-  "autor": "Leonard Stuart Lilly",
   "editorial": "Wolters Kluwer",
   "isbn": "9788418257728",
-  "idioma": "Español",
   "precioBook": "600",
   "precioEbook": "350",
-  "paginas": "500",
+  "idioma": "Inglés",
   "year": "2021",
-  "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>El libro está diseñado específicamente para preparar a los estudiantes para sus primeros encuentros con pacientes con enfermedades cardiovasculares. Esta 7.ª edición, revisada a fondo por la facultad de la Facultad de Medicina de Harvard y un equipo selecto de cardiólogos y residentes de medicina interna, equipa a los estudiantes con una comprensión clara, completa y clínicamente relevante de la fisiopatología cardiovascular, estableciendo una base sólida para el diagnóstico y el tratamiento del paciente.</p>\r\n</div>",
-  "detallesAutor": "<p>El Dr. Leonard Stuart Lilly es jefe de la División de Cardiología del Brigham and Women's Faulkner Hospital y especialista en medicina cardiovascular del Brigham and Women’s Hospital (BWH). Además, es profesor de medicina en la Escuela de Medicina de Harvard (HMS).</p>",
-  "id": 2,
-  "portada": "public/images/booksCover/default-image.png"
+  "paginas": "500",
+  "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>El libro est&aacute; dise&ntilde;ado espec&iacute;ficamente para preparar a los estudiantes para sus primeros encuentros con pacientes con enfermedades cardiovasculares. Esta 7.&ordf; edici&oacute;n, revisada a fondo por la facultad de la Facultad de Medicina de Harvard y un equipo selecto de cardi&oacute;logos y residentes de medicina interna, equipa a los estudiantes con una comprensi&oacute;n clara, completa y cl&iacute;nicamente relevante de la fisiopatolog&iacute;a cardiovascular, estableciendo una base s&oacute;lida para el diagn&oacute;stico y el tratamiento del paciente.</p>\r\n</div>",
+  "detallesAutor": "<p>El Dr. Leonard Stuart Lilly es jefe de la Divisi&oacute;n de Cardiolog&iacute;a del Brigham and Women's Faulkner Hospital y especialista en medicina cardiovascular del Brigham and Women&rsquo;s Hospital (BWH). Adem&aacute;s, es profesor de medicina en la Escuela de Medicina de Harvard (HMS).</p>",
+  "portada": "public/images/booksCover/portada-1631586606098.png"
  },
  {
   "id": 3,
