@@ -287,5 +287,39 @@
   "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>Microbiología clínica es un texto conciso y atractivamente ilustrado, y que presenta la ciencia básica de la microbiología médica, así como su relación con la práctica clínica. Cabe señalar que esta edición incluye los temas más relevantes de la virología, micología y parasitología.</p>\r\n</div>",
   "detallesAutor": "<p>El Dr. Struthers ha sido microbiólogo durante más de cuatro décadas, obteniendo la licenciatura en medicina y luego la especialización en microbiología médica a mitad de camino. Es médico microbiólogo consultor desde 1994. Tiene una amplia experiencia en microbiología clínica y de laboratorio, así como en la docencia de pregrado y posgrado. Ha escrito tres libros de texto sobre microbiología médica.</p>",
   "portada": "public/images/booksCover/default-image.png"
+ },
+ {
+  "id": 18,
+  "nombreLibro": "Berek y Novak: Fundamentos de ginecología",
+  "autor": "Jonathan S. Berek",
+  "categoria": "Medicina",
+  "subcategoria": "Ginecología",
+  "editorial": "Wolters Kluwer",
+  "isbn": "9788418257179",
+  "precioBook": "1200",
+  "precioEbook": "550",
+  "idioma": "Español",
+  "year": "2021",
+  "paginas": "810",
+  "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>Derivado del bestseller, Ginecología de Berek y Novak, esta referencia concisa y fácil de leer presenta información esencial de ginecología en un formato de fácil lectura y ampliamente ilustrado. Berek y Novak. Fundamentos de ginecología incluye los capítulos más relevantes, así como las tablas y figuras del texto más amplio, compilados y editados por el Dr. Berek. Adaptado para residentes, practicantes de enfermería, asistentes médicos y otros profesionales de la salud.</p>\r\n</div>",
+  "detallesAutor": "<p>Jonathan S. Berek, MD MMS es profesor Laurie Kraus Lacob en la Facultad de Medicina de la Universidad de Stanford, director del Centro de Cáncer para Mujeres de Stanford y asesor principal del Instituto del Cáncer de Stanford. Es un ex becario reciente del Instituto de Carreras Distinguidas de Stanford. La profesora Berek ayudó a establecer y es la Directora del Centro de Cáncer de Mujeres de Stanford, que es uno de los primeros programas en la nación en combinar oncología ginecológica y de mama con programas de investigación traslacional del cáncer de la mujer, genética y servicios de apoyo. Se desempeñó como presidente del Departamento de Obstetricia y Ginecología de Stanford de 2005 a 2017.</p>",
+  "portada": "public/images/booksCover/default-image.png"
+ },
+ {
+  "id": 19,
+  "nombreLibro": "Manual de oncología ginecológica: Principios y práctica",
+  "autor": "Douglas A. Levine",
+  "categoria": "Medicina",
+  "subcategoria": "Ginecología",
+  "editorial": "Wolters Kluwer",
+  "isbn": "9788418257681",
+  "precioBook": "640",
+  "precioEbook": "300",
+  "idioma": "Español",
+  "year": "2021",
+  "paginas": "315",
+  "detallesDelLibro": "<div class=\"overview__body\" data-gtm-vis-has-fired-9995629_87=\"1\">\r\n<p>El Manual de ginecología oncológica. Principios y práctica desarrolla, en un formato práctico y a todo color, la información esencial sobre el diagnóstico y el tratamiento del cáncer en la mujer. El manual aborda los avances más recientes en la especialidad, la evidencia y los datos claros que respaldan las recomendaciones de tratamiento, y numerosos algoritmos, tablas, resúmenes y puntos clave sobre la incidencia y la etiología, y las modalidades de diagnóstico y de tratamiento de cada uno de los padecimientos.</p>\r\n</div>",
+  "detallesAutor": "<p>Douglas A. Levine MD es un ginecólogo oncólogo que se especializa en el tratamiento quirúrgico de mujeres con cánceres de ovario o de útero conocidos o sospechados. Además de su práctica clínica, el Dr. Levine es el actual Jefe del Laboratorio de Investigación de Ginecología, donde estudia la prevención del cáncer, la medicina de precisión y los tumores raros con necesidades insatisfechas.</p>",
+  "portada": "public/images/booksCover/default-image.png"
  }
 ]
