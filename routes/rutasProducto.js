@@ -19,11 +19,11 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 router.get('/', productoController.index)
-router.get('/agregarLibro', productoController.create)
-router.post('/', upload.any(), productoController.store)
-router.get('/detail/:id', productoController.detail)
-router.get('/editarLibro/:id', productoController.edit)
-router.patch('/editarLibro/:id', upload.any(), productoController.update)
+router.get('/create', productoController.create)
+router.post('/', upload.single('portada'), productoController.store)
+router.get('/:id', productoController.detail)
+router.get('/:id/edit', productoController.edit)
+router.put('/:id/edit', upload.single('portada'), productoController.update)
 router.delete('/delete/:id', productoController.destroy)
 
 module.exports = router

@@ -41,5 +41,23 @@
     "direcciones": [],
     "facturacion": [],
     "category": "cliente"
+  },
+  {
+    "firstName": "Ines",
+    "lastName": "Sanchez",
+    "email": "ines@gmail.com",
+    "password": "Ines1234",
+    "direcciones": [],
+    "facturacion": [],
+    "category": "cliente"
+  },
+  {
+    "firstName": "Antonio",
+    "lastName": "Hernandez",
+    "email": "antonio@gmail.com",
+    "password": "Antonio1234",
+    "direcciones": [],
+    "facturacion": [],
+    "category": "cliente"
   }
 ]

@@ -18,7 +18,7 @@
     <%- include('../partials/navBarMobile') %>
 
 
-    <form class="container" autocomplete="false" action="/producto/agregarLibro" method="POST"
+    <form class="container" autocomplete="false" action=<%= edit ? "/products/" + id + "/edit?_method=PUT" :"/products/"%> method="POST"
         enctype="multipart/form-data">
         <h1 class="pageTitle">
             <%- tittle %>
@@ -46,7 +46,7 @@
 
             <div class="form-group col-sm-4">
                 <label for="subcategoria">Subcategoría:</label>
-                <input type="text" class="form-control" name="subcategorias" id="subcategoria"
+                <input type="text" class="form-control" name="subcategoria" id="subcategoria"
                     placeholder="Python" value="<%= edit ? subcategoria : '' %>">
             </div>
 
