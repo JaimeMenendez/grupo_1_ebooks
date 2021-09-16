@@ -157,6 +157,21 @@ form.searchBar button:hover {
 .mySidenavlinks{
     position:relative;
 }
+.mySidenavlinks a{
+    font-size: 20px;
+    color: var(--fontColors);
+    font-weight:normal;
+    
+}
+
+.sideBarOption{
+transition: background 0.2s !important;
+}
+
+.mySidenavlinks .sideBarOption:hover{
+    background: #2D2F8E;
+    color: white !important; 
+}
 
 #sideNav a,#sideNav label {
     padding:10px;
@@ -202,7 +217,6 @@ form.searchBar button:hover {
         text-decoration: none;
         color:var(--fontColors);
         font-family: "Roboto", sans-serif;
-        font-weight: bold;
         font-size: 18px;
         z-index: 1;
     }

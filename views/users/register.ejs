@@ -157,17 +157,17 @@
       <form action="/users/register" method="POST">
         <div class="question">
           <label for="">*¿Cómo te llamas?</label>
-          <input type="text" name="firstName" placeholder=" *Nombre(s)" required/>
+          <input type="text" name="firstName" placeholder=" *Nombre(s)" required value="<%= locals.oldValues && locals.oldValues.firstName ? locals.oldValues.firstName:''%>"/>
         </div>
 
         <div class="question">
           <label for="">*¿Cuál es tu apellido?</label>
-          <input type="text" name="lastName" placeholder=" *Apellido(s)" required/>
+          <input type="text" name="lastName" placeholder=" *Apellido(s)" required value="<%= locals.oldValues && locals.oldValues.lastName ? locals.oldValues.lastName:''%>"/>
         </div>
 
         <div class="question">
           <label for="">*¿Cuál es tu correo electrónico?</label>
-          <input type="email" name="email" placeholder=" *Correo Electrónico" required/>
+          <input type="email" name="email" placeholder=" *Correo Electrónico" required value="<%= locals.oldValues && locals.oldValues.email ? locals.oldValues.email:''%>"/>
         </div>
 
         <div class="question">

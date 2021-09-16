@@ -197,11 +197,11 @@ const userController = {
         fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
         res.render('users/login', { mensaje: 'Tu cuenta ha sido creada, ahora puedes iniciar sesión.', warning: false })
       } else {
-        res.render('users/register', {mensaje: '<p><i class="fas fa-exclamation-triangle"></i>El correo que está utilizando ya está registrado. Intente iniciar sesión o regístrese con otro correo.</p>', warning: true })
+        res.render('users/register', {mensaje: '<p><i class="fas fa-exclamation-triangle"></i>El correo que está utilizando ya está registrado. Intente iniciar sesión o regístrese con otro correo.</p>', warning: true, oldValues:req.body })
       }
     }else{
       const errores = errors.errors.reduce((acc,error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
-      res.render('users/register', {mensaje: errores, warning: true })
+      res.render('users/register', {mensaje: errores, warning: true, oldValues:req.body})
     }
   } 
 }
