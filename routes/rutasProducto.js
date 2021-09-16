@@ -5,6 +5,7 @@ const path = require('path')
 
 const productoController = require('../controllers/productoController')
 
+// Multer Configuration
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './public/images/booksCover')
@@ -18,6 +19,7 @@ const storage = multer.diskStorage({
 })
 const upload = multer({ storage: storage })
 
+// Routes
 router.get('/', productoController.index)
 router.get('/create', productoController.create)
 router.post('/', upload.single('portada'), productoController.store)

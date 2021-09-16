@@ -2,6 +2,18 @@ const express = require('express')
 const userController = require('../controllers/userController')
 const routerUser = express.Router()
 
+// Express Validator
+const {body} = require('express-validator')
+const validarRegistro = [
+  body('firstName').notEmpty().withMessage("Debe especificar su nombre."),
+  body('lastName').notEmpty().withMessage("Debe especificar sus apellidos."),
+  body('email').notEmpty().withMessage("Debe especificar un email.").bail()
+                .isEmail().withMessage('Debe introducir un email válido.'),
+  body('password').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres.")
+]
+
+routerUser.get('/register', userController.registerView)
+
 routerUser.get('/', userController.sendMyAccount)
 routerUser.get('/security', userController.sendSecurity)
 
@@ -21,6 +33,6 @@ routerUser.put('/make-default-address/:id', userController.makeDefaultAddress)
 routerUser.post('/add-new-address', userController.storeNewAddress)
 routerUser.delete('/delete-address/:id', userController.deleteAddress)
 
-routerUser.post('/register', userController.register)
+routerUser.post('/register',validarRegistro, userController.register)
 
 module.exports = routerUser

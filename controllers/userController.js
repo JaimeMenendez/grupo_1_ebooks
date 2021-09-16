@@ -1,5 +1,7 @@
 const fs = require('fs')
 const path = require('path')
+const {validationResult} = require('express-validator')
+
 
 const usersPath = path.resolve(__dirname, '../DB/usersDB.json')
 
@@ -54,7 +56,6 @@ const userController = {
   sendEditInvoiceView: (req, res) => {
     const user = users[0]
     const invoiceEdit = user.facturacion.find(invoice => invoice.id === parseInt(req.params.id))
-    console.log(invoiceEdit)
     res.render('users/invoice', { edit: true, user: invoiceEdit, direcciones: user.direcciones })
   },
 
@@ -176,24 +177,33 @@ const userController = {
   /** **************************************************/
   /** ************** METHODS FOR REGISTER **************/
   /** **************************************************/
+  registerView: (req, res) => {
+    res.render('users/register')
+  },
 
   register: (req, res) => {
-    const email = req.body.email
-    if (users.findIndex(usuario => usuario.email === email) === -1) {
-      const newUser = {
-        ...req.body,
-        direcciones: [],
-        facturacion: [],
-        category: 'cliente'
-      }
+    let errors = validationResult(req)
+    if(errors.isEmpty()){
+      const email = req.body.email
+      if (users.findIndex(usuario => usuario.email === email) === -1) {
+        const newUser = {
+          ...req.body,
+          direcciones: [],
+          facturacion: [],
+          category: 'cliente'
+        }
 
-      users.push(newUser)
-      fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
-      res.render('users/login', { mensaje: 'Tu cuenta ha sido creada, ahora puedes iniciar sesión.', warning: false })
-    } else {
-      res.render('users/register', { mensaje: 'El correo que está utilizando ya está registrado. Intente iniciar sesión o regístrese con otro correo.', warning: true })
+        users.push(newUser)
+        fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
+        res.render('users/login', { mensaje: 'Tu cuenta ha sido creada, ahora puedes iniciar sesión.', warning: false })
+      } else {
+        res.render('users/register', {mensaje: '<p><i class="fas fa-exclamation-triangle"></i>El correo que está utilizando ya está registrado. Intente iniciar sesión o regístrese con otro correo.</p>', warning: true })
+      }
+    }else{
+      const errores = errors.errors.reduce((acc,error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
+      res.render('users/register', {mensaje: errores, warning: true })
     }
-  }
+  } 
 }
 
 module.exports = userController

@@ -16,14 +16,20 @@
          <%- mensaje %>  
     </div>
     <script> 
-      setTimeout(() => {
-        document.querySelector(".alert-message").style.opacity = '0';
-      }, 10000);
+     setTimeout(() => {
+       document.querySelector(".alert-message").style.opacity = '0';
+     }, 10000);
+     setTimeout(() => {
+       document.querySelector(".alert-message").style.display = 'none';
+     }, 11000);
 
-      const closeMessage = () =>{
-        document.querySelector(".alert-message").style.opacity = '0';
-      }
-      </script>
+     const closeMessage = () =>{
+       document.querySelector(".alert-message").style.opacity = '0';
+       setTimeout(() => {
+       document.querySelector(".alert-message").style.display = 'none';
+     }, 1000);
+     }
+     </script>
   <%}%>
 
   <div class="main-container">

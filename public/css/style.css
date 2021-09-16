@@ -385,15 +385,6 @@ a {
     animation-delay: 1.2s;
   }
 
-  @keyframes aparecer{
-    from {
-      opacity:0;
-    }
-  
-    to {
-      opacity:1;
-    }
-  }
 
 
   .alert-message{
@@ -420,6 +411,18 @@ a {
     text-align: center;
     transform: translate(-50%);
     transition: opacity 1s;
+    animation: caer 1s;
+  }
+
+  @keyframes caer{
+    0%{
+      transform:translate(-50%,-100%);
+      opacity: 0;
+    }
+
+    100%{
+      opacity: 1;
+    }
   }
 
   .green-alert{
@@ -436,12 +439,20 @@ a {
     font-size: 20px;
   }
 
-  
-
   .red-alert{
     color: #721c24;
-    background-color: rgba(248, 215, 218,0.8);
+    background-color: rgba(248, 215, 218,0.9);
     border-color: #f5c6cb;
+  }
+
+  .red-alert p{
+    color: #721c24;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .red-alert p i{
+    padding-right: 5px;
   }
 
   @media (prefers-color-scheme: dark) {
