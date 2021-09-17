@@ -63,5 +63,6 @@ routerUser.delete('/delete-address/:id',authMiddleware, userController.deleteAdd
 
 routerUser.post('/register',validarRegistro, userController.register)
 routerUser.post('/login',validarLogin, userController.login)
+routerUser.get('/logout', userController.logout)
 
 module.exports = routerUser

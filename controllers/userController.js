@@ -8,6 +8,7 @@ const usersPath = path.resolve(__dirname, '../DB/usersDB.json')
 
 const seccion = require('./secciones.json')
 const botonesPrincipales = require('./botonesPrincipales.json')
+const session = require('express-session')
 let users = JSON.parse(fs.readFileSync(usersPath))
 
 const userController = {
@@ -298,6 +299,10 @@ const userController = {
         oldValues: req.body
       })
     }
+  },
+  logout: (req,res) => {
+    delete req.session.userLogged
+    res.redirect('/users/login')
   }
 }
 
