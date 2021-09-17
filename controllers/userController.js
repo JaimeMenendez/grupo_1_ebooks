@@ -17,15 +17,27 @@ const userController = {
       user: user,
       botonesPrincipales: botonesPrincipales,
       busquedas: seccion.busquedas,
+      favoritos: seccion.favoritos,
+      nuevos: seccion.nuevos
+    })
+  },
+
+  /** **************************************************/
+  /** ************* METHODS FOR SECURITY ***************/
+  /** **************************************************/
+
+  sendSecurity: (req, res) => {
+    const user = users[0]
+    res.render('users/edit-data-user', {
+      user: user,
+      busquedas: seccion.busquedas,
       favoritos: seccion.favoritos
     })
   },
 
-  sendSecurity: (req, res) => {
-    res.render('users/security', {
-      busquedas: seccion.busquedas,
-      favoritos: seccion.favoritos
-    })
+  updateUser: (req, res) => {
+    const user = users[0]
+    res.redirect('/users')
   },
 
   /** **************************************************/
@@ -34,7 +46,10 @@ const userController = {
 
   sendAddInvoiceView: (req, res) => {
     const user = users[0]
-    res.render('users/invoice', { direcciones: user.direcciones, edit: false })
+    res.render('users/invoice', { direcciones: user.direcciones, 
+      edit: false,
+      busquedas: seccion.busquedas,
+      nuevos: seccion.nuevos  })
   },
 
   storeNewInvoice: (req, res) => {
@@ -57,7 +72,11 @@ const userController = {
   sendEditInvoiceView: (req, res) => {
     const user = users[0]
     const invoiceEdit = user.facturacion.find(invoice => invoice.id === parseInt(req.params.id))
-    res.render('users/invoice', { edit: true, user: invoiceEdit, direcciones: user.direcciones })
+    res.render('users/invoice', { edit: true, 
+      user: invoiceEdit, 
+      direcciones: user.direcciones,
+      busquedas: seccion.busquedas,
+      nuevos: seccion.nuevos  })
   },
 
   updateInvoice: (req, res) => {
@@ -110,11 +129,16 @@ const userController = {
     const direccionSolicitada = user.direcciones.find(
       (direccion) => direccion.id === Number.parseInt(req.params.id)
     )
-    res.render('users/editar-direccion', { edit: true, ...direccionSolicitada })
+    res.render('users/editar-direccion', { edit: true,
+      ...direccionSolicitada, 
+      busquedas: seccion.busquedas,
+      nuevos: seccion.nuevos })
   },
 
   sendAddAddressView: (req, res) => {
-    res.render('users/editar-direccion', { edit: false })
+    res.render('users/editar-direccion', { edit: false,
+      busquedas: seccion.busquedas,
+      nuevos: seccion.nuevos  })
   },
 
   storeNewAddress: (req, res) => {

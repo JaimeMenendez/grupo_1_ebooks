@@ -1,6 +1,22 @@
 const express = require('express')
 const userController = require('../controllers/userController')
 const routerUser = express.Router()
+const multer = require('multer')
+const path = require('path')
+
+// Multer
+const storageUser = multer.diskStorage({
+  destination: function(req, file, callback){
+    callback(null,'./public/image/userProfile')
+  },
+  filename: function (req, file, callback) {
+    const imageUser = `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`
+    cb(null, imageUser)
+  },
+})
+
+// Especificamos la conf anterios como disco de almacenamiento de archivos
+const UploadImageUser = multer({storageUser})
 
 // Express Validator
 const {body} = require('express-validator')
@@ -23,7 +39,9 @@ routerUser.get('/register', userController.registerView)
 routerUser.get('/login', userController.loginView)
 
 routerUser.get('/', userController.sendMyAccount)
-routerUser.get('/security', userController.sendSecurity)
+
+routerUser.get('/edit-data-user', userController.sendSecurity)
+routerUser.put('/edit-data-user', UploadImageUser.single('imageUser'), userController.updateUser)
 
 routerUser.get('/add-new-invoice', userController.sendAddInvoiceView)
 routerUser.post('/add-new-invoice', userController.storeNewInvoice)

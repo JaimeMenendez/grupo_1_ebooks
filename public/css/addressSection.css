@@ -156,7 +156,7 @@
 }
 
 
-.entradaDeDatos input,.entradaDeDatos select{
+.entradaDeDatos input, .entradaDeDatos select{
     -webkit-appearance:none;
     -webkit-text-size-adjust: 100%;
     box-sizing: border-box;
@@ -175,6 +175,25 @@
     padding: 3px 7px;
     line-height: normal;
     color: var(--fontColors);
+}
+
+#input-foto{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 37px;
+    text-align: center;
+    margin: 15px auto;
+    box-shadow: none;
+    border: none;
+}
+
+.entradaDeDatos i{
+    font-size: 100px;
+    margin-top: 40px;
+    border-radius: 50%;
+    color: var(--fontColors);
+    background-color: white;
 }
 
 .entradaDeDatos label{
