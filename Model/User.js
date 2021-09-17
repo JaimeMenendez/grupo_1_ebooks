@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs').promises
+const bcrypt = require('bcryptjs')
 
 const User = {
     filePath: path.resolve(__dirname, '../DB/usersDB.json'),
@@ -56,4 +57,4 @@ const User = {
 
 
 console.log(bcrypt)
-console.log(bcrypt.hashSync('Hola Mundo'))
+console.log(bcrypt.hashSync('Juana123',10))

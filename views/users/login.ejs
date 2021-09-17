@@ -129,16 +129,16 @@
     </section>
 
     <section class="loginForm">
-      <form action="">
+      <form action="/users/login" method="POST">
         <div class="question">
           <label for="">Correo Electrónico</label>
-          <input type="email" placeholder=" Correo Electrónico" required />
+          <input type="email" name="email" placeholder=" Correo Electrónico" required value="<%= locals.oldValues && locals.oldValues.email ? locals.oldValues.email:''%>" />
         </div>
 
         <div class="question">
           <label for="">Contraseña</label>
           <div class="passwordDiv">
-            <input type="password" id="PasswordInput" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            <input type="password" id="PasswordInput" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres"
               placeholder=" Contraseña" autocomplete="on" required>
             <span><i id="passwordEye" class="flaticon-invisible"></i></span>
@@ -156,7 +156,7 @@
         <div class="center-separator">o</div>
 
         <div class="button-div">
-          <button class="btn googleButton" type="submit"><img src="./images/google.svg" alt="">&nbsp Iniciar sesión con
+          <button class="btn googleButton"><img src="./images/google.svg" alt="">&nbsp Iniciar sesión con
             Google
           </button>
         </div>

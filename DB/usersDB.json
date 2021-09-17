@@ -3,7 +3,7 @@
     "firstName": "Jaime",
     "lastName": "Menendez",
     "email": "jaimemenendezalvarez@gmail.com",
-    "password": "Alonso657",
+    "password": "$2a$10$cHXLflVIUb.MCBIEdq4MoOPz45oLQdtgMv3IjAwkfWGaSjCii38oa",
     "direcciones": [
       {
         "nombre": "TATIANA LEAL",
@@ -55,7 +55,7 @@
     "firstName": "Alicia",
     "lastName": "Gimenez",
     "email": "alicia@gmail.com",
-    "password": "Alicia12",
+    "password": "$2a$10$J0krMffwUThiTVa6cKpBQe1vP8rI5GRyzAckL9yUoSgL5msGMhGq2",
     "direcciones": [
       {
         "nombre": "Yeison Leal",
@@ -79,7 +79,7 @@
     "firstName": "Tatiana ",
     "lastName": "Leal",
     "email": "mileydy.1125@gmail.com",
-    "password": "Tatiana1125",
+    "password": "$2a$10$r4AVu2DrHTNn2YN1BRivj.GQbMhRVjw9KfrDNsCs86CwjmZqua5Qu",
     "direcciones": [],
     "facturacion": [],
     "category": "cliente",
@@ -89,7 +89,7 @@
     "firstName": "Juana",
     "lastName": "Gonzalez",
     "email": "juana@gmail.com",
-    "password": "Juana123",
+    "password": "$2a$10$NN.jnhRfsVraQK9rEjXUCe09uEjx/9MW6KKyGWAbK7Gw./ieZZwqa",
     "direcciones": [],
     "facturacion": [],
     "category": "cliente",

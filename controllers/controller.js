@@ -20,12 +20,6 @@ const controller = {
   sendProductDescription: (req, res) => {
     res.render('products/description', book)
   },
-  sendLogin: (req, res) => {
-    res.render('users/login')
-  },
-  sendRegister: (req, res) => {
-    res.render('users/register')
-  },
   sendSearchPage: (req, res) => {
     const buttonPressed = 'searchBook'
     res.render('main/searchBook', { seccion: seccion, categorias: categorias, buttonPressed: buttonPressed })

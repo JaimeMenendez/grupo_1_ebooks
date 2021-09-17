@@ -12,7 +12,15 @@ const validarRegistro = [
   body('password').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres.")
 ]
 
+const validarLogin = [
+  body('email').notEmpty().withMessage("Debe especificar un email.").bail()
+               .isEmail().withMessage('Debe introducir un email válido.'),
+  body('password').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña no es correcta, por favor, intente nuevamente.")
+]
+
+
 routerUser.get('/register', userController.registerView)
+routerUser.get('/login', userController.loginView)
 
 routerUser.get('/', userController.sendMyAccount)
 routerUser.get('/security', userController.sendSecurity)
@@ -34,5 +42,6 @@ routerUser.post('/add-new-address', userController.storeNewAddress)
 routerUser.delete('/delete-address/:id', userController.deleteAddress)
 
 routerUser.post('/register',validarRegistro, userController.register)
+routerUser.post('/login',validarLogin, userController.login)
 
 module.exports = routerUser

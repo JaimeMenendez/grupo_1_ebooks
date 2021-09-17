@@ -206,7 +206,18 @@ const userController = {
       const errores = errors.errors.reduce((acc,error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
       res.render('users/register', {mensaje: errores, warning: true, oldValues:req.body})
     }
-  } 
+  },
+/** **************************************************/
+/** ************** METHODS FOR LOGIN **************/
+/** **************************************************/
+  loginView:(req,res) =>{
+      res.render('users/login')
+  },
+  login: (req, res) =>{
+    let errors = validationResult(req)
+    const errores = errors.errors.reduce((acc,error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
+    res.render('users/login', {mensaje: errores, warning: true, oldValues: req.body})
+  }
 }
 
 module.exports = userController
