@@ -190,7 +190,8 @@ const userController = {
           ...req.body,
           direcciones: [],
           facturacion: [],
-          category: 'cliente'
+          category: 'cliente',
+          id: users[users.length - 1].id + 1
         }
 
         users.push(newUser)
