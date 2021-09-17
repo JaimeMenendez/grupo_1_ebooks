@@ -1,0 +1,84 @@
+<% let data ={css:["css/myAccount.css","css/navBar.css", "css/navBarMobile.css"],
+             jsfile:["./js/darkModeScript.js"],
+             titulo: "Security"}%>
+
+<%- include('../partials/head', data)%>
+
+<body>
+
+    <%- include('../partials/navBar') %>
+    <%- include('../partials/navBarMobile') %>
+
+    <main>
+       
+        <section class="formContainer">
+        
+            <form class="editForm" action='/users/edit-data-user?_method=PUT' method="POST" enctype="multipart/form-data">
+                <h4 class="formPath"><a href="/users/">Mi cuenta</a> > <a href="/users/">Mis seguridad</a> > <span>Editar inicio de sesión y seguridad</span></h4>
+                <h3 class="formTitle">Editar inicio de sesión y seguridad</h3>
+                
+                <div class="entradaDeDatos">
+                    <i class="fas fa-user-circle"></i>
+                    <input id="input-foto" type="file" name="imageUser">
+                </div>
+
+                <div class="entradaDeDatos">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" required value="<%=user.firstName%>">
+                </div>
+            
+                <div class="entradaDeDatos">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido" id="apellido" required value="<%=user.lastName%>">
+                </div>
+            
+                <div class="entradaDeDatos">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" name="correo" id="correo" required value="<%=user.email%>">
+                </div>
+            
+                <div class="entradaDeDatos">
+                    <label for="contraseña">Contraseña</label>
+                    <input type="password" name="contraseña" id="contraseña" required  placeholder="Contraseña" value = "<%=user.password%>"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="La contraseña debe tener al menos una letra en mayúscula, una letra en minúscula y 8 caracteres">
+                </div>
+
+                <div class="entradaDeDatos">
+                    <label for="confContraseña">Confirma tu contraseña</label>
+                    <input type="password" name="contraseña" id="contraseña" required  placeholder="Contraseña" value = "<%=user.password%>"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="La contraseña debe tener al menos una letra en mayúscula, una letra en minúscula y 8 caracteres">
+                </div>
+                
+                <div class="formButtons">
+                    <button class="blue" type="submit">Guardar</button>
+                    <button type="reset" onclick="window.location.href='/users/'">Salir</button>
+                </div>
+
+            </form>
+        </section>
+
+        <%- include('../partials/section', favoritos) %>
+        <%- include('../partials/section', busquedas) %>
+
+        <!--Banner promocional-->
+        <%- include('../partials/promotionalBanner')%>
+
+        <%- include('../partials/section', busquedas) %>
+        <!--Separador bonito -->
+        <%- include('../partials/separador') %>
+
+        <!--Botón que retorna al incio de la página -->
+        <%- include('../partials/botonAInicio') %>
+
+    </main>
+
+    <%- include('../partials/footer') %>
+    <script defer>
+        function mostrar(){
+            document.getElementById('favoritos').classList.toggle('ocultar')
+            console.log('Estoy dentro')
+        }
+        document.getElementById('favoritos').classList.toggle('ocultar')
+    </script>
+</body>
+</html>

@@ -9,55 +9,67 @@
     <%- include('../partials/navBar') %>
     <%- include('../partials/navBarMobile') %>
 
-    <section class="formContainer">
+    <main id="main">
+        <section class="formContainer">
 
-        <form class="editForm" action=<%= edit ? `/users/edit-invoice/${ user.id }?_method=PUT` : '/users/add-new-invoice' %> method="POST">
-            <h4 class="formPath">
-                <a href="/users/">Mi cuenta</a>
-                >
-                <a href="/users/">Mis datos de facturación</a>
-                >
-                <span><%= edit ? "Editar datos de facturación" : "Agregar datos de facturación" %></span>
-            </h4>
-            <h3 class="formTitle"><%= edit ? "Editar datos de facturación" : "Agregar datos de facturación" %></h3>
+            <form class="editForm" action=<%= edit ? `/users/edit-invoice/${ user.id }?_method=PUT` : '/users/add-new-invoice' %> method="POST">
+                <h4 class="formPath">
+                    <a href="/users/">Mi cuenta</a>
+                    >
+                    <a href="/users/">Mis datos de facturación</a>
+                    >
+                    <span><%= edit ? "Editar datos de facturación" : "Agregar datos de facturación" %></span>
+                </h4>
+                <h3 class="formTitle"><%= edit ? "Editar datos de facturación" : "Agregar datos de facturación" %></h3>
 
-            <div class="entradaDeDatos">
-                <label for="razonSocial">Nombre o Razón social</label>
-                <input type="text" id="razonSocial" name="razonSocial" value="<%= edit ? user.razonSocial : '' %>" autocomplete="on" required>
-            </div>
+                <div class="entradaDeDatos">
+                    <label for="razonSocial">Nombre o Razón social</label>
+                    <input type="text" id="razonSocial" name="razonSocial" value="<%= edit ? user.razonSocial : '' %>" autocomplete="on" required>
+                </div>
 
-            <div class="entradaDeDatos">
-                <label for="rfc">R.F.C</label>
-                <input type="text" id="rfc" name="rfc" value="<%= edit ? user.rfc : '' %>" autocomplete="on" required>
-            </div>
+                <div class="entradaDeDatos">
+                    <label for="rfc">R.F.C</label>
+                    <input type="text" id="rfc" name="rfc" value="<%= edit ? user.rfc : '' %>" autocomplete="on" required>
+                </div>
 
-            <div class="entradaDeDatos">
-                <label for="idDireccion">Seleccionar una dirección</label>
-                <select id="idDireccion" name="idDireccion">
-                    <% direcciones.forEach(address => { %>
-                        <option value= <%= address.id %> <%= edit && (address.id == user.idDireccion)? 'selected': '' %> > <%= address.nombre + ', ' + address.direccion %> </option>
-                    <% }) %>
-                    <option value="" onclick="mostrarAlerta()" <%= edit ? '' : 'selected' %> >Agregar una nueva dirección </option>
-                </select>
-            </div>
+                <div class="entradaDeDatos">
+                    <label for="idDireccion">Seleccionar una dirección</label>
+                    <select id="idDireccion" name="idDireccion">
+                        <% direcciones.forEach(address => { %>
+                            <option value= <%= address.id %> <%= edit && (address.id == user.idDireccion)? 'selected': '' %> > <%= address.nombre + ', ' + address.direccion %> </option>
+                        <% }) %>
+                        <option value="" onclick="mostrarAlerta()" <%= edit ? '' : 'selected' %> >Agregar una nueva dirección </option>
+                    </select>
+                </div>
 
-            <script> 
-                document.querySelector(".alert-message").style.display = 'none';
-                function mostrarAlerta(){
-                    let opcion = confirm("¿Desea agregar una nueva dirección?")
-                    if(opcion == true){
-                        window.location.href='/users/add-new-address';
-                    } 
-                }
-            </script>
+                <script> 
+                    document.querySelector(".alert-message").style.display = 'none';
+                    function mostrarAlerta(){
+                        let opcion = confirm("¿Desea agregar una nueva dirección?")
+                        if(opcion == true){
+                            window.location.href='/users/add-new-address';
+                        } 
+                    }
+                </script>
 
-            <div class="formButtons">
-                <button class="blue" type="submit">Guardar</button>
-                <button type="reset" onclick="window.location.href='/users'">Salir</button>
-            </div>
-        </form>  
+                <div class="formButtons">
+                    <button class="blue" type="submit">Guardar</button>
+                    <button type="reset" onclick="window.location.href='/users'">Salir</button>
+                </div>
+            </form>  
+        </section>
 
-    </section>
+        <%- include('../partials/section', busquedas) %>
+
+        <%- include('../partials/section', nuevos) %>
+
+        <!--Separador bonito -->
+        <%- include('../partials/separador') %>
+
+        <!--Botón que retorna al incio de la página -->
+        <%- include('../partials/botonAInicio') %>
+
+    </main>
 
     <%- include('../partials/footer') %>
     <script defer>
