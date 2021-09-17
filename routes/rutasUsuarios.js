@@ -3,6 +3,8 @@ const userController = require('../controllers/userController')
 const routerUser = express.Router()
 const multer = require('multer')
 const path = require('path')
+const guestMiddleware = require('../middlewares/guest.middleware')
+const authMiddleware = require('../middlewares/authMiddleware')
 
 // Multer
 const storageUser = multer.diskStorage({
@@ -35,29 +37,29 @@ const validarLogin = [
 ]
 
 
-routerUser.get('/register', userController.registerView)
-routerUser.get('/login', userController.loginView)
+routerUser.get('/register', guestMiddleware, userController.registerView)
+routerUser.get('/login',guestMiddleware, userController.loginView)
 
-routerUser.get('/', userController.sendMyAccount)
+routerUser.get('/',authMiddleware, userController.sendMyAccount)
 
-routerUser.get('/edit-data-user', userController.sendSecurity)
-routerUser.put('/edit-data-user', UploadImageUser.single('imageUser'), userController.updateUser)
+routerUser.get('/edit-data-user',authMiddleware, userController.sendSecurity)
+routerUser.put('/edit-data-user',authMiddleware, UploadImageUser.single('imageUser'), userController.updateUser)
 
-routerUser.get('/add-new-invoice', userController.sendAddInvoiceView)
-routerUser.post('/add-new-invoice', userController.storeNewInvoice)
+routerUser.get('/add-new-invoice',authMiddleware, userController.sendAddInvoiceView)
+routerUser.post('/add-new-invoice',authMiddleware, userController.storeNewInvoice)
 
-routerUser.get('/edit-invoice/:id', userController.sendEditInvoiceView)
-routerUser.put('/edit-invoice/:id', userController.updateInvoice)
-routerUser.put('/make-default-invoice/:id', userController.makeDefaultInvoice)
+routerUser.get('/edit-invoice/:id',authMiddleware, userController.sendEditInvoiceView)
+routerUser.put('/edit-invoice/:id',authMiddleware, userController.updateInvoice)
+routerUser.put('/make-default-invoice/:id',authMiddleware, userController.makeDefaultInvoice)
 
-routerUser.delete('/delete-invoice/:id', userController.deleteInvoice)
+routerUser.delete('/delete-invoice/:id',authMiddleware, userController.deleteInvoice)
 
-routerUser.get('/edit-address/:id', userController.sendEditAddressView)
-routerUser.get('/add-new-address', userController.sendAddAddressView)
-routerUser.put('/edit-address/:id', userController.updateAddress)
-routerUser.put('/make-default-address/:id', userController.makeDefaultAddress)
-routerUser.post('/add-new-address', userController.storeNewAddress)
-routerUser.delete('/delete-address/:id', userController.deleteAddress)
+routerUser.get('/edit-address/:id',authMiddleware, userController.sendEditAddressView)
+routerUser.get('/add-new-address',authMiddleware, userController.sendAddAddressView)
+routerUser.put('/edit-address/:id',authMiddleware, userController.updateAddress)
+routerUser.put('/make-default-address/:id',authMiddleware, userController.makeDefaultAddress)
+routerUser.post('/add-new-address',authMiddleware, userController.storeNewAddress)
+routerUser.delete('/delete-address/:id',authMiddleware, userController.deleteAddress)
 
 routerUser.post('/register',validarRegistro, userController.register)
 routerUser.post('/login',validarLogin, userController.login)

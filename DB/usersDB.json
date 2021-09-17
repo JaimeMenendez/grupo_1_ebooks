@@ -3,19 +3,18 @@
     "firstName": "Jaime",
     "lastName": "Menendez",
     "email": "jaimemenendezalvarez@gmail.com",
-    "password": "$2a$10$cHXLflVIUb.MCBIEdq4MoOPz45oLQdtgMv3IjAwkfWGaSjCii38oa",
     "direcciones": [
       {
         "nombre": "TATIANA LEAL",
         "pais": "México",
         "estado": "Ciudad de México",
         "ciudad": "Ciudad de México",
-        "direccion": "Call 7",
+        "direccion": "Calle 756",
         "colonia": "Argentina Antigua",
         "delegacion": "Miguel Hidalgo",
         "codigoPostal": "11270",
         "telefono": "5555555",
-        "id": 3,
+        "id": 1,
         "predeterminada": false
       },
       {
@@ -34,22 +33,16 @@
     ],
     "facturacion": [
       {
-        "razonSocial": "Tatiana Mileydy Leal del Río",
-        "rfc": "LEARTHSLNU06",
+        "razonSocial": "Tatiana Mileydy Leal ",
+        "rfc": "fdd",
         "idDireccion": 4,
         "id": 1,
-        "predeterminada": false
-      },
-      {
-        "razonSocial": "Crononauter S.A",
-        "rfc": "CRSACD0604174H8",
-        "idDireccion": 4,
-        "id": 2,
         "predeterminada": true
       }
     ],
     "category": "cliente",
-    "id": 1
+    "id": 1,
+    "password": "$2a$10$kyOWCM3QtEwYdusjArna5OI39SkXguzS33riopieiKQUJ8NEMOlgC"
   },
   {
     "firstName": "Alicia",
@@ -104,5 +97,37 @@
     "facturacion": [],
     "category": "cliente",
     "id": 5
+  },
+  {
+    "firstName": "Maria",
+    "lastName": "Angeles",
+    "email": "maria@gmail.com",
+    "direcciones": [
+      {
+        "nombre": "Machine Learning with R",
+        "pais": "Argentina",
+        "estado": "Nuevo León",
+        "ciudad": "General Escobedo",
+        "direccion": "Claveles 605",
+        "colonia": "Gladiolas",
+        "delegacion": "d",
+        "codigoPostal": "66056",
+        "telefono": "9982197111",
+        "id": 1,
+        "predeterminada": true
+      }
+    ],
+    "facturacion": [
+      {
+        "razonSocial": "s",
+        "rfc": "s",
+        "idDireccion": 1,
+        "id": 1,
+        "predeterminada": true
+      }
+    ],
+    "category": "cliente",
+    "id": 6,
+    "password": "$2a$10$ZWfXUJ8U83zLfdrTJZAck.12zV7OIcWoaQKXzhgcwpLmjnGZVrpXq"
   }
 ]

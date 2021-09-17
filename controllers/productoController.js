@@ -8,7 +8,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-		res.render('products/products', products)
+		res.render('products/products', {...products, userLogged: req.session.userLogged})
 	},
 
 	// Detail - Detail from one product
@@ -19,9 +19,9 @@ const controller = {
 	
 		  const libroBuscado = librosDB.find((libro) => libro.id == req.params.id)
 		  if (libroBuscado) {
-			res.render('products/description', libroBuscado)
+			res.render('products/description', {...libroBuscado, userLogged: req.session.userLogged})
 		  } else {
-			res.render('main/error404')
+			res.render('main/error404',{userLogged: req.session.userLogged})
 		  }
 		}
 	  },
@@ -30,7 +30,8 @@ const controller = {
 	create: (req, res) => {
 		res.render('products/editar-agregar-producto', {
 		  tittle: '<i class="fas fa-book"></i>&nbsp Agregar Libro',
-		  edit: false
+		  edit: false,
+		  userLogged: req.session.userLogged
 		})
 	  },
 	
@@ -70,10 +71,11 @@ const controller = {
 			res.render('products/editar-agregar-producto', {
 			  ...libroBuscado,
 			  tittle: '<i class="fas fa-edit"></i>&nbsp Editar Libro',
-			  edit: true
+			  edit: true,
+			  userLogged: req.session.userLogged
 			})
 		  } else {
-			res.render('main/error404')
+			res.render('main/error404',{userLogged: req.session.userLogged})
 		  }
 		}
 	  },

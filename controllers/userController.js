@@ -1,24 +1,25 @@
 const fs = require('fs')
 const path = require('path')
-const {validationResult} = require('express-validator')
+const { validationResult } = require('express-validator')
 const bcrypt = require('bcryptjs')
-
+const UserModel = require('../Model/User')
 
 const usersPath = path.resolve(__dirname, '../DB/usersDB.json')
 
 const seccion = require('./secciones.json')
 const botonesPrincipales = require('./botonesPrincipales.json')
-const users = JSON.parse(fs.readFileSync(usersPath))
+let users = JSON.parse(fs.readFileSync(usersPath))
 
 const userController = {
   sendMyAccount: (req, res) => {
-    const user = users[0]
+    const user = req.session.userLogged
     res.render('users/myAccount', {
       user: user,
       botonesPrincipales: botonesPrincipales,
       busquedas: seccion.busquedas,
       favoritos: seccion.favoritos,
-      nuevos: seccion.nuevos
+      nuevos: seccion.nuevos,
+      userLogged: req.session.userLogged
     })
   },
 
@@ -27,16 +28,17 @@ const userController = {
   /** **************************************************/
 
   sendSecurity: (req, res) => {
-    const user = users[0]
+    const user = req.session.userLogged
     res.render('users/edit-data-user', {
       user: user,
       busquedas: seccion.busquedas,
-      favoritos: seccion.favoritos
+      favoritos: seccion.favoritos,
+      userLogged: req.session.userLogged
     })
   },
 
   updateUser: (req, res) => {
-    const user = users[0]
+    const user = req.session.user
     res.redirect('/users')
   },
 
@@ -45,16 +47,19 @@ const userController = {
   /** **************************************************/
 
   sendAddInvoiceView: (req, res) => {
-    const user = users[0]
-    res.render('users/invoice', { direcciones: user.direcciones, 
+    const user = req.session.userLogged
+    res.render('users/invoice', {
+      direcciones: user.direcciones,
       edit: false,
       busquedas: seccion.busquedas,
-      nuevos: seccion.nuevos  })
+      nuevos: seccion.nuevos,
+      userLogged: req.session.userLogged
+    })
   },
 
   storeNewInvoice: (req, res) => {
     const newDataInvoice = req.body
-    const user = users[0]
+    const user =req.session.userLogged
     if (user.facturacion.length === 0) {
       newDataInvoice.id = 1
     } else {
@@ -63,60 +68,61 @@ const userController = {
     newDataInvoice.idDireccion = parseInt(newDataInvoice.idDireccion)
     newDataInvoice.predeterminada = false
     user.facturacion.push(newDataInvoice)
-    users[0] = user
-    fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
+    saveUserToDB(user)
     res.redirect('/users')
   },
 
   // Edit old invoice
   sendEditInvoiceView: (req, res) => {
-    const user = users[0]
-    const invoiceEdit = user.facturacion.find(invoice => invoice.id === parseInt(req.params.id))
-    res.render('users/invoice', { edit: true, 
-      user: invoiceEdit, 
+    const user = req.session.userLogged
+    const invoiceEdit = user.facturacion.find(
+      (invoice) => invoice.id === parseInt(req.params.id)
+    )
+    res.render('users/invoice', {
+      edit: true,
+      user: invoiceEdit,
       direcciones: user.direcciones,
       busquedas: seccion.busquedas,
-      nuevos: seccion.nuevos  })
+      nuevos: seccion.nuevos,
+      userLogged: req.session.userLogged
+    })
   },
 
   updateInvoice: (req, res) => {
-    const user = users[0]
+    const user = req.session.userLogged
     const updateInvoice = req.body
     const id = parseInt(req.params.id)
-    const index = user.facturacion.findIndex(invoice => invoice.id === id)
+    const index = user.facturacion.findIndex((invoice) => invoice.id === id)
     if (index >= 0) {
       updateInvoice.id = id
       user.facturacion[index] = updateInvoice
-      users[0] = user
-      fs.writeFileSync(usersPath, JSON.stringify(users[0], null, 2))
+      saveUserToDB(user)
     }
     res.redirect('/users')
   },
 
   deleteInvoice: (req, res) => {
     const id = Number.parseInt(req.params.id)
-    const user = users[0]
+    const user = req.session.userLogged
     const index = user.facturacion.findIndex((invoice) => invoice.id === id)
 
     if (index >= 0) {
       user.facturacion.splice(index, 1)
-      users[0] = user
-      fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
+      saveUserToDB(user)
     }
     res.redirect('/users')
   },
 
   makeDefaultInvoice: (req, res) => {
     const id = parseInt(req.params.id)
-    const user = users[0]
-    user.facturacion.forEach(invoice => {
+    const user = req.session.userLogged
+    user.facturacion.forEach((invoice) => {
       invoice.predeterminada = false
       if (invoice.id === id) {
         invoice.predeterminada = true
       }
     })
-    users[0] = user
-    fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
+    saveUserToDB(user)
     res.redirect('/users')
   },
 
@@ -125,25 +131,31 @@ const userController = {
   /** **************************************************/
 
   sendEditAddressView: (req, res) => {
-    const user = users[0]
+    const user = req.session.userLogged
     const direccionSolicitada = user.direcciones.find(
       (direccion) => direccion.id === Number.parseInt(req.params.id)
     )
-    res.render('users/editar-direccion', { edit: true,
-      ...direccionSolicitada, 
+    res.render('users/editar-direccion', {
+      edit: true,
+      ...direccionSolicitada,
       busquedas: seccion.busquedas,
-      nuevos: seccion.nuevos })
+      nuevos: seccion.nuevos,
+      userLogged: req.session.userLogged
+    })
   },
 
   sendAddAddressView: (req, res) => {
-    res.render('users/editar-direccion', { edit: false,
+    res.render('users/editar-direccion', {
+      edit: false,
       busquedas: seccion.busquedas,
-      nuevos: seccion.nuevos  })
+      nuevos: seccion.nuevos,
+      userLogged: req.session.userLogged
+    })
   },
 
   storeNewAddress: (req, res) => {
-    const newAddress = req.body
-    const user = users[0]
+    let newAddress = req.body
+    let user = req.session.userLogged
     if (user.direcciones.length > 0) {
       newAddress.id = user.direcciones[user.direcciones.length - 1].id + 1
       newAddress.predeterminada = false
@@ -151,36 +163,36 @@ const userController = {
       newAddress.id = 1
       newAddress.predeterminada = true
     }
-
     user.direcciones.push(newAddress)
-    users[0] = user
-    fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
+    saveUserToDB(user)
     res.redirect('/users')
   },
 
   updateAddress: (req, res) => {
     const addressUpdated = req.body
-    const user = users[0]
+    const user = req.session.userLogged
     const id = Number.parseInt(req.params.id)
-    const index = user.direcciones.findIndex(direccion => direccion.id === id)
+    const index = user.direcciones.findIndex((direccion) => direccion.id === id)
     if (index >= 0) {
       addressUpdated.id = id
-      addressUpdated.predeterminada = users[0].direcciones[index].predeterminada
-      users[0].direcciones[index] = addressUpdated
-      fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
+      addressUpdated.predeterminada = user.direcciones[index].predeterminada
+      user.direcciones[index] = addressUpdated
+      req.session.userLogged = user
+      saveUserToDB(user)
     }
     res.redirect('/users')
   },
 
   deleteAddress: (req, res) => {
     const id = Number.parseInt(req.params.id)
-    const user = users[0]
+    const user = req.session.userLogged
     const index = user.direcciones.findIndex((direccion) => direccion.id === id)
+   
 
     if (index >= 0) {
+      user.facturacion = user.facturacion.filter(factura => Number.parseInt(factura.idDireccion) != id)
       user.direcciones.splice(index, 1)
-      users[0] = user
-      fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
+      saveUserToDB(user)
     }
     res.redirect('/users')
   },
@@ -194,8 +206,7 @@ const userController = {
         address.predeterminada = true
       }
     })
-    users[0] = user
-    fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
+    saveUserToDB(user)
     res.redirect('/users')
   },
 
@@ -203,14 +214,14 @@ const userController = {
   /** ************** METHODS FOR REGISTER **************/
   /** **************************************************/
   registerView: (req, res) => {
-    res.render('users/register')
+    res.render('users/register', {userLogged: req.session.userLogged})
   },
 
   register: (req, res) => {
     let errors = validationResult(req)
-    if(errors.isEmpty()){
+    if (errors.isEmpty()) {
       const email = req.body.email
-      if (users.findIndex(usuario => usuario.email === email) === -1) {
+      if (users.findIndex((usuario) => usuario.email === email) === -1) {
         const newUser = {
           ...req.body,
           password: bcrypt.hashSync(req.body.password, 10),
@@ -222,26 +233,83 @@ const userController = {
 
         users.push(newUser)
         fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
-        res.render('users/login', { mensaje: 'Tu cuenta ha sido creada, ahora puedes iniciar sesión.', warning: false })
+        res.render('users/login', {
+          mensaje: 'Tu cuenta ha sido creada, ahora puedes iniciar sesión.',
+          warning: false
+        })
       } else {
-        res.render('users/register', {mensaje: '<p><i class="fas fa-exclamation-triangle"></i>El correo que está utilizando ya está registrado. Intente iniciar sesión o regístrese con otro correo.</p>', warning: true, oldValues:req.body })
+        res.render('users/register', {
+          mensaje:
+            '<p><i class="fas fa-exclamation-triangle"></i>El correo que está utilizando ya está registrado. Intente iniciar sesión o regístrese con otro correo.</p>',
+          warning: true,
+          oldValues: req.body
+        })
       }
-    }else{
-      const errores = errors.errors.reduce((acc,error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
-      res.render('users/register', {mensaje: errores, warning: true, oldValues:req.body})
+    } else {
+      const errores = errors.errors.reduce(
+        (acc, error) =>
+          acc +
+          `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,
+        ''
+      )
+      res.render('users/register', {
+        mensaje: errores,
+        warning: true,
+        oldValues: req.body
+      })
     }
   },
-/** **************************************************/
-/** ************** METHODS FOR LOGIN **************/
-/** **************************************************/
-  loginView:(req,res) =>{
-      res.render('users/login')
+  /** **************************************************/
+  /** ************** METHODS FOR LOGIN **************/
+  /** **************************************************/
+  loginView: (req, res) => {
+    res.render('users/login', {})
   },
-  login: (req, res) =>{
+  login: async (req, res) => {
     let errors = validationResult(req)
-    const errores = errors.errors.reduce((acc,error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
-    res.render('users/login', {mensaje: errores, warning: true, oldValues: req.body})
+    if (errors.isEmpty()) { // Ocurre cuando no hay errores de validacion
+      try {
+        const userToLogin = await UserModel.findUserByEmail(req.body.email)
+        const isLogged = await bcrypt.compare(req.body.password,userToLogin.password)//Lanza un error si no se encuentra el usuario
+        if (isLogged) {
+          delete userToLogin.password
+          req.session.userLogged = userToLogin
+          res.redirect('/')
+        } else {
+          res.render('users/login',{mensaje:
+            '<p><i class="fas fa-exclamation-triangle"></i>Su contraseña no es correcta. Por favor, intente de nuevo.</p>',
+          warning: true,
+          oldValues: req.body})
+        }
+      } catch { // Ocurre cuando el usuario no existe
+        res.render('users/login', {
+          mensaje:
+            '<p><i class="fas fa-exclamation-triangle"></i>Autenticación fallida. Compruebe que su correo y su contraseña sean correctos.</p>',
+          warning: true,
+          oldValues: req.body
+        })
+      }
+    } else {
+      const errores = errors.errors.reduce(
+        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
+      res.render('users/login', {
+        mensaje: errores,
+        warning: true,
+        oldValues: req.body
+      })
+    }
   }
 }
 
 module.exports = userController
+
+function findIndexById(element, collection) {
+  return collection.findIndex(item => element.id === item.id)
+}
+
+function saveUserToDB(user){
+  let users = JSON.parse(fs.readFileSync(usersPath,'utf-8'))
+  const index = findIndexById(user, users)
+  users[index] = {...user, password:users[index].password}
+  fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
+}

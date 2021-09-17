@@ -55,6 +55,5 @@ const User = {
     }
 }
 
-
-console.log(bcrypt)
-console.log(bcrypt.hashSync('Juana123',10))
+module.exports = User
+// console.log(bcrypt.hashSync('Jaime123',10))
