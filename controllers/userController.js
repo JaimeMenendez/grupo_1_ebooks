@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const {validationResult} = require('express-validator')
+const bcrypt = require('bcryptjs')
 
 
 const usersPath = path.resolve(__dirname, '../DB/usersDB.json')
@@ -188,6 +189,7 @@ const userController = {
       if (users.findIndex(usuario => usuario.email === email) === -1) {
         const newUser = {
           ...req.body,
+          password: bcrypt.hashSync(req.body.password, 10),
           direcciones: [],
           facturacion: [],
           category: 'cliente',

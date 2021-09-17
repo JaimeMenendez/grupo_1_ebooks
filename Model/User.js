@@ -9,27 +9,51 @@ const User = {
         return JSON.parse(users);
     },
 
-    findUser: async (email) =>{
+    findUserByEmail: async (email) =>{
         const users = await User.findAll()
         return users.find(user => user.email === email)
     },
 
-    findUserIndex: async (email) => {
+    findUserIndexByEmail: async (email) => {
         const users = await User.findAll()
         return users.findIndex(user => user.email === email)
     },
 
-    writeDB: async (users) => {
-        return fs.writeFile(User.filePath, users, 'utf-8')
+    findUserById: async (id) =>{
+        const users = await User.findAll()
+        return users.find(user => user.id === id)
     },
 
-    update: async (id, userData) =>{
-        const userIndex = await User.findUserIndex(user.email)
+    findUserIndexById: async (id) => {
+        const users = await User.findAll()
+        return users.findIndex(user => user.id === id)
+    },
 
-        users[userIndex] = userData
-        User.writeDB()
+    writeDB: async (users) => {
+        return fs.writeFile(User.filePath, JSON.stringify(users, null, 2), 'utf-8')
+    },
+
+    generateId: (collection) => {
+        if(collection)
+            return collection[collection.length - 1].id + 1 
+        return 1
+    },
+
+    create: async (userData) => {
+        const users = await User.findAll()
+        const newUser = {...userData, id: User.generateId(users)}
+        users.push(newUser)
+        User.writeDB(users) 
+        return newUser  
+    },
+
+    delete: async (id) => {
+        let users = await User.findAll()
+        users = users.filter(user => user.id !== id)
+        User.writeDB(users)
     }
 }
 
-User.findUser('jaimemenendezalvarez@gmail.com')
-    .then(user => User.writeDB())
+
+console.log(bcrypt)
+console.log(bcrypt.hashSync('Hola Mundo'))

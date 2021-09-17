@@ -94,5 +94,15 @@
     "facturacion": [],
     "category": "cliente",
     "id": 4
+  },
+  {
+    "firstName": "Alberto",
+    "lastName": "Cabazos",
+    "email": "alberto@gmail.com",
+    "password": "$2a$10$lTKwMG0j5KxVQEZ8xX/1d.GcjWdorMYJpe0CnLLdipgvXUxwS2xhO",
+    "direcciones": [],
+    "facturacion": [],
+    "category": "cliente",
+    "id": 5
   }
 ]
