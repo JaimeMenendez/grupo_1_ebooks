@@ -15,7 +15,7 @@
         "codigoPostal": "11270",
         "telefono": "5555555",
         "id": 1,
-        "predeterminada": false
+        "predeterminada": true
       },
       {
         "nombre": "Karen Alicia Ortega",
@@ -124,6 +124,13 @@
         "idDireccion": 1,
         "id": 1,
         "predeterminada": true
+      },
+      {
+        "razonSocial": "d",
+        "rfc": "d",
+        "idDireccion": null,
+        "id": 2,
+        "predeterminada": false
       }
     ],
     "category": "cliente",

@@ -200,7 +200,7 @@ const userController = {
 
   makeDefaultAddress: (req, res) => {
     const id = Number.parseInt(req.params.id)
-    const user = users[0]
+    const user = req.session.userLogged
     user.direcciones.forEach((address) => {
       address.predeterminada = false
       if (address.id === id) {
