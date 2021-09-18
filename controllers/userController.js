@@ -1,14 +1,15 @@
 const fs = require('fs')
 const path = require('path')
-const { validationResult } = require('express-validator')
 const bcrypt = require('bcryptjs')
 const UserModel = require('../Model/User')
+const seccion = require('./secciones.json')
+const botonesPrincipales = require('./botonesPrincipales.json')
 
 const usersPath = path.resolve(__dirname, '../DB/usersDB.json')
 
-const seccion = require('./secciones.json')
-const botonesPrincipales = require('./botonesPrincipales.json')
 const session = require('express-session')
+const { validationResult } = require('express-validator')
+
 let users = JSON.parse(fs.readFileSync(usersPath))
 
 const userController = {
@@ -61,16 +62,24 @@ const userController = {
   storeNewInvoice: (req, res) => {
     const newDataInvoice = req.body
     const user =req.session.userLogged
-    if (user.facturacion.length === 0) {
-      newDataInvoice.id = 1
-    } else {
-      newDataInvoice.id = user.facturacion[user.facturacion.length - 1].id + 1
+    let errors = validationResult(req)
+    if(errors.isEmpty()){
+      if (user.facturacion.length === 0) {
+        newDataInvoice.id = 1
+      } else {
+        newDataInvoice.id = user.facturacion[user.facturacion.length - 1].id + 1
+      }
+      newDataInvoice.idDireccion = parseInt(newDataInvoice.idDireccion)
+      newDataInvoice.predeterminada = false
+      user.facturacion.push(newDataInvoice)
+      saveUserToDB(user)
+      res.redirect('/users')
+    } else{
+      console.log(errors)
+      const errores = errors.errors.reduce(
+        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
+      res.redirect('/users')
     }
-    newDataInvoice.idDireccion = parseInt(newDataInvoice.idDireccion)
-    newDataInvoice.predeterminada = false
-    user.facturacion.push(newDataInvoice)
-    saveUserToDB(user)
-    res.redirect('/users')
   },
 
   // Edit old invoice
@@ -92,14 +101,20 @@ const userController = {
   updateInvoice: (req, res) => {
     const user = req.session.userLogged
     const updateInvoice = req.body
+    let errores = validationResult(req)
     const id = parseInt(req.params.id)
     const index = user.facturacion.findIndex((invoice) => invoice.id === id)
-    if (index >= 0) {
-      updateInvoice.id = id
-      user.facturacion[index] = updateInvoice
-      saveUserToDB(user)
+    if(errores.isEmpty()){
+      if (index >= 0) {
+        updateInvoice.id = id
+        user.facturacion[index] = updateInvoice
+        saveUserToDB(user)
+      }
+      res.redirect('/users')
+    }else{
+      console.log(errores)
+      res.redirect('/users')
     }
-    res.redirect('/users')
   },
 
   deleteInvoice: (req, res) => {

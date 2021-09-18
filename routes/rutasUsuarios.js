@@ -1,10 +1,11 @@
 const express = require('express')
-const userController = require('../controllers/userController')
-const routerUser = express.Router()
 const multer = require('multer')
 const path = require('path')
+const routerUser = express.Router()
+const userController = require('../controllers/userController')
 const guestMiddleware = require('../middlewares/guest.middleware')
 const authMiddleware = require('../middlewares/authMiddleware')
+
 
 // Multer
 const storageUser = multer.diskStorage({
@@ -36,6 +37,9 @@ const validarLogin = [
   body('password').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña no es correcta, por favor, intente nuevamente.")
 ]
 
+const validarInvoice = [
+  body('idDireccion').notEmpty().withMessage("Debe seleccionar una dirección de la lista o seleccionar la opción de 'Agregar una nueva dirección'").bail()
+]
 
 routerUser.get('/register', guestMiddleware, userController.registerView)
 routerUser.get('/login',guestMiddleware, userController.loginView)
@@ -46,10 +50,10 @@ routerUser.get('/edit-data-user',authMiddleware, userController.sendSecurity)
 routerUser.put('/edit-data-user',authMiddleware, UploadImageUser.single('imageUser'), userController.updateUser)
 
 routerUser.get('/add-new-invoice',authMiddleware, userController.sendAddInvoiceView)
-routerUser.post('/add-new-invoice',authMiddleware, userController.storeNewInvoice)
+routerUser.post('/add-new-invoice',authMiddleware, validarInvoice, userController.storeNewInvoice)
 
 routerUser.get('/edit-invoice/:id',authMiddleware, userController.sendEditInvoiceView)
-routerUser.put('/edit-invoice/:id',authMiddleware, userController.updateInvoice)
+routerUser.put('/edit-invoice/:id',authMiddleware, validarInvoice, userController.updateInvoice)
 routerUser.put('/make-default-invoice/:id',authMiddleware, userController.makeDefaultInvoice)
 
 routerUser.delete('/delete-invoice/:id',authMiddleware, userController.deleteInvoice)

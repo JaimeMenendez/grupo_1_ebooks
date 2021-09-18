@@ -19,7 +19,7 @@
                 <div class="addressContent">
                     <p><strong><%= invoice.razonSocial %></strong></p>
                     <p><%= invoice.rfc %></p>
-                    <% let addressInvoice = user.direcciones.find(direccion => direccion.id == invoice.idDireccion)%>
+                    <% let addressInvoice = direcciones.find(direccion => direccion.id == invoice.idDireccion)%>
                     <p><%= addressInvoice.direccion %></p>
                     <p><%= addressInvoice.delegacion.trim() === "" ? addressInvoice.colonia : addressInvoice.delegacion + ", " + addressInvoice.colonia %></p>
                     <p><%= addressInvoice.ciudad %>, <%= addressInvoice.estado %></p>

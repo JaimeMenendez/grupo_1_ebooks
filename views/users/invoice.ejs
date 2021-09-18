@@ -1,4 +1,4 @@
-<% let data ={css:["css/myAccount.css","css/navBar.css", "css/navBarMobile.css"],
+<% let data ={css:["css/myAccount.css","css/navBar.css", "css/navBarMobile.css","alertMessage.css"],
              jsfile:["./js/darkModeScript.js"],
              titulo: "Invoice"}%>
 
@@ -11,6 +11,28 @@
 
     <main id="main">
         <section class="formContainer">
+        
+            <% if(locals.mensaje) {%>
+                <div class="alert-message <%= warning ? 'red-alert': 'green-alert'%>">
+                    <a href="javascript:void(0)" class="closebtn1" onclick="closeMessage()">&times;</a>
+                        <%- mensaje %>  
+                </div>
+                <script> 
+                    setTimeout(() => {
+                        document.querySelector(".alert-message").style.opacity = '0';
+                    }, 10000);
+                    setTimeout(() => {
+                        document.querySelector(".alert-message").style.display = 'none';
+                    }, 11000);
+
+                    const closeMessage = () =>{
+                        document.querySelector(".alert-message").style.opacity = '0';
+                        setTimeout(() => {
+                            document.querySelector(".alert-message").style.display = 'none';
+                        }, 1000);
+                    }
+                </script>
+            <%}%>
 
             <form class="editForm" action=<%= edit ? `/users/edit-invoice/${ user.id }?_method=PUT` : '/users/add-new-invoice' %> method="POST">
                 <h4 class="formPath">
@@ -33,12 +55,12 @@
                 </div>
 
                 <div class="entradaDeDatos">
-                    <label for="idDireccion">Seleccionar una dirección</label>
+                    <label for="idDireccion">Seleccionar una dirección o agregar una nueva</label>
                     <select id="idDireccion" name="idDireccion">
                         <% direcciones.forEach(address => { %>
-                            <option value= <%= address.id %> <%= edit && (address.id == user.idDireccion)? 'selected': '' %> > <%= address.nombre + ', ' + address.direccion %> </option>
+                            <option value= <%= address.id %> <%= edit && (address.id == user.idDireccion)? 'selected': '' %> required> <%= address.nombre + ', ' + address.direccion %> </option>
                         <% }) %>
-                        <option value="" onclick="mostrarAlerta()" <%= edit ? '' : 'selected' %> >Agregar una nueva dirección </option>
+                        <option value=""  onclick="mostrarAlerta()" <%= edit ? '' : 'selected' %> required >Agregar una nueva dirección </option>
                     </select>
                 </div>
 

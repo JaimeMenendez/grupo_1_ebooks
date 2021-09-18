@@ -5,37 +5,24 @@
     "email": "jaimemenendezalvarez@gmail.com",
     "direcciones": [
       {
-        "nombre": "TATIANA LEAL",
+        "nombre": "Antonio Landarte",
         "pais": "México",
         "estado": "Ciudad de México",
         "ciudad": "Ciudad de México",
-        "direccion": "Calle 756",
-        "colonia": "Argentina Antigua",
-        "delegacion": "Miguel Hidalgo",
-        "codigoPostal": "11270",
-        "telefono": "5555555",
+        "direccion": "Cll  falsa 123",
+        "colonia": "Centro",
+        "delegacion": "Benito Juaréz",
+        "codigoPostal": "00675",
+        "telefono": "5554632424",
         "id": 1,
         "predeterminada": true
-      },
-      {
-        "nombre": "Karen Alicia Ortega",
-        "pais": "Colombia",
-        "estado": "Norte de Santander",
-        "ciudad": "Cúcucta",
-        "direccion": "Cll 1N 16 E 98",
-        "colonia": "Parques Residenciales",
-        "delegacion": " ",
-        "codigoPostal": "11345",
-        "telefono": "5434326748",
-        "id": 4,
-        "predeterminada": false
       }
     ],
     "facturacion": [
       {
-        "razonSocial": "Tatiana Mileydy Leal ",
-        "rfc": "fdd",
-        "idDireccion": 4,
+        "razonSocial": "Crononauter S.A",
+        "rfc": "CRSACD0604174H8",
+        "idDireccion": 1,
         "id": 1,
         "predeterminada": true
       }
@@ -124,17 +111,20 @@
         "idDireccion": 1,
         "id": 1,
         "predeterminada": true
-      },
-      {
-        "razonSocial": "d",
-        "rfc": "d",
-        "idDireccion": null,
-        "id": 2,
-        "predeterminada": false
       }
     ],
     "category": "cliente",
     "id": 6,
     "password": "$2a$10$ZWfXUJ8U83zLfdrTJZAck.12zV7OIcWoaQKXzhgcwpLmjnGZVrpXq"
+  },
+  {
+    "firstName": "Tatiana",
+    "lastName": "Leal",
+    "email": "mileydy.1125@hotmail.com",
+    "direcciones": [],
+    "facturacion": [],
+    "category": "cliente",
+    "id": 7,
+    "password": "$2a$10$4y4DDRHYnanzu0clE2Sc1eIBWPS9J.tkSYZ.WypVgIYGu0oUPiBky"
   }
 ]
