@@ -78,7 +78,15 @@ const userController = {
       console.log(errors)
       const errores = errors.errors.reduce(
         (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
-      res.redirect('/users')
+      res.render('users/invoice',{
+        mensaje: errores,
+        warning: true,
+        edit: false,
+        direcciones: user.direcciones,
+        busquedas: seccion.busquedas,
+        nuevos: seccion.nuevos,
+        userLogged: req.session.userLogged
+      })
     }
   },
 
