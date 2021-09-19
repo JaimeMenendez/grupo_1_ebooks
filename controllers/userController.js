@@ -75,13 +75,14 @@ const userController = {
       saveUserToDB(user)
       res.redirect('/users')
     } else{
-      console.log(errors)
+      console.log(req.body)
       const errores = errors.errors.reduce(
         (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
       res.render('users/invoice',{
         mensaje: errores,
         warning: true,
         edit: false,
+        oldValues: req.body,
         direcciones: user.direcciones,
         busquedas: seccion.busquedas,
         nuevos: seccion.nuevos,
