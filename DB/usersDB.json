@@ -34,10 +34,9 @@
     "facturacion": [
       {
         "razonSocial": "Crononauter S.A",
-        "rfc": "CRSACD0604174H8",
-        "idDireccion": 1,
-        "id": 1,
-        "predeterminada": true
+        "rfc": "CRSACD06041",
+        "idDireccion": "1",
+        "id": 1
       },
       {
         "razonSocial": "Mina Ortega",
@@ -50,6 +49,13 @@
         "rfc": "MURT2345674R5",
         "idDireccion": 1,
         "id": 3,
+        "predeterminada": false
+      },
+      {
+        "razonSocial": "Crononauter S.A",
+        "rfc": "CRSACD060412",
+        "idDireccion": 1,
+        "id": 4,
         "predeterminada": false
       }
     ],

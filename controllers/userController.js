@@ -110,10 +110,10 @@ const userController = {
   updateInvoice: (req, res) => {
     const user = req.session.userLogged
     const updateInvoice = req.body
-    const errores = validationResult(req)
+    const errors = validationResult(req)
     const id = parseInt(req.params.id)
     const index = user.facturacion.findIndex((invoice) => invoice.id === id)
-    if(errores.isEmpty()){
+    if(errors.isEmpty()){
       if (index >= 0) {
         updateInvoice.id = id
         user.facturacion[index] = updateInvoice
