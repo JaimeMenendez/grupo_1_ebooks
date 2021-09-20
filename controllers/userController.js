@@ -110,7 +110,7 @@ const userController = {
   updateInvoice: (req, res) => {
     const user = req.session.userLogged
     const updateInvoice = req.body
-    let errores = validationResult(req)
+    const errores = validationResult(req)
     const id = parseInt(req.params.id)
     const index = user.facturacion.findIndex((invoice) => invoice.id === id)
     if(errores.isEmpty()){
@@ -121,8 +121,18 @@ const userController = {
       }
       res.redirect('/users')
     }else{
-      console.log(errores)
-      res.redirect('/users')
+      const errores = errors.errors.reduce(
+        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
+      res.render('users/invoice',{
+        mensaje: errores,
+        warning: true,
+        edit: false,
+        oldValues: req.body,
+        direcciones: user.direcciones,
+        busquedas: seccion.busquedas,
+        nuevos: seccion.nuevos,
+        userLogged: req.session.userLogged
+      })
     }
   },
 

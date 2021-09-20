@@ -199,6 +199,9 @@ p{
     font-size: 20px;
   }
 
+#contraseña, #labelContraseña, #confirmContraseña, #labelConfirmContraseña{
+    display: none;
+}
 /************************************
 //        PROMOTIONAL BANNER       //
 /***********************************/

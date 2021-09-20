@@ -46,21 +46,21 @@
 
                 <div class="entradaDeDatos">
                     <label for="razonSocial">Nombre o Razón social</label>
-                    <input type="text" id="razonSocial" name="razonSocial" value="<%= edit ? user.razonSocial : locals.oldValues && oldValues.razonSocial ? oldValues.razonSocial : '' %>" autocomplete="on" required>
+                    <input type="text" id="razonSocial" name="razonSocial" value="<%= edit ? user.razonSocial : locals.oldValues && oldValues.razonSocial ? oldValues.razonSocial : '' %>" autocomplete="on">
                 </div>
 
                 <div class="entradaDeDatos">
                     <label for="rfc">R.F.C</label>
-                    <input type="text" id="rfc" name="rfc" value="<%= edit ? user.rfc : locals.oldValues && oldValues.rfc ? oldValues.rfc : '' %>" autocomplete="on" required>
+                    <input type="text" id="rfc" name="rfc" value="<%= edit ? user.rfc : locals.oldValues && oldValues.rfc ? oldValues.rfc : '' %>" autocomplete="on">
                 </div>
 
                 <div class="entradaDeDatos">
                     <label for="idDireccion">Seleccionar una dirección o agregar una nueva</label>
                     <select id="idDireccion" name="idDireccion">
                         <% direcciones.forEach(address => { %>
-                            <option value= <%= address.id %> <%= edit && (address.id == user.idDireccion)? 'selected': locals.oldValues && (oldValues.idDireccion == userLogged.idDireccion )? 'selected' : '' %> required> <%= address.nombre + ', ' + address.direccion %> </option>
+                            <option value= <%= address.id %> <%= edit && (address.id == user.idDireccion)? 'selected': locals.oldValues && (oldValues.idDireccion == userLogged.idDireccion )? 'selected' : '' %> > <%= address.nombre + ', ' + address.direccion %> </option>
                         <% }) %>
-                        <option value=""  onclick="mostrarAlerta()" <%= edit ? '' : 'selected' %> required >Agregar una nueva dirección </option>
+                        <option value=""  onclick="mostrarAlerta()" <%= edit ? '' : 'selected' %>  >Agregar una nueva dirección </option>
                     </select>
                 </div>
 
