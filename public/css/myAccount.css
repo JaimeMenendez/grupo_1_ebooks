@@ -199,9 +199,28 @@ p{
     font-size: 20px;
   }
 
-#contraseña, #labelContraseña, #confirmContraseña, #labelConfirmContraseña{
+#PasswordInput, #labelContraseña, #confirmPasswordInput, #labelConfirmContraseña{
     display: none;
 }
+
+.passwordDiv {
+    position: relative;
+  }
+  
+.passwordDiv span {
+    display: none;
+    position: absolute;
+    right: 4%;
+    top: 25%;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+#passwordEye,#confirmPasswordEye{
+    color: var(--fontColors);
+  
+}
+
 /************************************
 //        PROMOTIONAL BANNER       //
 /***********************************/

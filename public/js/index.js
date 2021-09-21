@@ -12,6 +12,16 @@ togglePassword.addEventListener('click', function (e) {
   this.classList.toggle('flaticon-visibility');
 });
 
+if(togglePasswordConfirm){
+  togglePasswordConfirm.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = passwordConfirm.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordConfirm.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('flaticon-visibility');
+  })
+};
+
   const bloqueRojo = document.querySelector(".logo .bloqueRojo");
   const bloqueAzul = document.querySelector(".logo .bloqueAzul");
   const bloqueVerde = document.querySelector(".logo .bloqueVerde");
@@ -102,15 +112,5 @@ bloqueNaranja.addEventListener('mouseout', e =>{
   root.style.setProperty('--buttonColorHover', currentColorHover);
 })
 
-
-
-if(togglePasswordConfirm){
-togglePasswordConfirm.addEventListener('click', function (e) {
-  // toggle the type attribute
-  const type = passwordConfirm.getAttribute('type') === 'password' ? 'text' : 'password';
-  passwordConfirm.setAttribute('type', type);
-  // toggle the eye slash icon
-  this.classList.toggle('flaticon-visibility');
-})}
 
 
