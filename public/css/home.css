@@ -247,6 +247,10 @@ main div.products{
         transition: transform 0.5s;
         transform: scale(1.1) !important;
     }
+
+    #productos{
+        margin-top: 60px;
+    }
 }
 
 @media (min-width: 834px) {
