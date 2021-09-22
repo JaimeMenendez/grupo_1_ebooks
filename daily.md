@@ -60,3 +60,6 @@
 
 # 14-9-2021
 - Base de datos de libros categoría Medicina completada
+
+# 22-9-2021
+- Vista de productos terminada
