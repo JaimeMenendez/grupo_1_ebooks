@@ -104,16 +104,22 @@ const controller = {
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
-		let id = req.params.id
-		const productoAEliminar = products.findIndex(producto => id == producto.id)
-		if(productoAEliminar >= 0)
-		{
-			products.splice(productoAEliminar, 1)
-			fs.writeFileSync(productsFilePath,JSON.stringify(products,null,2),'utf-8')
-			res.redirect('/products')
-		} else
-			res.redirect('/products')
-	}
-};
+		if (req.params.id) {
+			let librosDB = readFileSync(productsFilePath, 'utf-8')
+			librosDB = JSON.parse(librosDB)
+			const libroParaEliminar = librosDB.findIndex((libro) => libro.id == req.params.id)
+			if (libroParaEliminar >= 0) {
+				librosDB.splice(libroParaEliminar,1)
+				fs.writeFileSync(productsFilePath, JSON.stringify(librosDB, null, ' '));
+				res.redirect('/home');
+			} else {
+			  res.render('main/error404',{userLogged: req.session.userLogged})
+			}
+		  }
+		  else{
+			res.render('main/error404',{userLogged: req.session.userLogged})
+		  }
+		}
+}
 
 module.exports = controller;

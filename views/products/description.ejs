@@ -12,10 +12,22 @@
         <section class="datosPrincipales">
             <div class="materiaTitulo">
                 <p>
-                    <%= categoria %> > <%= nombreLibro%> <label class="heartIcon">
-                        <input type="checkbox" name="favorito" id="favorito">
-                        <i class="far fa-heart"></i></label>
+                    <%= categoria %> > <%= nombreLibro%> 
+                    
                 </p>
+                    <label class="editIcon">
+                        <a title="Editar este libro." href="/products/<%= locals.id ? id:''%>/edit" onclick="return confirm('¿Desea editar este libro?')"><i class="far fa-edit"></i></a>
+                    </label>
+
+                    <form action="/products/delete/<%= locals.id ? id:''%>?_method=DELETE" method="POST" class="deleteIcon">
+                        <button title="Eliminar este libro." type="submit" onclick="return confirm('¿Está seguro que desea eliminar este libro?')"><i class="far fa-trash-alt"></i></button>
+                    </form>
+
+                    <label class="heartIcon">
+                        <input type="checkbox" name="favorito" id="favorito">
+                        <i title="Añadir a favoritos." class="far fa-heart"></i>
+                    </label>
+                
             </div>
 
             <div class="portada">
