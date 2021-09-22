@@ -1,14 +1,25 @@
 const fs = require('fs');
 const path = require('path');
 const { readFileSync, writeFileSync, unlinkSync } = require('fs')
+const seccion = require("../controllers/secciones.json")
 
 const productsFilePath = path.join(__dirname, '../DB/librosDB.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+let productos = seccion.todosLosProductos;
+
+let nuevosArticulos = products.map(articulo => {
+	return articulo = {...articulo, idClass:"", nuevo:false, clasificacion: 3, formato:""}
+  })
+
+let seccionProductos = seccion.todosLosProductos;
+seccionProductos.articulos = nuevosArticulos;
+
+
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-		res.render('products/products', {...products, userLogged: req.session.userLogged})
+		res.render('products/products', {seccionProductos: seccionProductos, userLogged: req.session.userLogged})
 	},
 
 	// Detail - Detail from one product

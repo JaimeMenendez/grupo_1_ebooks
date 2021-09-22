@@ -45,6 +45,14 @@ const validarInvoice = [
   body('idDireccion').notEmpty().withMessage("Debe seleccionar una dirección de la lista o seleccionar la opción de 'Agregar una nueva dirección'").bail()
 ]
 
+const validarDataUser = [
+  body('nombre').notEmpty().withMessage("Debe especificar su nombre"),
+  body('apellido').notEmpty().withMessage("Debe especificar su apellido"),
+  body('correo').notEmpty().withMessage("Debe especificar un email").bail()
+                .isEmail().withMessage("Debe especificar un email válido"),
+                body('password').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña no es correcta, por favor, intente nuevamente.")
+]
+
 routerUser.get('/register', guestMiddleware, userController.registerView)
 routerUser.get('/login',guestMiddleware, userController.loginView)
 

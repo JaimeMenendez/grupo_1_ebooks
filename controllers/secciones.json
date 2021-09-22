@@ -1,4 +1,9 @@
 {
+    "todosLosProductos":{
+        "idSection": "productos",
+        "titulo": "Todos los productos"
+    },
+
     "tendencias": {
         "idSection": "tendencias",
         "titulo": "Tendencia en libros...",
