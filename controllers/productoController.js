@@ -119,7 +119,18 @@ const controller = {
 		  else{
 			res.render('main/error404',{userLogged: req.session.userLogged})
 		  }
+		},
+		/**
+		 * Esta función maneja la vista de 
+		 * @param {*} req 
+		 * @param {*} res 
+		 */
+		libro: (req, res) => {
+			let librosDB = readFileSync(productsFilePath, 'utf-8')
+			librosDB = JSON.parse(librosDB)
+			res.render('products/libros', {libros:librosDB})
 		}
+
 }
 
 module.exports = controller;
