@@ -259,14 +259,12 @@ form.sbMobile::after {
     color: red;
 }
 
-.deleteIcon{
-    position: absolute;
-    right: 73px;
-    top: -3px;
-    font-size:20px;
-}
 
 .deleteIcon button{
+    position: absolute;
+    right: 75px;
+    top: -3px;
+    font-size:20px;
     background-color:transparent;
     border: none;
     top: -3px;
@@ -274,6 +272,8 @@ form.sbMobile::after {
     color: #e74c3c;
     cursor: pointer;
     transition-duration: 0.2s;
+    padding: 0;
+    margin: 0;
 }
 
 .deleteIcon button i:hover{
@@ -635,11 +635,10 @@ main ul a{
         font-size:20px;
     }
 
-    .deleteIcon{
-        position: absolute;
-        right: 70px;
+    .deleteIcon button{
+        right: 80px;
         top:12px;
-        font-size:20px;
+
     }
 
     .formato{
