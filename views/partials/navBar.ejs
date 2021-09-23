@@ -39,7 +39,10 @@
          
           <a href="/users/" class="sideBarOption"><i class="far fa-user-circle"></i> &nbsp Mi cuenta</a>
           <a href="/products/create" class="sideBarOption"><i class="far fa-plus-square"></i>  &nbsp Agregar libro</a>
+          <a href="/products/" class="sideBarOption"><i class="far fa-bookmark"></i>  &nbsp Todos los libros</a>
+          <% if(locals.userLogged){%> 
           <a href="/users/logout" class="sideBarOption"><i class="fas fa-sign-out-alt"></i>&nbsp Cerrar sesión</a>
+          <% }  %> 
         </div>
       </div>
 

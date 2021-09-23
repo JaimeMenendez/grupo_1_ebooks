@@ -4,21 +4,18 @@ const { readFileSync, writeFileSync, unlinkSync } = require('fs')
 const seccion = require("../controllers/secciones.json")
 
 const productsFilePath = path.join(__dirname, '../DB/librosDB.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-let productos = seccion.todosLosProductos;
-
-let nuevosArticulos = products.map(articulo => {
-	return articulo = {...articulo, idClass:"", nuevo:false, clasificacion: 3, formato:""}
-  })
-
-let seccionProductos = seccion.todosLosProductos;
-seccionProductos.articulos = nuevosArticulos;
 
 
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
+		let nuevosArticulos = products.map(articulo => {
+		return articulo = {...articulo, idClass:"", nuevo:false, clasificacion: 3, formato:""}
+	  })
+
+		let seccionProductos = seccion.todosLosProductos;
+   		seccionProductos.articulos = nuevosArticulos;
 		res.render('products/products', {seccionProductos: seccionProductos, userLogged: req.session.userLogged})
 	},
 
@@ -68,7 +65,7 @@ const controller = {
 	
 		librosDB.push(newBook)
 		writeFileSync(productsFilePath, JSON.stringify(librosDB, null, 2))
-		res.redirect('/products/' + newBook.id)
+		res.redirect('/products/')
 	  },
 
 	// Update - Form to edit
@@ -92,6 +89,7 @@ const controller = {
 	  },
 	// Update - Method to update
 	update: (req, res) => {
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
 		let id = req.params.id;
 		let index = products.findIndex(product => product.id == id)
 
@@ -122,7 +120,7 @@ const controller = {
 			if (libroParaEliminar >= 0) {
 				librosDB.splice(libroParaEliminar,1)
 				fs.writeFileSync(productsFilePath, JSON.stringify(librosDB, null, ' '));
-				res.redirect('/home');
+				res.redirect('/products/')
 			} else {
 			  res.render('main/error404',{userLogged: req.session.userLogged})
 			}
@@ -131,11 +129,6 @@ const controller = {
 			res.render('main/error404',{userLogged: req.session.userLogged})
 		  }
 		},
-		/**
-		 * Esta función maneja la vista de 
-		 * @param {*} req 
-		 * @param {*} res 
-		 */
 		libro: (req, res) => {
 			let librosDB = readFileSync(productsFilePath, 'utf-8')
 			librosDB = JSON.parse(librosDB)
