@@ -1,0 +1,173 @@
+@import "./fonts.css";
+@import "./logoStyle.css";
+@import "./navBar.css";
+@import "./footer.css";
+@import "./comentarios.css";
+
+:root {
+    --azul-morado-oscuro: #2d2f8e;
+    --azul-morado-claro: #585dba;
+    --verde-pastel-oscuro: #44979c;
+    --verde-pastel-claro: #89cab4;
+    --azul-gris-oscuro: #202020;
+    --oscuro: #56575e;
+    --azul-oscuro: #14213D;
+    --rojo: #ea4533;
+    --rojo-oscuro: #c0392b;
+    --naranja-pastel: #f4ae62;
+    --rosado-pastel: #f6c7af;
+    --crema:#f3f0d7;
+    --blanco: #ffffff;
+    --dorado: #81670f;
+
+  --navBarHeight: 50px;
+  --marginBottom:10px;
+  --borderRadius:5px;
+
+  --sectionBackground: white;
+  --backgroundColor: #e2e1e0;
+  --backgroundSections:white;
+
+  --navBarBackground:rgb(255, 255, 255);
+  --fontColors:#2e2e2e;
+
+  /* Buttons */
+  --buttonHeight:35px;
+  --buttonBorderRadio: 2px;
+
+  --buttonColor:#EA4533;
+  --buttonColorHover:#c0392b;
+   --fontColorButtons: #eaebf1;
+
+   /* White Buttons */
+
+   --whiteButtonsFontColor: #2e2e2e;
+   --whiteButtonsBackground:white;
+
+   --footerBackground: #2d2f8e;
+   --footerFontColor: #eaebf1;
+
+}
+
+/* ========================================================= */
+/*                     Button Style                          */
+/* ========================================================= */
+body {
+    font-family: "Roboto", sans-serif;
+    color:var(--fontColors);
+    background-color: var(--sectionBackground);
+}
+.btn.red {
+    background-color: #e74c3c;
+  }
+  
+  .btn.red:hover, .btn.red:focus {
+    background-color: #c0392b;
+  }
+  
+  .btn {
+    font-weight: bold;
+    display: block;
+    margin: 10px auto;
+    padding: 0; 
+    border-width: 0;
+    outline: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    color: var(--fontColorButtons);
+    transition: background-color .3s;
+    cursor: pointer;
+  }
+  
+  .btn.red {
+    background-color: var(--buttonColor);
+  }
+  
+  .btn.red:hover, .btn.red:focus {
+    background-color: #c0392b;
+  }
+
+  #separadorTop{
+    margin-bottom: 0;
+  }
+
+  #separadorBottom{
+    margin-top: -4px;
+    margin-bottom: -5px;
+  }
+
+main.allBooks{  
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,400px));
+    gap: 20px;
+    margin-top: 20px;
+    justify-content:center;
+    margin-bottom: 20px;
+}
+
+main article.bookMini{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 40% 60%;
+    max-width:none;
+    height:100%;
+}
+
+main article.bookMini .portada img{
+ width: 100%;
+ height: 100%;
+ object-fit:fill;
+ box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+main article.bookMini .portada{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+main a{
+    text-decoration: none;
+    color: var(--fontColors);
+}
+
+.bookContent{
+    padding-left: 10px;
+    text-align: left;
+}
+.titulo{
+    margin-bottom: 5px;
+
+}
+
+.autor{
+font-weight: 400;
+margin-top: 0;
+color:#86878b;
+}
+
+@media (min-width:600px) {
+
+main.allBooks{  
+    margin-top: 60px;
+}
+
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+      --navBarHeight: 50px;
+      --navBarBackground:rgb(41, 41, 41);
+      --searchBarColor: rgb(59, 57, 57);
+      --fontColors:#eaebf1;
+      --sectionBackground: #121212;
+
+      --backgroundColor: #121212;
+      --backgroundSections:#222222;
+
+      --whiteButtonsFontColor: #eaebf1;
+      --whiteButtonsBackground:rgb(59, 57, 57);
+      --footerBackground: rgb(41, 41, 41);
+    } 
+}

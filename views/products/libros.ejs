@@ -1,0 +1,30 @@
+<% let data ={css:["css/navBar.css", "css/navBarMobile.css","css/libros.css"],
+             jsfile:["./js/darkModeScript.js"],
+             titulo: "Products"}%>
+
+<%- include('../partials/head', data)%>
+
+<body>
+    <%- include('../partials/navBar') %>
+    <%- include('../partials/navBarMobile') %>
+
+    <main class="allBooks">
+        <% locals.libros.forEach(libro => { %>
+            <a href="/products/<%= libro.id%>">
+            <article class="bookMini">
+            <div class="portada">
+                <img src="<%= libro.portada%>" alt="">                
+            </div>     
+            <div class="bookContent">
+                <p class="titulo"><%= libro.nombreLibro%></p>
+                <p class="autor"><%= libro.autor%></p>
+                <p><%= libro.subcategoria%>, <%= libro.categoria%></p> 
+            </div>   
+            </article>   
+        </a>         
+        <% });%>
+          
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>

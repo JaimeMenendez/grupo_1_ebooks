@@ -20,6 +20,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 // Routes
+router.get('/libro', productoController.libro)
 router.get('/', productoController.index)
 router.get('/create', productoController.create)
 router.post('/', upload.single('portada'), productoController.store)
