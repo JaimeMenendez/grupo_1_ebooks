@@ -6,11 +6,27 @@ const seccion = require('./secciones.json')
 const botonesPrincipales = require('./botonesPrincipales.json')
 
 const usersPath = path.resolve(__dirname, '../DB/usersDB.json')
+const productsFilePath = path.join(__dirname, '../DB/librosDB.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const session = require('express-session')
 const { validationResult } = require('express-validator')
 
 let users = JSON.parse(fs.readFileSync(usersPath))
+
+
+let articulosDB = function(idClass,nuevo,formato){ 
+  return products.map(articulo => {
+	return articulo = {...articulo, idClass:idClass, nuevo:nuevo, clasificacion: 3, formato:formato}
+  })
+}
+
+let tamaño = articulosDB.length
+
+seccion.favoritos.articulos = articulosDB("",true,"").filter(articulo => articulo.id<=tamaño && articulo.id > (tamaño-8));
+seccion.nuevos.articulos = articulosDB("",true,"").filter(articulo => articulo.id<= 16 && articulo.id > 8);
+seccion.busquedas.articulos = articulosDB("",false,"ebook").filter(articulo => articulo.id<= 13 && articulo.id > 5);
+
 
 const userController = {
   sendMyAccount: (req, res) => {

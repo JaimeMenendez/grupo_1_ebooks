@@ -19,7 +19,7 @@ main article{
 main article img{
     width: 90%;
     max-width: 160px;
-    max-height: 200px;
+    max-height: 180px;
 }
 
 main article div.main-article{
@@ -90,9 +90,9 @@ main article form{
 //         BUTTONS BOOKS           //
 /***********************************/
 
-main form.product-button button, .inicio{
+main div.product-button button, .inicio{
     width: 90%;
-    height: 33px;
+    height: 30px;
     font-family: "DIN", sans-serif;
     font-size: 0.8em;
     font-weight: 700;
@@ -103,6 +103,7 @@ main form.product-button button, .inicio{
     color: var(--blanco);
     cursor: pointer;
     box-shadow: 3px 5px var(--sombra-boton);
+    margin-top: 5px;
 }
 
 main article div.main-article button:hover{

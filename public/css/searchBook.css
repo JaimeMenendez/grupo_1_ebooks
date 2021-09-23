@@ -301,7 +301,7 @@ main section.banner-books img{
         width: 20%;
     }
 
-    main article img, main article div.main-article, main form.product-button button{
+    main article img, main article div.main-article, main div.product-button button{
         width: 80%;
     }
 

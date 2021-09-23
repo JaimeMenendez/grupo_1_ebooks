@@ -280,7 +280,7 @@ main div.products{
         width: 25%;
     }
 
-    main article img, main article div.main-article, main form.product-button button{
+    main article img, main article div.main-article, main div.product-button button{
         width: 80%;
     }
 
