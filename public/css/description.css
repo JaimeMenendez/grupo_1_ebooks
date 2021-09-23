@@ -726,6 +726,8 @@ main ul a{
 
     .PC{
         display:block;
+        padding-top: 30px;
+        padding-right: 20px;
     }
 
     .portada .bookTitle{

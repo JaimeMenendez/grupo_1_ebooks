@@ -47,19 +47,44 @@
 - Se agregó una animación al login y register
 - Se mejoró la accesibilidad de los botones en el home y el register haciendo el cursor de tipo pointer en los elementos clickeables.
 
+# 2-9-2021
+- Se corrigieron errores en el css de espaciado y se rectificaron algunos colores.
+
+# 2-9-2021
+- Se corrigieron y removieron las rutas de productos.
 # 6-9-2021
 - retro.md de 3er sprint
+
+# 9-9-2021
+- Se agregaron los botones categoría y subcategoría y se eliminaron bugs de la vista editar/agregar libros.
+- Se limpió la base de datos para agregar libros nuevos.
+
+# 9-9-2021
+- Se creó la vista editar dirección en el perfil de usuario, así como el CRUD necesario para agregar una nueva dirección.
+- Se corrigieron errores en Safari.
 
 # 10-9-2021
 - Actualización de rutas y controller de productos
 - Corrección de subcategorías de categoría Medicina
 - Vista de Todos los productos iniciada
 
+# 10-9-2021
+- Se agregaron etiquetas meta en la página para crear un link de previsualización.
+- Se implementó el CRUD para seleccionar una dirección predeterminada.
+
+# 10-9-2021
+- Se conectó la vista del registro con el servidor, haciendo posible que se registren nuevos usuarios.
+- Se implementó un script para mostrar mensajes en las páginas.
 # 12-9-2021
 - Se agregaron 2 libros por cada una de las primeras 3 categorías de Medicina
 
+# 13-9-2021
+- Se corrigieron errores en editar/agregar libro.
 # 14-9-2021
 - Base de datos de libros categoría Medicina completada
+
+# 16-9-2021
+- Se agregó validación con express validator al Register y se implementó el login usando session y bcrypt.
 
 # 22-9-2021
 - Vista de productos terminada
