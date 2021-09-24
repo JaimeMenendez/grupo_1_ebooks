@@ -50,7 +50,9 @@ const validarDataUser = [
   body('apellido').notEmpty().withMessage("Debe especificar su apellido"),
   body('correo').notEmpty().withMessage("Debe especificar un email").bail()
                 .isEmail().withMessage("Debe especificar un email válido"),
-                body('password').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña no es correcta, por favor, intente nuevamente.")
+  //body('cambiarContraseña').notEmpty().withMessage("Debe seleccionar una opción para la contraseña"),
+  body('contraseña').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres."),
+  body('confContraseña').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La confirmación de la contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres.")
 ]
 
 routerUser.get('/register', guestMiddleware, userController.registerView)
@@ -59,7 +61,7 @@ routerUser.get('/login',guestMiddleware, userController.loginView)
 routerUser.get('/',authMiddleware, userController.sendMyAccount)
 
 routerUser.get('/edit-data-user',authMiddleware, userController.sendSecurity)
-routerUser.put('/edit-data-user',authMiddleware, UploadImageUser.single('imageUser'), userController.updateUser)
+routerUser.put('/edit-data-user',authMiddleware,  UploadImageUser.single('imageUser'), validarDataUser, userController.updateUser)
 
 routerUser.get('/add-new-invoice',authMiddleware, userController.sendAddInvoiceView)
 routerUser.post('/add-new-invoice',authMiddleware, validarInvoice, userController.storeNewInvoice)

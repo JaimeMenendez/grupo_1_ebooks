@@ -56,8 +56,18 @@ const userController = {
   },
 
   updateUser: (req, res) => {
-    const user = req.session.user
-    res.redirect('/users')
+    const user = req.session.userLogged
+    const dataUser = req.body
+    let errors = validationResult(req)
+    if(errors.isEmpty()){
+      console.log("No hubo errores de validación")
+      res.redirect('/users')
+    } else {
+      console.log("Los datos del usuario son: ", user)
+      console.log("Los datos de edición de usuario son: ", dataUser)
+      console.log("Los errores encontrados son: ", errors)
+      res.redirect('/users')
+    }
   },
 
   /** **************************************************/
