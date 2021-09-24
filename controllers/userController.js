@@ -59,13 +59,22 @@ const userController = {
     const user = req.session.userLogged
     const dataUser = req.body
     let errors = validationResult(req)
-    if(errors.isEmpty()){
-      console.log("No hubo errores de validación")
+    if(errors.isEmpty() && (req.body.contraseña === req.body.confContraseña)){
+      user.firstName = req.body.nombre
+      user.lastname = req.body.apellido
+      //if(req.file){
+      //  user.imageUser = req.file.path
+      //}else {
+      //  user.imageUser = 'public/images/userProfile/user-default2.png'
+      //}
+      if(req.body.cambiarContraseña === 'si'){
+        user.password = bcrypt.hashSync(req.body.contraseña, 10)
+      }
+      console.log('Usuario editado correctamente')
       res.redirect('/users')
     } else {
-      console.log("Los datos del usuario son: ", user)
-      console.log("Los datos de edición de usuario son: ", dataUser)
-      console.log("Los errores encontrados son: ", errors)
+      //enviar un mensaje que diga que las contraseñas no son iguales
+      console.log('Hubo un error y no se guardaron los datos')
       res.redirect('/users')
     }
   },

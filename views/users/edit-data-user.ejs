@@ -18,7 +18,7 @@
                 <h3 class="formTitle">Editar inicio de sesión y seguridad</h3>
                 
                 <div class="entradaDeDatos">
-                    <img src="/public/images/user-default2.png" alt="portada" id="userImg">
+                    <img src="/public/images/userProfile/user-default2.png" alt="portada" id="userImg">
                     <input id="portada" type="file" name="portada" accept="image/*" multiple=false
                         onchange="loadFile(event)">
                 </div>
@@ -35,17 +35,17 @@
 
                 <div class="entradaDeDatos">
                     <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" id="nombre" required value="<%=user.firstName%>">
+                    <input type="text" name="nombre" id="nombre" value="<%=user.firstName%>">
                 </div>
             
                 <div class="entradaDeDatos">
                     <label for="apellido">Apellido</label>
-                    <input type="text" name="apellido" id="apellido" required value="<%=user.lastName%>">
+                    <input type="text" name="apellido" id="apellido" value="<%=user.lastName%>">
                 </div>
             
                 <div class="entradaDeDatos">
                     <label for="correo">Correo electrónico</label>
-                    <input type="email" name="correo" id="correo" required value="<%=user.email%>">
+                    <input type="email" name="correo" id="correo" value="<%=user.email%>">
                 </div>
                 
                 <div class="entradaDeDatos">
