@@ -81,10 +81,10 @@
             <div class="form-group col-sm-4">
                 <label for="exampleFormControlSelect1">Idioma:</label>
                 <select class="form-control" name="idioma" id="idioma">
-                    <option value="Inglés">Inglés</option>
-                    <option value="Español">Español</option>
-                    <option value="Francés">Francés</option>
-                    <option value="Italiano">Italiano</option>
+                    <option value="Inglés" <%= edit && locals.idioma == 'Inglés'? 'selected': '' %>>Inglés</option>
+                    <option value="Español" <%= edit && locals.idioma == 'Español'? 'selected': '' %>>Español</option>
+                    <option value="Francés" <%= edit && locals.idioma == 'Francés'? 'selected': '' %>>Francés</option>
+                    <option value="Italiano" <%= edit && locals.idioma == 'Italiano'? 'selected': '' %>>Italiano</option>
                 </select>
             </div>
 
