@@ -57,19 +57,22 @@ const userController = {
   updateUser: (req, res) => {
     const user = req.session.userLogged
     let errors = validationResult(req)
-    console.log("Los errores son: ", errors)
-    console.log("Lo que llega del select-options es: ", req.body.cambiarContraseña)
     if(errors.isEmpty()){
       user.firstName = req.body.nombre
       user.lastname = req.body.apellido
-      user.password = bcrypt.hashSync(req.body.contraseña, 10)
+      if(req.body.cambiarContraseña === 'si'){
+        console.log("la contraseña es: ", req.body.contraseña)
+        //isEqual = bcrypt.compareSync(req.body.contraseña, user.password)
+        //if(equalPassword){
+        //  errors.errors.msg="La nueva contraseña debe ser diferente a la anterior"
+        //  console.log(errors)
+        //}
+      }
       if(req.file){
         user.imageUser = req.file.path
-        console.log("la imagen del usuario es: ",user.imageUser)
       }else {
         user.imageUser = 'public/images/userProfile/user-default2.png'
       }
-
       console.log('Usuario editado correctamente')
       console.log(user)
       saveUserToDB(user)
@@ -77,7 +80,16 @@ const userController = {
     } else {
       //enviar un mensaje que diga que las contraseñas no son iguales
       console.log('Hubo un error y no se guardaron los datos')
-      res.redirect('/users')
+      const errores = errors.errors.reduce(
+        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
+      res.render('users/edit-data-user',{
+        mensaje: errores,
+        warning: true,
+        user: user,
+        busquedas: seccion.busquedas,
+        favoritos: seccion.favoritos,
+        userLogged: req.session.userLogged
+      })
     }
   },
 
@@ -115,7 +127,7 @@ const userController = {
       console.log(req.body)
       const errores = errors.errors.reduce(
         (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
-      res.render('users/invoice',{
+      res.render('users/invoice', {
         mensaje: errores,
         warning: true,
         edit: false,

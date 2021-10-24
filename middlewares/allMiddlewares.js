@@ -25,28 +25,29 @@ const middleware = {
         body('password').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña no es correcta, por favor, intente nuevamente.")
     ],
 
-    validarDataUser: function(req,res,next){
-        if(req.body.cambiarContraseña === 'si'){
-            [
-                body('nombre').notEmpty().withMessage("Debe especificar su nombre"),
-                body('apellido').notEmpty().withMessage("Debe especificar su apellido"),
-                body('correo').notEmpty().withMessage("Debe especificar un email").bail()
-                            .isEmail().withMessage("Debe especificar un email válido"),
-                body('cambiarContraseña').notEmpty().withMessage("Debe seleccionar una opción para la contraseña"),
-                body('contraseña').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres."),
-                body('confContraseña').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La confirmación de la contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres.")
-            ]
-        }else{
-            [
-                body('nombre').notEmpty().withMessage("Debe especificar su nombre"),
-                body('apellido').notEmpty().withMessage("Debe especificar su apellido"),
-                body('correo').notEmpty().withMessage("Debe especificar un email").bail()
-                            .isEmail().withMessage("Debe especificar un email válido"),
-                body('cambiarContraseña').notEmpty().withMessage("Debe seleccionar una opción para la contraseña")
-            ]
-        }
-        next()
-    }
+    validarDataUser: [
+        body('nombre').notEmpty().withMessage("Debe especificar su nombre"),
+        body('apellido').notEmpty().withMessage("Debe especificar su apellido"),
+        body('correo').notEmpty().withMessage("Debe especificar un email").bail()
+                    .isEmail().withMessage("Debe especificar un email válido"),
+        body('cambiarContraseña').notEmpty().withMessage("Debe seleccionar una opción en 'Cambiar contraseña'"),                             
+        body('contraseña').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres."),
+        body('confContraseña').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La confirmación de la contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres.")
+                           .custom((value, {req}) => {
+                                if(value !== req.body.contraseña){
+                                    console.log('Values es igual a: ', value)
+                                    throw new Error('Las contraseñas no son iguales')
+                                }
+                            })  
+    ],
+
+    validarDataUserWithoutPassword: [
+        body('nombre').notEmpty().withMessage("Debe especificar su nombre"),
+        body('apellido').notEmpty().withMessage("Debe especificar su apellido"),
+        body('correo').notEmpty().withMessage("Debe especificar un email").bail()
+                    .isEmail().withMessage("Debe especificar un email válido")
+    ]
+
 }
 
 module.exports = middleware
