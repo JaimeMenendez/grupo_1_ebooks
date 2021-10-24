@@ -15,16 +15,17 @@ const validarDataUser = middleware.validarDataUser
 // Multer
 const storageUser = multer.diskStorage({
   destination: function(req, file, callback){
-    callback(null,'./public/image/userProfile')
+    callback(null,'./public/images/userProfile')
   },
   filename: function (req, file, callback) {
-    const imageUser = `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`
-    cb(null, imageUser)
+    const name = `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`
+    console.log(name)
+    callback(null, name)
   },
 })
 
 // Especificamos la conf anterios como disco de almacenamiento de archivos
-const UploadImageUser = multer({storageUser})
+const UploadImageUser = multer({storage: storageUser})
 
 routerUser.get('/register', guestMiddleware, userController.registerView)
 routerUser.get('/login',guestMiddleware, userController.loginView)
@@ -32,7 +33,7 @@ routerUser.get('/login',guestMiddleware, userController.loginView)
 routerUser.get('/',authMiddleware, userController.sendMyAccount)
 
 routerUser.get('/edit-data-user',authMiddleware, userController.sendSecurity)
-routerUser.put('/edit-data-user',authMiddleware,  UploadImageUser.single('imageUser'), validarDataUser, userController.updateUser)
+routerUser.put('/edit-data-user',authMiddleware,  UploadImageUser.single('userImage'), validarDataUser, userController.updateUser)
 
 routerUser.get('/add-new-invoice',authMiddleware, userController.sendAddInvoiceView)
 routerUser.post('/add-new-invoice',authMiddleware, validarInvoice, userController.storeNewInvoice)

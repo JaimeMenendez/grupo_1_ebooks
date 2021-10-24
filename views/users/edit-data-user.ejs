@@ -18,8 +18,8 @@
                 <h3 class="formTitle">Editar inicio de sesión y seguridad</h3>
                 
                 <div class="entradaDeDatos">
-                    <img src="/public/images/userProfile/user-default2.png" alt="portada" id="userImg">
-                    <input id="portada" type="file" name="portada" accept="image/*" multiple=false
+                    <img src="/public/images/userProfile/user-default2.png" alt="userImage" id="userImg">
+                    <input id="userImage" type="file" name="userImage" accept="image/*" multiple=false
                         onchange="loadFile(event)">
                 </div>
 
@@ -60,7 +60,8 @@
                     <label for="contraseña" id="labelContraseña">Contraseña</label>
                     <div class='passwordDiv'>
                         <input type="password" name="contraseña" id="PasswordInput" placeholder="Contraseña" value = "" 
-                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="La contraseña debe tener al menos una letra en mayúscula, una letra en minúscula y 8 caracteres">        
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="La contraseña debe tener al menos una letra en mayúscula, una letra en minúscula y 8 caracteres"
+                            onchange='onChange();'>        
                         <span id="showIcon1"><i  id="passwordEye" class="flaticon-invisible"></i></span>
                     </div>
                 </div>
@@ -69,10 +70,31 @@
                     <label for="confContraseña" id="labelConfirmContraseña">Confirma tu contraseña</label>
                     <div class='passwordDiv'>
                         <input type="password" name="confContraseña" id="confirmPasswordInput" placeholder="Contraseña" value = "" 
-                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="La contraseña debe tener al menos una letra en mayúscula, una letra en minúscula y 8 caracteres">
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="La contraseña debe tener al menos una letra en mayúscula, una letra en minúscula y 8 caracteres"
+                            onchange='onChange();'>
                         <span id="showIcon2"><i id="confirmPasswordEye"  class="flaticon-invisible"></i></span>
                     </div>
                 </div>
+
+                <script>
+                    function onChange() {
+                        const select = document.querySelector('select[name=cambiarContraseña]')
+                        const password = document.querySelector('input[name=contraseña]');
+                        const confirm = document.querySelector('#confirmPasswordInput');
+                        if(select.value === 'si'){
+                            password.required = true;
+                            confirm.required = true;
+                            if (confirm.value === password.value) {
+                                confirm.setCustomValidity('');
+                            } else {
+                                confirm.setCustomValidity('Las contraseñas no coinciden');
+                            }
+                        }else{
+                            password.required = false;
+                            confirm.required = false;
+                        }
+                    }
+                </script>
                 
                 <div class="formButtons">
                     <button class="blue" type="submit">Guardar</button>

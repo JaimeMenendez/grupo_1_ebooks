@@ -9,7 +9,6 @@ const usersPath = path.resolve(__dirname, '../DB/usersDB.json')
 const productsFilePath = path.join(__dirname, '../DB/librosDB.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-const session = require('express-session')
 const { validationResult } = require('express-validator')
 
 let users = JSON.parse(fs.readFileSync(usersPath))
@@ -57,20 +56,23 @@ const userController = {
 
   updateUser: (req, res) => {
     const user = req.session.userLogged
-    const dataUser = req.body
     let errors = validationResult(req)
-    if(errors.isEmpty() && (req.body.contraseña === req.body.confContraseña)){
+    console.log("Los errores son: ", errors)
+    console.log("Lo que llega del select-options es: ", req.body.cambiarContraseña)
+    if(errors.isEmpty()){
       user.firstName = req.body.nombre
       user.lastname = req.body.apellido
-      //if(req.file){
-      //  user.imageUser = req.file.path
-      //}else {
-      //  user.imageUser = 'public/images/userProfile/user-default2.png'
-      //}
-      if(req.body.cambiarContraseña === 'si'){
-        user.password = bcrypt.hashSync(req.body.contraseña, 10)
+      user.password = bcrypt.hashSync(req.body.contraseña, 10)
+      if(req.file){
+        user.imageUser = req.file.path
+        console.log("la imagen del usuario es: ",user.imageUser)
+      }else {
+        user.imageUser = 'public/images/userProfile/user-default2.png'
       }
+
       console.log('Usuario editado correctamente')
+      console.log(user)
+      saveUserToDB(user)
       res.redirect('/users')
     } else {
       //enviar un mensaje que diga que las contraseñas no son iguales
