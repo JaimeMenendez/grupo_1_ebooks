@@ -1,4 +1,4 @@
-<% let data ={css:["css/myAccount.css","css/navBar.css", "css/navBarMobile.css"],
+<% let data ={css:["css/myAccount.css","css/navBar.css", "css/navBarMobile.css","css/userForm.css"],
              jsfile:["./js/darkModeScript.js","./js/index.js"],
              titulo: "Security"}%>
 
@@ -35,12 +35,12 @@
                 </script>
             <%}%>
         
-            <form class="editForm" action='/users/edit-data-user?_method=PATCH' method="POST" enctype="multipart/form-data">
-                <h4 class="formPath"><a href="/users/">Mi cuenta</a> > <a href="/users/">Mis seguridad</a> > <span>Editar inicio de sesión y seguridad</span></h4>
-                <h3 class="formTitle">Editar inicio de sesión y seguridad</h3>
+            <form class="editFormUser" action='/users/edit-data-user?_method=PATCH' method="POST" enctype="multipart/form-data">
+                <h4 class="formPathUser"><a href="/users/">Mi cuenta</a> > <a href="/users/">Mis seguridad</a> > <span>Editar inicio de sesión y seguridad</span></h4>
+                <h3 class="formTitleUser">Editar inicio de sesión y seguridad</h3>
                 
-                <div class="entradaDeDatos">
-                    <img src="/public/images/userProfile/user-default2.png" alt="userImage" id="userImg">
+                <div class="entradaDeDatosUser">
+                    <img src="<%=user.imageUser%>" alt="userImage" id="userImg">
                     <input id="userImage" type="file" name="userImage" accept="image/*" multiple=false
                         onchange="loadFile(event)">
                 </div>
@@ -55,31 +55,46 @@
                     };
                 </script>
 
-                <div class="entradaDeDatos">
+                <div class="entradaDeDatosUser">
                     <label for="nombre">Nombre</label>
                     <input type="text" name="nombre" id="nombre" value="<%=user.firstName%>">
                 </div>
-            
-                <div class="entradaDeDatos">
+
+                <div class="entradaDeDatosUser">
                     <label for="apellido">Apellido</label>
                     <input type="text" name="apellido" id="apellido" value="<%=user.lastName%>">
                 </div>
-            
-                <div class="entradaDeDatos">
+
+                <div class="entradaDeDatosUser">
                     <label for="correo">Correo electrónico</label>
                     <input type="email" name="correo" id="correo" value="<%=user.email%>">
                 </div>
                 
-                <div class="entradaDeDatos">
-                    <label for="cambiarContraseña">Cambiar contraseña</label>
+                <div class="formButtonsUser">
+                    <button class="blue" type="submit">Guardar cambios</button>
+                </div>
+            </form>
+
+            <form class="editFormUser" action='/users/edit-data-user-password?_method=PUT' method="POST">
+                <div class="entradaDeDatosUser">
+                    <label for="cambiarContraseña">¿Desea cambiar la contraseña?</label>
                     <select id="cambiarContraseña" name="cambiarContraseña" onchange="changeFunc()">
                         <option value="si" id="siCambiarContraseña">Sí</option>
                         <option value="no" id="noCambiarContraseña" selected>No</option>
                     </select>
                 </div>
+
+                <div class="entradaDeDatosUser">
+                    <label for="contraseñaActual" id="labelContraseñaActual">Contraseña actual</label>
+                    <div class='passwordDiv'>
+                        <input type="password" name="contraseñaActual" id="currentPasswordInput" placeholder="Contraseña actual" value = "" 
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="La contraseña debe tener al menos una letra en mayúscula, una letra en minúscula y 8 caracteres"
+                            >        
+                    </div>
+                </div>
                 
-                <div class="entradaDeDatos">
-                    <label for="contraseña" id="labelContraseña">Contraseña</label>
+                <div class="entradaDeDatosUser">
+                    <label for="contraseña" id="labelContraseña">Nueva contraseña</label>
                     <div class='passwordDiv'>
                         <input type="password" name="contraseña" id="PasswordInput" placeholder="Contraseña" value = "" 
                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="La contraseña debe tener al menos una letra en mayúscula, una letra en minúscula y 8 caracteres"
@@ -88,8 +103,8 @@
                     </div>
                 </div>
 
-                <div class="entradaDeDatos">
-                    <label for="confContraseña" id="labelConfirmContraseña">Confirma tu contraseña</label>
+                <div class="entradaDeDatosUser">
+                    <label for="confContraseña" id="labelConfirmContraseña">Confirma tu nueva contraseña</label>
                     <div class='passwordDiv'>
                         <input type="password" name="confContraseña" id="confirmPasswordInput" placeholder="Contraseña" value = "" 
                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="La contraseña debe tener al menos una letra en mayúscula, una letra en minúscula y 8 caracteres"
@@ -118,17 +133,27 @@
                     }
                 </script>
                 
-                <div class="formButtons">
-                    <button class="blue" type="submit">Guardar</button>
-                    <button type="reset" onclick="window.location.href='/users/'">Salir</button>
+                <div class="formButtonsUser">
+                    <button class="blue" id="bluePassword" type="submit">Guardar cambiamos</button>
+                </div>
+
+                <div class="formButtonsUser">
+                    <button type="reset" onclick="window.location.href='/users/'">Finalizado</button>
                 </div>
 
                 <script>
                     let changeFunc = function(){
+                        const buttonPassword = document.getElementById('bluePassword');
+
                         const contraseña = document.getElementById('PasswordInput');
                         const labelContraseña = document.getElementById('labelContraseña');
+
+                        const contraseñaActual = document.getElementById('currentPasswordInput');
+                        const labelContraseñaActual = document.getElementById('labelContraseñaActual');
+
                         const confContraseña = document.getElementById('confirmPasswordInput');
                         const labelConfContraseña = document.getElementById('labelConfirmContraseña');
+
                         const icon1 = document.getElementById('showIcon1');
                         const icon2 = document.getElementById('showIcon2');
 
@@ -137,18 +162,23 @@
 
                         switch(selectedValue){
                             case 'si': 
-                                console.log('Soy un Sí');
                                 labelContraseña.style.display = 'block';
+                                buttonPassword.style.display = 'block';
                                 contraseña.style.display = 'block';
                                 contraseña.value = "".trim()
+                                labelContraseñaActual.style.display = 'block';
+                                contraseñaActual.style.display = 'block';
+                                contraseñaActual.value = "".trim();
                                 labelConfContraseña.style.display = 'block';
                                 confContraseña.style.display = 'block';
                                 confContraseña.value= "".trim();
                                 icon1.style.display = 'inline';
                                 icon2.style.display = 'inline';
                                 break;  
-                            case 'no': 
-                                console.log('Soy un No');
+                            case 'no':
+                                buttonPassword.style.display = 'none';
+                                labelContraseñaActual.style.display = 'none';
+                                contraseñaActual.style.display = 'none';
                                 labelContraseña.style.display = 'none';
                                 contraseña.style.display = 'none'
                                 labelConfContraseña.style.display = 'none';

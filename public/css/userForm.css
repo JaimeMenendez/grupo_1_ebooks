@@ -107,7 +107,7 @@
 
 .formButtonsUser{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   margin: 2.5%;
   gap: 20px;
   margin-top: 20px;
@@ -136,7 +136,7 @@
     background-color: #cf2512;
 }
 
-#bluePassword{
+#bluePassword, #labelContraseñaActual, #currentPasswordInput{
     display: none;
 }
 
