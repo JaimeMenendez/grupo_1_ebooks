@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-25T18:14:32.854Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15" etag="1DDQ2sVV7oyWd4LCMp22" version="15.5.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-26T14:55:57.677Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15" etag="7TTr_uBn23QboPGYFKID" version="15.5.7" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="946" dy="725" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -435,6 +435,17 @@
         </mxCell>
         <mxCell id="xnzH9Sbu-gTlfSfWvBRV-128" value="microeconomia" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="xnzH9Sbu-gTlfSfWvBRV-7" vertex="1">
           <mxGeometry y="2132" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="JRDzx7E2uzcRiw5ZvXNT-0" value="carrito" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="100" y="778" width="160" height="82" as="geometry">
+            <mxRectangle x="130" y="380" width="160" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JRDzx7E2uzcRiw5ZvXNT-1" value="id" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="JRDzx7E2uzcRiw5ZvXNT-0">
+          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="JRDzx7E2uzcRiw5ZvXNT-2" value="idLibro" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rounded=0;shadow=0;html=0;" vertex="1" parent="JRDzx7E2uzcRiw5ZvXNT-0">
+          <mxGeometry y="52" width="160" height="26" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
