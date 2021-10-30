@@ -60,28 +60,57 @@ const userController = {
     if(errors.isEmpty()){
       user.firstName = req.body.nombre
       user.lastname = req.body.apellido
-      if(req.body.cambiarContraseña === 'si'){
-        console.log("la contraseña es: ", req.body.contraseña)
-        //isEqual = bcrypt.compareSync(req.body.contraseña, user.password)
-        //if(equalPassword){
-        //  errors.errors.msg="La nueva contraseña debe ser diferente a la anterior"
-        //  console.log(errors)
-        //}
-      }
-      if(req.file){
-        user.imageUser = req.file.path
-      }else {
-        user.imageUser = 'public/images/userProfile/user-default2.png'
-      }
-      console.log('Usuario editado correctamente')
-      console.log(user)
+      user.email = req.body.correo
+      req.file ? user.imageUser = req.file.path : user.imageUser = 'public/images/userProfile/user-default2.png'
+      mensaje = `<p><i class="fas fa-exclamation-triangle"></i>Datos de usuario editados correctamente</p>`
       saveUserToDB(user)
-      res.redirect('/users')
+      console.log(user)
+      res.render('users/edit-data-user',{
+        mensaje: mensaje,
+        warning: false,
+        user: user,
+        busquedas: seccion.busquedas,
+        favoritos: seccion.favoritos,
+        userLogged: req.session.userLogged
+      })
     } else {
       //enviar un mensaje que diga que las contraseñas no son iguales
       console.log('Hubo un error y no se guardaron los datos')
       const errores = errors.errors.reduce(
         (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
+        console.log('Mostrando los errores generados ', errores)
+      res.render('users/edit-data-user',{
+        mensaje: errores,
+        warning: true,
+        user: user,
+        busquedas: seccion.busquedas,
+        favoritos: seccion.favoritos,
+        userLogged: req.session.userLogged
+      })
+    }
+  },
+
+  updateUserPassword: (req,res) => {
+    const user = req.session.userLogged
+    let errors = validationResult(req)
+    if(errors.isEmpty()){
+      user.password = bcrypt.hashSync(req.body.contraseña,10)
+      saveUserToDB(user)
+      mensaje = `<p><i class="fas fa-exclamation-triangle"></i>La contraseña ha sido actualizada</p>`
+      res.render('users/edit-data-user',{
+        mensaje: mensaje,
+        warning: false,
+        user: user,
+        busquedas: seccion.busquedas,
+        favoritos: seccion.favoritos,
+        userLogged: req.session.userLogged
+      })
+    } else {
+      //enviar un mensaje que diga que las contraseñas no son iguales
+      console.log('Hubo un error y no se guardaron los datos')
+      const errores = errors.errors.reduce(
+        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
+        console.log('Mostrando los errores generados ', errores)
       res.render('users/edit-data-user',{
         mensaje: errores,
         warning: true,

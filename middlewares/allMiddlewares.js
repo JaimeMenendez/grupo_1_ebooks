@@ -1,4 +1,4 @@
-const express = require('express')
+const bcrypt = require('bcryptjs')
 const {body} = require('express-validator')
 
 const middleware = {
@@ -28,24 +28,27 @@ const middleware = {
     validarDataUser: [
         body('nombre').notEmpty().withMessage("Debe especificar su nombre"),
         body('apellido').notEmpty().withMessage("Debe especificar su apellido"),
-        body('correo').notEmpty().withMessage("Debe especificar un email").bail()
-                    .isEmail().withMessage("Debe especificar un email válido"),
-        body('cambiarContraseña').notEmpty().withMessage("Debe seleccionar una opción en 'Cambiar contraseña'"),                             
+        body('correo').notEmpty().withMessage("Debe especificar un email")
+                    .isEmail().withMessage("Debe especificar un email válido")  
+    ],
+
+    validarDataUserPassword: [
+        body('cambiarContraseña').notEmpty().withMessage("Debe seleccionar una opción en 'Cambiar contraseña'"),
+        body('contraseñaActual').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña actual debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres."),                             
         body('contraseña').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres."),
         body('confContraseña').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La confirmación de la contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres.")
                            .custom((value, {req}) => {
                                 if(value !== req.body.contraseña){
                                     console.log('Values es igual a: ', value)
                                     throw new Error('Las contraseñas no son iguales')
+                                }else{
+                                    const user = req.session.userLogged
+                                    let check = bcrypt.compareSync(value,user.password)
+                                    if(check){
+                                        throw new Error('La nueva contraseña debe ser diferente a la contraseña actual')
+                                    }
                                 }
-                            })  
-    ],
-
-    validarDataUserWithoutPassword: [
-        body('nombre').notEmpty().withMessage("Debe especificar su nombre"),
-        body('apellido').notEmpty().withMessage("Debe especificar su apellido"),
-        body('correo').notEmpty().withMessage("Debe especificar un email").bail()
-                    .isEmail().withMessage("Debe especificar un email válido")
+                            })
     ]
 
 }

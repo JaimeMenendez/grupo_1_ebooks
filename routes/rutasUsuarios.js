@@ -11,7 +11,7 @@ const validarInvoice = middleware.validarInvoice
 const validarRegistro = middleware.validarRegistro
 const validarLogin = middleware.validarLogin
 const validarDataUser = middleware.validarDataUser
-const validarDataUserWithoutPassword = middleware.validarDataUserWithoutPassword
+const validarDataUserPassword = middleware.validarDataUserWithoutPassword
 
 // Multer
 const storageUser = multer.diskStorage({
@@ -35,6 +35,7 @@ routerUser.get('/',authMiddleware, userController.sendMyAccount)
 
 routerUser.get('/edit-data-user',authMiddleware, userController.sendSecurity)
 routerUser.patch('/edit-data-user',authMiddleware,  UploadImageUser.single('userImage'),validarDataUser, userController.updateUser)
+routerUser.put('/edit-data-user-password',authMiddleware,validarDataUserPassword,userController.updateUserPassword)
 
 routerUser.get('/add-new-invoice',authMiddleware, userController.sendAddInvoiceView)
 routerUser.post('/add-new-invoice',authMiddleware, validarInvoice, userController.storeNewInvoice)
