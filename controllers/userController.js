@@ -401,7 +401,7 @@ const userController = {
         const userToLogin = await UserModel.findUserByEmail(req.body.email)
         const isLogged = await bcrypt.compare(req.body.password,userToLogin.password)//Lanza un error si no se encuentra el usuario
         if (isLogged) {
-          delete userToLogin.password
+          //delete userToLogin.password
           req.session.userLogged = userToLogin
           res.redirect('/')
         } else {
