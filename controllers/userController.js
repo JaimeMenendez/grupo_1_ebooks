@@ -92,14 +92,30 @@ const userController = {
 
   updateUserPassword: (req,res) => {
     const user = req.session.userLogged
+    console.log(user)
     let errors = validationResult(req)
+    let w;
     if(errors.isEmpty()){
-      user.password = bcrypt.hashSync(req.body.contraseña,10)
-      saveUserToDB(user)
+      /* check = bcrypt.compareSync(req.body.contraseña, user.password)
+      if(check){
+        w = true
+        mensaje = `<p><i class="fas fa-exclamation-triangle"></i>La nueva contraseña debe ser diferente de la contraseña actual</p>`
+      }*/
+      const check = bcrypt.compareSync(req.body.contraseñaActual,user.password)
+      if(!check){
+        w = true
+        mensaje = `<p><i class="fas fa-exclamation-triangle"></i>La contraseña actual ingresada no es igual a la contraseña actual</p>`
+      }else{
+        w = false
+        user.password = bcrypt.hashSync(req.body.contraseña,10)
+        mensaje = `<p><i class="fas fa-exclamation-triangle"></i>La contraseña ha sido actualizada</p>`
+        saveUserToDB(user)
+      } 
       mensaje = `<p><i class="fas fa-exclamation-triangle"></i>La contraseña ha sido actualizada</p>`
+      w = false
       res.render('users/edit-data-user',{
         mensaje: mensaje,
-        warning: false,
+        warning: w,
         user: user,
         busquedas: seccion.busquedas,
         favoritos: seccion.favoritos,
@@ -110,7 +126,7 @@ const userController = {
       console.log('Hubo un error y no se guardaron los datos')
       const errores = errors.errors.reduce(
         (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
-        console.log('Mostrando los errores generados ', errores)
+        console.log('Mostrando los errores generados ', errors)
       res.render('users/edit-data-user',{
         mensaje: errores,
         warning: true,

@@ -76,6 +76,7 @@
             </form>
 
             <form class="editFormUser" action='/users/edit-data-user-password?_method=PUT' method="POST">
+
                 <div class="entradaDeDatosUser">
                     <label for="cambiarContraseña">¿Desea cambiar la contraseña?</label>
                     <select id="cambiarContraseña" name="cambiarContraseña" onchange="changeFunc()">
@@ -84,14 +85,17 @@
                     </select>
                 </div>
 
+                <input type="email" name="correo" id="correo" value="<%=user.email%>" style="display:none;">
+                
                 <div class="entradaDeDatosUser">
                     <label for="contraseñaActual" id="labelContraseñaActual">Ingrese tu contraseña actual</label>
                     <div class='passwordDiv'>
                         <input type="password" name="contraseñaActual" id="currentPasswordInput" placeholder="Contraseña actual" value = "" 
                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="La contraseña debe tener al menos una letra en mayúscula, una letra en minúscula y 8 caracteres"
-                            >        
+                            style="display:none">        
                     </div>
                 </div>
+                
                 
                 <div class="entradaDeDatosUser">
                     <label for="contraseña" id="labelContraseña">Ingrese tu nueva contraseña</label>

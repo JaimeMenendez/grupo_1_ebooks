@@ -33,22 +33,17 @@ const middleware = {
     ],
 
     validarDataUserPassword: [
-        body('cambiarContraseña').notEmpty().withMessage("Debe seleccionar una opción en 'Cambiar contraseña'"),
-        body('contraseñaActual').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña actual debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres."),                             
+        body('cambiarContraseña').notEmpty().withMessage("Debe seleccionar una opción en 'Cambiar contraseña'"),                             
+        body('contraseñaActual').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña actual debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres."),
         body('contraseña').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres."),
         body('confContraseña').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La confirmación de la contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres.")
                            .custom((value, {req}) => {
                                 if(value !== req.body.contraseña){
                                     console.log('Values es igual a: ', value)
-                                    throw new Error('Las contraseñas no son iguales')
-                                }else{
-                                    const user = req.session.userLogged
-                                    let check = bcrypt.compareSync(value,user.password)
-                                    if(check){
-                                        throw new Error('La nueva contraseña debe ser diferente a la contraseña actual')
-                                    }
+                                    throw new Error('Las contraseñas no son iguales')  
                                 }
-                            })
+                                return true
+                            })                 
     ]
 
 }
