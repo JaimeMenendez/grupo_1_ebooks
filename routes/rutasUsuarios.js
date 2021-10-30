@@ -11,7 +11,7 @@ const validarInvoice = middleware.validarInvoice
 const validarRegistro = middleware.validarRegistro
 const validarLogin = middleware.validarLogin
 const validarDataUser = middleware.validarDataUser
-const validarDataUserPassword = middleware.validarDataUserWithoutPassword
+const validarDataUserPassword = middleware.validarDataUserPassword
 
 // Multer
 const storageUser = multer.diskStorage({
