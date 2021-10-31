@@ -69,17 +69,18 @@ const userController = {
       mensaje = `<p><i class="fas fa-exclamation-triangle"></i>Datos de usuario editados correctamente</p>`
       saveUserToDB(user)
       console.log(user)
+      console.log('OldValues son: ', req.body)
       res.render('users/edit-data-user',{
         mensaje: mensaje,
         warning: false,
-        user: user,
+        user:user,
         busquedas: seccion.busquedas,
         favoritos: seccion.favoritos,
         userLogged: req.session.userLogged
       })
     } else {
-      //enviar un mensaje que diga que las contraseñas no son iguales
       console.log('Hubo un error y no se guardaron los datos')
+      console.log(req.body)
       const errores = errors.errors.reduce(
         (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
         console.log('Mostrando los errores generados ', errores)
@@ -97,7 +98,6 @@ const userController = {
   updateUserPassword: (req,res) => {
     const user = req.session.userLogged
     let errors = validationResult(req)
-    delete user.password
     if(errors.isEmpty()){
         user.password = bcrypt.hashSync(req.body.contraseña,10)
         console.log(req.body.contraseña)
@@ -165,7 +165,7 @@ const userController = {
         (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
       res.render('users/invoice', {
         mensaje: errores,
-        warning: true,
+        warning: false,
         edit: false,
         oldValues: req.body,
         direcciones: user.direcciones,

@@ -237,10 +237,11 @@ transition: background 0.2s !important;
     }
   }
 
-  .green-alert{
+  .green-alert p{
     color: rgba(21, 87, 36);
     background-color: rgb(212, 237, 218,0.7);
     border-color: #c3e6cb;
+    font-size: 1rem;
   }
 
   .closebtn1{

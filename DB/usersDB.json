@@ -88,15 +88,15 @@
     "id": 2
   },
   {
-    "firstName": "Tatiana ",
+    "firstName": "Tatiana Mileydy",
     "lastName": "Leal",
     "email": "mileydy.1125@gmail.com",
     "direcciones": [],
     "facturacion": [],
     "category": "cliente",
     "id": 3,
-    "imageUser": "public/images/userProfile/user-default2.png",
-    "password": "$2a$10$r4AVu2DrHTNn2YN1BRivj.GQbMhRVjw9KfrDNsCs86CwjmZqua5Qu"
+    "imageUser": "public/images/userProfile/userImage-1635705283519.png",
+    "password": "$2a$10$Suzn/cNIbA0B2VvZriZfBuUb7i0SMSuhlgkYbkHMqcJdlZnERsXW6"
   },
   {
     "firstName": "Juana",
