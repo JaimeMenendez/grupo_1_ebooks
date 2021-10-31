@@ -434,6 +434,9 @@ function findIndexById(element, collection) {
 function saveUserToDB(user){
   let users = JSON.parse(fs.readFileSync(usersPath,'utf-8'))
   const index = findIndexById(user, users)
-  users[index] = {...user, password:users[index].password}
+  if(!user.password)
+    users[index] = {...user, password:users[index].password}
+  else
+    users[index] = user
   fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
 }
