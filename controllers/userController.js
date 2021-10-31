@@ -59,9 +59,13 @@ const userController = {
     let errors = validationResult(req)
     if(errors.isEmpty()){
       user.firstName = req.body.nombre
-      user.lastname = req.body.apellido
+      user.lastName = req.body.apellido
       user.email = req.body.correo
-      req.file ? user.imageUser = req.file.path : user.imageUser = 'public/images/userProfile/user-default2.png'
+      if(req.file) {
+        user.imageUser = req.file.path
+      }else{ 
+        user.imageUser = 'public/images/userProfile/user-default2.png'
+      }
       mensaje = `<p><i class="fas fa-exclamation-triangle"></i>Datos de usuario editados correctamente</p>`
       saveUserToDB(user)
       console.log(user)
@@ -92,35 +96,22 @@ const userController = {
 
   updateUserPassword: (req,res) => {
     const user = req.session.userLogged
-    console.log(user)
     let errors = validationResult(req)
-    let w;
+    delete user.password
     if(errors.isEmpty()){
-      /* check = bcrypt.compareSync(req.body.contraseña, user.password)
-      if(check){
-        w = true
-        mensaje = `<p><i class="fas fa-exclamation-triangle"></i>La nueva contraseña debe ser diferente de la contraseña actual</p>`
-      }*/
-      const check = bcrypt.compareSync(req.body.contraseñaActual,user.password)
-      if(!check){
-        w = true
-        mensaje = `<p><i class="fas fa-exclamation-triangle"></i>La contraseña actual ingresada no es igual a la contraseña actual</p>`
-      }else{
-        w = false
         user.password = bcrypt.hashSync(req.body.contraseña,10)
-        mensaje = `<p><i class="fas fa-exclamation-triangle"></i>La contraseña ha sido actualizada</p>`
+        console.log(req.body.contraseña)
+        console.log(user.password)
         saveUserToDB(user)
-      } 
-      mensaje = `<p><i class="fas fa-exclamation-triangle"></i>La contraseña ha sido actualizada</p>`
-      w = false
-      res.render('users/edit-data-user',{
-        mensaje: mensaje,
-        warning: w,
-        user: user,
-        busquedas: seccion.busquedas,
-        favoritos: seccion.favoritos,
-        userLogged: req.session.userLogged
-      })
+        mensaje = `<p><i class="fas fa-exclamation-triangle"></i>La contraseña ha sido actualizada</p>`
+        res.render('users/edit-data-user',{
+          mensaje: mensaje,
+          warning: false,
+          user: user,
+          busquedas: seccion.busquedas,
+          favoritos: seccion.favoritos,
+          userLogged: req.session.userLogged
+        })
     } else {
       //enviar un mensaje que diga que las contraseñas no son iguales
       console.log('Hubo un error y no se guardaron los datos')

@@ -34,16 +34,28 @@ const middleware = {
 
     validarDataUserPassword: [
         body('cambiarContraseña').notEmpty().withMessage("Debe seleccionar una opción en 'Cambiar contraseña'"),                             
-        body('contraseñaActual').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña actual debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres."),
         body('contraseña').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres."),
         body('confContraseña').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La confirmación de la contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres.")
                            .custom((value, {req}) => {
                                 if(value !== req.body.contraseña){
                                     console.log('Values es igual a: ', value)
-                                    throw new Error('Las contraseñas no son iguales')  
+                                    throw new Error('La nueva contraseña y su confirmación no son iguales')  
                                 }
                                 return true
-                            })                 
+                            }),
+        body('contraseñaActual').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña actual debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres.")
+                            .custom((value, {req}) => {
+                                const user = req.session.userLogged
+                                let check = bcrypt.compareSync(value,user.password)
+                                if(!check){
+                                    throw new Error('La contraseña actual ingresada no es igual a la contraseña actual')
+                                }else{
+                                    if(value === req.body.contraseña){
+                                        throw new Error('La nueva contraseña debe ser diferente a la contraseña actual')
+                                    }
+                                }
+                                return true
+                            })
     ]
 
 }
