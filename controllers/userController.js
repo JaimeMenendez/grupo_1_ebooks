@@ -101,7 +101,7 @@ const userController = {
         console.log(req.body.contraseña)
         console.log(user.password)
         saveUserToDB(user)
-        mensaje = `<p><i class="fas fa-exclamation-triangle"></i>La contraseña ha sido actualizada</p>`
+        let mensaje = `<p><i class="fas fa-exclamation-triangle"></i>La contraseña ha sido actualizada</p>`
         res.render('users/edit-data-user',{
           mensaje: mensaje,
           warning: false,
