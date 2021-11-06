@@ -390,13 +390,14 @@ const userController = {
         const userToLogin = await UserModel.findUserByEmail(req.body.email)
         const isLogged = await bcrypt.compare(req.body.password,userToLogin.password)//Lanza un error si no se encuentra el usuario
         if (isLogged) {
-          res.cookie('userLogged', userToLogin, {
-            maxAge: 1000 * 60 * 60 * 24 * 7,
-            httpOnly: true
-          })
+          if(req.body.remember)
+            res.cookie('userLogged', userToLogin,{
+              maxAge: 1000 * 60 * 60 * 24 * 7,
+              httpOnly: true
+            })
           req.session.userLogged = userToLogin
           res.redirect('/')
-        } else {
+        }else {
           res.render('users/login',{mensaje:
             '<p><i class="fas fa-exclamation-triangle"></i>Su contraseña no es correcta. Por favor, intente de nuevo.</p>',
           warning: true,
