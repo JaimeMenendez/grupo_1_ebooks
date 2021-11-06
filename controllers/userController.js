@@ -63,8 +63,6 @@ const userController = {
       user.email = req.body.correo
       if(req.file) {
         user.imageUser = req.file.path
-      }else{ 
-        user.imageUser = 'public/images/userProfile/user-default2.png'
       }
       mensaje = `<p><i class="fas fa-exclamation-triangle"></i>Datos de usuario editados correctamente</p>`
       saveUserToDB(user)
