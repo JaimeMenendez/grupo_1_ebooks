@@ -61,7 +61,8 @@
     ],
     "category": "cliente",
     "id": 1,
-    "password": "$2a$10$kyOWCM3QtEwYdusjArna5OI39SkXguzS33riopieiKQUJ8NEMOlgC"
+    "password": "$2a$10$kyOWCM3QtEwYdusjArna5OI39SkXguzS33riopieiKQUJ8NEMOlgC",
+    "imageUser": "public/images/userProfile/userImage-1635706916546.jpeg"
   },
   {
     "firstName": "Alicia",

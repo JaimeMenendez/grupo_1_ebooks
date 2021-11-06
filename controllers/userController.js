@@ -63,8 +63,7 @@ const userController = {
       user.email = req.body.correo
       if(req.file) {
         user.imageUser = req.file.path
-      }else{ 
-        user.imageUser = 'public/images/userProfile/user-default2.png'
+
       }
       mensaje = `<p><i class="fas fa-exclamation-triangle"></i>Datos de usuario editados correctamente</p>`
       saveUserToDB(user)
@@ -392,7 +391,10 @@ const userController = {
         const userToLogin = await UserModel.findUserByEmail(req.body.email)
         const isLogged = await bcrypt.compare(req.body.password,userToLogin.password)//Lanza un error si no se encuentra el usuario
         if (isLogged) {
-          //delete userToLogin.password
+          res.cookie('userLogged', userToLogin, {
+            maxAge: 1000 * 60 * 60 * 24 * 7,
+            httpOnly: true
+          })
           req.session.userLogged = userToLogin
           res.redirect('/')
         } else {
@@ -421,6 +423,7 @@ const userController = {
   },
   logout: (req,res) => {
     delete req.session.userLogged
+    res.clearCookie("userLogged");
     res.redirect('/users/login')
   }
 }

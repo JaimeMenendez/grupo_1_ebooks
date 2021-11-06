@@ -40,7 +40,7 @@
                 <h3 class="formTitleUser">Editar inicio de sesión y seguridad</h3>
                 
                 <div class="entradaDeDatosUser">
-                    <img src="<%=user.imageUser%>" alt="userImage" id="userImg">
+                    <img src="<%=user.imageUser ? user.imageUser: 'images/userProfile/user-default2.png'%>" alt="userImage" id="userImg">
                     <input id="userImage" type="file" name="userImage" accept="image/*" multiple=false
                         onchange="loadFile(event)">
                 </div>

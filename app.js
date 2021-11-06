@@ -5,6 +5,8 @@ const routerUser = require('./routes/rutasUsuarios')
 const routerProducto = require('./routes/rutasProducto')
 const session = require('express-session')
 const morgan = require('morgan')
+const cookieParser = require('cookie-parser');
+const recuerdame = require('./middlewares/recuerdame')
 
 const app = express()
 
@@ -32,10 +34,15 @@ app.use(session({
 const methodOverride = require('method-override')
 app.use(methodOverride('_method'))
 
+app.use(cookieParser());
+
+app.use(recuerdame)
+
 // Routes
 app.use('/products', routerProducto)
 app.use('/users', routerUser)
 app.use(router)
+
 
 // Inicia el servidor
 const port = process.env.PORT || 3000
