@@ -36,8 +36,6 @@ app.use(methodOverride('_method'))
 
 app.use(cookieParser());
 
-app.use(recuerdame)
-
 // Routes
 app.use('/products', routerProducto)
 app.use('/users', routerUser)

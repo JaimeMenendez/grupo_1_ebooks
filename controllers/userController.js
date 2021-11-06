@@ -391,10 +391,7 @@ const userController = {
         const isLogged = await bcrypt.compare(req.body.password,userToLogin.password)//Lanza un error si no se encuentra el usuario
         if (isLogged) {
           if(req.body.remember)
-            res.cookie('userLogged', userToLogin,{
-              maxAge: 1000 * 60 * 60 * 24 * 7,
-              httpOnly: true
-            })
+            req.session.cookie.maxAge = 365 * 24 *60 * 60 * 1000; // 1 year
           req.session.userLogged = userToLogin
           res.redirect('/')
         }else {
