@@ -420,7 +420,6 @@ const userController = {
   },
   logout: (req,res) => {
     delete req.session.userLogged
-    res.clearCookie("userLogged");
     res.redirect('/users/login')
   }
 }
