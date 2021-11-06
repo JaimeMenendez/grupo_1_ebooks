@@ -6,7 +6,6 @@ const routerProducto = require('./routes/rutasProducto')
 const session = require('express-session')
 const morgan = require('morgan')
 const cookieParser = require('cookie-parser');
-const recuerdame = require('./middlewares/recuerdame')
 
 const app = express()
 
