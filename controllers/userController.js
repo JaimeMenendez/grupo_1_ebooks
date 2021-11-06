@@ -63,9 +63,8 @@ const userController = {
       user.email = req.body.correo
       if(req.file) {
         user.imageUser = req.file.path
-
       }
-      mensaje = `<p><i class="fas fa-exclamation-triangle"></i>Datos de usuario editados correctamente</p>`
+      let mensaje = `<p><i class="fas fa-exclamation-triangle"></i>Datos de usuario editados correctamente</p>`
       saveUserToDB(user)
       console.log(user)
       console.log('OldValues son: ', req.body)
