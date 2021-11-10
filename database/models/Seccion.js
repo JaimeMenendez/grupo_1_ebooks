@@ -1,17 +1,14 @@
-// Model for sections 
-const Sequelize = require('sequelize')
-
-module.export= (sequelize, dataTypes) => {
+module.exports= (sequelize, dataTypes) => {
     let alias = 'section';
     let cols = {
         id: {
-            type: Sequelize.INTEGER(10),
+            type: dataTypes.INTEGER(10),
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
         },
         name:{
-            type: Sequelize.STRING(50),
+            type: dataTypes.STRING(50),
             allowNull: false
         }
     };

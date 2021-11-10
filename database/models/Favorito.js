@@ -1,5 +1,5 @@
 module.exports= (sequelize, dataTypes) => {
-    let alias = 'subsection';
+    let alias = 'Favorito';
     let cols = {
         id: {
             type: dataTypes.INTEGER(10),
@@ -7,20 +7,25 @@ module.exports= (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        name:{
-            type: dataTypes.STRING(50),
+        idUsuario:{
+            type: dataTypes.INTEGER(10),
             allowNull: false
+        },
+        idLibro:{
+            type: dataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
         }
     };
     let config = {
-        tableName: 'subsections',
+        tableName: 'favoritos',
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
         deletedAt: false
     }
 
-    const Section = sequelize.define(alias,cols,config);
+    const Favoritos = sequelize.define(alias,cols,config);
     //Section.associate = function (models) {};
-    return Section;
+    return Favoritos;
 }
