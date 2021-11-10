@@ -7,7 +7,7 @@ const session = require('express-session')
 const morgan = require('morgan')
 const cookieParser = require('cookie-parser');
 const recuerdame = require('./middlewares/recuerdame')
-const db = require("./database/models");
+const dbInit = require("./database/models/init");
 
 const app = express()
 
@@ -44,13 +44,12 @@ app.use('/products', routerProducto)
 app.use('/users', routerUser)
 app.use(router)
 
-db.sequelize.sync().then(() => {
-
- console.log('Se ha sincronizado la base de datos')
- 
+dbInit().then(() => {
+  console.log('Se ha sincronizado la base de datos')
+  // Inicia el servidor
+  const port = process.env.PORT || 3000
+  app.listen(port, () =>
+    console.log('Servidor Corriendo en el puerto', port))
 })
 
-// Inicia el servidor
-const port = process.env.PORT || 3000
-app.listen(port, () =>
-  console.log('Servidor Corriendo en el puerto', port))
+
