@@ -11,16 +11,18 @@ const db = {};
 
 const initialize = async () => {
   let sequelize;
- 
+
   if (config.use_env_variable) {
     sequelize = new Sequelize(process.env[config.use_env_variable], config);
   } else {
-    let connection = await mysql.createConnection({
-      host    :config.host,
-      user    :config.username,
-      password:config.password
-  });
-    await connection.query(`CREATE DATABASE IF NOT EXISTS \`${config.database}\`;`);
+    if (config.dialect === 'mysql') {
+      let connection = await mysql.createConnection({
+        host: config.host,
+        user: config.username,
+        password: config.password
+      });
+      await connection.query(`CREATE DATABASE IF NOT EXISTS \`${config.database}\`;`);
+    }
     sequelize = new Sequelize(config.database, config.username, config.password, config);
   }
 
@@ -28,7 +30,7 @@ const initialize = async () => {
     .readdirSync(__dirname)
     .filter(file => {
       console.log(file);
-      return (file.indexOf('.') !== 0) && (file !== 'index.js')&& (file !== 'init.js') && (file !== 'models.js') && (file.slice(-3) === '.js');
+      return (file.indexOf('.') !== 0) && (file !== 'index.js') && (file !== 'init.js') && (file !== 'models.js') && (file.slice(-3) === '.js');
     })
     .forEach(file => {
 
@@ -42,7 +44,7 @@ const initialize = async () => {
     }
   });
 
-  return  sequelize.sync( {force: true});
+  return sequelize.sync({ force: true });
 }
 
 module.exports = initialize;
