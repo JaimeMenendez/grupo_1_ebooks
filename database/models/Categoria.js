@@ -25,6 +25,10 @@ module.exports = (sequelize, dataTypes) => {
         Categoria.belongsToMany(models.libro, {
             through: 'libros_categorias'
         })
+
+        Categoria.belongsToMany(models.subcategoria, {
+            through: 'categorias_subcategorias'
+        })
     }
     return Categoria;
 
