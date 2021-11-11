@@ -21,6 +21,7 @@ const initialize = async () => {
         user: config.username,
         password: config.password
       });
+      await connection.query(`DROP DATABASE IF EXISTS \`${config.database}\`;`);
       await connection.query(`CREATE DATABASE IF NOT EXISTS \`${config.database}\`;`);
     }
     sequelize = new Sequelize(config.database, config.username, config.password, config);

@@ -63,7 +63,7 @@ module.exports= (sequelize, dataTypes) => {
     const Direccion = sequelize.define(alias, cols, config);
     Direccion.associate = function (models) {
         Direccion.belongsTo(models.usuario, {
-            as: 'usuario',
+            as: 'usuarios',
             foreignKey: 'idUsuario'
         });
     };

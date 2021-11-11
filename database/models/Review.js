@@ -20,9 +20,8 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         idLibro: {
-            type: dataTypes.BOOLEAN,
+            type: dataTypes.INTEGER(10),
             allowNull: false,
-            defaultValue: false
         }
     };
     let config = {

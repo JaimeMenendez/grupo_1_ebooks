@@ -1,7 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = 'usuario';
     let cols = {
-        idUsuario: {
+        id: {
             type: dataTypes.INTEGER(10),
             primaryKey: true,
             allowNull: false,
@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(50),
             allowNull: false,
             validate: {
-                isEmail: { args: true, msg: 'El correo no es valido' }
+                isEmail: { args: true, msg: 'El correo no es válido' }
             }
         },
         password: {
@@ -61,7 +61,13 @@ module.exports = (sequelize, dataTypes) => {
                 as: 'direcciones',
                 foreignKey: 'idUsuario'
             });
+
+            Usuario.belongsToMany(models.libro, {
+                through: 'favoritos'
+            })
         }
+
+        
     };
     return Usuario;
 }

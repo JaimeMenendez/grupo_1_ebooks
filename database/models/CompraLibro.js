@@ -12,9 +12,8 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         idLibro: {
-            type: dataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: false
+            type: dataTypes.INTEGER(10),
+            allowNull: false
         },
         cantidad: {
             type: dataTypes.INTEGER(10),
