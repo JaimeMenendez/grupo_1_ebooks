@@ -1,5 +1,5 @@
-module.exports= (sequelize, dataTypes) => {
-    let alias = 'Subcategoria';
+module.exports = (sequelize, dataTypes) => {
+    let alias = 'MetodoDePago';
     let cols = {
         id: {
             type: dataTypes.INTEGER(10),
@@ -7,20 +7,21 @@ module.exports= (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        name:{
+        metodo: {
             type: dataTypes.STRING(50),
             allowNull: false
         }
     };
     let config = {
-        tableName: 'subsections',
+        tableName: 'metodosDePagos',
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
-        deletedAt: false
+        deleteAt: false
     }
 
-    const Section = sequelize.define(alias,cols,config);
-    //Section.associate = function (models) {};
-    return Section;
+    const MetodoDePago = sequelize.define(alias, cols, config);
+    // MetodoDePago.associate = function (models) {}
+    return MetodoDePago;
+
 }
