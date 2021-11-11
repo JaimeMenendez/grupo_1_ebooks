@@ -1,5 +1,5 @@
 module.exports= (sequelize, dataTypes) => {
-    let alias = 'Subcategoria';
+    let alias = 'subcategoria';
     let cols = {
         id: {
             type: dataTypes.INTEGER(10),
@@ -13,14 +13,18 @@ module.exports= (sequelize, dataTypes) => {
         }
     };
     let config = {
-        tableName: 'subsections',
+        tableName: 'subcategorias',
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
         deletedAt: false
     }
 
-    const Section = sequelize.define(alias,cols,config);
-    //Section.associate = function (models) {};
-    return Section;
+    const Subcategoria = sequelize.define(alias,cols,config);
+    Subcategoria.associate = function (models) {
+        Subcategoria.belongsToMany(models.libro, {
+            through: 'libros_subcategorias'
+        })
+    };
+    return Subcategoria;
 }

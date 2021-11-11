@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Categoria';
+    let alias = 'categoria';
     let cols = {
         id: {
             type: dataTypes.INTEGER(10),
@@ -21,7 +21,11 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const Categoria = sequelize.define(alias, cols, config);
-    // Categoria.associate = function (models) {}
+    Categoria.associate = function (models) {
+        Categoria.belongsToMany(models.libro, {
+            through: 'libros_categorias'
+        })
+    }
     return Categoria;
 
 }

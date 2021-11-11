@@ -1,7 +1,7 @@
 module.exports= (sequelize, dataTypes) => {
-    let alias = 'Direccion';
+    let alias = 'direccion';
     let cols = {
-        idDireccion: {
+        id: {
             type: dataTypes.INTEGER(10),
             primaryKey: true,
             allowNull: false,
@@ -66,6 +66,7 @@ module.exports= (sequelize, dataTypes) => {
             as: 'usuarios',
             foreignKey: 'idUsuario'
         });
+        Direccion.hasMany(models.datosFacturacion)
     };
     return Direccion;
 }

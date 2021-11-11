@@ -1,5 +1,5 @@
 module.exports= (sequelize, dataTypes) => {
-    let alias = 'Facturacion';
+    let alias = 'datosFacturacion';
     let cols = {
         id: {
             type: dataTypes.INTEGER(10),
@@ -15,14 +15,6 @@ module.exports= (sequelize, dataTypes) => {
             type: dataTypes.STRING(13),
             allowNull: false
         },
-        idDireccion:{
-            type: dataTypes.INTEGER(10),
-            allowNull: false
-        },
-        idUsuario:{
-            type: dataTypes.INTEGER(10),
-            allowNull: false
-        },
         predeterminado:{
             type: dataTypes.BOOLEAN,
             allowNull: false,
@@ -30,7 +22,7 @@ module.exports= (sequelize, dataTypes) => {
         }
     };
     let config = {
-        tableName: 'facturacionInfo',
+        tableName: 'datosFacturacion',
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
@@ -38,6 +30,8 @@ module.exports= (sequelize, dataTypes) => {
     }
 
     const Facturacion = sequelize.define(alias,cols,config);
-    //Section.associate = function (models) {};
+    Facturacion.associate = function (models) {
+        Facturacion.belongsTo(models.direccion);
+    };
     return Facturacion;
 }

@@ -65,6 +65,7 @@ module.exports = (sequelize, dataTypes) => {
             Usuario.belongsToMany(models.libro, {
                 through: 'favoritos'
             })
+
         }
 
         
