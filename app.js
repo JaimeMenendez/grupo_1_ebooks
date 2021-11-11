@@ -5,7 +5,7 @@ const routerUser = require('./routes/rutasUsuarios')
 const routerProducto = require('./routes/rutasProducto')
 const session = require('express-session')
 const morgan = require('morgan')
-const cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser')
 
 const app = express()
 
