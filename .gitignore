@@ -2,6 +2,7 @@
 # dependencies
 /node_modules
 /database/mysql-data
+/database/config/config.js
 /.pnp
 .pnp.js
 ./package-lock.json
