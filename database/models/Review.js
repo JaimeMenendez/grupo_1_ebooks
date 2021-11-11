@@ -8,7 +8,7 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         contenido: {
-            type: dataTypes.TEXT,
+            type: dataTypes.STRING(1000),
             allowNull: true
         },
         rating: {
@@ -20,9 +20,8 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         idLibro: {
-            type: dataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: false
+            type: dataTypes.INTEGER(10),
+            allowNull: false
         }
     };
     let config = {
