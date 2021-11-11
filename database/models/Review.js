@@ -8,7 +8,7 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         contenido: {
-            type: dataTypes.TEXT,
+            type: dataTypes.STRING(1000),
             allowNull: true
         },
         rating: {
