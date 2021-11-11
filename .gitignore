@@ -2,6 +2,7 @@
 # dependencies
 /node_modules
 /database/mysql-data
+/database/config/config.js
 /.pnp
 .pnp.js
 ./package-lock.json
@@ -19,3 +20,4 @@ package-lock.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*package-lock.json
+database/config/config.js

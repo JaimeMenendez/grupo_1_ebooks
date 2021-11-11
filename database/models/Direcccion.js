@@ -1,49 +1,52 @@
 module.exports= (sequelize, dataTypes) => {
     let alias = 'Direccion';
     let cols = {
-        id: {
+        idDireccion: {
             type: dataTypes.INTEGER(10),
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
         },
-        idUsuario:{
+        idUsuario: {
             type: dataTypes.INTEGER(10),
             allowNull: false
         },
-        nombre:{
+        nombre: {
             type: dataTypes.STRING(100),
             allowNull: false
         },
-        pais:{
+        pais: {
             type: dataTypes.STRING(50),
             allowNull: false
         },
-        ciudad:{
+        ciudad: {
             type: dataTypes.STRING(50),
             allowNull: false
         },
-        direccion:{
+        direccion: {
             type: dataTypes.STRING(100),
             allowNull: false
         },
-        colonia:{
+        colonia: {
             type: dataTypes.STRING(50),
             allowNull: false
         },
-        delegacion:{
+        delegacion: {
             type: dataTypes.STRING(50),
             allowNull: false
         },
-        cp:{
+        cp: {
             type: dataTypes.STRING(5),
-            allowNull: false
+            allowNull: false,
+            validate: {
+                isNumeric: true
+            }
         },
-        telefono:{
+        telefono: {
             type: dataTypes.STRING(20),
             allowNull: false
         },
-        predeterminado:{
+        predeterminado: {
             type: dataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: false
@@ -57,7 +60,12 @@ module.exports= (sequelize, dataTypes) => {
         deletedAt: false
     }
 
-    const Direccion = sequelize.define(alias,cols,config);
-    //Section.associate = function (models) {};
+    const Direccion = sequelize.define(alias, cols, config);
+    Direccion.associate = function (models) {
+        Direccion.belongsTo(models.usuario, {
+            as: 'usuario',
+            foreignKey: 'idUsuario'
+        });
+    };
     return Direccion;
 }

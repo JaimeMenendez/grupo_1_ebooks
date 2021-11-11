@@ -7,6 +7,4 @@ services:
     environment:
       - MYSQL_DATABASE=insidebooksDB
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-    volumes:
-      - ./database/mysql-data/:/var/lib/mysql
     restart: always
