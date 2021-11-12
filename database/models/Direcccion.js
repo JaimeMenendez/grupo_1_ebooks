@@ -7,10 +7,6 @@ module.exports= (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        idUsuario: {
-            type: dataTypes.INTEGER(10),
-            allowNull: false
-        },
         nombre: {
             type: dataTypes.STRING(100),
             allowNull: false
@@ -35,8 +31,8 @@ module.exports= (sequelize, dataTypes) => {
             type: dataTypes.STRING(50),
             allowNull: false
         },
-        cp: {
-            type: dataTypes.STRING(5),
+        codigoPostal: {
+            type: dataTypes.STRING(10),
             allowNull: false,
             validate: {
                 isNumeric: true

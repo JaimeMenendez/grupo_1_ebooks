@@ -7,15 +7,15 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        nombre: {
+        firstName: {
             type: dataTypes.STRING(50),
             allowNull: false
         },
-        apellidos: {
+        lastName: {
             type: dataTypes.STRING(50),
             allowNull: false
         },
-        correo: {
+        email: {
             type: dataTypes.STRING(50),
             allowNull: false,
             validate: {
@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
             }
         },
         password: {
-            type: dataTypes.STRING(50),
+            type: dataTypes.STRING(100),
             allowNull: false,
             validate: {
                 is: {
@@ -32,18 +32,14 @@ module.exports = (sequelize, dataTypes) => {
                 }
             }
         },
-        rol: {
-            type: dataTypes.STRING(50),
-            allowNull: false
-        },
-        avatar: {
+        imageUser: {
             type: dataTypes.STRING(200),
             allowNull: true
         },
         estado: {
             type: dataTypes.BOOLEAN,
             allowNull: false,
-            defaultValue: false
+            defaultValue: true
         }
     };
     let config = {
@@ -68,6 +64,7 @@ module.exports = (sequelize, dataTypes) => {
                 through: 'favoritos'
             })
 
+            Usuario.belongsTo(models.rol);
         }
 
         

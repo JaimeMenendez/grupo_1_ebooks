@@ -9,7 +9,7 @@ const config = require(__dirname + '/../config/config.js')[env];
 const mysql = require('mysql2/promise');
 const db = {};
 let librosjson = require('../../DB/librosDB.json');
-const { libro } = require('../../controllers/productoController');
+let usersjson = require('../../DB/usersDB.json');
 
 const initialize = async () => {
   let sequelize;
@@ -54,6 +54,8 @@ const initialize = async () => {
 
   await sequelize.sync({ force: true });
 
+  await db.rol.bulkCreate([{nombre: "cliente"},{nombre: "admin"}]);
+
   for (const libro of librosjson) {
     let libroDB = await db.libro.create(libro);
     let subcategoria = await db.subcategoria.findOrCreate({ where: { nombre: libro.subcategoria } });
@@ -61,6 +63,25 @@ const initialize = async () => {
     await subcategoria[0].addLibro(libroDB);
     await categoria[0].addLibro(libroDB);
     await categoria[0].addSubcategoria(subcategoria[0]);
+  }
+
+  for (const user of usersjson) {
+    let userDB = await db.usuario.create(user);
+    if(user.direcciones){
+      for (const direccion of user.direcciones) {
+        delete direccion.id
+        let direccionDB = await db.direccion.create(direccion);
+        await direccionDB.setUsuarios(userDB);
+      }
+    }
+
+    if(user.facturacion){
+      for (const facturacion of user.facturacion) {
+        delete facturacion.id
+        let facturacionDB = await db.datosFacturacion.create(facturacion);
+        await facturacionDB.setDireccion(await db.direccion.findByPk(facturacion.idDireccion));
+      }
+    }
   }
 
 }

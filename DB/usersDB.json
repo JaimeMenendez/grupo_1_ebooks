@@ -120,38 +120,6 @@
     "id": 5
   },
   {
-    "firstName": "Maria",
-    "lastName": "Angeles",
-    "email": "maria@gmail.com",
-    "direcciones": [
-      {
-        "nombre": "Machine Learning with R",
-        "pais": "Argentina",
-        "estado": "Nuevo León",
-        "ciudad": "General Escobedo",
-        "direccion": "Claveles 605",
-        "colonia": "Gladiolas",
-        "delegacion": "d",
-        "codigoPostal": "66056",
-        "telefono": "9982197111",
-        "id": 1,
-        "predeterminada": true
-      }
-    ],
-    "facturacion": [
-      {
-        "razonSocial": "s",
-        "rfc": "s",
-        "idDireccion": 1,
-        "id": 1,
-        "predeterminada": true
-      }
-    ],
-    "category": "cliente",
-    "id": 6,
-    "password": "$2a$10$ZWfXUJ8U83zLfdrTJZAck.12zV7OIcWoaQKXzhgcwpLmjnGZVrpXq"
-  },
-  {
     "firstName": "Tatiana",
     "lastName": "Leal",
     "email": "mileydy.1125@hotmail.com",
