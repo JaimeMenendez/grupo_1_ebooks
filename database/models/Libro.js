@@ -7,7 +7,7 @@ module.exports= (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        titulo:{
+        nombreLibro:{
             type: dataTypes.STRING(100),
             allowNull: false
         },
@@ -19,7 +19,7 @@ module.exports= (sequelize, dataTypes) => {
             type: dataTypes.STRING(50),
             allowNull: false
         },
-        isnb:{
+        isbn:{
             type: dataTypes.STRING(13),
             allowNull: false
         },
@@ -39,30 +39,31 @@ module.exports= (sequelize, dataTypes) => {
             type: dataTypes.STRING(4),
             allowNull: false
         },
-        edicion:{
-            type: dataTypes.STRING(50),
-            allowNull: false
+        paginas:{
+            type: dataTypes.INTEGER(10),
+            allowNull: false    
         },
-        detallesLibro:{
-            type: dataTypes.STRING(500),
+        detallesDelLibro:{
+            type: dataTypes.STRING(2000),
             allowNull: false
         },
         detallesAutor:{
-            type: dataTypes.STRING(500),
+            type: dataTypes.STRING(2000),
             allowNull: false
         },
-        puntuacion:{
-            type: dataTypes.DOUBLE,
-            allowNull: false
+        portada:{
+            type: dataTypes.STRING(500),
+            allowNull: true
         },
         puntuacion:{
             type: dataTypes.INTEGER,
-            allowNull: false
+            allowNull: true,
+            defaultValue: 0
         },
         disponible:{
             type: dataTypes.BOOLEAN,
             allowNull: false,
-            defaultValue: false
+            defaultValue: true
         }
     };
     let config = {

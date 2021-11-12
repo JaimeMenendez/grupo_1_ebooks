@@ -46,7 +46,7 @@ app.use(router)
 
 dbInit().then(() => {
   console.log('Se ha sincronizado la base de datos')
-  // Inicia el servidor
+ 
   const port = process.env.PORT || 3000
   app.listen(port, () =>
     console.log('Servidor Corriendo en el puerto', port))
