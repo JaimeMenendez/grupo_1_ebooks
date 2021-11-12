@@ -89,6 +89,7 @@ module.exports= (sequelize, dataTypes) => {
         })
 
         Libro.hasMany(models.compraLibro);
+        
 
 
     };

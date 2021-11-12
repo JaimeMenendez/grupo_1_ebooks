@@ -9,7 +9,8 @@ module.exports = (sequelize, dataTypes) => {
         },
         nombre: {
             type: dataTypes.STRING(50),
-            allowNull: false
+            allowNull: false,
+            unique: true
         }
     };
     let config = {
@@ -26,6 +27,7 @@ module.exports = (sequelize, dataTypes) => {
             through: 'libros_categorias',
             foreignKey: 'categoria_id'
         })
+        
 
         Categoria.belongsToMany(models.subcategoria, {
             through: 'categorias_subcategorias',

@@ -8,7 +8,8 @@ const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.js')[env];
 const mysql = require('mysql2/promise');
 const db = {};
-const librosjson = require('../../DB/librosDB.json')
+let librosjson = require('../../DB/librosDB.json');
+const { libro } = require('../../controllers/productoController');
 
 const initialize = async () => {
   let sequelize;
@@ -52,8 +53,16 @@ const initialize = async () => {
   global.db = db;
 
   await sequelize.sync({ force: true });
-  await db.libro.bulkCreate(librosjson)
-  
+
+  for (let i = 0; i < librosjson.length; i++) {
+    let libroDB = await db.libro.create(librosjson[i]);
+    let subcategoria = await db.subcategoria.findOrCreate({ where: { nombre: librosjson[i].subcategoria } });
+    let categoria = await db.categoria.findOrCreate({ where: { nombre: librosjson[i].categoria } });
+    await subcategoria[0].addLibro(libroDB);
+    await categoria[0].addLibro(libroDB);
+    await categoria[0].addSubcategoria(subcategoria[0]);
+  }
+
 }
 
 module.exports = initialize;
