@@ -1,19 +1,11 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'CompraLibro';
+    let alias = 'compraLibro';
     let cols = {
         id: {
             type: dataTypes.INTEGER(10),
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
-        },
-        idCompra: {
-            type: dataTypes.INTEGER(10),
-            allowNull: false
-        },
-        idLibro: {
-            type: dataTypes.INTEGER(10),
-            allowNull: false
         },
         cantidad: {
             type: dataTypes.INTEGER(10),
@@ -39,7 +31,10 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const CompraLibro = sequelize.define(alias, cols, config);
-    // CompraLibro.associate = function (models) {}
+    CompraLibro.associate = function (models) {
+        CompraLibro.belongsTo(models.compra);
+        CompraLibro.belongsTo(models.libro);
+    }
     return CompraLibro;
 
 }

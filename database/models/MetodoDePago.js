@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'MetodoDePago';
+    let alias = 'metodoDePago';
     let cols = {
         id: {
             type: dataTypes.INTEGER(10),
@@ -21,7 +21,9 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const MetodoDePago = sequelize.define(alias, cols, config);
-    // MetodoDePago.associate = function (models) {}
+    MetodoDePago.associate = function (models) {
+        MetodoDePago.hasMany(models.compra);
+    }
     return MetodoDePago;
 
 }

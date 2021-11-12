@@ -14,14 +14,6 @@ module.exports = (sequelize, dataTypes) => {
         rating: {
             type: dataTypes.DECIMAL(3,1),
             allowNull: false
-        },
-        idUsuario: {
-            type: dataTypes.INTEGER(10),
-            allowNull: false
-        },
-        idLibro: {
-            type: dataTypes.INTEGER(10),
-            allowNull: false,
         }
     };
     let config = {
@@ -33,7 +25,10 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const Review = sequelize.define(alias, cols, config);
-    // Review.associate = function (models) {}
+    Review.associate = function (models) {
+        Review.belongsTo(models.usuario);
+        Review.belongsTo(models.libro);
+    }
     return Review;
 
 }

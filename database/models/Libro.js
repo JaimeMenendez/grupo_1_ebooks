@@ -87,6 +87,8 @@ module.exports= (sequelize, dataTypes) => {
             through: 'libros_categorias'
         })
 
+        Libro.hasMany(models.compraLibro);
+
 
     };
     return Libro;

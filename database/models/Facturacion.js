@@ -32,6 +32,7 @@ module.exports= (sequelize, dataTypes) => {
     const Facturacion = sequelize.define(alias,cols,config);
     Facturacion.associate = function (models) {
         Facturacion.belongsTo(models.direccion);
+        Facturacion.hasMany(models.compra);
     };
     return Facturacion;
 }

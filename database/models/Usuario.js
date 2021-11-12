@@ -62,6 +62,8 @@ module.exports = (sequelize, dataTypes) => {
                 foreignKey: 'idUsuario'
             });
 
+            Usuario.hasMany(models.compra);
+
             Usuario.belongsToMany(models.libro, {
                 through: 'favoritos'
             })

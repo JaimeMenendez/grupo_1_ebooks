@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        name: {
+        nombre: {
             type: dataTypes.STRING(50),
             allowNull: false
         }
@@ -23,11 +23,13 @@ module.exports = (sequelize, dataTypes) => {
     const Categoria = sequelize.define(alias, cols, config);
     Categoria.associate = function (models) {
         Categoria.belongsToMany(models.libro, {
-            through: 'libros_categorias'
+            through: 'libros_categorias',
+            foreignKey: 'categoria_id'
         })
 
         Categoria.belongsToMany(models.subcategoria, {
-            through: 'categorias_subcategorias'
+            through: 'categorias_subcategorias',
+            foreignKey: 'categoria_id'
         })
     }
     return Categoria;
