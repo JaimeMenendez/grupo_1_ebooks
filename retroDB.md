@@ -17,3 +17,4 @@
 13. compras_libros --> CompraLibro (implementado)
 14. metodosPago --> MetodoDePago (implementado)
 15. reviews --> Review (implementado)
+16. rol --> Rol (implementado)

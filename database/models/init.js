@@ -52,14 +52,32 @@ const initialize = async () => {
 
   global.db = db;
 
+  //fuerza a crear la base de datos desde cero. Fuerza la sincronización
   await sequelize.sync({ force: true });
 
+  //crea 2 registros (roles) a la tabla Rol.js
   await db.rol.bulkCreate([{nombre: "cliente"},{nombre: "admin"}]);
 
+  //
   for (const libro of librosjson) {
     let libroDB = await db.libro.create(libro);
-    let subcategoria = await db.subcategoria.findOrCreate({ where: { nombre: libro.subcategoria } });
-    let categoria = await db.categoria.findOrCreate({ where: { nombre: libro.categoria } });
+
+    let subcategoria = await db.subcategoria.findOrCreate({ 
+        where: { 
+          nombre: libro.subcategoria 
+        }
+    });
+
+    let categoria = await db.categoria.findOrCreate({ 
+      where: { 
+        nombre: libro.categoria 
+      } 
+    });
+
+    //findOrCreate devuelve un array. array[0] devuelve el objeto creado/encontrado
+    //array[1] devuelve un boolean indicando si creó/encontró
+    //addLibro es un método que se crea después de la relación.
+    //hasMany crea un método que se llama add+nombreModelo
     await subcategoria[0].addLibro(libroDB);
     await categoria[0].addLibro(libroDB);
     await categoria[0].addSubcategoria(subcategoria[0]);
