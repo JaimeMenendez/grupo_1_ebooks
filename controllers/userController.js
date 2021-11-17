@@ -1,4 +1,6 @@
 const fs = require('fs')
+const db = require('../database/models')
+const sequelize = db.sequelize
 const path = require('path')
 const bcrypt = require('bcryptjs')
 const UserModel = require('../Model/User')
@@ -335,6 +337,62 @@ const userController = {
     res.render('users/register', {userLogged: req.session.userLogged})
   },
 
+  register: async (req, res) => {
+    let errors = validationResult(req)
+    if (errors.isEmpty()) {
+      try {
+        let userDBS = await db.usuario.findOrCreate({
+          where:{
+            email: req.body.email
+          },
+          defaults: {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10),
+            imageUser: 'images/userProfile/user-default2.png',
+            estado: true
+          }
+        })
+        console.log('Lo que se regresó de la base de datos fue: ', userDBS)
+  
+        if (userDBS[1]) {
+          console.log('Tu cuenta ha sido creada exitosamente!!')
+          res.render('users/login', {
+            mensaje: 'Tu cuenta ha sido creada, ahora puedes iniciar sesión.',
+            warning: false
+          })
+        } else {
+          res.render('users/register', {
+            mensaje:
+              '<p><i class="fas fa-exclamation-triangle"></i>El correo que está utilizando ya está registrado. Intente iniciar sesión o regístrese con otro correo.</p>',
+            warning: true,
+            oldValues: req.body
+          })
+        }
+      }catch(error){
+        console.log('Ocurrió un error ', error)
+      }
+    } else {
+      const errores = errors.errors.reduce(
+        (acc, error) =>
+          acc +
+          `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,
+        ''
+      )
+      res.render('users/register', {
+        mensaje: errores,
+        warning: true,
+        oldValues: req.body
+      })
+    }
+  },
+
+
+  /* registerView: (req, res) => {
+    res.render('users/register', {userLogged: req.session.userLogged})
+  },
+
   register: (req, res) => {
     let errors = validationResult(req)
     if (errors.isEmpty()) {
@@ -376,7 +434,7 @@ const userController = {
         oldValues: req.body
       })
     }
-  },
+  }, */
   /** **************************************************/
   /** ************** METHODS FOR LOGIN **************/
   /** **************************************************/
