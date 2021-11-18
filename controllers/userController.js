@@ -412,7 +412,7 @@ const userController = {
     let errors = validationResult(req)
     if (errors.isEmpty()) { // Ocurre cuando no hay errores de validacion
       try {
-        await db.usuario.getDireccion()
+        //await db.usuario.getDireccion()
         const userToLogin = await db.usuario.findOne({
           include: [{association: 'direcciones'}],
           where: { email: req.body.email}
