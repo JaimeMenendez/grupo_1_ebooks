@@ -8,29 +8,31 @@
             </div>
         </a>
 
-        <% user.direcciones.forEach(address => {   %> 
-            <div class="addressBox">
-               <% if(address.predeterminada) {%> 
-                <div class="defaultAdress">Predeterminada: &nbsp &nbsp <img src="/public/images/Logo_2.2.png"></div>
-                <% } %> 
-                <div class="addressContent">
-                    <p><strong><%= address.nombre %></strong></p>
-                    <p><%= address.direccion %></p>
-                    <p><%= address.delegacion.trim() === "" ? address.colonia : address.delegacion + ", " + address.colonia %></p>
-                    <p><%= address.ciudad %>, <%= address.estado %></p>
-                    <p><%= address.codigoPostal %></p>
-                    <p><%= address.pais %></p>
-                    <p>Teléfono de contacto: <span><%= address.telefono %></span></p>
+        <%if (user.direcciones) {%>
+            <% user.direcciones.forEach(address => {   %> 
+                <div class="addressBox">
+                   <% if(address.predeterminada) {%> 
+                    <div class="defaultAdress">Predeterminada: &nbsp &nbsp <img src="/public/images/Logo_2.2.png"></div>
+                    <% } %> 
+                    <div class="addressContent">
+                        <p><strong><%= address.nombre %></strong></p>
+                        <p><%= address.direccion %></p>
+                        <p><%= address.delegacion.trim() === "" ? address.colonia : address.delegacion + ", " + address.colonia %></p>
+                        <p><%= address.ciudad %>, <%= address.estado %></p>
+                        <p><%= address.codigoPostal %></p>
+                        <p><%= address.pais %></p>
+                        <p>Teléfono de contacto: <span><%= address.telefono %></span></p>
+                    </div>
+        
+                    <div class="addressButtons">
+                        <a href="/users/edit-address/<%= address.id %>">Editar</a> | <form action="/users/delete-address/<%= address.id %>?_method=DELETE" method="POST"><button onclick="return confirm('¿Estás seguro que desea eliminar esta dirección?')" type="submit">Descartar</button></form>
+                        <% if(!address.predeterminada){ %> 
+                        | <form action="/users/make-default-address/<%= address.id %>?_method=PUT" method="POST"><button onclick="return confirm('¿Estás seguro que desea utilizar esta dirección como predeterminada?')" type="submit">Predeterminada</button></form>
+                        <% } %>
+                    </div>
                 </div>
-    
-                <div class="addressButtons">
-                    <a href="/users/edit-address/<%= address.id %>">Editar</a> | <form action="/users/delete-address/<%= address.id %>?_method=DELETE" method="POST"><button onclick="return confirm('¿Estás seguro que desea eliminar esta dirección?')" type="submit">Descartar</button></form>
-                    <% if(!address.predeterminada){ %> 
-                    | <form action="/users/make-default-address/<%= address.id %>?_method=PUT" method="POST"><button onclick="return confirm('¿Estás seguro que desea utilizar esta dirección como predeterminada?')" type="submit">Predeterminada</button></form>
-                    <% } %>
-                </div>
-            </div>
-        <% }) %> 
+            <% }) %> 
+        <%}%>
     </div>
 
 

@@ -8,34 +8,36 @@
             </div>
         </a>
         <% const direcciones = user.direcciones %>
-        <% user.facturacion.forEach(invoice => {   %> 
-            <div class="addressBox">
-                <% if(invoice.predeterminada) {%> 
-                    <div class="defaultAdress">
-                        Predeterminada: &nbsp &nbsp 
-                        <img src="/public/images/Logo_2.2.png">
+        <%if (user.facturacion) {%> 
+            <% user.facturacion.forEach(invoice => {   %> 
+                <div class="addressBox">
+                    <% if(invoice.predeterminada) {%> 
+                        <div class="defaultAdress">
+                            Predeterminada: &nbsp &nbsp 
+                            <img src="/public/images/Logo_2.2.png">
+                        </div>
+                    <% } %> 
+                    <div class="addressContent">
+                        <p><strong><%= invoice.razonSocial %></strong></p>
+                        <p><%= invoice.rfc %></p>
+                        <% let addressInvoice = direcciones.find(direccion => direccion.id == invoice.idDireccion)%>
+                        <p><%= addressInvoice.direccion %></p>
+                        <p><%= addressInvoice.delegacion.trim() === "" ? addressInvoice.colonia : addressInvoice.delegacion + ", " + addressInvoice.colonia %></p>
+                        <p><%= addressInvoice.ciudad %>, <%= addressInvoice.estado %></p>
+                        <p><%= addressInvoice.pais %></p>
+                        <p><%= addressInvoice.codigoPostal %></p>
                     </div>
-                <% } %> 
-                <div class="addressContent">
-                    <p><strong><%= invoice.razonSocial %></strong></p>
-                    <p><%= invoice.rfc %></p>
-                    <% let addressInvoice = direcciones.find(direccion => direccion.id == invoice.idDireccion)%>
-                    <p><%= addressInvoice.direccion %></p>
-                    <p><%= addressInvoice.delegacion.trim() === "" ? addressInvoice.colonia : addressInvoice.delegacion + ", " + addressInvoice.colonia %></p>
-                    <p><%= addressInvoice.ciudad %>, <%= addressInvoice.estado %></p>
-                    <p><%= addressInvoice.pais %></p>
-                    <p><%= addressInvoice.codigoPostal %></p>
+        
+                    <div class="addressButtons">
+                        <a href="/users/edit-invoice/<%= invoice.id %>">Editar</a> | <form action="/users/delete-invoice/<%= invoice.id %>?_method=DELETE" method="POST"><button onclick="return confirm('¿Estás seguro que desea eliminar los datos de facturación?')" type="submit">Descartar</button></form>
+                        <% if(!invoice.predeterminada){ %> 
+                            | <form action="/users/make-default-invoice/<%= invoice.id %>?_method=PUT" method="POST">
+                                <button onclick="return confirm('¿Estás seguro que desea utilizar estos datos de facturación como predeterminados?')" type="submit">Predeterminada</button>
+                            </form>
+                        <% } %>
+                    </div>
                 </div>
-    
-                <div class="addressButtons">
-                    <a href="/users/edit-invoice/<%= invoice.id %>">Editar</a> | <form action="/users/delete-invoice/<%= invoice.id %>?_method=DELETE" method="POST"><button onclick="return confirm('¿Estás seguro que desea eliminar los datos de facturación?')" type="submit">Descartar</button></form>
-                    <% if(!invoice.predeterminada){ %> 
-                        | <form action="/users/make-default-invoice/<%= invoice.id %>?_method=PUT" method="POST">
-                            <button onclick="return confirm('¿Estás seguro que desea utilizar estos datos de facturación como predeterminados?')" type="submit">Predeterminada</button>
-                        </form>
-                    <% } %>
-                </div>
-            </div>
-        <% }) %> 
+            <% }) %>
+        <% } %>
     </div>
 </section>

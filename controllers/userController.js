@@ -32,6 +32,7 @@ seccion.busquedas.articulos = articulosDB("",false,"ebook").filter(articulo => a
 const userController = {
   sendMyAccount: (req, res) => {
     const user = req.session.userLogged
+    console.log('Lo que tiene user: ', user)
     res.render('users/myAccount', {
       user: user,
       botonesPrincipales: botonesPrincipales,
@@ -411,7 +412,9 @@ const userController = {
     let errors = validationResult(req)
     if (errors.isEmpty()) { // Ocurre cuando no hay errores de validacion
       try {
+        await db.usuario.getDireccion()
         const userToLogin = await db.usuario.findOne({
+          include: [{association: 'direcciones'}],
           where: { email: req.body.email}
         })
         const isLogged = await bcrypt.compare(req.body.password,userToLogin.password)//Lanza un error si no se encuentra el usuario
