@@ -16,17 +16,17 @@ const { validationResult } = require('express-validator')
 let users = JSON.parse(fs.readFileSync(usersPath))
 
 
-let articulosDB = function(idClass,nuevo,formato){ 
+let articulosDB = function (idClass, nuevo, formato) {
   return products.map(articulo => {
-	return articulo = {...articulo, idClass:idClass, nuevo:nuevo, clasificacion: 3, formato:formato}
+    return articulo = { ...articulo, idClass: idClass, nuevo: nuevo, clasificacion: 3, formato: formato }
   })
 }
 
 let tamaño = articulosDB.length
 
-seccion.favoritos.articulos = articulosDB("",true,"").filter(articulo => articulo.id<=tamaño && articulo.id > (tamaño-8));
-seccion.nuevos.articulos = articulosDB("",true,"").filter(articulo => articulo.id<= 16 && articulo.id > 8);
-seccion.busquedas.articulos = articulosDB("",false,"ebook").filter(articulo => articulo.id<= 13 && articulo.id > 5);
+seccion.favoritos.articulos = articulosDB("", true, "").filter(articulo => articulo.id <= tamaño && articulo.id > (tamaño - 8));
+seccion.nuevos.articulos = articulosDB("", true, "").filter(articulo => articulo.id <= 16 && articulo.id > 8);
+seccion.busquedas.articulos = articulosDB("", false, "ebook").filter(articulo => articulo.id <= 13 && articulo.id > 5);
 
 
 const userController = {
@@ -60,7 +60,7 @@ const userController = {
   updateUser: (req, res) => {
     const user = req.session.userLogged
     let errors = validationResult(req)
-    if(errors.isEmpty()){
+    if (errors.isEmpty()) {
       /* await db.usuario.update({
         firstName: req.body.nombre,
         lastName: req.body.apellido,
@@ -76,17 +76,17 @@ const userController = {
       user.firstName = req.body.nombre
       user.lastName = req.body.apellido
       user.email = req.body.correo
-      if(req.file) {
+      if (req.file) {
         user.imageUser = req.file.path
       }
       let mensaje = `<p><i class="fas fa-exclamation-triangle"></i>Datos de usuario editados correctamente</p>`
       //saveUserToDB(user)
       //console.log(user)
       //console.log('OldValues son: ', req.body)
-      res.render('users/edit-data-user',{
+      res.render('users/edit-data-user', {
         mensaje: mensaje,
         warning: false,
-        user:user,
+        user: user,
         busquedas: seccion.busquedas,
         favoritos: seccion.favoritos,
         userLogged: req.session.userLogged
@@ -95,9 +95,9 @@ const userController = {
       console.log('Hubo un error y no se guardaron los datos')
       console.log(req.body)
       const errores = errors.errors.reduce(
-        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
-        console.log('Mostrando los errores generados ', errores)
-      res.render('users/edit-data-user',{
+        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`, '')
+      console.log('Mostrando los errores generados ', errores)
+      res.render('users/edit-data-user', {
         mensaje: errores,
         warning: true,
         user: user,
@@ -108,30 +108,30 @@ const userController = {
     }
   },
 
-  updateUserPassword: (req,res) => {
+  updateUserPassword: (req, res) => {
     const user = req.session.userLogged
     let errors = validationResult(req)
-    if(errors.isEmpty()){
-        user.password = bcrypt.hashSync(req.body.contraseña,10)
-        console.log(req.body.contraseña)
-        console.log(user.password)
-        saveUserToDB(user)
-        let mensaje = `<p><i class="fas fa-exclamation-triangle"></i>La contraseña ha sido actualizada</p>`
-        res.render('users/edit-data-user',{
-          mensaje: mensaje,
-          warning: false,
-          user: user,
-          busquedas: seccion.busquedas,
-          favoritos: seccion.favoritos,
-          userLogged: req.session.userLogged
-        })
+    if (errors.isEmpty()) {
+      user.password = bcrypt.hashSync(req.body.contraseña, 10)
+      console.log(req.body.contraseña)
+      console.log(user.password)
+      saveUserToDB(user)
+      let mensaje = `<p><i class="fas fa-exclamation-triangle"></i>La contraseña ha sido actualizada</p>`
+      res.render('users/edit-data-user', {
+        mensaje: mensaje,
+        warning: false,
+        user: user,
+        busquedas: seccion.busquedas,
+        favoritos: seccion.favoritos,
+        userLogged: req.session.userLogged
+      })
     } else {
       //enviar un mensaje que diga que las contraseñas no son iguales
       console.log('Hubo un error y no se guardaron los datos')
       const errores = errors.errors.reduce(
-        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
-        console.log('Mostrando los errores generados ', errors)
-      res.render('users/edit-data-user',{
+        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`, '')
+      console.log('Mostrando los errores generados ', errors)
+      res.render('users/edit-data-user', {
         mensaje: errores,
         warning: true,
         user: user,
@@ -159,9 +159,9 @@ const userController = {
 
   storeNewInvoice: (req, res) => {
     const newDataInvoice = req.body
-    const user =req.session.userLogged
+    const user = req.session.userLogged
     let errors = validationResult(req)
-    if(errors.isEmpty()){
+    if (errors.isEmpty()) {
       if (user.facturacion.length === 0) {
         newDataInvoice.id = 1
       } else {
@@ -172,10 +172,10 @@ const userController = {
       user.facturacion.push(newDataInvoice)
       saveUserToDB(user)
       res.redirect('/users')
-    } else{
+    } else {
       console.log(req.body)
       const errores = errors.errors.reduce(
-        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
+        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`, '')
       res.render('users/invoice', {
         mensaje: errores,
         warning: false,
@@ -211,17 +211,17 @@ const userController = {
     const errors = validationResult(req)
     const id = parseInt(req.params.id)
     const index = user.facturacion.findIndex((invoice) => invoice.id === id)
-    if(errors.isEmpty()){
+    if (errors.isEmpty()) {
       if (index >= 0) {
         updateInvoice.id = id
         user.facturacion[index] = updateInvoice
         saveUserToDB(user)
       }
       res.redirect('/users')
-    }else{
+    } else {
       const errores = errors.errors.reduce(
-        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
-      res.render('users/invoice',{
+        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`, '')
+      res.render('users/invoice', {
         mensaje: errores,
         warning: true,
         edit: false,
@@ -320,7 +320,7 @@ const userController = {
     const id = Number.parseInt(req.params.id)
     const user = req.session.userLogged
     const index = user.direcciones.findIndex((direccion) => direccion.id === id)
-   
+
 
     if (index >= 0) {
       user.facturacion = user.facturacion.filter(factura => Number.parseInt(factura.idDireccion) != id)
@@ -347,7 +347,7 @@ const userController = {
   /** ************** METHODS FOR REGISTER **************/
   /** **************************************************/
   registerView: (req, res) => {
-    res.render('users/register', {userLogged: req.session.userLogged})
+    res.render('users/register', { userLogged: req.session.userLogged })
   },
 
   register: async (req, res) => {
@@ -355,7 +355,7 @@ const userController = {
     if (errors.isEmpty()) {
       try {
         let userDBS = await db.usuario.findOrCreate({
-          where:{
+          where: {
             email: req.body.email
           },
           defaults: {
@@ -368,7 +368,7 @@ const userController = {
           }
         })
         console.log('Lo que se regresó de la base de datos fue: ', userDBS)
-  
+
         if (userDBS[1]) {
           console.log('Tu cuenta ha sido creada exitosamente!!')
           res.render('users/login', {
@@ -383,7 +383,7 @@ const userController = {
             oldValues: req.body
           })
         }
-      }catch(error){
+      } catch (error) {
         console.log('Ocurrió un error ', error)
       }
     } else {
@@ -412,27 +412,35 @@ const userController = {
     let errors = validationResult(req)
     if (errors.isEmpty()) { // Ocurre cuando no hay errores de validacion
       try {
-        //await db.usuario.getDireccion()
         const userToLogin = await db.usuario.findOne({
-          include: [{association: 'direcciones'}],
-          where: { email: req.body.email}
+          include: [{
+            model: db.direccion,
+            as: 'direcciones',
+            include: [{
+              model: db.datosFacturacion,
+              as: 'facturacion'}]
+          }],
+          where: { email: req.body.email }
         })
-        const isLogged = await bcrypt.compare(req.body.password,userToLogin.password)//Lanza un error si no se encuentra el usuario
+        const isLogged = await bcrypt.compare(req.body.password, userToLogin.password)//Lanza un error si no se encuentra el usuario
         if (isLogged) {
-          if(req.body.remember)
-            res.cookie('userLogged', userToLogin,{
+          if (req.body.remember)
+            res.cookie('userLogged', userToLogin, {
               maxAge: 1000 * 60 * 60 * 24 * 7,
               httpOnly: true
             })
           req.session.userLogged = userToLogin
           res.redirect('/')
-        }else {
-          res.render('users/login',{mensaje:
-            '<p><i class="fas fa-exclamation-triangle"></i>Su contraseña no es correcta. Por favor, intente de nuevo.</p>',
-          warning: true,
-          oldValues: req.body})
+        } else {
+          res.render('users/login', {
+            mensaje:
+              '<p><i class="fas fa-exclamation-triangle"></i>Su contraseña no es correcta. Por favor, intente de nuevo.</p>',
+            warning: true,
+            oldValues: req.body
+          })
         }
-      } catch { // Ocurre cuando el usuario no existe
+      } catch (error) { // Ocurre cuando el usuario no existe
+        console.log(error)
         res.render('users/login', {
           mensaje:
             '<p><i class="fas fa-exclamation-triangle"></i>Autenticación fallida. Compruebe que su correo y su contraseña sean correctos.</p>',
@@ -442,7 +450,7 @@ const userController = {
       }
     } else {
       const errores = errors.errors.reduce(
-        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
+        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`, '')
       res.render('users/login', {
         mensaje: errores,
         warning: true,
@@ -451,7 +459,7 @@ const userController = {
     }
   },
 
-  logout: (req,res) => {
+  logout: (req, res) => {
     delete req.session.userLogged
     res.clearCookie("userLogged");
     res.redirect('/users/login')
@@ -464,11 +472,11 @@ function findIndexById(element, collection) {
   return collection.findIndex(item => element.id === item.id)
 }
 
-function saveUserToDB(user){
-  let users = JSON.parse(fs.readFileSync(usersPath,'utf-8'))
+function saveUserToDB(user) {
+  let users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'))
   const index = findIndexById(user, users)
-  if(!user.password)
-    users[index] = {...user, password:users[index].password}
+  if (!user.password)
+    users[index] = { ...user, password: users[index].password }
   else
     users[index] = user
   fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))

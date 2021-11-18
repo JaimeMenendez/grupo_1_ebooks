@@ -52,7 +52,6 @@ module.exports = (sequelize, dataTypes) => {
 
     const Usuario = sequelize.define(alias, cols, config);
     Usuario.associate = function (models) {
-        Usuario.associate = function (models) {
             Usuario.hasMany(models.direccion, {
                 as: 'direcciones',
                 foreignKey: 'idUsuario'
@@ -66,8 +65,5 @@ module.exports = (sequelize, dataTypes) => {
 
             Usuario.belongsTo(models.rol);
         }
-
-        
-    };
     return Usuario;
 }

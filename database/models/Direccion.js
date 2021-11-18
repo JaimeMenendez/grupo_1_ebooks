@@ -62,7 +62,7 @@ module.exports= (sequelize, dataTypes) => {
             as: 'usuarios',
             foreignKey: 'idUsuario'
         });
-        Direccion.hasMany(models.datosFacturacion)
+        Direccion.hasMany(models.datosFacturacion,{ as: 'facturacion'})
     };
     return Direccion;
 }
