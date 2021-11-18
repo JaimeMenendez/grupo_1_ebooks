@@ -388,59 +388,57 @@ const userController = {
     }
   },
 
-
-  /* registerView: (req, res) => {
-    res.render('users/register', {userLogged: req.session.userLogged})
-  },
-
-  register: (req, res) => {
-    let errors = validationResult(req)
-    if (errors.isEmpty()) {
-      const email = req.body.email
-      if (users.findIndex((usuario) => usuario.email === email) === -1) {
-        const newUser = {
-          ...req.body,
-          password: bcrypt.hashSync(req.body.password, 10),
-          direcciones: [],
-          facturacion: [],
-          category: 'cliente',
-          id: users[users.length - 1].id + 1
-        }
-
-        users.push(newUser)
-        fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
-        res.render('users/login', {
-          mensaje: 'Tu cuenta ha sido creada, ahora puedes iniciar sesión.',
-          warning: false
-        })
-      } else {
-        res.render('users/register', {
-          mensaje:
-            '<p><i class="fas fa-exclamation-triangle"></i>El correo que está utilizando ya está registrado. Intente iniciar sesión o regístrese con otro correo.</p>',
-          warning: true,
-          oldValues: req.body
-        })
-      }
-    } else {
-      const errores = errors.errors.reduce(
-        (acc, error) =>
-          acc +
-          `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,
-        ''
-      )
-      res.render('users/register', {
-        mensaje: errores,
-        warning: true,
-        oldValues: req.body
-      })
-    }
-  }, */
   /** **************************************************/
   /** ************** METHODS FOR LOGIN **************/
   /** **************************************************/
   loginView: (req, res) => {
     res.render('users/login', {})
   },
+
+  login: async (req, res) => {
+    let errors = validationResult(req)
+    if (errors.isEmpty()) { // Ocurre cuando no hay errores de validacion
+      try {
+        //const userToLogin = await UserModel.findUserByEmail(req.body.email)
+        const userToLogin = await db.usuario.findOne({
+          where: { email: req.body.email}
+        })
+        const isLogged = await bcrypt.compare(req.body.password,userToLogin.password)//Lanza un error si no se encuentra el usuario
+        if (isLogged) {
+          console.log('Mira lo que tiene isLogged', isLogged)
+          if(req.body.remember)
+            res.cookie('userLogged', userToLogin,{
+              maxAge: 1000 * 60 * 60 * 24 * 7,
+              httpOnly: true
+            })
+          req.session.userLogged = userToLogin
+          res.redirect('/')
+        }else {
+          res.render('users/login',{mensaje:
+            '<p><i class="fas fa-exclamation-triangle"></i>Su contraseña no es correcta. Por favor, intente de nuevo.</p>',
+          warning: true,
+          oldValues: req.body})
+        }
+      } catch { // Ocurre cuando el usuario no existe
+        res.render('users/login', {
+          mensaje:
+            '<p><i class="fas fa-exclamation-triangle"></i>Autenticación fallida. Compruebe que su correo y su contraseña sean correctos.</p>',
+          warning: true,
+          oldValues: req.body
+        })
+      }
+    } else {
+      const errores = errors.errors.reduce(
+        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
+      res.render('users/login', {
+        mensaje: errores,
+        warning: true,
+        oldValues: req.body
+      })
+    }
+  },
+
+  /* 
   login: async (req, res) => {
     let errors = validationResult(req)
     if (errors.isEmpty()) { // Ocurre cuando no hay errores de validacion
@@ -479,6 +477,8 @@ const userController = {
       })
     }
   },
+  */
+
   logout: (req,res) => {
     delete req.session.userLogged
     res.clearCookie("userLogged");
