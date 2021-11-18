@@ -60,6 +60,18 @@ const userController = {
     const user = req.session.userLogged
     let errors = validationResult(req)
     if(errors.isEmpty()){
+      /* await db.usuario.update({
+        firstName: req.body.nombre,
+        lastName: req.body.apellido,
+        email: req.body.correo,
+        if(req.file){
+          imageUser = req.file.path
+        }
+      },{
+        where: {
+          email: user.email
+        }
+      }) */
       user.firstName = req.body.nombre
       user.lastName = req.body.apellido
       user.email = req.body.correo
@@ -67,9 +79,9 @@ const userController = {
         user.imageUser = req.file.path
       }
       let mensaje = `<p><i class="fas fa-exclamation-triangle"></i>Datos de usuario editados correctamente</p>`
-      saveUserToDB(user)
-      console.log(user)
-      console.log('OldValues son: ', req.body)
+      //saveUserToDB(user)
+      //console.log(user)
+      //console.log('OldValues son: ', req.body)
       res.render('users/edit-data-user',{
         mensaje: mensaje,
         warning: false,
@@ -399,13 +411,11 @@ const userController = {
     let errors = validationResult(req)
     if (errors.isEmpty()) { // Ocurre cuando no hay errores de validacion
       try {
-        //const userToLogin = await UserModel.findUserByEmail(req.body.email)
         const userToLogin = await db.usuario.findOne({
           where: { email: req.body.email}
         })
         const isLogged = await bcrypt.compare(req.body.password,userToLogin.password)//Lanza un error si no se encuentra el usuario
         if (isLogged) {
-          console.log('Mira lo que tiene isLogged', isLogged)
           if(req.body.remember)
             res.cookie('userLogged', userToLogin,{
               maxAge: 1000 * 60 * 60 * 24 * 7,
@@ -437,47 +447,6 @@ const userController = {
       })
     }
   },
-
-  /* 
-  login: async (req, res) => {
-    let errors = validationResult(req)
-    if (errors.isEmpty()) { // Ocurre cuando no hay errores de validacion
-      try {
-        const userToLogin = await UserModel.findUserByEmail(req.body.email)
-        const isLogged = await bcrypt.compare(req.body.password,userToLogin.password)//Lanza un error si no se encuentra el usuario
-        if (isLogged) {
-          if(req.body.remember)
-            res.cookie('userLogged', userToLogin,{
-              maxAge: 1000 * 60 * 60 * 24 * 7,
-              httpOnly: true
-            })
-          req.session.userLogged = userToLogin
-          res.redirect('/')
-        }else {
-          res.render('users/login',{mensaje:
-            '<p><i class="fas fa-exclamation-triangle"></i>Su contraseña no es correcta. Por favor, intente de nuevo.</p>',
-          warning: true,
-          oldValues: req.body})
-        }
-      } catch { // Ocurre cuando el usuario no existe
-        res.render('users/login', {
-          mensaje:
-            '<p><i class="fas fa-exclamation-triangle"></i>Autenticación fallida. Compruebe que su correo y su contraseña sean correctos.</p>',
-          warning: true,
-          oldValues: req.body
-        })
-      }
-    } else {
-      const errores = errors.errors.reduce(
-        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,'')
-      res.render('users/login', {
-        mensaje: errores,
-        warning: true,
-        oldValues: req.body
-      })
-    }
-  },
-  */
 
   logout: (req,res) => {
     delete req.session.userLogged
