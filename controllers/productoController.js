@@ -1,7 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const { readFileSync, writeFileSync, unlinkSync } = require('fs')
-const seccion = require("../controllers/secciones.json")
+const seccion = require("../controllers/secciones.json");
+const { decodeBase64 } = require('bcryptjs');
+const db = require('../database/models')
 
 const productsFilePath = path.join(__dirname, '../DB/librosDB.json');
 
@@ -21,17 +23,11 @@ const controller = {
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
-		if (req.params.id) {
-		  let librosDB = readFileSync(productsFilePath, 'utf-8')
-		  librosDB = JSON.parse(librosDB)
-	
-		  const libroBuscado = librosDB.find((libro) => libro.id == req.params.id)
-		  if (libroBuscado) {
-			res.render('products/description', {...libroBuscado, userLogged: req.session.userLogged})
-		  } else {
-			res.render('main/error404',{userLogged: req.session.userLogged})
-		  }
-		}
+		db.libro.findByPk (req.params.id, {include: [{model: db.categoria},{model: db.subcategoria}]}).then((resultado) => {
+			console.log(resultado);
+			res.render('products/description', {...resultado.dataValues, userLogged: req.session.userLogged})
+		})
+		.catch(e => {res.render('main/error404',{userLogged: req.session.userLogged})});
 	  },
 
 	// Create - Form to create

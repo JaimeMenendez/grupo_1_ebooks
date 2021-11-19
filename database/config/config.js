@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "T@mileri@._1125",
+    "password": "data8digita.L",
     "database": "insidebooksDB",
     "host": "127.0.0.1",
     "dialect": "mysql",
