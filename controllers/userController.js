@@ -1,6 +1,5 @@
 const fs = require('fs')
 const db = require('../database/models')
-const sequelize = db.sequelize
 const path = require('path')
 const bcrypt = require('bcryptjs')
 const UserModel = require('../Model/User')
@@ -57,46 +56,53 @@ const userController = {
     })
   },
 
-  updateUser: (req, res) => {
+  updateUser: async(req, res) => {
     const user = req.session.userLogged
     let errors = validationResult(req)
+    let update
+    console.log('Datos de usuario antes: ', user)
     if (errors.isEmpty()) {
-      /* await db.usuario.update({
-        firstName: req.body.nombre,
-        lastName: req.body.apellido,
-        email: req.body.correo,
+      try{
         if(req.file){
-          imageUser = req.file.path
+          update = await db.usuario.update({
+            firstName: req.body.nombre,
+            lastName: req.body.apellido,
+            email: req.body.correo,
+            imageUser: req.file.path
+          },{ where: {email: user.email}, returning: true})
+          req.session.userLogged = {...req.session.userLogged,
+            firstName: req.body.nombre,
+            lastName: req.body.apellido,
+            email: req.body.correo,
+            imageUser: req.file.path
+          }
+        }else{
+          update = await db.usuario.update({
+            firstName: req.body.nombre,
+            lastName: req.body.apellido,
+            email: req.body.correo
+          },{ where: {email: user.email}, returning: true})
+          req.session.userLogged = {...req.session.userLogged,
+            firstName: req.body.nombre,
+            lastName: req.body.apellido,
+            email: req.body.correo
+          }
         }
-      },{
-        where: {
-          email: user.email
-        }
-      }) */
-      user.firstName = req.body.nombre
-      user.lastName = req.body.apellido
-      user.email = req.body.correo
-      if (req.file) {
-        user.imageUser = req.file.path
+        let mensaje = `<p><i class="fas fa-exclamation-triangle"></i>Datos de usuario editados correctamente</p>`
+        res.render('users/edit-data-user', {
+          mensaje: mensaje,
+          warning: false,
+          user: req.session.userLogged,
+          busquedas: seccion.busquedas,
+          favoritos: seccion.favoritos,
+          userLogged: req.session.userLogged
+        })
+      }catch(errorDB){
+        console.log(errorDB)
       }
-      let mensaje = `<p><i class="fas fa-exclamation-triangle"></i>Datos de usuario editados correctamente</p>`
-      //saveUserToDB(user)
-      //console.log(user)
-      //console.log('OldValues son: ', req.body)
-      res.render('users/edit-data-user', {
-        mensaje: mensaje,
-        warning: false,
-        user: user,
-        busquedas: seccion.busquedas,
-        favoritos: seccion.favoritos,
-        userLogged: req.session.userLogged
-      })
     } else {
-      console.log('Hubo un error y no se guardaron los datos')
-      console.log(req.body)
       const errores = errors.errors.reduce(
         (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`, '')
-      console.log('Mostrando los errores generados ', errores)
       res.render('users/edit-data-user', {
         mensaje: errores,
         warning: true,
@@ -108,11 +114,11 @@ const userController = {
     }
   },
 
-  updateUserPassword: (req, res) => {
+  updateUserPassword: async(req, res) => {
     const user = req.session.userLogged
     let errors = validationResult(req)
     if (errors.isEmpty()) {
-      user.password = bcrypt.hashSync(req.body.contraseña, 10)
+      user.password = await bcrypt.hash(req.body.contraseña, 10)
       console.log(req.body.contraseña)
       console.log(user.password)
       saveUserToDB(user)
@@ -286,10 +292,31 @@ const userController = {
     })
   },
 
-  storeNewAddress: (req, res) => {
+  storeNewAddress: async(req, res) => {
     let newAddress = req.body
     let user = req.session.userLogged
-    if (user.direcciones.length > 0) {
+    try{
+      let userDirection = await db.direccion.create({
+        ...newAddress,
+        idUsuario: user.id
+      })
+
+      req.session.userLogged = await db.usuario.findOne({
+        include: [{
+          model: db.direccion,
+          as: 'direcciones',
+          include: [{
+            model: db.datosFacturacion,
+            as: 'facturacion'}]
+        }],
+        where: { id: user.id }
+      })
+      
+      }catch(errorDB){
+      console.log(errorDB)
+    }
+
+    /* if (user.direcciones.length > 0) {
       newAddress.id = user.direcciones[user.direcciones.length - 1].id + 1
       newAddress.predeterminada = false
     } else {
@@ -297,7 +324,7 @@ const userController = {
       newAddress.predeterminada = true
     }
     user.direcciones.push(newAddress)
-    saveUserToDB(user)
+    saveUserToDB(user) */
     res.redirect('/users')
   },
 
