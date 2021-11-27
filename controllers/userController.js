@@ -88,6 +88,14 @@ const userController = {
             email: req.body.correo
           }
         }
+        const direccionEditar = await db.usuario.findByPk(user.id,
+          {include: [{model: db.direccion, as: 'direcciones',
+            include: [{
+            model: db.datosFacturacion,
+            as: 'facturacion'}]
+          }]
+        })
+        console.log('Las direcciones que tiene: ', direccionEditar.dataValues.direcciones)
         let mensaje = `<p><i class="fas fa-exclamation-triangle"></i>Datos de usuario editados correctamente</p>`
         res.render('users/edit-data-user', {
           mensaje: mensaje,
@@ -269,9 +277,26 @@ const userController = {
   /** ************** METHODS FOR ADDRESS ***************/
   /** **************************************************/
 
-  sendEditAddressView: (req, res) => {
+  sendEditAddressView: async(req, res) => {
     const user = req.session.userLogged
-    const direccionSolicitada = user.direcciones.find(
+    console.log('El id que llega por params es: ', req.params.id)
+    try{
+      const direccionEditar = await db.direccion.findOne(
+        {include: [{
+          model: db.usuario,
+          as: 'usuarios' 
+        }],
+        where: {
+          id: req.params.id
+        }
+      })
+      console.log('La dirección a editar es: ',direccionEditar.dataValues)
+      res.redirect('/users')
+    }catch(e){
+      console.log('Ocurrió un error al enviar la vista', e)
+    }
+
+    /* const direccionSolicitada = user.direcciones.find(
       (direccion) => direccion.id === Number.parseInt(req.params.id)
     )
     res.render('users/editar-direccion', {
@@ -280,7 +305,7 @@ const userController = {
       busquedas: seccion.busquedas,
       nuevos: seccion.nuevos,
       userLogged: req.session.userLogged
-    })
+    }) */
   },
 
   sendAddAddressView: (req, res) => {
@@ -316,22 +341,22 @@ const userController = {
       console.log(errorDB)
     }
 
-    /* if (user.direcciones.length > 0) {
-      newAddress.id = user.direcciones[user.direcciones.length - 1].id + 1
-      newAddress.predeterminada = false
-    } else {
-      newAddress.id = 1
-      newAddress.predeterminada = true
-    }
-    user.direcciones.push(newAddress)
-    saveUserToDB(user) */
     res.redirect('/users')
   },
 
-  updateAddress: (req, res) => {
+  updateAddress: async(req, res) => {
     const addressUpdated = req.body
     const user = req.session.userLogged
-    const id = Number.parseInt(req.params.id)
+
+    try{
+      const factura = await db.facturacion.findIndexById(req.params.id, 
+        { include: [{model: db.direcciones, as: 'direcciones'}] })
+      console.log(factura)
+    }catch(e){
+      console.log('Ocurrió un error al editar la dirección',e)
+    }
+
+    /* const id = Number.parseInt(req.params.id)
     const index = user.direcciones.findIndex((direccion) => direccion.id === id)
     if (index >= 0) {
       addressUpdated.id = id
@@ -339,7 +364,7 @@ const userController = {
       user.direcciones[index] = addressUpdated
       req.session.userLogged = user
       saveUserToDB(user)
-    }
+    } */
     res.redirect('/users')
   },
 
