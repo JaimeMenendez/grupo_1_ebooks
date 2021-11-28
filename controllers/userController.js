@@ -88,14 +88,6 @@ const userController = {
             email: req.body.correo
           }
         }
-        const direccionEditar = await db.usuario.findByPk(user.id,
-          {include: [{model: db.direccion, as: 'direcciones',
-            include: [{
-            model: db.datosFacturacion,
-            as: 'facturacion'}]
-          }]
-        })
-        console.log('Las direcciones que tiene: ', direccionEditar.dataValues.direcciones)
         let mensaje = `<p><i class="fas fa-exclamation-triangle"></i>Datos de usuario editados correctamente</p>`
         res.render('users/edit-data-user', {
           mensaje: mensaje,
@@ -276,6 +268,9 @@ const userController = {
   /** **************************************************/
   /** ************** METHODS FOR ADDRESS ***************/
   /** **************************************************/
+  // edit == 1 -> 'Editando el formulario' 
+  // edit == 0 -> 'Agregando una nueva dirección'
+  // edit == 2 -> 'Agregando una nueva dirección con errores en el formulario'
 
   sendEditAddressView: async(req, res) => {
     const user = req.session.userLogged
@@ -290,7 +285,7 @@ const userController = {
         }
       })
       res.render('users/editar-direccion', {
-        edit: true,
+        edit: 1,
         ...direccionSolicitada.dataValues,
         busquedas: seccion.busquedas,
         nuevos: seccion.nuevos,
@@ -303,7 +298,7 @@ const userController = {
 
   sendAddAddressView: (req, res) => {
     res.render('users/editar-direccion', {
-      edit: false,
+      edit: 0,
       busquedas: seccion.busquedas,
       nuevos: seccion.nuevos,
       userLogged: req.session.userLogged
@@ -338,16 +333,18 @@ const userController = {
       let errores = errors.errors.reduce(
         (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,' '
       )
-      newAddress = {...newAddress, id: req.params.id}
+      //newAddress = {...newAddress, id: req.params.id}
+      console.log('El id que se está mandando a la vista es: ', req.params.id)
       res.render('users/editar-direccion',{
-        edit: true,
-        ...newAddress,
+        edit: 2,
+        newAddress,
+        mensaje: errores,
+        warning: true,
         busquedas: seccion.busquedas,
         nuevos: seccion.nuevos,
         userLogged: req.session.userLogged
       })
-    }
-    
+    } 
   },
 
   updateAddress: async(req, res) => {
