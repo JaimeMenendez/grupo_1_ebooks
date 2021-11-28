@@ -11,6 +11,20 @@ const middleware = {
         body('idDireccion').notEmpty().withMessage("Debe seleccionar una dirección de la lista o seleccionar la opción de 'Agregar una nueva dirección'").bail()
     ],
 
+    validarDireccion: [
+        body('nombre').notEmpty().withMessage("Debe especificar un nombre"),
+        body('pais').notEmpty().withMessage("Debe seleccionar un país de la lista "),
+        body('estado').notEmpty().withMessage("Debe especificar el estado"),
+        body('ciudad').notEmpty().withMessage("Debe especificar una ciudad "),
+        body('direccion').notEmpty().withMessage("Debe especificar una dirección"),
+        body('colonia').notEmpty().withMessage("Debe especificar una colonia"),
+        body('delegacion').notEmpty().withMessage("Debe especificar una delegación"),
+        body('codigoPostal').notEmpty().withMessage("Debe especificar el código postal")
+                        .isNumeric().withMessage("El código postal debe ser un número"),
+        body('telefono').isNumeric().withMessage("Debe especificar un número de teléfono")
+                        .isLength({ min: 8, max: 12 }).withMessage("El número de teléfono debe tener mínimo 8 números y máximo 12 números incluido el indicativo del país")                 
+    ],
+
     validarRegistro: [
         body('firstName').notEmpty().withMessage("Debe especificar su nombre."),
         body('lastName').notEmpty().withMessage("Debe especificar sus apellidos."),

@@ -1,3 +1,4 @@
+//https://www.digitalocean.com/community/questions/error-2002-hy000-can-t-connect-to-local-mysql-server-through-socket-var-run-mysqld-mysqld-sock-2
 const fs = require('fs')
 const db = require('../database/models')
 const path = require('path')
@@ -60,7 +61,6 @@ const userController = {
     const user = req.session.userLogged
     let errors = validationResult(req)
     let update
-    console.log('Datos de usuario antes: ', user)
     if (errors.isEmpty()) {
       try{
         if(req.file){
@@ -279,9 +279,8 @@ const userController = {
 
   sendEditAddressView: async(req, res) => {
     const user = req.session.userLogged
-    console.log('El id que llega por params es: ', req.params.id)
     try{
-      const direccionEditar = await db.direccion.findOne(
+      const direccionSolicitada = await db.direccion.findOne(
         {include: [{
           model: db.usuario,
           as: 'usuarios' 
@@ -290,22 +289,16 @@ const userController = {
           id: req.params.id
         }
       })
-      console.log('La dirección a editar es: ',direccionEditar.dataValues)
-      res.redirect('/users')
+      res.render('users/editar-direccion', {
+        edit: true,
+        ...direccionSolicitada.dataValues,
+        busquedas: seccion.busquedas,
+        nuevos: seccion.nuevos,
+        userLogged: req.session.userLogged
+      })
     }catch(e){
       console.log('Ocurrió un error al enviar la vista', e)
     }
-
-    /* const direccionSolicitada = user.direcciones.find(
-      (direccion) => direccion.id === Number.parseInt(req.params.id)
-    )
-    res.render('users/editar-direccion', {
-      edit: true,
-      ...direccionSolicitada,
-      busquedas: seccion.busquedas,
-      nuevos: seccion.nuevos,
-      userLogged: req.session.userLogged
-    }) */
   },
 
   sendAddAddressView: (req, res) => {
@@ -318,30 +311,43 @@ const userController = {
   },
 
   storeNewAddress: async(req, res) => {
-    let newAddress = req.body
     let user = req.session.userLogged
-    try{
-      let userDirection = await db.direccion.create({
-        ...newAddress,
-        idUsuario: user.id
-      })
-
-      req.session.userLogged = await db.usuario.findOne({
-        include: [{
-          model: db.direccion,
-          as: 'direcciones',
+    let newAddress = req.body
+    let errors = validationResult(req)
+    if(errors.isEmpty()){
+      try{
+        await db.direccion.create({
+          ...newAddress,
+          idUsuario: user.id
+        })
+        req.session.userLogged = await db.usuario.findOne({
           include: [{
-            model: db.datosFacturacion,
-            as: 'facturacion'}]
-        }],
-        where: { id: user.id }
+            model: db.direccion,
+            as: 'direcciones',
+            include: [{
+              model: db.datosFacturacion,
+              as: 'facturacion'}]
+          }],
+          where: { id: user.id }
+        })
+        res.redirect('/users')
+        }catch(errorDB){
+        console.log(errorDB)
+      }
+    }else{
+      let errores = errors.errors.reduce(
+        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,' '
+      )
+      newAddress = {...newAddress, id: req.params.id}
+      res.render('users/editar-direccion',{
+        edit: true,
+        ...newAddress,
+        busquedas: seccion.busquedas,
+        nuevos: seccion.nuevos,
+        userLogged: req.session.userLogged
       })
-      
-      }catch(errorDB){
-      console.log(errorDB)
     }
-
-    res.redirect('/users')
+    
   },
 
   updateAddress: async(req, res) => {
@@ -349,7 +355,8 @@ const userController = {
     const user = req.session.userLogged
 
     try{
-      const factura = await db.facturacion.findIndexById(req.params.id, 
+      //const direccionActualizada
+      const factura = await db.facturacion.findByPk(req.params.id, 
         { include: [{model: db.direcciones, as: 'direcciones'}] })
       console.log(factura)
     }catch(e){

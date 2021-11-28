@@ -10,6 +10,28 @@
    
     <main id="main">
         <section class="formContainer">
+
+            <% if(locals.mensaje) {%>
+                <div class="alert-message <%= warning ? 'red-alert': 'green-alert'%>">
+                    <a href="javascript:void(0)" class="closebtn1" onclick="closeMessage()">&times;</a>
+                        <%- mensaje %>  
+                </div>
+                <script> 
+                    setTimeout(() => {
+                        document.querySelector(".alert-message").style.opacity = '0';
+                    }, 10000);
+                    setTimeout(() => {
+                        document.querySelector(".alert-message").style.display = 'none';
+                    }, 11000);
+
+                    const closeMessage = () =>{
+                        document.querySelector(".alert-message").style.opacity = '0';
+                        setTimeout(() => {
+                            document.querySelector(".alert-message").style.display = 'none';
+                        }, 1000);
+                    }
+                </script>
+            <%}%>
         
             <form class="editForm" action=<%= edit ? `/users/edit-address/${id}?_method=PUT` : '/users/add-new-address' %> method="POST">
                 <h4 class="formPath"><a href="/users/">Mi cuenta</a> > <a href="/users/">Mis direcciones</a> > <span><%= edit ? 'Editar dirección' : 'Agregar dirección' %></span></h4>

@@ -12,6 +12,7 @@ const validarRegistro = middleware.validarRegistro
 const validarLogin = middleware.validarLogin
 const validarDataUser = middleware.validarDataUser
 const validarDataUserPassword = middleware.validarDataUserPassword
+const validarDireccion = middleware.validarDireccion
 
 // Multer
 const storageUser = multer.diskStorage({
@@ -48,9 +49,9 @@ routerUser.delete('/delete-invoice/:id',authMiddleware, userController.deleteInv
 
 routerUser.get('/edit-address/:id',authMiddleware, userController.sendEditAddressView)
 routerUser.get('/add-new-address',authMiddleware, userController.sendAddAddressView)
-routerUser.put('/edit-address/:id',authMiddleware, userController.updateAddress)
+routerUser.put('/edit-address/:id',authMiddleware, validarDireccion,userController.updateAddress)
 routerUser.put('/make-default-address/:id',authMiddleware, userController.makeDefaultAddress)
-routerUser.post('/add-new-address',authMiddleware, userController.storeNewAddress)
+routerUser.post('/add-new-address',authMiddleware, validarDireccion, userController.storeNewAddress)
 routerUser.delete('/delete-address/:id',authMiddleware, userController.deleteAddress)
 
 routerUser.post('/register',validarRegistro, userController.register)
