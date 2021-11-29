@@ -315,7 +315,7 @@ const userController = {
           ...newAddress,
           idUsuario: user.id
         })
-        await updateUserLogged(user,db,req)
+        await updateUserLogged(user.id,db,req)
         res.redirect('/users')
         }catch(errorDB){
         console.log(errorDB)
@@ -350,7 +350,7 @@ const userController = {
             id: req.params.id
           }
         })
-        await updateUserLogged(user,db,req)
+        await updateUserLogged(user.id,db,req)
         res.redirect('/users')
       }catch(e){
         console.log('Hubo un error al actualizar la dirección ',e)
@@ -372,31 +372,59 @@ const userController = {
     }
   },
 
-  deleteAddress: (req, res) => {
-    const id = Number.parseInt(req.params.id)
+  deleteAddress: async(req, res) => {
     const user = req.session.userLogged
-    const index = user.direcciones.findIndex((direccion) => direccion.id === id)
-
-
-    if (index >= 0) {
-      user.facturacion = user.facturacion.filter(factura => Number.parseInt(factura.idDireccion) != id)
-      user.direcciones.splice(index, 1)
-      saveUserToDB(user)
+    try{
+      await db.direccion.destroy({
+        where: {
+          id: req.params.id
+        }
+      })
+      await updateUserLogged(user.id,db,req)
+      res.redirect('/users')
+    }catch(e){
+      console.log('Hubo un error al borrar la dirección ', e)
     }
-    res.redirect('/users')
   },
 
-  makeDefaultAddress: (req, res) => {
-    const id = Number.parseInt(req.params.id)
+  makeDefaultAddress: async(req, res) => {
+    //const id = Number.parseInt(req.params.id)
     const user = req.session.userLogged
-    user.direcciones.forEach((address) => {
+    try{
+      let direcciones = await db.usuario.findAll({
+        incude: [{
+          include: db.direccion,
+          as: 'direcciones',
+          include: [{
+            include: db.datosFacturacion,
+            as: 'facturacion'
+          }]
+        }],
+        where: {
+          id: user.id
+        }
+      })
+      console.log('La direcciones en makeDefault son: ', direcciones)
+      await db.direccion.update({
+        predeterminado: true
+      },{
+       where: {
+         id: req.params.id
+      }
+    })
+    await updateUserLogged(user.id,db,req)
+    res.redirect('/users')
+    }catch(e){
+      console.log('Hubo un error al hacer predeterminada la dirección ', e)
+    }
+    /* user.direcciones.forEach((address) => {
       address.predeterminada = false
       if (address.id === id) {
         address.predeterminada = true
       }
     })
     saveUserToDB(user)
-    res.redirect('/users')
+    res.redirect('/users') */
   },
 
   /** **************************************************/
@@ -538,7 +566,7 @@ function saveUserToDB(user) {
   fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
 }
 
-async function updateUserLogged(user,db,req){
+async function updateUserLogged(userId,db,req){
   req.session.userLogged = await db.usuario.findOne({
     include: [{
       model: db.direccion,
@@ -547,6 +575,6 @@ async function updateUserLogged(user,db,req){
         model: db.datosFacturacion,
         as: 'facturacion'}]
     }],
-    where: { id: user.id }
+    where: { id: userId }
   })
 }

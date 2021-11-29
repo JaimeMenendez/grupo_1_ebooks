@@ -1,10 +1,18 @@
 [
   {
+    "id": 1,
     "firstName": "Jaime",
     "lastName": "Menendez",
     "email": "jaimemenendezalvarez@gmail.com",
+    "password": "$2a$10$kyOWCM3QtEwYdusjArna5OI39SkXguzS33riopieiKQUJ8NEMOlgC",
+    "imageUser": "public/images/userProfile/userImage-1635706916546.jpeg",
+    "estado": true,
+    "created_at": "2021-11-28T03:43:00.000Z",
+    "updated_at": "2021-11-28T03:43:00.000Z",
+    "rolId": 1,
     "direcciones": [
       {
+        "id": 1,
         "nombre": "Antonio Landarte",
         "pais": "México",
         "estado": "Ciudad de México",
@@ -14,10 +22,43 @@
         "delegacion": "Benito Juaréz",
         "codigoPostal": "00675",
         "telefono": "5554632424",
-        "id": 1,
-        "predeterminada": true
+        "predeterminado": false,
+        "created_at": "2021-11-28T03:43:01.000Z",
+        "updated_at": "2021-11-28T03:43:01.000Z",
+        "idUsuario": 1,
+        "facturacion": [
+          {
+            "id": 4,
+            "razonSocial": "Crononauter S.A",
+            "rfc": "CRSACD060412",
+            "predeterminado": false,
+            "created_at": "2021-11-28T03:43:02.000Z",
+            "updated_at": "2021-11-28T03:43:02.000Z",
+            "direccionId": 1
+          },
+          {
+            "id": 3,
+            "razonSocial": "Tatiana Mileydy Leal del Río",
+            "rfc": "MURT2345674R5",
+            "predeterminado": false,
+            "created_at": "2021-11-28T03:43:01.000Z",
+            "updated_at": "2021-11-28T03:43:01.000Z",
+            "direccionId": 1
+          },
+          {
+            "id": 1,
+            "razonSocial": "Crononauter S.A",
+            "rfc": "CRSACD06041",
+            "predeterminado": false,
+            "created_at": "2021-11-28T03:43:01.000Z",
+            "updated_at": "2021-11-28T03:43:01.000Z",
+            "direccionId": 1
+          }
+        ],
+        "predeterminada": false
       },
       {
+        "id": 2,
         "nombre": "Mina Guadalupe Ortega",
         "pais": "México",
         "estado": "Ciudad de México",
@@ -27,42 +68,42 @@
         "delegacion": "Fox",
         "codigoPostal": "12345",
         "telefono": "5567899870",
-        "id": 2,
-        "predeterminada": false
-      }
-    ],
-    "facturacion": [
-      {
-        "razonSocial": "Crononauter S.A",
-        "rfc": "CRSACD06041",
-        "idDireccion": "1",
-        "id": 1
+        "predeterminado": false,
+        "created_at": "2021-11-28T03:43:01.000Z",
+        "updated_at": "2021-11-28T03:43:01.000Z",
+        "idUsuario": 1,
+        "facturacion": [
+          {
+            "id": 2,
+            "razonSocial": "Mina Ortega",
+            "rfc": "LASD7865347T5",
+            "predeterminado": false,
+            "created_at": "2021-11-28T03:43:01.000Z",
+            "updated_at": "2021-11-28T03:43:01.000Z",
+            "direccionId": 2
+          }
+        ],
+        "predeterminada": true
       },
       {
-        "razonSocial": "Mina Ortega",
-        "rfc": "LASD7865347T5",
-        "idDireccion": "2",
-        "id": 2
-      },
-      {
-        "razonSocial": "Tatiana Mileydy Leal del Río",
-        "rfc": "MURT2345674R5",
-        "idDireccion": 1,
-        "id": 3,
-        "predeterminada": false
-      },
-      {
-        "razonSocial": "Crononauter S.A",
-        "rfc": "CRSACD060412",
-        "idDireccion": 1,
         "id": 4,
+        "nombre": "Yeison Jesús Leal del Río",
+        "pais": "México",
+        "estado": "Ciudad de México",
+        "ciudad": "Ciudad de México",
+        "direccion": "Cll de colores 343",
+        "colonia": "Argentina",
+        "delegacion": "Miguel Hidalgo",
+        "codigoPostal": "11234",
+        "telefono": "12345678",
+        "predeterminado": false,
+        "created_at": "2021-11-28T21:02:41.000Z",
+        "updated_at": "2021-11-28T21:02:41.000Z",
+        "idUsuario": 1,
+        "facturacion": [],
         "predeterminada": false
       }
-    ],
-    "category": "cliente",
-    "id": 1,
-    "password": "$2a$10$kyOWCM3QtEwYdusjArna5OI39SkXguzS33riopieiKQUJ8NEMOlgC",
-    "imageUser": "public/images/userProfile/userImage-1635706916546.jpeg"
+    ]
   },
   {
     "firstName": "Alicia",
