@@ -315,16 +315,7 @@ const userController = {
           ...newAddress,
           idUsuario: user.id
         })
-        req.session.userLogged = await db.usuario.findOne({
-          include: [{
-            model: db.direccion,
-            as: 'direcciones',
-            include: [{
-              model: db.datosFacturacion,
-              as: 'facturacion'}]
-          }],
-          where: { id: user.id }
-        })
+        await updateUserLogged(user,db,req)
         res.redirect('/users')
         }catch(errorDB){
         console.log(errorDB)
@@ -333,43 +324,52 @@ const userController = {
       let errores = errors.errors.reduce(
         (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,' '
       )
-      //newAddress = {...newAddress, id: req.params.id}
-      console.log('El id que se está mandando a la vista es: ', req.params.id)
       res.render('users/editar-direccion',{
         edit: 2,
-        newAddress,
+        ...newAddress,
         mensaje: errores,
         warning: true,
         busquedas: seccion.busquedas,
         nuevos: seccion.nuevos,
-        userLogged: req.session.userLogged
+        userLogged: user
       })
     } 
   },
 
   updateAddress: async(req, res) => {
-    const addressUpdated = req.body
     const user = req.session.userLogged
-
-    try{
-      //const direccionActualizada
-      const factura = await db.facturacion.findByPk(req.params.id, 
-        { include: [{model: db.direcciones, as: 'direcciones'}] })
-      console.log(factura)
-    }catch(e){
-      console.log('Ocurrió un error al editar la dirección',e)
+    let addressUpdated = req.body
+    let errors = validationResult(req)
+    if(errors.isEmpty()){
+      try{
+       await db.direccion.update({
+          ...addressUpdated,
+          idUsuario: user.id
+        },{
+          where: {
+            id: req.params.id
+          }
+        })
+        await updateUserLogged(user,db,req)
+        res.redirect('/users')
+      }catch(e){
+        console.log('Hubo un error al actualizar la dirección ',e)
+      }
+    }else{
+      let errores = errors.errors.reduce(
+        (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`,' '
+      )
+      addressUpdated = {...addressUpdated, id: req.params.id}
+      res.render('users/editar-direccion', {
+        edit: 1,
+        ...addressUpdated,
+        mensaje: errores,
+        warning: true,
+        busquedas: seccion.busquedas,
+        nuevos: seccion.nuevos,
+        userLogged: user
+      })
     }
-
-    /* const id = Number.parseInt(req.params.id)
-    const index = user.direcciones.findIndex((direccion) => direccion.id === id)
-    if (index >= 0) {
-      addressUpdated.id = id
-      addressUpdated.predeterminada = user.direcciones[index].predeterminada
-      user.direcciones[index] = addressUpdated
-      req.session.userLogged = user
-      saveUserToDB(user)
-    } */
-    res.redirect('/users')
   },
 
   deleteAddress: (req, res) => {
@@ -536,4 +536,17 @@ function saveUserToDB(user) {
   else
     users[index] = user
   fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
+}
+
+async function updateUserLogged(user,db,req){
+  req.session.userLogged = await db.usuario.findOne({
+    include: [{
+      model: db.direccion,
+      as: 'direcciones',
+      include: [{
+        model: db.datosFacturacion,
+        as: 'facturacion'}]
+    }],
+    where: { id: user.id }
+  })
 }

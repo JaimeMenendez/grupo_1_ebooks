@@ -36,6 +36,7 @@
             <form class="editForm" action=<%= edit == 1 ? `/users/edit-address/${id}?_method=PUT` : '/users/add-new-address' %> method="POST">
                 <h4 class="formPath"><a href="/users/">Mi cuenta</a> > <a href="/users/">Mis direcciones</a> > <span><%= edit == 1 ? 'Editar dirección' : 'Agregar dirección' %></span></h4>
                 <h3 class="formTitle"><%= edit == 1 ? 'Editar dirección' : 'Agregar dirección' %></h3>
+               
                 <div class="entradaDeDatos">
                     <label for="nombre">Nombre completo</label>
                     <input type="text" name="nombre" id="nombre" required value="<%= edit ? nombre: '' %>">
