@@ -45,11 +45,6 @@ module.exports= (sequelize, dataTypes) => {
         telefono: {
             type: dataTypes.STRING(20),
             allowNull: false
-        },
-        predeterminado: {
-            type: dataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: false
         }
     };
     let config = {

@@ -40,6 +40,16 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: true
+        },
+        addressDefault: {
+            type: dataTypes.INTEGER(10), 
+            allowNull: true,
+            defaultValue: 0
+        },
+        invoiceDefault: {
+            type: dataTypes.INTEGER(10),
+            allowNull: true,
+            defaultValue: 0
         }
     };
     let config = {

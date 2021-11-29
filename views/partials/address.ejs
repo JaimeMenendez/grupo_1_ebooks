@@ -11,7 +11,7 @@
         <%if (user.direcciones) {%>
             <% user.direcciones.forEach(address => {   %> 
                 <div class="addressBox">
-                   <% if(address.predeterminada) {%> 
+                   <% if(address.id == user.addressDefault) {%> 
                     <div class="defaultAdress">Predeterminada: &nbsp &nbsp <img src="/public/images/Logo_2.2.png"></div>
                     <% } %> 
                     <div class="addressContent">

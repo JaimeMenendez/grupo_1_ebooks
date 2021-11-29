@@ -12,7 +12,7 @@
             <% user.direcciones.forEach(direccion => {   %> 
                 <% direccion.facturacion.forEach(invoice => {   %> 
                     <div class="addressBox">
-                        <% if(invoice.predeterminada) {%> 
+                        <% if(invoice.id == user.invoiceDefault) {%> 
                             <div class="defaultAdress">
                                 Predeterminada: &nbsp &nbsp 
                                 <img src="/public/images/Logo_2.2.png">
