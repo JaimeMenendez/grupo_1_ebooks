@@ -177,30 +177,18 @@ const userController = {
         nuevos: seccion.nuevos,
         userLogged: req.session.userLogged
       }) 
-      //console.log('Los datos de facturación son: ', datosDeFacturacion.dataValues.direccion.dataValues)
-      //res.redirect('/users')
     }catch(e){
       console.log('Hubo un error al cargar la vista de editar un invoice')
     }
-    /* const invoiceEdit = user.facturacion.find(
-      (invoice) => invoice.id === parseInt(req.params.id)
-    )
-    res.render('users/invoice', {
-      edit: 1,
-      user: datosDeFacturacion.dataValues,
-      direcciones: datosDeFacturacion.dataValues.direccion.dataValues,
-      busquedas: seccion.busquedas,
-      nuevos: seccion.nuevos,
-      userLogged: req.session.userLogged
-    }) */
   },
   
   sendAddInvoiceView: (req, res) => {
     const user = req.session.userLogged
     try{
       res.render('users/invoice', {
+        edit: 0,
+        user: user,
         direcciones: user.direcciones,
-        edit: 1,
         busquedas: seccion.busquedas,
         nuevos: seccion.nuevos,
         userLogged: req.session.userLogged
@@ -210,30 +198,39 @@ const userController = {
     }
   },
 
-  storeNewInvoice: (req, res) => {
-    const newDataInvoice = req.body
+  storeNewInvoice: async(req, res) => {
     const user = req.session.userLogged
+    /* onsole.log('Datos de body: ', req.body)
+    await db.datosFacturacion.create({
+      razonSocial: req.body.razonSocial,
+      rfc: req.body.rfc,
+      predeterminado: false,
+      direccionId: req.body.idDireccion
+    })
+    await updateUserLogged(user.id,db,req)
+    res.redirect('/users') */
     let errors = validationResult(req)
     if (errors.isEmpty()) {
-      if (user.facturacion.length === 0) {
-        newDataInvoice.id = 1
-      } else {
-        newDataInvoice.id = user.facturacion[user.facturacion.length - 1].id + 1
+      try{
+        await db.datosFacturacion.create({
+          razonSocial: req.body.razonSocial,
+          rfc: req.body.rfc,
+          predeterminado: false,
+          direccionId: req.body.idDireccion
+        })
+        await updateUserLogged(user.id,db,req)
+        res.redirect('/users')
+      }catch(e){
+        console.log('Hubo un error al crear los datos de facturación ',e)
       }
-      newDataInvoice.idDireccion = parseInt(newDataInvoice.idDireccion)
-      newDataInvoice.predeterminada = false
-      user.facturacion.push(newDataInvoice)
-      saveUserToDB(user)
-      res.redirect('/users')
     } else {
-      console.log(req.body)
       const errores = errors.errors.reduce(
         (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`, '')
       res.render('users/invoice', {
         mensaje: errores,
-        warning: false,
-        edit: false,
-        oldValues: req.body,
+        warning: true,
+        edit: 2,
+        user: { razonSocial: req.body.razonSocial,rfc: req.body.rfc, direccionId: req.body.idDireccion },
         direcciones: user.direcciones,
         busquedas: seccion.busquedas,
         nuevos: seccion.nuevos,
@@ -261,7 +258,7 @@ const userController = {
       res.render('users/invoice', {
         mensaje: errores,
         warning: true,
-        edit: false,
+        edit: 0,
         ...updateInvoice,
         direcciones: user.direcciones,
         busquedas: seccion.busquedas,
