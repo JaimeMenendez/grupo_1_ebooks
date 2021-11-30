@@ -151,16 +151,63 @@ const userController = {
   /** **************************************************/
   /** ************** METHODS FOR INVOICE ***************/
   /** **************************************************/
-
-  sendAddInvoiceView: (req, res) => {
+  // edit == 1 -> 'Editando el formulario' 
+  // edit == 0 -> 'Agregando una nueva dirección de facturación'
+  // edit == 2 -> 'Agregando una nueva dirección de facturación con errores en el formulario'
+  
+  sendEditInvoiceView: async(req, res) => {
     const user = req.session.userLogged
+    try{
+      const datosDeFacturacion = await db.datosFacturacion.findOne({
+        include: [{
+          model: db.direccion
+        }],
+        where: {
+          id: req.params.id
+        }
+      })
+      datosDeFacturacion.dataValues = {...datosDeFacturacion.dataValues, id: req.params.id}
+      console.log('Las direcciones de usuario son: ', user.direcciones)
+      console.log('Los datos de facturación son: ', datosDeFacturacion)
+      res.render('users/invoice', {
+        edit: 1,
+        user: datosDeFacturacion.dataValues,
+        direcciones: user.direcciones,
+        busquedas: seccion.busquedas,
+        nuevos: seccion.nuevos,
+        userLogged: req.session.userLogged
+      }) 
+      //console.log('Los datos de facturación son: ', datosDeFacturacion.dataValues.direccion.dataValues)
+      //res.redirect('/users')
+    }catch(e){
+      console.log('Hubo un error al cargar la vista de editar un invoice')
+    }
+    /* const invoiceEdit = user.facturacion.find(
+      (invoice) => invoice.id === parseInt(req.params.id)
+    )
     res.render('users/invoice', {
-      direcciones: user.direcciones,
-      edit: false,
+      edit: 1,
+      user: datosDeFacturacion.dataValues,
+      direcciones: datosDeFacturacion.dataValues.direccion.dataValues,
       busquedas: seccion.busquedas,
       nuevos: seccion.nuevos,
       userLogged: req.session.userLogged
-    })
+    }) */
+  },
+  
+  sendAddInvoiceView: (req, res) => {
+    const user = req.session.userLogged
+    try{
+      res.render('users/invoice', {
+        direcciones: user.direcciones,
+        edit: 1,
+        busquedas: seccion.busquedas,
+        nuevos: seccion.nuevos,
+        userLogged: req.session.userLogged
+      })
+    }catch(e){
+      console.log('Hubo un error al enviar la vista de facturación ',e)
+    }
   },
 
   storeNewInvoice: (req, res) => {
@@ -193,22 +240,6 @@ const userController = {
         userLogged: req.session.userLogged
       })
     }
-  },
-
-  // Edit old invoice
-  sendEditInvoiceView: (req, res) => {
-    const user = req.session.userLogged
-    const invoiceEdit = user.facturacion.find(
-      (invoice) => invoice.id === parseInt(req.params.id)
-    )
-    res.render('users/invoice', {
-      edit: true,
-      user: invoiceEdit,
-      direcciones: user.direcciones,
-      busquedas: seccion.busquedas,
-      nuevos: seccion.nuevos,
-      userLogged: req.session.userLogged
-    })
   },
 
   updateInvoice: (req, res) => {

@@ -34,13 +34,10 @@
                 </script>
             <%}%>
 
-            <form class="editForm" action=<%= edit == 1 ? `/users/edit-invoice/${ user.id }?_method=PUT` : '/users/add-new-invoice' %> method="POST">
+            <form class="editForm" action=<%= edit == 1? `/users/edit-invoice/${ user.id }?_method=PUT` : '/users/add-new-invoice' %> method="POST">
                 <h4 class="formPath">
-                    <a href="/users/">Mi cuenta</a>
-                    >
-                    <a href="/users/">Mis datos de facturación</a>
-                    >
-                    <span><%= edit == 1 ? "Editar datos de facturación" : "Agregar datos de facturación" %></span>
+                    <a href="/users/">Mi cuenta</a> > <a href="/users/">Mis datos de facturación</a> >
+                    <span><%= edit == 1? "Editar datos de facturación" : "Agregar datos de facturación" %></span>
                 </h4>
                 <h3 class="formTitle"><%= edit == 1 ? "Editar datos de facturación" : "Agregar datos de facturación" %></h3>
 
@@ -58,7 +55,9 @@
                     <label for="idDireccion">Seleccionar una dirección o agregar una nueva</label>
                     <select id="idDireccion" name="idDireccion">
                         <% direcciones.forEach(address => { %>
-                            <option value= <%= address.id %> <%= edit && (address.id == user.idDireccion)? 'selected': locals.oldValues && (oldValues.idDireccion == userLogged.idDireccion )? 'selected' : '' %> > <%= address.nombre + ', ' + address.direccion %> </option>
+                            <option value= <%= address.id %> <%= edit && (address.id == user.direccionId) ? 'selected': '' %> > 
+                                <%= address.nombre + ', ' + address.direccion %> 
+                            </option>
                         <% }) %>
                         <option value=""  onclick="mostrarAlerta()" <%= edit ? '' : 'selected' %>  >Agregar una nueva dirección </option>
                     </select>
