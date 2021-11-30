@@ -231,7 +231,7 @@ const userController = {
         mensaje: errores,
         warning: true,
         edit: false,
-        oldValues: req.body,
+        ...updateInvoice,
         direcciones: user.direcciones,
         busquedas: seccion.busquedas,
         nuevos: seccion.nuevos,
@@ -252,17 +252,21 @@ const userController = {
     res.redirect('/users')
   },
 
-  makeDefaultInvoice: (req, res) => {
-    const id = parseInt(req.params.id)
+  makeDefaultInvoice: async(req, res) => {
     const user = req.session.userLogged
-    user.facturacion.forEach((invoice) => {
-      invoice.predeterminada = false
-      if (invoice.id === id) {
-        invoice.predeterminada = true
-      }
-    })
-    saveUserToDB(user)
+    try{
+      await db.usuario.update({
+        invoiceDefault: req.params.id
+      },{
+        where:{
+          id: user.id
+        }
+      })
+    await updateUserLogged(user.id,db,req)
     res.redirect('/users')
+    }catch(e){
+      console.log('Hubo un error al hacer predeterminada la dirección de facturación', e)
+    }
   },
 
   /** **************************************************/
@@ -388,43 +392,20 @@ const userController = {
   },
 
   makeDefaultAddress: async(req, res) => {
-    //const id = Number.parseInt(req.params.id)
     const user = req.session.userLogged
     try{
-      let direcciones = await db.usuario.findAll({
-        incude: [{
-          include: db.direccion,
-          as: 'direcciones',
-          include: [{
-            include: db.datosFacturacion,
-            as: 'facturacion'
-          }]
-        }],
-        where: {
+      await db.usuario.update({
+        addressDefault: req.params.id
+      },{
+        where:{
           id: user.id
         }
       })
-      console.log('La direcciones en makeDefault son: ', direcciones)
-      await db.direccion.update({
-        predeterminado: true
-      },{
-       where: {
-         id: req.params.id
-      }
-    })
     await updateUserLogged(user.id,db,req)
     res.redirect('/users')
     }catch(e){
       console.log('Hubo un error al hacer predeterminada la dirección ', e)
     }
-    /* user.direcciones.forEach((address) => {
-      address.predeterminada = false
-      if (address.id === id) {
-        address.predeterminada = true
-      }
-    })
-    saveUserToDB(user)
-    res.redirect('/users') */
   },
 
   /** **************************************************/

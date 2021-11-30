@@ -34,15 +34,15 @@
                 </script>
             <%}%>
 
-            <form class="editForm" action=<%= edit ? `/users/edit-invoice/${ user.id }?_method=PUT` : '/users/add-new-invoice' %> method="POST">
+            <form class="editForm" action=<%= edit == 1 ? `/users/edit-invoice/${ user.id }?_method=PUT` : '/users/add-new-invoice' %> method="POST">
                 <h4 class="formPath">
                     <a href="/users/">Mi cuenta</a>
                     >
                     <a href="/users/">Mis datos de facturación</a>
                     >
-                    <span><%= edit ? "Editar datos de facturación" : "Agregar datos de facturación" %></span>
+                    <span><%= edit == 1 ? "Editar datos de facturación" : "Agregar datos de facturación" %></span>
                 </h4>
-                <h3 class="formTitle"><%= edit ? "Editar datos de facturación" : "Agregar datos de facturación" %></h3>
+                <h3 class="formTitle"><%= edit == 1 ? "Editar datos de facturación" : "Agregar datos de facturación" %></h3>
 
                 <div class="entradaDeDatos">
                     <label for="razonSocial">Nombre o Razón social</label>
