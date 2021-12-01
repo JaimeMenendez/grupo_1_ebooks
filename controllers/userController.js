@@ -200,15 +200,6 @@ const userController = {
 
   storeNewInvoice: async(req, res) => {
     const user = req.session.userLogged
-    /* onsole.log('Datos de body: ', req.body)
-    await db.datosFacturacion.create({
-      razonSocial: req.body.razonSocial,
-      rfc: req.body.rfc,
-      predeterminado: false,
-      direccionId: req.body.idDireccion
-    })
-    await updateUserLogged(user.id,db,req)
-    res.redirect('/users') */
     let errors = validationResult(req)
     if (errors.isEmpty()) {
       try{
@@ -239,45 +230,55 @@ const userController = {
     }
   },
 
-  updateInvoice: (req, res) => {
+  updateInvoice: async(req, res) => {
     const user = req.session.userLogged
-    const updateInvoice = req.body
     const errors = validationResult(req)
-    const id = parseInt(req.params.id)
-    const index = user.facturacion.findIndex((invoice) => invoice.id === id)
-    if (errors.isEmpty()) {
-      if (index >= 0) {
-        updateInvoice.id = id
-        user.facturacion[index] = updateInvoice
-        saveUserToDB(user)
+    if(errors.isEmpty()){
+      try{
+        await db.datosFacturacion.update({
+          razonSocial: req.body.razonSocial,
+          rfc: req.body.rfc,
+          direccionId: req.body.idDireccion
+        },
+        {
+          where: {
+            id: req.params.id
+          }
+        })
+        await updateUserLogged(user.id,db,req)
+        res.redirect('/users')
+      }catch(e){
+        console.log('Hubo un error al actualizar los datos de facturación ', e)
       }
-      res.redirect('/users')
-    } else {
+    }else{
       const errores = errors.errors.reduce(
         (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`, '')
       res.render('users/invoice', {
         mensaje: errores,
         warning: true,
-        edit: 0,
-        ...updateInvoice,
+        edit: 1,
+        user: {direcciones: req.body.idDireccion == '' ? user.direcciones.push({id: 0}): user.direcciones,razonSocial: req.body.razonSocial, rfc: req.body.rfc, direccionId: req.body.idDireccion == '' ? 0 : req.body.idDireccion },
         direcciones: user.direcciones,
         busquedas: seccion.busquedas,
         nuevos: seccion.nuevos,
         userLogged: req.session.userLogged
-      })
-    }
+    })
+  }
   },
 
-  deleteInvoice: (req, res) => {
-    const id = Number.parseInt(req.params.id)
+  deleteInvoice: async(req, res) => {
     const user = req.session.userLogged
-    const index = user.facturacion.findIndex((invoice) => invoice.id === id)
-
-    if (index >= 0) {
-      user.facturacion.splice(index, 1)
-      saveUserToDB(user)
+    try{
+      await db.datosFacturacion.destroy({
+        where: {
+          id: req.params.id
+        }
+      })
+      await updateUserLogged(user.id,db,req)
+      res.redirect('/users')
+    }catch(e){
+      console.log('Hubo un error al eliminar los datos de facturación ',e)
     }
-    res.redirect('/users')
   },
 
   makeDefaultInvoice: async(req, res) => {
