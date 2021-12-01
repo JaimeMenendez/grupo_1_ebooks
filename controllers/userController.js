@@ -119,9 +119,14 @@ const userController = {
     let errors = validationResult(req)
     if (errors.isEmpty()) {
       user.password = await bcrypt.hash(req.body.contraseña, 10)
-      console.log(req.body.contraseña)
-      console.log(user.password)
-      saveUserToDB(user)
+      await db.usuario.update({
+        ...user
+      },{
+        where: {
+          id: user.id
+        }
+      })
+      await updateUserLogged(user.id,db,req)
       let mensaje = `<p><i class="fas fa-exclamation-triangle"></i>La contraseña ha sido actualizada</p>`
       res.render('users/edit-data-user', {
         mensaje: mensaje,
@@ -132,11 +137,8 @@ const userController = {
         userLogged: req.session.userLogged
       })
     } else {
-      //enviar un mensaje que diga que las contraseñas no son iguales
-      console.log('Hubo un error y no se guardaron los datos')
       const errores = errors.errors.reduce(
         (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`, '')
-      console.log('Mostrando los errores generados ', errors)
       res.render('users/edit-data-user', {
         mensaje: errores,
         warning: true,
