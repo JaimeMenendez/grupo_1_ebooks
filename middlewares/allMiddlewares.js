@@ -8,7 +8,13 @@ const middleware = {
         body('rfc').notEmpty().withMessage("Debe especificar el RFC de la empresa o persona").bail()
                    .isLength({ min: 12 }).withMessage("EL RFC debe tener mínimo 12 caracteres para personas morales y 13 caracteres para personas físicas").bail()
                    .isAlphanumeric().withMessage("EL RFC debe contener caracteres alfanuméricos"),
-        body('idDireccion').notEmpty().withMessage("Debe seleccionar una dirección de la lista o seleccionar la opción de 'Agregar una nueva dirección'").bail()
+        body('idDireccion').notEmpty().withMessage("Debe seleccionar una dirección de la lista o seleccionar la opción de 'Agregar una nueva dirección'")
+                           .custom((value, {req}) => {
+                                if(value == '0'){
+                                    throw new Error("La dirección no puede estar vacía. Debe seleccionar una dirección de la lista o seleccionar la opción de 'Agregar una nueva dirección'")  
+                                }
+                                return true
+                            }),
     ],
 
     validarDireccion: [

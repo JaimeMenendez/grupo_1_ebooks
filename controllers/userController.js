@@ -230,7 +230,7 @@ const userController = {
         mensaje: errores,
         warning: true,
         edit: 2,
-        user: { razonSocial: req.body.razonSocial,rfc: req.body.rfc, direccionId: req.body.idDireccion },
+        user: { direcciones: req.body.idDireccion == '' ? user.direcciones.push({id: 0}): user.direcciones,razonSocial: req.body.razonSocial, rfc: req.body.rfc, direccionId: req.body.idDireccion == '' ? 0 : req.body.idDireccion },
         direcciones: user.direcciones,
         busquedas: seccion.busquedas,
         nuevos: seccion.nuevos,
