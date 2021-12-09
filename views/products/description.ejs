@@ -12,7 +12,7 @@
         <section class="datosPrincipales">
             <div class="materiaTitulo">
                 <p>
-                    <%= categoria %> > <%= nombreLibro%> 
+                    <%= Array.isArray(categoria) ? categoria[0].dataValues.nombre:categoria  %> > <%= nombreLibro%> 
                     
                 </p>
                     <label class="editIcon">
@@ -119,7 +119,7 @@
                     <tr>
                         <td class="sombrear">Materia</td>
                         <td>
-                            <%=categoria%>
+                            <%=Array.isArray(categoria) ? categoria[0].dataValues.nombre:categoria%>
                         </td>
                     </tr>
                     <tr>

@@ -41,13 +41,13 @@
             <div class="form-group col-sm-4">
                 <label for="categoria">Categoría:</label>
                 <input type="text" class="form-control" name="categoria" id="categoria"
-                    placeholder="Programación" value="<%= edit ? categoria : '' %>">
+                    placeholder="Programación" value="<%= edit ? (Array.isArray(categoria) ? categoria[0].dataValues.nombre :categoria) : '' %>">
             </div>
 
             <div class="form-group col-sm-4">
                 <label for="subcategoria">Subcategoría:</label>
                 <input type="text" class="form-control" name="subcategoria" id="subcategoria"
-                    placeholder="Python" value="<%= edit ? subcategoria : '' %>">
+                    placeholder="Python" value="<%= edit ? (Array.isArray(subcategoria) ? subcategoria[0].dataValues.nombre :subcategoria) : '' %>">
             </div>
 
             <div class="form-group col-sm-4">

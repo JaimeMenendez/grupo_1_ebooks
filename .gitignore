@@ -21,3 +21,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*package-lock.json
 database/config/config.js
+.idea
+controllers/test.js
+jsconfig.json
