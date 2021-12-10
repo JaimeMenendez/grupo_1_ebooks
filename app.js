@@ -7,7 +7,7 @@ const session = require('express-session')
 const morgan = require('morgan')
 const cookieParser = require('cookie-parser');
 const recuerdame = require('./middlewares/recuerdame')
-//const dbInit = require("./database/models/init");
+const dbInit = require("./database/models/init");
 
 const app = express()
 
@@ -44,13 +44,13 @@ app.use('/products', routerProducto)
 app.use('/users', routerUser)
 app.use(router)
 
-/* dbInit().then(() => {
-  console.log('Se ha sincronizado la base de datos')
+// dbInit().then(() => {
+//   console.log('Se ha sincronizado la base de datos')
  
-  const port = process.env.PORT || 3000
-  app.listen(port, () =>
-    console.log('Servidor Corriendo en el puerto', port))
-})  */
+//   const port = process.env.PORT || 3000
+//   app.listen(port, () =>
+//     console.log('Servidor Corriendo en el puerto', port))
+// }) 
 
 const port = process.env.PORT || 3000
 app.listen(port, () =>

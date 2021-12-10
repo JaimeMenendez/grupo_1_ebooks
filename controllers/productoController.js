@@ -3,7 +3,8 @@ const path = require('path');
 const { readFileSync, writeFileSync, unlinkSync } = require('fs')
 const seccion = require("../controllers/secciones.json");
 const { decodeBase64 } = require('bcryptjs');
-const db = require('../database/models')
+const db = require('../database/models');
+const { Sequelize } = require("../database/models");
 
 const productsFilePath = path.join(__dirname, '../DB/librosDB.json');
 
@@ -43,6 +44,7 @@ const controller = {
     // Create -  Method to store
     // TODO Validar el guardado de un libro con express validator
     store: async (req, res) => {
+        let path = require("path")
         const newBook = req.body
         newBook.precioBook = Number.parseInt(newBook.precioBook)
         newBook.precioEbook = Number.parseInt(newBook.precioEbook)
@@ -99,45 +101,45 @@ const controller = {
         }
     },
     // Update - Method to update
-    update: async(req, res) => {
+    update: async (req, res) => {
         let id = Number.parseInt(req.params.id);
 
-            if (req.file) {
-                req.portada = req.file.path
+        if (req.file) {
+            req.portada = req.file.path
+        }
+
+        let libroDB = await db.libro.update(req.body, {
+            where: { id: id }
+        });
+        libroDB = await db.libro.findByPk(id)
+
+        await libroDB.setCategoria([]);
+        await libroDB.setSubcategoria([]);
+
+        let subcategoria = await db.subcategoria.findOrCreate({
+            where: {
+                nombre: req.body.subcategoria
             }
+        });
 
-            let libroDB = await db.libro.update(req.body, {
-                where: {id: id}
-            });
-            libroDB = await db.libro.findByPk(id)
+        let categoria = await db.categoria.findOrCreate({
+            where: {
+                nombre: req.body.categoria
+            }
+        });
 
-            await libroDB.setCategoria([]);
-            await libroDB.setSubcategoria([]);
+        await subcategoria[0].addLibro(libroDB);
+        await categoria[0].addLibro(libroDB);
+        await categoria[0].addSubcategoria(subcategoria[0]);
 
-            let subcategoria = await db.subcategoria.findOrCreate({
-                where: {
-                    nombre: req.body.subcategoria
-                }
-            });
-    
-            let categoria = await db.categoria.findOrCreate({
-                where: {
-                    nombre: req.body.categoria
-                }
-            });
-
-            await subcategoria[0].addLibro(libroDB);
-            await categoria[0].addLibro(libroDB);
-            await categoria[0].addSubcategoria(subcategoria[0]);
-
-            res.redirect('/products/' + id);
+        res.redirect('/products/' + id);
     },
 
     // Delete - Delete one product from DB
-    destroy: async(req, res) => {
+    destroy: async (req, res) => {
         let id = Number.parseInt(req.params.id);
         if (id) {
-            await db.libro.destroy({where: {id:id}});
+            await db.libro.destroy({ where: { id: id } });
             res.redirect('/products/')
         }
         else {
@@ -148,6 +150,56 @@ const controller = {
         let librosDB = readFileSync(productsFilePath, 'utf-8')
         librosDB = JSON.parse(librosDB)
         res.render('products/libros', { libros: librosDB })
+    },
+
+
+    // Carrito
+    addItemToCar: async (req, res) => {
+        try {
+            let item = {
+                libroId: Number(req.body.libroId),
+                usuarioId: req.session.userLogged.id,
+                cantidad: Number(req.body.cantidad),
+                formato: Number(req.body.formato)
+            }
+
+            let itemOnCar = await db.carrito.findOne({
+                where: {
+                    [db.Sequelize.Op.and]: [
+                        { libroId: item.libroId },
+                        { usuarioId: item.usuarioId }
+                    ]
+                }
+            })
+
+            item = itemOnCar == null ? item: {...item, id: itemOnCar.dataValues.id}
+
+            await db.carrito.upsert({
+                ...item
+            }, {
+                where: {
+                    [db.Sequelize.Op.and]: [
+                        { libroId: item.libroId },
+                        { usuarioId: item.usuarioId }
+                    ]
+                }
+            })
+
+            res.sendStatus(200)
+        }
+        catch (e) {
+            console.log(e)
+            res.sendStatus(400)
+        }
+    },
+    sendShoppingCart: async (req, res) => {
+        let carrito = await db.carrito.findAll({
+            where: {
+                usuarioId: req.session.userLogged.id
+            },
+            include: db.libro
+        })
+        res.render('products/carrito', { articulos: carrito, userLogged: req.session.userLogged })
     }
 
 }

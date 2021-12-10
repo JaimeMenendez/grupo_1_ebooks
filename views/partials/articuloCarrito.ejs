@@ -1,11 +1,12 @@
 <article class="carArticle">
-    <img src="<%= portada %> " alt="">
+    <img src="<%= locals.libro.dataValues.portada %> " onclick="window.location.href ='/products/<%=locals.libro.dataValues.id%>'" alt="" style="cursor: pointer;">
     <div class="carArticleData">
-        <p class="carProductTitle"><%= nombreLibro %> </p>
-        <p class="carProductAuthor"><%= autor %></p>
-        <p class="carProductFormat"><%= formato %></p>
+        <p class="carProductTitle"><%= locals.libro.dataValues.nombreLibro %> </p>
+        <p class="carProductAuthor"><%= locals.libro.dataValues.autor %></p>
+        <p class="carProductFormat"><%= locals.formato == 0 ? "Libro Electrónico" : "Pasta Blanda" %></p>
     </div>
 
+    <% if(locals.formato != 0) {%> 
     <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
             style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
@@ -14,6 +15,7 @@
             onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
                 class="fas fa-plus-circle"></i></button>
     </div>
-    <p class="precio">$ &nbsp<span><%= precio.toFixed(2) %> </span></p>
+    <% } %> 
+    <p class="precio">$ &nbsp<span><%= locals.formato == 0 ?  locals.libro.dataValues.precioEbook.toFixed(2) : locals.libro.dataValues.precioBook.toFixed(2)  %> </span></p>
     <i class="fas fa-trash-alt"></i>
 </article>

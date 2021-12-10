@@ -73,7 +73,7 @@ module.exports = (sequelize, dataTypes) => {
                 through: 'favoritos'
             })
 
-            Usuario.belongsTo(models.rol);
+            Usuario.hasMany(models.carrito);
         }
     return Usuario;
 }

@@ -90,7 +90,7 @@
                     </div>
                 </div>
                 <div class="botones">
-                    <button class='btn red agregarAlCarrito'>Agregar al carrito</button>
+                    <button class='btn red agregarAlCarrito' onClick="addToCar('<%= id%>')">Agregar al carrito</button>
                     <button class='btn Azul comprarAhora'>Comprar ahora</button>
                 </div>
             </section>
@@ -193,6 +193,58 @@
     <img src="./images/bannerDescuentos.jpg" alt="Banner de descuentos" width="100%">
 
 <%- include('../partials/footer') %>
+
+
+    <script>
+        async function addToCar(libroId) {
+
+            let pastaBlanda = document.querySelector("#pastaBlandaButton").checked
+            let libroElectronico = document.querySelector("#ebookButton").checked
+
+            if(!(pastaBlanda || libroElectronico)) {
+                alert("No ha seleccionado ningún formato. \n\nPor favor, especifique el formato de su compra con los botones \"Libro Electrónico\" o \"Pasta Blanda\".")
+                return;
+            }
+
+            let formato = 0;
+            if(libroElectronico == true && pastaBlanda ==false ) 
+               formato = 0
+            if(libroElectronico == false && pastaBlanda ==true ) 
+               formato = 1
+            if(libroElectronico == true && pastaBlanda ==true ) 
+               formato = 2
+
+
+            let url = '/products/add-item-to-car/'+libroId;
+            cantidad =  document.querySelector(".quantity").value
+            let data = {
+                libroId:  libroId, 
+                cantidad: cantidad,
+                formato: formato
+            };
+
+            fetch(url, {
+            redirect:"follow",
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers:{
+                'Content-Type': 'application/json'
+            }
+            })
+            .then(response => {
+                console.log(response)
+                if(response.redirected){
+                    window.location.href = response.url;
+                }else if(!response.ok){
+                    alert("No se ha podido agregar el producto al carrito.")
+                }else{
+                    alert("El producto ha sido agregado al carrito.")
+                }
+            })       
+            .catch(error => console.log('Error:', error))
+        }
+
+    </script>
 </body>
 
 </html>

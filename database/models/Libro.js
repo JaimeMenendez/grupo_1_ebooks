@@ -90,8 +90,7 @@ module.exports= (sequelize, dataTypes) => {
 
         Libro.hasMany(models.compraLibro);
         
-
-
+        Libro.hasMany(models.carrito);
     };
     return Libro;
 }

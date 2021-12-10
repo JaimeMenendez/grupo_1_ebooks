@@ -12,9 +12,21 @@
     <main>
         <h2 class="carritoTitle"><i class="fas fa-shopping-cart"></i>&nbsp Mi Carrito</h2>
         <section>
-            <% articulos.forEach(libro => { %> 
+            <% articulos.forEach(book => { %> 
+                <% let libro = book.dataValues%>
+                <% if(book.dataValues.formato == 0 ||book.dataValues.formato == 1) {%>
                 <%- include('../partials/articuloCarrito', libro) %> 
-            <% })%>       
+                <% } else{%>
+                    <% book.dataValues.formato = 0 %>
+                    <%- include('../partials/articuloCarrito', libro) %> 
+                    <% book.dataValues.formato = 1 %>
+                    <%- include('../partials/articuloCarrito', libro) %> 
+                <% }%>    
+            <% })%>  
+            
+            <% if(articulos.length == 0) { %> 
+                <div style="padding: 40px; font-size: 20px;">No se han agregado artículos en su carrito.</div>
+            <% }%>  
         </section>
 
         <article class="totalAPagar carArticle">

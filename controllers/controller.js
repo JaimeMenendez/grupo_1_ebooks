@@ -1,7 +1,7 @@
 const book = require('./libro.json')
 const path = require('path');
 const fs = require('fs');
-const carrito = require('./carrito.json')
+//const carrito = require('./carrito.json')
 const seccion = require('./secciones.json')
 const categorias = require('./categorias.json')
 const botonesPrincipales = require('./botonesPrincipales.json')
@@ -33,12 +33,6 @@ const controller = {
   },
   sendTerminosyCondiciones: (req, res) => {
     res.render('main/documento', { documento: '../partials/terminos',userLogged: req.session.userLogged })
-  },
-  sendShoppingCart: (req, res) => {
-    res.render('products/carrito', {...carrito,userLogged: req.session.userLogged})
-  },
-  sendProductDescription: (req, res) => {
-    res.render('products/description', {...book,userLogged: req.session.userLogged})
   },
   sendSearchPage: (req, res) => {
     const buttonPressed = 'searchBook'

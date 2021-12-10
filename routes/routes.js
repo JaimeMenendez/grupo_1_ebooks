@@ -6,8 +6,8 @@ router.get('/', controller.sendHome)
 router.get('/home', controller.sendHome)
 router.get('/PoliticaDePrivacidad', controller.sendPoliticaDePrivacidad)
 router.get('/TerminosyCondiciones', controller.sendTerminosyCondiciones)
-router.get('/carrito', controller.sendShoppingCart)
-router.get('/description', controller.sendProductDescription)
+
+
 
 router.get('/searchBook', controller.sendSearchPage)
 router.get('/searchBook/:buttonId/', controller.sendCategoryButtons)
