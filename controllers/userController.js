@@ -62,46 +62,47 @@ const userController = {
         let errors = validationResult(req)
         let update
         if (errors.isEmpty()) {
-            try {
-                if (req.file) {
-                    update = await db.usuario.update({
-                        firstName: req.body.nombre,
-                        lastName: req.body.apellido,
-                        email: req.body.correo,
-                        imageUser: req.file.path
-                    }, { where: { email: user.email }, returning: true })
-                    req.session.userLogged = {
-                        ...req.session.userLogged,
-                        firstName: req.body.nombre,
-                        lastName: req.body.apellido,
-                        email: req.body.correo,
-                        imageUser: req.file.path
-                    }
-                } else {
-                    update = await db.usuario.update({
-                        firstName: req.body.nombre,
-                        lastName: req.body.apellido,
-                        email: req.body.correo
-                    }, { where: { email: user.email }, returning: true })
-                    req.session.userLogged = {
-                        ...req.session.userLogged,
-                        firstName: req.body.nombre,
-                        lastName: req.body.apellido,
-                        email: req.body.correo
-                    }
+          try {
+              if (req.file) {
+                update = await db.usuario.update({
+                  firstName: req.body.nombre,
+                  lastName: req.body.apellido,
+                  email: req.body.correo,
+                  imageUser: req.file.path
+                }, { where: { email: user.email }, returning: true })
+
+                req.session.userLogged = {
+                  ...req.session.userLogged,
+                  firstName: req.body.nombre,
+                  lastName: req.body.apellido,
+                  email: req.body.correo,
+                  imageUser: req.file.path
                 }
-                let mensaje = `<p><i class="fas fa-exclamation-triangle"></i>Datos de usuario editados correctamente</p>`
-                res.render('users/edit-data-user', {
-                    mensaje: mensaje,
-                    warning: false,
-                    user: req.session.userLogged,
-                    busquedas: seccion.busquedas,
-                    favoritos: seccion.favoritos,
-                    userLogged: req.session.userLogged
-                })
-            } catch (errorDB) {
-                console.log(errorDB)
-            }
+              } else {
+                update = await db.usuario.update({
+                    firstName: req.body.nombre,
+                    lastName: req.body.apellido,
+                    email: req.body.correo
+                }, { where: { email: user.email }, returning: true })
+                req.session.userLogged = {
+                    ...req.session.userLogged,
+                    firstName: req.body.nombre,
+                    lastName: req.body.apellido,
+                    email: req.body.correo
+                }
+              }
+              let mensaje = `<p><i class="fas fa-exclamation-triangle"></i>Datos de usuario editados correctamente</p>`
+              res.render('users/edit-data-user', {
+                  mensaje: mensaje,
+                  warning: false,
+                  user: req.session.userLogged,
+                  busquedas: seccion.busquedas,
+                  favoritos: seccion.favoritos,
+                  userLogged: req.session.userLogged
+              })
+          } catch (errorDB) {
+              console.log(errorDB)
+          }
         } else {
             const errores = errors.errors.reduce(
                 (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`, '')
