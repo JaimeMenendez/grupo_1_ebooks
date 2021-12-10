@@ -32,8 +32,8 @@ const middleware = {
     ],
 
     validarRegistro: [
-        body('firstName').notEmpty().withMessage("Debe especificar su nombre."),
-        body('lastName').notEmpty().withMessage("Debe especificar sus apellidos."),
+        body('firstName').notEmpty().isLength({ min: 2 }).withMessage("Debe especificar su nombre."),
+        body('lastName').notEmpty().isLength({ min: 2 }).withMessage("Debe especificar sus apellidos."),
         body('email').notEmpty().withMessage("Debe especificar un email.").bail()
                       .isEmail().withMessage('Debe introducir un email válido.'),
         body('password').matches(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/).withMessage("La contraseña debe tener una letra en minúscula, una letra en mayúscula, un número y al menos 8 caracteres.")
@@ -46,8 +46,8 @@ const middleware = {
     ],
 
     validarDataUser: [
-        body('nombre').notEmpty().withMessage("Debe especificar su nombre"),
-        body('apellido').notEmpty().withMessage("Debe especificar su apellido"),
+        body('nombre').notEmpty().isLength({ min: 2 }).withMessage("Debe especificar su nombre"),
+        body('apellido').notEmpty().isLength({ min: 2 }).withMessage("Debe especificar su apellido"),
         body('correo').notEmpty().withMessage("Debe especificar un email")
                     .isEmail().withMessage("Debe especificar un email válido")  
     ],
