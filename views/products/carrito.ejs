@@ -48,7 +48,7 @@
                 nuestros libros </p>
 
             <ul>
-                <li><a href=""> <i class="fas fa-map-marker-alt"></i> <span> &nbsp Configurar Dirección de
+                <li><a href="/users/#direcciones"> <i class="fas fa-map-marker-alt"></i> <span> &nbsp Configurar Dirección de
                             Envío</span></a></li>
                 <li><a href=""><i class="fas fa-info-circle"></i> <span>&nbsp Más Información sobre precios y tiempos de
                             entrega de Inside Books en la República Mexicana.</span></a></li>
@@ -66,6 +66,18 @@
     <img src="./images/bannerDescuentos.jpg" alt="Banner de descuentos" width="100%">
 
 <%- include('../partials/footer') %>
+
+    <script>
+       function deleteItem(id){
+        let confirmation = confirm("¿Estás seguro que desea eliminar este libro de su carrito?")
+        if(confirmation){
+            fetch('/products/remove-item-from-car/' + id,{method: 'DELETE'})
+            .then(() => window.location.reload())
+        }
+        
+        }
+    
+    </script>
 </body>
 
 </html>

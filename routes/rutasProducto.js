@@ -5,6 +5,7 @@ const path = require('path')
 
 const productoController = require('../controllers/productoController')
 const authMiddleware = require("../middlewares/authMiddleware")
+const routerUser = require("./rutasUsuarios")
 
 // Multer Configuration
 const storage = multer.diskStorage({
@@ -34,4 +35,7 @@ router.put('/:id/edit', upload.single('portada'), productoController.update)
 router.delete('/delete/:id', productoController.destroy)
 
 router.post('/add-item-to-car/:id',authMiddleware, productoController.addItemToCar)
+router.delete("/remove-item-from-car/:id", productoController.removeItemFromCar)
+
+
 module.exports = router

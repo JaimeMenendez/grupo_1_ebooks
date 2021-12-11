@@ -10,12 +10,12 @@
     <div class="number-input">
         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
             style="padding:1px 7px;"><i class="fas fa-minus-circle"></i></button>
-        <input class="quantity" min="1" name="quantity" value="1" type="number" readonly>
+        <input class="quantity" min="1" name="quantity" value="<%=locals.cantidad%>" type="number" readonly>
         <button style="padding:1px 7px"
             onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
                 class="fas fa-plus-circle"></i></button>
     </div>
     <% } %> 
     <p class="precio">$ &nbsp<span><%= locals.formato == 0 ?  locals.libro.dataValues.precioEbook.toFixed(2) : locals.libro.dataValues.precioBook.toFixed(2)  %> </span></p>
-    <i class="fas fa-trash-alt"></i>
+    <i class="fas fa-trash-alt" onclick="deleteItem(<%= locals.id%>)"></i>
 </article>

@@ -223,7 +223,37 @@
                 formato: formato
             };
 
-            fetch(url, {
+           if(formato == 2){
+               Promise.all([addToCarFetch(url,{...data, formato: 0}),addToCarFetch(url,{...data, formato: 1}) ])
+               .then(response => {
+                    if(response[0].redirected){
+                        window.location.href = response.url;
+                    }else if(!(response[0].ok && response[1].ok)){
+                        alert("No se ha podido agregar el producto al carrito.")
+                    }else{
+                        alert("El producto ha sido agregado al carrito.")
+                    }
+                })       
+                .catch(error => console.log('Error:', error))
+
+           }else{
+                addToCarFetch(url,data)
+                .then(response => {
+                    console.log(response)
+                    if(response.redirected){
+                        window.location.href = response.url;
+                    }else if(!response.ok){
+                        alert("No se ha podido agregar el producto al carrito.")
+                    }else{
+                        alert("El producto ha sido agregado al carrito.")
+                    }
+                })       
+                .catch(error => console.log('Error:', error))
+           }
+        }
+
+        async function addToCarFetch(url,data){
+            return fetch(url, {
             redirect:"follow",
             method: 'POST',
             body: JSON.stringify(data),
@@ -231,17 +261,6 @@
                 'Content-Type': 'application/json'
             }
             })
-            .then(response => {
-                console.log(response)
-                if(response.redirected){
-                    window.location.href = response.url;
-                }else if(!response.ok){
-                    alert("No se ha podido agregar el producto al carrito.")
-                }else{
-                    alert("El producto ha sido agregado al carrito.")
-                }
-            })       
-            .catch(error => console.log('Error:', error))
         }
 
     </script>

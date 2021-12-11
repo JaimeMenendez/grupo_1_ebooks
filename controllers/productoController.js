@@ -49,8 +49,6 @@ const controller = {
         newBook.precioBook = Number.parseInt(newBook.precioBook)
         newBook.precioEbook = Number.parseInt(newBook.precioEbook)
 
-
-
         // let librosDB = readFileSync(productsFilePath, 'utf-8')
         // librosDB = JSON.parse(librosDB)
 
@@ -167,12 +165,13 @@ const controller = {
                 where: {
                     [db.Sequelize.Op.and]: [
                         { libroId: item.libroId },
-                        { usuarioId: item.usuarioId }
+                        { usuarioId: item.usuarioId },
+                        { formato: item.formato }
                     ]
                 }
             })
 
-            item = itemOnCar == null ? item: {...item, id: itemOnCar.dataValues.id}
+            item = itemOnCar == null ? item: {...item, id: itemOnCar.dataValues.id, cantidad:  itemOnCar.dataValues.cantidad + item.cantidad}
 
             await db.carrito.upsert({
                 ...item
@@ -180,7 +179,8 @@ const controller = {
                 where: {
                     [db.Sequelize.Op.and]: [
                         { libroId: item.libroId },
-                        { usuarioId: item.usuarioId }
+                        { usuarioId: item.usuarioId },
+                        { formato: item.formato },
                     ]
                 }
             })
@@ -200,6 +200,11 @@ const controller = {
             include: db.libro
         })
         res.render('products/carrito', { articulos: carrito, userLogged: req.session.userLogged })
+    },
+    removeItemFromCar: async(req, res) =>{
+        let id = Number(req.params.id)
+        await db.carrito.destroy({where: {id}})
+        res.sendStatus(200)
     }
 
 }
