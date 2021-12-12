@@ -265,12 +265,12 @@ transition: background 0.2s !important;
     color: #721c24;
     font-weight: bold;
     text-align: left;
-    font-size: 1rem;
+    font-size: 16px;
   }
 
   .red-alert p i{
     padding-right: 5px;
-    font-size: 1rem;
+    font-size: 16px;
   }
 
 

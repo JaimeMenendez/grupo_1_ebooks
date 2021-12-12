@@ -11,29 +11,55 @@
     <script>
         tinymce.init({
             selector: 'textarea',
+            setup: function (editor) {
+                editor.on('change', function () {
+                editor.save();
+            })},
+            extended_valid_elements: "*[*]"
         });
     </script>
 
     <%- include('../partials/navBar') %>
     <%- include('../partials/navBarMobile') %>
 
+    <% if(locals.mensaje) {%>
+        <div class="alert-message <%= warning ? 'red-alert': 'green-alert'%>" style="font-size: 18px !important;">
+            <a href="javascript:void(0)" class="closebtn1" onclick="closeMessage()" style="font-size: 25px !important;">&times;</a>
+                <%- mensaje %>  
+        </div>
+        <script> 
+            setTimeout(() => {
+                document.querySelector(".alert-message").style.opacity = '0';
+            }, 10000);
+            setTimeout(() => {
+                document.querySelector(".alert-message").style.display = 'none';
+            }, 11000);
 
-    <form class="container" autocomplete="false" action=<%= edit ? "/products/" + id + "/edit?_method=PUT" :"/products/"%> method="POST"
+            const closeMessage = () =>{
+                document.querySelector(".alert-message").style.opacity = '0';
+                setTimeout(() => {
+                    document.querySelector(".alert-message").style.display = 'none';
+                }, 1000);
+            }
+        </script>
+    <%}%>
+
+    <form class="container" autocomplete="false" action=<%= edit ? "/products/" + locals.id + "/edit?_method=PUT" : "/products/" %> method="POST"
         enctype="multipart/form-data">
         <h1 class="pageTitle">
-            <%- tittle %>
+            <%- title %>
         </h1>
         <div class="form-row">
             <div class="form-group col-sm-6">
                 <label for="nombreLibro">Título del Libro:</label>
                 <input type="text" name="nombreLibro" class="form-control" id="nombreLibro"
-                    placeholder="Título" value="<%= edit ? nombreLibro : '' %>">
+                    placeholder="Título" value="<%= locals.nombreLibro ? nombreLibro : '' %>" required minlength="5">
             </div>
 
             <div class="form-group col-sm-6">
                 <label for="autor">Autor:</label>
                 <input type="text" class="form-control" id="autor" name="autor" placeholder="Autor"
-                    value="<%= edit ? autor : '' %>">
+                    value="<%= locals.autor ? autor : '' %>" required>
             </div>
         </div>
 
@@ -41,19 +67,19 @@
             <div class="form-group col-sm-4">
                 <label for="categoria">Categoría:</label>
                 <input type="text" class="form-control" name="categoria" id="categoria"
-                    placeholder="Programación" value="<%= edit ? (Array.isArray(categoria) ? categoria[0].dataValues.nombre :categoria) : '' %>">
+                    placeholder="Programación" value="<%= locals.categoria ? (Array.isArray(categoria) ? categoria[0].dataValues.nombre :categoria) : '' %>" required>
             </div>
 
             <div class="form-group col-sm-4">
                 <label for="subcategoria">Subcategoría:</label>
                 <input type="text" class="form-control" name="subcategoria" id="subcategoria"
-                    placeholder="Python" value="<%= edit ? (Array.isArray(subcategoria) ? subcategoria[0].dataValues.nombre :subcategoria) : '' %>">
+                    placeholder="Python" value="<%= locals.subcategoria ? (Array.isArray(subcategoria) ? subcategoria[0].dataValues.nombre :subcategoria) : '' %>" required>
             </div>
 
             <div class="form-group col-sm-4">
                 <label for="editorial">Editorial:</label>
                 <input type="text" class="form-control" name="editorial" id="editorial"
-                    placeholder="Springer" value="<%= edit ? editorial : '' %>">
+                    placeholder="Springer" value="<%= locals.editorial ? editorial : '' %>" required>
             </div>
         </div>
 
@@ -61,19 +87,19 @@
             <div class="form-group col-sm-4">
                 <label for="isbn">ISBN:</label>
                 <input type="text" class="form-control" id="isbn" name="isbn"
-                    placeholder="9781449340377" value="<%= edit ? isbn : '' %>">
+                    placeholder="9781449340377" value="<%= locals.isbn ? isbn : '' %>" required>
             </div>
 
             <div class="form-group col-sm-4">
                 <label for="precioBook">Precio del Libro</label>
                 <input id="precioBook" class="form-control" type="number" min="0" step="0.5"
-                    name="precioBook" placeholder=" " value="<%= edit ? precioBook : '' %>">
+                    name="precioBook" placeholder=" " value="<%= locals.precioBook ? precioBook : '' %>" required>
             </div>
 
             <div class="form-group col-sm-4">
                 <label for="precioBook">Precio Ebook:</label>
                 <input id="precioBook" class="form-control" type="number" min="0" step="0.5"
-                    name="precioEbook" placeholder=" " value="<%= edit ? precioEbook : '' %>">
+                    name="precioEbook" placeholder=" " value="<%= locals.precioEbook ? precioEbook : '' %>" required>
             </div>
         </div>
 
@@ -81,36 +107,36 @@
             <div class="form-group col-sm-4">
                 <label for="exampleFormControlSelect1">Idioma:</label>
                 <select class="form-control" name="idioma" id="idioma">
-                    <option value="Inglés" <%= edit && locals.idioma == 'Inglés'? 'selected': '' %>>Inglés</option>
-                    <option value="Español" <%= edit && locals.idioma == 'Español'? 'selected': '' %>>Español</option>
-                    <option value="Francés" <%= edit && locals.idioma == 'Francés'? 'selected': '' %>>Francés</option>
-                    <option value="Italiano" <%= edit && locals.idioma == 'Italiano'? 'selected': '' %>>Italiano</option>
+                    <option value="Inglés" <%=  locals.idioma && locals.idioma == 'Inglés'? 'selected': '' %>>Inglés</option>
+                    <option value="Español" <%=  locals.idioma && locals.idioma == 'Español'? 'selected': '' %>>Español</option>
+                    <option value="Francés" <%=  locals.idioma && locals.idioma == 'Francés'? 'selected': '' %>>Francés</option>
+                    <option value="Italiano" <%=  locals.idioma && locals.idioma == 'Italiano'? 'selected': '' %>>Italiano</option>
                 </select>
             </div>
 
             <div class="form-group col-sm-4">
                 <label>Año</label>
                 <input type="number" class="form-control" id="year" min="1980" max="2021" step="1"
-                    name="year" placeholder=" " value="<%= edit ? year : '' %>">
+                    name="year" placeholder=" " value="<%=  locals.year ? year : '' %>" required>
             </div>
 
             <div class="form-group col-sm-4">
                 <label for="paginas">Número de Páginas</label>
                 <input type="number" class="form-control" id="paginas" min="0" step="1" name="paginas"
-                    placeholder=" " value="<%= edit ? paginas : '' %>">
+                    placeholder=" " value="<%= locals.paginas ? paginas : '' %>" required>
             </div>
         </div>
 
         <div class="container center-block">
             <div class="row">
                 <div>
-                    <img src="<%= edit ? portada : '' %>" alt="portada" id="portadaImg"
+                    <img src="<%= locals.portada ? portada : '' %>" alt="portada" id="portadaImg"
                     style="width: 200px; ">
                 </div>
 
             <div>
                 <label for="imagen">Seleccionar imagen: </label>
-                <input type="file" onchange="loadFile(event)" name="portada"
+                <input type="file"  accept="image/png, image/jpeg, image/gif" onchange="loadFile(event)" name="portada"
                     class="form-control-file .form-control-lg" id="imagen">
             </div>
 
@@ -131,21 +157,21 @@
 
         <div class="form-group">
             <h4>Acerca de este libro</h4>
-            <textarea id="detallesLibro" name="detallesDelLibro">
-            <%= edit ? detallesDelLibro : '' %>
+            <textarea name="detallesDelLibro">
+            <%= locals.detallesDelLibro ? detallesDelLibro : '' %>
             </textarea>
         </div>
 
         <div class="autorDetails">
             <h4>Acerca del Autor</h4>
-            <textarea id="detallesAutor" name="detallesAutor">
-            <%= edit ? detallesAutor : '' %>
+            <textarea name="detallesAutor">
+            <%= locals.detallesAutor ? detallesAutor : '' %>
             </textarea>
         </div>
 
 
         <div class="botones">
-            <button class="btn btn-primary" type="submit"><%= edit ? "Editar Libro" : 'Agregar Libro' %></button>
+            <button class="btn btn-primary" type="submit" onsubmit="tinyMCE.triggerSave();"><%= edit ? "Editar Libro" : 'Agregar Libro' %></button>
             <button class="btn btn-danger" type="reset">Borrar</button>
         </div>
     </form>

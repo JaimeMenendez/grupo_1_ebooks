@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs')
-const {body} = require('express-validator')
+const {body, check} = require('express-validator')
 
 const middleware = {
 
@@ -76,6 +76,16 @@ const middleware = {
                                 }
                                 return true
                             })
+    ],
+    validarLibro: [
+        check('nombreLibro')
+        .notEmpty().withMessage("Debe especificar un título").bail()
+        .isLength({ min: 5 }).withMessage("El título debe tener al menos 5 caracteres"),
+        check('autor').notEmpty().withMessage("Debe especificar un autor"),
+        check("detallesAutor").notEmpty().withMessage("Debe especificar los detalles del autor").bail()
+        .isLength({ min: 5 }).withMessage("Los detalles del autor deben tener un mínimo de 5 caractere."),
+        check("detallesDelLibro").notEmpty().withMessage("Debe especificar los detalles del libro").bail()
+        .isLength({ min: 5 }).withMessage("Los detalles del libro deben tener un mínimo de 5 caracteres."),
     ]
 
 }

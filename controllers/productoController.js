@@ -5,9 +5,10 @@ const seccion = require("../controllers/secciones.json");
 const { decodeBase64 } = require('bcryptjs');
 const db = require('../database/models');
 const { Sequelize } = require("../database/models");
+const { validationResult } = require("express-validator");
+const multer = require("multer");
 
 const productsFilePath = path.join(__dirname, '../DB/librosDB.json');
-
 
 const controller = {
     // Root - Show all products
@@ -16,7 +17,6 @@ const controller = {
         let nuevosArticulos = products.map(articulo => {
             return { ...articulo.dataValues, idClass: "", nuevo: false, clasificacion: 3, formato: "" }
         })
-
 
         let seccionProductos = seccion.todosLosProductos;
         seccionProductos.articulos = nuevosArticulos;
@@ -35,7 +35,7 @@ const controller = {
     // Create - Form to create
     create: (req, res) => {
         res.render('products/editar-agregar-producto', {
-            tittle: '<i class="fas fa-book"></i>&nbsp Agregar Libro',
+            title: '<i class="fas fa-book"></i>&nbsp Agregar Libro',
             edit: false,
             userLogged: req.session.userLogged
         })
@@ -44,42 +44,57 @@ const controller = {
     // Create -  Method to store
     // TODO Validar el guardado de un libro con express validator
     store: async (req, res) => {
-        let path = require("path")
-        const newBook = req.body
-        newBook.precioBook = Number.parseInt(newBook.precioBook)
-        newBook.precioEbook = Number.parseInt(newBook.precioEbook)
+        let errors = validationResult(req)
+        if (errors.isEmpty()) {
+            const newBook = req.body
+            newBook.precioBook = Number.parseInt(newBook.precioBook)
+            newBook.precioEbook = Number.parseInt(newBook.precioEbook)
 
-        // let librosDB = readFileSync(productsFilePath, 'utf-8')
-        // librosDB = JSON.parse(librosDB)
+            // let librosDB = readFileSync(productsFilePath, 'utf-8')
+            // librosDB = JSON.parse(librosDB)
 
-        // const currentMaxId = librosDB[librosDB.length - 1].id
-        // newBook.id = currentMaxId + 1
-        newBook.votos = 0
-        newBook.rating = 0
+            // const currentMaxId = librosDB[librosDB.length - 1].id
+            // newBook.id = currentMaxId + 1
+            newBook.votos = 0
+            newBook.rating = 0
 
-        if (req.file) {
-            newBook.portada = req.file.path
+            if (req.file) {
+                newBook.portada = req.file.path
+            } else {
+                newBook.portada = 'public/images/booksCover/default-image.png'
+            }
+
+            let libroDB = await db.libro.create(req.body);
+
+            let subcategoria = await db.subcategoria.findOrCreate({
+                where: {
+                    nombre: req.body.subcategoria
+                }
+            });
+
+            let categoria = await db.categoria.findOrCreate({
+                where: {
+                    nombre: req.body.categoria
+                }
+            });
+            await subcategoria[0].addLibro(libroDB);
+            await categoria[0].addLibro(libroDB);
+            await categoria[0].addSubcategoria(subcategoria[0]);
+            res.redirect('/products/')
         } else {
-            newBook.portada = 'public/images/booksCover/default-image.png'
+            const errores = errors.errors.reduce(
+                (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`, '')
+            res.render('products/editar-agregar-producto', {
+                ...req.body,
+                portada: "",
+                title: '<i class="fas fa-book"></i>&nbsp Agregar Libro',
+                edit: false,
+                userLogged: req.session.userLogged,
+                mensaje: errores,
+                warning: true
+            })
         }
-
-        let libroDB = await db.libro.create(req.body);
-
-        let subcategoria = await db.subcategoria.findOrCreate({
-            where: {
-                nombre: req.body.subcategoria
-            }
-        });
-
-        let categoria = await db.categoria.findOrCreate({
-            where: {
-                nombre: req.body.categoria
-            }
-        });
-        await subcategoria[0].addLibro(libroDB);
-        await categoria[0].addLibro(libroDB);
-        await categoria[0].addSubcategoria(subcategoria[0]);
-        res.redirect('/products/')
+        
     },
 
     // Update - Form to edit
@@ -89,7 +104,7 @@ const controller = {
                 .then((libroBuscado) => {
                     res.render('products/editar-agregar-producto', {
                         ...libroBuscado.dataValues,
-                        tittle: '<i class="fas fa-edit"></i>&nbsp Editar Libro',
+                        title: '<i class="fas fa-edit"></i>&nbsp Editar Libro',
                         edit: true,
                         userLogged: req.session.userLogged
                     })

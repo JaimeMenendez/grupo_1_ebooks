@@ -49,7 +49,7 @@
 
         <div class="container tituloInput">
             <div class="inputContainer ">
-                <input type="text" placeholder=" " name="nombre">
+                <input type="text" placeholder=" " name="nombre" minlength="5" required>
                 <label>Título</label>
                 <div class="error-message"></div>
             </div>
@@ -57,7 +57,7 @@
 
         <div class="container autorInput">
             <div class="inputContainer">
-                <input id="autor" placeholder=" " type="text" name="autor">
+                <input id="autor" placeholder=" " type="text" name="autor" required>
                 <label>Autor</label>
                 <div class="error-message"></div>
             </div>
@@ -129,13 +129,13 @@
 
         <div class="librosDetails">
             <h2>Acerca de este libro</h2>
-            <textarea id="detallesLibro" name="detallesDelLibro">
+            <textarea id="detallesLibro" name="detallesDelLibro" minlength="20">
           </textarea>
         </div>
 
         <div class="autorDetails">
             <h2>Acerca del autor</h2>
-            <textarea id="detallesAutor" name="detallesAutor">
+            <textarea id="detallesAutor" name="detallesAutor" minlength="20">
           </textarea>
         </div>
 
