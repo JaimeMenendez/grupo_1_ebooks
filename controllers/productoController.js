@@ -171,7 +171,7 @@ const controller = {
                 }
             })
 
-            item = itemOnCar == null ? item: {...item, id: itemOnCar.dataValues.id, cantidad:  itemOnCar.dataValues.cantidad + item.cantidad}
+            item = itemOnCar == null ? item : { ...item, id: itemOnCar.dataValues.id, cantidad: itemOnCar.dataValues.cantidad + item.cantidad }
 
             await db.carrito.upsert({
                 ...item
@@ -201,12 +201,29 @@ const controller = {
         })
         res.render('products/carrito', { articulos: carrito, userLogged: req.session.userLogged })
     },
-    removeItemFromCar: async(req, res) =>{
+    removeItemFromCar: async (req, res) => {
         let id = Number(req.params.id)
-        await db.carrito.destroy({where: {id}})
+        await db.carrito.destroy({ where: { id } })
+        res.sendStatus(200)
+    },
+    changeQuantityInCar: async (req, res) => {
+        let id = Number(req.params.id)
+        let quantity = Number(req.body.quantity)
+        if (!quantity) {
+            res.sendStatus(400)
+            return
+        }
+        await db.carrito.update({ cantidad: quantity }, {
+            where: {
+                [db.Sequelize.Op.and]: [
+                    { id },
+                    { usuarioId: req.session.userLogged.id }
+                ]
+            }
+        })
         res.sendStatus(200)
     }
-
 }
+
 
 module.exports = controller;

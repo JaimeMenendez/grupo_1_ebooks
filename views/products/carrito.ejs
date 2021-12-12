@@ -74,7 +74,17 @@
             fetch('/products/remove-item-from-car/' + id,{method: 'DELETE'})
             .then(() => window.location.reload())
         }
-        
+        }
+
+        function changeQuantity(id, input){
+            let quantity = input.value
+            fetch('/products/change-quantity-in-car/' + id,{
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({quantity})
+            })
         }
     
     </script>
