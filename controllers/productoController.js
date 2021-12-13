@@ -82,9 +82,9 @@ const controller = {
             await categoria[0].addSubcategoria(subcategoria[0]);
             res.redirect('/products/')
         } else {
-           if(req.file){
-               fs.unlinkSync(req.file.path)
-           }
+            if (req.file) {
+                fs.unlinkSync(req.file.path)
+            }
             const errores = errors.errors.reduce(
                 (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`, '')
             res.render('products/editar-agregar-producto', {
@@ -97,7 +97,7 @@ const controller = {
                 warning: true
             })
         }
-        
+
     },
 
     // Update - Form to edit
@@ -240,6 +240,40 @@ const controller = {
             }
         })
         res.sendStatus(200)
+    },
+    search: async (req, res) => {
+        let results = await db.libro.findAll({
+            where: {
+                [db.Sequelize.Op.or]: [
+                    { nombreLibro: { [db.Sequelize.Op.like]: `%${req.query.search}%` } },
+                    { autor: { [db.Sequelize.Op.like]: `%${req.query.search}%` } },
+                    { isbn: { [db.Sequelize.Op.like]: `%${req.query.search}%` } },
+                    { detallesDelLibro: { [db.Sequelize.Op.like]: `%${req.query.search}%` } },
+                    { detallesAutor: { [db.Sequelize.Op.like]: `%${req.query.search}%` } }
+                ]
+            }
+        })
+
+        let msg;
+        if (results.length == 0) {
+            msg = 'No se encontraron resultados para: ' + req.query.search
+        } else if (req.query.search == "") {
+            msg = 'Todos los productos'
+
+        } else {
+            msg = 'Resultados para: ' + req.query.search
+        }
+
+        let nuevosArticulos = results.map(articulo => {
+            return { ...articulo.dataValues, idClass: "", nuevo: false, clasificacion: 3, formato: "" }
+        })
+
+        let seccionProductos = {
+            "idSection": "productos",
+            "titulo": msg
+        };
+        seccionProductos.articulos = nuevosArticulos;
+        res.render('products/products', { seccionProductos: seccionProductos, userLogged: req.session.userLogged })
     }
 }
 

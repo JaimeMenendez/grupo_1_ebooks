@@ -30,6 +30,7 @@ const upload = multer({
         }
     }
 }).single("portada")
+router.get('/search', productoController.search)
 
 // Routes
 router.get('/car', authMiddleware, productoController.sendShoppingCart)
@@ -45,5 +46,6 @@ router.delete('/delete/:id', productoController.destroy)
 router.post('/add-item-to-car/:id', authMiddleware, productoController.addItemToCar)
 router.delete("/remove-item-from-car/:id", productoController.removeItemFromCar)
 router.put("/change-quantity-in-car/:id", productoController.changeQuantityInCar)
+
 
 module.exports = router
