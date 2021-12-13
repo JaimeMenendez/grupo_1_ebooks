@@ -81,9 +81,27 @@ const middleware = {
         check('nombreLibro')
         .notEmpty().withMessage("Debe especificar un título").bail()
         .isLength({ min: 5 }).withMessage("El título debe tener al menos 5 caracteres"),
+
         check('autor').notEmpty().withMessage("Debe especificar un autor"),
+
+        check("categoria").notEmpty().withMessage("Debe especificar una categoría"),
+
+        check("subcategoria").notEmpty().withMessage("Debe especificar una subcategoría"),
+
+        check("isbn").notEmpty().withMessage("Debe especificar un isbn"),
+
+        check('editorial').notEmpty().withMessage("Debe especificar una editorial"),
+
+        check("precioEbook").notEmpty().withMessage("Debe especificar un precio para el libro electrónico.").bail()
+        .isNumeric().withMessage("El precio del libro electrónico debe ser un número"),
+
+        check("paginas").notEmpty().withMessage("Debe especificar un número de páginas").bail().isNumeric().withMessage("El número de páginas debe ser un número"),
+
+        check("precioBook").notEmpty().withMessage("Debe especificar un precio para el libro").bail()
+        .isNumeric().withMessage("El precio del libro debe ser un número"),
         check("detallesAutor").notEmpty().withMessage("Debe especificar los detalles del autor").bail()
-        .isLength({ min: 5 }).withMessage("Los detalles del autor deben tener un mínimo de 5 caractere."),
+        .isLength({ min: 5 }).withMessage("Los detalles del autor deben tener un mínimo de 5 caracteres."),
+
         check("detallesDelLibro").notEmpty().withMessage("Debe especificar los detalles del libro").bail()
         .isLength({ min: 5 }).withMessage("Los detalles del libro deben tener un mínimo de 5 caracteres."),
     ]

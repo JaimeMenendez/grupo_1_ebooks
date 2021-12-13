@@ -82,6 +82,9 @@ const controller = {
             await categoria[0].addSubcategoria(subcategoria[0]);
             res.redirect('/products/')
         } else {
+           if(req.file){
+               fs.unlinkSync(req.file.path)
+           }
             const errores = errors.errors.reduce(
                 (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`, '')
             res.render('products/editar-agregar-producto', {
