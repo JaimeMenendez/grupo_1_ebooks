@@ -16,6 +16,9 @@
     --dorado: rgb(202, 172, 4);
 }
 
+body{
+    background-color: var(--backgroundColor);
+}
 /************************************
 //        SEARCH BAR MOBILE        //
 /***********************************/

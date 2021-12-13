@@ -7,7 +7,7 @@ const session = require('express-session')
 const morgan = require('morgan')
 const cookieParser = require('cookie-parser');
 const recuerdame = require('./middlewares/recuerdame')
-const dbInit = require("./database/models/init");
+// const dbInit = require("./database/models/init");
 
 const app = express()
 

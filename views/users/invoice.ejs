@@ -54,12 +54,13 @@
                 <div class="entradaDeDatos">
                     <label for="idDireccion">Seleccionar una dirección o agregar una nueva</label>
                     <select id="idDireccion" name="idDireccion">
+                        <option value="" onclick="mostrarAlerta()" <%= edit ? '' : 'selected' %>  >Agregar una nueva dirección </option>
                         <% direcciones.forEach(address => { %>
                             <option value= <%= address.id %> <%= edit && (address.id == user.direccionId) ? 'selected': '' %> > 
-                                <%= address.id == 0 ? '':address.nombre + ', ' + address.direccion %> 
+                                <%= address.nombre + ', ' + address.direccion %> 
                             </option>
                         <% }) %>
-                        <option value=""  onclick="mostrarAlerta()" <%= edit ? '' : 'selected' %>  >Agregar una nueva dirección </option>
+                      
                     </select>
                 </div>
 

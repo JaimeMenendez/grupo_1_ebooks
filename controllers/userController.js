@@ -215,7 +215,7 @@ const userController = {
                     direccionId: req.body.idDireccion
                 })
                 await updateUserLogged(user.id, db, req)
-                res.redirect('/users')
+                res.redirect('/users/#invoice')
             } catch (e) {
                 console.log('Hubo un error al crear los datos de facturación ', e)
             }
@@ -226,7 +226,7 @@ const userController = {
                 mensaje: errores,
                 warning: true,
                 edit: 2,
-                user: { direcciones: req.body.idDireccion == '' ? user.direcciones.push({ id: 0 }) : user.direcciones, razonSocial: req.body.razonSocial, rfc: req.body.rfc, direccionId: req.body.idDireccion == '' ? 0 : req.body.idDireccion },
+                user: { direcciones: req.body.idDireccion == '' ? null : user.direcciones, razonSocial: req.body.razonSocial, rfc: req.body.rfc, direccionId: req.body.idDireccion == '' ? 0 : req.body.idDireccion },
                 direcciones: user.direcciones,
                 busquedas: seccion.busquedas,
                 nuevos: seccion.nuevos,
@@ -297,7 +297,7 @@ const userController = {
                 }
             })
             await updateUserLogged(user.id, db, req)
-            res.redirect('/users')
+            res.redirect('/users/#invoices')
         } catch (e) {
             console.log('Hubo un error al hacer predeterminada la dirección de facturación', e)
         }
@@ -437,7 +437,7 @@ const userController = {
                 }
             })
             await updateUserLogged(user.id, db, req)
-            res.redirect('/users')
+            res.redirect('/users#direcciones')
         } catch (e) {
             console.log('Hubo un error al hacer predeterminada la dirección ', e)
         }

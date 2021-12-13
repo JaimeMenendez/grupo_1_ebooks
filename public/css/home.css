@@ -154,6 +154,8 @@ main{
     align-content: center;
     justify-content: center;
     background-color: var(--backgroundColor);
+    margin-bottom: 5px;
+
 }
 
 main div.imp-buttons-hidden{
@@ -312,6 +314,7 @@ main div.products{
 //    MEDIA QUERIES PC             //
 /***********************************/
 @media (min-width: 1024px) {
+
   
     main article p.calificacion{
         font-size: 13px;
