@@ -60,7 +60,14 @@ const userController = {
     updateUser: async (req, res) => {
         const user = req.session.userLogged
         let errors = validationResult(req)
-        let update
+        console.log('Originalname ', req.file)
+        console.log('Los errores son: ', errors)
+        if(req.file !== undefined){
+            let ext = path.extname(req.file.originalname)
+            if(ext !== '.png' && ext !=='.jpg' && ext !== '.jpeg' && ext !== '.gif'){
+                errors.errors.push({msg: 'Debe seleccionar una imagen con un formato válido: .jpg, .jpeg, .gif, .png'})
+            }
+        }
         if (errors.isEmpty()) {
           try {
               if (req.file) {
@@ -104,6 +111,9 @@ const userController = {
               console.log(errorDB)
           }
         } else {
+            if (req.file) {
+                fs.unlinkSync(req.file.path)
+            }
             const errores = errors.errors.reduce(
                 (acc, error) => acc + `<p><i class="fas fa-exclamation-triangle"></i>${error.msg}</p>`, '')
             res.render('users/edit-data-user', {

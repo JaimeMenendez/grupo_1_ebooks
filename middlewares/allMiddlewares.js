@@ -46,9 +46,11 @@ const middleware = {
     ],
 
     validarDataUser: [
-        body('nombre').notEmpty().isLength({ min: 2 }).withMessage("Debe especificar su nombre"),
-        body('apellido').notEmpty().isLength({ min: 2 }).withMessage("Debe especificar su apellido"),
-        body('correo').notEmpty().withMessage("Debe especificar un email")
+        body('nombre').notEmpty().withMessage("Debe especificar su nombre").bail()
+                    .isLength({ min: 2 }).withMessage("El nombre debe tener mínimo 2 carácteres"),
+        body('apellido').notEmpty().withMessage("Debe especificar su apellido").bail()
+                    .isLength({ min: 2 }).withMessage("El apellido debe tener mínimo 2 carácteres"),
+        body('correo').notEmpty().withMessage("Debe especificar un email").bail()
                     .isEmail().withMessage("Debe especificar un email válido")  
     ],
 
