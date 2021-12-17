@@ -7,24 +7,6 @@ const botonesPrincipales = require('./botonesPrincipales.json')
 
 const { validationResult } = require('express-validator')
 
-async function cargarLibros(){
-    librosDB = await db.libro.findAll()
-    let tamaño = librosDB.length
-
-    let articulosBusquedas = librosDB.filter(articulo => articulo.dataValues.id <= 16 && articulo.dataValues.id > 8)
-        .map(articulo => { return {...articulo.dataValues, idClass:"", nuevo: false, formato:"ebook",clasificacion: 4}})
-    
-    let articulosFavoritos = librosDB.filter(articulo => articulo.dataValues.id <= tamaño && articulo.dataValues.id > (tamaño - 8))
-        .map(articulo => { return {...articulo.dataValues, idClass:"", nuevo: false, formato:"", clasificacion: 2}})
-
-    let articulosNuevos = librosDB.filter(articulo => articulo.dataValues.id <= 13 && articulo.dataValues.id > 5)
-        .map(articulo => { return {...articulo.dataValues, idClass:"", nuevo: true, formato:"",clasificacion: 4}})
-    
-    busquedas = {...busquedas, articulos: articulosBusquedas}
-    favoritos = {...favoritos, articulos: articulosFavoritos}
-    nuevos = {...nuevos, articulos: articulosNuevos}
-}
-
 var librosDB; 
 var nuevos = {idSection: "nuevos", titulo:'Los más nuevos...'}
 var busquedas = {idSection: "busquedas", titulo:'Relacionado a tus búsquedas...'}
@@ -69,7 +51,7 @@ const userController = {
         let errors = validationResult(req)
         console.log('Originalname ', req.file)
         console.log('Los errores son: ', errors)
-        
+
         if(req.file !== undefined){
             let ext = path.extname(req.file.originalname)
             if(ext !== '.png' && ext !=='.jpg' && ext !== '.jpeg' && ext !== '.gif'){
@@ -599,4 +581,22 @@ async function updateUserLogged(userId, db, req) {
         }],
         where: { id: userId }
     })
+}
+
+async function cargarLibros(){
+    librosDB = await db.libro.findAll()
+    let tamaño = librosDB.length
+
+    let articulosBusquedas = librosDB.filter(articulo => articulo.dataValues.id <= 16 && articulo.dataValues.id > 8)
+        .map(articulo => { return {...articulo.dataValues, idClass:"", nuevo: false, formato:"ebook",clasificacion: Math.floor((Math.random() * 5)+1)}})
+    
+    let articulosFavoritos = librosDB.filter(articulo => articulo.dataValues.id <= tamaño && articulo.dataValues.id > (tamaño - 8))
+        .map(articulo => { return {...articulo.dataValues, idClass:"", nuevo: false, formato:"", clasificacion: Math.floor((Math.random() * 5)+1)}})
+
+    let articulosNuevos = librosDB.filter(articulo => articulo.dataValues.id <= 13 && articulo.dataValues.id > 5)
+        .map(articulo => { return {...articulo.dataValues, idClass:"", nuevo: true, formato:"",clasificacion: Math.floor((Math.random() * 5)+1)}})
+    
+    busquedas = {...busquedas, articulos: articulosBusquedas}
+    favoritos = {...favoritos, articulos: articulosFavoritos}
+    nuevos = {...nuevos, articulos: articulosNuevos}
 }
