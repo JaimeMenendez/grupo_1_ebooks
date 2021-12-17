@@ -3,42 +3,49 @@ const fs = require('fs')
 const db = require('../database/models')
 const path = require('path')
 const bcrypt = require('bcryptjs')
-const UserModel = require('../Model/User')
-const seccion = require('./secciones.json')
 const botonesPrincipales = require('./botonesPrincipales.json')
-
-const usersPath = path.resolve(__dirname, '../DB/usersDB.json')
-const productsFilePath = path.join(__dirname, '../DB/librosDB.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const { validationResult } = require('express-validator')
 
-let users = JSON.parse(fs.readFileSync(usersPath))
+async function cargarLibros(){
+    librosDB = await db.libro.findAll()
+    let tamaño = librosDB.length
 
+    let articulosBusquedas = librosDB.filter(articulo => articulo.dataValues.id <= 16 && articulo.dataValues.id > 8)
+        .map(articulo => { return {...articulo.dataValues, idClass:"", nuevo: false, formato:"ebook",clasificacion: 4}})
+    
+    let articulosFavoritos = librosDB.filter(articulo => articulo.dataValues.id <= tamaño && articulo.dataValues.id > (tamaño - 8))
+        .map(articulo => { return {...articulo.dataValues, idClass:"", nuevo: false, formato:"", clasificacion: 2}})
 
-let articulosDB = function (idClass, nuevo, formato) {
-    return products.map(articulo => {
-        return articulo = { ...articulo, idClass: idClass, nuevo: nuevo, clasificacion: 3, formato: formato }
-    })
+    let articulosNuevos = librosDB.filter(articulo => articulo.dataValues.id <= 13 && articulo.dataValues.id > 5)
+        .map(articulo => { return {...articulo.dataValues, idClass:"", nuevo: true, formato:"",clasificacion: 4}})
+    
+    busquedas = {...busquedas, articulos: articulosBusquedas}
+    favoritos = {...favoritos, articulos: articulosFavoritos}
+    nuevos = {...nuevos, articulos: articulosNuevos}
 }
 
-let tamaño = articulosDB.length
+var librosDB; 
+var nuevos = {idSection: "nuevos", titulo:'Los más nuevos...'}
+var busquedas = {idSection: "busquedas", titulo:'Relacionado a tus búsquedas...'}
+var favoritos = {idSection: "favoritos", titulo:'Favoritos de los usuarios...'}
 
-seccion.favoritos.articulos = articulosDB("", true, "").filter(articulo => articulo.id <= tamaño && articulo.id > (tamaño - 8));
-seccion.nuevos.articulos = articulosDB("", true, "").filter(articulo => articulo.id <= 16 && articulo.id > 8);
-seccion.busquedas.articulos = articulosDB("", false, "ebook").filter(articulo => articulo.id <= 13 && articulo.id > 5);
-
+try{
+    cargarLibros()
+}catch(e){
+    console.log('Ocurrió un error mientras se cargaban los libros: ', e)
+}
 
 const userController = {
-    sendMyAccount: (req, res) => {
+    sendMyAccount: async (req, res) => {
         const user = req.session.userLogged
-        console.log('Lo que tiene user: ', user)
+        console.log('Lo que tiene user: ', user)  
         res.render('users/myAccount', {
             user: user,
             botonesPrincipales: botonesPrincipales,
-            busquedas: seccion.busquedas,
-            favoritos: seccion.favoritos,
-            nuevos: seccion.nuevos,
+            busquedas: busquedas,
+            favoritos: favoritos,
+            nuevos: nuevos,
             userLogged: req.session.userLogged
         })
     },
@@ -51,8 +58,8 @@ const userController = {
         const user = req.session.userLogged
         res.render('users/edit-data-user', {
             user: user,
-            busquedas: seccion.busquedas,
-            favoritos: seccion.favoritos,
+            busquedas: busquedas,
+            nuevos: nuevos,
             userLogged: req.session.userLogged
         })
     },
@@ -62,6 +69,7 @@ const userController = {
         let errors = validationResult(req)
         console.log('Originalname ', req.file)
         console.log('Los errores son: ', errors)
+        
         if(req.file !== undefined){
             let ext = path.extname(req.file.originalname)
             if(ext !== '.png' && ext !=='.jpg' && ext !== '.jpeg' && ext !== '.gif'){
@@ -103,8 +111,8 @@ const userController = {
                   mensaje: mensaje,
                   warning: false,
                   user: req.session.userLogged,
-                  busquedas: seccion.busquedas,
-                  favoritos: seccion.favoritos,
+                  busquedas: busquedas,
+                  nuevos:nuevos,
                   userLogged: req.session.userLogged
               })
           } catch (errorDB) {
@@ -120,8 +128,8 @@ const userController = {
                 mensaje: errores,
                 warning: true,
                 user: user,
-                busquedas: seccion.busquedas,
-                favoritos: seccion.favoritos,
+                busquedas: busquedas,
+                nuevos:nuevos,
                 userLogged: req.session.userLogged
             })
         }
@@ -145,8 +153,8 @@ const userController = {
                 mensaje: mensaje,
                 warning: false,
                 user: user,
-                busquedas: seccion.busquedas,
-                favoritos: seccion.favoritos,
+                busquedas: busquedas,
+                nuevos:nuevos,
                 userLogged: req.session.userLogged
             })
         } else {
@@ -156,8 +164,8 @@ const userController = {
                 mensaje: errores,
                 warning: true,
                 user: user,
-                busquedas: seccion.busquedas,
-                favoritos: seccion.favoritos,
+                busquedas: busquedas,
+                nuevos:nuevos,
                 userLogged: req.session.userLogged
             })
         }
@@ -188,8 +196,8 @@ const userController = {
                 edit: 1,
                 user: datosDeFacturacion.dataValues,
                 direcciones: user.direcciones,
-                busquedas: seccion.busquedas,
-                nuevos: seccion.nuevos,
+                busquedas: busquedas,
+                nuevos: nuevos,
                 userLogged: req.session.userLogged
             })
         } catch (e) {
@@ -204,8 +212,8 @@ const userController = {
                 edit: 0,
                 user: user,
                 direcciones: user.direcciones,
-                busquedas: seccion.busquedas,
-                nuevos: seccion.nuevos,
+                busquedas: busquedas,
+                nuevos: nuevos,
                 userLogged: req.session.userLogged
             })
         } catch (e) {
@@ -238,8 +246,8 @@ const userController = {
                 edit: 2,
                 user: { direcciones: req.body.idDireccion == '' ? null : user.direcciones, razonSocial: req.body.razonSocial, rfc: req.body.rfc, direccionId: req.body.idDireccion == '' ? 0 : req.body.idDireccion },
                 direcciones: user.direcciones,
-                busquedas: seccion.busquedas,
-                nuevos: seccion.nuevos,
+                busquedas: busquedas,
+                nuevos: nuevos,
                 userLogged: req.session.userLogged
             })
         }
@@ -274,8 +282,8 @@ const userController = {
                 edit: 1,
                 user: { direcciones: req.body.idDireccion == '' ? user.direcciones.push({ id: 0 }) : user.direcciones, razonSocial: req.body.razonSocial, rfc: req.body.rfc, direccionId: req.body.idDireccion == '' ? 0 : req.body.idDireccion },
                 direcciones: user.direcciones,
-                busquedas: seccion.busquedas,
-                nuevos: seccion.nuevos,
+                busquedas: busquedas,
+                nuevos: nuevos,
                 userLogged: req.session.userLogged
             })
         }
@@ -336,8 +344,8 @@ const userController = {
             res.render('users/editar-direccion', {
                 edit: 1,
                 ...direccionSolicitada.dataValues,
-                busquedas: seccion.busquedas,
-                nuevos: seccion.nuevos,
+                busquedas: busquedas,
+                nuevos: nuevos,
                 userLogged: req.session.userLogged
             })
         } catch (e) {
@@ -348,8 +356,8 @@ const userController = {
     sendAddAddressView: (req, res) => {
         res.render('users/editar-direccion', {
             edit: 0,
-            busquedas: seccion.busquedas,
-            nuevos: seccion.nuevos,
+            busquedas: busquedas,
+            nuevos: nuevos,
             userLogged: req.session.userLogged
         })
     },
@@ -378,8 +386,8 @@ const userController = {
                 ...newAddress,
                 mensaje: errores,
                 warning: true,
-                busquedas: seccion.busquedas,
-                nuevos: seccion.nuevos,
+                busquedas: busquedas,
+                nuevos: nuevos,
                 userLogged: user
             })
         }
@@ -414,8 +422,8 @@ const userController = {
                 ...addressUpdated,
                 mensaje: errores,
                 warning: true,
-                busquedas: seccion.busquedas,
-                nuevos: seccion.nuevos,
+                busquedas: busquedas,
+                nuevos: nuevos,
                 userLogged: user
             })
         }
@@ -578,20 +586,6 @@ const userController = {
 }
 
 module.exports = userController
-
-function findIndexById(element, collection) {
-    return collection.findIndex(item => element.id === item.id)
-}
-
-function saveUserToDB(user) {
-    let users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'))
-    const index = findIndexById(user, users)
-    if (!user.password)
-        users[index] = { ...user, password: users[index].password }
-    else
-        users[index] = user
-    fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
-}
 
 async function updateUserLogged(userId, db, req) {
     req.session.userLogged = await db.usuario.findOne({
