@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const router = require('./routes/routes')
+const routerAPI = require('./routes/rutasAPI')
 const routerUser = require('./routes/rutasUsuarios')
 const routerProducto = require('./routes/rutasProducto')
 const session = require('express-session')
@@ -42,6 +43,7 @@ app.use(recuerdame)
 // Routes
 app.use('/products', routerProducto)
 app.use('/users', routerUser)
+app.use('/api', routerAPI)
 app.use(router)
 
 // dbInit().then(() => {

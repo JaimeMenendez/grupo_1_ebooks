@@ -13,7 +13,7 @@ var seccion;
 
 try{
   cargarLibros()
-  console.log('lo que tiene seccion', seccion.tendencias)
+  //console.log('lo que tiene seccion', seccion.tendencias)
 }catch(e){
   console.log('Ocurrió un error mientras se cargaban los libros: ', e)
 }
