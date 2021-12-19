@@ -9,11 +9,9 @@ var nuevos = {idSection: "nuevos", titulo:'Los más nuevos...'}
 var ebooks = {idSection: "ebooks", titulo:'Libros electrónicos...'}
 var resultados = {idSection: "resultados", titulo:'Resultados de la búsqueda...'}
 var productos = {idSection: "productos",titulo: "Todos los productos"}
-var seccion;
 
 try{
   cargarLibros()
-  //console.log('lo que tiene seccion', seccion.tendencias)
 }catch(e){
   console.log('Ocurrió un error mientras se cargaban los libros: ', e)
 }

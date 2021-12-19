@@ -279,6 +279,9 @@ const userController = {
                     id: req.params.id
                 }
             })
+            if( user.invoiceDefault == req.params.id){
+                await db.usuario.update({ invoiceDefault: 0}, { where: { id: user.id }})
+            }
             await updateUserLogged(user.id, db, req)
             res.redirect('/users')
         } catch (e) {
@@ -296,6 +299,7 @@ const userController = {
                     id: user.id
                 }
             })
+            
             await updateUserLogged(user.id, db, req)
             res.redirect('/users/#invoices')
         } catch (e) {
@@ -419,6 +423,9 @@ const userController = {
                     id: req.params.id
                 }
             })
+            if( user.addressDefault == req.params.id){
+                await db.usuario.update({ addressDefault: 0}, { where: { id: user.id }})
+            }
             await updateUserLogged(user.id, db, req)
             res.redirect('/users')
         } catch (e) {
