@@ -27,7 +27,9 @@ const apiController = {
     },
     users: async(req,res)=>{
         try{
-            let users = await db.usuario.findAll()
+            let page = req.query.page
+            let limit = req.query.limit
+            let users = await db.usuario.findAll({offset:page, limit: limit})
             return res.status(200).json({
                 count: users.length,
                 users: users.map(user => {
