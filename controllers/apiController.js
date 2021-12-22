@@ -1,30 +1,78 @@
 const db = require('../database/models')
-const Op = db.Sequelize.Op
+//const Op = db.Sequelize.Op
 var _ = require('underscore')
 var _ = require('lodash')
-const { values } = require('underscore')
 
 const apiController = {
     products: async(req,res) => {
         try{
-            let libros = await db.libro.findAll()
-            return res.status(200).json({
-                total: libros.length,
-                data: libros,
-                status: 200,
+            var { page } = req.query;
+            var size = 10
+            page = parseInt(page)
+
+            let books = await db.libro.findAndCountAll({
+                include: [{
+                    model: db.categoria
+                }],
+                limit: size,
+                offset: page * size
             })
-        }catch(e){console.log(e)}
-        _unset
-    },
-    product: async (req,res) =>{
-        try{
-            let libro = await db.libro.findByPk(req.params.id)
-            return res.status(200).json({
-                data: libro,
+            console.log(books.rows)
+            const totalPages = Math.ceil(books.count/size)
+            return res.json({
+                count: books.count,
+                pagination: {
+                    totalPages: totalPages,
+                    limit: size,
+                    nextPage: page >= 0 && page <totalPages-1?`http://localhost:3000/api/products?page=${page+1}`:'',
+                    previousPage: page > 0 && page <= totalPages ? `http://localhost:3000/api/products?page=${page-1}`:'',
+                },
+                books: books.rows.map(book => {
+                    return {
+                        id: book.id,
+                        name: book.nombreLibro,
+                        description: book.detallesDelLibro,
+                        category: book.categoria.map(categoria => categoria.nombre),
+                        detail: 'http://localhost:3000/api/products/' + book.id + '/detail'
+                    }
+                }), 
                 status: 200
             })
         }catch(e){console.log(e)}
     },
+    product: async (req,res) =>{
+        try{
+            let book = await db.libro.findByPk(req.params.id,{
+                include: [{
+                    model: db.categoria
+                }]
+            })
+            return res.status(200).json({
+                book: _.omit(book.dataValues,['portada','precioEbook','categoria']),
+                category: book.categoria.map(categoria => categoria.nombre),
+                imageBook: "http://localhost:3000/"+ book.portada,
+                status: 200
+            })
+        }catch(e){console.log(e)}
+    },
+    productDetail: async(req,res)=>{
+        try{
+            let book = await db.libro.findByPk(req.params.id,{
+                include: [{
+                    model: db.categoria,
+                    include: [{
+                        model: db.subcategoria,
+                        foreignKey: 'categoria_id'
+                    }]
+                }]
+            })
+            return res.json({
+                book: book,
+                imageBook: "http://localhost:3000/"+book.portada,
+                status: 200
+            })
+        }catch(e){console.log(e)}
+    }, 
     create: (req, res) => {
         res.render('products/editar-agregar-producto', {
             title: '<i class="fas fa-book"></i>&nbsp Agregar Libro',
@@ -135,26 +183,8 @@ const apiController = {
         await categoria[0].addSubcategoria(subcategoria[0]);
 
         res.redirect('/products/' + id);
-    },
-    users: async(req,res)=>{
-        try{
-            let page = req.query.page
-            let limit = req.query.limit
-            let users = await db.usuario.findAll({offset:page, limit: limit})
-            return res.status(200).json({
-                count: users.length,
-                users: users.map(user => {
-                    return {
-                        id: user.id,
-                        name: user.firstName + user.lastName,
-                        email: user.email,
-                        detail: 'http://localhost:3000/api/users/' + user.id + '/detail'
-                    }
-                }),
-                status: 200
-            })
-        }catch(e){console.log(e)}
-    },
+    }, 
+    
     destroy: async (req, res) => {
         let id = Number.parseInt(req.params.id);
         if (id) {
@@ -243,6 +273,39 @@ const apiController = {
         })
         res.sendStatus(200)
     },
+    
+    users: async(req,res)=>{
+        try{
+            var { page } = req.query;
+            var size = 10
+            page = parseInt(page)
+
+            let users = await db.usuario.findAndCountAll({
+                limit: size,
+                offset: page*size
+            })
+            const totalPages = Math.ceil(users.count/size)
+            return res.json({
+                count: users.count,
+                pagination: {
+                    totalPages: totalPages,
+                    limit: size,
+                    nextPage: page >= 0 && page<totalPages-1?`http://localhost:3000/api/users?page=${page+1}`:'',
+                    previousPage: page > 0 && page <= totalPages ? `http://localhost:3000/api/users?page=${page-1}`:'',
+                },
+                users: users.rows.map(user => {
+                    return {
+                        id: user.id,
+                        name: user.firstName + user.lastName,
+                        email: user.email,
+                        detail: 'http://localhost:3000/api/users/' + user.id + '/detail'
+                    }
+                }),
+                status: 200
+            }) 
+        }catch(e){console.log(e)}
+    },
+    
     user: async(req,res)=>{
         try{
             let user = await db.usuario.findOne({
@@ -263,7 +326,6 @@ const apiController = {
         }catch(e){console.log(e)}
     },
     userDetail: async(req,res)=>{
-        //res.send('Soy el detalle del usuario con id: ' + req.params.id)
         try{
             let user = await db.usuario.findOne({
                 include: [{
@@ -293,7 +355,7 @@ const apiController = {
 
     },
     sendPageNotFound: (res)=>{
-        res.status(200).send("Recurso no encontrado!!!")
+        res.status(404).send("Recurso no encontrado!!!")
     }
 }
 
