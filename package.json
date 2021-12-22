@@ -34,8 +34,7 @@
     "normalize.css": "^8.0.1",
     "sequelize": "^6.9.0",
     "sequelize-cli": "^6.3.0",
-    "sqlite3": "^5.0.2",
-    "underscore": "^1.13.2"
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"

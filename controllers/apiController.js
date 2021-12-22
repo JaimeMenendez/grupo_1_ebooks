@@ -33,46 +33,35 @@ const apiController = {
                         name: book.nombreLibro,
                         description: book.detallesDelLibro,
                         category: book.categoria.map(categoria => categoria.nombre),
-                        detail: 'http://localhost:3000/api/products/' + book.id + '/detail'
+                        detail: 'http://localhost:3000/api/products/' + book.id
                     }
                 }), 
                 status: 200
             })
         }catch(e){console.log(e)}
     },
-    product: async (req,res) =>{
+    productDetail: async (req,res) =>{
         try{
             let book = await db.libro.findByPk(req.params.id,{
                 include: [{
                     model: db.categoria
                 }]
             })
+            book = JSON.parse(JSON.stringify(book));
+            let categoria = book.categoria
+            let portada = book.portada
+            delete book.portada
+            delete book.precioEbook
+            delete book.categoria
             return res.status(200).json({
-                book: _.omit(book.dataValues,['portada','precioEbook','categoria']),
-                category: book.categoria.map(categoria => categoria.nombre),
-                imageBook: "http://localhost:3000/"+ book.portada,
+                book: book,
+                category: categoria.map(categoria => categoria.nombre),
+                imageBook: "http://localhost:3000/"+ portada,
                 status: 200
             })
         }catch(e){console.log(e)}
     },
-    productDetail: async(req,res)=>{
-        try{
-            let book = await db.libro.findByPk(req.params.id,{
-                include: [{
-                    model: db.categoria,
-                    include: [{
-                        model: db.subcategoria,
-                        foreignKey: 'categoria_id'
-                    }]
-                }]
-            })
-            return res.json({
-                book: book,
-                imageBook: "http://localhost:3000/"+book.portada,
-                status: 200
-            })
-        }catch(e){console.log(e)}
-    }, 
+    
    /*  create: (req, res) => {
         res.render('products/editar-agregar-producto', {
             title: '<i class="fas fa-book"></i>&nbsp Agregar Libro',
@@ -298,7 +287,7 @@ const apiController = {
                         id: user.id,
                         name: user.firstName + user.lastName,
                         email: user.email,
-                        detail: 'http://localhost:3000/api/users/' + user.id + '/detail'
+                        detail: 'http://localhost:3000/api/users/' + user.id 
                     }
                 }),
                 status: 200
@@ -306,25 +295,6 @@ const apiController = {
         }catch(e){console.log(e)}
     },
     
-    user: async(req,res)=>{
-        try{
-            let user = await db.usuario.findOne({
-                include: [{
-                    model: db.direccion,
-                    as: 'direcciones',
-                    include: [{
-                        model: db.datosFacturacion,
-                        as: 'facturacion'
-                    }]
-                }], where: { id: req.params.id } })
-           
-            return res.json({
-                user: _.omit(user.dataValues,['password','estado','imageUser','rolId']),
-                imageUser: "http://localhost:3000/"+user.imageUser,
-                status: 200
-            })
-        }catch(e){console.log(e)}
-    },
     userDetail: async(req,res)=>{
         try{
             let user = await db.usuario.findOne({
@@ -335,10 +305,12 @@ const apiController = {
                         model: db.datosFacturacion,
                         as: 'facturacion'
                     }]
-                }], where: { id: req.params.id } })
+                }], where: { id: req.params.id },
+            })
             if(user.addressDefault != 0){
                 let address = user.direcciones.find(direccion => direccion.dataValues.id == user.addressDefault)
-                console.log("ADress" , address)
+                address= JSON.parse(JSON.stringify(address))
+                delete address.facturacion 
                 user.addressDefault = address
             }
             if(user.invoiceDefault != 0){
@@ -346,9 +318,15 @@ const apiController = {
                 let invoice = addressInvoice.dataValues.facturacion.find(i => i.dataValues.id == user.invoiceDefault)
                 user.invoiceDefault = invoice.dataValues
             }
+            user = JSON.parse(JSON.stringify(user));
+            let image = user.imageUser
+            delete user.password; 
+            delete user.estado;
+            delete user.imageUser;
+            delete user.rolId;
             return res.json({
-                user: _.omit(user.dataValues,['password','estado','imageUser','rolId','addressDefault.dataValues.facturacion']),
-                imageUser: "http://localhost:3000/"+user.imageUser,
+                user: user, // _.omit(user.dataValues,['password','estado','imageUser','rolId','addressDefault.dataValues.facturacion']),
+                imageUser: "http://localhost:3000/"+ image,
                 status: 200
             })
         }catch(e){console.log(e)}
