@@ -73,7 +73,7 @@ const apiController = {
             })
         }catch(e){console.log(e)}
     }, 
-    create: (req, res) => {
+   /*  create: (req, res) => {
         res.render('products/editar-agregar-producto', {
             title: '<i class="fas fa-book"></i>&nbsp Agregar Libro',
             edit: false,
@@ -273,7 +273,7 @@ const apiController = {
         })
         res.sendStatus(200)
     },
-    
+     */
     users: async(req,res)=>{
         try{
             var { page } = req.query;
