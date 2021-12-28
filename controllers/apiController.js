@@ -1,7 +1,5 @@
 const db = require('../database/models')
 //const Op = db.Sequelize.Op
-var _ = require('underscore')
-var _ = require('lodash')
 
 const apiController = {
     products: async(req,res) => {
@@ -325,7 +323,7 @@ const apiController = {
             delete user.imageUser;
             delete user.rolId;
             return res.json({
-                user: user, // _.omit(user.dataValues,['password','estado','imageUser','rolId','addressDefault.dataValues.facturacion']),
+                user: user, 
                 imageUser: "http://localhost:3000/"+ image,
                 status: 200
             })
