@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const cors = require('cors')
 const router = require('./routes/routes')
 const routerAPI = require('./routes/rutasAPI')
 const routerUser = require('./routes/rutasUsuarios')
@@ -11,6 +12,8 @@ const recuerdame = require('./middlewares/recuerdame')
 // const dbInit = require("./database/models/init");
 
 const app = express()
+
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
@@ -53,6 +56,7 @@ app.use(router)
 //   app.listen(port, () =>
 //     console.log('Servidor Corriendo en el puerto', port))
 // }) 
+
 
 const port = process.env.PORT || 3000
 app.listen(port, () =>

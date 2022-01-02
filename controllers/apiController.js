@@ -2,6 +2,7 @@ const db = require('../database/models')
 //const Op = db.Sequelize.Op
 
 const apiController = {
+    
     products: async(req,res) => {
         try{
             var { page } = req.query;
@@ -12,6 +13,15 @@ const apiController = {
                 include: [{
                     model: db.categoria
                 }],
+                where: {
+                    [db.Sequelize.Op.or]: [
+                        {nombreLibro: {[db.Sequelize.Op.like]: `%${req.query.search}%`}},
+                        {autor: {[db.Sequelize.Op.like]: `%${req.query.search}%`}},
+                        {isbn: {[db.Sequelize.Op.like]: `%${req.query.search}%`}},
+                        {detallesDelLibro: {[db.Sequelize.Op.like]: `%${req.query.search}%`}},
+                        {detallesAutor: {[db.Sequelize.Op.like]: `%${req.query.search}%`}}
+                    ]
+                },
                 limit: size,
                 offset: page * size
             })
@@ -19,6 +29,7 @@ const apiController = {
             const totalPages = Math.ceil(books.count/size)
             return res.json({
                 count: books.count,
+                Error: books.count == 0 ? true : false,
                 pagination: {
                     totalPages: totalPages,
                     limit: size,
@@ -31,6 +42,7 @@ const apiController = {
                         name: book.nombreLibro,
                         description: book.detallesDelLibro,
                         category: book.categoria.map(categoria => categoria.nombre),
+                        imageBook: "http://localhost:3000/"+ book.portada,
                         detail: 'http://localhost:3000/api/products/' + book.id
                     }
                 }), 
